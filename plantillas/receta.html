@@ -1,38 +1,40 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{PAGE_TITLE}}</title>
-<meta name="description" content="{{META_DESCRIPTION}}">
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="MiruRecetas">
-<meta property="og:title" content="{{PAGE_TITLE}}">
-<meta property="og:description" content="{{META_DESCRIPTION}}">
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{PAGE_TITLE}}</title><meta name="description" content="{{META_DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="MiruRecetas">
+<meta property="og:title" content="{{PAGE_TITLE}}"><meta property="og:description" content="{{META_DESCRIPTION}}">
 <meta property="og:url" content="{{CANONICAL_URL}}">
 {{SOCIAL_IMAGE}}
-<link rel="canonical" href="{{CANONICAL_URL}}">
 <link rel="stylesheet" href="{{CSS_URL}}">
 <script type="application/ld+json">{{JSON_LD}}</script>
-</head>
-<body>
-<div class="wrap">
-<header class="brand"><a href="{{HOME_URL}}">MiruRecetas</a><span class="tag">Recetario · Menú anual</span></header>
-<article itemscope itemtype="https://schema.org/Recipe">
-{{VISIBLE_IMAGE}}
-<div class="content">
-<span class="tag">Receta</span>
+</head><body>
+<div class="shell">
+<header class="topbar"><a class="logo" href="{{HOME_URL}}">Miru<span>Recetas</span></a><nav class="nav" aria-label="Principal"><a href="{{HOME_URL}}">Mis menús</a><a href="{{HOME_URL}}#recetario">Recetario</a></nav></header>
+<main class="main">
+<article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+<section class="face active" id="anverso" aria-label="Ficha de receta">
+<div class="front-grid">
+<div class="photo-panel">{{VISIBLE_IMAGE}}</div>
+<div class="recipe-main">
+<span class="eyebrow">Recetario · ficha</span>
 <h1 itemprop="name">{{TITLE}}</h1>
 {{DESCRIPTION}}
-<div class="meta"><span class="pill" itemprop="recipeYield">{{YIELD_LABEL}}</span>{{TIME_PILLS}}</div>
-<h2>Ingredientes</h2>
-<ul class="ingredients">{{INGREDIENT_ROWS}}</ul>
-<h2>Elaboración</h2>
-<ol class="steps">{{STEP_ROWS}}</ol>
-{{NOTES}}
-</div>
+<div class="recipe-controls"><span class="muted small">Cantidad a preparar</span><div class="stepper" aria-label="Raciones"><button type="button" id="portion-minus" aria-label="Una ración menos">−</button><output id="portion-value" aria-live="polite">{{BASE_SERVINGS}}</output><button type="button" id="portion-plus" aria-label="Una ración más">+</button></div><span class="muted small">raciones</span></div>
+{{NUTRITION}}
+<h2 class="section-title">Ingredientes</h2><ul class="ingredients">{{INGREDIENT_ROWS}}</ul>
+{{TAGS}}
+</div></div></section>
+<section class="face" id="reverso" aria-label="Modo cocina">
+<div class="back-grid">
+<div class="cooking-main"><span class="eyebrow">Modo cocina · {{BASE_SERVINGS}} raciones de referencia</span><h1>{{TITLE}}</h1><p class="muted" id="cooking-servings">{{BASE_SERVINGS}} raciones seleccionadas</p><h2 class="section-title">Elaboración</h2><ol class="steps">{{STEP_ROWS}}</ol><button class="action outline" type="button" id="steps-reset">Reiniciar pasos</button></div>
+<aside class="side-panel"><span class="eyebrow">Herramientas de cocina</span><h2>Temporizador</h2><div class="timer"><p class="muted small">Cuenta atrás</p><div class="timer-readout" role="timer" aria-live="off" id="timer-readout">10:00</div><div class="timer-presets"><button type="button" data-minutes="5">5 min</button><button type="button" data-minutes="10">10 min</button><button type="button" data-minutes="15">15 min</button><button type="button" data-minutes="30">30 min</button></div><div class="timer-actions"><button id="timer-start" type="button">Iniciar</button><button id="timer-pause" type="button">Pausar</button><button id="timer-reset" type="button">Reiniciar</button></div><p id="timer-status" class="muted small" aria-live="polite"></p></div>
+{{NOTES}}<p class="muted small">Los pasos pueden marcarse durante la sesión. Si el navegador admite el bloqueo de pantalla, se intentará mantener la tablet encendida en el modo cocina.</p></aside>
+</div></section>
+<div class="flipbar"><button id="flip-button" class="action" type="button" aria-controls="anverso reverso">Dar la vuelta · Modo cocina →</button></div>
 </article>
-<footer>MiruRecetas · Las cantidades corresponden a las raciones indicadas. Los ingredientes de despensa también forman parte de la receta.</footer>
-</div>
-</body>
-</html>
+</main><footer class="footer">MiruRecetas · Las cantidades se calculan desde los datos originales. La información nutricional corresponde a una ración de referencia.</footer></div>
+<script id="recipe-ui-data" type="application/json">{{UI_JSON}}</script>
+<script src="{{JS_URL}}" defer></script>
+</body></html>

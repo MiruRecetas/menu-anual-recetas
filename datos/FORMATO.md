@@ -1,35 +1,19 @@
-# Formato de cada receta (JSON)
+# MiruRecetas · Contrato de datos
 
-Crear un fichero `datos/recetas/<slug>.json`. No añadir recetas ficticias al catálogo.
+Las recetas se generarán desde Airtable cuando esté conectado. Los archivos JSON son el formato de publicación; no se requieren recetas ficticias.
 
-```json
-{
-  "slug": "identificador-de-la-receta",
-  "nombre": "Nombre de la receta",
-  "descripcion": "Breve descripción opcional",
-  "raciones": 4,
-  "imagen": "identificador-de-la-receta.jpg",
-  "preparacion_min": 15,
-  "coccion_min": 35,
-  "ingredientes": [
-    "500 g de ingrediente",
-    "10 g de aceite de oliva",
-    "2 g de sal"
-  ],
-  "pasos": [
-    "Primer paso de la receta.",
-    "Segundo paso de la receta."
-  ],
-  "notas": "Consejos opcionales para conservar o recalentar."
-}
-```
+## Receta: datos/recetas/slug.json
 
-**El ejemplo es solo documentación, no es una receta real.**
+Campos obligatorios: slug, nombre, raciones (número entero), ingredientes (lista), pasos (lista de textos). Cada ingrediente: nombre, cantidad numérica positiva y unidad; si es una preparación, añadir preparacion con el slug de la receta enlazada. Las cantidades son totales para las raciones base y deben ser numéricas para poder escalarse.
 
-Obligatorios: `slug`, `nombre`, `raciones`, `ingredientes` y `pasos`. `imagen` es opcional al redactar, pero recomendable para importar la foto a Bring!. El archivo de imagen debe existir en `imagenes/`.
+Opcionales: descripcion, imagen (nombre de archivo real en imagenes/), preparacion_min, coccion_min, etiquetas (lista), notas, nutricion. Nutricion, una vez auditada, tendrá kcal, proteinas_g, hidratos_g y grasas_g por ración. El anillo reparte la energía de macros mediante 4/4/9, no representa un cálculo alternativo de calorías. No inventar datos nutricionales.
 
-`preparacion_min` y `coccion_min` son opcionales; si se incluyen, deben ser enteros no negativos y se publican como tiempos Schema.org.
+## Menú: datos/menus/MM-N.json
 
-Los ingredientes son cadenas ya preparadas para Bring! con **peso o volumen por la cantidad total de raciones**; el generador no calcula escalados ni valores nutricionales. No separar ingredientes de despensa en otro bloque, ni omitirlos. El marcado de opcionales se puede ajustar después de importar la receta a Bring!.
+Mes de 1 a 12, menu de 1 a 4. dias contiene exactamente Lunes, Martes, Miércoles, Jueves, Viernes. Cada día incluye comida y cena, con slug de receta existente o null. batchcooking es una lista opcional de slugs existentes. No se usan fechas. Los cuatro menús de cada mes son intercambiables.
 
-Cuando Airtable sea la fuente principal, la exportación deberá componer/expandir preparaciones anidadas y entregar aquí la lista final de compra sin duplicar cantidades. No se debe trasladar a esta web una receta provisional sin revisión.
+## Bring!
+
+La página conserva Schema.org Recipe, image apuntando al repositorio, recipeIngredient con cantidades *base* sin JavaScript y microdatos de imagen. El selector de raciones solo cambia las cantidades visibles para cocinar. Bring! permite escalar sus propias cantidades al importar y guardar cada receta. Los artículos opcionales se editan posteriormente en Bring!.
+
+La expansión de preparaciones anidadas para la compra final necesita definirse con Airtable; esta versión las enlaza y muestra como ingredientes, sin sumarlas automáticamente a Bring!. Los huevos y otras unidades indivisibles pueden requerir redondeo culinario.
