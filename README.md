@@ -13,6 +13,8 @@ Recetario estático para consultar recetas y **compartir una receta individual c
 - `index.html`: portada/catálogo generado.
 - `.github/workflows/publicar-recetas.yml`: regenera las páginas al añadir/modificar datos o plantillas.
 
+**Guía completa para agregar recetas desde cualquier chat del proyecto:** [docs/NUEVA-RECETA.md](docs/NUEVA-RECETA.md).
+
 ## Añadir una receta
 
 1. Crear `datos/recetas/<slug>.json` siguiendo la referencia `datos/FORMATO.md`. El `slug` debe coincidir con el nombre del archivo.
@@ -22,6 +24,6 @@ Recetario estático para consultar recetas y **compartir una receta individual c
 
 Para generar localmente: `python scripts/generar.py`.
 
-**Importante:** no hay recetas de demostración publicadas ni se inventan pesos, valores nutricionales o fotografías reales. El ingrediente que se marca opcional para la compra **permanece en la fuente nutricional**, pues Bring! y el cálculo nutricional tienen finalidades distintas. Toda receta debe contener todos sus ingredientes y cantidades, incluidos aceite y sal.
+**Importante:** no hay recetas de demostración publicadas ni se inventan pesos, valores nutricionales o fotografías reales. El ingrediente que se marca opcional para la compra **permanece en la fuente nutricional**, pues Bring! y el cálculo nutricional tienen finalidades distintas. Toda receta debe incluir sus ingredientes, incluso aceite y sal; las especias y la sal sin cantidad usan cantidad nula para que Bring! no interprete «al gusto» como parte del nombre.
 
 La integración automática Airtable → datos/recetas **todavía no está configurada**. El formato es un contrato de exportación provisional, no una duplicación manual obligatoria futura.
