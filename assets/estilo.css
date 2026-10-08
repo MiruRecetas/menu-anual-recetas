@@ -7,8 +7,8 @@
 [data-lucide]{width:1.1em;height:1.1em;stroke-width:1.75;vertical-align:-.17em;flex-shrink:0}.nav a{display:inline-flex;gap:6px;align-items:center}.eyebrow [data-lucide],.section-title [data-lucide]{margin-right:.35em}.action [data-lucide]{margin-right:.4em}
 
 /* MiruRecetas · jerarquía y símbolos */
-.recipe-main h1,.cooking-main h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:750;letter-spacing:-.045em;line-height:1.06;font-optical-sizing:auto}
-.logo,h2,h3,.section-title{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:650;letter-spacing:-.028em}
+.recipe-main h1,.cooking-main h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;letter-spacing:-.038em;line-height:1.06;font-optical-sizing:auto}
+.logo,h2,h3,.section-title{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:600;letter-spacing:-.028em}
 .category-badge{position:absolute;top:18px;right:18px;z-index:2;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#f9f5edee;color:var(--green);box-shadow:0 5px 18px #18251d24;border:1px solid #ffffffaa}
 .category-badge [data-lucide],.category-badge svg{height:27px;width:27px;stroke-width:1.9}
 .icon-tags{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin:10px 0 3px}
@@ -41,3 +41,26 @@
  .cooking-main,.side-panel{overflow:visible}
 }
 @media(max-width:500px){.category-badge{width:45px;height:45px;top:13px;right:13px}.category-badge svg{width:23px;height:23px}.icon-tag{height:42px;width:42px}}
+
+/* v20261009: diseño de tarjeta sensible a la orientación en cualquier móvil/tablet */
+.photo-panel{position:relative!important}
+.category-badge{position:absolute!important;top:14px!important;right:14px!important;display:flex!important;justify-content:center!important;align-items:center!important;border-radius:50%!important;width:52px!important;height:52px!important;background:#fffaf0f2!important;border:1px solid #fdf8ed!important;box-shadow:0 6px 20px #17291e26!important;color:#426851!important;z-index:5!important}
+.icon-tags{display:flex!important;flex-wrap:wrap!important;gap:11px!important;align-items:center!important;margin:16px 0 8px!important}
+.icon-tag{width:46px!important;height:46px!important;min-width:46px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:50%!important;background:#e8f0e8!important;border:1px solid #bdd0c0!important;color:#44634e!important;position:relative!important}
+.icon-tag.is-main{background:#f6e5db!important;border-color:#e6c1ac!important;color:#9e543a!important}
+.icon-tag svg,.icon-tag [data-lucide]{width:23px!important;height:23px!important}
+.category-badge svg{width:26px!important;height:26px!important}
+@media (orientation:landscape){
+  .recipe-card .front-grid{display:grid!important;grid-template-columns:minmax(0,42%) minmax(0,58%)!important}
+  .recipe-card .back-grid{display:grid!important;grid-template-columns:minmax(0,60%) minmax(0,40%)!important;height:max(300px,calc(100dvh - 165px))!important;min-height:0!important}
+  .recipe-card .back-grid>.cooking-main,.recipe-card .back-grid>.side-panel{min-height:0!important;overflow-y:auto!important;overscroll-behavior:contain}
+  .recipe-card .back-grid>.side-panel{order:initial!important}
+  .recipe-card .photo-panel{height:auto!important;min-height:0!important}
+  .recipe-card .hero-photo{height:100%!important;min-height:100%!important;object-fit:cover}
+}
+@media (orientation:portrait){
+  .recipe-card .front-grid,.recipe-card .back-grid{grid-template-columns:minmax(0,1fr)!important;height:auto!important}
+  .recipe-card .photo-panel{height:clamp(255px,55vw,430px)!important;min-height:0!important}
+  .recipe-card .hero-photo{height:100%!important;min-height:0!important}
+  .recipe-card .back-grid>.cooking-main,.recipe-card .back-grid>.side-panel{overflow:visible!important}
+}
