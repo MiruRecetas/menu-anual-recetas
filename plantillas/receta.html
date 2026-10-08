@@ -19,13 +19,13 @@
 <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
 <section class="face active" id="anverso" aria-label="Ficha de receta">
 <div class="front-grid">
-<div class="photo-panel">{{VISIBLE_IMAGE}}</div>
+<div class="photo-panel">{{VISIBLE_IMAGE}}{{CATEGORY_ICON}}</div>
 <div class="recipe-main">
 <span class="eyebrow"><i data-lucide="book-open" aria-hidden="true"></i> Recetario · ficha</span>
 <h1 itemprop="name">{{TITLE}}</h1>
 {{DESCRIPTION}}
-<div class="recipe-controls"><span class="muted small">Cantidad a preparar</span><div class="stepper" aria-label="Raciones"><button type="button" id="portion-minus" aria-label="Una ración menos">−</button><output id="portion-value" aria-live="polite">{{BASE_SERVINGS}}</output><button type="button" id="portion-plus" aria-label="Una ración más">+</button></div><span class="muted small">raciones</span></div>
 {{NUTRITION}}
+<div class="recipe-controls"><span class="muted small">Cantidad a preparar</span><div class="stepper" aria-label="Raciones"><button type="button" id="portion-minus" aria-label="Una ración menos">−</button><output id="portion-value" aria-live="polite">{{BASE_SERVINGS}}</output><button type="button" id="portion-plus" aria-label="Una ración más">+</button></div><span class="muted small">raciones</span></div>
 <h2 class="section-title"><i data-lucide="scale" aria-hidden="true"></i> Ingredientes</h2><ul class="ingredients">{{INGREDIENT_ROWS}}</ul>
 {{TAGS}}
 </div></div></section>
@@ -40,6 +40,6 @@
 </main><footer class="footer">MiruRecetas · Las cantidades se calculan desde los datos originales. La información nutricional corresponde a una ración de referencia.</footer></div>
 <script id="recipe-ui-data" type="application/json">{{UI_JSON}}</script>
 <script src="{{JS_URL}}" defer></script>
-<script src="https://unpkg.com/lucide@0.525.0/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 </body></html>

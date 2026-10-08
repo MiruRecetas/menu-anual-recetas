@@ -5,3 +5,39 @@
 
 /* Iconos Lucide: comparten trazo y color con el texto. */
 [data-lucide]{width:1.1em;height:1.1em;stroke-width:1.75;vertical-align:-.17em;flex-shrink:0}.nav a{display:inline-flex;gap:6px;align-items:center}.eyebrow [data-lucide],.section-title [data-lucide]{margin-right:.35em}.action [data-lucide]{margin-right:.4em}
+
+/* MiruRecetas · jerarquía y símbolos */
+.recipe-main h1,.cooking-main h1{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:750;letter-spacing:-.045em;line-height:1.06;font-optical-sizing:auto}
+.logo,h2,h3,.section-title{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:650;letter-spacing:-.028em}
+.category-badge{position:absolute;top:18px;right:18px;z-index:2;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:#f9f5edee;color:var(--green);box-shadow:0 5px 18px #18251d24;border:1px solid #ffffffaa}
+.category-badge [data-lucide],.category-badge svg{height:27px;width:27px;stroke-width:1.9}
+.icon-tags{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin:10px 0 3px}
+.icon-tag{width:45px;height:45px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid #bfd0c1;background:#eaf1e8;color:#426851;position:relative;cursor:help}
+.icon-tag.is-main{background:#f7ebe2;border-color:#e7c9b7;color:#a55e42}
+.icon-tag svg,.icon-tag [data-lucide]{width:22px;height:22px;stroke-width:1.8}
+.icon-tag:focus-visible,.category-badge:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.icon-tag:focus::after,.icon-tag:hover::after,.category-badge:hover::after,.category-badge:focus::after{content:attr(data-label);position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);padding:7px 11px;white-space:nowrap;background:var(--ink);color:#fff;font:500 12px "Geist",sans-serif;border-radius:8px;z-index:10;box-shadow:0 3px 14px #0002}
+.category-badge:hover::after,.category-badge:focus::after{bottom:auto;top:calc(100% + 9px)}
+/* Los controles y la elaboración se desplazan por separado en orientación apaisada. */
+@media (orientation:landscape) and (min-width:650px){
+ .front-grid,.back-grid{display:grid!important;grid-template-columns:minmax(0,43%) minmax(0,57%)!important}
+ .front-grid{min-height:0}
+ .photo-panel{min-height:0!important;height:auto!important;position:relative}
+ .hero-photo,.photo-empty{min-height:100%!important;height:100%!important;max-height:none}
+ .back-grid{grid-template-columns:minmax(0,60%) minmax(0,40%)!important;height:clamp(400px,calc(100dvh - 165px),900px);min-height:0!important}
+ .back-grid>.cooking-main,.back-grid>.side-panel{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;min-height:0}
+ .back-grid>.side-panel{order:initial!important}
+ .recipe-main{padding:clamp(20px,2.7vw,44px)}
+ .cooking-main,.side-panel{padding:clamp(20px,2.5vw,38px)}
+ .steps li{padding:12px 0}
+ .timer{margin:14px 0;padding:16px}
+ .timer-readout{margin:4px 0}
+}
+@media (orientation:portrait), (max-width:649px){
+ .front-grid,.back-grid{display:grid;grid-template-columns:1fr!important}
+ .photo-panel{height:clamp(255px,55vw,430px)!important;min-height:0!important}
+ .hero-photo,.photo-empty{height:100%!important;min-height:0!important}
+ .back-grid{height:auto}
+ .cooking-main,.side-panel{overflow:visible}
+}
+@media(max-width:500px){.category-badge{width:45px;height:45px;top:13px;right:13px}.category-badge svg{width:23px;height:23px}.icon-tag{height:42px;width:42px}}

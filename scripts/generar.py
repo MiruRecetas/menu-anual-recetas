@@ -16,14 +16,14 @@ def entries(r):
     values=r["ingredientes"]
     if not isinstance(values,list) or not values:raise ValueError("Ingredientes necesarios")
     for v in values:
-        if not isinstance(v,dict) or not isinstance(v.get("nombre"),str) or not v["nombre"].strip() or not isinstance(v.get("unidad"),str) or not v["unidad"].strip() or isinstance(v.get("cantidad"),bool) or (v.get("cantidad") is not None and (not isinstance(v["cantidad"],(int,float)) or v["cantidad"]<=0)) or (v.get("preparacion") and not slug(v["preparacion"])):raise ValueError("Ingrediente inválido: "+str(v))
+        if not isinstance(v,dict) or not isinstance(v.get("nombre"),str) or not v["nombre"].strip() or not isinstance(v.get("unidad"),str) or (v["cantidad"] is not None and not v["unidad"].strip()) or isinstance(v.get("cantidad"),bool) or (v.get("cantidad") is not None and (not isinstance(v["cantidad"],(int,float)) or v["cantidad"]<=0)) or (v.get("preparacion") and not slug(v["preparacion"])):raise ValueError("Ingrediente inválido: "+str(v))
     return values
 def make(r):
     s=r["slug"]; n=r["nombre"]; servings=r["raciones"];steps=r["pasos"]
     if not slug(s) or not isinstance(n,str) or not n.strip() or isinstance(servings,bool) or not isinstance(servings,int) or servings<1 or not isinstance(steps,list) or not steps or any(not isinstance(t,str) or not t.strip() for t in steps):raise ValueError("Receta incorrecta")
     ing=entries(r); img=image(r);url=SITE+"/recetas/"+s+"/"
     desc=str(r.get("descripcion") or "").strip()
-    structured={"@context":"https://schema.org","@type":"Recipe","name":n,"url":url,"author":{"@type":"Organization","name":"MiruRecetas"},"recipeYield":str(servings),"recipeIngredient":[(str(v["cantidad"])+" "+v["unidad"]+" de "+v["nombre"]) if v["cantidad"] is not None else (v["nombre"]+" "+v["unidad"]) for v in ing],"recipeInstructions":[{"@type":"HowToStep","text":step} for step in steps]}
+    structured={"@context":"https://schema.org","@type":"Recipe","name":n,"url":url,"author":{"@type":"Organization","name":"MiruRecetas"},"recipeYield":str(servings),"recipeIngredient":[(str(v["cantidad"])+" "+v["unidad"]+" de "+v["nombre"]) if v["cantidad"] is not None else (v["nombre"]) for v in ing],"recipeInstructions":[{"@type":"HowToStep","text":step} for step in steps]}
     if img:structured["image"]=img
     if desc:structured["description"]=desc
     for key,out in [("preparacion_min","prepTime"),("coccion_min","cookTime")]:
@@ -43,9 +43,35 @@ def make(r):
             nut_html+='<div class="macro"><span><span class="dot '+cls+'"></span>'+name+'</span><strong>'+e(nut[key])+' g</strong></div>'
         nut_html+='</div></div></section>'
         structured["nutrition"]={"@type":"NutritionInformation","calories":str(nut["kcal"])+" calories","proteinContent":str(p)+" g","carbohydrateContent":str(c)+" g","fatContent":str(f)+" g"}
+    # Catálogo cerrado, compartido con Airtable.
+    categories={
+        "guisos-legumbres":("Guisos, estofados y legumbres","cooking-pot"),
+        "arroces-pastas":("Arroces y pastas","wheat"),
+        "asados-horno":("Asados y horno","ham"),
+        "ensaladas-frios":("Ensaladas y platos fríos","salad"),
+        "sopas-cremas-pures":("Sopas, cremas y purés","soup"),
+        "huevos-tortillas":("Huevos y tortillas","egg-fried"),
+        "tostas-bocadillos-wraps":("Tostas, bocadillos y wraps","sandwich"),
+        "postres":("Postres","cupcake"),
+        "salsas-guarniciones":("Salsas y guarniciones","paint-bucket")}
+    tags_catalog={
+        "congelable":("Congelable","snowflake","practical"),
+        "microondas":("Apto para microondas","waves-vertical","practical"),
+        "tupper":("Apto para tupper","paper-bag","practical"),
+        "batchcooking":("Batchcooking","calendar-check","practical"),
+        "rapida":("Preparación rápida","zap","practical"),
+        "carne":("Carne","beef","main"),
+        "pescado":("Pescado","fish","main"),
+        "marisco":("Marisco","shrimp","main"),
+        "verduras":("Verduras","carrot","main"),
+        "legumbres":("Legumbres","bean","main")}
+    category=r.get("categoria")
+    if category is not None and category not in categories:raise ValueError("Categoría inválida: "+str(category))
+    cat_title,cat_icon=categories[category] if category else ("Sin categoría","book-open")
+    cat_html='<span class="category-badge" role="img" tabindex="0" aria-label="'+e(cat_title)+'" title="'+e(cat_title)+'" data-label="'+e(cat_title)+'"><i data-lucide="'+cat_icon+'" aria-hidden="true"></i></span>' if category else ""
     tags=r.get("etiquetas",[])
-    if not isinstance(tags,list) or any(not isinstance(t,str) for t in tags):raise ValueError("Etiquetas inválidas")
-    tags_html='<h2 class="section-title">Etiquetas</h2><div class="tags">'+''.join('<span class="tag">'+e(t)+'</span>' for t in tags)+'</div>' if tags else ""
+    if not isinstance(tags,list) or any(t not in tags_catalog for t in tags):raise ValueError("Etiquetas inválidas")
+    tags_html='<h2 class="section-title visually-hidden">Características de la receta</h2><div class="icon-tags" aria-label="Características">'+"".join('<span class="icon-tag '+('is-main' if tags_catalog[t][2]=="main" else '')+'" role="img" tabindex="0" aria-label="'+e(tags_catalog[t][0])+'" title="'+e(tags_catalog[t][0])+'" data-label="'+e(tags_catalog[t][0])+'"><i data-lucide="'+tags_catalog[t][1]+'" aria-hidden="true"></i></span>' for t in tags)+"</div>" if tags else ""
     rows=""
     for v in ing:
         name=e(v["nombre"])
@@ -54,11 +80,11 @@ def make(r):
     photo='<img class="hero-photo" itemprop="image" src="'+e(img)+'" alt="'+e(n)+'">' if img else '<div class="photo-empty">Fotografía pendiente</div>'
     social='<meta property="og:image" content="'+e(img)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+e(img)+'">' if img else ""
     notes=str(r.get("notas") or "")
-    replacements={"PAGE_TITLE":e(n+" · MiruRecetas"),"META_DESCRIPTION":e(desc or n),"CANONICAL_URL":url,"SOCIAL_IMAGE":social,"CSS_URL":SITE+"/assets/estilo.css","JS_URL":SITE+"/assets/cocina.js","HOME_URL":SITE+"/","JSON_LD":json.dumps(structured,ensure_ascii=False).replace("<",r"\u003c"),"UI_JSON":json.dumps({"raciones":servings}),"VISIBLE_IMAGE":photo,"TITLE":e(n),"DESCRIPTION":'<p class="muted">'+e(desc)+'</p>' if desc else "","BASE_SERVINGS":str(servings),"NUTRITION":nut_html,"INGREDIENT_ROWS":rows,"TAGS":tags_html,"STEP_ROWS":''.join('<li><label><input type="checkbox"><span class="step-text">'+e(t)+'</span></label></li>' for t in steps),"NOTES":'<div class="notes"><h2>Notas</h2><p>'+e(notes)+'</p></div>' if notes else ""}
+    replacements={"PAGE_TITLE":e(n+" · MiruRecetas"),"META_DESCRIPTION":e(desc or n),"CANONICAL_URL":url,"SOCIAL_IMAGE":social,"CSS_URL":SITE+"/assets/estilo.css","JS_URL":SITE+"/assets/cocina.js","HOME_URL":SITE+"/","JSON_LD":json.dumps(structured,ensure_ascii=False).replace("<",r"\u003c"),"UI_JSON":json.dumps({"raciones":servings}),"VISIBLE_IMAGE":photo,"TITLE":e(n),"DESCRIPTION":'<p class="muted">'+e(desc)+'</p>' if desc else "","BASE_SERVINGS":str(servings),"NUTRITION":nut_html,"INGREDIENT_ROWS":rows,"TAGS":tags_html,"CATEGORY_ICON":cat_html,"STEP_ROWS":''.join('<li><label><input type="checkbox"><span class="step-text">'+e(t)+'</span></label></li>' for t in steps),"NOTES":'<div class="notes"><h2>Notas</h2><p>'+e(notes)+'</p></div>' if notes else ""}
     out=T
     for k,v in replacements.items():out=out.replace("{{"+k+"}}",v)
     dest=R/"recetas"/s/"index.html";dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(out,encoding="utf-8")
-    return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":tags}
+    return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":[tags_catalog[t][0] for t in tags]}
 def main():
     (R/"datos"/"recetas").mkdir(parents=True,exist_ok=True);(R/"datos"/"menus").mkdir(parents=True,exist_ok=True)
     recipes=[];rs={}

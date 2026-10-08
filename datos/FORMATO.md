@@ -17,3 +17,12 @@ Mes de 1 a 12, menu de 1 a 4. dias contiene exactamente Lunes, Martes, Miércole
 La página conserva Schema.org Recipe, image apuntando al repositorio, recipeIngredient con cantidades *base* sin JavaScript y microdatos de imagen. El selector de raciones solo cambia las cantidades visibles para cocinar. Bring! permite escalar sus propias cantidades al importar y guardar cada receta. Los artículos opcionales se editan posteriormente en Bring!.
 
 La expansión de preparaciones anidadas para la compra final necesita definirse con Airtable; esta versión las enlaza y muestra como ingredientes, sin sumarlas automáticamente a Bring!. Los huevos y otras unidades indivisibles pueden requerir redondeo culinario.
+
+
+## Vocabulario cerrado de iconos (Lucide)
+
+`categoria`: `guisos-legumbres` (cooking-pot), `arroces-pastas` (wheat), `asados-horno` (ham), `ensaladas-frios` (salad), `sopas-cremas-pures` (soup), `huevos-tortillas` (egg-fried), `tostas-bocadillos-wraps` (sandwich), `postres` (cupcake), `salsas-guarniciones` (paint-bucket).
+
+`etiquetas`: `congelable` (snowflake), `microondas` (waves-vertical), `tupper` (paper-bag), `batchcooking` (calendar-check), `rapida` (zap), `carne` (beef), `pescado` (fish), `marisco` (shrimp), `verduras` (carrot), `legumbres` (bean).
+
+Los ingredientes aromáticos sin cantidad tienen `cantidad: null`, `unidad: ""` y se exportan a Bring! únicamente por nombre. Las cantidades numéricas se escalan en la interfaz. La categoría es única, las etiquetas pueden ser varias.
