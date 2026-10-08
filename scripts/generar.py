@@ -16,14 +16,14 @@ def entries(r):
     values=r["ingredientes"]
     if not isinstance(values,list) or not values:raise ValueError("Ingredientes necesarios")
     for v in values:
-        if not isinstance(v,dict) or not isinstance(v.get("nombre"),str) or not v["nombre"].strip() or not isinstance(v.get("unidad"),str) or not v["unidad"].strip() or isinstance(v.get("cantidad"),bool) or not isinstance(v.get("cantidad"),(int,float)) or v["cantidad"]<=0 or (v.get("preparacion") and not slug(v["preparacion"])):raise ValueError("Ingrediente inválido: "+str(v))
+        if not isinstance(v,dict) or not isinstance(v.get("nombre"),str) or not v["nombre"].strip() or not isinstance(v.get("unidad"),str) or not v["unidad"].strip() or isinstance(v.get("cantidad"),bool) or (v.get("cantidad") is not None and (not isinstance(v["cantidad"],(int,float)) or v["cantidad"]<=0)) or (v.get("preparacion") and not slug(v["preparacion"])):raise ValueError("Ingrediente inválido: "+str(v))
     return values
 def make(r):
     s=r["slug"]; n=r["nombre"]; servings=r["raciones"];steps=r["pasos"]
     if not slug(s) or not isinstance(n,str) or not n.strip() or isinstance(servings,bool) or not isinstance(servings,int) or servings<1 or not isinstance(steps,list) or not steps or any(not isinstance(t,str) or not t.strip() for t in steps):raise ValueError("Receta incorrecta")
     ing=entries(r); img=image(r);url=SITE+"/recetas/"+s+"/"
     desc=str(r.get("descripcion") or "").strip()
-    structured={"@context":"https://schema.org","@type":"Recipe","name":n,"url":url,"author":{"@type":"Organization","name":"MiruRecetas"},"recipeYield":str(servings),"recipeIngredient":[str(v["cantidad"])+" "+v["unidad"]+" de "+v["nombre"] for v in ing],"recipeInstructions":[{"@type":"HowToStep","text":step} for step in steps]}
+    structured={"@context":"https://schema.org","@type":"Recipe","name":n,"url":url,"author":{"@type":"Organization","name":"MiruRecetas"},"recipeYield":str(servings),"recipeIngredient":[(str(v["cantidad"])+" "+v["unidad"]+" de "+v["nombre"]) if v["cantidad"] is not None else (v["nombre"]+" "+v["unidad"]) for v in ing],"recipeInstructions":[{"@type":"HowToStep","text":step} for step in steps]}
     if img:structured["image"]=img
     if desc:structured["description"]=desc
     for key,out in [("preparacion_min","prepTime"),("coccion_min","cookTime")]:
@@ -50,7 +50,7 @@ def make(r):
     for v in ing:
         name=e(v["nombre"])
         if v.get("preparacion"):name='<a href="'+SITE+'/recetas/'+e(v["preparacion"])+'/">'+name+' ↗</a>'
-        rows+='<li><span class="itemname">'+name+'</span><span class="qty" data-qty="'+e(v["cantidad"])+'" data-unit="'+e(v["unidad"])+'">'+e(v["cantidad"])+' '+e(v["unidad"])+'</span></li>'
+        rows+='<li><span class="itemname">'+name+'</span>'+(('<span class="qty" data-qty="'+e(v["cantidad"])+'" data-unit="'+e(v["unidad"])+'">'+e(v["cantidad"])+' '+e(v["unidad"])+'</span>') if v["cantidad"] is not None else ('<span class="qty">'+e(v["unidad"])+'</span>'))+'</li>'
     photo='<img class="hero-photo" itemprop="image" src="'+e(img)+'" alt="'+e(n)+'">' if img else '<div class="photo-empty">Fotografía pendiente</div>'
     social='<meta property="og:image" content="'+e(img)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+e(img)+'">' if img else ""
     notes=str(r.get("notas") or "")
