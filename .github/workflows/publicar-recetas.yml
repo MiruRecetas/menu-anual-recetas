@@ -1,0 +1,29 @@
+name: Publicar recetas
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'datos/recetas/**'
+      - 'plantillas/**'
+      - 'scripts/generar.py'
+      - 'assets/**'
+      - 'imagenes/**'
+      - '.github/workflows/publicar-recetas.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/generar.py
+      - name: Guardar páginas generadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html recetas/
+          git diff --cached --quiet || (git commit -m "Publicar páginas generadas" && git push)
