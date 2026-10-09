@@ -4,7 +4,9 @@
   "descripcion": "Bechamel casera elaborada con mantequilla, harina y leche semidesnatada, ideal para gratinar canelones.",
   "raciones": 6,
   "categoria": "salsas-guarniciones",
-  "etiquetas": [],
+  "etiquetas": [
+    "lacteos"
+  ],
   "nutricion": {
     "kcal": 126.7,
     "proteinas_g": 3.7,
