@@ -32,7 +32,7 @@ Indicar siempre en la respuesta: (a) enlace público de la receta, (b) ruta exac
 congelable = snowflake; microondas = waves-vertical; tupper = paper-bag; batchcooking = calendar-check; rapida = zap. No hay etiqueta airfryer.
 
 ## Ingrediente protagonista
-carne = beef; pescado = fish; marisco = shrimp; verduras = carrot; legumbres = bean.
+carne = beef; pescado = fish; marisco = shrimp; verduras = carrot; legumbres = bean. lacteos = milk (envase de leche; `carton` no existe en el catálogo de Lucide).
 
 ## Diseño validado (octubre 2026)
 Título Bricolage Grotesque peso 600. Categoría como círculo en esquina superior derecha de la fotografía. Etiquetas solo iconos oficiales Lucide, en círculos; prácticas verdes, ingredientes protagonistas terracota. Vertical: bloques apilados. Horizontal tanto móvil como tablet: anverso foto izquierda y datos derecha; reverso pasos izquierda y temporizador/notas derecha, paneles con desplazamiento independiente. Mantener selector de raciones, temporizador, anillo de macros y marcado estructurado Bring!. **Pendiente menor:** centrar horizontalmente la fila inferior de iconos. Airtable será fuente central cuando se conecte, pero la sincronización aún no está configurada.
