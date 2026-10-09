@@ -1,0 +1,54 @@
+{
+  "slug": "bechamel",
+  "nombre": "Bechamel",
+  "descripcion": "Bechamel casera elaborada con mantequilla, harina y leche semidesnatada, ideal para gratinar canelones.",
+  "raciones": 6,
+  "categoria": "salsas-guarniciones",
+  "etiquetas": [],
+  "nutricion": {
+    "kcal": 126.7,
+    "proteinas_g": 3.7,
+    "hidratos_g": 9.9,
+    "grasas_g": 8.2
+  },
+  "ingredientes": [
+    {
+      "nombre": "Mantequilla",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Harina de trigo",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Leche semidesnatada",
+      "cantidad": 500,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Nuez moscada",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Funde la mantequilla en una cazuela a fuego medio. Añade la harina de golpe y remueve continuamente con unas varillas durante 2 minutos, para cocinar la harina y evitar que la salsa sepa a crudo.",
+    "Baja el fuego al mínimo y añade un chorro de leche sin dejar de remover, hasta obtener una pasta homogénea.",
+    "Incorpora el resto de la leche poco a poco, en dos o tres tandas, removiendo continuamente con las varillas para disolver los grumos.",
+    "Cocina la mezcla durante 10–15 minutos, removiendo constantemente, hasta que empiece a espesar.",
+    "Añade sal, pimienta negra y nuez moscada al gusto. Mezcla bien."
+  ],
+  "notas": "Rinde aproximadamente 600 g: 6 raciones de unos 100 g. Se utiliza siempre leche semidesnatada. Las cantidades de harina y mantequilla son en crudo. La sal, la pimienta y la nuez moscada permanecen en la receta web, pero no se contabilizan en los macronutrientes de Airtable. Nutrición por ración calculada en Airtable a partir de ingredientes, no de una medición del producto final. Fotografía real pendiente."
+}
