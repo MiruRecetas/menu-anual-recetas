@@ -64,7 +64,7 @@ def make(r):
         "pescado":("Pescado","fish","main"),
         "marisco":("Marisco","shrimp","main"),
         "verduras":("Verduras","carrot","main"),
-        "legumbres":("Legumbres","bean","main")}
+        "legumbres":("Legumbres","bean","main"),"lacteos":("Lácteos","milk","main")}
     category=r.get("categoria")
     if category is not None and category not in categories:raise ValueError("Categoría inválida: "+str(category))
     cat_title,cat_icon=categories[category] if category else ("Sin categoría","book-open")
