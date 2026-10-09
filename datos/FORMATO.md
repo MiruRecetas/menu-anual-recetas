@@ -23,6 +23,6 @@ La expansión de preparaciones anidadas para la compra final necesita definirse 
 
 `categoria`: `guisos-legumbres` (cooking-pot), `arroces-pastas` (wheat), `asados-horno` (ham), `ensaladas-frios` (salad), `sopas-cremas-pures` (soup), `huevos-tortillas` (egg-fried), `tostas-bocadillos-wraps` (sandwich), `postres` (cupcake), `salsas-guarniciones` (paint-bucket).
 
-`etiquetas`: `congelable` (snowflake), `microondas` (waves-vertical), `tupper` (paper-bag), `batchcooking` (calendar-check), `rapida` (zap), `carne` (beef), `pescado` (fish), `marisco` (shrimp), `verduras` (carrot), `legumbres` (bean).
+`etiquetas`: `congelable` (snowflake), `microondas` (waves-vertical), `tupper` (paper-bag), `batchcooking` (calendar-check), `rapida` (zap), `carne` (beef), `pescado` (fish), `marisco` (shrimp), `verduras` (carrot), `legumbres` (bean), `lacteos` (milk).
 
 Los ingredientes aromáticos sin cantidad tienen `cantidad: null`, `unidad: ""` y se exportan a Bring! únicamente por nombre. Las cantidades numéricas se escalan en la interfaz. La categoría es única, las etiquetas pueden ser varias.
