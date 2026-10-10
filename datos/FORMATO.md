@@ -21,7 +21,7 @@ La expansión de preparaciones anidadas para la compra final necesita definirse 
 
 ## Vocabulario cerrado de iconos (Lucide)
 
-`categoria`: `guisos-legumbres` (cooking-pot), `arroces-pastas` (wheat), `asados-horno` (ham), `ensaladas-frios` (salad), `sopas-cremas-pures` (soup), `huevos-tortillas` (egg-fried), `tostas-bocadillos-wraps` (sandwich), `postres` (cupcake), `salsas-guarniciones` (paint-bucket).
+`categoria`: `guisos-legumbres` (cooking-pot; visualmente «Guisos y estofados»), `arroces-pastas` (wheat), `asados-horno` (ham), `ensaladas-frios` (salad), `sopas-cremas-pures` (soup), `huevos-tortillas` (egg-fried), `tostas-bocadillos-wraps` (sandwich), `postres` (cupcake), `aperitivos-guarniciones` (hand-platter), `salsas-aderezos` (paint-bucket).
 
 `etiquetas`: `congelable` (snowflake), `microondas` (waves-vertical), `tupper` (paper-bag), `batchcooking` (calendar-check), `rapida` (zap), `carne` (beef), `pescado` (fish), `marisco` (shrimp), `verduras` (carrot), `legumbres` (bean), `lacteos` (carton).
 
