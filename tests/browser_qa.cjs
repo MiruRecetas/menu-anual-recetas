@@ -12,6 +12,17 @@ const assert = require('node:assert/strict');
     await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
     await page.locator('#week .day-button').first().waitFor();
     assert.equal(await page.locator('#week .day-button').count(),5,test.name+': días');
+    assert.equal(await page.locator('#week .week-kcal-ring').count(),5,'Cinco anillos');
+    assert.equal(await page.locator('#week .week-meal-row').count(),17,'Ingestas existentes');
+    const monday=page.locator('#week .day-button').first();
+    assert.match(await monday.innerText(),/Café con leche/);
+    assert.match(await monday.innerText(),/Carpaccio[\\s\\S]*Puerros con mayonesa[\\s\\S]*Bowl de yogur/);
+    assert.match(await monday.innerText(),/Ciruelas/);
+    assert.ok(!(await monday.innerText()).includes('Incapto'),'Nombre de café simplificado');
+    assert.ok(!(await monday.innerText()).includes('Cena lunes'),'Cena sin prefijo técnico');
+    assert.equal(await monday.locator('.week-kcal-ring strong').innerText(),'1488');
+    assert.equal(await monday.locator('.week-kcal-ring').getAttribute('aria-label'),'1488 kcal registradas de 1600 kcal objetivo');
+
     assert.equal(await page.locator('#month').inputValue(),'10',test.name+': mes');
     assert.match(await page.locator('#week').innerText(),/Bacalao a la vizcaína con patatas panadera/);
     const scroll=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
