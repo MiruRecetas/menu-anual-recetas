@@ -53,7 +53,8 @@ def make(r):
         "huevos-tortillas":("Huevos y tortillas","egg-fried"),
         "tostas-bocadillos-wraps":("Tostas, bocadillos y wraps","sandwich"),
         "postres":("Postres","cupcake"),
-        "salsas-guarniciones":("Salsas y guarniciones","paint-bucket")}
+        "aperitivos-guarniciones":("Aperitivos, bocados y guarniciones","hand-platter"),
+        "salsas-aderezos":("Salsas y aderezos","paint-bucket")}
     tags_catalog={
         "congelable":("Congelable","snowflake","practical"),
         "microondas":("Apto para microondas","waves-vertical","practical"),
