@@ -46,6 +46,14 @@ const assert = require('node:assert/strict');
     const nameStyle=await gallery.locator('.batch-tile-title').first().evaluate(el=>({align:getComputedStyle(el).textAlign,font:getComputedStyle(el).fontFamily}));
     assert.equal(nameStyle.align,'center','Nombres centrados');
     assert.ok(nameStyle.font.includes('Geist'),'Tipografía Geist');
+    assert.equal(await gallery.locator('.batch-tile > .batch-tile-title').count(),0,'Sin títulos debajo de la imagen');
+    assert.equal(await gallery.locator('.batch-thumb > .batch-tile-title').count(),tileCount,'Títulos encima de imágenes');
+    const firstTile=gallery.locator('.batch-tile').first();
+    assert.equal(await firstTile.locator('.batch-tile-title').evaluate(el=>getComputedStyle(el).opacity),'0','Nombre oculto inicialmente');
+    if(test.name==='desktop'){
+      await firstTile.hover();
+      assert.equal(await firstTile.locator('.batch-tile-title').evaluate(el=>getComputedStyle(el).visibility),'visible','Nombre visible al pasar ratón');
+    }
     if((test.width===1440||test.name.endsWith('horizontal')) && tileCount>=2){
       const cardWidths=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().width));
       assert.ok(cardWidths.every(w=>w<=191),'Miniaturas acotadas en horizontal');
