@@ -107,14 +107,12 @@ else{
   const fallback=el('span',undefined,'batch-thumb-placeholder');
   const glyph=el('i');glyph.setAttribute('data-lucide','cooking-pot');glyph.setAttribute('aria-hidden','true');
   fallback.append(glyph);imageBox.append(fallback);
-  const img=el('img');img.alt='';img.loading='eager';img.decoding='async';
-  img.src=site+'/imagenes/batchcooking/'+slug+'.webp';
-  img.addEventListener('load',()=>imageBox.classList.add('has-photo'));
-  img.addEventListener('error',()=>{
-   if(r?.imagen){img.src=r.imagen;img.addEventListener('error',()=>img.remove(),{once:true})}
-   else img.remove()
-  },{once:true});
-  imageBox.append(img);
+  if(r?.imagen){
+   const img=el('img');img.alt='';img.loading='eager';img.decoding='async';
+   img.addEventListener('load',()=>imageBox.classList.add('has-photo'));
+   img.addEventListener('error',()=>img.remove(),{once:true});
+   img.src=r.imagen;imageBox.append(img);
+  }
   const caption=el('span',r?.nombre||slug,'batch-tile-title');
   tile.append(imageBox,caption);gallery.append(tile)
  }
