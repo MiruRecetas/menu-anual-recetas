@@ -41,6 +41,15 @@ const assert = require('node:assert/strict');
     assert.equal(await gallery.locator('a[href$="/recetas/bacalao-a-la-vizcaina/"]').count(),1,'Bacalao aparece en batch cooking');
     assert.equal(await page.locator('#batch .batch-gallery img').count(),await gallery.locator('.batch-tile').count(),'Miniaturas por preparación');
     const tileCount=await gallery.locator('.batch-tile').count();
+    const nameStyle=await gallery.locator('.batch-tile-title').first().evaluate(el=>({align:getComputedStyle(el).textAlign,font:getComputedStyle(el).fontFamily}));
+    assert.equal(nameStyle.align,'center','Nombres centrados');
+    assert.ok(nameStyle.font.includes('Geist'),'Tipografía Geist');
+    if(test.width===1440 && tileCount>=2){
+      const cardWidths=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().width));
+      assert.ok(cardWidths.every(w=>w<=191),'Miniaturas acotadas en horizontal');
+      const rows=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>Math.round(el.getBoundingClientRect().top)));
+      assert.ok(new Set(rows.slice(0,Math.min(5,rows.length))).size===1,'Hasta cinco miniaturas en primera fila');
+    }
     assert.ok(await gallery.evaluate(el=>el.classList.contains('batch-cols-'+(el.children.length===1?1:(el.children.length%3===0||el.children.length%5===0||el.children.length%2!==0)?3:2))),'Columnas de galería correctas');
     await page.screenshot({path:out+'/semana-'+test.name+'.png',fullPage:true});
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
