@@ -1,0 +1,498 @@
+{
+  "schema_version": 2,
+  "mes": 10,
+  "menu": 1,
+  "airtable_menu_id": "reci0EmSxZE2WlJ1K",
+  "estado": "Calculado",
+  "dias": {
+    "Lunes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "comida_id": "rec6pQ1IKkMn3Eqyf",
+        "nombre": "Bacalao a la vizcaína con patatas panadera",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 539.8621720414914,
+          "proteinas_g": 58.269375,
+          "hidratos_g": 39.7705,
+          "grasas_g": 15.1813
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Bacalao a la vizcaína",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec6yQ4Z2SbrnVuLs",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec2zKHAUl6XFjWrX",
+                  "nombre": "Bacalao a la vizcaína",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "bacalao-a-la-vizcaina"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Patatas panadera",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recGGRphM3Lx4otXr",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSE81b9WjkURbXi",
+                  "nombre": "Patata, cruda (parte comestible)",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "rec8xgtFTRS7Iz0PK",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
+      },
+      "cena": {
+        "comida_id": "recnyx5GwQGLPf1pr",
+        "nombre": "Cena lunes · Bowl de yogur, carpaccio y puerros con mayonesa",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 847.0428292915869,
+          "proteinas_g": 36.683324999999996,
+          "hidratos_g": 48.21595,
+          "grasas_g": 52.69499999999999
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recwzLQz5W5ddrCmU",
+              "tipo": "preparacion",
+              "referencia_id": "recACTMx4Sfoy1Sv7",
+              "nombre": "Bowl de yogur con miel y granola",
+              "cantidad": 1,
+              "unidad": "ración",
+              "slug": "bowl-de-yogur-con-miel-y-granola"
+            },
+            {
+              "id": "recmU1URfb1OBEL07",
+              "tipo": "ingrediente",
+              "referencia_id": "recJoLfb85Oe5dxXq",
+              "nombre": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
+              "cantidad": 120,
+              "unidad": "g"
+            },
+            {
+              "id": "recImdO7ueFMlnxaE",
+              "tipo": "ingrediente",
+              "referencia_id": "rec3RHqUWRFk0FIJ1",
+              "nombre": "Puerros al natural Conservas Morán (escurridos)",
+              "cantidad": 175,
+              "unidad": "g"
+            },
+            {
+              "id": "recfa0XvtV5Ah8ZRb",
+              "tipo": "ingrediente",
+              "referencia_id": "recEtJBidxvvxhoAg",
+              "nombre": "Mayonesa Heinz con cebolla caramelizada y ajo",
+              "cantidad": 10,
+              "unidad": "g"
+            }
+          ]
+        }
+      },
+      "postre": {
+        "tipo": "ingrediente",
+        "referencia_id": "rec4H9nVK34mLywwy",
+        "nombre": "Ciruela fresca con piel (cruda)",
+        "cantidad": 100,
+        "unidad": "g",
+        "nutricion": {
+          "kcal": 54,
+          "proteinas_g": 0.75,
+          "hidratos_g": 12,
+          "grasas_g": 0.2
+        }
+      },
+      "nutricion": {
+        "kcal": 1488.4119813330785,
+        "proteinas_g": 99.03469999999999,
+        "hidratos_g": 104.72444999999999,
+        "grasas_g": 69.73029999999999
+      }
+    },
+    "Martes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "comida_id": "recV2xhndk7uXp3j3",
+        "nombre": "Carrilleras al vino con boniato al horno",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 622.1569207499999,
+          "proteinas_g": 45.288875,
+          "hidratos_g": 42.330125,
+          "grasas_g": 29.160550000000004
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Carrilleras de cerdo al vino",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec0ETgeB2SkeupKs",
+                  "tipo": "preparacion",
+                  "referencia_id": "recb11ZAHayvOIBWU",
+                  "nombre": "Carrilleras de cerdo al vino",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "carrilleras-de-cerdo-al-vino"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Boniato al horno",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recqG3M3bIVP5xJ2p",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recgTA0LAJrz7rD8B",
+                  "nombre": "Boniato, crudo (parte comestible)",
+                  "cantidad": 150,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recpG2hj6COERpX1p",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
+      },
+      "cena": {
+        "comida_id": "recV0I2zP8kowNyNk",
+        "nombre": "Mini wraps de falafel con boquerones aliñados",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 643.2192743311371,
+          "proteinas_g": 37.127822916666666,
+          "hidratos_g": 66.11860666666666,
+          "grasas_g": 24.908448333333332
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "reckvWQszelpW0u01",
+              "tipo": "preparacion",
+              "referencia_id": "rec9cxis2Yndtrq6K",
+              "nombre": "Mini wraps de falafel",
+              "cantidad": 1,
+              "unidad": "ración",
+              "slug": "mini-wraps-de-falafel"
+            },
+            {
+              "id": "recGt7r2zE5WbHRbu",
+              "tipo": "ingrediente",
+              "referencia_id": "recHiBRS3Ikrzb1mt",
+              "nombre": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
+              "cantidad": 100,
+              "unidad": "g"
+            }
+          ]
+        }
+      },
+      "postre": {
+        "tipo": "ingrediente",
+        "referencia_id": "recPmxLD5hBc4rvSM",
+        "nombre": "Higo fresco (higos y brevas)",
+        "cantidad": 100,
+        "unidad": "g",
+        "nutricion": {
+          "kcal": 70,
+          "proteinas_g": 1.2,
+          "hidratos_g": 16,
+          "grasas_g": 0.3
+        }
+      },
+      "nutricion": {
+        "kcal": 1382.8831750811369,
+        "proteinas_g": 86.94869791666666,
+        "hidratos_g": 129.18673166666667,
+        "grasas_g": 56.022998333333334
+      }
+    },
+    "Miércoles": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "comida_id": "rec6pQ1IKkMn3Eqyf",
+        "nombre": "Bacalao a la vizcaína con patatas panadera",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 539.8621720414914,
+          "proteinas_g": 58.269375,
+          "hidratos_g": 39.7705,
+          "grasas_g": 15.1813
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Bacalao a la vizcaína",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec6yQ4Z2SbrnVuLs",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec2zKHAUl6XFjWrX",
+                  "nombre": "Bacalao a la vizcaína",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "bacalao-a-la-vizcaina"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Patatas panadera",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recGGRphM3Lx4otXr",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSE81b9WjkURbXi",
+                  "nombre": "Patata, cruda (parte comestible)",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "rec8xgtFTRS7Iz0PK",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
+      },
+      "cena": {
+        "comida_id": "recU0Tg6O9eGXVUaB",
+        "nombre": "Quiche de puerro, champiñones y pavo (2 raciones)",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 947.9707455014393,
+          "proteinas_g": 45.69,
+          "hidratos_g": 59.315,
+          "grasas_g": 57.245000000000005
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recLIFxlaD1FoVSxy",
+              "tipo": "preparacion",
+              "referencia_id": "recfl98fDfDp6ApRO",
+              "nombre": "Quiche de puerro, champiñones y pavo",
+              "cantidad": 2,
+              "unidad": "ración",
+              "slug": "quiche-de-puerro-champinones-y-pavo"
+            }
+          ]
+        }
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 1535.3398975429309,
+        "proteinas_g": 107.29137499999999,
+        "hidratos_g": 103.8235,
+        "grasas_g": 74.0803
+      }
+    },
+    "Jueves": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "comida_id": "rec5CulygOWu2rNnB",
+        "nombre": "Canelones de carrilleras",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 894.5008831666667,
+          "proteinas_g": 63.23970833333334,
+          "hidratos_g": 67.91179166666667,
+          "grasas_g": 40.138148666666666
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "rec9TImdQlBmsDPOa",
+              "tipo": "preparacion",
+              "referencia_id": "rec7qUQ85hy3AQ753",
+              "nombre": "Canelones de carrilleras",
+              "cantidad": 1,
+              "unidad": "ración",
+              "slug": "canelones-de-carrilleras"
+            }
+          ]
+        }
+      },
+      "cena": {
+        "comida_id": "recGuYLbhZjw8jNaX",
+        "nombre": "Tostas de hummus y sardinillas",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 652.4061611034411,
+          "proteinas_g": 37.11474194785276,
+          "hidratos_g": 56.7211,
+          "grasas_g": 29.48457717791411
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recrzc4RyHhJ1vqNd",
+              "tipo": "preparacion",
+              "referencia_id": "recxRAH9FD9GvayFF",
+              "nombre": "Tostas de hummus y sardinillas",
+              "cantidad": 1,
+              "unidad": "ración"
+            }
+          ]
+        }
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 1594.4140242701078,
+        "proteinas_g": 103.6864502811861,
+        "hidratos_g": 129.37089166666667,
+        "grasas_g": 71.27672584458077
+      }
+    },
+    "Viernes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "comida_id": "rec8CnfzjZfgyZRIX",
+        "nombre": "Wok de gambones y pisto",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 637.3288326017831,
+          "proteinas_g": 48.12297619047619,
+          "hidratos_g": 78.15130952380952,
+          "grasas_g": 14.635833333333334
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recNazflEl4CBV4MA",
+              "tipo": "preparacion",
+              "referencia_id": "recl8ijk3FI18QqNj",
+              "nombre": "Wok de gambones y pisto",
+              "cantidad": 1,
+              "unidad": "ración",
+              "slug": "wok-de-gambones-y-pisto"
+            }
+          ]
+        }
+      },
+      "cena": {
+        "estado": "libre"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 684.8358126017831,
+        "proteinas_g": 51.45497619047619,
+        "hidratos_g": 82.88930952380952,
+        "grasas_g": 16.289833333333334
+      }
+    }
+  },
+  "nutricion_semana": {
+    "kcal": 6685.8848908290365,
+    "proteinas_g": 448.41619938832895,
+    "hidratos_g": 549.9948828571428,
+    "grasas_g": 287.4001575112474
+  }
+}
