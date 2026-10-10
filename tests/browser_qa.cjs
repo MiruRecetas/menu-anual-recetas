@@ -16,7 +16,7 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('#week .week-meal-row').count(),17,'Ingestas existentes');
     const monday=page.locator('#week .day-button').first();
     assert.match(await monday.innerText(),/Café con leche/);
-    assert.match(await monday.innerText(),/Carpaccio[\\s\\S]*Puerros con mayonesa[\\s\\S]*Bowl de yogur/);
+    const textMonday=await monday.innerText();assert.ok(textMonday.indexOf('Carpaccio')<textMonday.indexOf('Puerros con mayonesa')&&textMonday.indexOf('Puerros con mayonesa')<textMonday.indexOf('Bowl de yogur'),'Orden de cena');
     assert.match(await monday.innerText(),/Ciruelas/);
     assert.ok(!(await monday.innerText()).includes('Incapto'),'Nombre de café simplificado');
     assert.ok(!(await monday.innerText()).includes('Cena lunes'),'Cena sin prefijo técnico');
