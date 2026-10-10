@@ -4,6 +4,8 @@ Uso: AIRTABLE_TOKEN=... python scripts/exportar_airtable.py
 El token solo se lee del entorno y jamás se imprime ni se guarda.
 """
 import json
+import math
+import urllib.error
 import os
 import re
 import sys
@@ -37,7 +39,7 @@ def value(v):
 
 def numeric(v,context):
     v=value(v)
-    if type(v) not in (int,float) or v<0:
+    if type(v) not in (int,float) or not math.isfinite(v) or v<0:
         error("Valor numérico ausente o inválido en "+context)
     return v
 
@@ -98,9 +100,8 @@ def meal(ref,comidas,elementos,ingredientes,preps,slugs):
         if pr:
             link=source.get("Enlace receta") or ""
             match=re.search(r"/recetas/([a-z0-9-]+)/?",link)
-            if not match or match.group(1) not in slugs:
-                error("PREPARACIÓN sin ficha web válida: "+reference)
-            item["slug"]=match.group(1)
+            if match and match.group(1) in slugs:
+                item["slug"]=match.group(1)
         for field in ("Visual · Grupo ID","Visual · Nombre grupo",
                       "Visual · Orden grupo","Visual · Orden elemento"):
             if field in r:item[field]=r[field]
@@ -115,7 +116,10 @@ def main():
     tables={name:retrieve(name,token) for name in TABLES}
     existing={p.stem for p in (ROOT/"datos"/"recetas").glob("*.json")}
     menus=[]
+    targets=set(os.environ.get("AIRTABLE_MENU_IDS","").split(",")) - {""}
     for mid,m in tables["menus"].items():
+        if targets and mid not in targets:
+            continue
         if m.get("Estado menú")!="Calculado":
             continue
         month=MONTHS.get(value(m.get("Mes")))
@@ -146,6 +150,8 @@ def main():
         filename=f"{month:02d}-{number}.json"
         validate_menu(week,filename,existing)
         menus.append((filename,week))
+    if targets and targets != {m["airtable_menu_id"] for _,m in menus}:
+        error("No se pudo validar el conjunto solicitado de menús")
     if not menus:error("No hay menús completos calculados")
     # Ningún fichero se escribe antes de validar todos los menús seleccionados.
     for filename,week in menus:
