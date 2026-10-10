@@ -203,7 +203,7 @@ button[hidden]{display:none!important}
  border-radius:50%;background:#fff;box-sizing:border-box;
  text-decoration:none;line-height:1
 }
-#day-dialog .day-dialog-actions #expand-day{color:var(--green)}
+#day-dialog .day-dialog-actions #expand-day{color:var(--ink)}
 #day-dialog .day-dialog-actions #expand-day svg{width:22px;height:22px;stroke-width:2.2}
 #day-dialog .day-dialog-actions #close-day{color:var(--ink);font-size:1.7rem}
 #quick-content .day-context .day-context-name{color:var(--green);font-weight:800}
