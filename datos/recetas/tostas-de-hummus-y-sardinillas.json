@@ -1,0 +1,42 @@
+{
+  "slug": "tostas-de-hummus-y-sardinillas",
+  "nombre": "Tostas de hummus y sardinillas",
+  "descripcion": "Dos tostas de pan multicereales con hummus casero y sardinillas bien escurridas.",
+  "raciones": 1,
+  "categoria": "tostas-bocadillos-wraps",
+  "etiquetas": [
+    "rapida",
+    "pescado"
+  ],
+  "nutricion": {
+    "kcal": 652.41,
+    "proteinas_g": 37.11,
+    "hidratos_g": 56.72,
+    "grasas_g": 29.48
+  },
+  "ingredientes": [
+    {
+      "nombre": "Pan de molde multicereales y semillas",
+      "cantidad": 2,
+      "unidad": "rebanadas"
+    },
+    {
+      "nombre": "Hummus",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "hummus"
+    },
+    {
+      "nombre": "Sardinillas en aceite de oliva, escurridas",
+      "cantidad": 8,
+      "unidad": "unidades"
+    }
+  ],
+  "pasos": [
+    "Tostar ligeramente las dos rebanadas de pan hasta que estén doradas y crujientes.",
+    "Repartir la ración de hummus entre ambas tostas.",
+    "Escurrir muy bien las sardinillas y colocar cuatro sobre cada tosta.",
+    "Servir enseguida para conservar la textura crujiente del pan."
+  ],
+  "notas": "Las 2 rebanadas equivalen a 73 g de pan para el cálculo de Airtable. La ración de hummus se enlaza a su preparación N0. Ocho sardinillas se estiman en 58 g escurridos según 163 g de peso escurrido por lata de 20–25 piezas; el peso real puede variar. El cálculo considera solo el 5 % del aceite de cobertura estimado adherido al pescado después del escurrido; es un balance de masas aproximado, no un dato de etiqueta para pescado escurrido. Los productos comerciales exactos están identificados en Airtable y no se muestran sus marcas en la web. Nutrición por ración obtenida de Airtable PREPARACIONES recxRAH9FD9GvayFF: 652,4062 kcal, 37,1147 g proteínas, 56,7211 g hidratos y 29,4846 g grasas. Fotografía real pendiente."
+}
