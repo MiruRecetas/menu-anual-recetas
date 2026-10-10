@@ -21,7 +21,7 @@ def check_element(e, slugs):
     ensure(e.get("tipo") in ("ingrediente", "preparacion"), "tipo de elemento inválido")
     ensure(type(e.get("cantidad")) in (int, float) and e["cantidad"] > 0 and bool(e.get("unidad")), "cantidad inválida")
     if e["tipo"] == "preparacion":
-        ensure(e.get("slug") in slugs, "enlace a preparación inexistente")
+        ensure(not e.get("slug") or e.get("slug") in slugs, "enlace a preparación inexistente")
     else:
         ensure(not e.get("slug"), "ingrediente con enlace de preparación")
 
