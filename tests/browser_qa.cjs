@@ -141,7 +141,7 @@ const assert = require('node:assert/strict');
     assert.deepEqual(await page.locator('#quick-content .quick-meal').last().locator('.quick-meal-name').allInnerTexts(),['Noche libre'],'Cena libre simplificada');
     await page.keyboard.press('Escape');
     await page.getByRole('button',{name:'Ver resumen de Martes'}).click();
-    assert.match(await page.locator('#quick-content').innerText(),/Boniato al horno/);
+    assert.match(await page.locator('#quick-content').innerText(),/Carrilleras al vino con boniato al horno/);
     assert.equal(await page.locator('#quick-content .daily-nutrition').count(),1,'Nutrición visual también el martes');
     assert.equal(await page.locator('#quick-content .day-context').textContent(),'Octubre · Menú 1 · Martes','Encabezado contextual');
     assert.equal(await page.locator('#quick-content .day-context-name').textContent(),'Martes','Día destacado');
