@@ -207,3 +207,51 @@ button[hidden]{display:none!important}
 #day-dialog .day-dialog-actions #expand-day svg{width:22px;height:22px;stroke-width:2.2}
 #day-dialog .day-dialog-actions #close-day{color:var(--ink);font-size:1.7rem}
 #quick-content .day-context .day-context-name{color:var(--green);font-weight:800}
+
+
+/* Resumen nutricional de la ventana diaria: energía y distribución de macros */
+.daily-nutrition{
+ display:grid;grid-template-columns:minmax(106px,136px) minmax(0,1fr);
+ align-items:center;gap:14px;margin:0 0 16px;padding:15px 13px;
+ background:#f8f4ed;border:1px solid #eee8df;border-radius:20px;
+}
+.daily-energy{min-width:0;display:grid;place-items:center;padding-right:12px;border-right:1px solid var(--line)}
+.daily-energy-ring{position:relative;width:min(100%,132px);aspect-ratio:1;display:grid;place-items:center;color:var(--ink)}
+.daily-energy-ring svg{width:100%;height:100%;display:block;transform:rotate(-90deg)}
+.daily-energy-ring circle{fill:none;stroke-width:9}
+.daily-energy-track{stroke:#e4ded8}
+.daily-energy-progress{stroke:var(--terra);stroke-linecap:round}
+.daily-energy-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;pointer-events:none}
+.daily-energy-center strong{font-size:clamp(1.25rem,2.4vw,1.65rem);font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.daily-energy-center span{font-size:.72rem;margin-top:3px;color:var(--ink)}
+.daily-energy-center small{font-size:.61rem;color:var(--muted);margin-top:5px;white-space:nowrap}
+.daily-macros{min-width:0;display:grid;gap:10px}
+.daily-macro{min-width:0}
+.daily-macro-head{display:flex;justify-content:space-between;align-items:baseline;gap:5px;margin-bottom:4px;font-size:.75rem;line-height:1.2}
+.daily-macro-name{font-weight:550;color:var(--ink)}
+.daily-macro-values{display:flex;gap:6px;white-space:nowrap;align-items:baseline;font-variant-numeric:tabular-nums}
+.daily-macro-values strong{font-weight:600}
+.daily-macro-values small{color:var(--muted);font-size:.65rem}
+.daily-macro-track{width:100%;height:9px;border-radius:99px;overflow:hidden;background:#e5dfd8}
+.daily-macro-fill{height:100%;border-radius:99px;max-width:100%}
+.daily-macro-protein .daily-macro-fill{background:#789582}
+.daily-macro-carbs .daily-macro-fill{background:#c78465}
+.daily-macro-fat .daily-macro-fill{background:#9d88a3}
+.daily-macro-note{font-size:.59rem;line-height:1.3;color:var(--muted);margin:0}
+@media(max-width:540px){
+ .daily-nutrition{grid-template-columns:minmax(94px,115px) minmax(0,1fr);gap:11px;padding:12px 10px;border-radius:17px}
+ .daily-energy{padding-right:10px}
+ .daily-energy-center strong{font-size:1.42rem}
+ .daily-macros{gap:9px}
+ .daily-macro-head{font-size:.69rem}
+ .daily-macro-values{gap:4px}
+ .daily-macro-values small{font-size:.61rem}
+ .daily-macro-track{height:8px}
+ .daily-macro-note{font-size:.55rem}
+}
+@media(max-width:345px){
+ .daily-nutrition{grid-template-columns:88px minmax(0,1fr);gap:8px;padding:10px 8px}
+ .daily-energy{padding-right:7px}
+ .daily-energy-center strong{font-size:1.21rem}
+ .daily-macro-head{font-size:.63rem}
+}
