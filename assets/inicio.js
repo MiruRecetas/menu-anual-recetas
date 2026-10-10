@@ -114,8 +114,18 @@ else{
    img.src=r.imagen;imageBox.append(img);
   }
   const caption=el('span',r?.nombre||slug,'batch-tile-title');
-  tile.append(imageBox,caption);gallery.append(tile)
+  imageBox.append(caption);
+  tile.append(imageBox);
+  tile.addEventListener('click',event=>{
+   if(!window.matchMedia('(hover: none), (pointer: coarse)').matches)return;
+   if(tile.classList.contains('batch-revealed'))return;
+   event.preventDefault();
+   gallery.querySelectorAll('.batch-revealed').forEach(node=>node.classList.remove('batch-revealed'));
+   tile.classList.add('batch-revealed');
+  });
+  gallery.append(tile)
  }
+ gallery.addEventListener('pointerdown',event=>{if(!event.target.closest('.batch-tile'))gallery.querySelectorAll('.batch-revealed').forEach(node=>node.classList.remove('batch-revealed'))});
  b.append(gallery);if(window.lucide?.createIcons)window.lucide.createIcons()
 }
 }
