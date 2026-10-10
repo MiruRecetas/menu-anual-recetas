@@ -1,0 +1,40 @@
+{
+  "slug": "bacalao-a-la-vizcaina",
+  "nombre": "Bacalao a la vizcaína",
+  "descripcion": "Bacalao marcado con ajo y terminado a fuego suave en salsa vizcaína, ligada con los jugos del pescado.",
+  "raciones": 2,
+  "categoria": "guisos-legumbres",
+  "etiquetas": [
+    "pescado"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Salsa vizcaína",
+      "cantidad": 2,
+      "unidad": "raciones",
+      "preparacion": "salsa-vizcaina"
+    },
+    {
+      "nombre": "Bacalao",
+      "cantidad": 400,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Aceite de oliva virgen extra",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 2,
+      "unidad": "dientes"
+    }
+  ],
+  "pasos": [
+    "Cortar los 2 dientes de ajo en láminas y saltearlos en una sartén con los 10 ml de aceite de oliva virgen extra.",
+    "Colocar el bacalao en la sartén con la piel hacia abajo. Marcarlo aproximadamente 1 minuto por cada lado.",
+    "Añadir por encima las 2 raciones de salsa vizcaína ya preparada. Ligar la salsa con los jugos del bacalao mediante movimientos circulares de la sartén.",
+    "Tapar y cocinar el conjunto a fuego bajo unos 5 minutos, o hasta que el bacalao comience a separarse en lascas."
+  ],
+  "notas": "Los 400 g de bacalao se entienden en crudo. Pendiente de confirmar si es bacalao fresco o bacalao desalado: la identidad cambia la referencia nutricional BEDCA y el contenido de sodio. Mientras no se confirme, los valores nutricionales permanecen sin publicar. La salsa vizcaína es una preparación N0 ya calculada; al incluirla se mantiene su ajuste energético de alcohol, sin descontarlo de nuevo. Fotografía real pendiente."
+}
