@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
   const browser = await chromium.launch({headless:true});
   const issues=[];
   const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
-  for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844}]){
+  for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390}]){
     const page=await browser.newPage({viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
     page.on('pageerror',e=>issues.push(test.name+': error JS: '+e.message));
     await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
@@ -44,7 +44,7 @@ const assert = require('node:assert/strict');
     const nameStyle=await gallery.locator('.batch-tile-title').first().evaluate(el=>({align:getComputedStyle(el).textAlign,font:getComputedStyle(el).fontFamily}));
     assert.equal(nameStyle.align,'center','Nombres centrados');
     assert.ok(nameStyle.font.includes('Geist'),'Tipografía Geist');
-    if(test.width===1440 && tileCount>=2){
+    if((test.width===1440||test.name.endsWith('horizontal')) && tileCount>=2){
       const cardWidths=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().width));
       assert.ok(cardWidths.every(w=>w<=191),'Miniaturas acotadas en horizontal');
       const rows=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>Math.round(el.getBoundingClientRect().top)));
