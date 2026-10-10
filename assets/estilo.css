@@ -255,3 +255,24 @@ button[hidden]{display:none!important}
  .daily-energy-center strong{font-size:1.21rem}
  .daily-macro-head{font-size:.63rem}
 }
+
+
+/* Ventana diaria: nombres de ingestas compactos, iconografía compartida y sin divisores */
+#quick-content .quick-meal{border:0;padding:11px 0 15px;margin:0}
+#quick-content .quick-meal-heading{
+ display:flex;align-items:center;gap:10px;margin:0 0 5px;
+ font-family:"Geist",system-ui,sans-serif;font-size:1.05rem;
+ font-weight:700;line-height:1.35;color:var(--ink)
+}
+#quick-content .quick-meal-heading svg{
+ width:20px;height:20px;flex:0 0 20px;
+ stroke:var(--green);stroke-width:1.8
+}
+#quick-content .quick-meal-names{display:flex;flex-direction:column;gap:4px;padding-left:30px;min-width:0}
+#quick-content .quick-meal-name{font-size:1.02rem;line-height:1.42;color:var(--ink);overflow-wrap:break-word}
+#quick-content .quick-meal-free .quick-meal-name{font-style:italic;color:var(--green)}
+@media(max-width:540px){
+ #quick-content .quick-meal{padding:10px 0 13px}
+ #quick-content .quick-meal-heading{font-size:1rem}
+ #quick-content .quick-meal-name{font-size:1rem}
+}
