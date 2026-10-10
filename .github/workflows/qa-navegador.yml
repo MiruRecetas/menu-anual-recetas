@@ -1,0 +1,59 @@
+name: QA navegador MiruRecetas
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generar las páginas reales
+        run: python scripts/generar.py
+      - name: Preparar copia local aislada de QA
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+          root=Path('.')
+          qa=Path('/tmp/miru-qa-site')
+          qa.mkdir(exist_ok=True)
+          for item in ('index.html','recetario','recetas','menus','assets','imagenes'):
+              p=root/item
+              if not p.exists():
+                  continue
+              if p.is_dir():
+                  shutil.copytree(p,qa/item,dirs_exist_ok=True)
+              else:
+                  shutil.copy2(p,qa/item)
+          for p in qa.rglob('*'):
+              if p.suffix in ('.html','.js','.css'):
+                  s=p.read_text(encoding='utf-8')
+                  s=s.replace('https://mirurecetas.github.io/menu-anual-recetas','http://127.0.0.1:8765')
+                  p.write_text(s,encoding='utf-8')
+          PY
+      - name: Instalar navegador Chromium
+        run: |
+          npm install --no-save playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Abrir y probar las páginas reales
+        run: |
+          (cd /tmp/miru-qa-site && python -m http.server 8765 --bind 127.0.0.1) >/tmp/miru-http.log 2>&1 &
+          sleep 2
+          node tests/browser_qa.cjs
+      - name: Guardar capturas de pantalla
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mirurecetas-responsive
+          path: qa-screenshots/
+          if-no-files-found: ignore
