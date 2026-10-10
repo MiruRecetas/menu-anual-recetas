@@ -46,7 +46,7 @@
       "unidad": "dientes"
     },
     {
-      "nombre": "Caldo de carne Gallina Blanca",
+      "nombre": "Caldo de carne",
       "cantidad": 300,
       "unidad": "ml"
     },
@@ -94,6 +94,6 @@
     "Incorporar las carrilleras, el caldo, la hoja de laurel y las hierbas al gusto. Tapar y cocer a fuego suave durante 1 hora y 30 minutos.",
     "Retirar las carrilleras con cuidado. Eliminar el laurel y las hierbas; triturar la salsa y ajustar la consistencia y el punto de sal. Devolver las carrilleras a la salsa y cocinar todo junto 5 minutos más para integrar los sabores."
   ],
-  "notas": "La cantidad definitiva de harina para enharinar es 8 g en total. Laurel, sal, pimienta, tomillo y romero se mantienen para la receta web y Bring!, pero no se registran como ingredientes de cálculo de macronutrientes en Airtable; la sal puede tenerse en cuenta por separado en la auditoría de sodio y micronutrientes. Valores nutricionales por ración calculados en Airtable con carrillera ibérica limpia (referencia representativa COVAP) y descuento energético estimado por evaporación de alcohol según factores USDA (90 min, retención del 20 %). Son estimaciones trazables, no análisis de laboratorio. Los tiempos de preparación son orientativos. La sal utilizada habitualmente es yodada; este dato se conserva para el análisis de micronutrientes, no para la lista de compra. El caldo empleado es el caldo de carne comercial Gallina Blanca; el EAN de referencia encontrado en comercios para el envase de 1 l es 8410300349044, pendiente de confirmación con el envase real.",
+  "notas": "La cantidad definitiva de harina para enharinar es 8 g en total. Laurel, sal, pimienta, tomillo y romero se mantienen para la receta web y Bring!, pero no se registran como ingredientes de cálculo de macronutrientes en Airtable; la sal puede tenerse en cuenta por separado en la auditoría de sodio y micronutrientes. Valores nutricionales por ración calculados en Airtable con carrillera ibérica limpia (referencia nutricional registrada en Airtable) y descuento energético estimado por evaporación de alcohol según factores USDA (90 min, retención del 20 %). Son estimaciones trazables, no análisis de laboratorio. Los tiempos de preparación son orientativos. La sal utilizada habitualmente es yodada; este dato se conserva para el análisis de micronutrientes, no para la lista de compra. El caldo empleado es el caldo de carne comercial Gallina Blanca; el EAN de referencia encontrado en comercios para el envase de 1 l es 8410300349044, pendiente de confirmación con el envase real.",
   "categoria": "guisos-legumbres"
 }
