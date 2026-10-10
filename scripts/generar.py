@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json,html,re
+from validar_menus import validate_menu
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
@@ -102,6 +103,10 @@ def main():
     for p in sorted((R/"datos"/"menus").glob("*.json")):
         m=json.loads(p.read_text(encoding="utf-8"));month,num=m.get("mes"),m.get("menu")
         if isinstance(month,bool) or isinstance(num,bool) or not isinstance(month,int) or not isinstance(num,int) or not 1<=month<=12 or not 1<=num<=4 or p.stem!=str(month).zfill(2)+"-"+str(num):raise ValueError("Menú inválido")
+        if m.get("schema_version")==2:
+            validate_menu(m,p.name,set(rs))
+            menus.append(m)
+            continue
         days=m.get("dias")
         if not isinstance(days,dict) or set(days)!=set(DAYS):raise ValueError("Días inválidos")
         for day in DAYS:
@@ -111,8 +116,32 @@ def main():
         batch=m.get("batchcooking",[])
         if not isinstance(batch,list) or any(x not in rs for x in batch):raise ValueError("Batch cooking inválido")
         menus.append(m)
-    sitejson=json.dumps({"recetas":recipes,"menus":menus},ensure_ascii=False).replace("<",r"\u003c")
+    batch_index=[{"slug":r["slug"],"nombre":r["nombre"],"batchcooking":"batchcooking" in r.get("etiquetas",[]),"dependencias":[x["preparacion"] for x in entries(r) if x.get("preparacion")]} for r in rs.values()]
+    sitejson=json.dumps({"menus":menus,"recetas":recipes,"preparaciones":batch_index},ensure_ascii=False).replace("<",r"\u003c")
     page=(R/"plantillas"/"inicio.html").read_text(encoding="utf-8").replace("{{SITE_JSON}}",sitejson).replace("{{SITE}}",SITE)
     (R/"index.html").write_text(page,encoding="utf-8")
+    catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))
+    (R/"recetario").mkdir(parents=True,exist_ok=True)
+    (R/"recetario"/"index.html").write_text(catalog,encoding="utf-8")
+    month_names={1:"Enero",2:"Febrero",3:"Marzo",4:"Abril",5:"Mayo",6:"Junio",9:"Septiembre",10:"Octubre",11:"Noviembre",12:"Diciembre"}
+    template=(R/"plantillas"/"dia.html").read_text(encoding="utf-8")
+    for m in menus:
+        if m.get("schema_version")!=2:
+            continue
+        menu_key=f'{m["mes"]:02d}-{m["menu"]}'
+        menu_title=f'{month_names[m["mes"]]} · Menú {m["menu"]}'
+        for i,day in enumerate(DAYS):
+            navigation=[]
+            for j,title in ((i-1,"← Día anterior"),(i+1,"Día siguiente →")):
+                if 0<=j<len(DAYS):
+                    navigation.append('<a href="'+SITE+'/menus/'+menu_key+'/'+DAYS[j].lower()+'/">'+title+'</a>')
+            payload={"dia":m["dias"][day],"nombre_dia":day}
+            content=template
+            replacements={"DAY":e(day),"MENU_TITLE":e(menu_title),"SITE":SITE,"NAVIGATION":" ".join(navigation),"DAY_JSON":json.dumps(payload,ensure_ascii=False).replace("<",r"\u003c")}
+            for key,value in replacements.items():
+                content=content.replace("{{"+key+"}}",value)
+            dest=R/"menus"/menu_key/day.lower()/"index.html"
+            dest.parent.mkdir(parents=True,exist_ok=True)
+            dest.write_text(content,encoding="utf-8")
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
 if __name__=="__main__":main()

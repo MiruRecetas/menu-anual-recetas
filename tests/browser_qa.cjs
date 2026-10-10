@@ -1,0 +1,53 @@
+const { chromium } = require('playwright');
+const fs = require('fs');
+const assert = require('node:assert/strict');
+
+(async () => {
+  const browser = await chromium.launch({headless:true});
+  const issues=[];
+  const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
+  for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844}]){
+    const page=await browser.newPage({viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
+    page.on('pageerror',e=>issues.push(test.name+': error JS: '+e.message));
+    await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
+    await page.locator('#week .day-button').first().waitFor();
+    assert.equal(await page.locator('#week .day-button').count(),5,test.name+': días');
+    assert.equal(await page.locator('#month').inputValue(),'10',test.name+': mes');
+    assert.match(await page.locator('#week').innerText(),/Bacalao a la vizcaína con patatas panadera/);
+    const scroll=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+    assert.ok(scroll<=2,test.name+': desbordamiento horizontal '+scroll);
+    await page.screenshot({path:out+'/semana-'+test.name+'.png',fullPage:true});
+    await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
+    assert.equal(await page.locator('#day-modal').isVisible(),true);
+    assert.match(await page.locator('#quick-content').innerText(),/Patatas panadera/);
+    const dialog=await page.locator('#day-dialog').boundingBox();
+    assert.ok(dialog.x>=-1&&dialog.x+dialog.width<=test.width+1,test.name+': panel fuera de ventana');
+    await page.screenshot({path:out+'/panel-'+test.name+'.png'});
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#day-modal').isVisible(),false,'Escape');
+    await page.getByRole('button',{name:'Ver resumen de Martes'}).click();
+    assert.match(await page.locator('#quick-content').innerText(),/Boniato al horno/);
+    await page.getByRole('link',{name:/Ver día completo/}).click();
+    await page.waitForURL(/\/menus\/10-1\/martes\//);
+    await page.locator('.daily-meal').first().waitFor();
+    assert.match(await page.locator('body').innerText(),/Carrilleras al vino con boniato al horno/);
+    const principal=page.locator('.culinary-group').filter({hasText:'Carrilleras de cerdo al vino'}).first();
+    assert.equal(await principal.getAttribute('open'),'','Preparación principal inicialmente visible');
+    assert.ok(await principal.locator('a[href*="/recetas/"]').count()>0,'Ficha de receta enlazada');
+    const group=page.locator('.culinary-group').filter({hasText:'Boniato al horno'}).first();
+    await group.locator('summary').click();
+    assert.equal(await group.getAttribute('open'),'');
+    assert.match(await group.innerText(),/Boniato/);
+    const dailyOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+    assert.ok(dailyOverflow<=2,test.name+': página diaria desborda '+dailyOverflow);
+    await page.screenshot({path:out+'/dia-'+test.name+'.png',fullPage:true});
+    await page.goto('http://127.0.0.1:8765/recetario/');
+    await page.locator('#recipe-catalog').waitFor();
+    assert.ok(await page.locator('#recipe-catalog .recipe-tile').count()>=10,'10 recetas iniciales');
+    await page.screenshot({path:out+'/recetario-'+test.name+'.png',fullPage:true});
+    await page.close();
+  }
+  await browser.close();
+  if(issues.length)throw new Error(issues.join('\n'));
+  console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -64,3 +64,43 @@
   .recipe-card .hero-photo{height:100%!important;min-height:0!important}
   .recipe-card .back-grid>.cooking-main,.recipe-card .back-grid>.side-panel{overflow:visible!important}
 }
+
+/* Recetario independiente: tarjetas horizontales compactas */
+.compact-recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px;align-items:stretch}
+.compact-recipes .recipe-tile{display:flex;align-items:center;min-width:0;min-height:108px;padding:10px;gap:14px}
+.compact-recipes .recipe-tile img{width:96px;height:96px;flex:0 0 96px;object-fit:cover;border-radius:12px}
+.compact-recipes .recipe-tile .tile-text{padding:5px;min-width:0}
+.compact-recipes .recipe-tile h3{font-size:1.05rem;line-height:1.22;margin:0 0 6px}
+.compact-recipes .recipe-tile p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.catalog-actions{text-align:center;margin:24px 0}
+button[hidden]{display:none!important}
+.recipe-tile:focus-visible,.nav a:focus-visible,.catalog-actions button:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+@media(max-width:540px){.compact-recipes{grid-template-columns:1fr}.compact-recipes .recipe-tile img{width:82px;height:82px;flex-basis:82px}}
+
+/* Experiencia semanal y diaria v2 */
+.day-button{font:inherit;color:inherit;text-align:left;width:100%;cursor:pointer;min-height:190px}
+.day-button:hover{border-color:var(--green);box-shadow:0 8px 22px #344b3112}
+.day-button:focus-visible,.day-close:focus-visible,.day-cta:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.day-button .meal{padding:9px 0}
+.day-button .meal span{font-weight:600;line-height:1.3;display:block;font-size:.89rem}
+.day-overlay[hidden]{display:none}
+.day-overlay{position:fixed;inset:0;background:#17251db2;z-index:90;display:flex;justify-content:flex-end}
+.day-dialog{position:relative;background:var(--paper);width:min(480px,100%);height:100%;overflow:auto;padding:60px 28px 32px;box-shadow:var(--shadow)}
+.day-close{position:absolute;right:20px;top:18px;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:white;font-size:1.7rem}
+.modal-open{overflow:hidden}
+.quick-meal{border-top:1px solid var(--line);padding:12px 0}
+.quick-meal p{margin:3px 0}
+.day-cta{display:inline-block;text-decoration:none;margin-top:18px}
+.crumbs{font-size:.84rem;color:var(--muted);padding:18px 0}
+.daily-total,.daily-meal{padding:22px 25px;margin:15px 0;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+.daily-total h2,.daily-meal h2{font-size:1.3rem;margin:0 0 12px}
+.daily-meal h3{font-size:1.08rem;margin:0 0 10px}
+.culinary-group{border-top:1px solid var(--line);padding:13px 0}
+.culinary-group summary{cursor:pointer;font-weight:600;color:var(--green);min-height:34px}
+.group-entries{padding:6px 0 4px 17px}
+.ingredient-line{display:flex;justify-content:space-between;align-items:baseline;gap:15px;border-bottom:1px solid var(--line);padding:9px 0}
+.ingredient-line strong{white-space:nowrap}
+.daily-navigation{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:20px 0}
+@media(max-width:700px){.day-overlay{align-items:flex-end}.day-dialog{width:100%;height:auto;max-height:88dvh;border-radius:24px 24px 0 0;padding-bottom:max(28px,env(safe-area-inset-bottom))}.menu-grid{grid-template-columns:1fr}.day-button{min-height:0}.day-button .meal{padding:7px 0}}
+@media(min-width:701px) and (max-width:1090px){.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.day-button{transition:none}}

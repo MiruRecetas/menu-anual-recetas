@@ -6,7 +6,7 @@ on:
       - 'datos/recetas/**'
       - 'datos/menus/**'
       - 'plantillas/**'
-      - 'scripts/generar.py'
+      - 'scripts/**'
       - 'assets/**'
       - 'imagenes/**'
       - '.github/workflows/publicar-recetas.yml'
@@ -21,12 +21,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m py_compile scripts/generar.py
+      - name: Validar código y datos antes de publicar
+        run: |
+          python -m py_compile scripts/generar.py scripts/validar_menus.py scripts/agrupar_componentes.py
+          python -m unittest discover -s tests -v
+      - name: Comprobar sintaxis JavaScript
+        run: |
+          node --check assets/inicio.js
+          node --check assets/dia.js
+          node --check assets/recetario.js
+          node --check assets/cocina.js
       - run: python scripts/generar.py
       - name: Guardar páginas generadas
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
+          if [ -d recetario ]; then git add -A recetario; fi
           if [ -d recetas ]; then git add -A recetas; fi
+          if [ -d menus ]; then git add -A menus; fi
           git diff --cached --quiet || (git commit -m "Publicar páginas generadas" && git push)
