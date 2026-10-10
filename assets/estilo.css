@@ -170,3 +170,10 @@ button[hidden]{display:none!important}
  .batch-gallery .batch-tile{flex:0 0 calc((100% - 72px)/5);max-width:190px;min-width:0}
 }
 @media(max-width:540px){.batch-tile-title{font-size:.82rem;margin-top:7px}}
+
+
+/* Título de batch sobre foto: solo aparece al interactuar */
+.batch-thumb .batch-tile-title{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;box-sizing:border-box;margin:0;padding:14px;max-width:none;width:100%;height:100%;border-radius:inherit;background:rgba(20,35,28,.69);color:#fff;font-family:"Geist",Arial,sans-serif;font-size:clamp(.78rem,1.3vw,1.05rem);font-weight:550;text-align:center;line-height:1.3;letter-spacing:-.01em;overflow-wrap:anywhere;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s ease;pointer-events:none}
+.batch-tile:hover .batch-tile-title{opacity:1;visibility:visible}
+.batch-tile:focus-visible .batch-tile-title,.batch-tile.batch-revealed .batch-tile-title{opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){.batch-thumb .batch-tile-title{transition:none}}
