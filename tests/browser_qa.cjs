@@ -85,6 +85,16 @@ const assert = require('node:assert/strict');
     assert.ok(Math.abs(actionLayout.a.width-actionLayout.b.width)<=1 && actionLayout.a.width>=43,'Botones del mismo tamaño circular');
     assert.equal(actionLayout.color,'rgb(81, 111, 93)','Nombre del día en verde de MiruRecetas');
     assert.ok(actionLayout.weight>=700,'Nombre del día en negrita');
+    const expandIcon=page.locator('#expand-day svg.lucide-maximize-2');
+    assert.equal(await expandIcon.count(),1,'Icono maximize-2 renderizado');
+    const actionColors=await page.locator('#day-dialog').evaluate(dialog=>({
+      expand:getComputedStyle(dialog.querySelector('#expand-day')).color,
+      close:getComputedStyle(dialog.querySelector('#close-day')).color,
+      icon:getComputedStyle(dialog.querySelector('#expand-day svg')).color
+    }));
+    assert.equal(actionColors.expand,actionColors.close,'Ampliar y cerrar usan el mismo color');
+    assert.equal(actionColors.icon,actionColors.close,'SVG hereda el mismo color');
+
     const dialog=await page.locator('#day-dialog').boundingBox();
     assert.ok(dialog.x>=-1&&dialog.x+dialog.width<=test.width+1,test.name+': panel fuera de ventana');
     await page.screenshot({path:out+'/panel-'+test.name+'.png'});
