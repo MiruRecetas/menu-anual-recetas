@@ -45,7 +45,7 @@ def make(r):
         structured["nutrition"]={"@type":"NutritionInformation","calories":str(nut["kcal"])+" calories","proteinContent":str(p)+" g","carbohydrateContent":str(c)+" g","fatContent":str(f)+" g"}
     # Catálogo cerrado, compartido con Airtable.
     categories={
-        "guisos-legumbres":("Guisos, estofados y legumbres","cooking-pot"),
+        "guisos-legumbres":("Guisos y estofados","cooking-pot"),
         "arroces-pastas":("Arroces y pastas","wheat"),
         "asados-horno":("Asados y horno","ham"),
         "ensaladas-frios":("Ensaladas y platos fríos","salad"),
