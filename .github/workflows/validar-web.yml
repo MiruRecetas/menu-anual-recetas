@@ -1,0 +1,36 @@
+name: Validar web
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sintaxis de generador y scripts
+        run: |
+          python -m py_compile scripts/generar.py
+          node --check assets/inicio.js
+          node --check assets/recetario.js
+          node --check assets/cocina.js
+      - name: Generar y comprobar contrato del recetario
+        run: |
+          python scripts/generar.py
+          test -f index.html
+          test -f recetario/index.html
+          grep -q 'id="recipe-catalog"' recetario/index.html
+          ! grep -q 'id="recipe-catalog"' index.html
+          grep -q '/recetario/' plantillas/receta.html
+          sha256sum index.html recetario/index.html > /tmp/miru-first
+          python scripts/generar.py
+          sha256sum index.html recetario/index.html > /tmp/miru-second
+          diff -u /tmp/miru-first /tmp/miru-second
