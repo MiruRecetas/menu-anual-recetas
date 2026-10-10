@@ -27,8 +27,34 @@ function week(){const mes=Number(select.value),num=Number($('#menu-number').valu
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
 for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);button.append(el('h3',day));for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;const box=el('div',undefined,'meal');box.append(el('small',kind),el('span',item.estado==='libre'?'Libre':item.nombre));button.append(box)}button.append(el('p',fmt(d.nutricion.kcal)+' kcal registradas','muted small'));button.addEventListener('click',()=>open(day,m,button));w.append(button)}
-const counts=new Map();for(const day of days){for(const kind of ['comida','cena']){const meal=m.dias[day][kind];if(!meal?.presentacion)continue;const visit=(slug,visited=new Set())=>{if(visited.has(slug))return;visited.add(slug);const r=recipes.find(x=>x.slug===slug);if(!r)return;if((r.etiquetas||[]).some(t=>t==='Batchcooking'))counts.set(slug,(counts.get(slug)||0)+1)};for(const group of meal.presentacion.grupos)for(const e of group.elementos)if(e.tipo==='preparacion'&&e.slug)visit(e.slug);for(const e of meal.presentacion.elementos_sin_grupo)if(e.tipo==='preparacion'&&e.slug)visit(e.slug)}}
-if(!counts.size)b.textContent='No hay preparaciones identificadas con etiqueta batchcooking.';else for(const [slug,n] of counts){const p=el('p');p.append(recipeLink(slug),el('span',' · '+n+' '+(n===1?'uso':'usos')));b.append(p)}
+const prepMap=new Map((data.preparaciones||[]).map(p=>[p.slug,p]));
+const counts=new Map();
+function traverse(slug,visited){
+ if(visited.has(slug))return;
+ visited.add(slug);
+ const prep=prepMap.get(slug);
+ if(!prep)return;
+ if(prep.batchcooking)counts.set(slug,(counts.get(slug)||0)+1);
+ for(const dependency of prep.dependencias||[])traverse(dependency,visited)
+}
+for(const day of days){
+ for(const kind of ['comida','cena']){
+  const meal=m.dias[day][kind];
+  if(!meal?.presentacion)continue;
+  const inMeal=new Set();
+  for(const group of meal.presentacion.grupos)
+   for(const item of group.elementos)
+    if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
+  for(const item of meal.presentacion.elementos_sin_grupo)
+   if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
+ }
+}
+if(!counts.size)b.textContent='No hay preparaciones identificadas con etiqueta batchcooking.';
+else for(const [slug,n] of counts){
+ const p=el('p');
+ p.append(recipeLink(slug),el('span',' · '+n+' '+(n===1?'comida':'comidas')));
+ b.append(p)
+}
 }
 select.addEventListener('change',week);$('#menu-number').addEventListener('change',week);week();
 })();
