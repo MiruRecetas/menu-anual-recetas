@@ -8,15 +8,15 @@
     "verduras"
   ],
   "nutricion": {
-    "kcal": 168.4,
-    "proteinas_g": 5.97,
-    "hidratos_g": 19.69,
-    "grasas_g": 7.66
+    "kcal": 166.8,
+    "proteinas_g": 5.89,
+    "hidratos_g": 19.4,
+    "grasas_g": 7.65
   },
   "ingredientes": [
     {
       "nombre": "Tomate",
-      "cantidad": 1050,
+      "cantidad": 1000,
       "unidad": "g"
     },
     {
@@ -40,15 +40,15 @@
       "unidad": "g"
     },
     {
-      "nombre": "Aceite de oliva virgen",
+      "nombre": "AOVE",
       "cantidad": 39.5,
       "unidad": "g"
     }
   ],
   "pasos": [
-    "Pochar los vegetales, excepto el tomate, con el aceite de oliva virgen.",
+    "Pochar los vegetales, excepto el tomate, con el AOVE.",
     "Pelar los tomates, cortarlos en trozos y añadirlos a los vegetales pochados.",
     "Dejar reducir el conjunto hasta obtener la consistencia deseada."
   ],
-  "notas": "Para 6 raciones. Cantidades interpretadas en crudo: 7 tomates grandes de 150 g cada uno = 1.050 g en total. La referencia de aceite de Lifesum indica 5 raciones recomendadas de 7,9 g: 39,5 g de aceite en total (≈43,41 ml usando una densidad estimada de 0,91 g/ml para el aceite de oliva). En Airtable se reutiliza la ficha de AOVE BEDCA:2544 como equivalente de aceite de oliva virgen, con dicha conversión documentada. Se mantienen las indicaciones culinarias esenciales de la captura; no se han inventado tiempos de cocción ni temperaturas. Nutrición por ración calculada en Airtable, preparación recG1UJ6vBcK3NBaE, nivel 0: 168,357 kcal, 5,9658 g de proteínas, 19,6883 g de hidratos, 7,6608 g de grasas. Lifesum mostraba 182 kcal/ración, dato comparativo que no sustituye Airtable. El pimiento verde utiliza USDA SR Legacy FDC:170427; tomate, pimiento rojo y calabacín utilizan BEDCA:2421, 2409 y 2376, y la cebolla BEDCA:2381. El valor de peso de verduras corresponde a parte comestible en crudo; cuando la indicación original se refiere a piezas enteras puede haber variación por pelado/limpieza. Fotografía real pendiente."
+  "notas": "Para 6 raciones: 1 kg de tomate en crudo y 39,5 g de AOVE (43,4066 ml para Airtable con densidad estimada 0,91 g/ml). Valores por ración calculados en Airtable: 166,7935 kcal, 5,8908 g de proteínas, 19,3967 g de hidratos, 7,6525 g de grasas. Referencias: tomate BEDCA:2421, pimiento rojo BEDCA:2409, calabacín BEDCA:2376, cebolla BEDCA:2381, AOVE BEDCA:2544, pimiento verde USDA:170427. Fotografía pendiente."
 }
