@@ -18,7 +18,7 @@ jobs:
           node-version: '22'
       - name: Sintaxis de generador y scripts
         run: |
-          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py scripts/validar_menus.py
+          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py scripts/validar_menus.py scripts/exportar_airtable.py
           python -m unittest discover -s tests -v
           node --check assets/inicio.js
           node --check assets/recetario.js
