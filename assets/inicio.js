@@ -14,9 +14,20 @@ select.value=available?.mes||10;
 if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
-function summary(kind,meal){const box=el('div',undefined,'quick-meal');box.append(el('strong',kind));if(meal?.estado==='libre'){box.append(el('p','Libre'));return box}
-box.append(el('p',meal?.nombre||'Sin asignar'));
-if(meal?.presentacion){for(const group of meal.presentacion.grupos)box.append(el('p',group.nombre,'muted small'));for(const x of meal.presentacion.elementos_sin_grupo)box.append(el('p',x.nombre,'muted small'))}return box}
+const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
+function summary(kind,meal,day){
+ const box=el('section',undefined,'quick-meal');
+ const heading=el('h3',undefined,'quick-meal-heading');
+ const symbol=el('i');
+ symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);
+ symbol.setAttribute('aria-hidden','true');
+ heading.append(symbol,el('span',kind));
+ const names=el('div',undefined,'quick-meal-names');
+ for(const name of meal?compactName(kind,meal,day):['Sin asignar'])
+  names.append(el('span',name,'quick-meal-name'));
+ if(meal?.estado==='libre')box.classList.add('quick-meal-free');
+ box.append(heading,names);return box;
+}
 function dismiss(){modal.hidden=true;document.body.classList.remove('modal-open');origin?.focus()}
 // Los porcentajes de las barras corresponden al reparto energético de macros,
  // no a metas nutricionales individuales: proteínas 4, hidratos 4 y grasas 9 kcal/g.
@@ -70,7 +81,7 @@ function dailyNutrition(nut){
  macros.append(note);group.append(energy,macros);
  return group;
 }
-function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));content.append(summary('Desayuno',d.desayuno),summary('Comida',d.comida),summary('Cena',d.cena));if(d.postre)content.append(summary('Postre',d.postre));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
+function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));content.append(summary('Desayuno',d.desayuno,day),summary('Comida',d.comida,day),summary('Cena',d.cena,day));if(d.postre)content.append(summary('Postre',d.postre,day));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
 close.addEventListener('click',dismiss);
 modal.addEventListener('click',e=>{if(e.target===modal)dismiss()});
 document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')dismiss();if(e.key==='Tab'){const focusable=[...dialog.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
@@ -113,7 +124,7 @@ function calorieRing(kcal){
 }
 function mealRow(kind,item,day){
  const row=el('div',undefined,'week-meal-row');
- const label=el('span',undefined,'week-meal-label');const icons={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};const symbol=el('i');symbol.setAttribute('data-lucide',icons[kind]);symbol.setAttribute('aria-hidden','true');label.append(symbol);label.setAttribute('aria-label',kind);label.title=kind;
+ const label=el('span',undefined,'week-meal-label');const symbol=el('i');symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);symbol.setAttribute('aria-hidden','true');label.append(symbol);label.setAttribute('aria-label',kind);label.title=kind;
  const names=el('span',undefined,'week-meal-names');
  for(const name of compactName(kind,item,day))names.append(el('span',name,'week-meal-name'));
  row.classList.add(kind==='Comida'||kind==='Cena'?'week-meal-main':'week-meal-secondary');if(item?.estado==='libre')row.classList.add('week-meal-free');row.append(label,names);
