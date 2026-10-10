@@ -276,3 +276,15 @@ button[hidden]{display:none!important}
  #quick-content .quick-meal-heading{font-size:1rem}
  #quick-content .quick-meal-name{font-size:1rem}
 }
+
+
+/* Enlaces discretos a las recetas desde el resumen diario */
+#quick-content .quick-meal-link{
+ color:var(--green);text-decoration:underline;
+ text-decoration-color:#b9c9ba;text-decoration-thickness:1px;
+ text-underline-offset:3px
+}
+#quick-content .quick-meal-link:hover{color:var(--terra);text-decoration-color:currentColor}
+#quick-content .quick-meal-link:focus-visible{
+ outline:2px solid var(--terra);outline-offset:3px;border-radius:3px
+}

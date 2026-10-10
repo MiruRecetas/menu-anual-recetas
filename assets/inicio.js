@@ -15,6 +15,33 @@ if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
+// Solo se enlazan recetas publicadas y relacionadas mediante las referencias del menú.
+const cleanRecipeName=name=>String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').replace(/\s+/g,' ').trim();
+function relatedRecipes(meal){
+ if(!meal||meal.estado==='libre')return [];
+ const refs=[];
+ if(meal.tipo==='preparacion')refs.push(meal);
+ const presentation=meal.presentacion;
+ for(const group of presentation?.grupos||[])refs.push(...(group.elementos||[]));
+ refs.push(...(presentation?.elementos_sin_grupo||[]));
+ const found=new Map();
+ for(const ref of refs){
+  if(ref.tipo!=='preparacion')continue;
+  // Si falta slug en el menú, solo se admite coincidencia exacta con la ficha pública.
+  const recipe=ref.slug
+   ?recipes.find(r=>r.slug===ref.slug)
+   :recipes.find(r=>cleanRecipeName(r.nombre)===cleanRecipeName(ref.nombre));
+  if(recipe)found.set(recipe.slug,recipe);
+ }
+ return [...found.values()];
+}
+function matchSummaryRecipe(name,names,available){
+ if(!available.length)return null;
+ if(names.length===1&&available.length===1)return available[0];
+ const short=cleanRecipeName(name);
+ const matches=available.filter(r=>cleanRecipeName(r.nombre).startsWith(short));
+ return matches.length===1?matches[0]:null;
+}
 function summary(kind,meal,day){
  const box=el('section',undefined,'quick-meal');
  const heading=el('h3',undefined,'quick-meal-heading');
@@ -22,11 +49,21 @@ function summary(kind,meal,day){
  symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);
  symbol.setAttribute('aria-hidden','true');
  heading.append(symbol,el('span',kind));
- const names=el('div',undefined,'quick-meal-names');
- for(const name of meal?compactName(kind,meal,day):['Sin asignar'])
-  names.append(el('span',name,'quick-meal-name'));
+ const namesContainer=el('div',undefined,'quick-meal-names');
+ const names=meal?compactName(kind,meal,day):['Sin asignar'];
+ const available=relatedRecipes(meal);
+ for(const name of names){
+  const recipe=matchSummaryRecipe(name,names,available);
+  const node=recipe?el('a',name,'quick-meal-name quick-meal-link'):el('span',name,'quick-meal-name');
+  if(recipe){
+   node.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
+   node.title='Abrir receta: '+recipe.nombre;
+   node.setAttribute('aria-label',name+' · Abrir receta: '+recipe.nombre);
+  }
+  namesContainer.append(node);
+ }
  if(meal?.estado==='libre')box.classList.add('quick-meal-free');
- box.append(heading,names);return box;
+ box.append(heading,namesContainer);return box;
 }
 function dismiss(){modal.hidden=true;document.body.classList.remove('modal-open');origin?.focus()}
 // Los porcentajes de las barras corresponden al reparto energético de macros,
