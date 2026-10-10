@@ -1,0 +1,62 @@
+{
+  "slug": "tzatziki",
+  "nombre": "Tzatziki",
+  "descripcion": "Salsa fría de yogur griego natural, pepino escurrido, ajo, limón y hierbas frescas.",
+  "raciones": 2,
+  "categoria": "salsas-guarniciones",
+  "etiquetas": [
+    "lacteos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Yogur griego natural",
+      "cantidad": 1,
+      "unidad": "unidad (125 g)"
+    },
+    {
+      "nombre": "Pepino",
+      "cantidad": 30,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Zumo de limón",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 1,
+      "unidad": "diente"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 5,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Menta o hierbabuena",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Pelar el pepino, retirar las semillas y rallarlo.",
+    "Poner el pepino rallado en un colador, añadir un poco de sal y colocar el colador sobre un plato durante 30 minutos para que suelte parte del agua. Presionarlo con una cuchara si es necesario para escurrirlo por completo.",
+    "Machacar en un mortero el ajo y la menta o hierbabuena.",
+    "Incorporar el yogur griego, el AOVE y el zumo de limón al mortero y mezclar.",
+    "Añadir el pepino escurrido y volver a mezclar.",
+    "Dejar reposar unas 2 horas en la nevera para que adquiera consistencia."
+  ],
+  "nutricion": {
+    "kcal": 105,
+    "proteinas_g": 2.44,
+    "hidratos_g": 4.31,
+    "grasas_g": 8.71
+  },
+  "notas": "Dos raciones. Un yogur griego natural equivale a un vasito de 125 g; el producto comercial concreto queda identificado exclusivamente en Airtable. Cantidades de alimentos en crudo: 30 g de pepino, 15 g de zumo de limón y 5 g de AOVE. El ajo se calcula como 3 g por diente, equivalencia orientativa usada previamente para 2 dientes=6 g. El AOVE se convierte a 5,4945 ml con densidad aproximada de 0,91 g/ml para reutilizar el ingrediente BEDCA:2544. La menta/hierbabuena y la sal se agregan al gusto; sin cantidad especificada, no están incluidas en las cifras nutricionales. El peso del pepino después de escurrir puede variar; la cantidad nutricional se refiere al peso crudo indicado, sin deducir automáticamente el agua escurrida. Cálculo en Airtable preparación recgi0wLvd7EOUa6E (nivel 0): por ración 105,048 kcal, 2,4441 g proteínas, 4,3095 g hidratos y 8,71345 g grasas. Fotografía real pendiente."
+}
