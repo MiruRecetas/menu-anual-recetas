@@ -114,7 +114,7 @@ def main():
     sitejson=json.dumps({"menus":menus},ensure_ascii=False).replace("<",r"\u003c")
     page=(R/"plantillas"/"inicio.html").read_text(encoding="utf-8").replace("{{SITE_JSON}}",sitejson).replace("{{SITE}}",SITE)
     (R/"index.html").write_text(page,encoding="utf-8")
-    catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\\u003c"))
+    catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))
     (R/"recetario").mkdir(parents=True,exist_ok=True)
     (R/"recetario"/"index.html").write_text(catalog,encoding="utf-8")
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
