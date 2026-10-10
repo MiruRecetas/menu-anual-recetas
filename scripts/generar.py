@@ -122,5 +122,25 @@ def main():
     catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))
     (R/"recetario").mkdir(parents=True,exist_ok=True)
     (R/"recetario"/"index.html").write_text(catalog,encoding="utf-8")
+    month_names={1:"Enero",2:"Febrero",3:"Marzo",4:"Abril",5:"Mayo",6:"Junio",9:"Septiembre",10:"Octubre",11:"Noviembre",12:"Diciembre"}
+    template=(R/"plantillas"/"dia.html").read_text(encoding="utf-8")
+    for m in menus:
+        if m.get("schema_version")!=2:
+            continue
+        menu_key=f'{m["mes"]:02d}-{m["menu"]}'
+        menu_title=f'{month_names[m["mes"]]} · Menú {m["menu"]}'
+        for i,day in enumerate(DAYS):
+            navigation=[]
+            for j,title in ((i-1,"← Día anterior"),(i+1,"Día siguiente →")):
+                if 0<=j<len(DAYS):
+                    navigation.append('<a href="'+SITE+'/menus/'+menu_key+'/'+DAYS[j].lower()+'/">'+title+'</a>')
+            payload={"dia":m["dias"][day],"nombre_dia":day}
+            content=template
+            replacements={"DAY":e(day),"MENU_TITLE":e(menu_title),"SITE":SITE,"NAVIGATION":" ".join(navigation),"DAY_JSON":json.dumps(payload,ensure_ascii=False).replace("<",r"\u003c")}
+            for key,value in replacements.items():
+                content=content.replace("{{"+key+"}}",value)
+            dest=R/"menus"/menu_key/day.lower()/"index.html"
+            dest.parent.mkdir(parents=True,exist_ok=True)
+            dest.write_text(content,encoding="utf-8")
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
 if __name__=="__main__":main()
