@@ -7,7 +7,6 @@
   "etiquetas": [
     "verduras"
   ],
-  "coccion_min": 47,
   "ingredientes": [
     {
       "nombre": "Carne de pimiento choricero",
@@ -21,7 +20,7 @@
     },
     {
       "nombre": "Ajo",
-      "cantidad": 4,
+      "cantidad": 2,
       "unidad": "dientes"
     },
     {
@@ -30,7 +29,7 @@
       "unidad": "g"
     },
     {
-      "nombre": "Vino blanco para guisar",
+      "nombre": "Vino para cocinar (producto comercial pendiente de identificar)",
       "cantidad": 25,
       "unidad": "ml"
     },
@@ -41,7 +40,7 @@
     },
     {
       "nombre": "Aceite de oliva virgen extra",
-      "cantidad": 20,
+      "cantidad": 10,
       "unidad": "ml"
     },
     {
@@ -52,13 +51,13 @@
   ],
   "pasos": [
     "Cortar la cebolla en juliana y los dientes de ajo en láminas.",
-    "Calentar una tartera a fuego medio con la mitad del aceite. Cuando esté caliente, añadir la mitad del ajo y sofreír.",
+    "Calentar una tartera a fuego medio con los 10 ml de aceite. Cuando esté caliente, añadir los 2 dientes de ajo laminados (6 g en total) y sofreír.",
     "Añadir la cebolla, mezclar bien y añadir un poco de sal.",
     "Bajar el fuego y cocinar la cebolla durante unos 30–35 minutos.",
     "Añadir el pan tostado cortado en trocitos y mezclar bien.",
-    "Subir un poco el fuego, añadir el vino blanco, mezclar y cocinar durante 2 minutos. La receta original indica que el alcohol se evapora por completo; no se asume evaporación total a efectos nutricionales.",
+    "Subir un poco el fuego, añadir el vino para cocinar, mezclar y cocinar durante 2 minutos. La evaporación completa del alcohol no está garantizada.",
     "Añadir la carne de pimiento choricero, mezclar bien e incorporar el agua. Cocinar a fuego bajo, con la tartera tapada, durante 10 minutos.",
     "Pasar la salsa por un chino o pasapurés y reservar."
   ],
-  "notas": "Cantidades originales para 2 raciones, entendidas en crudo. La captura indica 4 dientes de ajo a 2,7 g por diente (10,8 g estimados). El aceite figura como 2 raciones estándar de 10 ml: se interpreta como 20 ml totales, aunque el procedimiento solo indica usar la mitad al principio y no explica el uso del resto. El vino se describe como 'vino de guiso' en los ingredientes y como vino blanco en el paso 6; queda pendiente confirmar producto concreto y tipo. Pendiente de validación de carne de pimiento choricero, pan y vino y de cálculo nutricional completo en Airtable. No se han publicado macronutrientes parciales. Sin fotografía."
+  "notas": "Cantidades para 2 raciones; pesos en crudo. Corrección confirmada por la usuaria: solo 2 dientes de ajo (6 g comestibles en total) y 10 ml de aceite de oliva virgen extra. Los otros 2 dientes y el aceite restante corresponden a otra preparación que utilizará esta salsa y no deben contabilizarse aquí. La carne de pimiento choricero es un producto comercial en tarro todavía sin marca/variante verificada. El vino es un producto comercial específico para cocinar pendiente de identificación. El pan se debe validar nutricionalmente. Los tiempos declarados son 30–35 min de cebolla, 2 min de vino y 10 min tapado. No publicar valores nutricionales hasta que Airtable complete todos los elementos y ajuste el alcohol. Fotografía pendiente."
 }
