@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json,html,re
+from validar_menus import validate_menu
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
@@ -102,6 +103,10 @@ def main():
     for p in sorted((R/"datos"/"menus").glob("*.json")):
         m=json.loads(p.read_text(encoding="utf-8"));month,num=m.get("mes"),m.get("menu")
         if isinstance(month,bool) or isinstance(num,bool) or not isinstance(month,int) or not isinstance(num,int) or not 1<=month<=12 or not 1<=num<=4 or p.stem!=str(month).zfill(2)+"-"+str(num):raise ValueError("Menú inválido")
+        if m.get("schema_version")==2:
+            validate_menu(m,p.name,set(rs))
+            menus.append(m)
+            continue
         days=m.get("dias")
         if not isinstance(days,dict) or set(days)!=set(DAYS):raise ValueError("Días inválidos")
         for day in DAYS:
