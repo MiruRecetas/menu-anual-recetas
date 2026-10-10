@@ -64,7 +64,7 @@ const assert = require('node:assert/strict');
     await page.screenshot({path:out+'/semana-'+test.name+'.png',fullPage:true});
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
     assert.equal(await page.locator('#day-modal').isVisible(),true);
-    assert.match(await page.locator('#quick-content').innerText(),/Patatas panadera/);
+    assert.match(await page.locator('#quick-content').innerText(),/Bacalao a la vizcaína con patatas panadera/);
     const dailyMeals=page.locator('#quick-content .quick-meal');
     assert.equal(await dailyMeals.count(),4,'Las cuatro ingestas del lunes');
     assert.deepEqual(await dailyMeals.locator('.quick-meal-heading').allInnerTexts(),['Desayuno','Comida','Cena','Postre'],'Etiquetas de las ingestas');
