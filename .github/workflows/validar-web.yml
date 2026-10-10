@@ -18,16 +18,18 @@ jobs:
           node-version: '22'
       - name: Sintaxis de generador y scripts
         run: |
-          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py
+          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py scripts/validar_menus.py
           python -m unittest discover -s tests -v
           node --check assets/inicio.js
           node --check assets/recetario.js
+          node --check assets/dia.js
           node --check assets/cocina.js
       - name: Generar y comprobar contrato del recetario
         run: |
           python scripts/generar.py
           test -f index.html
           test -f recetario/index.html
+          test -f plantillas/dia.html
           grep -q 'id="recipe-catalog"' recetario/index.html
           ! grep -q 'id="recipe-catalog"' index.html
           grep -q 'recetario/' plantillas/receta.html
