@@ -36,5 +36,11 @@
     "Añadir por encima las 2 raciones de salsa vizcaína ya preparada. Ligar la salsa con los jugos del bacalao mediante movimientos circulares de la sartén.",
     "Tapar y cocinar el conjunto a fuego bajo unos 5 minutos, o hasta que el bacalao comience a separarse en lascas."
   ],
-  "notas": "Los 400 g de bacalao se entienden en crudo. Pendiente de confirmar si es bacalao fresco o bacalao desalado: la identidad cambia la referencia nutricional BEDCA y el contenido de sodio. Mientras no se confirme, los valores nutricionales permanecen sin publicar. La salsa vizcaína es una preparación N0 ya calculada; al incluirla se mantiene su ajuste energético de alcohol, sin descontarlo de nuevo. Fotografía real pendiente."
+  "notas": "Los 400 g de bacalao corresponden al peso una vez desalado y antes de cocinar, con ficha nutricional BEDCA:797 (bacalao salado, remojado, crudo). La sal residual y el contenido de sodio pueden variar según el desalado. Preparación N1 calculada en Airtable (rec2zKHAUl6XFjWrX) que incluye 2 raciones de salsa vizcaína N0, 400 g de bacalao desalado, 10 ml de AOVE y 6 g de ajo. El aporte energético del vino de la salsa ya está corregido por retención de alcohol en la N0, sin aplicar doble descuento. Nutrición por ración auditada en Airtable, con las estimaciones nutricionales documentadas de la salsa. Fotografía pendiente.",
+  "nutricion": {
+    "kcal": 354.7,
+    "proteinas_g": 53.87,
+    "hidratos_g": 9.37,
+    "grasas_g": 10.23
+  }
 }
