@@ -65,6 +65,29 @@ const assert = require('node:assert/strict');
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
     assert.equal(await page.locator('#day-modal').isVisible(),true);
     assert.match(await page.locator('#quick-content').innerText(),/Patatas panadera/);
+    const nutrition=page.locator('#quick-content .daily-nutrition');
+    assert.equal(await nutrition.count(),1,'Nuevo resumen nutricional');
+    assert.equal(await nutrition.locator('.daily-energy-center strong').innerText(),'1488','Kcal del día');
+    assert.equal(await nutrition.locator('.daily-energy-center small').innerText(),'de 1600','Referencia kcal');
+    assert.equal(await nutrition.locator('.daily-macro').count(),3,'Tres barras de macros');
+    assert.equal(await nutrition.locator('.daily-macro-name').allInnerTexts().then(a=>a.join(',')),'Proteínas,Hidratos,Grasas','Orden de macros');
+    const macroValues=await nutrition.locator('.daily-macro').evaluateAll(els=>els.map(el=>({
+      grams:el.querySelector('.daily-macro-values strong').textContent,
+      percentage:el.querySelector('.daily-macro-values small').textContent,
+      width:parseFloat(el.querySelector('.daily-macro-fill').style.width)
+    })));
+    assert.deepEqual(macroValues.map(v=>v.grams),['99 g','105 g','70 g'],'Gramos registrados');
+    assert.deepEqual(macroValues.map(v=>v.percentage),['27%','29%','44%'],'Distribución 4-4-9 normalizada');
+    assert.ok(macroValues.every(v=>v.width>=0&&v.width<=100),'Anchura segura para barras');
+    assert.ok(Math.abs(macroValues.reduce((sum,v)=>sum+v.width,0)-100)<.01,'Las barras representan porcentajes del total energético calculado');
+    assert.match(await nutrition.locator('.daily-macro-note').innerText(),/% de energía/,'Interpretación inequívoca');
+    const nutritionDimensions=await nutrition.evaluate(el=>{
+      const box=el.getBoundingClientRect(),dialog=el.closest('.day-dialog').getBoundingClientRect();
+      return {left:box.left,right:box.right,dlgLeft:dialog.left,dlgRight:dialog.right,overflow:el.scrollWidth-el.clientWidth}
+    });
+    assert.ok(nutritionDimensions.left>=nutritionDimensions.dlgLeft-1&&nutritionDimensions.right<=nutritionDimensions.dlgRight+1,'Panel de nutrición cabe en el modal');
+    assert.ok(nutritionDimensions.overflow<=2,'El módulo nutricional no desborda en '+test.name);
+
     // Los estilos deben aplicarse realmente (no basta con comprobar clases).
     const actionLayout=await page.locator('#day-dialog').evaluate(dialog=>{
       const close=dialog.querySelector('#close-day'),expand=dialog.querySelector('#expand-day');
@@ -102,6 +125,7 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('#day-modal').isVisible(),false,'Escape');
     await page.getByRole('button',{name:'Ver resumen de Martes'}).click();
     assert.match(await page.locator('#quick-content').innerText(),/Boniato al horno/);
+    assert.equal(await page.locator('#quick-content .daily-nutrition').count(),1,'Nutrición visual también el martes');
     assert.equal(await page.locator('#quick-content .day-context').textContent(),'Octubre · Menú 1 · Martes','Encabezado contextual');
     assert.equal(await page.locator('#quick-content .day-context-name').textContent(),'Martes','Día destacado');
     assert.equal(await page.locator('#expand-day').getAttribute('aria-label'),'Ver día completo','Icono accesible');

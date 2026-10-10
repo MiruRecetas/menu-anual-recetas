@@ -18,7 +18,59 @@ function summary(kind,meal){const box=el('div',undefined,'quick-meal');box.appen
 box.append(el('p',meal?.nombre||'Sin asignar'));
 if(meal?.presentacion){for(const group of meal.presentacion.grupos)box.append(el('p',group.nombre,'muted small'));for(const x of meal.presentacion.elementos_sin_grupo)box.append(el('p',x.nombre,'muted small'))}return box}
 function dismiss(){modal.hidden=true;document.body.classList.remove('modal-open');origin?.focus()}
-function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(el('p',fmt(nut.kcal)+' kcal · P '+fmt(nut.proteinas_g)+' g · HC '+fmt(nut.hidratos_g)+' g · G '+fmt(nut.grasas_g)+' g','muted'));content.append(summary('Desayuno',d.desayuno),summary('Comida',d.comida),summary('Cena',d.cena));if(d.postre)content.append(summary('Postre',d.postre));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
+// Los porcentajes de las barras corresponden al reparto energético de macros,
+ // no a metas nutricionales individuales: proteínas 4, hidratos 4 y grasas 9 kcal/g.
+function dailyNutrition(nut){
+ const group=el('section',undefined,'daily-nutrition');
+ group.setAttribute('aria-label','Resumen nutricional del día');
+ const kcal=Number(nut.kcal)||0;
+ const ratio=Math.max(0,Math.min(1,kcal/GOAL_KCAL));
+ const energy=el('div',undefined,'daily-energy');
+ const circle=el('div',undefined,'daily-energy-ring');
+ circle.setAttribute('aria-label',fmt(kcal)+' kilocalorías de '+GOAL_KCAL+' kilocalorías de referencia');
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+ svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('aria-hidden','true');
+ const circumference=2*Math.PI*49;
+ for(const [cls,offset] of [['daily-energy-track',0],['daily-energy-progress',circumference*(1-ratio)]]){
+  const node=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  node.setAttribute('class',cls);node.setAttribute('cx','60');node.setAttribute('cy','60');node.setAttribute('r','49');
+  if(cls==='daily-energy-progress'){
+   node.setAttribute('stroke-dasharray',String(circumference));
+   node.setAttribute('stroke-dashoffset',String(offset));
+  }
+  svg.append(node);
+ }
+ circle.append(svg);
+ const center=el('span',undefined,'daily-energy-center');
+ center.append(el('strong',fmt(kcal)),el('span','kcal'),el('small','de '+GOAL_KCAL));
+ circle.append(center);energy.append(circle);
+ const entries=[
+  {label:'Proteínas',short:'P',key:'proteinas_g',energy:4,kind:'protein'},
+  {label:'Hidratos',short:'HC',key:'hidratos_g',energy:4,kind:'carbs'},
+  {label:'Grasas',short:'G',key:'grasas_g',energy:9,kind:'fat'}
+ ];
+ const total=entries.reduce((sum,item)=>sum+Math.max(0,Number(nut[item.key])||0)*item.energy,0);
+ const macros=el('div',undefined,'daily-macros');
+ for(const item of entries){
+  const grams=Math.max(0,Number(nut[item.key])||0);
+  const percent=total>0?100*grams*item.energy/total:0;
+  const row=el('div',undefined,'daily-macro daily-macro-'+item.kind);
+  row.setAttribute('aria-label',item.label+': '+fmt(grams)+' gramos, '+Math.round(percent)+' por ciento de la energía calculada a partir de macronutrientes');
+  const top=el('div',undefined,'daily-macro-head');
+  const label=el('span',item.label,'daily-macro-name');
+  const values=el('span',undefined,'daily-macro-values');
+  values.append(el('strong',fmt(grams)+' g'),el('small',Math.round(percent)+'%'));
+  top.append(label,values);
+  const track=el('div',undefined,'daily-macro-track');
+  const bar=el('div',undefined,'daily-macro-fill');
+  bar.style.width=Math.max(0,Math.min(100,percent))+'%';
+  track.append(bar);row.append(top,track);macros.append(row);
+ }
+ const note=el('p','Barras: % de energía de cada macronutriente','daily-macro-note');
+ macros.append(note);group.append(energy,macros);
+ return group;
+}
+function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));content.append(summary('Desayuno',d.desayuno),summary('Comida',d.comida),summary('Cena',d.cena));if(d.postre)content.append(summary('Postre',d.postre));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
 close.addEventListener('click',dismiss);
 modal.addEventListener('click',e=>{if(e.target===modal)dismiss()});
 document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')dismiss();if(e.key==='Tab'){const focusable=[...dialog.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
