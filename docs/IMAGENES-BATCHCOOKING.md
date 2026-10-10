@@ -1,17 +1,31 @@
-# Imágenes de batch cooking · contrato de publicación
+# Fotografía principal y miniaturas de Batch cooking
 
-La galería de la portada recorre exclusivamente las preparaciones etiquetadas `batchcooking` en los JSON de `datos/recetas/`, incluidas dependencias N0. Cuenta las apariciones sin duplicar una preparación dentro de una COMIDA.
+Actualizado: 10 de octubre de 2026.
 
-**Ruta fija por slug:** `imagenes/batchcooking/<slug>.webp`. No se requiere editar menús, generador ni HTML tras subir una imagen.
+## Contrato único de imagen
 
-**Entrega:** fotografía 1:1, WebP RGB/sRGB, 1024×1024 px recomendado, peso optimizado < 350 KB, sin texto ni marca de agua. Un archivo por slug, por ejemplo:
-- `imagenes/batchcooking/bacalao-a-la-vizcaina.webp`
-- `imagenes/batchcooking/carrilleras-de-cerdo-al-vino.webp`
+Cada receta tiene **una sola fotografía principal**. La ficha completa, la miniatura del recetario y la miniatura de Batch cooking reutilizan el mismo archivo.
 
-Si la foto específica no existe, la web usa la imagen existente de la receta cuando la hay; en caso contrario, muestra un recuadro neutro con icono hasta recibirla. Nunca sustituir las imágenes existentes en `imagenes/` sin permiso. Cada miniatura enlaza a `/recetas/<slug>/`.
+- Archivo nuevo: `imagenes/<slug>.webp`.
+- Enlace: campo `imagen` en `datos/recetas/<slug>.json`, con el nombre simple `<slug>.webp`, sin prefijo de carpeta.
+- Sube primero el binario y confirma su existencia; después actualiza exclusivamente `imagen`.
+- **No generes ni publiques imágenes independientes en `imagenes/batchcooking/`.** Los archivos históricos pueden permanecer sin uso; no los borres por iniciativa propia.
+- Respeta fotografías existentes válidas y sus nombres/formatos admitidos. No sobrescribas sin autorización expresa.
 
-La disposición es automática según el número de preparaciones identificadas: una centrada, 2 en dos columnas, 3 en tres columnas, 4 en dos columnas y 5 o más en tres columnas, también en móvil. El título de la preparación permanece bajo la foto.
+## Calidad y estilo
 
-**Importante:** el conector GitHub de archivos de texto no sirve para guardar bytes de imagen. Para subir WebP binario debe usarse un flujo que acepte subida binaria (por ejemplo ChatGPT Work con navegador de GitHub y permisos del repositorio), y verificar que el archivo sea un WebP real y no un texto Base64.
+WebP binario auténtico, sRGB, 1:1 y 1024 × 1024 px como referencia; optimiza hacia menos de 350 KB sin degradación apreciable. Mantén calidad para la ficha completa: la web adapta automáticamente la imagen a sus miniaturas.
 
-**Gobierno de etiquetas:** `batchcooking` y las demás etiquetas funcionales son metadatos exclusivos del JSON de la web (`datos/recetas/`), no campos que deban leerse ni corregirse directamente desde Airtable. El chat específico de creación de recetas se encarga de crearlas y sincronizar la receta entre Airtable y la web según sus protocolos, pero las etiquetas funcionales de la web se gestionan exclusivamente en el repositorio. No pedir cambios de etiquetas funcionales en Airtable.
+Fotografía editorial culinaria realista, luminosa y cálida; luz natural suave, fondos neutros crema, vajilla discreta, lino y madera clara. Mantén iluminación, color e identidad gastronómica coherentes en toda la colección. Consulta ingredientes y pasos reales; no añadas guarniciones inexistentes, texto, marcas de agua, logos, manos, personas o collages. Las imágenes generadas son representaciones editoriales, sin atribuirles procedencia fotográfica de la usuaria.
+
+## Selección de Batch cooking
+
+La galería recorre exclusivamente las preparaciones con etiqueta funcional exacta `batchcooking` en los JSON web, incluidas dependencias N0 cuando correspondan. Deduplica por slug y comprueba sus vínculos desde las COMIDAS del menú. Las etiquetas funcionales se gestionan por el chat de creación de recetas en el repositorio; no se gestionan desde Airtable ni las modifica el agente de imágenes.
+
+La selección de la galería no limita la responsabilidad de fotografías principales: completa también las fichas publicadas sin imagen, respetando las existentes. La web determina composición y recorte de miniaturas; el agente de imágenes no modifica CSS, JavaScript, menús ni el generador.
+
+## Publicación y verificación
+
+Usa una subida que almacene bytes reales, nunca cadenas Base64 como archivos de texto WebP. Publica en la rama servida por GitHub Pages, con commits identificables y comprobación del despliegue. Verifica el archivo en GitHub, su resolución/formato, la URL pública, el campo `imagen` y la foto de la ficha. Comprueba también recetario y Batch cooking cuando la receta esté seleccionada: sus imágenes deben apuntar al mismo archivo principal. Comprueba escritorio y móvil cuando el entorno lo permita, declarando las verificaciones no disponibles.
+
+No modifiques Airtable, ingredientes, cantidades, pasos, nutrición, categorías, slugs ni etiquetas. Continúa autónomamente y solicita intervención solo ante bloqueos reales o decisiones fuera del alcance autorizado.
