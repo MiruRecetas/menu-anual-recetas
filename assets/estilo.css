@@ -125,3 +125,16 @@ button[hidden]{display:none!important}
 .week-card:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
 @media(max-width:1090px){.week-card{padding:22px 22px!important}.week-card-title{font-size:1.65rem}.week-kcal-ring{width:82px;height:82px;flex-basis:82px}.week-kcal-ring strong{font-size:1.12rem}.week-meal-row{grid-template-columns:38px minmax(0,1fr);gap:12px;margin:11px 0}.week-meal-label{font-size:.65rem;letter-spacing:.14em}.week-meal-name{font-size:1rem}}
 @media(max-width:540px){.week-card{padding:20px 20px!important}.week-card-title{font-size:1.55rem}.week-kcal-ring{width:76px;height:76px;flex-basis:76px}.week-meal-row{grid-template-columns:36px minmax(0,1fr);gap:10px}.week-meal-name{font-size:.96rem}}
+
+
+/* Segunda iteración: anillo aireado, iconos y jerarquía editorial */
+.week-kcal-ring strong{font-size:.82rem;font-weight:650}
+.week-kcal-ring circle{stroke-width:6}
+.week-meal-label{transform:none;writing-mode:horizontal-tb;border:0;padding:0;font-size:1.12rem;letter-spacing:0;width:25px;min-height:30px;display:flex;align-items:center;justify-content:center;color:var(--green);filter:grayscale(1)}
+.week-meal-main .week-meal-name{font-weight:700}
+.week-meal-secondary .week-meal-name{font-weight:400;color:var(--muted)}
+.week-meal-free{background:var(--sage);border-radius:12px;padding:9px 7px;margin-top:10px}
+.week-meal-free .week-meal-name{font-style:italic;font-weight:600;color:var(--green)}
+.week-card-friday{background:linear-gradient(150deg,var(--paper),#f1f4ed)}
+@media(max-width:1090px){.week-kcal-ring strong{font-size:.94rem}.week-meal-label{font-size:1.25rem;width:32px}}
+@media(max-width:540px){.week-kcal-ring strong{font-size:.88rem}.week-meal-label{font-size:1.2rem;width:30px}}
