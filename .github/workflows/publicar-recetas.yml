@@ -6,7 +6,7 @@ on:
       - 'datos/recetas/**'
       - 'datos/menus/**'
       - 'plantillas/**'
-      - 'scripts/generar.py'
+      - 'scripts/**'
       - 'assets/**'
       - 'imagenes/**'
       - '.github/workflows/publicar-recetas.yml'
@@ -30,4 +30,5 @@ jobs:
           git add index.html
           if [ -d recetario ]; then git add -A recetario; fi
           if [ -d recetas ]; then git add -A recetas; fi
+          if [ -d menus ]; then git add -A menus; fi
           git diff --cached --quiet || (git commit -m "Publicar páginas generadas" && git push)
