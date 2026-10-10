@@ -1,0 +1,63 @@
+{
+  "slug": "hummus",
+  "nombre": "Hummus",
+  "descripcion": "Crema de garbanzos cocidos con tahini, limón, ajo, AOVE y comino.",
+  "raciones": 1,
+  "categoria": "salsas-aderezos",
+  "etiquetas": [
+    "rapida",
+    "legumbres"
+  ],
+  "nutricion": {
+    "kcal": 335.77,
+    "proteinas_g": 12.96,
+    "hidratos_g": 27.55,
+    "grasas_g": 19.46
+  },
+  "ingredientes": [
+    {
+      "nombre": "Garbanzos cocidos",
+      "cantidad": 90,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Agua",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 1,
+      "unidad": "diente (2,7 g)"
+    },
+    {
+      "nombre": "Zumo de limón",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tahini",
+      "cantidad": 15,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 7.5,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Comino en polvo",
+      "cantidad": 3,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": 7,
+      "unidad": "g"
+    }
+  ],
+  "pasos": [
+    "Introducir todos los ingredientes en un procesador de alimentos o en el vaso de una batidora y triturar hasta obtener una pasta cremosa."
+  ],
+  "notas": "Receta transcrita de la captura original, para 1 ración. El tahini comercial utilizado está identificado en Airtable; no se muestra la marca en la web. El origen indica media cucharada sopera y, entre paréntesis, 15 ml de tahini, equivalencias inconsistentes: se conservan los 15 ml explícitos y para el cálculo se estima provisionalmente una densidad de 1,1 g/ml (16,5 g). Garbanzos cocidos 90 g, no garbanzos secos. Se usa USDA:173757 para garbanzos hervidos sin sal como alternativa a un dato aparentemente anómalo de BEDCA:2192. AOVE: 7,5 ml. El ajo se calcula como 2,7 g. Agua 15 g sin aporte energético. La sal indicada es 7 g por ración; aparece en la receta pero no en los macronutrientes, y debería confirmarse por ser elevada. Nutrición por ración calculada en Airtable recFVyiowroB8vane: 335,7701 kcal, 12,9643 g proteína, 27,5496 g hidratos y 19,4582 g grasas. Fotografía real pendiente."
+}
