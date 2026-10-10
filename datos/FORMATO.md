@@ -8,6 +8,8 @@ Campos obligatorios: slug, nombre, raciones (número entero), ingredientes (list
 
 Opcionales: descripcion, imagen (nombre de archivo real en imagenes/), preparacion_min, coccion_min, etiquetas (lista), notas, nutricion. Nutricion, una vez auditada, tendrá kcal, proteinas_g, hidratos_g y grasas_g por ración. El anillo reparte la energía de macros mediante 4/4/9, no representa un cálculo alternativo de calorías. No inventar datos nutricionales.
 
+**Uso editorial de `notas` (visible en la web):** únicamente consejos prácticos relativos a la preparación, cocción, textura, presentación, conservación, congelación o recalentado de la receta. Debe ser breve y útil para quien cocina; no repetir los pasos salvo una advertencia culinaria importante. Si no aporta información adicional, omitir el campo o dejarlo vacío. **No incluir** referencias a la conversación, confirmaciones, Airtable, BEDCA/USDA, IDs, conversiones nutricionales, balances de aceite/alcohol, fuentes comerciales, estado de fotografías, justificaciones de etiquetas o auditorías. Toda trazabilidad técnica debe permanecer en los registros/catálogos internos correspondientes o en el historial de Git, nunca en `notas`.
+
 ## Menú: datos/menus/MM-N.json
 
 Mes de 1 a 12, menu de 1 a 4. dias contiene exactamente Lunes, Martes, Miércoles, Jueves, Viernes. Cada día incluye comida y cena, con slug de receta existente o null. batchcooking es una lista opcional de slugs existentes. No se usan fechas. Los cuatro menús de cada mes son intercambiables.
