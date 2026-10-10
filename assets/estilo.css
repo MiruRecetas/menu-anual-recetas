@@ -177,3 +177,13 @@ button[hidden]{display:none!important}
 .batch-tile:hover .batch-tile-title{opacity:1;visibility:visible}
 .batch-tile:focus-visible .batch-tile-title,.batch-tile.batch-revealed .batch-tile-title{opacity:1;visibility:visible}
 @media(prefers-reduced-motion:reduce){.batch-thumb .batch-tile-title{transition:none}}
+
+/* Cabecera compacta del resumen diario y acciones superiores */
+.day-dialog-actions{position:absolute;top:18px;right:20px;display:flex;gap:10px;align-items:center}
+.day-dialog-actions .day-close{position:static;display:grid;place-items:center;line-height:1}
+.day-expand{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:white;color:var(--green);text-decoration:none}
+.day-expand svg{width:21px;height:21px}
+.day-expand:hover,.day-close:hover{background:var(--sage)}
+.day-expand:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.day-context{display:block;margin:8px 0 26px;line-height:1.55}
+.day-context-name{color:var(--green);font-weight:800}
