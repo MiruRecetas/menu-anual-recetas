@@ -61,7 +61,7 @@ def make(r):
         "tupper":("Apto para tupper","paper-bag","practical"),
         "batchcooking":("Batchcooking","calendar-check","practical"),
         "rapida":("Preparación rápida","zap","practical"),
-        "consumo-frio":("Se puede comer frío","snowflake-off","practical"),
+        "consumo-frio":("Se puede comer frío","refrigerator","practical"),
         "carne":("Carne","beef","main"),
         "huevos":("Huevos","egg","main"),
         "pescado":("Pescado","fish","main"),
