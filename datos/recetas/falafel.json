@@ -1,0 +1,70 @@
+{
+  "slug": "falafel",
+  "nombre": "Falafel",
+  "descripcion": "Falafel de garbanzos secos remojados, hierbas frescas y especias, preparados en horno o airfryer.",
+  "raciones": 6,
+  "categoria": "legumbres",
+  "etiquetas": [
+    "legumbres"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Harina de trigo",
+      "cantidad": 12.1,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": 2.4,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": 7,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Comino en polvo",
+      "cantidad": 3,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cilantro fresco",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Perejil",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 75,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 2,
+      "unidad": "dientes (2,7 g)"
+    },
+    {
+      "nombre": "Garbanzos secos",
+      "cantidad": 180,
+      "unidad": "g"
+    }
+  ],
+  "pasos": [
+    "Poner los garbanzos a remojo la noche anterior.",
+    "Sin cocerlos, escurrir los garbanzos y ponerlos en un procesador de alimentos o batidora potente junto con el resto de los ingredientes. Triturar hasta que todos los ingredientes queden bien desmenuzados, pero sin llegar a formar un puré.",
+    "Formar unas 18 bolitas o discos con las manos.",
+    "Cocinar en horno o airfryer a 200 °C durante unos 15 minutos por cada lado, o hasta que se doren."
+  ],
+  "nutricion": {
+    "kcal": 114.49,
+    "proteinas_g": 6.41,
+    "hidratos_g": 17.53,
+    "grasas_g": 2.07
+  },
+  "notas": "La receta original indica 6 raciones y aproximadamente 18 falafel, 3 piezas por ración. Los 180 g de garbanzos corresponden a su peso seco y crudo, antes del remojo; se remojan la noche anterior, pero no se cuecen antes de triturarlos. Las cantidades de ingredientes son las transcritas de la captura: 12,1 g harina, 2,4 g pimienta negra, 7 g sal, 3 g comino, 15 g cilantro, 15 g perejil, 75 g cebolla, 2 dientes de ajo (2,7 g), 180 g garbanzos secos. No se añade aceite porque la receta de origen no lo especifica. Cocción al horno o airfryer a 200 °C, unos 15 minutos por lado. Referencias nutricionales: BEDCA:1020 garbanzo seco; BEDCA:2571 comino; BEDCA:2590 pimienta; BEDCA:2593 perejil; USDA:169997 cilantro; y referencias existentes de harina, cebolla y ajo. Sal registrada en lista visible pero no como elemento de macronutrientes: 7 g en receta, 1,17 g por ración; sodio debe considerarse por separado. Nutrición definitiva obtenida de Airtable preparación recYwT8ThENiOpHF9: 114,4893 kcal; 6,41276 g proteínas; 17,5271 g hidratos; 2,073 g grasas por ración. Fotografía original del plato pendiente; la captura es una receta de referencia, no fotografía del resultado."
+}
