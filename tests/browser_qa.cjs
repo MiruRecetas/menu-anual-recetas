@@ -65,6 +65,26 @@ const assert = require('node:assert/strict');
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
     assert.equal(await page.locator('#day-modal').isVisible(),true);
     assert.match(await page.locator('#quick-content').innerText(),/Patatas panadera/);
+    // Los estilos deben aplicarse realmente (no basta con comprobar clases).
+    const actionLayout=await page.locator('#day-dialog').evaluate(dialog=>{
+      const close=dialog.querySelector('#close-day'),expand=dialog.querySelector('#expand-day');
+      const a=expand.getBoundingClientRect(),b=close.getBoundingClientRect(),container=dialog.getBoundingClientRect();
+      const name=dialog.querySelector('.day-context-name');
+      return {
+        a:{x:a.x,y:a.y,width:a.width,height:a.height},
+        b:{x:b.x,y:b.y,width:b.width,height:b.height},
+        right:container.right,color:getComputedStyle(name).color,
+        weight:Number.parseInt(getComputedStyle(name).fontWeight,10),
+        expandParent:expand.parentElement===close.parentElement
+      };
+    });
+    assert.ok(actionLayout.expandParent,'Ampliar y cerrar comparten contenedor');
+    assert.ok(Math.abs(actionLayout.a.y-actionLayout.b.y)<=2,'Botones de ampliar y cerrar a la misma altura');
+    assert.ok(actionLayout.a.x<actionLayout.b.x && actionLayout.b.x-actionLayout.a.x<=60,'Ampliar inmediatamente a la izquierda de X');
+    assert.ok(actionLayout.right-actionLayout.b.x<85,'Acciones en extremo superior derecho');
+    assert.ok(Math.abs(actionLayout.a.width-actionLayout.b.width)<=1 && actionLayout.a.width>=43,'Botones del mismo tamaño circular');
+    assert.equal(actionLayout.color,'rgb(81, 111, 93)','Nombre del día en verde de MiruRecetas');
+    assert.ok(actionLayout.weight>=700,'Nombre del día en negrita');
     const dialog=await page.locator('#day-dialog').boundingBox();
     assert.ok(dialog.x>=-1&&dialog.x+dialog.width<=test.width+1,test.name+': panel fuera de ventana');
     await page.screenshot({path:out+'/panel-'+test.name+'.png'});
@@ -74,6 +94,7 @@ const assert = require('node:assert/strict');
     assert.match(await page.locator('#quick-content').innerText(),/Boniato al horno/);
     assert.equal(await page.locator('#quick-content .day-context').textContent(),'Octubre · Menú 1 · Martes','Encabezado contextual');
     assert.equal(await page.locator('#quick-content .day-context-name').textContent(),'Martes','Día destacado');
+    assert.equal(await page.locator('#expand-day').getAttribute('aria-label'),'Ver día completo','Icono accesible');
     assert.equal(await page.locator('#quick-content .day-cta').count(),0,'Sin botón inferior');
     assert.equal(await page.locator('#day-dialog-actions').count(),0,'Sin acciones duplicadas');
     await page.locator('#expand-day').click();
