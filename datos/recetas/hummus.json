@@ -9,10 +9,10 @@
     "legumbres"
   ],
   "nutricion": {
-    "kcal": 335.77,
-    "proteinas_g": 12.96,
-    "hidratos_g": 27.55,
-    "grasas_g": 19.46
+    "kcal": 325.81,
+    "proteinas_g": 12.57,
+    "hidratos_g": 27.52,
+    "grasas_g": 18.57
   },
   "ingredientes": [
     {
@@ -38,7 +38,7 @@
     {
       "nombre": "Tahini",
       "cantidad": 15,
-      "unidad": "ml"
+      "unidad": "g"
     },
     {
       "nombre": "AOVE",
@@ -49,15 +49,10 @@
       "nombre": "Comino en polvo",
       "cantidad": 3,
       "unidad": "g"
-    },
-    {
-      "nombre": "Sal",
-      "cantidad": 7,
-      "unidad": "g"
     }
   ],
   "pasos": [
     "Introducir todos los ingredientes en un procesador de alimentos o en el vaso de una batidora y triturar hasta obtener una pasta cremosa."
   ],
-  "notas": "Receta transcrita de la captura original, para 1 ración. El tahini comercial utilizado está identificado en Airtable; no se muestra la marca en la web. El origen indica media cucharada sopera y, entre paréntesis, 15 ml de tahini, equivalencias inconsistentes: se conservan los 15 ml explícitos y para el cálculo se estima provisionalmente una densidad de 1,1 g/ml (16,5 g). Garbanzos cocidos 90 g, no garbanzos secos. Se usa USDA:173757 para garbanzos hervidos sin sal como alternativa a un dato aparentemente anómalo de BEDCA:2192. AOVE: 7,5 ml. El ajo se calcula como 2,7 g. Agua 15 g sin aporte energético. La sal indicada es 7 g por ración; aparece en la receta pero no en los macronutrientes, y debería confirmarse por ser elevada. Nutrición por ración calculada en Airtable recFVyiowroB8vane: 335,7701 kcal, 12,9643 g proteína, 27,5496 g hidratos y 19,4582 g grasas. Fotografía real pendiente."
+  "notas": "Receta para 1 ración. Tahini: 15 g confirmados por la usuaria, sin conversión de volumen. No se añade sal. Garbanzos cocidos 90 g (USDA:173757), AOVE 7,5 ml y ajo 2,7 g. Referencias comerciales conservadas únicamente en Airtable. Nutrición recalculada en Airtable recFVyiowroB8vane: 325,8101 kcal, 12,5743 g proteínas, 27,5211 g hidratos y 18,5732 g grasas por ración. Fotografía real pendiente."
 }
