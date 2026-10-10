@@ -138,3 +138,9 @@ button[hidden]{display:none!important}
 .week-card-friday{background:linear-gradient(150deg,var(--paper),#f1f4ed)}
 @media(max-width:1090px){.week-kcal-ring strong{font-size:.94rem}.week-meal-label{font-size:1.25rem;width:32px}}
 @media(max-width:540px){.week-kcal-ring strong{font-size:.88rem}.week-meal-label{font-size:1.2rem;width:30px}}
+
+/* Títulos de los días alineados con la columna de comidas */
+.week-card-head{padding-left:36px}
+.week-card-title{font-size:clamp(1.35rem,1.95vw,1.95rem);color:var(--green);font-weight:700}
+@media(max-width:1090px){.week-card-head{padding-left:50px}.week-card-title{font-size:1.88rem}}
+@media(max-width:540px){.week-card-head{padding-left:46px}.week-card-title{font-size:1.72rem}}
