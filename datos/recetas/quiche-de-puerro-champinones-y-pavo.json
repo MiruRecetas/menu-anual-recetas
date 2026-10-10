@@ -7,7 +7,8 @@
     "congelable",
     "tupper",
     "batchcooking",
-    "carne"
+    "consumo-frio",
+    "huevos"
   ],
   "nutricion": {
     "kcal": 473.99,
