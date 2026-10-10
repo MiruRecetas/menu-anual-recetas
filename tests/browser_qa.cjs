@@ -22,6 +22,14 @@ const assert = require('node:assert/strict');
     assert.ok(!(await monday.innerText()).includes('Cena lunes'),'Cena sin prefijo técnico');
     assert.equal(await monday.locator('.week-kcal-ring strong').innerText(),'1488');
     assert.equal(await monday.locator('.week-kcal-ring').getAttribute('aria-label'),'1488 kcal registradas de 1600 kcal objetivo');
+    assert.equal(await monday.locator('.week-meal-label').count(),4,'iconos de cuatro ingestas');
+    assert.equal(await monday.locator('.week-meal-main').count(),2,'comida y cena con jerarquía igual');
+    assert.equal(await monday.locator('.week-meal-secondary').count(),2,'desayuno y postre secundarios');
+    const friday=page.locator('#week .day-button').last();
+    assert.equal(await friday.locator('.week-meal-free').count(),1,'viernes noche libre destacada');
+    assert.match(await friday.innerText(),/Noche libre/);
+    assert.equal(await friday.locator('.week-meal-row').count(),3,'sin postre oculto');
+
 
     assert.equal(await page.locator('#month').inputValue(),'10',test.name+': mes');
     assert.match(await page.locator('#week').innerText(),/Bacalao a la vizcaína con patatas panadera/);
