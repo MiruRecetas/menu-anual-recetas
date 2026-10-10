@@ -38,8 +38,13 @@ class MenuV2(unittest.TestCase):
         with self.assertRaises(ValueError):validate_menu(m,"10-1.json",{"receta-real"})
     def test_sin_postre_es_valido(self):
         validate_menu(fixture(),"10-1.json",{"receta-real"})
-    def test_sin_ficha_real_rechazado(self):
-        with self.assertRaises(ValueError):validate_menu(fixture(),"10-1.json",set())
+    def test_sin_ficha_se_conserva_sin_enlace(self):
+        m=fixture()
+        for day in DAYS:
+            for kind in ("comida", "cena"):
+                if m["dias"][day][kind].get("estado") == "libre":continue
+                m["dias"][day][kind]["presentacion"]["grupos"][0]["elementos"][0].pop("slug")
+        validate_menu(m,"10-1.json",set())
     def test_no_dobla_elementos(self):
         m=fixture()
         g=m["dias"]["Lunes"]["comida"]["presentacion"]["grupos"]
