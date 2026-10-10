@@ -187,3 +187,23 @@ button[hidden]{display:none!important}
 .day-expand:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
 .day-context{display:block;margin:8px 0 26px;line-height:1.55}
 .day-context-name{color:var(--green);font-weight:800}
+
+
+/* Cabecera del panel: especificidad suficiente frente a estilos generales */
+#day-dialog .day-dialog-actions{
+ position:absolute;top:18px;right:20px;left:auto;
+ display:flex;flex-direction:row;align-items:center;justify-content:flex-end;
+ gap:10px;z-index:2;width:auto
+}
+#day-dialog .day-dialog-actions #close-day,
+#day-dialog .day-dialog-actions #expand-day{
+ position:static;inset:auto;flex:0 0 44px;
+ display:flex;align-items:center;justify-content:center;
+ width:44px;height:44px;padding:0;border:1px solid var(--line);
+ border-radius:50%;background:#fff;box-sizing:border-box;
+ text-decoration:none;line-height:1
+}
+#day-dialog .day-dialog-actions #expand-day{color:var(--green)}
+#day-dialog .day-dialog-actions #expand-day svg{width:22px;height:22px;stroke-width:2.2}
+#day-dialog .day-dialog-actions #close-day{color:var(--ink);font-size:1.7rem}
+#quick-content .day-context .day-context-name{color:var(--green);font-weight:800}
