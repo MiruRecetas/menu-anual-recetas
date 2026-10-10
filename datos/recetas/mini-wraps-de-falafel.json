@@ -1,0 +1,58 @@
+{
+  "slug": "mini-wraps-de-falafel",
+  "nombre": "Mini wraps de falafel",
+  "descripcion": "Tres mini wraps de trigo rellenos de falafel, tzatziki, tomate, cebolla y rúcula.",
+  "raciones": 1,
+  "categoria": "tostas-bocadillos-wraps",
+  "etiquetas": [
+    "legumbres"
+  ],
+  "nutricion": {
+    "kcal": 477.37,
+    "proteinas_g": 16.05,
+    "hidratos_g": 65.13,
+    "grasas_g": 16.54
+  },
+  "ingredientes": [
+    {
+      "nombre": "Falafel",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "falafel"
+    },
+    {
+      "nombre": "Tzatziki",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "tzatziki"
+    },
+    {
+      "nombre": "Mini tortillas de trigo",
+      "cantidad": 3,
+      "unidad": "unidades (25 g cada una)"
+    },
+    {
+      "nombre": "Tomate",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 20,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Rúcula",
+      "cantidad": 20,
+      "unidad": "g"
+    }
+  ],
+  "pasos": [
+    "Calentar las mini tortillas de trigo según las instrucciones del paquete.",
+    "Para montar los wraps, colocar una porción de rúcula en el centro de cada tortilla.",
+    "Repartir los falafel, el tomate cortado en rodajas finas y la cebolla cortada en juliana fina.",
+    "Añadir el tzatziki.",
+    "Doblar los extremos de las tortillas y después enrollarlas con cuidado."
+  ],
+  "notas": "La receta rinde 1 ración de 3 mini wraps. Se emplea 1 ración ya elaborada de falafel (3 piezas) y 1 ración de tzatziki, según las recetas enlazadas, sin sumar nuevamente sus ingredientes. Las tortillas comerciales de referencia pesan 25 g por unidad (3 unidades = 75 g); la identificación comercial queda exclusivamente en Airtable. Tomate, cebolla y rúcula en crudo. No se añaden aceites, salsas ni condimentos distintos de los indicados. Nutrición calculada en Airtable PREPARACIONES rec9cxis2Yndtrq6K, nivel 1: 477,3693 kcal, 16,0478 g proteína, 65,1266 g hidratos, 16,5384 g grasas por ración completa. La aportación aproximada por cada mini wrap es un tercio. Fotografía real pendiente."
+}
