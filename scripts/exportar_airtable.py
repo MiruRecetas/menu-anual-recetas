@@ -130,7 +130,10 @@ def main():
         for day in DAYS:
             br=single_link(m,day+" · Desayuno")
             breakfast_nut=macros(m,tuple("TEC "+day+" Desayuno "+k for k in FIELD_MACROS),day)
-            breakfast=ingredient(br,tables["ingredientes"],130,"ml",breakfast_nut)
+            # Rollups TEC Desayuno son valores por 100 ml; el día registra 130 ml.
+            breakfast_quantity=130
+            breakfast_nut={k: v*breakfast_quantity/100 for k,v in breakfast_nut.items()}
+            breakfast=ingredient(br,tables["ingredientes"],breakfast_quantity,"ml",breakfast_nut)
             lunch=meal(single_link(m,day+" · Comida"),tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing)
             dinner=({"estado":"libre"} if day=="Viernes" else
                     meal(single_link(m,day+" · Cena"),tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing))
