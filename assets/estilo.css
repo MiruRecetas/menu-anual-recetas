@@ -64,3 +64,15 @@
   .recipe-card .hero-photo{height:100%!important;min-height:0!important}
   .recipe-card .back-grid>.cooking-main,.recipe-card .back-grid>.side-panel{overflow:visible!important}
 }
+
+/* Recetario independiente: tarjetas horizontales compactas */
+.compact-recipes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px;align-items:stretch}
+.compact-recipes .recipe-tile{display:flex;align-items:center;min-width:0;min-height:108px;padding:10px;gap:14px}
+.compact-recipes .recipe-tile img{width:96px;height:96px;flex:0 0 96px;object-fit:cover;border-radius:12px}
+.compact-recipes .recipe-tile .tile-text{padding:5px;min-width:0}
+.compact-recipes .recipe-tile h3{font-size:1.05rem;line-height:1.22;margin:0 0 6px}
+.compact-recipes .recipe-tile p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+.catalog-actions{text-align:center;margin:24px 0}
+button[hidden]{display:none!important}
+.recipe-tile:focus-visible,.nav a:focus-visible,.catalog-actions button:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+@media(max-width:540px){.compact-recipes{grid-template-columns:1fr}.compact-recipes .recipe-tile img{width:82px;height:82px;flex-basis:82px}}
