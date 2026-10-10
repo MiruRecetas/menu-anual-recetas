@@ -94,11 +94,30 @@ for(const day of days){
    if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
  }
 }
-if(!counts.size)b.textContent='No hay preparaciones identificadas con etiqueta batchcooking.';
-else for(const [slug,n] of counts){
- const p=el('p');
- p.append(recipeLink(slug),el('span',' · '+n+' '+(n===1?'comida':'comidas')));
- b.append(p)
+if(!counts.size){b.append(el('p','No hay preparaciones de batch cooking identificadas para este menú.','muted small'))}
+else{
+ const gallery=el('div',undefined,'batch-gallery');
+ gallery.classList.add('batch-cols-'+(counts.size===1?'1':counts.size===2?'2':'3'));
+ for(const [slug,n] of counts){
+  const r=recipes.find(x=>x.slug===slug);
+  const tile=el('a',undefined,'batch-tile');tile.href=site+'/recetas/'+slug+'/';
+  tile.setAttribute('aria-label',(r?.nombre||slug)+' · receta de batch cooking');
+  const imageBox=el('span',undefined,'batch-thumb');
+  const fallback=el('span',undefined,'batch-thumb-placeholder');
+  const glyph=el('i');glyph.setAttribute('data-lucide','cooking-pot');glyph.setAttribute('aria-hidden','true');
+  fallback.append(glyph);imageBox.append(fallback);
+  const img=el('img');img.alt='';img.loading='lazy';img.decoding='async';
+  img.src=site+'/imagenes/batchcooking/'+slug+'.webp';
+  img.addEventListener('load',()=>imageBox.classList.add('has-photo'));
+  img.addEventListener('error',()=>{
+   if(r?.imagen){img.src=r.imagen;img.addEventListener('error',()=>img.remove(),{once:true})}
+   else img.remove()
+  },{once:true});
+  imageBox.append(img);
+  const caption=el('span',r?.nombre||slug,'batch-tile-title');
+  tile.append(imageBox,caption);gallery.append(tile)
+ }
+ b.append(gallery);if(window.lucide?.createIcons)window.lucide.createIcons()
 }
 }
 select.addEventListener('change',week);$('#menu-number').addEventListener('change',week);week();
