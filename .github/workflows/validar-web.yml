@@ -18,7 +18,8 @@ jobs:
           node-version: '22'
       - name: Sintaxis de generador y scripts
         run: |
-          python -m py_compile scripts/generar.py
+          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py
+          python -m unittest discover -s tests -v
           node --check assets/inicio.js
           node --check assets/recetario.js
           node --check assets/cocina.js
