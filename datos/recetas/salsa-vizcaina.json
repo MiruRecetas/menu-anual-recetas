@@ -9,7 +9,7 @@
   ],
   "ingredientes": [
     {
-      "nombre": "Carne de pimiento choricero Serrano",
+      "nombre": "Carne de pimiento choricero",
       "cantidad": 30,
       "unidad": "g"
     },
@@ -24,12 +24,12 @@
       "unidad": "dientes"
     },
     {
-      "nombre": "Pan blanco de barra (para tostar)",
+      "nombre": "Pan",
       "cantidad": 10,
       "unidad": "g"
     },
     {
-      "nombre": "Vino blanco para guisar de Alberto",
+      "nombre": "Vino blanco de guiso",
       "cantidad": 25,
       "unidad": "ml"
     },
