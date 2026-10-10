@@ -107,7 +107,7 @@ else{
   const fallback=el('span',undefined,'batch-thumb-placeholder');
   const glyph=el('i');glyph.setAttribute('data-lucide','cooking-pot');glyph.setAttribute('aria-hidden','true');
   fallback.append(glyph);imageBox.append(fallback);
-  const img=el('img');img.alt='';img.loading='lazy';img.decoding='async';
+  const img=el('img');img.alt='';img.loading='eager';img.decoding='async';
   img.src=site+'/imagenes/batchcooking/'+slug+'.webp';
   img.addEventListener('load',()=>imageBox.classList.add('has-photo'));
   img.addEventListener('error',()=>{
