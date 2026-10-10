@@ -1,0 +1,71 @@
+{
+  "slug": "quiche-de-puerro-champinones-y-pavo",
+  "nombre": "Quiche de puerro, champiñones y pavo",
+  "raciones": 4,
+  "categoria": "asados-horno",
+  "etiquetas": [
+    "carne"
+  ],
+  "nutricion": {
+    "kcal": 473.99,
+    "proteinas_g": 22.85,
+    "hidratos_g": 29.66,
+    "grasas_g": 28.62
+  },
+  "ingredientes": [
+    {
+      "nombre": "Masa quebrada",
+      "cantidad": 1,
+      "unidad": "unidad (230 g)"
+    },
+    {
+      "nombre": "Champiñones",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Puerro",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Huevos M",
+      "cantidad": 4,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Dados de pechuga de pavo",
+      "cantidad": 250,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Queso crema",
+      "cantidad": 70,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Nuez moscada",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Precalentar el horno a 200 °C. Colocar la masa quebrada en un molde, pinchar el fondo con un tenedor y cubrir con garbanzos secos como peso. Hornear en blanco 15 minutos.",
+    "Retirar los garbanzos utilizados como peso y hornear la base otros 5 minutos a 200 °C, hasta que se dore ligeramente.",
+    "Saltear el puerro, los champiñones y los dados de pechuga de pavo con el AOVE.",
+    "Añadir el queso crema al salteado y mezclar aprovechando el calor residual para ablandarlo.",
+    "Batir los huevos e incorporar la mezcla de la sartén. Remover hasta integrar el queso. Añadir pimienta negra y nuez moscada al gusto.",
+    "Verter el relleno sobre la base y hornear unos 25 minutos a 180 °C."
+  ],
+  "notas": "Garbanzos utilizados como peso para la masa, no comestibles en la receta. Pimienta y nuez moscada solo en la web, sin cómputo nutricional. Masa de 230 g y cuatro huevos M equivalentes a 200 g de parte comestible. Nutrición calculada en Airtable recfl98fDfDp6ApRO; fotografía pendiente."
+}
