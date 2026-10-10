@@ -30,6 +30,11 @@ jobs:
           test -f index.html
           test -f recetario/index.html
           test -f plantillas/dia.html
+          test -f menus/10-1/lunes/index.html
+          test -f menus/10-1/viernes/index.html
+          grep -q "Patatas panadera" menus/10-1/lunes/index.html
+          grep -q "Boniato al horno" menus/10-1/martes/index.html
+          grep -q "libre" menus/10-1/viernes/index.html
           grep -q 'id="recipe-catalog"' recetario/index.html
           ! grep -q 'id="recipe-catalog"' index.html
           grep -q 'recetario/' plantillas/receta.html
