@@ -97,7 +97,8 @@ for(const day of days){
 if(!counts.size){b.append(el('p','No hay preparaciones de batch cooking identificadas para este menú.','muted small'))}
 else{
  const gallery=el('div',undefined,'batch-gallery');
- gallery.classList.add('batch-cols-'+(counts.size===1?'1':counts.size===2||counts.size===4?'2':'3'));
+ const n=counts.size;const cols=n===1?1:(n%3===0||n%5===0||n%2!==0)?3:2;
+ gallery.classList.add('batch-cols-'+cols);
  for(const [slug,n] of counts){
   const r=recipes.find(x=>x.slug===slug);
   const tile=el('a',undefined,'batch-tile');tile.href=site+'/recetas/'+slug+'/';
