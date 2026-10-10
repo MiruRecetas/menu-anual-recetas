@@ -5,6 +5,11 @@
   "raciones": 6,
   "categoria": "aperitivos-guarniciones",
   "etiquetas": [
+    "congelable",
+    "microondas",
+    "tupper",
+    "batchcooking",
+    "consumo-frio",
     "verduras"
   ],
   "nutricion": {
