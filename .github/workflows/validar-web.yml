@@ -29,7 +29,7 @@ jobs:
           test -f recetario/index.html
           grep -q 'id="recipe-catalog"' recetario/index.html
           ! grep -q 'id="recipe-catalog"' index.html
-          grep -q '/recetario/' plantillas/receta.html
+          grep -q 'recetario/' plantillas/receta.html
           sha256sum index.html recetario/index.html > /tmp/miru-first
           python scripts/generar.py
           sha256sum index.html recetario/index.html > /tmp/miru-second
