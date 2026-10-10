@@ -116,7 +116,7 @@ def main():
         batch=m.get("batchcooking",[])
         if not isinstance(batch,list) or any(x not in rs for x in batch):raise ValueError("Batch cooking inválido")
         menus.append(m)
-    sitejson=json.dumps({"menus":menus},ensure_ascii=False).replace("<",r"\u003c")
+    sitejson=json.dumps({"menus":menus,"recetas":recipes},ensure_ascii=False).replace("<",r"\u003c")
     page=(R/"plantillas"/"inicio.html").read_text(encoding="utf-8").replace("{{SITE_JSON}}",sitejson).replace("{{SITE}}",SITE)
     (R/"index.html").write_text(page,encoding="utf-8")
     catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))
