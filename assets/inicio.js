@@ -158,6 +158,7 @@ document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escap
 const GOAL_KCAL=1600;
 function compactName(kind,item,day){
  if(item?.estado==='libre')return ['Noche libre'];
+ if(item?.estado==='pendiente')return ['Pendiente de asignar'];
  const original=item?.nombre||'';
  if(kind==='Desayuno'&&/^Café con leche/i.test(original))return ['Café con leche'];
  if(kind==='Postre'){
