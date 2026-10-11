@@ -86,6 +86,10 @@ const assert = require('node:assert/strict');
        return r.bottom<=card.bottom&&r.top>=card.top&&r.left>=card.left&&r.right<=card.right;
       }));
       assert.ok(texts.every(Boolean),'Todas las leyendas del reverso caben en la tarjeta');
+      assert.equal(await charts.locator('.weekly-pies .chart-legend-item').evaluateAll(items=>{
+       const b=document.querySelector('.weekly-chart-toggle').getBoundingClientRect();
+       return items.some(e=>{const r=e.getBoundingClientRect();return r.left<b.right&&r.right>b.left&&r.top<b.bottom&&r.bottom>b.top});
+      }),false,'El botón no tapa ninguna leyenda ni porcentaje');
       await page.screenshot({path:out+'/graficos-reverso-'+test.name+'.png',fullPage:true});
       await page.emulateMedia({reducedMotion:'reduce'});
       await page.setViewportSize({width:320,height:740});

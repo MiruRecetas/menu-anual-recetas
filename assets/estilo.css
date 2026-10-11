@@ -46,6 +46,7 @@
  .weekly-pies .weekly-pie-row{grid-template-columns:90px minmax(0,1fr);gap:12px}
  .weekly-pies .chart-legend{font-size:.65rem;line-height:1.2;gap:2px}
  .weekly-pies .chart-legend-item{gap:6px}
+ .weekly-variety .chart-legend{padding-right:44px}
  .weekly-bars .chart-title{font-size:1rem;margin-bottom:10px}
  .weekly-bars>.chart-title{padding-right:40px;min-height:26px}
  .weekly-variety>.chart-title{padding-right:40px}
