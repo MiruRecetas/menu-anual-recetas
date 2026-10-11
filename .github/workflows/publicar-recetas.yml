@@ -76,3 +76,32 @@ jobs:
                   raise SystemExit("No se pudo verificar lectura pública anónima del índice")
               time.sleep(5)
           PY
+      - name: Verificar índice JSON publicado en Pages sin autenticación
+        run: |
+          python - <<'PY'
+          import json, time, urllib.request, urllib.error
+          from pathlib import Path
+          local = json.loads(Path("indice-recetas.json").read_text(encoding="utf-8"))
+          url = "https://mirurecetas.github.io/menu-anual-recetas/indice-recetas.json"
+          for attempt in range(1, 25):
+              try:
+                  request = urllib.request.Request(
+                      url + "?source=" + local["source_commit_sha"] + "&retry=" + str(attempt),
+                      headers={"User-Agent": "MiruRecetas-Public-Index-Verification",
+                               "Cache-Control": "no-cache", "Accept": "application/json"})
+                  # Petición anónima, sin token, cookies ni autorización.
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      status, mime = response.status, response.headers.get("Content-Type", "")
+                      remote = json.loads(response.read().decode("utf-8"))
+                  if status == 200 and "json" in mime.lower() and remote == local:
+                      print("GET público anónimo verificado:", url)
+                      print("Total:", remote["total_recetas"], "SHA origen:", remote["source_commit_sha"])
+                      break
+                  print("Despliegue o caché pendiente, intento", attempt,
+                        "HTTP", status, "SHA visible", remote.get("source_commit_sha"))
+              except (urllib.error.URLError, ValueError, UnicodeError) as err:
+                  print("Acceso público pendiente, intento", attempt, str(err))
+              if attempt == 24:
+                  raise SystemExit("Pages no publicó todavía el JSON completo y vigente")
+              time.sleep(10)
+          PY
