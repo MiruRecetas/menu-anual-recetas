@@ -12,10 +12,10 @@
     "carne"
   ],
   "nutricion": {
-    "kcal": 316.71,
+    "kcal": 296.59,
     "proteinas_g": 36.21,
     "hidratos_g": 10.83,
-    "grasas_g": 13.68
+    "grasas_g": 11.41
   },
   "preparacion_min": 10,
   "coccion_min": 25,
@@ -42,7 +42,7 @@
     },
     {
       "nombre": "AOVE",
-      "cantidad": 20,
+      "cantidad": 15,
       "unidad": "ml"
     },
     {
@@ -53,7 +53,7 @@
   ],
   "pasos": [
     "Limpiar la pechuga de pollo, retirar las partes grasas o tendones visibles y cortarla en tiras o dados de tamaño parecido. Pelar la cebolla y cortarla en juliana; lavar los pimientos, retirar las semillas y cortarlos en tiras finas.",
-    "Calentar una sartén amplia a fuego medio-alto y añadir los 20 ml de AOVE. Incorporar el pollo en una sola capa y saltearlo, dándole la vuelta cuando se dore, hasta que esté dorado por fuera y bien cocinado por dentro. Retirar a un plato y reservar.",
+    "Calentar una sartén amplia a fuego medio-alto y añadir los 15 ml de AOVE. Incorporar el pollo en una sola capa y saltearlo, dándole la vuelta cuando se dore, hasta que esté dorado por fuera y bien cocinado por dentro. Retirar a un plato y reservar.",
     "En la misma sartén, bajar a fuego medio, añadir la cebolla con una pizca de sal y pocharla, removiendo de vez en cuando, hasta que quede tierna y transparente.",
     "Incorporar las tiras de pimiento verde y rojo. Mezclar con la cebolla y cocinar a fuego suave, removiendo ocasionalmente, hasta que los pimientos se ablanden y las verduras estén bien hechas.",
     "Devolver el pollo y sus jugos a la sartén, mezclar con las verduras y calentar el conjunto un par de minutos para integrar los sabores. Repartir en dos raciones y servir."
