@@ -314,3 +314,25 @@ button[hidden]{display:none!important}
 .daily-total .daily-macro-ring .daily-macro-arc-protein{stroke:#789582}
 .daily-total .daily-macro-ring .daily-macro-arc-carbs{stroke:#c78465}
 .daily-total .daily-macro-ring .daily-macro-arc-fat{stroke:#9d88a3}
+
+
+/* Navegación diaria accesible: flechas discretas en pie, gestos horizontales en táctil */
+.daily-navigation{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:10px 16px;align-items:center;margin:17px 0 0;padding:17px 0 10px
+}
+.daily-nav-link{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;max-width:210px;padding:9px 16px;
+ border:1px solid var(--line);border-radius:999px;
+ background:var(--paper);color:var(--green);font-size:.9rem;
+ text-align:center;font-weight:600;text-decoration:none;transition:background .15s,border-color .15s
+}
+.daily-nav-prev{grid-column:1;justify-self:start}
+.daily-nav-next{grid-column:2;justify-self:end}
+.daily-nav-link:hover{background:var(--sage);border-color:#c2d2c1}
+.daily-nav-link:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.daily-navigation-hint{grid-column:1/-1;text-align:center;font-size:.76rem;color:var(--muted);padding:2px 0 0}
+@media(pointer:fine){.daily-navigation-hint{display:none}}
+@media(max-width:540px){.daily-navigation{gap:8px 10px}.daily-nav-link{font-size:.83rem;padding:9px 11px}}
+@media(prefers-reduced-motion:reduce){.daily-nav-link{transition:none}}
