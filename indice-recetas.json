@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "061eafe96727892a233c2c8311b94eec876289c8",
-  "generated_at_utc": "2026-10-11T21:31:16Z",
-  "total_recetas": 31,
+  "source_commit_sha": "3ca78251b9ed4d0e85b5b1d7938040208f328da8",
+  "generated_at_utc": "2026-10-11T21:37:51Z",
+  "total_recetas": 32,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1074,6 +1074,51 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/quiche-de-puerro-champinones-y-pavo/"
+    },
+    {
+      "nombre": "Salchichas al vino",
+      "slug": "salchichas-al-vino",
+      "categoria": "guisos-legumbres",
+      "descripcion": "",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Salchichas frescas blancas de cerdo",
+          "cantidad": 250,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Salchichas frescas rojas de cerdo",
+          "cantidad": 250,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 15,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salchichas-al-vino/"
     },
     {
       "nombre": "Salsa vizcaína",
