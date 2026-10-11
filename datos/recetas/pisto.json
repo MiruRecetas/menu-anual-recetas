@@ -13,10 +13,10 @@
     "verduras"
   ],
   "nutricion": {
-    "kcal": 167.5,
-    "proteinas_g": 5.89,
-    "hidratos_g": 19.4,
-    "grasas_g": 7.74
+    "kcal": 164.35,
+    "proteinas_g": 5.69,
+    "hidratos_g": 18.58,
+    "grasas_g": 7.84
   },
   "ingredientes": [
     {
@@ -26,7 +26,7 @@
     },
     {
       "nombre": "Pimiento rojo",
-      "cantidad": 500,
+      "cantidad": 450,
       "unidad": "g"
     },
     {
@@ -41,13 +41,13 @@
     },
     {
       "nombre": "Cebolla",
-      "cantidad": 500,
+      "cantidad": 450,
       "unidad": "g"
     },
     {
       "nombre": "AOVE",
-      "cantidad": 40,
-      "unidad": "g"
+      "cantidad": 45,
+      "unidad": "ml"
     }
   ],
   "pasos": [
