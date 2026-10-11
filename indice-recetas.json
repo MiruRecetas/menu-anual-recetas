@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "4213eae52b44b9a243bf8a9bec6eac841bfbe46d",
-  "generated_at_utc": "2026-10-11T15:21:12Z",
-  "total_recetas": 25,
+  "source_commit_sha": "d259dcebf437994661cca2c95483a5e444765de5",
+  "generated_at_utc": "2026-10-11T15:27:27Z",
+  "total_recetas": 26,
   "recetas": [
     {
       "nombre": "Arroz con pollo",
@@ -384,6 +384,42 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/cuscus-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Ensalada campera",
+      "slug": "ensalada-campera",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada de patata cocida y tomate con atún al natural, aceitunas rellenas de anchoa y vinagreta casera de pimientos y cebolla.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Atún al natural",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Patata",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceitunas rellenas de anchoa",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Vinagreta de pimientos y cebolla",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "vinagreta-de-pimientos-y-cebolla"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-campera/"
     },
     {
       "nombre": "Fajitas de pollo",
