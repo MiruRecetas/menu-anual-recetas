@@ -98,7 +98,7 @@ Comandos orientativos: `python scripts/generar.py`, `python -m unittest discover
 
 ## 7. Pendiente identificado, NO afirmar que está hecho
 
-La usuaria eligió **«opción A»** para un futuro **gráfico de barras apiladas** y estableció que **1600 kcal de objetivo** se representen mediante **una línea horizontal discontinua**. Esta función **no consta como implementada ni validada** en los archivos revisados en esta actualización documental. Antes de construirla, recuperar la especificación exacta de esa opción y verificar dónde va el gráfico. **No** interpretarla como una instrucción para rediseñar los anillos diarios ya validados.
+Los tres gráficos semanales ya están implementados debajo de los selectores: barras apiladas de kcal por día con línea fina discontinua a 1600 kcal; circular de variedad provisional por protagonista; circular de energía por ingesta semanal. La variedad real por ingredientes sigue pendiente de ampliar y coordinar la exportación. Consultar [GRAFICOS-SEMANA.md](GRAFICOS-SEMANA.md) para cálculos, límites y evolución. Los anillos diarios conservan su función.
 
 Los cambios visuales exploratorios —p. ej. tres fondos para elegir— requieren aprobación **antes de editar** web o Airtable. No sustituir fotografías ni rediseñar otras pantallas sin encargo.
 

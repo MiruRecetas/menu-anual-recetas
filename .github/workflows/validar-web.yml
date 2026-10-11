@@ -26,6 +26,8 @@ jobs:
           node --check assets/recetario.js
           node --check assets/dia.js
           node --check assets/cocina.js
+          node --check assets/graficos-semana.js
+          node tests/test_graficos_semana.cjs
       - name: Generar y comprobar contrato del recetario
         run: |
           python scripts/generar.py

@@ -89,7 +89,7 @@ def make(r):
     out=T
     for k,v in replacements.items():out=out.replace("{{"+k+"}}",v)
     dest=R/"recetas"/s/"index.html";dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(out,encoding="utf-8")
-    return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":[tags_catalog[t][0] for t in tags]}
+    return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":[tags_catalog[t][0] for t in tags],"etiquetas_principales":[t for t in tags if tags_catalog[t][2]=="main"]}
 def main():
     (R/"datos"/"recetas").mkdir(parents=True,exist_ok=True);(R/"datos"/"menus").mkdir(parents=True,exist_ok=True)
     recipes=[];rs={}

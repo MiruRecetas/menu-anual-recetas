@@ -202,9 +202,10 @@ function mealRow(kind,item,day){
  return row;
 }
 function recipeLink(slug){const match=recipes.find(r=>r.slug===slug),a=el('a',match?.nombre||slug);a.href=site+'/recetas/'+slug+'/';return a}
-function week(){const mes=Number(select.value),num=Number($('#menu-number').value),m=menus.find(x=>x.mes===mes&&x.menu===num),w=$('#week'),b=$('#batch');try{localStorage.setItem('miru-menu',JSON.stringify({mes,menu:num}))}catch{}w.replaceChildren();b.replaceChildren();
+function week(){const mes=Number(select.value),num=Number($('#menu-number').value),m=menus.find(x=>x.mes===mes&&x.menu===num),w=$('#week'),b=$('#batch');try{localStorage.setItem('miru-menu',JSON.stringify({mes,menu:num}))}catch{}w.replaceChildren();b.replaceChildren();const charts=$('#weekly-charts');charts.replaceChildren();charts.hidden=true;
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
+if(window.MiruWeeklyCharts)window.MiruWeeklyCharts.render(charts,window.MiruWeeklyCharts.model(m,recipes));
 for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;button.append(mealRow(kind,item,day))}button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
 const prepMap=new Map((data.preparaciones||[]).map(p=>[p.slug,p]));
 const counts=new Map();

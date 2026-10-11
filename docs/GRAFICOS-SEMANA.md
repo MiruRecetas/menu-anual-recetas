@@ -1,0 +1,26 @@
+# Gráficos de la vista semanal
+
+Implementado el 11/10/2026. Se muestran debajo de los selectores y antes de los días. En escritorio/tablet: barras a la izquierda y dos gráficos circulares apilados a la derecha, con sus leyendas a la derecha. En móvil estrecho, las dos zonas se apilan para conservar la legibilidad. Sin marcos ni divisiones visibles entre columnas.
+
+## Datos actuales
+
+- **Energía diaria:** altura de cada barra = kcal oficiales del JSON de menú. Los segmentos se reparten proporcionalmente a proteínas × 4, hidratos × 4 y grasas × 9, normalizados a esas kcal oficiales. No reemplazan las kcal por el resultado de 4/4/9. Colores `--macro-protein`, `--macro-carbs`, `--macro-fat`; días L/M/X/J/V; objetivo de 1600 kcal mediante una línea fina discontinua. Escala con margen para días que superan el objetivo.
+- **Energía por ingesta:** suma semanal de las kcal registradas de desayuno, comida, cena y postre; solo incluye ingestas existentes. Viernes cena libre excluida.
+- **Variedad nutricional provisional:** atribuye todas las kcal de cada ingesta al protagonista del primer bloque culinario ordenado, sin volver a sumar sus guarniciones, ingredientes ni subpreparaciones. Para preparaciones se usa su única etiqueta principal web; se admite coincidencia exacta del nombre si falta slug. En ingredientes directos, una pequeña clasificación editorial por ID cubre café con leche (lácteos), frutas publicadas, huevos y carpaccio (carne). Los casos sin clasificación van a «Sin clasificar», conservando la energía. Es una aproximación expresamente indicada en la página, **no un desglose energético por ingredientes** ni una medida de adecuación nutricional.
+- Los menús pendientes muestran sus ingestas registradas con aviso de totales parciales. No se inventan kcal para las ingestas pendientes.
+
+`assets/graficos-semana.js` separa `model(menu, recipes)` (agregación) de `render(container, model)` (presentación SVG). El generador añade a su catálogo de presentación `etiquetas_principales` a partir de las etiquetas existentes; no cambia ningún JSON canónico de receta o menú. No requiere librería de gráficos, conexión con Airtable desde el navegador ni cambios en la forma actual de publicar recetas/menús.
+
+Pruebas de cálculo: `node tests/test_graficos_semana.cjs`. QA Chromium en `tests/browser_qa.cjs`: disposición en cinco tamaños/orientaciones, paleta computada, sumas, línea objetivo, actualización al cambiar menú y casos pendientes.
+
+## Paso futuro a variedad real: viable, todavía NO implementado
+
+La dificultad se concentra en la exportación de datos, no en el dibujo del gráfico. Hace falta una ampliación inicial de dificultad media:
+
+1. Mantener una clasificación estable de INGREDIENTES por ID en familias (lácteos, verduras, frutas, carne, pescado, marisco, huevos, legumbres, cereales, tubérculos, aceites, etc.). Puede ser un mapa de presentación en GitHub: no exige nuevos campos o fórmulas en Airtable ni etiquetas manuales en cada receta. Las excepciones requieren revisión inicial y los ingredientes nuevos sin familia se señalan, sin inventar clasificación.
+2. El exportador autenticado debe recorrer COMIDA_ELEMENTOS y PREPARACION_ELEMENTOS, expandir los niveles realmente admitidos, aplicar cantidades/unidades/raciones y sumar las kcal atribuibles a los ingredientes, sin contar dos veces preparaciones y sus componentes. Las kcal oficiales siguen siendo la referencia; ante ajustes de alcohol y diferencias de redondeo se debe definir y documentar una conciliación. No publicar una distribución discordante como si fuera exacta.
+3. Los productos comerciales compuestos (p. ej. carpaccio con queso y aceite) o perfiles ajustados necesitan un desglose trazable ya disponible o una categoría explícita de producto mixto; su nombre/etiqueta principal no permite inferir kcal de sus ingredientes. Tampoco el café con leche puede darse por completamente lácteo en el desglose real sin separar sus componentes con evidencia.
+4. Generar un resumen agregado por menú con clasificación, método/cobertura y referencia de origen. El navegador solo recibe esos totales. `render` puede consumir los nuevos `variety.entries` y `basis: 'ingredientes'`; no exige rediseñar los gráficos.
+5. Coordinar con el chat que publica menús para recalcular ese resumen con cada publicación. Los cambios de ingredientes/recetas que afectan a menús requieren refrescar sus datos y resumen conjuntamente: no existe sincronización continua actualmente. El chat de recetas no tendría que escribir porcentajes ni desgloses manuales adicionales; el exportador los derivaría de los vínculos y datos existentes.
+
+Tras esa ampliación, el mantenimiento habitual se limitaría a clasificar ingredientes nuevos o resolver productos compuestos. La función actual sigue siendo provisional hasta que se implemente, pruebe y apruebe el nuevo suministro de datos.

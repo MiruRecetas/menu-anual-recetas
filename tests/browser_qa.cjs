@@ -57,6 +57,60 @@ const assert = require('node:assert/strict');
       assert.ok(weeklyLayout.every(x=>x.first.top>=x.head.bottom),test.name+': comidas después del encabezado');
     }
 
+    const charts=page.locator('#weekly-charts');
+    assert.equal(await charts.isVisible(),true,'Gráficos visibles para el menú');
+    assert.equal(await charts.locator('figure').count(),3,'Tres gráficos');
+    assert.equal(await charts.locator('.weekly-bar').count(),5,'Cinco barras');
+    assert.deepEqual(await charts.locator('.chart-day-label').allTextContents(),['L','M','X','J','V']);
+    const geometry=await charts.evaluate(container=>{
+      const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
+      const bar=container.querySelector('.weekly-bars');
+      const pies=[...container.querySelectorAll('.weekly-pie')];
+      return {bar:rect(bar),pies:pies.map(rect),legends:pies.map(e=>rect(e.querySelector('.chart-legend'))),
+        circles:pies.map(e=>rect(e.querySelector('svg'))),
+        tools:rect(document.querySelector('.page-tools')),week:rect(document.querySelector('#week'))};
+    });
+    assert.ok(geometry.bar.y>=geometry.tools.bottom,'Gráficos debajo de selectores');
+    assert.ok(geometry.pies[1].bottom<geometry.week.y,'Gráficos antes de días');
+    if(test.width>=700){
+      assert.ok(geometry.pies[0].x>geometry.bar.right,'Barras izquierda y pies derecha');
+      assert.ok(Math.abs(geometry.bar.y-geometry.pies[0].y)<2,'Columnas alineadas arriba');
+    }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'En móvil se apilan sin comprimirse');
+    assert.ok(geometry.pies[1].y>geometry.pies[0].bottom,'Dos pies apilados');
+    assert.ok(geometry.legends.every((r,i)=>r.x>=geometry.circles[i].right),'Leyendas a la derecha de cada pie');
+    const chartValues=await charts.evaluate(container=>{
+      const source=JSON.parse(document.querySelector('#site-data').textContent).menus.find(m=>m.mes===10&&m.menu===1);
+      const bars=[...container.querySelectorAll('.weekly-bar')].map(g=>({
+        kcal:Number(g.dataset.kcal),heights:[...g.querySelectorAll('rect')].map(r=>Number(r.getAttribute('height'))),
+        values:[...g.querySelectorAll('rect')].map(r=>Number(r.dataset.kcal)),
+        colors:[...g.querySelectorAll('rect')].map(r=>getComputedStyle(r).fill)
+      }));
+      const goal=container.querySelector('.chart-goal');
+      return {bars,expected:Object.values(source.dias).map(d=>d.nutricion.kcal),
+        goal:{value:goal.dataset.kcal,dash:getComputedStyle(goal).strokeDasharray,width:getComputedStyle(goal).strokeWidth},
+        pies:[...container.querySelectorAll('.weekly-pie')].map(p=>[...p.querySelectorAll('.chart-pie-slice')].reduce((n,s)=>n+Number(s.dataset.kcal),0)),
+        total:source.nutricion_semana.kcal};
+    });
+    assert.deepEqual(chartValues.bars.map(b=>b.kcal),chartValues.expected,'Alturas basadas en kcal oficiales');
+    for(const b of chartValues.bars){
+      assert.ok(Math.abs(b.values.reduce((a,v)=>a+v,0)-b.kcal)<1e-7,'Apilado suma kcal oficiales');
+      assert.deepEqual(b.colors,['rgb(116, 141, 118)','rgb(184, 111, 84)','rgb(208, 163, 110)'],'Colores renderizados de macros');
+    }
+    assert.equal(chartValues.goal.value,'1600');
+    assert.notEqual(chartValues.goal.dash,'none','Objetivo discontinuo');
+    assert.equal(chartValues.goal.width,'1px','Línea fina');
+    assert.ok(chartValues.pies.every(v=>Math.abs(v-chartValues.total)<1e-7),'Cada circular abarca toda la semana');
+    assert.match(await charts.locator('.weekly-charts-note').innerText(),/aproximación/);
+    await page.locator('#menu-number').selectOption('2');
+    assert.match(await charts.locator('.weekly-charts-note').innerText(),/parciales/,'Menú pendiente identificado');
+    assert.equal(await charts.locator('.weekly-intakes .chart-pie-slice').count(),1,'Solo desayuno registrado en menú pendiente');
+    await page.locator('#month').selectOption('9');
+    await page.locator('#menu-number').selectOption('4');
+    const septemberTotal=await charts.locator('.weekly-intakes .chart-pie-slice').evaluateAll(slices=>slices.reduce((n,s)=>n+Number(s.dataset.kcal),0));
+    assert.ok(Math.abs(septemberTotal-5643.711531804741)<1e-7,'Cambio de menú actualiza gráficos');
+    await page.locator('#month').selectOption('10');
+    await page.locator('#menu-number').selectOption('1');
+
     const monday=page.locator('#week .day-button').first();
     assert.match(await monday.innerText(),/Café con leche/);
     const textMonday=await monday.innerText();assert.ok(textMonday.indexOf('Carpaccio')<textMonday.indexOf('Puerros con mayonesa')&&textMonday.indexOf('Puerros con mayonesa')<textMonday.indexOf('Bowl de yogur'),'Orden de cena');
