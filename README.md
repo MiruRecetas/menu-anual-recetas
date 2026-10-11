@@ -4,7 +4,7 @@
 
 **[Abrir MiruRecetas](https://mirurecetas.github.io/menu-anual-recetas/)** · [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) · [Repositorio](https://github.com/MiruRecetas/menu-anual-recetas)
 
-> **Estado (octubre de 2026):** están publicados **Octubre · Menú 1** y las recetas disponibles en el índice JSON público enlazado a continuación. El selector permite otros meses y los menús 1–4, pero las opciones sin datos publicados muestran un aviso: **no está completo todavía el año**.
+> **Estado revisado el 11/10/2026:** hay dos menús v2 en estado **Calculado**: **Septiembre · Menú 4** y **Octubre · Menú 1**. Los restantes menús del calendario estacional están **Pendiente**, no preparados. El índice público lista **26 recetas** en esta revisión; consulta el JSON para el total y el SHA actuales, pues seguirán evolucionando.
 
 **Índice público de recetas:** [consultar `indice-recetas.json`](https://mirurecetas.github.io/menu-anual-recetas/indice-recetas.json). Se actualiza automáticamente desde las fichas JSON originales.
 
@@ -15,15 +15,17 @@
 
 - Cinco tarjetas, de lunes a viernes, **sin fechas**: los menús de un mismo mes están pensados para poder intercambiarse.
 - Desayuno, comida, cena y postre cuando esté registrado. El **viernes tiene cena libre**, fuera del total nutricional mostrado; los postres no se inventan cuando no existen.
-- Nombres breves e iconos en las tarjetas, y anillo de kcal del día frente a la **referencia visual de 1600 kcal**.
-- Al tocar un día se abre un **resumen desplegable**: anillo de energía, gramos de proteínas/hidratos/grasas, barras de reparto energético y nombres simplificados de las ingestas.
-- Desde ese resumen es posible **abrir directamente las recetas que tienen ficha**, sin ampliar la vista. El icono `maximize-2` lleva a la página completa del día; la X cierra el panel.
+- Nombres breves e iconos en las tarjetas. En escritorio, las cinco tarjetas tienen **igual altura y ancho**, con encabezados y comidas **alineados arriba**, día en una sola línea (incluido «Miércoles») y espacio libre al final de las más cortas. El anillo semanal de kcal es **gris carbón** (`#454b4b`), no un color de macronutriente, frente a la referencia de **1600 kcal**.
+- Al tocar un día se abre la **ficha diaria compacta**: anillo tricolor de avance energético, gramos de proteínas/hidratos/grasas y **barras de cumplimiento de objetivos**, además de **solo los nombres de los platos**. Los ingredientes **no** se despliegan en esta vista.
+- Los platos con receta publicada ofrecen una **flecha `↗` independiente** para abrirla, manteniendo el nombre como texto. El icono `maximize-2` lleva al día completo y la X cierra el panel. Se conserva acceso por teclado y retorno del foco al origen.
 
 ### 2. Día completo
 
-Las rutas `menus/MM-N/<día>/` muestran las ingestas y sus valores registrados, además de los **grupos culinarios y componentes** de cada comida cuando constan en los datos. Las preparaciones enlazan a su ficha y hay navegación entre días.
+Las rutas `menus/MM-N/<día>/` presentan el mes/menú y el día **en una misma línea**, con el nombre del día a la derecha, **sin párrafo explicativo redundante**. Reutilizan el anillo tricolor y las barras nutricionales del panel compacto y muestran cada ingesta, sus valores oficiales, grupos culinarios **desplegables** y enlaces a las recetas realmente publicadas.
 
-La agrupación de componentes respeta la presentación registrada para cada **COMIDA**: no se deducen agrupaciones ni recetas a partir del texto.
+En móvil, **deslizar de derecha a izquierda** avanza lunes→viernes y **de izquierda a derecha** retrocede; la navegación **se detiene en los extremos**, sin vuelta circular. El desplazamiento vertical y los desplegables no deben quedar bloqueados; existen enlaces inferiores accesibles con el nombre del día de destino.
+
+Los grupos se identifican por `Visual · Grupo ID` **dentro de cada COMIDA**, se ordenan por `Visual · Orden grupo`, y sus ingredientes por `Visual · Orden elemento`; se muestran con `Visual · Nombre grupo`. **No** ordenar los IDs lexicográficamente. Ejemplo vinculante para la cena del lunes de Octubre · Menú 1: **Carpaccio con parmesano y AOVE → Puerros con mayonesa → Bowl de yogur con miel y granola**. El bowl permanece **dentro de CENA**, no pasa a Postre; el carpaccio comercial incluye su AOVE (no duplicar aceite). La agrupación **no cambia nutrición, referencias ni cantidades**.
 
 ### 3. Batch cooking
 
@@ -43,16 +45,31 @@ En la portada se construye automáticamente una **galería de fotografías** a p
 
 ## Nutrición: significado de los indicadores
 
-La web **presenta los valores publicados en los JSON**, sin sustituir los totales oficiales por cálculos nuevos.
+La web **presenta la nutrición registrada en los JSON**, sin recalcular ni reemplazar los valores oficiales de Airtable.
 
-| Elemento | Qué significa |
+| Vista / elemento | Qué representa |
 | --- | --- |
-| Anillo de kcal | Kcal registradas del día frente a la referencia de **1600 kcal**. |
-| Barras de proteínas, hidratos y grasas | **Porcentaje de energía calculada a partir de macronutrientes**, no porcentaje de una meta individual. |
-| Gramos junto a cada barra | Cantidades de macros registradas para ese día. |
-| Viernes | La cena libre **no** está incluida en las kcal y macros mostradas. |
+| Tarjeta semanal, anillo gris carbón | Progreso de **kcal registradas / 1600 kcal**, sin atribución a un macro. Color de progreso `#454b4b`; pista `#dcddda`. |
+| Fichas diarias compacta y ampliada, anillo tricolor | La longitud del arco indica **kcal registradas / 1600 kcal** (limitada visualmente al 100 %). El arco coloreado se reparte por energía relativa de **proteínas, hidratos y grasas**. |
+| Barras de macros en ambas fichas diarias | **Cumplimiento de objetivos diarios en gramos**: **93 g PR**, **147 g HC**, **65 g GR**; la barra no rebasa el 100 % de ancho, pero el porcentaje puede superar el 100 %. |
+| Receta individual, anillo tricolor | **Distribución de energía por macronutrientes de una ración**; **no** indica porcentaje de la meta diaria de 1600 kcal. |
+| Viernes | La **cena libre no se incluye** en los valores de las ingestas planificadas. |
 
-Los porcentajes de las barras se obtienen aplicando **4 kcal/g** a proteínas e hidratos y **9 kcal/g** a grasas; se normalizan para que el reparto sume el 100 % de la energía calculada a partir de esos tres macronutrientes. Por ello, ese total energético puede no coincidir exactamente con las kcal oficiales registradas. **No hay objetivos independientes de P/HC/G** configurados.
+Para distribuir la **energía calculada por macros**, aplicar **4 kcal/g** a proteínas e hidratos y **9 kcal/g** a grasas, normalizando las proporciones respecto de esa energía calculada. Puede haber diferencias frente a las kcal oficiales registradas; **no corregir** el dato oficial desde la interfaz.
+
+### Colores únicos de macronutrientes
+
+| Macros | Identidad obligatoria | Variable CSS |
+| --- | --- | --- |
+| Proteínas | **Verde** `#748d76` | `--macro-protein` |
+| Hidratos | **Terracota** `#b86f54` | `--macro-carbs` |
+| Grasas | **Mostaza** `#d0a36e` | `--macro-fat` |
+
+Los anillos, barras y leyendas usan **las mismas variables** de `assets/estilo.css`; no introducir malva ni invertir hidratos y grasas. Distinguir el terracota de interfaz `--terra` de la codificación de hidratos.
+
+### Diseño y navegación consistentes
+
+La identidad visual emplea **crema** de fondo, superficie clara, acentos verde salvia y terracota, tipografías **Bricolage Grotesque** (títulos) y **Geist** (texto), bordes redondeados y **Lucide**. Tanto «Mis menús» como «Recetario» deben mostrar en su cabecera los iconos **calendar-days** y **book-open**, respectivamente. El pie de la portada y del recetario dice **«MiruRecetas · Menús estacionales, siempre reutilizables»**; las páginas de recetas y días aún conservan pies explicativos propios.
 
 ## Estructura del repositorio
 
@@ -74,7 +91,8 @@ assets/
   recetario.js               # Búsqueda y lista de recetas
   cocina.js                  # Raciones, modo cocina, pasos y temporizador
 scripts/
-  generar.py                 # Generador estático
+  generar.py                 # Generador estático y alimentación del índice público
+  indice_publico.py          # Generación automática de indice-recetas.json
   validar_menus.py           # Contrato de menús v2 y nutrición
   agrupar_componentes.py     # Agrupación editorial de COMIDA_ELEMENTOS
   exportar_airtable.py       # Exportación autenticada de menús calculados
@@ -82,6 +100,7 @@ tests/                       # Tests de datos y navegador
 docs/
   NUEVA-RECETA.md
   IMAGENES-BATCHCOOKING.md
+  MANTENIMIENTO-DISENO-WEB.md # Manual operativo del chat web
 .github/workflows/
   validar-web.yml
   qa-navegador.yml
@@ -92,9 +111,10 @@ index.html
 recetario/index.html
 recetas/<slug>/index.html
 menus/MM-N/<día>/index.html
+indice-recetas.json         # Inventario público autogenerado, sin duplicación en README
 ```
 
-La **fuente de verdad de la publicación web** son los JSON de `datos/`, los archivos de `imagenes/`, las plantillas, el CSS/JS y el generador. El HTML generado se vuelve a crear a partir de esas fuentes.
+La **fuente de verdad de la publicación web** son los JSON de `datos/`, los archivos de `imagenes/`, las plantillas, el CSS/JS y el generador. **No editar los HTML ni el índice JSON generados a mano**. La publicación automática regenera `indice-recetas.json` de forma determinista con esquema, SHA de origen (último commit que afectó `datos/recetas/`), fecha UTC y total; el README contiene únicamente su enlace, no un catálogo duplicado.
 
 ## Cómo se actualiza el contenido
 
@@ -106,7 +126,7 @@ La **fuente de verdad de la publicación web** son los JSON de `datos/`, los arc
 4. Esa foto se reutiliza automáticamente en la **ficha, el recetario y Batch cooking**. Sin imagen, la web puede mostrar un marcador provisional. No subir nuevas fotos a `imagenes/batchcooking/`: allí solo pueden quedar archivos históricos sin uso.
 5. Validar y publicar el cambio mediante el flujo de GitHub. Revisar la ficha y sus enlaces públicos.
 
-**Documentación relacionada:** [contrato de recetas](datos/FORMATO.md), [guía para incorporar recetas](docs/NUEVA-RECETA.md) y [contrato de fotografía principal y Batch cooking](docs/IMAGENES-BATCHCOOKING.md). Los tres documentos están alineados con el contrato actual: las imágenes se publican por el agente de imágenes, las etiquetas web las gestiona el flujo de recetas y los **menús v2** se rigen por `scripts/validar_menus.py` y sus JSON publicados.
+**Documentación relacionada:** [manual operativo de mantenimiento y diseño web](docs/MANTENIMIENTO-DISENO-WEB.md), [contrato de recetas](datos/FORMATO.md), [guía para incorporar recetas](docs/NUEVA-RECETA.md) y [contrato de fotografía principal y Batch cooking](docs/IMAGENES-BATCHCOOKING.md). Los tres documentos están alineados con el contrato actual: las imágenes se publican por el agente de imágenes, las etiquetas web las gestiona el flujo de recetas y los **menús v2** se rigen por `scripts/validar_menus.py` y sus JSON publicados.
 
 ### Añadir o modificar un menú
 
@@ -139,7 +159,7 @@ node --check assets/cocina.js
 **Flujo habitual de publicación:**
 
 1. Crear una rama, realizar cambios sobre archivos fuente y abrir un **pull request** hacia `main`.
-2. Esperar las comprobaciones de [Validar web](.github/workflows/validar-web.yml) y [QA navegador MiruRecetas](.github/workflows/qa-navegador.yml). El QA ejecuta **Chromium/Playwright**, comprueba navegación y diseños en escritorio, tablet y móvil, vertical/horizontal, y adjunta capturas.
+2. Esperar las comprobaciones de [Validar web](.github/workflows/validar-web.yml) y [QA navegador MiruRecetas](.github/workflows/qa-navegador.yml). El QA ejecuta **Chromium/Playwright**, comprueba navegación y diseños en escritorio, tablet y móvil, vertical/horizontal, **incluidos los colores renderizados, alineación de los cinco encabezados, paneles compactos, barras/anillos, gestos horizontales limitados, enlaces e iconos**, y adjunta capturas.
 3. Fusionar tras las pruebas y verificar los archivos publicados. [Publicar recetas](.github/workflows/publicar-recetas.yml) se activa con cambios en datos, plantillas, scripts, CSS/JS, imágenes o su propio workflow: **regenera y guarda** `index.html`, recetario, fichas y menús en `main`.
 4. GitHub Pages sirve los archivos generados en el [sitio público](https://mirurecetas.github.io/menu-anual-recetas/). Puede existir un pequeño retraso de publicación o caché del navegador. En cambios visuales puede requerirse renovar la versión de CSS/JS referenciada por las plantillas.
 
@@ -152,3 +172,5 @@ node --check assets/cocina.js
 - Mantener la separación de responsabilidades: **recetas/etiquetas**, **menús/nutrición**, **fotografías** y **web/publicación**.
 - Priorizar una web **legible en móvil**, accesible, con menús intercambiables, fotografías coherentes y el mínimo mantenimiento duplicado.
 - Comprobar la generación, las pruebas y la publicación antes de dar por terminada una modificación.
+- Tras fusionar un cambio de diseño, esperar el commit del bot **«Publicar páginas generadas»**, comprobar las plantillas y la **versión de caché** `?v=...` en los HTML generados y distinguir esa comprobación de una verificación externa en GitHub Pages.
+- Para un nuevo chat web, usar [MANTENIMIENTO-DISENO-WEB.md](docs/MANTENIMIENTO-DISENO-WEB.md) y contrastarlo con `main` en cada sesión. Las propuestas antiguas del manual maestro web del 10/10/2026 pueden haber quedado superadas.

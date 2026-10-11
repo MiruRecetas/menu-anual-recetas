@@ -10,6 +10,10 @@ const assert = require('node:assert/strict');
     const page=await browser.newPage({viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
     page.on('pageerror',e=>issues.push(test.name+': error JS: '+e.message));
     await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
+    // Fijar el menú de regresión: el sitio ya dispone de otros menús calculados
+    // y el orden/última selección no implica que Octubre · Menú 1 esté activo.
+    await page.locator('#month').selectOption('10');
+    await page.locator('#menu-number').selectOption('1');
     await page.locator('#week .day-button').first().waitFor();
     assert.equal(await page.locator('#week .day-button').count(),5,test.name+': días');
     assert.equal(await page.locator('#week .week-kcal-ring').count(),5,'Cinco anillos');
