@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "37601ca0cb76a44348e34258990d9ae0615e6e13",
-  "generated_at_utc": "2026-10-11T20:51:11Z",
-  "total_recetas": 30,
+  "source_commit_sha": "061eafe96727892a233c2c8311b94eec876289c8",
+  "generated_at_utc": "2026-10-11T21:31:16Z",
+  "total_recetas": 31,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -979,6 +979,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pollo-al-limon/"
+    },
+    {
+      "nombre": "Puré de calabaza y calabacín",
+      "slug": "pure-de-calabaza-y-calabacin",
+      "categoria": "sopas-cremas-pures",
+      "descripcion": "",
+      "raciones_base": 5,
+      "ingredientes": [
+        {
+          "nombre": "Patata",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Calabacín",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Calabaza butternut",
+          "cantidad": 600,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nata líquida para cocinar",
+          "cantidad": 300,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pure-de-calabaza-y-calabacin/"
     },
     {
       "nombre": "Quiche de puerro, champiñones y pavo",
