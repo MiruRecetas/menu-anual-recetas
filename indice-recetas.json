@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "8ff3d6c30e3b1c9f6a347fbe7d6a334d3fa9f3e3",
-  "generated_at_utc": "2026-10-11T11:40:33Z",
-  "total_recetas": 20,
+  "source_commit_sha": "19bc3aabd6bc9873e593e812d8e99774c0d13a18",
+  "generated_at_utc": "2026-10-11T11:55:37Z",
+  "total_recetas": 21,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -292,6 +292,52 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/chili-con-carne/"
+    },
+    {
+      "nombre": "Cuscús de pollo y verduras",
+      "slug": "cuscus-de-pollo-y-verduras",
+      "categoria": "arroces-pastas",
+      "descripcion": "Cuscús de trigo con pollo salteado, pimientos y cebolla, acompañado de almendras, pasas y ras el hanout.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Salteado de pollo y verduras",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "salteado-de-pollo-y-verduras"
+        },
+        {
+          "nombre": "Almendras",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pasas",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cuscús seco",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ras el hanout",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/cuscus-de-pollo-y-verduras/"
     },
     {
       "nombre": "Fajitas de pollo",
