@@ -1,0 +1,62 @@
+{
+  "slug": "poke-de-salmon",
+  "nombre": "Poke de salmón",
+  "raciones": 1,
+  "categoria": "ensaladas-frios",
+  "etiquetas": [
+    "tupper",
+    "batchcooking",
+    "rapida",
+    "pescado"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Arroz blanco",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Salmón",
+      "cantidad": 130,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 25,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Edamame sin vaina",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Mango",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tomates cherry",
+      "cantidad": 5,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Tzatziki",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "tzatziki"
+    }
+  ],
+  "pasos": [
+    "Hornear el salmón en la freidora de aire durante 15 minutos.",
+    "Cocer el arroz blanco y dejarlo enfriar ligeramente.",
+    "Cocer el edamame congelado y sacar los granos de las vainas. Desechar las vainas; solo se utilizan los granos.",
+    "Montar el poke con el arroz, el salmón, la cebolla, los granos de edamame, el mango y los tomates cherry. Añadir una ración de tzatziki."
+  ],
+  "nutricion": {
+    "kcal": 622.68,
+    "proteinas_g": 36.44,
+    "hidratos_g": 58.19,
+    "grasas_g": 27.13
+  }
+}
