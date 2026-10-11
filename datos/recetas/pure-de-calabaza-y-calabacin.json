@@ -1,0 +1,57 @@
+{
+  "slug": "pure-de-calabaza-y-calabacin",
+  "nombre": "Puré de calabaza y calabacín",
+  "raciones": 5,
+  "categoria": "sopas-cremas-pures",
+  "etiquetas": [
+    "microondas",
+    "tupper",
+    "batchcooking",
+    "verduras"
+  ],
+  "coccion_min": 30,
+  "ingredientes": [
+    {
+      "nombre": "Patata",
+      "cantidad": 150,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Calabacín",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Calabaza butternut",
+      "cantidad": 600,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Nata líquida para cocinar",
+      "cantidad": 300,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Precalentar el horno a 180 °C. Pelar las patatas, el calabacín y la calabaza y cortarlos en dados grandes.",
+    "Colocar las verduras sobre una bandeja de horno forrada con papel sulfurizado. Pulverizar con los 10 ml de AOVE y salar.",
+    "Hornear a 180 °C durante 30 minutos.",
+    "Triturar las verduras junto con los 300 ml de nata líquida para cocinar hasta obtener una textura cremosa."
+  ],
+  "nutricion": {
+    "kcal": 215.56,
+    "proteinas_g": 4.44,
+    "hidratos_g": 22.31,
+    "grasas_g": 12.92
+  }
+}
