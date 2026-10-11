@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "3ca78251b9ed4d0e85b5b1d7938040208f328da8",
-  "generated_at_utc": "2026-10-11T21:37:51Z",
-  "total_recetas": 32,
+  "source_commit_sha": "da9868446ec051536f4ff271f5f8e818e21caad4",
+  "generated_at_utc": "2026-10-11T21:52:57Z",
+  "total_recetas": 33,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -949,6 +949,52 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pisto/"
+    },
+    {
+      "nombre": "Poke de salmón",
+      "slug": "poke-de-salmon",
+      "categoria": "ensaladas-frios",
+      "descripcion": "",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Arroz blanco",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Salmón",
+          "cantidad": 130,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Edamame sin vaina",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mango",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomates cherry",
+          "cantidad": 5,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Tzatziki",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "tzatziki"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/poke-de-salmon/"
     },
     {
       "nombre": "Pollo al limón",
