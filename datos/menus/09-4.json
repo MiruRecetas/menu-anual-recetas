@@ -329,10 +329,10 @@
         "nombre": "Huevos rotos con guisantes con jamón",
         "estado": "Calculado",
         "nutricion": {
-          "kcal": 855.4971061609942,
-          "proteinas_g": 43.16374999999999,
-          "hidratos_g": 63.028,
-          "grasas_g": 46.1138
+          "kcal": 778.4971061609942,
+          "proteinas_g": 37.943749999999994,
+          "hidratos_g": 49.428,
+          "grasas_g": 45.71379999999999
         },
         "presentacion": {
           "grupos": [
@@ -374,10 +374,10 @@
       },
       "postre": null,
       "nutricion": {
-        "kcal": 1619.1193439274377,
-        "proteinas_g": 88.51935999999999,
-        "hidratos_g": 138.35546,
-        "grasas_g": 76.330536
+        "kcal": 1542.1193439274377,
+        "proteinas_g": 83.29936,
+        "hidratos_g": 124.75546,
+        "grasas_g": 75.93053599999999
       }
     },
     "Jueves": {
@@ -508,9 +508,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 5321.666838389445,
-    "proteinas_g": 331.7168575,
-    "hidratos_g": 476.39247,
-    "grasas_g": 223.565326
+    "kcal": 5244.666838389445,
+    "proteinas_g": 326.49685750000003,
+    "hidratos_g": 462.79247,
+    "grasas_g": 223.165326
   }
 }
