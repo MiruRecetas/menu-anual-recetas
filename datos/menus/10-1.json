@@ -85,42 +85,63 @@
           "grasas_g": 52.69499999999999
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "recwzLQz5W5ddrCmU",
-              "tipo": "preparacion",
-              "referencia_id": "recACTMx4Sfoy1Sv7",
+              "id": "plato-1",
+              "nombre": "Carpaccio con parmesano y AOVE",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recmU1URfb1OBEL07",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recJoLfb85Oe5dxXq",
+                  "nombre": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
+                  "cantidad": 120,
+                  "unidad": "g"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Puerros con mayonesa",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recImdO7ueFMlnxaE",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec3RHqUWRFk0FIJ1",
+                  "nombre": "Puerros al natural Conservas Morán (escurridos)",
+                  "cantidad": 175,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recfa0XvtV5Ah8ZRb",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recEtJBidxvvxhoAg",
+                  "nombre": "Mayonesa Heinz con cebolla caramelizada y ajo",
+                  "cantidad": 10,
+                  "unidad": "g"
+                }
+              ]
+            },
+            {
+              "id": "plato-2",
               "nombre": "Bowl de yogur con miel y granola",
-              "cantidad": 1,
-              "unidad": "ración",
-              "slug": "bowl-de-yogur-con-miel-y-granola"
-            },
-            {
-              "id": "recmU1URfb1OBEL07",
-              "tipo": "ingrediente",
-              "referencia_id": "recJoLfb85Oe5dxXq",
-              "nombre": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
-              "cantidad": 120,
-              "unidad": "g"
-            },
-            {
-              "id": "recImdO7ueFMlnxaE",
-              "tipo": "ingrediente",
-              "referencia_id": "rec3RHqUWRFk0FIJ1",
-              "nombre": "Puerros al natural Conservas Morán (escurridos)",
-              "cantidad": 175,
-              "unidad": "g"
-            },
-            {
-              "id": "recfa0XvtV5Ah8ZRb",
-              "tipo": "ingrediente",
-              "referencia_id": "recEtJBidxvvxhoAg",
-              "nombre": "Mayonesa Heinz con cebolla caramelizada y ajo",
-              "cantidad": 10,
-              "unidad": "g"
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "recwzLQz5W5ddrCmU",
+                  "tipo": "preparacion",
+                  "referencia_id": "recACTMx4Sfoy1Sv7",
+                  "nombre": "Bowl de yogur con miel y granola",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "bowl-de-yogur-con-miel-y-granola"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "postre": {
@@ -223,26 +244,40 @@
           "grasas_g": 24.908448333333332
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "reckvWQszelpW0u01",
-              "tipo": "preparacion",
-              "referencia_id": "rec9cxis2Yndtrq6K",
+              "id": "principal",
               "nombre": "Mini wraps de falafel",
-              "cantidad": 1,
-              "unidad": "ración",
-              "slug": "mini-wraps-de-falafel"
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "reckvWQszelpW0u01",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec9cxis2Yndtrq6K",
+                  "nombre": "Mini wraps de falafel",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "mini-wraps-de-falafel"
+                }
+              ]
             },
             {
-              "id": "recGt7r2zE5WbHRbu",
-              "tipo": "ingrediente",
-              "referencia_id": "recHiBRS3Ikrzb1mt",
-              "nombre": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
-              "cantidad": 100,
-              "unidad": "g"
+              "id": "acompanamiento-1",
+              "nombre": "Boquerones aliñados",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recGt7r2zE5WbHRbu",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recHiBRS3Ikrzb1mt",
+                  "nombre": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
+                  "cantidad": 100,
+                  "unidad": "g"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "postre": {
@@ -345,18 +380,25 @@
           "grasas_g": 57.245000000000005
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "recLIFxlaD1FoVSxy",
-              "tipo": "preparacion",
-              "referencia_id": "recfl98fDfDp6ApRO",
+              "id": "principal",
               "nombre": "Quiche de puerro, champiñones y pavo",
-              "cantidad": 2,
-              "unidad": "ración",
-              "slug": "quiche-de-puerro-champinones-y-pavo"
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recLIFxlaD1FoVSxy",
+                  "tipo": "preparacion",
+                  "referencia_id": "recfl98fDfDp6ApRO",
+                  "nombre": "Quiche de puerro, champiñones y pavo",
+                  "cantidad": 2,
+                  "unidad": "ración",
+                  "slug": "quiche-de-puerro-champinones-y-pavo"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "postre": null,
@@ -392,18 +434,25 @@
           "grasas_g": 40.138148666666666
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "rec9TImdQlBmsDPOa",
-              "tipo": "preparacion",
-              "referencia_id": "rec7qUQ85hy3AQ753",
+              "id": "principal",
               "nombre": "Canelones de carrilleras",
-              "cantidad": 1,
-              "unidad": "ración",
-              "slug": "canelones-de-carrilleras"
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec9TImdQlBmsDPOa",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec7qUQ85hy3AQ753",
+                  "nombre": "Canelones de carrilleras",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "canelones-de-carrilleras"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "cena": {
@@ -417,17 +466,24 @@
           "grasas_g": 29.48457717791411
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "recrzc4RyHhJ1vqNd",
-              "tipo": "preparacion",
-              "referencia_id": "recxRAH9FD9GvayFF",
+              "id": "principal",
               "nombre": "Tostas de hummus y sardinillas",
-              "cantidad": 1,
-              "unidad": "ración"
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recrzc4RyHhJ1vqNd",
+                  "tipo": "preparacion",
+                  "referencia_id": "recxRAH9FD9GvayFF",
+                  "nombre": "Tostas de hummus y sardinillas",
+                  "cantidad": 1,
+                  "unidad": "ración"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "postre": null,
@@ -463,18 +519,25 @@
           "grasas_g": 14.635833333333334
         },
         "presentacion": {
-          "grupos": [],
-          "elementos_sin_grupo": [
+          "grupos": [
             {
-              "id": "recNazflEl4CBV4MA",
-              "tipo": "preparacion",
-              "referencia_id": "recl8ijk3FI18QqNj",
+              "id": "principal",
               "nombre": "Wok de gambones y pisto",
-              "cantidad": 1,
-              "unidad": "ración",
-              "slug": "wok-de-gambones-y-pisto"
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recNazflEl4CBV4MA",
+                  "tipo": "preparacion",
+                  "referencia_id": "recl8ijk3FI18QqNj",
+                  "nombre": "Wok de gambones y pisto",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "wok-de-gambones-y-pisto"
+                }
+              ]
             }
-          ]
+          ],
+          "elementos_sin_grupo": []
         }
       },
       "cena": {
