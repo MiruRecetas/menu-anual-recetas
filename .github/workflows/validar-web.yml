@@ -44,5 +44,5 @@ jobs:
           grep -q 'recetario/' plantillas/receta.html
           sha256sum index.html recetario/index.html README.md indice-recetas.json > /tmp/miru-first
           python scripts/generar.py
-          sha256sum index.html recetario/index.html README.md > /tmp/miru-second
+          sha256sum index.html recetario/index.html README.md indice-recetas.json > /tmp/miru-second
           diff -u /tmp/miru-first /tmp/miru-second
