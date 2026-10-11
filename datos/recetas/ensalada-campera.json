@@ -1,0 +1,56 @@
+{
+  "slug": "ensalada-campera",
+  "nombre": "Ensalada campera",
+  "descripcion": "Ensalada de patata cocida y tomate con atún al natural, aceitunas rellenas de anchoa y vinagreta casera de pimientos y cebolla.",
+  "raciones": 1,
+  "categoria": "ensaladas-frios",
+  "etiquetas": [
+    "tupper",
+    "batchcooking",
+    "pescado"
+  ],
+  "preparacion_min": 10,
+  "coccion_min": 25,
+  "nutricion": {
+    "kcal": 399.04,
+    "proteinas_g": 20.91,
+    "hidratos_g": 38.54,
+    "grasas_g": 17.86
+  },
+  "ingredientes": [
+    {
+      "nombre": "Atún al natural",
+      "cantidad": 1,
+      "unidad": "lata"
+    },
+    {
+      "nombre": "Patata",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tomate",
+      "cantidad": 150,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Aceitunas rellenas de anchoa",
+      "cantidad": 1,
+      "unidad": "lata"
+    },
+    {
+      "nombre": "Vinagreta de pimientos y cebolla",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "vinagreta-de-pimientos-y-cebolla"
+    }
+  ],
+  "pasos": [
+    "Lavar los 200 g de patata y cocerlos en agua hasta que estén tiernos al pincharlos, aproximadamente 20–25 minutos según su tamaño. Escurrir, dejar templar y pelar si se desea. Cortar la patata en trozos de bocado.",
+    "Lavar los 150 g de tomate y cortarlo en dados o gajos. Escurrir bien una lata de atún al natural y una lata de aceitunas rellenas de anchoa.",
+    "Colocar la patata y el tomate en una ensaladera. Incorporar el atún desmenuzado y las aceitunas escurridas.",
+    "Añadir una ración de vinagreta de pimientos y cebolla ya preparada. Mezclar con suavidad para repartir el aliño sin deshacer demasiado la patata.",
+    "Servir templada o fría, según se prefiera."
+  ],
+  "notas": "Las cantidades por lata se basan en 60 g escurridos de atún al natural y 50 g escurridos de aceitunas rellenas de anchoa. Si preparas la ensalada con antelación, enfría la patata rápidamente y refrigera la ensalada; puedes guardar la vinagreta aparte y aliñar antes de comer. No es adecuada para congelar."
+}
