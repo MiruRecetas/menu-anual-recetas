@@ -257,13 +257,13 @@ const assert = require('node:assert/strict');
   });
   const touchPage=await context.newPage();
   touchPage.on('pageerror',error=>issues.push('gestos: '+error.message));
-  const names=['lunes','martes','miercoles','jueves','viernes'];
+  const names=['lunes','martes','mi%C3%A9rcoles','jueves','viernes'];
   // Los href de producción apuntan a Pages; solo durante QA apuntan al servidor local.
   async function localizeDayLinks(){
     await touchPage.locator('.daily-navigation a').evaluateAll(links=>{
       for(const a of links){
         const url=new URL(a.href);
-        a.href='http://127.0.0.1:8765/'+url.pathname.replace(/^\/menu-anual-recetas\//,'');
+        a.href='http://127.0.0.1:8765/'+url.pathname.replace(/^\/menu-anual-recetas\//,'').replace(/^\/+/, '');
       }
     });
   }
@@ -296,24 +296,8 @@ const assert = require('node:assert/strict');
   await swipe('right');
   await touchPage.waitForTimeout(180);
   assert.match(touchPage.url(),/\/lunes\/$/,'No se permite retroceder de lunes');
-  await touchPage.evaluate(()=>{
-    window.__touchEvents=[];
-    const main=document.querySelector('.daily-page-main');
-    for(const type of ['touchstart','touchmove','touchend','touchcancel'])
-      main.addEventListener(type,e=>{
-        window.__touchEvents.push({type,touches:e.touches.length,
-          changed:[...e.changedTouches].map(x=>[x.clientX,x.clientY,x.identifier]),
-          target:e.target.tagName});
-      },true);
-  });
   for(let i=1;i<names.length;i++){
     await swipe('left');
-    await touchPage.waitForTimeout(200);
-    if(i===1)console.log('TOUCH_DIAGNOSTIC',JSON.stringify({
-      url:touchPage.url(),
-      touches:await touchPage.evaluate(()=>window.__touchEvents||[]),
-      nav:await touchPage.locator('.daily-navigation a').evaluateAll(els=>els.map(a=>a.href))
-    }));
     await touchPage.waitForURL(new RegExp('/'+names[i]+'/$'),{timeout:5000});
     assert.equal(await touchPage.locator('.daily-page-heading h1').innerText(),
                  ['Lunes','Martes','Miércoles','Jueves','Viernes'][i],
