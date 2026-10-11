@@ -13,10 +13,10 @@
   "preparacion_min": 5,
   "coccion_min": 10,
   "nutricion": {
-    "kcal": 748.65,
+    "kcal": 728.53,
     "proteinas_g": 49.31,
     "hidratos_g": 74.7,
-    "grasas_g": 25.42
+    "grasas_g": 23.15
   },
   "ingredientes": [
     {
