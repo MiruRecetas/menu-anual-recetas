@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -27,6 +29,8 @@ jobs:
       - name: Generar y comprobar contrato del recetario
         run: |
           python scripts/generar.py
+          test -f indice-recetas.json
+          python -m json.tool indice-recetas.json > /dev/null
           test -f index.html
           test -f recetario/index.html
           test -f plantillas/dia.html
@@ -38,7 +42,7 @@ jobs:
           grep -q 'id="recipe-catalog"' recetario/index.html
           ! grep -q 'id="recipe-catalog"' index.html
           grep -q 'recetario/' plantillas/receta.html
-          sha256sum index.html recetario/index.html README.md > /tmp/miru-first
+          sha256sum index.html recetario/index.html README.md indice-recetas.json > /tmp/miru-first
           python scripts/generar.py
           sha256sum index.html recetario/index.html README.md > /tmp/miru-second
           diff -u /tmp/miru-first /tmp/miru-second
