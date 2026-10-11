@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "7123817bd958392204561264872804482ea12ff9",
-  "generated_at_utc": "2026-10-11T18:33:27Z",
-  "total_recetas": 27,
+  "source_commit_sha": "43ef6151dd70e23b726433f6d403f37fbef93dba",
+  "generated_at_utc": "2026-10-11T18:48:59Z",
+  "total_recetas": 29,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -871,6 +871,36 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pisto/"
     },
     {
+      "nombre": "Pollo al limón",
+      "slug": "pollo-al-limon",
+      "categoria": "asados-horno",
+      "descripcion": "Tiras de pechuga de pollo doradas con ajo y terminadas en la sartén con zumo de limón fresco.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "AOVE",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 3,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Pechuga de pollo sin piel",
+          "cantidad": 240,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 30,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pollo-al-limon/"
+    },
+    {
       "nombre": "Quiche de puerro, champiñones y pavo",
       "slug": "quiche-de-puerro-champinones-y-pavo",
       "categoria": "huevos-tortillas",
@@ -1014,6 +1044,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salteado-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Tortilla de bacalao",
+      "slug": "tortilla-de-bacalao",
+      "categoria": "huevos-tortillas",
+      "descripcion": "",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevos",
+          "cantidad": 2,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Perejil fresco",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Puerro fresco",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Bacalao fresco",
+          "cantidad": 100,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tortilla-de-bacalao/"
     },
     {
       "nombre": "Tostas de hummus y sardinillas",
