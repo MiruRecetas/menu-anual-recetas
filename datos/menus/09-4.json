@@ -325,14 +325,59 @@
         }
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "recCHeKRTpYCHjsT4",
+        "nombre": "Huevos rotos con guisantes con jamón",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 855.4971061609942,
+          "proteinas_g": 43.16374999999999,
+          "hidratos_g": 63.028,
+          "grasas_g": 46.1138
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Huevos rotos",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recGSumQSJL0aty8a",
+                  "tipo": "preparacion",
+                  "referencia_id": "recRGUe7xVCtmkOhn",
+                  "nombre": "Huevos rotos",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "huevos-rotos"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Guisantes con jamón",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recA2pwtkOx3IZJ4E",
+                  "tipo": "preparacion",
+                  "referencia_id": "recsBVowHkPdUR68N",
+                  "nombre": "Guisantes con jamón",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "guisantes-con-jamon"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "postre": null,
       "nutricion": {
-        "kcal": 763.6222377664435,
-        "proteinas_g": 45.35561,
-        "hidratos_g": 75.32746,
-        "grasas_g": 30.216736
+        "kcal": 1619.1193439274377,
+        "proteinas_g": 88.51935999999999,
+        "hidratos_g": 138.35546,
+        "grasas_g": 76.330536
       }
     },
     "Jueves": {
@@ -463,9 +508,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 4466.169732228451,
-    "proteinas_g": 288.5531075,
-    "hidratos_g": 413.36447,
-    "grasas_g": 177.451526
+    "kcal": 5321.666838389445,
+    "proteinas_g": 331.7168575,
+    "hidratos_g": 476.39247,
+    "grasas_g": 223.565326
   }
 }
