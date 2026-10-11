@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "a0b70ee788f0a1f3730c817f5efad53201c183dc",
-  "generated_at_utc": "2026-10-11T09:19:24Z",
-  "total_recetas": 16,
+  "source_commit_sha": "542f41253322e650f136104fa8bd2b5670312611",
+  "generated_at_utc": "2026-10-11T09:28:13Z",
+  "total_recetas": 17,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -434,6 +434,32 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/mini-wraps-de-falafel/"
+    },
+    {
+      "nombre": "Pasta con chili",
+      "slug": "pasta-con-chili",
+      "categoria": "arroces-pastas",
+      "descripcion": "Pasta al dente mezclada con chili con carne casero y terminada con mozzarella rallada fundida.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pasta",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mozzarella rallada",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chili con carne",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "chili-con-carne"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pasta-con-chili/"
     },
     {
       "nombre": "Pisto",
