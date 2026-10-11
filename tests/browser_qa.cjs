@@ -104,6 +104,19 @@ const assert = require('node:assert/strict');
     assert.match(await nutrition.locator('.daily-macro-note').innerText(),/objetivo diario/,'Leyenda de objetivos diarios');
     assert.equal(await nutrition.locator('.daily-macro-ring .daily-energy-progress').count(),0,'Sin arco terracota único');
     assert.equal(await nutrition.locator('.daily-macro-ring .daily-macro-arc').count(),3,'Anillo tricolor en tarjeta compacta');
+    const palette=await page.evaluate(()=>{
+      const css=getComputedStyle(document.documentElement);
+      return ['--macro-protein','--macro-carbs','--macro-fat'].map(prop=>css.getPropertyValue(prop).trim());
+    });
+    assert.deepEqual(palette,['#748d76','#b86f54','#d0a36e'],'Paleta global: verde proteínas, terracota HC, mostaza grasas');
+    const targetRgb=['rgb(116, 141, 118)','rgb(184, 111, 84)','rgb(208, 163, 110)'];
+    const quickColors=await nutrition.evaluate(node=>({
+      bars:[...node.querySelectorAll('.daily-macro-fill')].map(el=>getComputedStyle(el).backgroundColor),
+      arcs:[...node.querySelectorAll('.daily-macro-arc')].map(el=>getComputedStyle(el).stroke)
+    }));
+    assert.deepEqual(quickColors.bars,targetRgb,'Barras compactas con paleta única');
+    assert.deepEqual(quickColors.arcs,targetRgb,'Anillo compacto con paleta única');
+
     const compactNutritionSignature=await nutrition.evaluate(node=>{
       const arcs=[...node.querySelectorAll('.daily-macro-arc')];
       return {
@@ -259,6 +272,9 @@ const assert = require('node:assert/strict');
       ringLabel:node.querySelector('.daily-macro-ring').getAttribute('aria-label')
     }));
     assert.deepEqual(expandedNutritionSignature,compactNutritionSignature,'Ficha rápida y ampliada representan idéntica energía, colores y objetivos');
+    const fullBarColors=await page.locator('.daily-total .daily-macro-fill').evaluateAll(nodes=>nodes.map(n=>getComputedStyle(n).backgroundColor));
+    assert.deepEqual(fullBarColors,targetRgb,'Barras ampliadas: verde proteínas, terracota HC, mostaza grasas');
+
     const ringValues=await page.locator('.daily-total .daily-macro-ring').evaluate(ring=>{
       const arcs=[...ring.querySelectorAll('.daily-macro-arc')];
       const track=ring.querySelector('.daily-energy-track');
@@ -293,6 +309,16 @@ const assert = require('node:assert/strict');
     await page.locator('#quick-content a.quick-group-recipe').last().click();
     await page.waitForURL(/\/recetas\/bowl-de-yogur-con-miel-y-granola\//);
     assert.match(await page.locator('h1').first().innerText(),/Bowl de yogur con miel y granola/,'Clic desde el modal abre la receta');
+    const recipeColors=await page.locator('.nutrition').evaluate(node=>({
+      dots:[...node.querySelectorAll('.macros .dot')].map(dot=>getComputedStyle(dot).backgroundColor),
+      ring:getComputedStyle(node.querySelector('.ring')).backgroundImage,
+      inlineGradient:node.querySelector('.ring').style.backgroundImage
+    }));
+    assert.deepEqual(recipeColors.dots,targetRgb,'Leyenda de receta: verde proteína, terracota hidratos, mostaza grasas');
+    for(const color of targetRgb)
+      assert.ok(recipeColors.ring.includes(color),'Anillo de receta usa el color '+color);
+    assert.ok(recipeColors.inlineGradient.includes('var(--macro-fat)'),'Anillo de receta deriva los colores del CSS compartido');
+
     await page.close();
   }
 
