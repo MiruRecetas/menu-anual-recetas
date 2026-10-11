@@ -1,0 +1,55 @@
+{
+  "slug": "tortilla-de-bacalao",
+  "nombre": "Tortilla de bacalao",
+  "raciones": 1,
+  "categoria": "huevos-tortillas",
+  "etiquetas": [
+    "rapida",
+    "huevos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 30,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Huevos",
+      "cantidad": 2,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Perejil fresco",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Puerro fresco",
+      "cantidad": 25,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Bacalao fresco",
+      "cantidad": 100,
+      "unidad": "g"
+    }
+  ],
+  "pasos": [
+    "Pochar la cebolla y el puerro a fuego bajo con el AOVE.",
+    "Cocer el bacalao fresco durante dos minutos y desmigarlo.",
+    "Añadir el bacalao a la sartén y templar.",
+    "Batir los huevos, añadir el sofrito con el bacalao y cuajar la tortilla.",
+    "Adornar con perejil."
+  ],
+  "nutricion": {
+    "kcal": 326.09,
+    "proteinas_g": 31.44,
+    "hidratos_g": 3.24,
+    "grasas_g": 21.3
+  }
+}
