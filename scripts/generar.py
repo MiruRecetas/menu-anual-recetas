@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json,html,re
 from validar_menus import validate_menu
+from indice_publico import update_readme
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
@@ -143,5 +144,6 @@ def main():
             dest=R/"menus"/menu_key/day.lower()/"index.html"
             dest.parent.mkdir(parents=True,exist_ok=True)
             dest.write_text(content,encoding="utf-8")
+    update_readme(R/"README.md", list(rs.values()))
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
 if __name__=="__main__":main()
