@@ -5,6 +5,8 @@ Repositorio: [MiruRecetas/menu-anual-recetas](https://github.com/MiruRecetas/men
 
 Esta guía describe **recetas**, no la exportación de menús. Consulta primero el [protocolo maestro de recetas](PROTOCOLO-MAESTRO-RECETAS.md) actualizado el 11/10/2026 y la versión actual de [README](../README.md), [datos/FORMATO.md](../datos/FORMATO.md), `scripts/generar.py`, las fichas `datos/recetas/*.json` y [el contrato de imágenes](IMAGENES-BATCHCOOKING.md). Contrasta con `plantillas/receta.html` y `.github/workflows/publicar-recetas.yml` antes de publicar. No te bases en ejemplos o manuales históricos que contradigan `main`.
 
+**Regla transversal actualizada:** los condimentos indicados deliberadamente sin cantidad (sal, vinagre, especias, hierbas) se muestran en la receta con `cantidad:null` y `unidad:""`, pero no se crean como ingredientes o elementos en Airtable ni se incorporan al cálculo nutricional. No pedir una cantidad no solicitada. Las altas y publicaciones completas se ejecutan autónomamente cuando los datos son suficientes. Para publicación incremental de COMIDAS y MENÚS, consultar el [protocolo v2](PROTOCOLO-MAESTRO-REGISTRO-COMIDAS.md).
+
 ## Responsabilidades y fuentes de verdad
 
 - **Flujo de recetas:** recopila o adapta la elaboración; registra/verifica ingredientes, cantidades y preparaciones N0/N1/N2 en Airtable; obtiene de allí la nutrición calculada cuando proceda; crea/edita el JSON web; decide **categoría y etiquetas web** y verifica su publicación.
