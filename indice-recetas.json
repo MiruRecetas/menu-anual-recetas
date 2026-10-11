@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "30471be5f9db793bee251ac7e01123b4e680dcbd",
-  "generated_at_utc": "2026-10-11T14:47:26Z",
+  "source_commit_sha": "f9d77d1649a1b3d991537819609126637e14b03a",
+  "generated_at_utc": "2026-10-11T15:01:49Z",
   "total_recetas": 24,
   "recetas": [
     {
@@ -485,7 +485,7 @@
         },
         {
           "nombre": "Guisantes",
-          "cantidad": 200,
+          "cantidad": 100,
           "unidad": "g"
         },
         {
