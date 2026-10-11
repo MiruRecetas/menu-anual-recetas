@@ -1,0 +1,62 @@
+{
+  "slug": "salchichas-al-vino",
+  "nombre": "Salchichas al vino",
+  "raciones": 3,
+  "categoria": "guisos-legumbres",
+  "etiquetas": [
+    "congelable",
+    "microondas",
+    "tupper",
+    "batchcooking",
+    "carne"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Salchichas frescas blancas de cerdo",
+      "cantidad": 250,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Salchichas frescas rojas de cerdo",
+      "cantidad": 250,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 50,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 15,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Vino blanco de guiso",
+      "cantidad": 150,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Laurel",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Sofreír la cebolla picada con los 15 ml de AOVE.",
+    "Cortar las salchichas en porciones, añadirlas a la cebolla y sofreír todo hasta que estén doradas.",
+    "Añadir los 150 ml de vino blanco, el laurel y unos granos de pimienta negra. Dejar cocinar hasta que las salchichas estén hechas.",
+    "Si la salsa reduce demasiado, añadir el agua necesaria."
+  ],
+  "nutricion": {
+    "kcal": 569.16,
+    "proteinas_g": 22.09,
+    "hidratos_g": 3.68,
+    "grasas_g": 51.4
+  }
+}
