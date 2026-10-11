@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "19bc3aabd6bc9873e593e812d8e99774c0d13a18",
-  "generated_at_utc": "2026-10-11T11:55:37Z",
+  "source_commit_sha": "90b2e7dbbedc0e1ca9056b8de453cd012f36a58d",
+  "generated_at_utc": "2026-10-11T12:29:09Z",
   "total_recetas": 21,
   "recetas": [
     {
@@ -792,7 +792,7 @@
         },
         {
           "nombre": "AOVE",
-          "cantidad": 20,
+          "cantidad": 15,
           "unidad": "ml"
         },
         {
