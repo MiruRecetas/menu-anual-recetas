@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json,html,re
 from validar_menus import validate_menu
-from indice_publico import update_readme, update_json_index, source_commit
+from indice_publico import update_json_index, source_commit
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
@@ -144,7 +144,6 @@ def main():
             dest=R/"menus"/menu_key/day.lower()/"index.html"
             dest.parent.mkdir(parents=True,exist_ok=True)
             dest.write_text(content,encoding="utf-8")
-    update_readme(R/"README.md", list(rs.values()))
     update_json_index(R/"indice-recetas.json", list(rs.values()), source_commit(R))
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
 if __name__=="__main__":main()
