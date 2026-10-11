@@ -166,9 +166,8 @@ const assert = require('node:assert/strict');
     assert.equal(chartValues.goal.width,'1px','Línea fina');
     assert.ok(chartValues.pies.every(v=>Math.abs(v-chartValues.total)<1e-7),'Cada circular abarca toda la semana');
     if(compact){await flip.click();assert.equal(await flip.getAttribute('aria-pressed'),'false')}
-    assert.match(await charts.locator('.weekly-charts-note').innerText(),/aproximación/);
+    assert.equal(await charts.locator('.weekly-charts-note').count(),0,'Sin nota bajo los gráficos');
     await page.locator('#menu-number').selectOption('2');
-    assert.match(await charts.locator('.weekly-charts-note').innerText(),/parciales/,'Menú pendiente identificado');
     assert.equal(await charts.locator('.weekly-intakes .chart-pie-slice').count(),1,'Solo desayuno registrado en menú pendiente');
     await page.locator('#month').selectOption('9');
     await page.locator('#menu-number').selectOption('4');

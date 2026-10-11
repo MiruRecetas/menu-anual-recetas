@@ -145,12 +145,7 @@
   const backLabel=node('span','Reparto semanal','weekly-chart-back-label');
   backLabel.setAttribute('aria-hidden','true');
   inner.append(left,right);card.append(inner,backLabel,toggle);container.append(card);
-  const note=node('p',(data.variety.basis==='protagonista'
-   ?'Variedad: aproximación por el ingrediente protagonista de cada plato. '
-   :'Variedad: aporte energético por grupos de ingredientes. ')
-   +(data.partial?'Totales parciales de las ingestas registradas. ':'Totales de las ingestas registradas. ')
-   +'La cena libre del viernes no está incluida.','weekly-charts-note');
-  container.append(note);container.hidden=false;
+  container.hidden=false;
   const compact=root.matchMedia('(max-width: 699px) and (orientation: portrait)');
   let flipped=false;
   const fit=()=>{
