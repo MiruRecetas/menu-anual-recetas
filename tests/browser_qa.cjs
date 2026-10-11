@@ -71,13 +71,9 @@ const assert = require('node:assert/strict');
     for(const icon of ['coffee','utensils','moon','apple'])
       assert.equal(await dailyMeals.locator('.quick-meal-heading svg.lucide-'+icon).count(),1,'Icono de '+icon+' igual que en semanal');
     assert.deepEqual(await dailyMeals.nth(0).locator('.quick-meal-name').allInnerTexts(),['Café con leche'],'Desayuno simplificado');
-    assert.deepEqual(await dailyMeals.nth(1).locator('.quick-group summary').allInnerTexts(),['Bacalao a la vizcaína','Patatas panadera'],'Comida en grupos Airtable');
-    assert.deepEqual(await dailyMeals.nth(2).locator('.quick-group summary').allInnerTexts(),['Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'],'Cena en orden Visual Orden grupo 1 2 3');
-    assert.equal(await dailyMeals.nth(2).locator('.quick-group').count(),3,'Tres grupos de cena');
-    await dailyMeals.nth(2).locator('.quick-group').nth(1).locator('summary').click();
-    assert.equal(await dailyMeals.nth(2).locator('.quick-group').nth(1).locator('.quick-group-ingredient').count(),2,'Puerros y mayonesa desplegables');
-    assert.match(await dailyMeals.nth(2).locator('.quick-group').nth(1).innerText(),/175 g/,'Puerros 175 g');
-    assert.match(await dailyMeals.nth(2).locator('.quick-group').nth(1).innerText(),/10 g/,'Mayonesa 10 g');
+    assert.deepEqual(await dailyMeals.nth(1).locator('.quick-group .quick-meal-name').allInnerTexts(),['Bacalao a la vizcaína','Patatas panadera'],'Solo nombres del almuerzo');
+    assert.deepEqual(await dailyMeals.nth(2).locator('.quick-group .quick-meal-name').allInnerTexts(),['Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'],'Nombres y orden de cena Airtable');
+    assert.equal(await dailyMeals.locator('details,summary,.quick-group-ingredient').count(),0,'Sin desplegables ni componentes en ventana rápida');
     assert.deepEqual(await dailyMeals.nth(3).locator('.quick-meal-name').allInnerTexts(),['Ciruelas'],'Postre sigue independiente');
     assert.deepEqual(await dailyMeals.locator('a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/bacalao-a-la-vizcaina/',
@@ -86,6 +82,7 @@ const assert = require('node:assert/strict');
     assert.equal(await dailyMeals.nth(0).locator('a').count(),0,'Café sin enlace');
     assert.equal(await dailyMeals.nth(3).locator('a').count(),0,'Ciruelas sin enlace');
     assert.equal(await dailyMeals.nth(2).locator('a.quick-group-recipe').count(),1,'Solo bowl es receta enlazada');
+    assert.equal(await dailyMeals.nth(2).locator('.quick-group').nth(1).locator('a').count(),0,'Puerros solo texto');
     assert.equal(await dailyMeals.locator('.muted.small').count(),0,'Sin detalles redundantes');
     assert.ok(await dailyMeals.evaluateAll(els=>els.every(el=>getComputedStyle(el).borderTopWidth==='0px')),'Sin líneas separadoras entre ingestas');
     assert.ok(await dailyMeals.evaluateAll(els=>els.every(el=>el.scrollWidth<=el.clientWidth+2)),'Sin desbordamiento en nombres');
@@ -168,7 +165,7 @@ const assert = require('node:assert/strict');
     ],'Viernes: wok enlazado');
     await page.keyboard.press('Escape');
     await page.getByRole('button',{name:'Ver resumen de Martes'}).click();
-    assert.deepEqual(await page.locator('#quick-content .quick-meal').nth(2).locator('.quick-group summary').allInnerTexts(),['Mini wraps de falafel','Boquerones aliñados'],'Cena del martes agrupada');
+    assert.deepEqual(await page.locator('#quick-content .quick-meal').nth(2).locator('.quick-group .quick-meal-name').allInnerTexts(),['Mini wraps de falafel','Boquerones aliñados'],'Cena del martes agrupada');
     assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/carrilleras-de-cerdo-al-vino/',
       '/recetas/mini-wraps-de-falafel/'
