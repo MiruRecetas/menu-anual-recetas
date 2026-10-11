@@ -1,9 +1,55 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "2a1ac165261fbe97088be4f939997aef5d45ef0c",
-  "generated_at_utc": "2026-10-11T12:38:50Z",
-  "total_recetas": 21,
+  "source_commit_sha": "9dbd62cf26c55a4cd9990ce92b58c91ceab3edb3",
+  "generated_at_utc": "2026-10-11T12:55:32Z",
+  "total_recetas": 22,
   "recetas": [
+    {
+      "nombre": "Arroz con pollo",
+      "slug": "arroz-con-pollo",
+      "categoria": "arroces-pastas",
+      "descripcion": "Arroz con pollo, pimientos, cebolla y guisantes, cocinado en caldo de pollo con azafrán a partir de un salteado casero de pollo y verduras.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Salteado de pollo y verduras",
+          "cantidad": 2,
+          "unidad": "raciones",
+          "preparacion": "salteado-de-pollo-y-verduras"
+        },
+        {
+          "nombre": "Arroz blanco",
+          "cantidad": 140,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Guisantes",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 6,
+          "unidad": "g (2 dientes)"
+        },
+        {
+          "nombre": "Caldo de pollo",
+          "cantidad": 400,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Azafrán",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/arroz-con-pollo/"
+    },
     {
       "nombre": "Bacalao a la vizcaína",
       "slug": "bacalao-a-la-vizcaina",
