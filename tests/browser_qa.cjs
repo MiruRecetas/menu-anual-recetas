@@ -71,17 +71,21 @@ const assert = require('node:assert/strict');
     for(const icon of ['coffee','utensils','moon','apple'])
       assert.equal(await dailyMeals.locator('.quick-meal-heading svg.lucide-'+icon).count(),1,'Icono de '+icon+' igual que en semanal');
     assert.deepEqual(await dailyMeals.nth(0).locator('.quick-meal-name').allInnerTexts(),['Café con leche'],'Desayuno simplificado');
-    assert.deepEqual(await dailyMeals.nth(1).locator('.quick-meal-name').allInnerTexts(),['Bacalao a la vizcaína con patatas panadera'],'Comida sin desglose duplicado');
-    assert.deepEqual(await dailyMeals.nth(2).locator('.quick-meal-name').allInnerTexts(),['Carpaccio','Puerros con mayonesa','Bowl de yogur'],'Cena simplificada igual que semanal');
-    assert.deepEqual(await dailyMeals.nth(3).locator('.quick-meal-name').allInnerTexts(),['Ciruelas'],'Postre simplificado');
-    assert.deepEqual(await dailyMeals.locator('a.quick-meal-link').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
+    assert.deepEqual(await dailyMeals.nth(1).locator('.quick-group summary').allInnerTexts(),['Bacalao a la vizcaína','Patatas panadera'],'Comida en grupos Airtable');
+    assert.deepEqual(await dailyMeals.nth(2).locator('.quick-group summary').allInnerTexts(),['Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'],'Cena en orden Visual Orden grupo 1 2 3');
+    assert.equal(await dailyMeals.nth(2).locator('.quick-group').count(),3,'Tres grupos de cena');
+    await dailyMeals.nth(2).locator('.quick-group').nth(1).locator('summary').click();
+    assert.equal(await dailyMeals.nth(2).locator('.quick-group').nth(1).locator('.quick-group-ingredient').count(),2,'Puerros y mayonesa desplegables');
+    assert.match(await dailyMeals.nth(2).locator('.quick-group').nth(1).innerText(),/175 g/,'Puerros 175 g');
+    assert.match(await dailyMeals.nth(2).locator('.quick-group').nth(1).innerText(),/10 g/,'Mayonesa 10 g');
+    assert.deepEqual(await dailyMeals.nth(3).locator('.quick-meal-name').allInnerTexts(),['Ciruelas'],'Postre sigue independiente');
+    assert.deepEqual(await dailyMeals.locator('a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/bacalao-a-la-vizcaina/',
       '/recetas/bowl-de-yogur-con-miel-y-granola/'
-    ],'Solo recetas reales del lunes enlazadas');
-    assert.equal(await dailyMeals.nth(0).locator('a').count(),0,'Café no es receta');
-    assert.equal(await dailyMeals.nth(3).locator('a').count(),0,'Fruta no es receta');
-    assert.equal(await dailyMeals.nth(2).locator('.quick-meal-name:not(a)').count(),2,'Carpaccio y puerros sin enlace');
-    assert.equal(await dailyMeals.nth(1).locator('a.quick-meal-link').getAttribute('title'),'Abrir receta: Bacalao a la vizcaína','El enlace distingue receta de acompañamiento');
+    ],'Recetas de lunes enlazadas desde grupos');
+    assert.equal(await dailyMeals.nth(0).locator('a').count(),0,'Café sin enlace');
+    assert.equal(await dailyMeals.nth(3).locator('a').count(),0,'Ciruelas sin enlace');
+    assert.equal(await dailyMeals.nth(2).locator('a.quick-group-recipe').count(),1,'Solo bowl es receta enlazada');
     assert.equal(await dailyMeals.locator('.muted.small').count(),0,'Sin detalles redundantes');
     assert.ok(await dailyMeals.evaluateAll(els=>els.every(el=>getComputedStyle(el).borderTopWidth==='0px')),'Sin líneas separadoras entre ingestas');
     assert.ok(await dailyMeals.evaluateAll(els=>els.every(el=>el.scrollWidth<=el.clientWidth+2)),'Sin desbordamiento en nombres');
@@ -145,31 +149,30 @@ const assert = require('node:assert/strict');
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#day-modal').isVisible(),false,'Escape');
     await page.getByRole('button',{name:'Ver resumen de Miércoles'}).click();
-    assert.deepEqual(await page.locator('#quick-content a.quick-meal-link').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
+    assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/bacalao-a-la-vizcaina/',
       '/recetas/quiche-de-puerro-champinones-y-pavo/'
-    ],'Miércoles: recetas verdaderas de bacalao y quiche');
+    ],'Miércoles: grupos de bacalao y quiche');
     await page.keyboard.press('Escape');
     await page.getByRole('button',{name:'Ver resumen de Jueves'}).click();
-    assert.deepEqual(await page.locator('#quick-content a.quick-meal-link').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
+    assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/canelones-de-carrilleras/',
       '/recetas/tostas-de-hummus-y-sardinillas/'
-    ],'Jueves: se resuelve receta de tostas incluso sin slug en el menú');
-    assert.equal(await page.locator('#quick-content .quick-meal').nth(2).locator('.quick-meal-name:not(a)').count(),1,'Sardinillas ingrediente sin ficha independiente');
+    ],'Jueves: preparaciones enlazadas');
     await page.keyboard.press('Escape');
     await page.getByRole('button',{name:'Ver resumen de Viernes'}).click();
     assert.equal(await page.locator('#quick-content .quick-meal').count(),3,'Viernes sin postre');
-    assert.deepEqual(await page.locator('#quick-content .quick-meal').last().locator('.quick-meal-name').allInnerTexts(),['Noche libre'],'Cena libre simplificada');
-    assert.deepEqual(await page.locator('#quick-content a.quick-meal-link').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
+    assert.deepEqual(await page.locator('#quick-content .quick-meal').last().locator('.quick-meal-name').allInnerTexts(),['Noche libre'],'Cena libre');
+    assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/wok-de-gambones-y-pisto/'
-    ],'Viernes: wok enlazado y noche libre sin enlace');
+    ],'Viernes: wok enlazado');
     await page.keyboard.press('Escape');
     await page.getByRole('button',{name:'Ver resumen de Martes'}).click();
-    assert.match(await page.locator('#quick-content').innerText(),/Carrilleras al vino con boniato al horno/);
-    assert.deepEqual(await page.locator('#quick-content a.quick-meal-link').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
+    assert.deepEqual(await page.locator('#quick-content .quick-meal').nth(2).locator('.quick-group summary').allInnerTexts(),['Mini wraps de falafel','Boquerones aliñados'],'Cena del martes agrupada');
+    assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/carrilleras-de-cerdo-al-vino/',
       '/recetas/mini-wraps-de-falafel/'
-    ],'Martes: carrilleras y mini wraps enlazados; boquerones no');
+    ],'Martes: recetas reales enlazadas');
     assert.equal(await page.locator('#quick-content .daily-nutrition').count(),1,'Nutrición visual también el martes');
     assert.equal(await page.locator('#quick-content .day-context').textContent(),'Octubre · Menú 1 · Martes','Encabezado contextual');
     assert.equal(await page.locator('#quick-content .day-context-name').textContent(),'Martes','Día destacado');
@@ -190,13 +193,20 @@ const assert = require('node:assert/strict');
     const dailyOverflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
     assert.ok(dailyOverflow<=2,test.name+': página diaria desborda '+dailyOverflow);
     await page.screenshot({path:out+'/dia-'+test.name+'.png',fullPage:true});
+    await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
+    const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('h2:text-is("Cena")')}).locator('.culinary-group');
+    assert.deepEqual(await dinnerGroups.locator('summary').allInnerTexts(),[
+      'Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'
+    ],'Página completa respeta orden definitivo del lunes');
+    await dinnerGroups.nth(1).locator('summary').click();
+    assert.equal(await dinnerGroups.nth(1).locator('.ingredient-line').count(),2,'Despliegue de puerros y mayonesa');
     await page.goto('http://127.0.0.1:8765/recetario/');
     await page.locator('#recipe-catalog').waitFor();
     assert.ok(await page.locator('#recipe-catalog .recipe-tile').count()>=10,'10 recetas iniciales');
     await page.screenshot({path:out+'/recetario-'+test.name+'.png',fullPage:true});
     await page.goto('http://127.0.0.1:8765/');
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
-    await page.locator('#quick-content a.quick-meal-link').last().click();
+    await page.locator('#quick-content a.quick-group-recipe').last().click();
     await page.waitForURL(/\/recetas\/bowl-de-yogur-con-miel-y-granola\//);
     assert.match(await page.locator('h1').first().innerText(),/Bowl de yogur con miel y granola/,'Clic desde el modal abre la receta');
     await page.close();
