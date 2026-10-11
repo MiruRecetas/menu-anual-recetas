@@ -306,3 +306,11 @@ button[hidden]{display:none!important}
 .daily-total .daily-nutrition{width:100%;max-width:520px;margin:0 0 12px}
 .daily-total .daily-energy-center strong{font-size:clamp(1.25rem,2.4vw,1.65rem)}
 @media(max-width:540px){.daily-page-heading{align-items:center;margin:11px 0 18px;gap:10px}.daily-page-heading h1{font-size:1.7rem}.daily-total .daily-nutrition{max-width:none}}
+
+
+/* Ficha ampliada: anillo con distribución energética multicolor.
+   Las barras siguen mostrando objetivos de gramos, no reparto calórico. */
+.daily-total .daily-macro-ring .daily-macro-arc{stroke-linecap:butt}
+.daily-total .daily-macro-ring .daily-macro-arc-protein{stroke:#789582}
+.daily-total .daily-macro-ring .daily-macro-arc-carbs{stroke:#c78465}
+.daily-total .daily-macro-ring .daily-macro-arc-fat{stroke:#9d88a3}
