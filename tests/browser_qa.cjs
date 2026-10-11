@@ -298,10 +298,7 @@ const assert = require('node:assert/strict');
   assert.match(touchPage.url(),/\/lunes\/$/,'No se permite retroceder de lunes');
   for(let i=1;i<names.length;i++){
     await swipe('left');
-    await touchPage.waitForURL(new RegExp('/'+names[i]+'/
-  console.log('PASS: Navegación responsive y deslizamiento táctil limitado lunes-viernes; capturas creadas.');
-})().catch(e=>{console.error(e);process.exit(1)});
-),{timeout:5000});
+    await touchPage.waitForURL(new RegExp('/'+names[i]+'/$'),{timeout:5000});
     assert.equal(await touchPage.locator('.daily-page-heading h1').innerText(),
                  ['Lunes','Martes','Miércoles','Jueves','Viernes'][i],
                  'Deslizamiento izquierda avanza al día '+i);
@@ -313,10 +310,7 @@ const assert = require('node:assert/strict');
   assert.match(touchPage.url(),/\/viernes\/$/,'No se permite avanzar después de viernes');
   for(let i=names.length-2;i>=0;i--){
     await swipe('right');
-    await touchPage.waitForURL(new RegExp('/'+names[i]+'/
-  console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
-})().catch(e=>{console.error(e);process.exit(1)});
-),{timeout:5000});
+    await touchPage.waitForURL(new RegExp('/'+names[i]+'/$'),{timeout:5000});
   }
   await swipe('left',true);
   await touchPage.waitForTimeout(180);
