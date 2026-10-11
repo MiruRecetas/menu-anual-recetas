@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "43ef6151dd70e23b726433f6d403f37fbef93dba",
-  "generated_at_utc": "2026-10-11T18:48:59Z",
+  "source_commit_sha": "c67880a545963a0a59cbdc3433450e0b27acab1e",
+  "generated_at_utc": "2026-10-11T18:50:04Z",
   "total_recetas": 29,
   "recetas": [
     {
@@ -880,7 +880,7 @@
         {
           "nombre": "AOVE",
           "cantidad": 15,
-          "unidad": "g"
+          "unidad": "ml"
         },
         {
           "nombre": "Ajo",
