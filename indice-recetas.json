@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "5e9f28410f64918c1410f4cf1c422b36aa0ccbfb",
-  "generated_at_utc": "2026-10-11T08:33:20Z",
-  "total_recetas": 14,
+  "source_commit_sha": "55efbdd8f4b534d3d292a3728b9063e50c3f841d",
+  "generated_at_utc": "2026-10-11T09:09:29Z",
+  "total_recetas": 15,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -211,6 +211,66 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/carrilleras-de-cerdo-al-vino/"
+    },
+    {
+      "nombre": "Chili con carne",
+      "slug": "chili-con-carne",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Guiso de ternera picada, alubias rojas y verduras con tomate, chipotle en adobo, jalapeños y maíz dulce.",
+      "raciones_base": 5,
+      "ingredientes": [
+        {
+          "nombre": "Jalapeños en conserva, picados",
+          "cantidad": 22.5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chipotles en adobo",
+          "cantidad": 90,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Alubias rojas cocidas en conserva, escurridas y enjuagadas",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Maíz dulce en conserva, escurrido",
+          "cantidad": 62,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate triturado",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ternera picada",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 30,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/chili-con-carne/"
     },
     {
       "nombre": "Falafel",
