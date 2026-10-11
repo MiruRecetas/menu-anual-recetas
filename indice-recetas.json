@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "2053b2c5d9243a7161df8852144531c591fbc7c6",
-  "generated_at_utc": "2026-10-11T10:19:14Z",
-  "total_recetas": 18,
+  "source_commit_sha": "af64f06a8176e46987745cb26bfbf488f0b1b822",
+  "generated_at_utc": "2026-10-11T11:31:17Z",
+  "total_recetas": 19,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -690,6 +690,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salsa-vizcaina/"
+    },
+    {
+      "nombre": "Salteado de pollo y verduras",
+      "slug": "salteado-de-pollo-y-verduras",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Pechuga de pollo dorada en sartén con cebolla pochada y tiras de pimiento verde y rojo, salteadas con AOVE.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de pollo sin piel",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 20,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salteado-de-pollo-y-verduras/"
     },
     {
       "nombre": "Tostas de hummus y sardinillas",
