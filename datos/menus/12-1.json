@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "mes": 12,
+  "menu": 1,
+  "airtable_menu_id": "recMEStCqsCs6ObL8",
+  "estado": "Pendiente",
+  "dias": {
+    "Lunes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "estado": "pendiente"
+      },
+      "cena": {
+        "estado": "pendiente"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 47.50698,
+        "proteinas_g": 3.332,
+        "hidratos_g": 4.738,
+        "grasas_g": 1.654
+      }
+    },
+    "Martes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "estado": "pendiente"
+      },
+      "cena": {
+        "estado": "pendiente"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 47.50698,
+        "proteinas_g": 3.332,
+        "hidratos_g": 4.738,
+        "grasas_g": 1.654
+      }
+    },
+    "Miércoles": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "estado": "pendiente"
+      },
+      "cena": {
+        "estado": "pendiente"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 47.50698,
+        "proteinas_g": 3.332,
+        "hidratos_g": 4.738,
+        "grasas_g": 1.654
+      }
+    },
+    "Jueves": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "estado": "pendiente"
+      },
+      "cena": {
+        "estado": "pendiente"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 47.50698,
+        "proteinas_g": 3.332,
+        "hidratos_g": 4.738,
+        "grasas_g": 1.654
+      }
+    },
+    "Viernes": {
+      "desayuno": {
+        "tipo": "ingrediente",
+        "referencia_id": "recIa7zpasm2s0mgH",
+        "nombre": "Café con leche (oficina, Incapto)",
+        "cantidad": 130,
+        "unidad": "ml",
+        "nutricion": {
+          "kcal": 47.50698,
+          "proteinas_g": 3.332,
+          "hidratos_g": 4.738,
+          "grasas_g": 1.654
+        }
+      },
+      "comida": {
+        "estado": "pendiente"
+      },
+      "cena": {
+        "estado": "libre"
+      },
+      "postre": null,
+      "nutricion": {
+        "kcal": 47.50698,
+        "proteinas_g": 3.332,
+        "hidratos_g": 4.738,
+        "grasas_g": 1.654
+      }
+    }
+  },
+  "nutricion_semana": {
+    "kcal": 237.5349,
+    "proteinas_g": 16.66,
+    "hidratos_g": 23.69,
+    "grasas_g": 8.27
+  }
+}
