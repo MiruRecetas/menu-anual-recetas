@@ -194,6 +194,9 @@ const assert = require('node:assert/strict');
     assert.equal(await dailyVisual.count(),1,'Tarjeta nutricional compartida');
     assert.equal(await dailyVisual.locator('.daily-energy-center strong').count(),1,'Anillo de calorías visible');
     assert.equal(await dailyVisual.locator('.daily-macro').count(),3,'Tres barras de macronutrientes');
+    assert.equal(await dailyVisual.locator('.daily-macro-ring .daily-macro-arc').count(),3,'Tres segmentos en el anillo del martes');
+    assert.match(await dailyVisual.locator('.daily-macro-note').innerText(),/objetivo diario/,'Barras referidas a objetivos, no a distribución energética');
+    assert.equal(await dailyVisual.locator('.daily-macro-ring .daily-energy-progress').count(),0,'No queda progreso terracota antiguo');
     assert.equal(await page.locator('.daily-total h2').count(),0,'Sin encabezado antiguo de nutrición');
     assert.ok(await dailyVisual.evaluate(node=>node.scrollWidth<=node.clientWidth+2),'Tarjeta nutricional sin desbordamiento');
         const principal=page.locator('.culinary-group').filter({hasText:'Carrilleras de cerdo al vino'}).first();
@@ -209,6 +212,26 @@ const assert = require('node:assert/strict');
     await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
     assert.equal(await page.locator('.daily-total .daily-energy-center strong').innerText(),'1488','Mismas kcal que el resumen rápido del lunes');
     assert.deepEqual(await page.locator('.daily-total .daily-macro-values strong').allInnerTexts(),['99 g','105 g','70 g'],'Mismos macros que en ficha rápida');
+    assert.deepEqual(await page.locator('.daily-total .daily-macro-values small').allInnerTexts(),['106%','71%','108%'],'Cumplimiento diario: PR 93 HC 147 GR 65');
+    const ringValues=await page.locator('.daily-total .daily-macro-ring').evaluate(ring=>{
+      const arcs=[...ring.querySelectorAll('.daily-macro-arc')];
+      const track=ring.querySelector('.daily-energy-track');
+      const circumference=2*Math.PI*Number(track.getAttribute('r'));
+      return {parts:arcs.map(a=>({
+        name:a.getAttribute('class'),
+        length:Number(a.getAttribute('stroke-dasharray').split(' ')[0]),
+        start:-Number(a.getAttribute('stroke-dashoffset'))
+      })),circumference}
+    });
+    assert.deepEqual(ringValues.parts.map(x=>x.name.split(' ').at(-1)),['daily-macro-arc-protein','daily-macro-arc-carbs','daily-macro-arc-fat'],'Orden fijo de segmentos de color');
+    const painted=ringValues.parts.reduce((sum,part)=>sum+part.length,0);
+    assert.ok(Math.abs(painted/ringValues.circumference-1488.4/1600)<.002,'Anillo refleja 93% del objetivo calórico');
+    const totalMacroKcal=99*4+105*4+70*9;
+    assert.ok(Math.abs(ringValues.parts[0].length/painted-99*4/totalMacroKcal)<.002,'Proteínas aportan 27% del arco');
+    assert.ok(Math.abs(ringValues.parts[1].length/painted-105*4/totalMacroKcal)<.002,'HC aportan 29% del arco');
+    assert.ok(Math.abs(ringValues.parts[2].length/painted-70*9/totalMacroKcal)<.002,'Grasas aportan 44% del arco');
+    const goalWidths=await page.locator('.daily-total .daily-macro-fill').evaluateAll(nodes=>nodes.map(node=>Number(node.style.width.replace('%',''))));
+    assert.deepEqual(goalWidths.map(Math.round),[100,71,100],'Barras capadas a 100% aunque el objetivo se supere');
         const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('h2:text-is("Cena")')}).locator('.culinary-group');
     assert.deepEqual(await dinnerGroups.locator('summary').allInnerTexts(),[
       'Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'
