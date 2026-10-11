@@ -120,7 +120,7 @@ def main():
     for mid,m in tables["menus"].items():
         if targets and mid not in targets:
             continue
-        if m.get("Estado menú")!="Calculado":
+        if m.get("Estado menú") not in ("Calculado", "Pendiente: revisar vínculos, desayunos, postres o nutrición"):
             continue
         month=MONTHS.get(value(m.get("Mes")))
         number=m.get("Número")
@@ -134,9 +134,13 @@ def main():
             breakfast_quantity=130
             breakfast_nut={k: v*breakfast_quantity/100 for k,v in breakfast_nut.items()}
             breakfast=ingredient(br,tables["ingredientes"],breakfast_quantity,"ml",breakfast_nut)
-            lunch=meal(single_link(m,day+" · Comida"),tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing)
+            lunch_ref=single_link(m,day+" · Comida",True)
+            lunch=(meal(lunch_ref,tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing)
+                   if lunch_ref else {"estado":"pendiente"})
+            dinner_ref=single_link(m,day+" · Cena",True) if day!="Viernes" else None
             dinner=({"estado":"libre"} if day=="Viernes" else
-                    meal(single_link(m,day+" · Cena"),tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing))
+                    meal(dinner_ref,tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing)
+                    if dinner_ref else {"estado":"pendiente"})
             postref=single_link(m,day+" · Postre",True)
             post=None
             if postref:
@@ -145,17 +149,30 @@ def main():
                 if not isinstance(unit,str) or not unit:error("Unidad de postre inválida: "+day)
                 post=ingredient(postref,tables["ingredientes"],quantity,unit,
                                 macros(m,tuple("TEC "+day+" Postre "+k for k in FIELD_MACROS),day))
+            components=[breakfast["nutricion"]]
+            for entry in (lunch,dinner):
+                if entry.get("estado")=="Calculado": components.append(entry["nutricion"])
+            if post: components.append(post["nutricion"])
+            calculated={key:sum(item[key] for item in components) for key in KEY_MACROS}
             days[day]={"desayuno":breakfast,"comida":lunch,"cena":dinner,"postre":post,
-                       "nutricion":macros(m,tuple(day+" · "+k+" totales" for k in FIELD_MACROS),day)}
+                       "nutricion":calculated}
+        complete=all(days[d][k].get("estado")!="pendiente"
+                     for d in DAYS for k in ("comida","cena"))
+        if complete and m.get("Estado menú")=="Calculado":
+            daily={d:macros(m,tuple(d+" · "+k+" totales" for k in FIELD_MACROS),d) for d in DAYS}
+            for d in DAYS: days[d]["nutricion"]=daily[d]
+            weekly=macros(m,("Menú · Kcal","Menú · Proteínas","Menú · Hidratos","Menú · Grasas"),mid)
+        else:
+            weekly={key:sum(days[d]["nutricion"][key] for d in DAYS) for key in KEY_MACROS}
         week={"schema_version":2,"mes":month,"menu":number,"airtable_menu_id":mid,
-              "estado":"Calculado","dias":days,
-              "nutricion_semana":macros(m,("Menú · Kcal","Menú · Proteínas","Menú · Hidratos","Menú · Grasas"),mid)}
+              "estado":"Calculado" if complete else "Pendiente","dias":days,
+              "nutricion_semana":weekly}
         filename=f"{month:02d}-{number}.json"
         validate_menu(week,filename,existing)
         menus.append((filename,week))
     if targets and targets != {m["airtable_menu_id"] for _,m in menus}:
         error("No se pudo validar el conjunto solicitado de menús")
-    if not menus:error("No hay menús completos calculados")
+    if not menus:error("No hay menús exportables")
     # Ningún fichero se escribe antes de validar todos los menús seleccionados.
     for filename,week in menus:
         target=ROOT/"datos"/"menus"/filename
