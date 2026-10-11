@@ -21,7 +21,7 @@
       },
       "comida": {
         "comida_id": "recisgOzomUjkPYsa",
-        "nombre": "Albóndigas en salsa rubia con patatas panadera y ensalada sencilla",
+        "nombre": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla",
         "estado": "Calculado",
         "nutricion": {
           "kcal": 792.3796438378586,
@@ -72,7 +72,7 @@
             },
             {
               "id": "acompanamiento-2",
-              "nombre": "Ensalada sencilla",
+              "nombre": "Ensalada de tomate y cebolla",
               "orden": 3,
               "elementos": [
                 {
@@ -106,14 +106,97 @@
         }
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "rec8qQq7tWoFYdvGm",
+        "nombre": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 593.5596460221415,
+          "proteinas_g": 31.555,
+          "hidratos_g": 38.228,
+          "grasas_g": 35.641
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Tortilla francesa de queso y pollo",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec6knYz4PCFa7u2u",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSPOXZkbn9PSbHI",
+                  "nombre": "Huevo de gallina entero crudo",
+                  "cantidad": 100,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recK24uPxhKxTQLLJ",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recG7EOA99Wt7MiRC",
+                  "nombre": "Mozzarella rallada Dia Láctea",
+                  "cantidad": 20,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recW2jZafsKDRaTck",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recVfgOdXad3Ns6po",
+                  "nombre": "Pechuga de pollo Nuestra Alacena DIA (95 %, loncheada)",
+                  "cantidad": 30,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recWUAOKxq42uU4WN",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Pan Oroweat",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recl4uPUsyH8G5eVU",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recZ6WhTcrZDhRgKI",
+                  "nombre": "Pan de molde 12 cereales y semillas Oroweat",
+                  "cantidad": 36.5,
+                  "unidad": "g"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-2",
+              "nombre": "Puré de calabaza y calabacín",
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "recLUF7XrBrj6nKKn",
+                  "tipo": "preparacion",
+                  "referencia_id": "reccvBMaeXJoSvdSf",
+                  "nombre": "Puré de calabaza y calabacín",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "pure-de-calabaza-y-calabacin"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "postre": null,
       "nutricion": {
-        "kcal": 839.8866238378586,
-        "proteinas_g": 44.46124166666667,
-        "hidratos_g": 53.86993333333333,
-        "grasas_g": 47.542833333333334
+        "kcal": 1433.44626986,
+        "proteinas_g": 76.01624166666667,
+        "hidratos_g": 92.09793333333333,
+        "grasas_g": 83.18383333333333
       }
     },
     "Martes": {
@@ -134,14 +217,59 @@
         "estado": "pendiente"
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "recqHPRCZmS834meh",
+        "nombre": "Puré de calabaza y calabacín y salchichas al vino",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 784.721322950121,
+          "proteinas_g": 26.52916666666666,
+          "hidratos_g": 25.991333333333333,
+          "grasas_g": 64.32
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "plato-1",
+              "nombre": "Puré de calabaza y calabacín",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec54RdqOTeEKC5PU",
+                  "tipo": "preparacion",
+                  "referencia_id": "reccvBMaeXJoSvdSf",
+                  "nombre": "Puré de calabaza y calabacín",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "pure-de-calabaza-y-calabacin"
+                }
+              ]
+            },
+            {
+              "id": "plato-2",
+              "nombre": "Salchichas al vino",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recgamLU5G0iB9YKr",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec3wB5bagR1Kf3MX",
+                  "nombre": "Salchichas al vino",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "salchichas-al-vino"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 832.228302950121,
+        "proteinas_g": 29.861166666666662,
+        "hidratos_g": 30.729333333333333,
+        "grasas_g": 65.97399999999999
       }
     },
     "Miércoles": {
@@ -159,17 +287,62 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recqHPRCZmS834meh",
+        "nombre": "Puré de calabaza y calabacín y salchichas al vino",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 784.721322950121,
+          "proteinas_g": 26.52916666666666,
+          "hidratos_g": 25.991333333333333,
+          "grasas_g": 64.32
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "plato-1",
+              "nombre": "Puré de calabaza y calabacín",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec54RdqOTeEKC5PU",
+                  "tipo": "preparacion",
+                  "referencia_id": "reccvBMaeXJoSvdSf",
+                  "nombre": "Puré de calabaza y calabacín",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "pure-de-calabaza-y-calabacin"
+                }
+              ]
+            },
+            {
+              "id": "plato-2",
+              "nombre": "Salchichas al vino",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recgamLU5G0iB9YKr",
+                  "tipo": "preparacion",
+                  "referencia_id": "rec3wB5bagR1Kf3MX",
+                  "nombre": "Salchichas al vino",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "salchichas-al-vino"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
         "estado": "pendiente"
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 832.228302950121,
+        "proteinas_g": 29.861166666666662,
+        "hidratos_g": 30.729333333333333,
+        "grasas_g": 65.97399999999999
       }
     },
     "Jueves": {
@@ -215,24 +388,107 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recisgOzomUjkPYsa",
+        "nombre": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 792.3796438378586,
+          "proteinas_g": 41.12924166666667,
+          "hidratos_g": 49.13193333333333,
+          "grasas_g": 45.88883333333334
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Albóndigas en salsa rubia",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recWH2AkGXuQeR6UN",
+                  "tipo": "preparacion",
+                  "referencia_id": "recaX3R7koMTr5nrn",
+                  "nombre": "Albóndigas en salsa rubia",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "albondigas-en-salsa-rubia"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Patatas panadera",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "rec8mnbXKIpQZWvF1",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSE81b9WjkURbXi",
+                  "nombre": "Patata, cruda (parte comestible)",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recfsHI0uGpb2pB9W",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-2",
+              "nombre": "Ensalada de tomate y cebolla",
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "reckqTHkmhoQ21ZRc",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recjq8IrRWXTVjRKg",
+                  "nombre": "Tomate crudo",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recRUuWNWLmWTz70e",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recrGNY88zOIOcRom",
+                  "nombre": "Cebolla fresca (cruda)",
+                  "cantidad": 25,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recJHFp2EjqjXn3FO",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
         "estado": "libre"
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 839.8866238378586,
+        "proteinas_g": 44.46124166666667,
+        "hidratos_g": 53.86993333333333,
+        "grasas_g": 47.542833333333334
       }
     }
   },
   "nutricion_semana": {
-    "kcal": 1029.9145438378587,
-    "proteinas_g": 57.789241666666676,
-    "hidratos_g": 72.82193333333333,
-    "grasas_g": 54.15883333333332
+    "kcal": 3985.2964795981006,
+    "proteinas_g": 183.53181666666666,
+    "hidratos_g": 212.16453333333334,
+    "grasas_g": 264.32866666666666
   }
 }
