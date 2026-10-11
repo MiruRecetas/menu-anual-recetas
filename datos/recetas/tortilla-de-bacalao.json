@@ -24,32 +24,32 @@
       "unidad": "unidades"
     },
     {
-      "nombre": "Perejil fresco",
+      "nombre": "Perejil",
       "cantidad": null,
       "unidad": ""
     },
     {
-      "nombre": "Puerro fresco",
+      "nombre": "Puerro",
       "cantidad": 25,
       "unidad": "g"
     },
     {
-      "nombre": "Bacalao fresco",
+      "nombre": "Bacalao desalado",
       "cantidad": 100,
       "unidad": "g"
     }
   ],
   "pasos": [
     "Pochar la cebolla y el puerro a fuego bajo con el AOVE.",
-    "Cocer el bacalao fresco durante dos minutos y desmigarlo.",
+    "Cocer el bacalao desalado durante dos minutos y desmigarlo.",
     "Añadir el bacalao a la sartén y templar.",
     "Batir los huevos, añadir el sofrito con el bacalao y cuajar la tortilla.",
     "Adornar con perejil."
   ],
   "nutricion": {
-    "kcal": 326.09,
-    "proteinas_g": 31.44,
+    "kcal": 352.48,
+    "proteinas_g": 39.24,
     "hidratos_g": 3.24,
-    "grasas_g": 21.3
+    "grasas_g": 20.7
   }
 }
