@@ -90,57 +90,68 @@ function summary(kind,meal,day){
  box.append(heading,namesContainer);return box;
 }
 function dismiss(){modal.hidden=true;document.body.classList.remove('modal-open');origin?.focus()}
-// Los porcentajes de las barras corresponden al reparto energético de macros,
- // no a metas nutricionales individuales: proteínas 4, hidratos 4 y grasas 9 kcal/g.
+// Mismos objetivos, segmentos de energía y porcentajes que la ficha diaria ampliada.
+const MACRO_GOALS={proteinas_g:93,hidratos_g:147,grasas_g:65};
 function dailyNutrition(nut){
  const group=el('section',undefined,'daily-nutrition');
  group.setAttribute('aria-label','Resumen nutricional del día');
- const kcal=Number(nut.kcal)||0;
- const ratio=Math.max(0,Math.min(1,kcal/GOAL_KCAL));
- const energy=el('div',undefined,'daily-energy');
- const circle=el('div',undefined,'daily-energy-ring');
- circle.setAttribute('aria-label',fmt(kcal)+' kilocalorías de '+GOAL_KCAL+' kilocalorías de referencia');
+ const kcal=Math.max(0,Number(nut.kcal)||0);
+ const ratio=Math.min(1,kcal/GOAL_KCAL);
+ const entries=[
+  {label:'Proteínas',key:'proteinas_g',factor:4,goal:MACRO_GOALS.proteinas_g,kind:'protein'},
+  {label:'Hidratos',key:'hidratos_g',factor:4,goal:MACRO_GOALS.hidratos_g,kind:'carbs'},
+  {label:'Grasas',key:'grasas_g',factor:9,goal:MACRO_GOALS.grasas_g,kind:'fat'}
+ ];
+ const energyByMacro=entries.map(item=>Math.max(0,Number(nut[item.key])||0)*item.factor);
+ const totalEnergy=energyByMacro.reduce((a,b)=>a+b,0);
+ const circumference=2*Math.PI*49;
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
  svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('aria-hidden','true');
- const circumference=2*Math.PI*49;
- for(const [cls,offset] of [['daily-energy-track',0],['daily-energy-progress',circumference*(1-ratio)]]){
+ const circle=(cls,color,offset,len)=>{
   const node=document.createElementNS('http://www.w3.org/2000/svg','circle');
-  node.setAttribute('class',cls);node.setAttribute('cx','60');node.setAttribute('cy','60');node.setAttribute('r','49');
-  if(cls==='daily-energy-progress'){
-   node.setAttribute('stroke-dasharray',String(circumference));
-   node.setAttribute('stroke-dashoffset',String(offset));
+  node.setAttribute('cx','60');node.setAttribute('cy','60');node.setAttribute('r','49');
+  node.setAttribute('class',cls);
+  if(color)node.setAttribute('stroke',color);
+  if(len!==undefined){
+   node.setAttribute('stroke-dasharray',len+' '+circumference);
+   node.setAttribute('stroke-dashoffset',String(-offset));
   }
   svg.append(node);
+ };
+ circle('daily-energy-track');
+ const energy=el('div',undefined,'daily-energy');
+ const ring=el('div',undefined,'daily-energy-ring daily-macro-ring');
+ ring.setAttribute('aria-label',fmt(kcal)+' kcal de '+GOAL_KCAL+' kcal, con reparto energético en proteínas, hidratos y grasas');
+ const fractions=energyByMacro.map(v=>totalEnergy>0?v/totalEnergy:0);
+ const colors=['#789582','#c78465','#9d88a3'];
+ let start=0;
+ for(let i=0;i<entries.length;i++){
+  const arc=circumference*ratio*fractions[i];
+  if(arc>0)circle('daily-macro-arc daily-macro-arc-'+entries[i].kind,colors[i],start,arc);
+  start+=arc;
  }
- circle.append(svg);
+ ring.append(svg);
  const center=el('span',undefined,'daily-energy-center');
  center.append(el('strong',fmt(kcal)),el('span','kcal'),el('small','de '+GOAL_KCAL));
- circle.append(center);energy.append(circle);
- const entries=[
-  {label:'Proteínas',short:'P',key:'proteinas_g',energy:4,kind:'protein'},
-  {label:'Hidratos',short:'HC',key:'hidratos_g',energy:4,kind:'carbs'},
-  {label:'Grasas',short:'G',key:'grasas_g',energy:9,kind:'fat'}
- ];
- const total=entries.reduce((sum,item)=>sum+Math.max(0,Number(nut[item.key])||0)*item.energy,0);
+ ring.append(center);energy.append(ring);
  const macros=el('div',undefined,'daily-macros');
  for(const item of entries){
   const grams=Math.max(0,Number(nut[item.key])||0);
-  const percent=total>0?100*grams*item.energy/total:0;
+  const fulfillment=100*grams/item.goal;
   const row=el('div',undefined,'daily-macro daily-macro-'+item.kind);
-  row.setAttribute('aria-label',item.label+': '+fmt(grams)+' gramos, '+Math.round(percent)+' por ciento de la energía calculada a partir de macronutrientes');
+  row.setAttribute('aria-label',item.label+': '+fmt(grams)+' de '+item.goal+' gramos, '+Math.round(fulfillment)+' por ciento del objetivo diario');
   const top=el('div',undefined,'daily-macro-head');
   const label=el('span',item.label,'daily-macro-name');
   const values=el('span',undefined,'daily-macro-values');
-  values.append(el('strong',fmt(grams)+' g'),el('small',Math.round(percent)+'%'));
+  values.append(el('strong',fmt(grams)+' g'),el('small',Math.round(fulfillment)+'%'));
   top.append(label,values);
   const track=el('div',undefined,'daily-macro-track');
   const bar=el('div',undefined,'daily-macro-fill');
-  bar.style.width=Math.max(0,Math.min(100,percent))+'%';
+  bar.style.width=Math.min(100,fulfillment)+'%';
   track.append(bar);row.append(top,track);macros.append(row);
  }
- const note=el('p','Barras: % de energía de cada macronutriente','daily-macro-note');
- macros.append(note);group.append(energy,macros);
- return group;
+ macros.append(el('p','Barras: % del objetivo diario · PR 93 g · HC 147 g · GR 65 g','daily-macro-note'));
+ group.append(energy,macros);return group;
 }
 function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));content.append(summary('Desayuno',d.desayuno,day),summary('Comida',d.comida,day),summary('Cena',d.cena,day));if(d.postre)content.append(summary('Postre',d.postre,day));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
 close.addEventListener('click',dismiss);
