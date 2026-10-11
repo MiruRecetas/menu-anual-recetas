@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "da9868446ec051536f4ff271f5f8e818e21caad4",
-  "generated_at_utc": "2026-10-11T21:52:57Z",
-  "total_recetas": 33,
+  "source_commit_sha": "2858f7ea3b1d5f6dc6c38dfc05202e6a8284159a",
+  "generated_at_utc": "2026-10-11T21:59:33Z",
+  "total_recetas": 34,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1255,6 +1255,57 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salteado-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Tacos de gambón",
+      "slug": "tacos-de-gambon",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Mini tortillas de trigo",
+          "cantidad": 3,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Aguacate",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Gambón",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 7.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Tzatziki",
+          "cantidad": 0.5,
+          "unidad": "ración",
+          "preparacion": "tzatziki"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tacos-de-gambon/"
     },
     {
       "nombre": "Tortilla de bacalao",
