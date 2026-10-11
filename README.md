@@ -123,6 +123,8 @@ indice-recetas.json         # Inventario público autogenerado, sin duplicación
 
 La **fuente de verdad de la publicación web** son los JSON de `datos/`, los archivos de `imagenes/`, las plantillas, el CSS/JS y el generador. **No editar los HTML ni el índice JSON generados a mano**. La publicación automática regenera `indice-recetas.json` de forma determinista con esquema, SHA de origen (último commit que afectó `datos/recetas/`), fecha UTC y total; el README contiene únicamente su enlace, no un catálogo duplicado.
 
+**Protocolo operativo de comidas y menús:** [registro autónomo, desayuno universal, grupos visuales, condimentos sin cantidad y publicación incremental](docs/PROTOCOLO-MAESTRO-REGISTRO-COMIDAS.md). La guía prevalece frente a las indicaciones históricas de esperar a completar la semana o de considerar inexistente la tabla MENÚS.
+
 ## Cómo se actualiza el contenido
 
 ### Añadir o modificar una receta
