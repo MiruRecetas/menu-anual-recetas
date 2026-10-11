@@ -11,10 +11,10 @@
   "preparacion_min": 5,
   "coccion_min": 20,
   "nutricion": {
-    "kcal": 400.67,
-    "proteinas_g": 26.26,
-    "hidratos_g": 31.91,
-    "grasas_g": 16.41
+    "kcal": 323.67,
+    "proteinas_g": 21.04,
+    "hidratos_g": 18.31,
+    "grasas_g": 16.01
   },
   "ingredientes": [
     {
@@ -29,7 +29,7 @@
     },
     {
       "nombre": "Guisantes",
-      "cantidad": 200,
+      "cantidad": 100,
       "unidad": "g"
     },
     {
@@ -46,7 +46,7 @@
   "pasos": [
     "Pelar los 2 dientes de ajo (aproximadamente 6 g) y picarlos finamente. Cortar el jamón serrano en taquitos o tiras pequeñas, si no está ya cortado.",
     "Calentar los 10 ml de AOVE en una sartén amplia a fuego medio. Añadir el ajo picado y sofreír brevemente, removiendo para que desprenda su aroma sin quemarse.",
-    "Incorporar los 50 g de jamón a la sartén y mezclar unos instantes. Antes de que el jamón llegue a freírse y endurecerse, añadir los 200 g de guisantes y remover para integrarlo todo.",
+    "Incorporar los 50 g de jamón a la sartén y mezclar unos instantes. Antes de que el jamón llegue a freírse y endurecerse, añadir los 100 g de guisantes y remover para integrarlo todo.",
     "Verter los 125 ml de vino blanco de guiso. Subir a fuego medio-alto y cocinar, removiendo de vez en cuando, hasta que el líquido libre se haya reducido por completo y los guisantes vuelvan a saltearse en la sartén, aproximadamente 15 minutos según el fuego y el diámetro de la sartén.",
     "Dar unas vueltas finales para impregnar bien los guisantes del sabor del jamón y el ajo, y servir calientes."
   ],
