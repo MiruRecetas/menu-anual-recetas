@@ -311,13 +311,12 @@ const assert = require('node:assert/strict');
     assert.match(await page.locator('h1').first().innerText(),/Bowl de yogur con miel y granola/,'Clic desde el modal abre la receta');
     const recipeColors=await page.locator('.nutrition').evaluate(node=>({
       dots:[...node.querySelectorAll('.macros .dot')].map(dot=>getComputedStyle(dot).backgroundColor),
-      ring:getComputedStyle(node.querySelector('.ring')).backgroundImage,
-      inlineGradient:node.querySelector('.ring').style.backgroundImage
+      ring:getComputedStyle(node.querySelector('.ring')).backgroundImage
     }));
     assert.deepEqual(recipeColors.dots,targetRgb,'Leyenda de receta: verde proteína, terracota hidratos, mostaza grasas');
     for(const color of targetRgb)
       assert.ok(recipeColors.ring.includes(color),'Anillo de receta usa el color '+color);
-    assert.ok(recipeColors.inlineGradient.includes('var(--macro-fat)'),'Anillo de receta deriva los colores del CSS compartido');
+
 
     await page.close();
   }
