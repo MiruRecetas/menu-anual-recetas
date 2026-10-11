@@ -341,6 +341,21 @@ const assert = require('node:assert/strict');
     assert.equal(await dinnerGroups.nth(1).locator('.ingredient-line').count(),2,'Despliegue de puerros y mayonesa');
     await page.goto('http://127.0.0.1:8765/recetario/');
     await page.locator('#recipe-catalog').waitFor();
+    const catalogNav=page.locator('header.topbar nav.nav');
+    assert.equal(await catalogNav.locator('a').count(),2,'El recetario conserva las dos opciones del menú');
+    await catalogNav.locator('svg.lucide-calendar-days').waitFor({state:'visible'});
+    await catalogNav.locator('svg.lucide-book-open').waitFor({state:'visible'});
+    assert.equal(await catalogNav.locator('a').nth(0).innerText(),'Mis menús','Etiqueta Mis menús junto al calendario');
+    assert.equal(await catalogNav.locator('a').nth(1).innerText(),'Recetario','Etiqueta Recetario junto al libro');
+    assert.equal(await catalogNav.locator('a').nth(1).getAttribute('aria-current'),'page','Página activa accesible');
+    const navIconLayout=await catalogNav.locator('svg').evaluateAll(nodes=>nodes.map(node=>{
+      const rect=node.getBoundingClientRect();
+      return {width:rect.width,height:rect.height,display:getComputedStyle(node).display};
+    }));
+    assert.equal(navIconLayout.length,2,'Ambos iconos Lucide renderizados');
+    assert.ok(navIconLayout.every(icon=>icon.width>0&&icon.height>0),
+      'Iconos de navegación no ocultos ni colapsados');
+
     assert.ok(await page.locator('#recipe-catalog .recipe-tile').count()>=10,'10 recetas iniciales');
     await page.screenshot({path:out+'/recetario-'+test.name+'.png',fullPage:true});
     await page.goto('http://127.0.0.1:8765/');
