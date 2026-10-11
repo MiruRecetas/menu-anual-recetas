@@ -152,8 +152,15 @@
   const compact=root.matchMedia('(max-width: 699px) and (orientation: portrait)');
   let flipped=false;
   const fit=()=>{
-   if(compact.matches)inner.style.height=(flipped?right:left).offsetHeight+'px';
-   else inner.style.removeProperty('height');
+   if(compact.matches){
+    const height=left.offsetHeight;
+    inner.style.height=height+'px';
+    // La altura de las barras es el límite también con más categorías o textos largos.
+    right.style.setProperty('--weekly-reverse-scale',Math.min(1,height/Math.max(1,right.offsetHeight)));
+   }else{
+    inner.style.removeProperty('height');
+    right.style.removeProperty('--weekly-reverse-scale');
+   }
   };
   const sync=()=>{
    if(!compact.matches)flipped=false;

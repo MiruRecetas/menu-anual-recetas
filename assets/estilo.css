@@ -38,12 +38,17 @@
 @media(max-width:699px) and (orientation:portrait){
  .weekly-charts{display:block;margin:24px 0 30px}
  .weekly-chart-card{display:block;position:relative;perspective:1100px;border-radius:20px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
- .weekly-chart-inner{display:block;position:relative;transform-style:preserve-3d;transition:transform .48s ease,height .48s ease}
+ .weekly-chart-inner{display:block;position:relative;transform-style:preserve-3d;transition:transform .48s ease}
  .weekly-chart-card.is-flipped .weekly-chart-inner{transform:rotateY(-180deg)}
  .weekly-chart-inner>.weekly-bars,.weekly-chart-inner>.weekly-pies{position:absolute;inset:0 0 auto;padding:20px 16px 18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--paper);border-radius:20px}
- .weekly-chart-inner>.weekly-pies{transform:rotateY(180deg);gap:16px}
- .weekly-chart-inner .chart-title{font-size:1rem;margin-bottom:10px}
- .weekly-bars>.chart-title,.weekly-variety>.chart-title{padding-right:40px;min-height:26px}
+ .weekly-chart-inner>.weekly-pies{transform:rotateY(180deg) scale(var(--weekly-reverse-scale,1));transform-origin:50% 0;gap:10px;padding:16px 14px}
+ .weekly-pies .chart-title{font-size:.85rem;margin-bottom:6px;min-height:22px}
+ .weekly-pies .weekly-pie-row{grid-template-columns:90px minmax(0,1fr);gap:12px}
+ .weekly-pies .chart-legend{font-size:.65rem;line-height:1.2;gap:2px}
+ .weekly-pies .chart-legend-item{gap:6px}
+ .weekly-bars .chart-title{font-size:1rem;margin-bottom:10px}
+ .weekly-bars>.chart-title{padding-right:40px;min-height:26px}
+ .weekly-variety>.chart-title{padding-right:40px}
  .weekly-bars-svg{height:auto;max-height:205px}
  .weekly-pie-row{grid-template-columns:120px minmax(0,1fr);gap:14px}
  .weekly-chart-toggle{display:grid;place-items:center;position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:var(--sage);color:var(--green);z-index:2}
