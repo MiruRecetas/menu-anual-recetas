@@ -107,11 +107,10 @@ function dailyNutrition(nut){
  const circumference=2*Math.PI*49;
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
  svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('aria-hidden','true');
- const circle=(cls,color,offset,len)=>{
+ const circle=(cls,offset,len)=>{
   const node=document.createElementNS('http://www.w3.org/2000/svg','circle');
   node.setAttribute('cx','60');node.setAttribute('cy','60');node.setAttribute('r','49');
   node.setAttribute('class',cls);
-  if(color)node.setAttribute('stroke',color);
   if(len!==undefined){
    node.setAttribute('stroke-dasharray',len+' '+circumference);
    node.setAttribute('stroke-dashoffset',String(-offset));
@@ -123,11 +122,10 @@ function dailyNutrition(nut){
  const ring=el('div',undefined,'daily-energy-ring daily-macro-ring');
  ring.setAttribute('aria-label',fmt(kcal)+' kcal de '+GOAL_KCAL+' kcal, con reparto energético en proteínas, hidratos y grasas');
  const fractions=energyByMacro.map(v=>totalEnergy>0?v/totalEnergy:0);
- const colors=['#789582','#c78465','#9d88a3'];
  let start=0;
  for(let i=0;i<entries.length;i++){
   const arc=circumference*ratio*fractions[i];
-  if(arc>0)circle('daily-macro-arc daily-macro-arc-'+entries[i].kind,colors[i],start,arc);
+  if(arc>0)circle('daily-macro-arc daily-macro-arc-'+entries[i].kind,start,arc);
   start+=arc;
  }
  ring.append(svg);
