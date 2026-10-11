@@ -128,8 +128,21 @@ const assert = require('node:assert/strict');
     }else if(compact){
       assert.ok(geometry.pies[0].y<frontBar.y+frontBar.height,'Círculos ocupan el reverso, no debajo de barras');
     }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'Pantalla estrecha horizontal apilada');
-    assert.ok(geometry.pies[1].y>geometry.pies[0].bottom,'Dos pies apilados');
-    assert.ok(geometry.legends.every((r,i)=>r.x>=geometry.circles[i].right),'Leyendas a la derecha de cada pie');
+    if(compact){
+      assert.ok(Math.abs(geometry.pies[0].y-geometry.pies[1].y)<1,'Dos círculos alineados en paralelo');
+      assert.ok(geometry.pies[1].x>geometry.pies[0].right,'Círculos uno al lado del otro');
+      assert.ok(geometry.legends.every((r,i)=>r.y>=geometry.circles[i].bottom),'Leyenda debajo de su círculo');
+      const aligned=await charts.locator('.weekly-pie').evaluateAll(figures=>figures.every(f=>{
+        const rows=[...f.querySelectorAll('.chart-legend-item')];
+        const names=rows.map(r=>r.querySelector('.chart-legend-label').getBoundingClientRect().left);
+        const percentages=rows.map(r=>r.querySelector('.chart-legend-value').getBoundingClientRect().right);
+        return Math.max(...names)-Math.min(...names)<1&&Math.max(...percentages)-Math.min(...percentages)<1;
+      }));
+      assert.ok(aligned,'Nombres y porcentajes alineados en dos columnas por leyenda');
+    }else{
+      assert.ok(geometry.pies[1].y>geometry.pies[0].bottom,'Dos pies apilados');
+      assert.ok(geometry.legends.every((r,i)=>r.x>=geometry.circles[i].right),'Leyendas a la derecha de cada pie');
+    }
     const chartValues=await charts.evaluate(container=>{
       const source=JSON.parse(document.querySelector('#site-data').textContent).menus.find(m=>m.mes===10&&m.menu===1);
       const bars=[...container.querySelectorAll('.weekly-bar')].map(g=>({

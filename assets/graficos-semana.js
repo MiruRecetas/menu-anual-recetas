@@ -142,7 +142,9 @@
   toggle.append(icon);
   right.id=container.id+'-pies';
   toggle.setAttribute('aria-controls',right.id);
-  inner.append(left,right);card.append(inner,toggle);container.append(card);
+  const backLabel=node('span','Reparto semanal','weekly-chart-back-label');
+  backLabel.setAttribute('aria-hidden','true');
+  inner.append(left,right);card.append(inner,backLabel,toggle);container.append(card);
   const note=node('p',(data.variety.basis==='protagonista'
    ?'Variedad: aproximación por el ingrediente protagonista de cada plato. '
    :'Variedad: aporte energético por grupos de ingredientes. ')
@@ -156,7 +158,7 @@
     const height=left.offsetHeight;
     inner.style.height=height+'px';
     // La altura de las barras es el límite también con más categorías o textos largos.
-    right.style.setProperty('--weekly-reverse-scale',Math.min(1,height/Math.max(1,right.offsetHeight)));
+    right.style.setProperty('--weekly-reverse-scale',Math.min(1,Math.max(0,height-56)/Math.max(1,right.offsetHeight)));
    }else{
     inner.style.removeProperty('height');
     right.style.removeProperty('--weekly-reverse-scale');
