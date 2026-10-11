@@ -99,10 +99,38 @@ const assert = require('node:assert/strict');
       width:parseFloat(el.querySelector('.daily-macro-fill').style.width)
     })));
     assert.deepEqual(macroValues.map(v=>v.grams),['99 g','105 g','70 g'],'Gramos registrados');
-    assert.deepEqual(macroValues.map(v=>v.percentage),['27%','29%','44%'],'Distribución 4-4-9 normalizada');
-    assert.ok(macroValues.every(v=>v.width>=0&&v.width<=100),'Anchura segura para barras');
-    assert.ok(Math.abs(macroValues.reduce((sum,v)=>sum+v.width,0)-100)<.01,'Las barras representan porcentajes del total energético calculado');
-    assert.match(await nutrition.locator('.daily-macro-note').innerText(),/% de energía/,'Interpretación inequívoca');
+    assert.deepEqual(macroValues.map(v=>v.percentage),['106%','71%','107%'],'Cumplimiento diario: PR 93 g, HC 147 g, GR 65 g');
+    assert.deepEqual(macroValues.map(v=>Math.round(v.width)),[100,71,100],'Anchura relativa al objetivo y limitada a 100%');
+    assert.match(await nutrition.locator('.daily-macro-note').innerText(),/objetivo diario/,'Leyenda de objetivos diarios');
+    assert.equal(await nutrition.locator('.daily-macro-ring .daily-energy-progress').count(),0,'Sin arco terracota único');
+    assert.equal(await nutrition.locator('.daily-macro-ring .daily-macro-arc').count(),3,'Anillo tricolor en tarjeta compacta');
+    const compactNutritionSignature=await nutrition.evaluate(node=>{
+      const arcs=[...node.querySelectorAll('.daily-macro-arc')];
+      return {
+        kcal:node.querySelector('.daily-energy-center strong').textContent,
+        reference:node.querySelector('.daily-energy-center small').textContent,
+        macros:[...node.querySelectorAll('.daily-macro')].map(row=>({
+          label:row.querySelector('.daily-macro-name').textContent,
+          value:row.querySelector('.daily-macro-values strong').textContent,
+          percent:row.querySelector('.daily-macro-values small').textContent,
+          width:row.querySelector('.daily-macro-fill').style.width
+        })),
+        ring:arcs.map(arc=>({
+          className:arc.getAttribute('class'),
+          length:Number(arc.getAttribute('stroke-dasharray').split(' ')[0]),
+          offset:Number(arc.getAttribute('stroke-dashoffset')),
+          color:getComputedStyle(arc).stroke
+        })),
+        ringLabel:node.querySelector('.daily-macro-ring').getAttribute('aria-label')
+      };
+    });
+    const paintedCompact=compactNutritionSignature.ring.reduce((sum,arc)=>sum+arc.length,0);
+    const circ=2*Math.PI*49;
+    assert.ok(Math.abs(paintedCompact/circ-1488.4/1600)<.002,'Energía visible del anillo compacto = 93% del objetivo');
+    const macroKcal=99*4+105*4+70*9;
+    for(const [i,energyKcal] of [99*4,105*4,70*9].entries())
+      assert.ok(Math.abs(compactNutritionSignature.ring[i].length/paintedCompact-energyKcal/macroKcal)<.002,
+        'Proporción energética del arco compacto '+i);
     const nutritionDimensions=await nutrition.evaluate(el=>{
       const box=el.getBoundingClientRect(),dialog=el.closest('.day-dialog').getBoundingClientRect();
       return {left:box.left,right:box.right,dlgLeft:dialog.left,dlgRight:dialog.right,overflow:el.scrollWidth-el.clientWidth}
@@ -213,6 +241,24 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('.daily-total .daily-energy-center strong').innerText(),'1488','Mismas kcal que el resumen rápido del lunes');
     assert.deepEqual(await page.locator('.daily-total .daily-macro-values strong').allInnerTexts(),['99 g','105 g','70 g'],'Mismos macros que en ficha rápida');
     assert.deepEqual(await page.locator('.daily-total .daily-macro-values small').allInnerTexts(),['106%','71%','107%'],'Cumplimiento diario: PR 93 HC 147 GR 65');
+    const expandedNutritionSignature=await page.locator('.daily-total .daily-nutrition').evaluate(node=>({
+      kcal:node.querySelector('.daily-energy-center strong').textContent,
+      reference:node.querySelector('.daily-energy-center small').textContent,
+      macros:[...node.querySelectorAll('.daily-macro')].map(row=>({
+        label:row.querySelector('.daily-macro-name').textContent,
+        value:row.querySelector('.daily-macro-values strong').textContent,
+        percent:row.querySelector('.daily-macro-values small').textContent,
+        width:row.querySelector('.daily-macro-fill').style.width
+      })),
+      ring:[...node.querySelectorAll('.daily-macro-arc')].map(arc=>({
+        className:arc.getAttribute('class'),
+        length:Number(arc.getAttribute('stroke-dasharray').split(' ')[0]),
+        offset:Number(arc.getAttribute('stroke-dashoffset')),
+        color:getComputedStyle(arc).stroke
+      })),
+      ringLabel:node.querySelector('.daily-macro-ring').getAttribute('aria-label')
+    }));
+    assert.deepEqual(expandedNutritionSignature,compactNutritionSignature,'Ficha rápida y ampliada representan idéntica energía, colores y objetivos');
     const ringValues=await page.locator('.daily-total .daily-macro-ring').evaluate(ring=>{
       const arcs=[...ring.querySelectorAll('.daily-macro-arc')];
       const track=ring.querySelector('.daily-energy-track');
