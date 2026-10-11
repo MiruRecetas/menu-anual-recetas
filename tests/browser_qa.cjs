@@ -180,7 +180,23 @@ const assert = require('node:assert/strict');
     await page.waitForURL(/\/menus\/10-1\/martes\//);
     await page.locator('.daily-meal').first().waitFor();
     assert.match(await page.locator('body').innerText(),/Carrilleras al vino con boniato al horno/);
-    const principal=page.locator('.culinary-group').filter({hasText:'Carrilleras de cerdo al vino'}).first();
+    assert.equal(await page.locator('.daily-page-heading .eyebrow').innerText(),'Octubre · Menú 1','Mes y menú visibles');
+    assert.equal(await page.locator('.daily-page-heading h1').innerText(),'Martes','Día a la derecha');
+    assert.equal(await page.getByText('Valores correspondientes a las ingestas planificadas registradas').count(),0,'Texto redundante retirado');
+    const headingGeometry=await page.locator('.daily-page-heading').evaluate(node=>{
+      const month=node.querySelector('.eyebrow').getBoundingClientRect();
+      const day=node.querySelector('h1').getBoundingClientRect();
+      return {monthX:month.x,dayX:day.x,monthY:month.y+month.height/2,dayY:day.y+day.height/2};
+    });
+    assert.ok(headingGeometry.dayX>headingGeometry.monthX,'Día alineado a la derecha');
+    assert.ok(Math.abs(headingGeometry.dayY-headingGeometry.monthY)<35,'Día y menú en la misma línea');
+    const dailyVisual=page.locator('.daily-total .daily-nutrition');
+    assert.equal(await dailyVisual.count(),1,'Tarjeta nutricional compartida');
+    assert.equal(await dailyVisual.locator('.daily-energy-center strong').count(),1,'Anillo de calorías visible');
+    assert.equal(await dailyVisual.locator('.daily-macro').count(),3,'Tres barras de macronutrientes');
+    assert.equal(await page.locator('.daily-total h2').count(),0,'Sin encabezado antiguo de nutrición');
+    assert.ok(await dailyVisual.evaluate(node=>node.scrollWidth<=node.clientWidth+2),'Tarjeta nutricional sin desbordamiento');
+        const principal=page.locator('.culinary-group').filter({hasText:'Carrilleras de cerdo al vino'}).first();
     assert.equal(await principal.getAttribute('open'),'','Preparación principal inicialmente visible');
     assert.ok(await principal.locator('a[href*="/recetas/"]').count()>0,'Ficha de receta enlazada');
     const group=page.locator('.culinary-group').filter({hasText:'Boniato al horno'}).first();
@@ -191,7 +207,9 @@ const assert = require('node:assert/strict');
     assert.ok(dailyOverflow<=2,test.name+': página diaria desborda '+dailyOverflow);
     await page.screenshot({path:out+'/dia-'+test.name+'.png',fullPage:true});
     await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
-    const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('h2:text-is("Cena")')}).locator('.culinary-group');
+    assert.equal(await page.locator('.daily-total .daily-energy-center strong').innerText(),'1488','Mismas kcal que el resumen rápido del lunes');
+    assert.deepEqual(await page.locator('.daily-total .daily-macro-values strong').allInnerTexts(),['99 g','105 g','70 g'],'Mismos macros que en ficha rápida');
+        const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('h2:text-is("Cena")')}).locator('.culinary-group');
     assert.deepEqual(await dinnerGroups.locator('summary').allInnerTexts(),[
       'Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'
     ],'Página completa respeta orden definitivo del lunes');
