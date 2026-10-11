@@ -1,0 +1,107 @@
+{
+  "slug": "marmitako-de-bonito",
+  "nombre": "Marmitako de bonito",
+  "descripcion": "Guiso tradicional de bonito del norte fresco con patata chascada, verduras, fumet de pescado y marisco, pimiento choricero y pimentón dulce.",
+  "raciones": 2,
+  "categoria": "guisos-legumbres",
+  "etiquetas": [
+    "tupper",
+    "pescado"
+  ],
+  "preparacion_min": 20,
+  "coccion_min": 45,
+  "nutricion": {
+    "kcal": 373.28,
+    "proteinas_g": 36.04,
+    "hidratos_g": 21.69,
+    "grasas_g": 14.84
+  },
+  "ingredientes": [
+    {
+      "nombre": "Bonito del norte fresco",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Patata cruda",
+      "cantidad": 130,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 114,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Pimiento verde",
+      "cantidad": 60,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Zanahoria",
+      "cantidad": 39,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 1,
+      "unidad": "diente (2,7 g)"
+    },
+    {
+      "nombre": "Fumet de pescado y marisco",
+      "cantidad": 300,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Vino blanco de guiso",
+      "cantidad": 70,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Pimentón dulce de la Vera",
+      "cantidad": 5,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Carne de pimiento choricero",
+      "cantidad": 100,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tomate triturado",
+      "cantidad": 15,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Guindilla",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Laurel",
+      "cantidad": 2,
+      "unidad": "hojas"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Retirar la piel y las espinas del bonito si las tiene, cortarlo en tacos medianos y reservarlo en la nevera. Pelar las patatas y chascarlas en trozos irregulares. Cortar la cebolla y el pimiento en juliana, la zanahoria en trozos pequeños y el ajo en láminas.",
+    "Calentar los 10 ml de AOVE en una cazuela a fuego medio. Incorporar el ajo, la cebolla, el pimiento verde y la zanahoria. Pochar durante 10–12 minutos, removiendo de vez en cuando, hasta que las verduras estén tiernas.",
+    "Añadir la guindilla y los 100 g de carne de pimiento choricero. Remover durante 1–2 minutos a fuego medio-bajo para integrar los sabores, sin dejar que se quemen.",
+    "Verter los 70 ml de vino blanco y mantener a fuego medio-alto durante 2–3 minutos, para reducirlo parcialmente.",
+    "Incorporar las patatas crudas chascadas y rehogarlas durante un par de minutos. Bajar el fuego, añadir el pimentón dulce y el tomate triturado y mezclar enseguida para que el pimentón no se queme.",
+    "Verter los 300 ml de fumet, añadir las dos hojas de laurel y probar antes de ajustar de sal. Llevar a ebullición y después bajar a un hervor suave. Cocinar unos 25 minutos, o hasta que las patatas estén tiernas.",
+    "Apagar el fuego, incorporar los tacos de bonito y tapar la cazuela. Dejar que se cocinen con el calor residual durante unos 5–7 minutos, según su grosor. Comprobar que el pescado esté bien cocinado en el centro; si es necesario, terminarlo brevemente a fuego muy suave.",
+    "Retirar el laurel, dejar reposar un par de minutos y servir el marmitako caliente."
+  ],
+  "notas": "Chasca las patatas para ayudar a espesar el caldo durante la cocción. Incorpora el bonito al final para mantenerlo jugoso y comprueba su cocción antes de servir. Si lo guardas en la nevera, enfríalo rápidamente y recaliéntalo suavemente hasta que esté bien caliente; evita recocer el pescado."
+}
