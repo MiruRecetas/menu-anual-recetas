@@ -49,7 +49,9 @@
  }
  // El renderizador recibe grupos agregados: un futuro exportador puede sustituir
  // variety.entries por kcal reales por ingrediente y basis por 'ingredientes'.
+ const cleanup=new WeakMap();
  function render(container,data){
+  cleanup.get(container)?.();
   const doc=container.ownerDocument;
   const node=(tag,text,cls)=>{const e=doc.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e};
   const fmt=n=>n.toLocaleString('es-ES',{maximumFractionDigits:0});
@@ -132,13 +134,43 @@
    row.append(chart,legend);figure.append(row);return figure;
   }
   right.append(pie('Variedad nutricional',data.variety.entries,'weekly-variety'),pie('Energía por ingesta',data.meals,'weekly-intakes'));
-  container.append(left,right);
+  const card=node('div',undefined,'weekly-chart-card');
+  const inner=node('div',undefined,'weekly-chart-inner');
+  const toggle=node('button',undefined,'weekly-chart-toggle');
+  toggle.type='button';
+  const icon=node('i');icon.setAttribute('data-lucide','iteration-cw');icon.setAttribute('aria-hidden','true');
+  toggle.append(icon);
+  right.id=container.id+'-pies';
+  toggle.setAttribute('aria-controls',right.id);
+  inner.append(left,right);card.append(inner,toggle);container.append(card);
   const note=node('p',(data.variety.basis==='protagonista'
    ?'Variedad: aproximación por el ingrediente protagonista de cada plato. '
    :'Variedad: aporte energético por grupos de ingredientes. ')
    +(data.partial?'Totales parciales de las ingestas registradas. ':'Totales de las ingestas registradas. ')
    +'La cena libre del viernes no está incluida.','weekly-charts-note');
   container.append(note);container.hidden=false;
+  const compact=root.matchMedia('(max-width: 699px) and (orientation: portrait)');
+  let flipped=false;
+  const fit=()=>{
+   if(compact.matches)inner.style.height=(flipped?right:left).offsetHeight+'px';
+   else inner.style.removeProperty('height');
+  };
+  const sync=()=>{
+   if(!compact.matches)flipped=false;
+   card.classList.toggle('is-flipped',flipped);
+   left.inert=compact.matches&&flipped;right.inert=compact.matches&&!flipped;
+   left.setAttribute('aria-hidden',String(left.inert));right.setAttribute('aria-hidden',String(right.inert));
+   toggle.setAttribute('aria-pressed',String(flipped));
+   const label=flipped?'Volver a energía diaria':'Ver gráficos circulares semanales';
+   toggle.setAttribute('aria-label',label);toggle.title=label;
+   fit();
+  };
+  toggle.addEventListener('click',()=>{flipped=!flipped;sync()});
+  compact.addEventListener('change',sync);
+  const observer=new root.ResizeObserver(fit);
+  observer.observe(left);observer.observe(right);
+  cleanup.set(container,()=>{compact.removeEventListener('change',sync);observer.disconnect()});
+  sync();
  }
  const api={model,render};
  if(typeof module!=='undefined'&&module.exports)module.exports=api;

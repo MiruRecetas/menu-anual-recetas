@@ -62,6 +62,36 @@ const assert = require('node:assert/strict');
     assert.equal(await charts.locator('figure').count(),3,'Tres gráficos');
     assert.equal(await charts.locator('.weekly-bar').count(),5,'Cinco barras');
     assert.deepEqual(await charts.locator('.chart-day-label').allTextContents(),['L','M','X','J','V']);
+    const compact=test.width<700&&test.height>test.width;
+    const flip=charts.locator('.weekly-chart-toggle');
+    if(compact){
+      assert.equal(await flip.isVisible(),true,'Control de giro en móvil vertical');
+      await flip.locator('svg.lucide-iteration-cw').waitFor();
+      assert.equal(await charts.locator('.weekly-pies').getAttribute('aria-hidden'),'true');
+      assert.equal(await charts.locator('.weekly-pies').evaluate(e=>e.inert),true);
+      const front=await charts.locator('.weekly-chart-card').boundingBox();
+      assert.ok(front.height<310,'Anverso compacto sin reservar altura para los círculos');
+      assert.ok(Math.abs(front.width-(test.width-36))<2,'Tarjeta a todo el ancho disponible');
+      await flip.focus();await page.keyboard.press('Enter');
+      await page.waitForTimeout(550);
+      assert.equal(await flip.getAttribute('aria-pressed'),'true');
+      assert.equal(await charts.locator('.weekly-bars').evaluate(e=>e.inert),true);
+      assert.equal(await charts.locator('.weekly-pies').getAttribute('aria-hidden'),'false');
+      const reverse=await charts.locator('.weekly-chart-card').boundingBox();
+      const pies=await charts.locator('.weekly-pies').boundingBox();
+      assert.ok(pies.y>=reverse.y&&pies.y+pies.height<=reverse.y+reverse.height+2,'Reverso completo sin recortes');
+      await page.screenshot({path:out+'/graficos-reverso-'+test.name+'.png',fullPage:true});
+      await page.emulateMedia({reducedMotion:'reduce'});
+      assert.equal(await charts.locator('.weekly-chart-inner').evaluate(e=>getComputedStyle(e).transitionDuration),'0s');
+      await page.setViewportSize({width:844,height:390});
+      assert.equal(await flip.isVisible(),false,'Horizontal recupera la disposición original');
+      assert.equal(await charts.locator('.weekly-pies').evaluate(e=>e.inert),false);
+      await page.setViewportSize({width:test.width,height:test.height});
+      assert.equal(await flip.getAttribute('aria-pressed'),'false','Regreso a vertical empieza por barras');
+      await page.screenshot({path:out+'/graficos-anverso-'+test.name+'.png',fullPage:true});
+    }else assert.equal(await flip.isVisible(),false,'Sin control de giro fuera de móvil vertical');
+    const frontBar=await charts.locator('.weekly-bars').boundingBox();
+    if(compact)await flip.click();
     const geometry=await charts.evaluate(container=>{
       const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
       const bar=container.querySelector('.weekly-bars');
@@ -75,7 +105,9 @@ const assert = require('node:assert/strict');
     if(test.width>=700){
       assert.ok(geometry.pies[0].x>geometry.bar.right,'Barras izquierda y pies derecha');
       assert.ok(Math.abs(geometry.bar.y-geometry.pies[0].y)<2,'Columnas alineadas arriba');
-    }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'En móvil se apilan sin comprimirse');
+    }else if(compact){
+      assert.ok(geometry.pies[0].y<frontBar.y+frontBar.height,'Círculos ocupan el reverso, no debajo de barras');
+    }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'Pantalla estrecha horizontal apilada');
     assert.ok(geometry.pies[1].y>geometry.pies[0].bottom,'Dos pies apilados');
     assert.ok(geometry.legends.every((r,i)=>r.x>=geometry.circles[i].right),'Leyendas a la derecha de cada pie');
     const chartValues=await charts.evaluate(container=>{
@@ -100,6 +132,7 @@ const assert = require('node:assert/strict');
     assert.notEqual(chartValues.goal.dash,'none','Objetivo discontinuo');
     assert.equal(chartValues.goal.width,'1px','Línea fina');
     assert.ok(chartValues.pies.every(v=>Math.abs(v-chartValues.total)<1e-7),'Cada circular abarca toda la semana');
+    if(compact){await flip.click();assert.equal(await flip.getAttribute('aria-pressed'),'false')}
     assert.match(await charts.locator('.weekly-charts-note').innerText(),/aproximación/);
     await page.locator('#menu-number').selectOption('2');
     assert.match(await charts.locator('.weekly-charts-note').innerText(),/parciales/,'Menú pendiente identificado');
