@@ -55,23 +55,27 @@ def validate_menu(m, filename, slugs):
     month, number = m.get("mes"), m.get("menu")
     ensure(type(month) is int and month in MONTHS and type(number) is int and 1 <= number <= 4, "mes/menú inválidos")
     ensure(filename == f"{month:02d}-{number}.json", "archivo no corresponde al menú")
-    ensure(bool(m.get("airtable_menu_id")) and m.get("estado") == "Calculado", "menú sin ID o sin calcular")
+    ensure(bool(m.get("airtable_menu_id")) and m.get("estado") in ("Calculado", "Pendiente"), "menú sin ID o estado válido")
     days = m.get("dias")
     ensure(isinstance(days, dict) and set(days) == set(DAYS), "días incorrectos")
     for day in DAYS:
         d = days[day]
         check_simple(d.get("desayuno"))
-        check_meal(d.get("comida"), slugs)
-        if day == "Viernes":
-            ensure(d.get("cena") == {"estado": "libre"}, "viernes debe tener cena libre")
-        else:
-            check_meal(d.get("cena"), slugs)
+        for kind in ("comida", "cena"):
+            entry = d.get(kind)
+            if day == "Viernes" and kind == "cena":
+                ensure(entry == {"estado": "libre"}, "viernes debe tener cena libre")
+            elif entry == {"estado": "pendiente"}:
+                ensure(m["estado"] == "Pendiente", "Menú calculado con ingestas pendientes")
+            else:
+                check_meal(entry, slugs)
         if d.get("postre") is not None:
             check_simple(d["postre"])
         check_macros(d.get("nutricion"), day)
-        ingestas = [d["desayuno"], d["comida"]]
-        if day != "Viernes":
-            ingestas.append(d["cena"])
+        ingestas = [d["desayuno"]]
+        for kind in ("comida", "cena"):
+            if d[kind].get("estado") == "Calculado":
+                ingestas.append(d[kind])
         if d.get("postre") is not None:
             ingestas.append(d["postre"])
         for key in MACROS:
