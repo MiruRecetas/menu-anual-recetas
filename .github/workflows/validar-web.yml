@@ -18,7 +18,7 @@ jobs:
           node-version: '22'
       - name: Sintaxis de generador y scripts
         run: |
-          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py scripts/validar_menus.py scripts/exportar_airtable.py
+          python -m py_compile scripts/generar.py scripts/agrupar_componentes.py scripts/validar_menus.py scripts/exportar_airtable.py scripts/indice_publico.py
           python -m unittest discover -s tests -v
           node --check assets/inicio.js
           node --check assets/recetario.js
@@ -38,7 +38,7 @@ jobs:
           grep -q 'id="recipe-catalog"' recetario/index.html
           ! grep -q 'id="recipe-catalog"' index.html
           grep -q 'recetario/' plantillas/receta.html
-          sha256sum index.html recetario/index.html > /tmp/miru-first
+          sha256sum index.html recetario/index.html README.md > /tmp/miru-first
           python scripts/generar.py
-          sha256sum index.html recetario/index.html > /tmp/miru-second
+          sha256sum index.html recetario/index.html README.md > /tmp/miru-second
           diff -u /tmp/miru-first /tmp/miru-second
