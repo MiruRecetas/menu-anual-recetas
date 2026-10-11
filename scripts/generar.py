@@ -39,7 +39,7 @@ def make(r):
         if any(isinstance(nut.get(k),bool) or not isinstance(nut.get(k),(int,float)) or nut[k]<0 for k in keys):raise ValueError("Nutrición incompleta")
         p,c,f=nut["proteinas_g"],nut["hidratos_g"],nut["grasas_g"]
         total=p*4+c*4+f*9;pc=100*p*4/total if total else 0;cc=100*c*4/total if total else 0
-        ring="conic-gradient(#748d76 0 "+str(pc)+"%, #d0a36e "+str(pc)+"% "+str(pc+cc)+"%, #b86f54 "+str(pc+cc)+"% 100%)" if total else "#d3d9d0"
+        ring="conic-gradient(var(--macro-protein) 0 "+str(pc)+"%, var(--macro-carbs) "+str(pc)+"% "+str(pc+cc)+"%, var(--macro-fat) "+str(pc+cc)+"% 100%)" if total else "#d3d9d0"
         nut_html='<section aria-label="Nutrición por ración"><div class="nutrition"><div class="ring" style="background:'+ring+'"><div class="ring-center"><strong>'+e(nut["kcal"])+'</strong><span>kcal/ración</span></div></div><div class="macros">'
         for name,key,cls in [("Proteínas","proteinas_g","p"),("Hidratos","hidratos_g","c"),("Grasas","grasas_g","f")]:
             nut_html+='<div class="macro"><span><span class="dot '+cls+'"></span>'+name+'</span><strong>'+e(nut[key])+' g</strong></div>'
