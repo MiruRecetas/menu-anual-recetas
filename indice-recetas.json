@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "16755955d61dbacdc0b2af7c49e0d9a004de5c6e",
-  "generated_at_utc": "2026-10-11T19:42:30Z",
-  "total_recetas": 29,
+  "source_commit_sha": "2257faa8334490583c2690547ad748abe74832ce",
+  "generated_at_utc": "2026-10-11T20:21:46Z",
+  "total_recetas": 30,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -263,6 +263,86 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/canelones-de-carrilleras/"
+    },
+    {
+      "nombre": "Carne guisada",
+      "slug": "carne-guisada",
+      "categoria": "guisos-legumbres",
+      "descripcion": "",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Aguja de ternera",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 7.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "Champiñones",
+          "cantidad": 230,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Coles de Bruselas",
+          "cantidad": 450,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Guisantes",
+          "cantidad": 280,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Patata",
+          "cantidad": 350,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/carne-guisada/"
     },
     {
       "nombre": "Carrilleras de cerdo al vino",
