@@ -42,6 +42,33 @@ function matchSummaryRecipe(name,names,available){
  const matches=available.filter(r=>cleanRecipeName(r.nombre).startsWith(short));
  return matches.length===1?matches[0]:null;
 }
+function displayGroup(g){
+ const wrap=el('div',undefined,'quick-group');
+ const details=el('details',undefined,'quick-group-details');
+ const head=el('summary',g.nombre,'quick-meal-name');
+ details.append(head);
+ const ingredients=el('div',undefined,'quick-group-ingredients');
+ for(const item of g.elementos){
+  const itemRow=el('div',undefined,'quick-group-ingredient');
+  itemRow.append(el('span',item.nombre),el('strong',Number(item.cantidad).toLocaleString('es-ES',{maximumFractionDigits:2})+' '+item.unidad));
+  ingredients.append(itemRow);
+ }
+ details.append(ingredients);
+ wrap.append(details);
+ const prepItems=g.elementos.filter(item=>item.tipo==='preparacion');
+ if(prepItems.length===1){
+  const prep=prepItems[0];
+  const recipe=recipes.find(r=>r.slug===prep.slug)||recipes.find(r=>cleanRecipeName(r.nombre)===cleanRecipeName(prep.nombre));
+  if(recipe){
+   const link=el('a','↗','quick-group-recipe');
+   link.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
+   link.setAttribute('aria-label','Abrir receta: '+recipe.nombre);
+   link.title='Abrir receta: '+recipe.nombre;
+   wrap.append(link);
+  }
+ }
+ return wrap;
+}
 function summary(kind,meal,day){
  const box=el('section',undefined,'quick-meal');
  const heading=el('h3',undefined,'quick-meal-heading');
@@ -50,17 +77,24 @@ function summary(kind,meal,day){
  symbol.setAttribute('aria-hidden','true');
  heading.append(symbol,el('span',kind));
  const namesContainer=el('div',undefined,'quick-meal-names');
- const names=meal?compactName(kind,meal,day):['Sin asignar'];
- const available=relatedRecipes(meal);
- for(const name of names){
-  const recipe=matchSummaryRecipe(name,names,available);
-  const node=recipe?el('a',name,'quick-meal-name quick-meal-link'):el('span',name,'quick-meal-name');
-  if(recipe){
-   node.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
-   node.title='Abrir receta: '+recipe.nombre;
-   node.setAttribute('aria-label',name+' · Abrir receta: '+recipe.nombre);
+ if(meal?.presentacion?.grupos?.length){
+  for(const g of [...meal.presentacion.grupos].sort((a,b)=>a.orden-b.orden))namesContainer.append(displayGroup(g));
+  for(const item of meal.presentacion.elementos_sin_grupo||[]){
+   const line=el('span',item.nombre,'quick-meal-name');namesContainer.append(line);
   }
-  namesContainer.append(node);
+ }else{
+  const names=meal?compactName(kind,meal,day):['Sin asignar'];
+  const available=relatedRecipes(meal);
+  for(const name of names){
+   const recipe=matchSummaryRecipe(name,names,available);
+   const node=recipe?el('a',name,'quick-meal-name quick-meal-link'):el('span',name,'quick-meal-name');
+   if(recipe){
+    node.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
+    node.title='Abrir receta: '+recipe.nombre;
+    node.setAttribute('aria-label',name+' · Abrir receta: '+recipe.nombre);
+   }
+   namesContainer.append(node);
+  }
  }
  if(meal?.estado==='libre')box.classList.add('quick-meal-free');
  box.append(heading,namesContainer);return box;
