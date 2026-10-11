@@ -1,4 +1,4 @@
-(()=>{'use strict';const root=document.querySelector('#daily-content'),payload=JSON.parse(document.querySelector('#daily-data').textContent),day=payload.dia,site='https://mirurecetas.github.io/menu-anual-recetas';const el=(tag,txt,cls)=>{const node=document.createElement(tag);if(txt!==undefined)node.textContent=txt;if(cls)node.className=cls;return node};const fmt=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:1});function macros(x){if(!x)return el('p','Datos pendientes','muted');return el('p',fmt(x.kcal)+' kcal · P '+fmt(x.proteinas_g)+' g · HC '+fmt(x.hidratos_g)+' g · G '+fmt(x.grasas_g)+' g','muted small')}const GOAL_KCAL=1600;function dailyNutrition(nut){
+(()=>{'use strict';const root=document.querySelector('#daily-content'),payload=JSON.parse(document.querySelector('#daily-data').textContent),day=payload.dia,site='https://mirurecetas.github.io/menu-anual-recetas';const el=(tag,txt,cls)=>{const node=document.createElement(tag);if(txt!==undefined)node.textContent=txt;if(cls)node.className=cls;return node};const fmt=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:1});function macros(x){if(!x)return el('p','Datos pendientes','muted');return el('p',fmt(x.kcal)+' kcal · P '+fmt(x.proteinas_g)+' g · HC '+fmt(x.hidratos_g)+' g · G '+fmt(x.grasas_g)+' g','muted small')}const GOAL_KCAL=1600;const fmtDaily=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:0});function dailyNutrition(nut){
 
  const group=el('section',undefined,'daily-nutrition');
  group.setAttribute('aria-label','Resumen nutricional del día');
@@ -6,7 +6,7 @@
  const ratio=Math.max(0,Math.min(1,kcal/GOAL_KCAL));
  const energy=el('div',undefined,'daily-energy');
  const circle=el('div',undefined,'daily-energy-ring');
- circle.setAttribute('aria-label',fmt(kcal)+' kilocalorías de '+GOAL_KCAL+' kilocalorías de referencia');
+ circle.setAttribute('aria-label',fmtDaily(kcal)+' kilocalorías de '+GOAL_KCAL+' kilocalorías de referencia');
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
  svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('aria-hidden','true');
  const circumference=2*Math.PI*49;
@@ -21,7 +21,7 @@
  }
  circle.append(svg);
  const center=el('span',undefined,'daily-energy-center');
- center.append(el('strong',fmt(kcal)),el('span','kcal'),el('small','de '+GOAL_KCAL));
+ center.append(el('strong',fmtDaily(kcal)),el('span','kcal'),el('small','de '+GOAL_KCAL));
  circle.append(center);energy.append(circle);
  const entries=[
   {label:'Proteínas',short:'P',key:'proteinas_g',energy:4,kind:'protein'},
@@ -34,11 +34,11 @@
   const grams=Math.max(0,Number(nut[item.key])||0);
   const percent=total>0?100*grams*item.energy/total:0;
   const row=el('div',undefined,'daily-macro daily-macro-'+item.kind);
-  row.setAttribute('aria-label',item.label+': '+fmt(grams)+' gramos, '+Math.round(percent)+' por ciento de la energía calculada a partir de macronutrientes');
+  row.setAttribute('aria-label',item.label+': '+fmtDaily(grams)+' gramos, '+Math.round(percent)+' por ciento de la energía calculada a partir de macronutrientes');
   const top=el('div',undefined,'daily-macro-head');
   const label=el('span',item.label,'daily-macro-name');
   const values=el('span',undefined,'daily-macro-values');
-  values.append(el('strong',fmt(grams)+' g'),el('small',Math.round(percent)+'%'));
+  values.append(el('strong',fmtDaily(grams)+' g'),el('small',Math.round(percent)+'%'));
   top.append(label,values);
   const track=el('div',undefined,'daily-macro-track');
   const bar=el('div',undefined,'daily-macro-fill');
