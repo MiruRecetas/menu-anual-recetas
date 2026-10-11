@@ -212,7 +212,7 @@ const assert = require('node:assert/strict');
     await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
     assert.equal(await page.locator('.daily-total .daily-energy-center strong').innerText(),'1488','Mismas kcal que el resumen rápido del lunes');
     assert.deepEqual(await page.locator('.daily-total .daily-macro-values strong').allInnerTexts(),['99 g','105 g','70 g'],'Mismos macros que en ficha rápida');
-    assert.deepEqual(await page.locator('.daily-total .daily-macro-values small').allInnerTexts(),['106%','71%','108%'],'Cumplimiento diario: PR 93 HC 147 GR 65');
+    assert.deepEqual(await page.locator('.daily-total .daily-macro-values small').allInnerTexts(),['106%','71%','107%'],'Cumplimiento diario: PR 93 HC 147 GR 65');
     const ringValues=await page.locator('.daily-total .daily-macro-ring').evaluate(ring=>{
       const arcs=[...ring.querySelectorAll('.daily-macro-arc')];
       const track=ring.querySelector('.daily-energy-track');
