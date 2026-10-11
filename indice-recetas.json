@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "c67880a545963a0a59cbdc3433450e0b27acab1e",
-  "generated_at_utc": "2026-10-11T18:50:04Z",
+  "source_commit_sha": "c5ea6a196fde46cba830aa2f66997ba5171419ba",
+  "generated_at_utc": "2026-10-11T18:52:40Z",
   "total_recetas": 29,
   "recetas": [
     {
@@ -1068,17 +1068,17 @@
           "unidad": "unidades"
         },
         {
-          "nombre": "Perejil fresco",
+          "nombre": "Perejil",
           "cantidad": null,
           "unidad": ""
         },
         {
-          "nombre": "Puerro fresco",
+          "nombre": "Puerro",
           "cantidad": 25,
           "unidad": "g"
         },
         {
-          "nombre": "Bacalao fresco",
+          "nombre": "Bacalao desalado",
           "cantidad": 100,
           "unidad": "g"
         }
