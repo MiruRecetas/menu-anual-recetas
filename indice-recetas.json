@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "f9d77d1649a1b3d991537819609126637e14b03a",
-  "generated_at_utc": "2026-10-11T15:01:49Z",
-  "total_recetas": 24,
+  "source_commit_sha": "4213eae52b44b9a243bf8a9bec6eac841bfbe46d",
+  "generated_at_utc": "2026-10-11T15:21:12Z",
+  "total_recetas": 25,
   "recetas": [
     {
       "nombre": "Arroz con pollo",
@@ -989,6 +989,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tzatziki/"
+    },
+    {
+      "nombre": "Vinagreta de pimientos y cebolla",
+      "slug": "vinagreta-de-pimientos-y-cebolla",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Vinagreta con pimiento verde, pimiento rojo y cebolla finamente picados.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/vinagreta-de-pimientos-y-cebolla/"
     },
     {
       "nombre": "Wok de gambones y pisto",
