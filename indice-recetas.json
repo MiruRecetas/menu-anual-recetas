@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "6deb87a0835c0b488eb33a86253c3fa823a91f93",
-  "generated_at_utc": "2026-10-11T13:48:39Z",
-  "total_recetas": 22,
+  "source_commit_sha": "e6067597b6e5898d73462fd2f35ce997216f80e1",
+  "generated_at_utc": "2026-10-11T13:56:59Z",
+  "total_recetas": 23,
   "recetas": [
     {
       "nombre": "Arroz con pollo",
@@ -465,6 +465,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Huevos rotos",
+      "slug": "huevos-rotos",
+      "categoria": "huevos-tortillas",
+      "descripcion": "Patatas en bastones doradas en freidora de aire, coronadas con dos huevos a la plancha y terminadas con pimentón y un chorrito de vinagre.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Patata cruda",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 20,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Huevos M",
+          "cantidad": 2,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Vinagre",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/huevos-rotos/"
     },
     {
       "nombre": "Hummus",
