@@ -20,17 +20,100 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recisgOzomUjkPYsa",
+        "nombre": "Albóndigas en salsa rubia con patatas panadera y ensalada sencilla",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 792.3796438378586,
+          "proteinas_g": 41.12924166666667,
+          "hidratos_g": 49.13193333333333,
+          "grasas_g": 45.88883333333334
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Albóndigas en salsa rubia",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recWH2AkGXuQeR6UN",
+                  "tipo": "preparacion",
+                  "referencia_id": "recaX3R7koMTr5nrn",
+                  "nombre": "Albóndigas en salsa rubia",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "albondigas-en-salsa-rubia"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Patatas panadera",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "rec8mnbXKIpQZWvF1",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSE81b9WjkURbXi",
+                  "nombre": "Patata, cruda (parte comestible)",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recfsHI0uGpb2pB9W",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-2",
+              "nombre": "Ensalada sencilla",
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "reckqTHkmhoQ21ZRc",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recjq8IrRWXTVjRKg",
+                  "nombre": "Tomate crudo",
+                  "cantidad": 200,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recRUuWNWLmWTz70e",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recrGNY88zOIOcRom",
+                  "nombre": "Cebolla fresca (cruda)",
+                  "cantidad": 25,
+                  "unidad": "g"
+                },
+                {
+                  "id": "recJHFp2EjqjXn3FO",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
         "estado": "pendiente"
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 839.8866238378586,
+        "proteinas_g": 44.46124166666667,
+        "hidratos_g": 53.86993333333333,
+        "grasas_g": 47.542833333333334
       }
     },
     "Martes": {
@@ -147,9 +230,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 237.5349,
-    "proteinas_g": 16.66,
-    "hidratos_g": 23.69,
-    "grasas_g": 8.27
+    "kcal": 1029.9145438378587,
+    "proteinas_g": 57.789241666666676,
+    "hidratos_g": 72.82193333333333,
+    "grasas_g": 54.15883333333332
   }
 }
