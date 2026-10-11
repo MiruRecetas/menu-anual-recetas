@@ -1,9 +1,69 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "3b4b4f9ecc1a5bfcf8c0d6ba2f322773063eecc5",
-  "generated_at_utc": "2026-10-11T18:14:54Z",
-  "total_recetas": 26,
+  "source_commit_sha": "7123817bd958392204561264872804482ea12ff9",
+  "generated_at_utc": "2026-10-11T18:33:27Z",
+  "total_recetas": 27,
   "recetas": [
+    {
+      "nombre": "Albóndigas en salsa rubia",
+      "slug": "albondigas-en-salsa-rubia",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Albóndigas de ternera guisadas en una salsa rubia de cebolla y vino blanco, ligadas con la harina del enharinado.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 3,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Huevo M",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Pan blanco",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Carne picada de ternera",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 30,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/albondigas-en-salsa-rubia/"
+    },
     {
       "nombre": "Arroz con pollo",
       "slug": "arroz-con-pollo",
