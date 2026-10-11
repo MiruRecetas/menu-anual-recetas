@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "f93fa4bc7edddd543c6d559a6aa425ea3bbfa352",
-  "generated_at_utc": "2026-10-11T08:12:29Z",
+  "source_commit_sha": "5e9f28410f64918c1410f4cf1c422b36aa0ccbfb",
+  "generated_at_utc": "2026-10-11T08:33:20Z",
   "total_recetas": 14,
   "recetas": [
     {
@@ -398,7 +398,7 @@
       "nombre": "Quiche de puerro, champiñones y pavo",
       "slug": "quiche-de-puerro-champinones-y-pavo",
       "categoria": "huevos-tortillas",
-      "descripcion": "",
+      "descripcion": "Quiche de masa quebrada con puerro, champiñones y dados de pavo salteados, ligada con huevos y queso crema y horneada hasta cuajar.",
       "raciones_base": 4,
       "ingredientes": [
         {
