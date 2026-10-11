@@ -71,7 +71,7 @@ const assert = require('node:assert/strict');
       assert.equal(await charts.locator('.weekly-pies').evaluate(e=>e.inert),true);
       const front=await charts.locator('.weekly-chart-card').boundingBox();
       assert.ok(front.height<310,'Anverso compacto sin reservar altura para los círculos');
-      assert.ok(Math.abs(front.width-(test.width-36))<2,'Tarjeta a todo el ancho disponible');
+      assert.ok(Math.abs(front.width-(await charts.boundingBox()).width)<2,'Tarjeta a todo el ancho disponible');
       await flip.focus();await page.keyboard.press('Enter');
       await page.waitForTimeout(550);
       assert.equal(await flip.getAttribute('aria-pressed'),'true');
