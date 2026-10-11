@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "90b2e7dbbedc0e1ca9056b8de453cd012f36a58d",
-  "generated_at_utc": "2026-10-11T12:29:09Z",
+  "source_commit_sha": "2a1ac165261fbe97088be4f939997aef5d45ef0c",
+  "generated_at_utc": "2026-10-11T12:38:50Z",
   "total_recetas": 21,
   "recetas": [
     {
@@ -262,17 +262,17 @@
         },
         {
           "nombre": "Pimiento verde",
-          "cantidad": 200,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
           "nombre": "Pimiento rojo",
-          "cantidad": 200,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
           "nombre": "Cebolla",
-          "cantidad": 200,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
@@ -287,7 +287,7 @@
         },
         {
           "nombre": "AOVE",
-          "cantidad": 30,
+          "cantidad": 22.5,
           "unidad": "ml"
         }
       ],
@@ -632,7 +632,7 @@
         },
         {
           "nombre": "Pimiento rojo",
-          "cantidad": 500,
+          "cantidad": 450,
           "unidad": "g"
         },
         {
@@ -647,13 +647,13 @@
         },
         {
           "nombre": "Cebolla",
-          "cantidad": 500,
+          "cantidad": 450,
           "unidad": "g"
         },
         {
           "nombre": "AOVE",
-          "cantidad": 40,
-          "unidad": "g"
+          "cantidad": 45,
+          "unidad": "ml"
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pisto/"
