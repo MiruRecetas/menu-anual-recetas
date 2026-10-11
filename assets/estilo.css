@@ -336,3 +336,6 @@ button[hidden]{display:none!important}
 @media(pointer:fine){.daily-navigation-hint{display:none}}
 @media(max-width:540px){.daily-navigation{gap:8px 10px}.daily-nav-link{font-size:.83rem;padding:9px 11px}}
 @media(prefers-reduced-motion:reduce){.daily-nav-link{transition:none}}
+
+/* Reservar deslizamientos horizontales para el cambio de día, manteniendo scroll vertical nativo */
+.daily-page-main{touch-action:pan-y}
