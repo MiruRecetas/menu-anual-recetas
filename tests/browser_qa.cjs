@@ -249,6 +249,89 @@ const assert = require('node:assert/strict');
     assert.match(await page.locator('h1').first().innerText(),/Bowl de yogur con miel y granola/,'Clic desde el modal abre la receta');
     await page.close();
   }
+
+  // Gestos táctiles reales en Chromium: límites, todos los días, scroll vertical
+  // y compatibilidad con controles de ingredientes y navegación de teclado.
+  const context=await browser.newContext({
+    viewport:{width:390,height:844},deviceScaleFactor:1,hasTouch:true,isMobile:true
+  });
+  const touchPage=await context.newPage();
+  touchPage.on('pageerror',error=>issues.push('gestos: '+error.message));
+  const names=['lunes','martes','miercoles','jueves','viernes'];
+  // Los href de producción apuntan a Pages; solo durante QA apuntan al servidor local.
+  async function localizeDayLinks(){
+    await touchPage.locator('.daily-navigation a').evaluateAll(links=>{
+      for(const a of links){
+        const url=new URL(a.href);
+        a.href='http://127.0.0.1:8765/'+url.pathname.replace(/^\/menu-anual-recetas\//,'');
+      }
+    });
+  }
+  async function swipe(direction,vertical=false){
+    await localizeDayLinks();
+    const size=touchPage.viewportSize();
+    const heading=await touchPage.locator('.daily-page-heading').boundingBox();
+    const y=Math.round(heading.y+heading.height/2);
+    const startX=Math.round(size.width*(direction==='left'?.82:.18));
+    const endX=vertical?startX+12:Math.round(size.width*(direction==='left'?.18:.82));
+    const endY=vertical?y+250:y+8;
+    const cdp=await context.newCDPSession(touchPage);
+    await cdp.send('Input.dispatchTouchEvent',{
+      type:'touchStart',touchPoints:[{x:startX,y,id:1}]
+    });
+    for(let i=1;i<=6;i++){
+      await cdp.send('Input.dispatchTouchEvent',{
+        type:'touchMove',
+        touchPoints:[{x:Math.round(startX+(endX-startX)*i/6),
+                       y:Math.round(y+(endY-y)*i/6),id:1}]
+      });
+    }
+    await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    await cdp.detach().catch(()=>{});
+  }
+  await touchPage.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
+  assert.equal(await touchPage.locator('.daily-nav-prev').count(),0,'Lunes no tiene anterior');
+  assert.equal(await touchPage.locator('.daily-nav-next').count(),1,'Lunes tiene siguiente');
+  assert.equal(await touchPage.locator('.daily-nav-next').getAttribute('aria-label'),'Ir al día siguiente: Martes','Siguiente accesible');
+  await swipe('right');
+  await touchPage.waitForTimeout(180);
+  assert.match(touchPage.url(),/\/lunes\/$/,'No se permite retroceder de lunes');
+  for(let i=1;i<names.length;i++){
+    await swipe('left');
+    await touchPage.waitForURL(new RegExp('/'+names[i]+'/
+  console.log('PASS: Navegación responsive y deslizamiento táctil limitado lunes-viernes; capturas creadas.');
+})().catch(e=>{console.error(e);process.exit(1)});
+),{timeout:5000});
+    assert.equal(await touchPage.locator('.daily-page-heading h1').innerText(),
+                 ['Lunes','Martes','Miércoles','Jueves','Viernes'][i],
+                 'Deslizamiento izquierda avanza al día '+i);
+  }
+  assert.equal(await touchPage.locator('.daily-nav-next').count(),0,'Viernes no tiene siguiente');
+  assert.equal(await touchPage.locator('.daily-nav-prev').getAttribute('aria-label'),'Ir al día anterior: Jueves','Anterior accesible');
+  await swipe('left');
+  await touchPage.waitForTimeout(180);
+  assert.match(touchPage.url(),/\/viernes\/$/,'No se permite avanzar después de viernes');
+  for(let i=names.length-2;i>=0;i--){
+    await swipe('right');
+    await touchPage.waitForURL(new RegExp('/'+names[i]+'/
+  console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
+})().catch(e=>{console.error(e);process.exit(1)});
+),{timeout:5000});
+  }
+  await swipe('left',true);
+  await touchPage.waitForTimeout(180);
+  assert.match(touchPage.url(),/\/lunes\/$/,'El scroll vertical no cambia de día');
+  const ingredientGroup=touchPage.locator('.culinary-group').first();
+  const prior=await ingredientGroup.getAttribute('open');
+  await ingredientGroup.locator('summary').click();
+  assert.notEqual(await ingredientGroup.getAttribute('open'),prior,'Desplegables siguen respondiendo al toque');
+  await localizeDayLinks();
+  await touchPage.locator('.daily-nav-next').focus();
+  await touchPage.keyboard.press('Enter');
+  await touchPage.waitForURL(/\/martes\/$/);
+  assert.equal(await touchPage.locator('.daily-page-heading h1').innerText(),'Martes','Navegación inferior accesible por teclado');
+  await context.close();
+
   await browser.close();
   if(issues.length)throw new Error(issues.join('\n'));
   console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
