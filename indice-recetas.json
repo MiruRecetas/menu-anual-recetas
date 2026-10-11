@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "9dbd62cf26c55a4cd9990ce92b58c91ceab3edb3",
-  "generated_at_utc": "2026-10-11T12:55:32Z",
+  "source_commit_sha": "68b8d7576bd348767aaf9b5f50fc519478c8f03b",
+  "generated_at_utc": "2026-10-11T12:59:52Z",
   "total_recetas": 22,
   "recetas": [
     {
@@ -29,8 +29,8 @@
         },
         {
           "nombre": "Ajo",
-          "cantidad": 6,
-          "unidad": "g (2 dientes)"
+          "cantidad": 2,
+          "unidad": "dientes"
         },
         {
           "nombre": "Caldo de pollo",
