@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "c5ea6a196fde46cba830aa2f66997ba5171419ba",
-  "generated_at_utc": "2026-10-11T18:52:40Z",
+  "source_commit_sha": "3dc950004215737435676ef2413a61ce791f190b",
+  "generated_at_utc": "2026-10-11T18:55:05Z",
   "total_recetas": 29,
   "recetas": [
     {
@@ -1078,7 +1078,7 @@
           "unidad": "g"
         },
         {
-          "nombre": "Bacalao desalado",
+          "nombre": "Bacalao",
           "cantidad": 100,
           "unidad": "g"
         }
