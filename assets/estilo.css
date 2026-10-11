@@ -296,3 +296,13 @@ button[hidden]{display:none!important}
 #quick-content .quick-group-recipe{flex:0 0 26px;display:grid;place-items:center;border-radius:50%;text-decoration:none;font-size:1.1rem;font-weight:700;color:var(--green);height:27px}
 #quick-content .quick-group-recipe:hover{background:var(--sage);color:var(--terra)}
 #quick-content .quick-group-recipe:focus-visible{outline:2px solid var(--terra)}
+
+
+/* Ficha diaria ampliada: encabezado compacto y nutrición igual que en panel rápido */
+.daily-page-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:14px 0 23px}
+.daily-page-heading .eyebrow{margin:0;flex:1;min-width:0}
+.daily-page-heading h1{margin:0;text-align:right;font-size:clamp(1.65rem,3vw,2.55rem);flex-shrink:0}
+.daily-total{padding:0;border:0;background:transparent;box-shadow:none;margin:0 0 16px}
+.daily-total .daily-nutrition{width:100%;max-width:520px;margin:0 0 12px}
+.daily-total .daily-energy-center strong{font-size:clamp(1.25rem,2.4vw,1.65rem)}
+@media(max-width:540px){.daily-page-heading{align-items:center;margin:11px 0 18px;gap:10px}.daily-page-heading h1{font-size:1.7rem}.daily-total .daily-nutrition{max-width:none}}
