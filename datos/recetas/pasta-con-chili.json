@@ -1,0 +1,45 @@
+{
+  "slug": "pasta-con-chili",
+  "nombre": "Pasta con chili",
+  "descripcion": "Pasta al dente mezclada con chili con carne casero y terminada con mozzarella rallada fundida.",
+  "raciones": 1,
+  "categoria": "arroces-pastas",
+  "etiquetas": [
+    "microondas",
+    "tupper",
+    "rapida",
+    "carne"
+  ],
+  "nutricion": {
+    "kcal": 724.44,
+    "proteinas_g": 41.86,
+    "hidratos_g": 69.87,
+    "grasas_g": 29.88
+  },
+  "ingredientes": [
+    {
+      "nombre": "Pasta",
+      "cantidad": 60,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Mozzarella rallada",
+      "cantidad": 30,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Chili con carne",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "chili-con-carne"
+    }
+  ],
+  "pasos": [
+    "Poner agua a hervir en una olla y cocer los 60 g de pasta siguiendo el tiempo indicado en el paquete, hasta que quede al dente.",
+    "Mientras se cuece la pasta, calentar una ración de chili con carne ya preparado en una sartén amplia a fuego medio-bajo. Remover hasta que esté bien caliente.",
+    "Reservar unas cucharadas del agua de cocción y escurrir la pasta. Incorporarla a la sartén con el chili y mezclar con suavidad para que quede bien impregnada de la salsa. Si está demasiado espesa, añadir un poco del agua reservada.",
+    "Repartir los 30 g de mozzarella rallada sobre la pasta con chili. Tapar la sartén y mantener a fuego bajo durante 1–2 minutos, hasta que el queso se funda.",
+    "Retirar del fuego y servir caliente."
+  ],
+  "notas": "El chili debe estar preparado previamente. Si vas a llevar la pasta en táper, consérvala refrigerada y recalienta hasta que esté bien caliente; si se ha secado, añade un poco de agua antes de calentarla."
+}
