@@ -9,16 +9,16 @@
     "carne"
   ],
   "nutricion": {
-    "kcal": 218.15,
+    "kcal": 212.18,
     "proteinas_g": 27.24,
     "hidratos_g": 1.63,
-    "grasas_g": 10.67
+    "grasas_g": 9.99
   },
   "ingredientes": [
     {
       "nombre": "AOVE",
       "cantidad": 15,
-      "unidad": "g"
+      "unidad": "ml"
     },
     {
       "nombre": "Ajo",
@@ -37,7 +37,7 @@
     }
   ],
   "pasos": [
-    "Pelar los 3 dientes de ajo, picarlos y dorarlos suavemente en una sartén con los 15 g de AOVE, sin dejar que se quemen.",
+    "Pelar los 3 dientes de ajo, picarlos y dorarlos suavemente en una sartén con los 15 ml de AOVE, sin dejar que se quemen.",
     "Cortar los 240 g de pechuga de pollo en tiras, añadirlos a la sartén y cocinarlos hasta que se doren por fuera, removiendo para que se hagan de manera uniforme.",
     "Verter los 30 ml de zumo de limón y terminar de cocinar el pollo en la sartén, hasta que las tiras estén bien hechas en su interior. Servir con el jugo de la sartén."
   ],
