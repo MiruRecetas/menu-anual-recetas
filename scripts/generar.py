@@ -133,9 +133,12 @@ def main():
         menu_title=f'{month_names[m["mes"]]} · Menú {m["menu"]}'
         for i,day in enumerate(DAYS):
             navigation=[]
-            for j,title in ((i-1,"← Día anterior"),(i+1,"Día siguiente →")):
+            for j,arrow,cls in ((i-1,"←","prev"),(i+1,"→","next")):
                 if 0<=j<len(DAYS):
-                    navigation.append('<a href="'+SITE+'/menus/'+menu_key+'/'+DAYS[j].lower()+'/">'+title+'</a>')
+                    target=DAYS[j]
+                    text=(arrow+" "+target) if cls=="prev" else (target+" "+arrow)
+                    label=("Ir al día anterior: " if cls=="prev" else "Ir al día siguiente: ")+target
+                    navigation.append('<a class="daily-nav-link daily-nav-'+cls+'" aria-label="'+e(label)+'" href="'+SITE+'/menus/'+menu_key+'/'+target.lower()+'/">'+e(text)+'</a>')
             payload={"dia":m["dias"][day],"nombre_dia":day}
             content=template
             replacements={"DAY":e(day),"MENU_TITLE":e(menu_title),"SITE":SITE,"NAVIGATION":" ".join(navigation),"DAY_JSON":json.dumps(payload,ensure_ascii=False).replace("<",r"\u003c")}
