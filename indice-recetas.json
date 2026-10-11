@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "542f41253322e650f136104fa8bd2b5670312611",
-  "generated_at_utc": "2026-10-11T09:28:13Z",
-  "total_recetas": 17,
+  "source_commit_sha": "25fe123a49ce34e424677a4127620802efd7cde2",
+  "generated_at_utc": "2026-10-11T09:47:24Z",
+  "total_recetas": 18,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -392,6 +392,91 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/hummus/"
+    },
+    {
+      "nombre": "Marmitako de bonito",
+      "slug": "marmitako-de-bonito",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Guiso tradicional de bonito del norte fresco con patata chascada, verduras, fumet de pescado y marisco, pimiento choricero y pimentón dulce.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Bonito del norte fresco",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Patata cruda",
+          "cantidad": 130,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 114,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 39,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente (2,7 g)"
+        },
+        {
+          "nombre": "Fumet de pescado y marisco",
+          "cantidad": 300,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 70,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Pimentón dulce de la Vera",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Carne de pimiento choricero",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate triturado",
+          "cantidad": 15,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Guindilla",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 2,
+          "unidad": "hojas"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/marmitako-de-bonito/"
     },
     {
       "nombre": "Mini wraps de falafel",
