@@ -4,7 +4,7 @@
 
 **[Abrir MiruRecetas](https://mirurecetas.github.io/menu-anual-recetas/)** · [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) · [Repositorio](https://github.com/MiruRecetas/menu-anual-recetas)
 
-> **Estado (octubre de 2026):** están publicados **Octubre · Menú 1** y 14 fichas de receta/preparación. El selector permite otros meses y los menús 1–4, pero las opciones sin datos publicados muestran un aviso: **no está completo todavía el año**.
+> **Estado (octubre de 2026):** están publicados **Octubre · Menú 1** y las recetas enumeradas en el índice público generado más abajo. El selector permite otros meses y los menús 1–4, pero las opciones sin datos publicados muestran un aviso: **no está completo todavía el año**.
 
 ## Qué ofrece la web
 
