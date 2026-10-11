@@ -14,6 +14,45 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('#week .day-button').count(),5,test.name+': días');
     assert.equal(await page.locator('#week .week-kcal-ring').count(),5,'Cinco anillos');
     assert.equal(await page.locator('#week .week-meal-row').count(),17,'Ingestas existentes');
+    const weeklyLayout=await page.locator('#week .week-card').evaluateAll(cards=>cards.map(card=>{
+      const rect=node=>{const r=node.getBoundingClientRect();return {top:r.top,bottom:r.bottom,height:r.height,width:r.width}};
+      const head=card.querySelector('.week-card-head');
+      const title=card.querySelector('.week-card-title');
+      const ring=card.querySelector('.week-kcal-ring');
+      const first=card.querySelector('.week-meal-row');
+      return {
+        card:rect(card),head:rect(head),title:rect(title),ring:rect(ring),first:rect(first),
+        titleText:title.textContent,titleScroll:title.scrollWidth,titleClient:title.clientWidth,
+        titleWhiteSpace:getComputedStyle(title).whiteSpace,
+        cardDisplay:getComputedStyle(card).display,
+        cardJustify:getComputedStyle(card).justifyContent,
+        progress:getComputedStyle(ring.querySelector('.ring-progress')).stroke,
+        track:getComputedStyle(ring.querySelector('.ring-track')).stroke,
+        label:getComputedStyle(ring.querySelector('small')).color
+      };
+    }));
+    assert.equal(weeklyLayout.length,5,'Cinco tarjetas semanales evaluadas');
+    assert.ok(weeklyLayout.every(x=>x.cardDisplay==='flex'&&x.cardJustify==='flex-start'),
+      'Todo el contenido semanal se alinea arriba');
+    assert.ok(weeklyLayout.every(x=>x.titleWhiteSpace==='nowrap'&&
+      x.titleScroll<=x.titleClient+1),'Todos los días caben en una sola línea, incluido Miércoles');
+    assert.deepEqual(weeklyLayout.map(x=>x.titleText),['Lunes','Martes','Miércoles','Jueves','Viernes']);
+    assert.ok(weeklyLayout.every(x=>x.progress==='rgb(69, 75, 75)'),
+      'Anillos semanales en gris carbón, distintos de la paleta de macros');
+    assert.ok(weeklyLayout.every(x=>x.track==='rgb(220, 221, 218)'),
+      'Pista neutra en los cinco anillos');
+    if(test.width>=1091){
+      const close=(values,tolerance=1)=>Math.max(...values)-Math.min(...values)<=tolerance;
+      assert.ok(close(weeklyLayout.map(x=>x.card.top)),test.name+': cinco tarjetas empiezan a la misma altura');
+      assert.ok(close(weeklyLayout.map(x=>x.card.height)),test.name+': cinco tarjetas mantienen igual altura');
+      assert.ok(close(weeklyLayout.map(x=>x.card.width)),test.name+': cinco tarjetas mantienen igual anchura');
+      assert.ok(close(weeklyLayout.map(x=>x.head.top)),test.name+': encabezados alineados arriba');
+      assert.ok(close(weeklyLayout.map(x=>x.head.height)),test.name+': encabezados de altura idéntica');
+      assert.ok(close(weeklyLayout.map(x=>x.first.top)),test.name+': primeras comidas alineadas arriba');
+      assert.ok(weeklyLayout.every(x=>x.head.top-x.card.top<30),test.name+': encabezados pegados a la zona superior');
+      assert.ok(weeklyLayout.every(x=>x.first.top>=x.head.bottom),test.name+': comidas después del encabezado');
+    }
+
     const monday=page.locator('#week .day-button').first();
     assert.match(await monday.innerText(),/Café con leche/);
     const textMonday=await monday.innerText();assert.ok(textMonday.indexOf('Carpaccio')<textMonday.indexOf('Puerros con mayonesa')&&textMonday.indexOf('Puerros con mayonesa')<textMonday.indexOf('Bowl de yogur'),'Orden de cena');

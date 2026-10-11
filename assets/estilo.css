@@ -339,3 +339,51 @@ button[hidden]{display:none!important}
 
 /* Reservar deslizamientos horizontales para el cambio de día, manteniendo scroll vertical nativo */
 .daily-page-main{touch-action:pan-y}
+
+
+/* Página semanal: cinco encabezados de altura fija, comidas ancladas arriba.
+   Mantener el tamaño igualado por la rejilla y dejar aire al final de los días cortos. */
+#week .week-card{
+ display:flex;
+ flex-direction:column;
+ align-items:stretch;
+ justify-content:flex-start;
+}
+#week .week-card-head{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) 70px;
+ align-items:center;
+ gap:7px;
+ padding-left:0;
+ margin-bottom:13px;
+ height:70px;
+ min-height:70px;
+ flex:0 0 70px;
+ width:100%;
+}
+#week .week-card-title{
+ font-size:clamp(1.02rem,1.36vw,1.26rem);
+ line-height:1.12;
+ white-space:nowrap;
+ overflow-wrap:normal;
+ word-break:normal;
+ min-width:0;
+}
+#week .week-meal-row{flex:0 0 auto}
+#week .week-kcal-ring .ring-track{stroke:#dcddda}
+#week .week-kcal-ring .ring-progress{stroke:#454b4b}
+#week .week-kcal-ring small{color:#454b4b}
+@media (min-width:701px) and (max-width:1090px){
+ #week .week-card-head{
+  grid-template-columns:minmax(0,1fr) 82px;
+  min-height:82px;height:82px;flex-basis:82px;
+ }
+ #week .week-card-title{font-size:1.56rem}
+}
+@media (max-width:700px){
+ #week .week-card-head{
+  grid-template-columns:minmax(0,1fr) 76px;
+  min-height:76px;height:76px;flex-basis:76px;
+ }
+ #week .week-card-title{font-size:1.46rem}
+}
