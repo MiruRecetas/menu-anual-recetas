@@ -44,17 +44,7 @@ function matchSummaryRecipe(name,names,available){
 }
 function displayGroup(g){
  const wrap=el('div',undefined,'quick-group');
- const details=el('details',undefined,'quick-group-details');
- const head=el('summary',g.nombre,'quick-meal-name');
- details.append(head);
- const ingredients=el('div',undefined,'quick-group-ingredients');
- for(const item of g.elementos){
-  const itemRow=el('div',undefined,'quick-group-ingredient');
-  itemRow.append(el('span',item.nombre),el('strong',Number(item.cantidad).toLocaleString('es-ES',{maximumFractionDigits:2})+' '+item.unidad));
-  ingredients.append(itemRow);
- }
- details.append(ingredients);
- wrap.append(details);
+ wrap.append(el('span',g.nombre,'quick-meal-name'));
  const prepItems=g.elementos.filter(item=>item.tipo==='preparacion');
  if(prepItems.length===1){
   const prep=prepItems[0];
