@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "55efbdd8f4b534d3d292a3728b9063e50c3f841d",
-  "generated_at_utc": "2026-10-11T09:09:29Z",
-  "total_recetas": 15,
+  "source_commit_sha": "a0b70ee788f0a1f3730c817f5efad53201c183dc",
+  "generated_at_utc": "2026-10-11T09:19:24Z",
+  "total_recetas": 16,
   "recetas": [
     {
       "nombre": "Bacalao a la vizcaína",
@@ -104,6 +104,27 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bowl-de-yogur-con-miel-y-granola/"
+    },
+    {
+      "nombre": "Burritos de chili con carne",
+      "slug": "burritos-de-chili-con-carne",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Tres mini burritos de trigo rellenos de chili con carne casero, calientes y ligeramente dorados en sartén.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Chili con carne",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "chili-con-carne"
+        },
+        {
+          "nombre": "Mini tortillas de trigo",
+          "cantidad": 3,
+          "unidad": "unidades"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/burritos-de-chili-con-carne/"
     },
     {
       "nombre": "Canelones de carrilleras",
