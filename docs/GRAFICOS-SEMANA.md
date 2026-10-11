@@ -1,6 +1,6 @@
 # Gráficos de la vista semanal
 
-Implementado el 11/10/2026. Se muestran debajo de los selectores y antes de los días. En escritorio/tablet: barras a la izquierda y dos gráficos circulares apilados a la derecha, con sus leyendas a la derecha. En móvil estrecho, las dos zonas se apilan para conservar la legibilidad. Sin marcos ni divisiones visibles entre columnas.
+Implementado el 11/10/2026. Se muestran debajo de los selectores y antes de los días. En escritorio/tablet: barras a la izquierda y dos gráficos circulares apilados a la derecha, con sus leyendas a la derecha. En móvil vertical de menos de 700 px, una tarjeta a todo el ancho muestra barras más bajas en su anverso. El botón Lucide `iteration-cw` en la esquina superior derecha gira la tarjeta de derecha a izquierda y muestra los dos circulares apilados con las leyendas a su derecha; otra pulsación vuelve a las barras. La altura se adapta a la cara activa, la cara oculta se excluye del foco y de lectores de pantalla y la preferencia de movimiento reducido elimina la animación. Al cambiar de menú u orientación se vuelve al anverso. Escritorio, tablet y móvil horizontal conservan las dos zonas sin marcos ni divisiones visibles entre columnas.
 
 ## Datos actuales
 

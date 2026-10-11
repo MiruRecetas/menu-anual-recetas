@@ -21,7 +21,7 @@
 
 ### Gráficos semanales
 
-Debajo de los selectores aparecen barras apiladas de kcal por día (L/M/X/J/V), con los colores de macros y una línea discontinua a **1600 kcal**. A la derecha hay dos gráficos circulares semanales: **variedad nutricional provisional por protagonista** y **energía por ingesta**, ambos con leyenda a su derecha. En móvil estrecho las zonas se apilan. Las kcal oficiales se conservan; las ingestas pendientes o libres no se inventan.
+Debajo de los selectores aparecen barras apiladas de kcal por día (L/M/X/J/V), con los colores de macros y una línea discontinua a **1600 kcal**. A la derecha hay dos gráficos circulares semanales: **variedad nutricional provisional por protagonista** y **energía por ingesta**, ambos con leyenda a su derecha. En móvil vertical estrecho se presentan en una tarjeta: barras compactas delante y dos círculos detrás, accesibles mediante el botón de giro superior derecho. Las kcal oficiales se conservan; las ingestas pendientes o libres no se inventan.
 
 La variedad es una **aproximación**, todavía no el aporte real de cada ingrediente. El [contrato y plan de evolución](docs/GRAFICOS-SEMANA.md) explica el cálculo actual y los datos que requerirá el desglose real. Esta primera versión no cambia el procedimiento de publicación de recetas o menús.
 
