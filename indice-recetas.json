@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "e6067597b6e5898d73462fd2f35ce997216f80e1",
-  "generated_at_utc": "2026-10-11T13:56:59Z",
-  "total_recetas": 23,
+  "source_commit_sha": "c984d4f3a215627cfd40b4bc0089fafbddddb319",
+  "generated_at_utc": "2026-10-11T14:07:08Z",
+  "total_recetas": 24,
   "recetas": [
     {
       "nombre": "Arroz con pollo",
@@ -465,6 +465,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Guisantes con jamón",
+      "slug": "guisantes-con-jamon",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Guisantes salteados con ajo y jamón serrano, terminados con una reducción de vino blanco de guiso.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Jamón serrano",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Guisantes",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 125,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/guisantes-con-jamon/"
     },
     {
       "nombre": "Huevos rotos",
