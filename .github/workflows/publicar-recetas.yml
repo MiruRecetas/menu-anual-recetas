@@ -23,7 +23,7 @@ jobs:
           python-version: '3.12'
       - name: Validar código y datos antes de publicar
         run: |
-          python -m py_compile scripts/generar.py scripts/validar_menus.py scripts/agrupar_componentes.py
+          python -m py_compile scripts/generar.py scripts/validar_menus.py scripts/agrupar_componentes.py scripts/indice_publico.py
           python -m unittest discover -s tests -v
       - name: Comprobar sintaxis JavaScript
         run: |
@@ -36,8 +36,41 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
           git add index.html
           if [ -d recetario ]; then git add -A recetario; fi
           if [ -d recetas ]; then git add -A recetas; fi
           if [ -d menus ]; then git add -A menus; fi
           git diff --cached --quiet || (git commit -m "Publicar páginas generadas" && git push)
+      - name: Verificar lectura pública anónima del índice de recetas
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess, time, urllib.request
+          from urllib.error import URLError
+
+          expected = Path("README.md").read_text(encoding="utf-8")
+          start = "<!-- MIRURECETAS_INDICE_PUBLICO_INICIO: generado automáticamente -->"
+          end = "<!-- MIRURECETAS_INDICE_PUBLICO_FIN -->"
+          if start not in expected or end not in expected:
+              raise SystemExit("No se generó índice público en README")
+          block = expected[expected.index(start):expected.index(end)+len(end)]
+          sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          url = ("https://raw.githubusercontent.com/MiruRecetas/menu-anual-recetas/"
+                 "main/README.md?version=" + sha)
+          for attempt in range(1, 11):
+              try:
+                  # No se envía Authorization, token ni cookie: comprobación anónima real.
+                  request = urllib.request.Request(url, headers={"User-Agent": "MiruRecetas-public-index-check"})
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      public = response.read().decode("utf-8")
+                  if block in public:
+                      print("Índice accesible públicamente sin autenticación, versión:", sha)
+                      break
+                  print("Índice público aún no actualizado, intento", attempt)
+              except (URLError, UnicodeError) as error:
+                  print("Consulta anónima no disponible, intento", attempt, str(error))
+              if attempt == 10:
+                  raise SystemExit("No se pudo verificar lectura pública anónima del índice")
+              time.sleep(5)
+          PY
