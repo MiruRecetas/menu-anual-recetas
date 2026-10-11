@@ -180,7 +180,7 @@ const assert = require('node:assert/strict');
     await page.waitForURL(/\/menus\/10-1\/martes\//);
     await page.locator('.daily-meal').first().waitFor();
     assert.match(await page.locator('body').innerText(),/Carrilleras al vino con boniato al horno/);
-    assert.equal(await page.locator('.daily-page-heading .eyebrow').innerText(),'Octubre · Menú 1','Mes y menú visibles');
+    assert.equal(await page.locator('.daily-page-heading .eyebrow').innerText(),'OCTUBRE · MENÚ 1','Mes y menú visibles');
     assert.equal(await page.locator('.daily-page-heading h1').innerText(),'Martes','Día a la derecha');
     assert.equal(await page.getByText('Valores correspondientes a las ingestas planificadas registradas').count(),0,'Texto redundante retirado');
     const headingGeometry=await page.locator('.daily-page-heading').evaluate(node=>{
