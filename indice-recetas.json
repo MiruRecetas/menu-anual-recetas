@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "source_commit_sha": "f93fa4bc7edddd543c6d559a6aa425ea3bbfa352",
+  "generated_at_utc": "2026-10-11T08:12:29Z",
+  "total_recetas": 14,
+  "recetas": [
+    {
+      "nombre": "Bacalao a la vizcaína",
+      "slug": "bacalao-a-la-vizcaina",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Bacalao marcado con ajo y terminado a fuego suave en salsa vizcaína, ligada con los jugos del pescado.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Salsa vizcaína",
+          "cantidad": 2,
+          "unidad": "raciones",
+          "preparacion": "salsa-vizcaina"
+        },
+        {
+          "nombre": "Bacalao",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bacalao-a-la-vizcaina/"
+    },
+    {
+      "nombre": "Bechamel",
+      "slug": "bechamel",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Bechamel casera elaborada con mantequilla, harina y leche semidesnatada, ideal para gratinar canelones.",
+      "raciones_base": 6,
+      "ingredientes": [
+        {
+          "nombre": "Mantequilla",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 500,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bechamel/"
+    },
+    {
+      "nombre": "Bowl de yogur con miel y granola",
+      "slug": "bowl-de-yogur-con-miel-y-granola",
+      "categoria": "postres",
+      "descripcion": "Bowl de yogur griego natural con granola, miel de apicultura y almendras tostadas en airfryer.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Yogur griego natural",
+          "cantidad": 1,
+          "unidad": "unidad (125 g)"
+        },
+        {
+          "nombre": "Granola",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Miel",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Almendras crudas",
+          "cantidad": 25,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bowl-de-yogur-con-miel-y-granola/"
+    },
+    {
+      "nombre": "Canelones de carrilleras",
+      "slug": "canelones-de-carrilleras",
+      "categoria": "arroces-pastas",
+      "descripcion": "Canelones rellenos de carrilleras guisadas desmechadas con su salsa, cubiertos de bechamel y mozzarella gratinada.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Carrilleras de cerdo al vino",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "carrilleras-de-cerdo-al-vino"
+        },
+        {
+          "nombre": "Bechamel",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "bechamel"
+        },
+        {
+          "nombre": "Mozzarella rallada",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Placas de canelones",
+          "cantidad": 70,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/canelones-de-carrilleras/"
+    },
+    {
+      "nombre": "Carrilleras de cerdo al vino",
+      "slug": "carrilleras-de-cerdo-al-vino",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Carrilleras selladas y cocinadas lentamente en salsa de vino tinto, verduras y caldo, con la salsa triturada al final.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Carrilleras de cerdo",
+          "cantidad": 800,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino tinto",
+          "cantidad": 250,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Caldo de carne",
+          "cantidad": 300,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 40,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Harina de trigo para enharinar",
+          "cantidad": 8,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 1,
+          "unidad": "hoja"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Tomillo",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Romero",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/carrilleras-de-cerdo-al-vino/"
+    },
+    {
+      "nombre": "Falafel",
+      "slug": "falafel",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Falafel de garbanzos secos remojados, hierbas frescas y especias, preparados en horno o airfryer.",
+      "raciones_base": 6,
+      "ingredientes": [
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 12.1,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": 2.4,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": 7,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Comino en polvo",
+          "cantidad": 3,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cilantro fresco",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes (2,7 g)"
+        },
+        {
+          "nombre": "Garbanzos secos",
+          "cantidad": 180,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Hummus",
+      "slug": "hummus",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Crema de garbanzos cocidos con tahini, limón, ajo, AOVE y comino.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Garbanzos cocidos",
+          "cantidad": 90,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente (2,7 g)"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tahini",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 7.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Comino en polvo",
+          "cantidad": 3,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/hummus/"
+    },
+    {
+      "nombre": "Mini wraps de falafel",
+      "slug": "mini-wraps-de-falafel",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Tres mini wraps de trigo rellenos de falafel, tzatziki, tomate, cebolla y rúcula.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Falafel",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "falafel"
+        },
+        {
+          "nombre": "Tzatziki",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "tzatziki"
+        },
+        {
+          "nombre": "Mini tortillas de trigo",
+          "cantidad": 3,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Rúcula",
+          "cantidad": 20,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/mini-wraps-de-falafel/"
+    },
+    {
+      "nombre": "Pisto",
+      "slug": "pisto",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Pisto casero de tomate, pimientos, calabacín y cebolla, pochados lentamente en aceite de oliva.",
+      "raciones_base": 6,
+      "ingredientes": [
+        {
+          "nombre": "Tomate",
+          "cantidad": 1000,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 450,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Calabacín",
+          "cantidad": 575,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 40,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pisto/"
+    },
+    {
+      "nombre": "Quiche de puerro, champiñones y pavo",
+      "slug": "quiche-de-puerro-champinones-y-pavo",
+      "categoria": "huevos-tortillas",
+      "descripcion": "",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Masa quebrada",
+          "cantidad": 1,
+          "unidad": "unidad (230 g)"
+        },
+        {
+          "nombre": "Champiñones",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevos M",
+          "cantidad": 4,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Dados de pechuga de pavo",
+          "cantidad": 250,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso crema",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/quiche-de-puerro-champinones-y-pavo/"
+    },
+    {
+      "nombre": "Salsa vizcaína",
+      "slug": "salsa-vizcaina",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Salsa de cebolla, pimiento choricero y pan tostado, cocinada lentamente y pasada por el pasapurés.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Carne de pimiento choricero",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 175,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Pan",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 25,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salsa-vizcaina/"
+    },
+    {
+      "nombre": "Tostas de hummus y sardinillas",
+      "slug": "tostas-de-hummus-y-sardinillas",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Dos tostas de pan multicereales con hummus casero y sardinillas bien escurridas.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pan de molde multicereales y semillas",
+          "cantidad": 2,
+          "unidad": "rebanadas"
+        },
+        {
+          "nombre": "Hummus",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "hummus"
+        },
+        {
+          "nombre": "Sardinillas en aceite de oliva, escurridas",
+          "cantidad": 8,
+          "unidad": "unidades"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tostas-de-hummus-y-sardinillas/"
+    },
+    {
+      "nombre": "Tzatziki",
+      "slug": "tzatziki",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Salsa fría de yogur griego natural, pepino escurrido, ajo, limón y hierbas frescas.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Yogur griego natural",
+          "cantidad": 1,
+          "unidad": "unidad (125 g)"
+        },
+        {
+          "nombre": "Pepino",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Menta o hierbabuena",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tzatziki/"
+    },
+    {
+      "nombre": "Wok de gambones y pisto",
+      "slug": "wok-de-gambones-y-pisto",
+      "categoria": "arroces-pastas",
+      "descripcion": "Noodles de arroz con gambones, pisto y salsa de soja, terminados en wok.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pisto",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "pisto"
+        },
+        {
+          "nombre": "Noodles de arroz",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Salsa de soja",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Gambones",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/wok-de-gambones-y-pisto/"
+    }
+  ]
+}
