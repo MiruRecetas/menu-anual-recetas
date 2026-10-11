@@ -244,7 +244,7 @@ La **fuente de verdad de la publicación web** son los JSON de `datos/`, los arc
 4. Esa foto se reutiliza automáticamente en la **ficha, el recetario y Batch cooking**. Sin imagen, la web puede mostrar un marcador provisional. No subir nuevas fotos a `imagenes/batchcooking/`: allí solo pueden quedar archivos históricos sin uso.
 5. Validar y publicar el cambio mediante el flujo de GitHub. Revisar la ficha y sus enlaces públicos.
 
-**Documentación relacionada:** [contrato de recetas](datos/FORMATO.md), [guía para incorporar recetas](docs/NUEVA-RECETA.md) y [contrato actualizado de imágenes](docs/IMAGENES-BATCHCOOKING.md). **Nota:** la guía de incorporación y el apartado histórico de menús de `datos/FORMATO.md` contienen indicaciones anteriores; para las **imágenes** prevalece el contrato único actual y para los **menús v2** prevalecen `scripts/validar_menus.py` y el JSON publicado.
+**Documentación relacionada:** [contrato de recetas](datos/FORMATO.md), [guía para incorporar recetas](docs/NUEVA-RECETA.md) y [contrato de fotografía principal y Batch cooking](docs/IMAGENES-BATCHCOOKING.md). Los tres documentos están alineados con el contrato actual: las imágenes se publican por el agente de imágenes, las etiquetas web las gestiona el flujo de recetas y los **menús v2** se rigen por `scripts/validar_menus.py` y sus JSON publicados.
 
 ### Añadir o modificar un menú
 
