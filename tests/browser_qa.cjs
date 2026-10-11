@@ -341,6 +341,10 @@ const assert = require('node:assert/strict');
     assert.equal(await dinnerGroups.nth(1).locator('.ingredient-line').count(),2,'Despliegue de puerros y mayonesa');
     await page.goto('http://127.0.0.1:8765/recetario/');
     await page.locator('#recipe-catalog').waitFor();
+    const expectedFooter='MiruRecetas · Menús estacionales, siempre reutilizables';
+    assert.equal(await page.locator('footer.footer').innerText(),expectedFooter,
+      'Recetario usa el pie de página aprobado');
+
     const catalogNav=page.locator('header.topbar nav.nav');
     assert.equal(await catalogNav.locator('a').count(),2,'El recetario conserva las dos opciones del menú');
     await catalogNav.locator('svg.lucide-calendar-days').waitFor({state:'visible'});
@@ -359,6 +363,8 @@ const assert = require('node:assert/strict');
     assert.ok(await page.locator('#recipe-catalog .recipe-tile').count()>=10,'10 recetas iniciales');
     await page.screenshot({path:out+'/recetario-'+test.name+'.png',fullPage:true});
     await page.goto('http://127.0.0.1:8765/');
+    assert.equal(await page.locator('footer.footer').innerText(),expectedFooter,
+      'Portada y recetario mantienen el mismo pie');
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
     await page.locator('#quick-content a.quick-group-recipe').last().click();
     await page.waitForURL(/\/recetas\/bowl-de-yogur-con-miel-y-granola\//);
