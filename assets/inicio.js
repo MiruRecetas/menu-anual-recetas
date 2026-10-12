@@ -187,8 +187,6 @@ function compactName(kind,item,day){
   if(day==='Martes'&&/Mini wraps de falafel con boquerones aliñados/i.test(original))
    return ['Mini wraps de falafel','Boquerones aliñados'];
   if(day==='Miércoles')return [original.replace(/\s*\(2 raciones\)\s*$/i,'')];
-  if(day==='Jueves'&&original==='Tostas de hummus y sardinillas')
-   return ['Tostas de hummus','Sardinillas'];
  }
  return [original];
 }

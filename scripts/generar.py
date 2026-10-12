@@ -142,7 +142,7 @@ def main():
                     text=(arrow+" "+target) if cls=="prev" else (target+" "+arrow)
                     label=("Ir al día anterior: " if cls=="prev" else "Ir al día siguiente: ")+target
                     navigation.append('<a class="daily-nav-link daily-nav-'+cls+'" aria-label="'+e(label)+'" href="'+SITE+'/menus/'+menu_key+'/'+target.lower()+'/">'+e(text)+'</a>')
-            payload={"dia":enrich_day(m["dias"][day],snapshot),"nombre_dia":day}
+            payload={"dia":enrich_day(m["dias"][day],snapshot,recipes),"nombre_dia":day}
             content=template
             replacements={"DAY":e(day),"MENU_TITLE":e(menu_title),"SITE":SITE,"NAVIGATION":" ".join(navigation),"DAY_JSON":json.dumps(payload,ensure_ascii=False).replace("<",r"\u003c")}
             for key,value in replacements.items():
