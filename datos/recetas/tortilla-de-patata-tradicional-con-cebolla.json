@@ -1,10 +1,11 @@
 {
   "slug": "tortilla-de-patata-tradicional-con-cebolla",
-  "nombre": "Tortilla de patata tradicional con cebolla",
+  "nombre": "Tortilla de patata y cebolla",
   "descripcion": "Tortilla de patata y cebolla fritas, bien escurridas y doradas antes de mezclarlas con el huevo y cuajarlas sin aceite añadido.",
   "raciones": 2,
   "categoria": "huevos-tortillas",
   "etiquetas": [
+    "consumo-frio",
     "huevos"
   ],
   "ingredientes": [
@@ -29,7 +30,7 @@
       "unidad": "ml"
     },
     {
-      "nombre": "Sal yodada",
+      "nombre": "Sal",
       "cantidad": null,
       "unidad": ""
     }
