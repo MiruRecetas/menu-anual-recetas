@@ -129,6 +129,8 @@ def meal(ref,comidas,elementos,ingredientes,preps,slugs):
     for eid in row.get("COMIDA_ELEMENTOS",[]):
         eid=eid["id"] if isinstance(eid,dict) else eid
         r=elementos[eid]
+        if value(r.get("TEC_Estado elemento")) != "Calculado":
+            error("Elemento de comida no calculado: "+eid)
         if single_link(r,"Comida")!=ref:
             error("Elemento no pertenece a la COMIDA: "+eid)
         ir=single_link(r,"Ingrediente",True)
@@ -143,6 +145,7 @@ def meal(ref,comidas,elementos,ingredientes,preps,slugs):
               "cantidad":numeric(r.get("Cantidad"),eid),"unidad":unit}
         if not isinstance(unit,str) or not unit:
             error("Unidad sin definir: "+eid)
+        item["nutricion"]=macros(r,("Kcal aportadas","Proteínas aportadas","Hidratos aportadas","Grasas aportadas"),eid)
         if pr:
             link=source.get("Enlace receta") or ""
             match=re.search(r"/recetas/([a-z0-9-]+)/?",link)

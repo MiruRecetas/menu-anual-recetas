@@ -20,6 +20,8 @@ def check_element(e, slugs):
     ensure(bool(e.get("id")) and bool(e.get("nombre")) and bool(e.get("referencia_id")), "elemento sin identidad")
     ensure(e.get("tipo") in ("ingrediente", "preparacion"), "tipo de elemento inválido")
     ensure(type(e.get("cantidad")) in (int, float) and e["cantidad"] > 0 and bool(e.get("unidad")), "cantidad inválida")
+    if "nutricion" in e:
+        check_macros(e["nutricion"], "elemento")
     if e["tipo"] == "preparacion":
         ensure(not e.get("slug") or e.get("slug") in slugs, "enlace a preparación inexistente")
     else:

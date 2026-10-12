@@ -474,8 +474,8 @@ const assert = require('node:assert/strict');
     assert.equal(await dailyVisual.locator('.daily-macro-ring .daily-energy-progress').count(),0,'No queda progreso terracota antiguo');
     assert.equal(await page.locator('.daily-total h2').count(),0,'Sin encabezado antiguo de nutrición');
     assert.ok(await dailyVisual.evaluate(node=>node.scrollWidth<=node.clientWidth+2),'Tarjeta nutricional sin desbordamiento');
-        const principal=page.locator('.culinary-group').filter({hasText:'Carrilleras de cerdo al vino'}).first();
-    assert.equal(await principal.getAttribute('open'),'','Preparación principal inicialmente visible');
+        const principal=page.locator('.daily-component').filter({hasText:'Carrilleras de cerdo al vino'}).first();
+    assert.equal(await principal.locator('details').count(),0,'Preparación única sin desplegable');
     assert.ok(await principal.locator('a[href*="/recetas/"]').count()>0,'Ficha de receta enlazada');
     const group=page.locator('.culinary-group').filter({hasText:'Boniato al horno'}).first();
     await group.locator('summary').click();
@@ -528,12 +528,12 @@ const assert = require('node:assert/strict');
     assert.ok(Math.abs(ringValues.parts[2].length/painted-70*9/totalMacroKcal)<.002,'Grasas aportan 44% del arco');
     const goalWidths=await page.locator('.daily-total .daily-macro-fill').evaluateAll(nodes=>nodes.map(node=>Number(node.style.width.replace('%',''))));
     assert.deepEqual(goalWidths.map(Math.round),[100,71,100],'Barras capadas a 100% aunque el objetivo se supere');
-        const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('h2:text-is("Cena")')}).locator('.culinary-group');
-    assert.deepEqual(await dinnerGroups.locator('summary').allInnerTexts(),[
-      'Carpaccio con parmesano y AOVE','Puerros con mayonesa'
+        const dinnerGroups=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Cena")')}).locator('.culinary-group');
+    assert.deepEqual(await dinnerGroups.locator('summary > .component-name').allInnerTexts(),[
+      'Puerros con mayonesa'
     ],'Página completa respeta orden definitivo del lunes');
-    await dinnerGroups.nth(1).locator('summary').click();
-    assert.equal(await dinnerGroups.nth(1).locator('.ingredient-line').count(),2,'Despliegue de puerros y mayonesa');
+    await dinnerGroups.first().locator('summary').click();
+    assert.equal(await dinnerGroups.first().locator('.ingredient-line').count(),2,'Despliegue de puerros y mayonesa');
     await page.goto('http://127.0.0.1:8765/recetario/');
     await page.locator('#recipe-catalog').waitFor();
     const expectedFooter='MiruRecetas · Menús estacionales, siempre reutilizables';
@@ -573,6 +573,48 @@ const assert = require('node:assert/strict');
       assert.ok(recipeColors.ring.includes(color),'Anillo de receta usa el color '+color);
 
 
+    await page.close();
+  }
+
+  // Caso de aceptación aportado por la usuaria: principal enlazado + dos guarniciones.
+  for(const width of [1440,390]){
+    const page=await browser.newPage({viewport:{width,height:900}});
+    page.on('pageerror',e=>issues.push('componentes: '+e.message));
+    await page.goto('http://127.0.0.1:8765/menus/09-3/lunes/');
+    const payload=await page.locator('#daily-data').evaluate(node=>JSON.parse(node.textContent));
+    const meal=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Comida")')});
+    assert.equal(await meal.locator('h3').count(),0,'Sin nombre compuesto redundante');
+    assert.ok(!(await meal.innerText()).includes(payload.dia.comida.nombre),'Título completo eliminado');
+    const components=meal.locator('.daily-component');
+    assert.equal(await components.count(),3,'Tres componentes culinarios');
+    assert.equal(await components.first().locator('details').count(),0,'Albóndigas sin desplegable');
+    assert.equal(await components.first().locator('.component-name').innerText(),'Albóndigas en salsa rubia');
+    assert.equal(await components.first().locator('.component-amount').innerText(),'1 ración');
+    assert.match(await components.first().locator('a').getAttribute('href'),/recetas\/albondigas-en-salsa-rubia\/$/);
+    assert.deepEqual(await meal.locator('summary > .component-name').allTextContents(),['Patatas panadera','Ensalada de tomate y cebolla']);
+    const values=await meal.locator('.component-nutrition').evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.kcal)));
+    assert.equal(values.length,3,'Nutrición debajo de cada componente');
+    assert.ok(Math.abs(values.reduce((a,b)=>a+b,0)-payload.dia.comida.nutricion.kcal)<.11,'Aportaciones suman el total oficial');
+    const renderedColors=await meal.locator('.component-nutrition').first().evaluate(node=>[...node.querySelectorAll('.component-macro')].map(x=>getComputedStyle(x).color));
+    assert.deepEqual(renderedColors,['rgb(116, 141, 118)','rgb(184, 111, 84)','rgb(208, 163, 110)'],'Cantidades en los colores oficiales de macros');
+    assert.ok(await meal.locator('.component-kcal').evaluateAll(nodes=>nodes.every(n=>Number(getComputedStyle(n).fontWeight)>=600)),'Kcal de componentes en negrita');
+    for(const section of await page.locator('.daily-meal').all()){
+      const title=section.locator('.daily-meal-title');
+      if(await title.locator('.daily-meal-kcal').count()){
+        const geometry=await title.evaluate(node=>{const a=node.firstChild.getBoundingClientRect(),b=node.lastChild.getBoundingClientRect();return {y:Math.abs(a.y-b.y),right:Math.abs(node.getBoundingClientRect().right-b.right),fonts:[...node.children].map(x=>getComputedStyle(x).fontSize)}});
+        assert.ok(geometry.y<2&&geometry.right<2,'Kcal en la misma línea y alineadas a la derecha');
+        assert.equal(geometry.fonts[0],geometry.fonts[1],'Etiqueta y total de ingesta en mismo tamaño');
+      }
+    }
+    assert.match(await page.locator('.daily-meal').first().locator('.component-name').innerText(),/^Café con leche$/,'Café abreviado');
+    assert.equal(await page.locator('.daily-meal h2 svg').count(),0,'Ingestas sin iconos en ampliada');
+    await meal.locator('summary').first().click();
+    assert.equal(await components.nth(1).locator('.ingredient-line').count(),2,'Patata y AOVE desplegables');
+    await meal.locator('summary').last().click();
+    assert.equal(await components.nth(2).locator('.ingredient-line').count(),3,'Ensalada muestra sus tres ingredientes');
+    assert.ok(await page.locator('.daily-page-main .ingredient-line').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).borderBottomWidth==='0px')),'Sin líneas divisorias en ingredientes');
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Sin desbordamiento');
+    await page.screenshot({path:out+'/dia-componentes-'+width+'.png',fullPage:true});
     await page.close();
   }
 
@@ -654,17 +696,17 @@ const assert = require('node:assert/strict');
         await route.fulfill({response,body:html});
       });
       await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
-      const dailyFruit=page.locator('.daily-meal').filter({has:page.getByRole('heading',{name:'Fruta',exact:true})});
-      const dailyPost=page.locator('.daily-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
+      const dailyFruit=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Fruta")')});
+      const dailyPost=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Postre")')});
       assert.equal(await dailyFruit.count(),variant.ingredient?1:0,'Fruta ampliada solo para ingrediente');
       assert.equal(await dailyPost.count(),variant.prep?1:0,'Postre ampliado solo para preparación');
       if(variant.ingredient){
-        await dailyFruit.locator('h2 svg.lucide-apple').waitFor({state:'visible'});
+        assert.equal(await dailyFruit.locator('h2 svg').count(),0,'Fruta ampliada sin icono');
         assert.equal(await dailyFruit.locator('.ingredient-line').count(),1,'Fruta independiente');
         assert.equal(await dailyFruit.locator('a').count(),0,'Fruta sin receta');
       }
       if(variant.prep){
-        await dailyPost.locator('h2 svg.lucide-dessert').waitFor({state:'visible'});
+        assert.equal(await dailyPost.locator('h2 svg').count(),0,'Postre ampliado sin icono');
         assert.equal(await dailyPost.locator('.ingredient-line').count(),1,'Postre independiente');
         assert.equal(await dailyPost.locator('.ingredient-line strong').innerText(),
           (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
