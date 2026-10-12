@@ -1,0 +1,55 @@
+{
+  "slug": "quesadillas-vegetales",
+  "nombre": "Quesadillas vegetales",
+  "descripcion": "Mini quesadillas rellenas de espinacas y champiñones salteados, maíz dulce y mozzarella, doradas a la plancha hasta fundir el queso.",
+  "raciones": 1,
+  "categoria": "tostas-bocadillos-wraps",
+  "etiquetas": [
+    "rapida",
+    "verduras"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Mini tortillas de trigo",
+      "cantidad": 3,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Mozzarella rallada",
+      "cantidad": 60,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Espinacas",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Champiñones",
+      "cantidad": 100,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Maíz dulce en conserva, escurrido",
+      "cantidad": 70,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 5,
+      "unidad": "ml"
+    }
+  ],
+  "pasos": [
+    "Saltear las espinacas y los champiñones con el AOVE.",
+    "Distribuir las verduras salteadas entre las mini tortillas.",
+    "Añadir el maíz escurrido y la mozzarella rallada.",
+    "Cerrar las tortillas y dorarlas a la plancha hasta que el queso se funda."
+  ],
+  "nutricion": {
+    "kcal": 578.76,
+    "proteinas_g": 29.82,
+    "hidratos_g": 62.13,
+    "grasas_g": 25.53
+  }
+}
