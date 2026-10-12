@@ -521,7 +521,7 @@ button[hidden]{display:none!important}
 .daily-page-main .daily-meal-title{display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:16px;border-right:2px solid #b96c4a;padding-right:12px;margin:0;font-size:1rem;line-height:1.1;color:var(--green)}
 .daily-page-main .daily-meal-title>span,.daily-page-main .daily-meal-kcal{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
 .daily-page-main .daily-meal-title>span{order:2}
-.daily-page-main .daily-meal-kcal{order:1;font:inherit;font-weight:600;color:var(--muted)}
+.daily-page-main .daily-meal-kcal{order:1;font-family:Geist,sans-serif;font-size:.78em;font-weight:400;line-height:1.2;color:var(--muted)}
 .daily-page-main .daily-meal-body{min-width:0;align-self:center}
 .daily-page-main .daily-component+.daily-component{margin-top:24px}
 .daily-page-main .ingredient-line{border:0;padding:0;gap:12px}
