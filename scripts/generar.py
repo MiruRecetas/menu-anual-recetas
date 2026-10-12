@@ -3,6 +3,7 @@ import json,html,re
 from validar_menus import validate_menu
 from indice_publico import update_json_index, source_commit
 from pathlib import Path
+from pwa import decorate, build
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
 DAYS=["Lunes","Martes","Miércoles","Jueves","Viernes"]
@@ -88,7 +89,7 @@ def make(r):
     replacements={"PAGE_TITLE":e(n+" · MiruRecetas"),"META_DESCRIPTION":e(desc or n),"CANONICAL_URL":url,"SOCIAL_IMAGE":social,"CSS_URL":SITE+"/assets/estilo.css","JS_URL":SITE+"/assets/cocina.js","HOME_URL":SITE+"/","JSON_LD":json.dumps(structured,ensure_ascii=False).replace("<",r"\u003c"),"UI_JSON":json.dumps({"raciones":servings}),"VISIBLE_IMAGE":photo,"TITLE":e(n),"DESCRIPTION":'<p class="muted">'+e(desc)+'</p>' if desc else "","BASE_SERVINGS":str(servings),"NUTRITION":nut_html,"INGREDIENT_ROWS":rows,"TAGS":tags_html,"CATEGORY_ICON":cat_html,"STEP_ROWS":''.join('<li><label><input type="checkbox"><span class="step-text">'+e(t)+'</span></label></li>' for t in steps),"NOTES":'<div class="notes"><h2>Notas</h2><p>'+e(notes)+'</p></div>' if notes else ""}
     out=T
     for k,v in replacements.items():out=out.replace("{{"+k+"}}",v)
-    dest=R/"recetas"/s/"index.html";dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(out,encoding="utf-8")
+    dest=R/"recetas"/s/"index.html";dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(decorate(out,R,SITE),encoding="utf-8")
     return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":[tags_catalog[t][0] for t in tags],"etiquetas_principales":[t for t in tags if tags_catalog[t][2]=="main"]}
 def main():
     (R/"datos"/"recetas").mkdir(parents=True,exist_ok=True);(R/"datos"/"menus").mkdir(parents=True,exist_ok=True)
@@ -123,10 +124,10 @@ def main():
     batch_index=[{"slug":r["slug"],"nombre":r["nombre"],"batchcooking":"batchcooking" in r.get("etiquetas",[]),"dependencias":[x["preparacion"] for x in entries(r) if x.get("preparacion")]} for r in rs.values()]
     sitejson=json.dumps({"menus":menus,"recetas":recipes,"preparaciones":batch_index},ensure_ascii=False).replace("<",r"\u003c")
     page=(R/"plantillas"/"inicio.html").read_text(encoding="utf-8").replace("{{SITE_JSON}}",sitejson).replace("{{SITE}}",SITE)
-    (R/"index.html").write_text(page,encoding="utf-8")
+    (R/"index.html").write_text(decorate(page,R,SITE),encoding="utf-8")
     catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))
     (R/"recetario").mkdir(parents=True,exist_ok=True)
-    (R/"recetario"/"index.html").write_text(catalog,encoding="utf-8")
+    (R/"recetario"/"index.html").write_text(decorate(catalog,R,SITE),encoding="utf-8")
     month_names={1:"Enero",2:"Febrero",3:"Marzo",4:"Abril",5:"Mayo",6:"Junio",9:"Septiembre",10:"Octubre",11:"Noviembre",12:"Diciembre"}
     template=(R/"plantillas"/"dia.html").read_text(encoding="utf-8")
     for m in menus:
@@ -149,7 +150,8 @@ def main():
                 content=content.replace("{{"+key+"}}",value)
             dest=R/"menus"/menu_key/day.lower()/"index.html"
             dest.parent.mkdir(parents=True,exist_ok=True)
-            dest.write_text(content,encoding="utf-8")
+            dest.write_text(decorate(content,R,SITE),encoding="utf-8")
     update_json_index(R/"indice-recetas.json", list(rs.values()), source_commit(R))
+    build(R)
     print("Generadas",len(recipes),"recetas y",len(menus),"menús.")
 if __name__=="__main__":main()

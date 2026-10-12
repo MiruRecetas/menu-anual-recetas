@@ -232,3 +232,7 @@ GitHub Pages requiere el nombre exacto `mirurecetas.github.io` para el sitio de 
 Una futura landing sustituirá la redirección del repositorio raíz y enlazará a menús/recetario existentes. No está implementada todavía. Mantener una sola fuente de datos y evitar copias de la aplicación. La configuración raíz vigente se mantiene en aquel repositorio; `hosting/github-pages-root/` de este repositorio conserva el modelo preparado y su prueba de redirección, no despliega automáticamente el otro sitio.
 
 Ambos repositorios usan rama y PR. Aquí se esperan Validar web y QA navegador; en el sitio raíz, Validar acceso raíz comprueba seis casos (390/820/1440 px, con/sin JavaScript). Después de fusionar, esperar Pages y verificar por HTTP público la página real y su destino. Los cambios solo de documentación se verifican en GitHub y no necesitan regeneración HTML.
+
+## PWA
+
+Instalación, actualización consentida, consulta offline limitada y recuperación: [contrato técnico PWA](docs/PWA.md). Los iconos de instalación son provisionales hasta la entrega de la identidad definitiva. Las pruebas automáticas no acreditan instalación física en Android, iOS o escritorio.
