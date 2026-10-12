@@ -114,13 +114,13 @@
           {
             "tipo": "ingrediente",
             "referencia_id": "rec8Qjo12MyyUQ3Rc",
-            "nombre": "Melón crudo (parte comestible)",
+            "nombre": "Melón",
             "cantidad": 200,
             "unidad": "g",
             "nutricion": {
               "kcal": 53.63288718929254,
               "proteinas_g": 1.2,
-              "hidratos_g": 12.0,
+              "hidratos_g": 12,
               "grasas_g": 0.28
             }
           }
@@ -186,13 +186,13 @@
           {
             "tipo": "ingrediente",
             "referencia_id": "rec8Qjo12MyyUQ3Rc",
-            "nombre": "Melón crudo (parte comestible)",
+            "nombre": "Melón",
             "cantidad": 200,
             "unidad": "g",
             "nutricion": {
               "kcal": 53.63288718929254,
               "proteinas_g": 1.2,
-              "hidratos_g": 12.0,
+              "hidratos_g": 12,
               "grasas_g": 0.28
             }
           }
