@@ -15,7 +15,7 @@ if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const dessertComponents=x=>x?.componentes||(x?[x]:[]);
-const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
+const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Fruta:'apple',Postre:'dessert'};
 const mealIcon=(kind,item)=>kind==='Postre'&&item?.tipo==='preparacion'?'dessert':MEAL_ICONS[kind];
 // Nombres de presentación para frutas directas de los menús; fuente nutricional intacta.
 const FRUIT_NAMES={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
@@ -70,14 +70,13 @@ function summary(kind,meal,day){
  const symbol=el('i');
  symbol.setAttribute('data-lucide',mealIcon(kind,meal));
  symbol.setAttribute('aria-hidden','true');
- if(kind!=='Postre')heading.append(symbol);
+ heading.append(symbol);
  heading.append(el('span',kind));
  const namesContainer=el('div',undefined,'quick-meal-names');
- if(kind==='Postre'){
-  for(const component of dessertComponents(meal)){
-   const line=el('div',undefined,'quick-group dessert-component');
-   const icon=el('i');icon.setAttribute('data-lucide',mealIcon(kind,component));icon.setAttribute('aria-hidden','true');
-   line.append(icon,el('span',ingredientName(component),'quick-meal-name'));
+ if(kind==='Fruta'||kind==='Postre'){
+  for(const component of [meal]){
+   const line=el('div',undefined,'quick-group');
+   line.append(el('span',ingredientName(component),'quick-meal-name'));
    const recipe=component.tipo==='preparacion'?recipes.find(r=>r.slug===component.slug):null;
    if(recipe){
     const link=el('a','↗','quick-group-recipe');
@@ -171,7 +170,7 @@ function dailyNutrition(nut){
  macros.append(el('p','Barras: % del objetivo diario · PR 93 g · HC 147 g · GR 65 g','daily-macro-note'));
  group.append(energy,macros);return group;
 }
-function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));if(d.comida?.estado==='pendiente'||d.cena?.estado==='pendiente')content.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));content.append(summary('Desayuno',d.desayuno,day),summary('Comida',d.comida,day),summary('Cena',d.cena,day));if(d.postre)content.append(summary('Postre',d.postre,day));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
+function open(day,menu,button){origin=button;content.replaceChildren();const heading=el('span',undefined,'eyebrow day-context');heading.append(document.createTextNode(months[menu.mes]+' · Menú '+menu.menu+' · '),el('strong',day,'day-context-name'));content.append(heading);const d=menu.dias[day];const nut=d.nutricion;content.append(dailyNutrition(nut));if(d.comida?.estado==='pendiente'||d.cena?.estado==='pendiente')content.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));content.append(summary('Desayuno',d.desayuno,day),summary('Comida',d.comida,day),summary('Cena',d.cena,day));for(const component of dessertComponents(d.postre))content.append(summary(component.tipo==='ingrediente'?'Fruta':'Postre',component,day));if(day==='Viernes')content.append(el('p','La cena libre no se incluye en el total.','muted small'));$('#expand-day').href=site+'/menus/'+String(menu.mes).padStart(2,'0')+'-'+menu.menu+'/'+day.toLowerCase()+'/';if(window.lucide?.createIcons)window.lucide.createIcons();modal.hidden=false;document.body.classList.add('modal-open');close.focus()}
 close.addEventListener('click',dismiss);
 modal.addEventListener('click',e=>{if(e.target===modal)dismiss()});
 document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')dismiss();if(e.key==='Tab'){const focusable=[...dialog.querySelectorAll('button:not([disabled]),a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
@@ -182,6 +181,7 @@ function compactName(kind,item,day){
  const original=ingredientName(item);
  if(kind==='Desayuno'&&/^Café con leche/i.test(original))return ['Café con leche'];
  if(kind==='Cena'){
+  if(day==='Lunes'&&original==='Carpaccio y puerros con mayonesa')return ['Carpaccio','Puerros con mayonesa'];
   if(day==='Lunes'&&/Bowl de yogur, carpaccio y puerros con mayonesa/i.test(original))
    return ['Carpaccio','Puerros con mayonesa','Bowl de yogur'];
   if(day==='Martes'&&/Mini wraps de falafel con boquerones aliñados/i.test(original))
@@ -241,7 +241,7 @@ function week(){const mes=Number(select.value),num=Number($('#menu-number').valu
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
 if(window.MiruWeeklyCharts)window.MiruWeeklyCharts.render(charts,window.MiruWeeklyCharts.model(m,recipes));
-for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);const meals=el('span',undefined,'week-card-meals');if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;if(kind==='Postre'){const slot=el('span',undefined,'week-desserts week-meal-slot-postre');slot.setAttribute('role','group');slot.setAttribute('aria-label','Postre');for(const component of dessertComponents(item)){const row=mealRow(kind,component,day);row.classList.remove('week-meal-slot-postre');slot.append(row)}meals.append(slot)}else meals.append(mealRow(kind,item,day))}const opener=el('span',undefined,'week-card-open');opener.setAttribute('aria-hidden','true');const openIcon=el('i');openIcon.setAttribute('data-lucide','panel-bottom-open');opener.append(openIcon);button.append(meals,opener);button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
+for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);const meals=el('span',undefined,'week-card-meals');if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;if(kind==='Postre'){const slot=el('span',undefined,'week-desserts week-meal-slot-postre');for(const component of dessertComponents(item)){const row=mealRow(component.tipo==='ingrediente'?'Fruta':'Postre',component,day);row.classList.remove('week-meal-slot-postre');slot.append(row)}meals.append(slot)}else meals.append(mealRow(kind,item,day))}const opener=el('span',undefined,'week-card-open');opener.setAttribute('aria-hidden','true');const openIcon=el('i');openIcon.setAttribute('data-lucide','panel-bottom-open');opener.append(openIcon);button.append(meals,opener);button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
 syncWeekCards(w);
 const prepMap=new Map((data.preparaciones||[]).map(p=>[p.slug,p]));
 const counts=new Map();
