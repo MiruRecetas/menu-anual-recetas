@@ -41,7 +41,7 @@ En la portada se construye automáticamente una **galería de fotografías** a p
 
 - Las miniaturas llevan a su receta.
 - El nombre no ocupa una línea bajo la foto: aparece **sobre la imagen atenuada** al pasar el ratón, al enfocar con teclado o con el primer toque en pantallas táctiles; el segundo toque abre la receta.
-- La disposición es adaptable: en vertical se aplica la regla editorial de 1, 2 o 3 columnas según cantidad; en escritorio y en móvil/tablet **horizontales** se usan hasta cinco miniaturas por fila, con ancho limitado y filas incompletas centradas.
+- La disposición es adaptable: en móvil vertical hasta 700 px se muestran siempre 3 columnas; en tablet vertical ancha se aplica la regla editorial de 1, 2 o 3 columnas según cantidad; en escritorio y en móvil/tablet **horizontales** se usan hasta cinco miniaturas por fila, con ancho limitado y filas incompletas centradas.
 - **No hay una colección de imágenes de batch cooking distinta de las fotografías principales.**
 
 ### 4. Recetario y fichas
