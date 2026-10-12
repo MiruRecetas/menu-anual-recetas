@@ -548,3 +548,7 @@ button[hidden]{display:none!important}
 #quick-content .quick-meal-free .free-night-band{margin-left:30px;padding:9px 12px}
 #quick-content .quick-meal-free .quick-meal-name{font-style:normal;font-weight:600}
 @media(max-width:540px){.daily-page-main .daily-meal.daily-meal-free{min-height:110px}.daily-page-main .free-night-band{padding:12px}.daily-page-main .free-night-title{font-size:1rem}.daily-page-main .free-night-note{font-size:.74rem}}
+
+/* Buscador del recetario alineado con el conjunto de tarjetas. */
+.catalog-search-tools .field{flex:1;min-width:0}
+.catalog-search-tools input{width:100%;min-width:0}
