@@ -76,13 +76,13 @@
       },
       "cena": {
         "comida_id": "recnyx5GwQGLPf1pr",
-        "nombre": "Cena lunes · Bowl de yogur, carpaccio y puerros con mayonesa",
+        "nombre": "Carpaccio y puerros con mayonesa",
         "estado": "Calculado",
         "nutricion": {
-          "kcal": 847.0428292915869,
-          "proteinas_g": 36.683324999999996,
-          "hidratos_g": 48.21595,
-          "grasas_g": 52.69499999999999
+          "kcal": 361.8348465,
+          "proteinas_g": 24.325,
+          "hidratos_g": 6.495,
+          "grasas_g": 25.714999999999996
         },
         "presentacion": {
           "grupos": [
@@ -123,45 +123,47 @@
                   "unidad": "g"
                 }
               ]
-            },
-            {
-              "id": "plato-2",
-              "nombre": "Bowl de yogur con miel y granola",
-              "orden": 3,
-              "elementos": [
-                {
-                  "id": "recwzLQz5W5ddrCmU",
-                  "tipo": "preparacion",
-                  "referencia_id": "recACTMx4Sfoy1Sv7",
-                  "nombre": "Bowl de yogur con miel y granola",
-                  "cantidad": 1,
-                  "unidad": "ración",
-                  "slug": "bowl-de-yogur-con-miel-y-granola"
-                }
-              ]
             }
           ],
           "elementos_sin_grupo": []
         }
       },
       "postre": {
-        "tipo": "ingrediente",
-        "referencia_id": "rec4H9nVK34mLywwy",
-        "nombre": "Ciruela fresca con piel (cruda)",
-        "cantidad": 100,
-        "unidad": "g",
-        "nutricion": {
-          "kcal": 54,
-          "proteinas_g": 0.75,
-          "hidratos_g": 12,
-          "grasas_g": 0.2
-        }
+        "componentes": [
+          {
+            "tipo": "ingrediente",
+            "referencia_id": "rec4H9nVK34mLywwy",
+            "nombre": "Ciruela fresca con piel (cruda)",
+            "cantidad": 100,
+            "unidad": "g",
+            "nutricion": {
+              "kcal": 54.0,
+              "proteinas_g": 0.75,
+              "hidratos_g": 12.0,
+              "grasas_g": 0.2
+            }
+          },
+          {
+            "tipo": "preparacion",
+            "referencia_id": "recACTMx4Sfoy1Sv7",
+            "nombre": "Bowl de yogur con miel y granola",
+            "raciones": 1,
+            "estado": "Calculado",
+            "nutricion": {
+              "kcal": 485.20798279158697,
+              "proteinas_g": 12.358324999999999,
+              "hidratos_g": 41.72095,
+              "grasas_g": 26.98
+            },
+            "slug": "bowl-de-yogur-con-miel-y-granola"
+          }
+        ]
       },
       "nutricion": {
         "kcal": 1488.4119813330785,
         "proteinas_g": 99.03469999999999,
         "hidratos_g": 104.72444999999999,
-        "grasas_g": 69.73029999999999
+        "grasas_g": 69.7303
       }
     },
     "Martes": {
@@ -281,17 +283,21 @@
         }
       },
       "postre": {
-        "tipo": "ingrediente",
-        "referencia_id": "recPmxLD5hBc4rvSM",
-        "nombre": "Higo fresco (higos y brevas)",
-        "cantidad": 100,
-        "unidad": "g",
-        "nutricion": {
-          "kcal": 70,
-          "proteinas_g": 1.2,
-          "hidratos_g": 16,
-          "grasas_g": 0.3
-        }
+        "componentes": [
+          {
+            "tipo": "ingrediente",
+            "referencia_id": "recPmxLD5hBc4rvSM",
+            "nombre": "Higo fresco (higos y brevas)",
+            "cantidad": 100,
+            "unidad": "g",
+            "nutricion": {
+              "kcal": 70.0,
+              "proteinas_g": 1.2,
+              "hidratos_g": 16.0,
+              "grasas_g": 0.3
+            }
+          }
+        ]
       },
       "nutricion": {
         "kcal": 1382.8831750811369,
