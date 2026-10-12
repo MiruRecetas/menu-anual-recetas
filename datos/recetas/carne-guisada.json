@@ -2,6 +2,7 @@
   "slug": "carne-guisada",
   "nombre": "Carne guisada",
   "imagen": "carne-guisada.webp",
+  "descripcion": "Guiso de aguja de ternera con patata, champiñones, guisantes y coles de Bruselas, cocinado en olla a presión con sofrito y vino blanco.",
   "raciones": 3,
   "categoria": "guisos-legumbres",
   "etiquetas": [

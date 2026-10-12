@@ -2,6 +2,7 @@
   "slug": "poke-de-salmon",
   "imagen": "poke-de-salmon.webp",
   "nombre": "Poke de salmón",
+  "descripcion": "Bowl de arroz con salmón cocinado en freidora de aire, edamame, mango, cebolla, tomates cherry y tzatziki.",
   "raciones": 1,
   "categoria": "ensaladas-frios",
   "etiquetas": [
@@ -51,7 +52,7 @@
     "Hornear el salmón en la freidora de aire durante 15 minutos.",
     "Cocer el arroz blanco y dejarlo enfriar ligeramente.",
     "Cocer el edamame congelado y sacar los granos de las vainas. Desechar las vainas; solo se utilizan los granos.",
-    "Montar el poke con el arroz, el salmón, la cebolla, los granos de edamame, el mango y los tomates cherry. Añadir una ración de tzatziki."
+    "Montar el poke con el arroz, el salmón, la cebolla, los granos de edamame, el mango y los tomates cherry. Añadir el tzatziki."
   ],
   "nutricion": {
     "kcal": 622.68,
