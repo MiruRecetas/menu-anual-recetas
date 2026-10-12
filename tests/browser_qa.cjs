@@ -61,6 +61,10 @@ const assert = require('node:assert/strict');
       assert.ok(weeklyLayout.every(x=>x.first.top>=x.head.bottom),test.name+': comidas después del encabezado');
     }
 
+    if(test.width>=600&&test.width<=1090&&test.width>test.height){
+      const size=await page.locator('#week .week-kcal-ring strong').first().evaluate(e=>parseFloat(getComputedStyle(e).fontSize));
+      assert.ok(size>=10&&size<11,'Kcal ligeramente menores en anillos horizontales');
+    }
     const charts=page.locator('#weekly-charts');
     assert.equal(await charts.isVisible(),true,'Gráficos visibles para el menú');
     assert.equal(await charts.locator('figure').count(),3,'Tres gráficos');
@@ -180,6 +184,26 @@ const assert = require('node:assert/strict');
     await page.locator('#month').selectOption('10');
     await page.locator('#menu-number').selectOption('1');
 
+    if(test.name==='desktop'||test.name==='mobile-horizontal'){
+      const fruits=await page.locator('#site-data').evaluate(e=>{
+        const short={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
+        return JSON.parse(e.textContent).menus.flatMap(m=>Object.entries(m.dias).flatMap(([day,d])=>{
+          const p=d.postre;return p?.tipo==='ingrediente'&&short[p.referencia_id]?[{month:m.mes,menu:m.menu,day,name:short[p.referencia_id],original:p.nombre}]:[];
+        }));
+      });
+      assert.ok(fruits.some(f=>f.name==='Uvas'),'Se prueban uvas reales de menús publicados');
+      for(const fruit of fruits){
+        await page.locator('#month').selectOption(String(fruit.month));
+        await page.locator('#menu-number').selectOption(String(fruit.menu));
+        const day=page.getByRole('button',{name:'Ver resumen de '+fruit.day,exact:true});
+        const dessert=day.locator('.week-meal-row').filter({has:page.locator('.week-meal-label[aria-label="Postre"]')});
+        assert.deepEqual(await dessert.locator('.week-meal-name').allTextContents(),[fruit.name],'Fruta breve en semana');
+        await day.click();
+        assert.deepEqual(await page.locator('#quick-content .quick-meal').last().locator('.quick-meal-name').allTextContents(),[fruit.name],'Fruta breve en resumen compacto');
+        await page.keyboard.press('Escape');
+      }
+      await page.locator('#month').selectOption('10');await page.locator('#menu-number').selectOption('1');
+    }
     const monday=page.locator('#week .day-button').first();
     assert.match(await monday.innerText(),/Café con leche/);
     const textMonday=await monday.innerText();assert.ok(textMonday.indexOf('Carpaccio')<textMonday.indexOf('Puerros con mayonesa')&&textMonday.indexOf('Puerros con mayonesa')<textMonday.indexOf('Bowl de yogur'),'Orden de cena');

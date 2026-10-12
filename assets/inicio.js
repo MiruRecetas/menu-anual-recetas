@@ -15,6 +15,9 @@ if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
+// Nombres de presentación para frutas directas de los menús; fuente nutricional intacta.
+const FRUIT_NAMES={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
+const ingredientName=item=>item?.tipo==='ingrediente'?(FRUIT_NAMES[item.referencia_id]||item.nombre||''):(item?.nombre||'');
 // Solo se enlazan recetas publicadas y relacionadas mediante las referencias del menú.
 const cleanRecipeName=name=>String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').replace(/\s+/g,' ').trim();
 function relatedRecipes(meal){
@@ -70,7 +73,7 @@ function summary(kind,meal,day){
  if(meal?.presentacion?.grupos?.length){
   for(const g of [...meal.presentacion.grupos].sort((a,b)=>a.orden-b.orden))namesContainer.append(displayGroup(g));
   for(const item of meal.presentacion.elementos_sin_grupo||[]){
-   const line=el('span',item.nombre,'quick-meal-name');namesContainer.append(line);
+   const line=el('span',ingredientName(item),'quick-meal-name');namesContainer.append(line);
   }
  }else{
   const names=meal?compactName(kind,meal,day):['Sin asignar'];
@@ -159,12 +162,8 @@ const GOAL_KCAL=1600;
 function compactName(kind,item,day){
  if(item?.estado==='libre')return ['Noche libre'];
  if(item?.estado==='pendiente')return ['Pendiente de asignar'];
- const original=item?.nombre||'';
+ const original=ingredientName(item);
  if(kind==='Desayuno'&&/^Café con leche/i.test(original))return ['Café con leche'];
- if(kind==='Postre'){
-  if(/ciruela/i.test(original))return ['Ciruelas'];
-  if(/higo/i.test(original))return ['Higos'];
- }
  if(kind==='Cena'){
   if(day==='Lunes'&&/Bowl de yogur, carpaccio y puerros con mayonesa/i.test(original))
    return ['Carpaccio','Puerros con mayonesa','Bowl de yogur'];

@@ -39,6 +39,8 @@ La publicación pública es estática, sobre GitHub Pages. `scripts/exportar_air
 - Adaptación responsive: **5 columnas** en escritorio ancho y en móvil/tablet horizontal desde 600 px, con cabeceras/anillos/textos compactos hasta 1090 px. Entre 600 y 799 px horizontales, el anillo va debajo del nombre del día. En vertical se conservan **2 columnas** en anchuras intermedias y **1 columna** en móvil; por debajo de 600 px horizontal se mantiene la disposición anterior para no forzar columnas ilegibles. Sin scroll horizontal. El panel individual conserva sus estilos y comportamiento.
 - El anillo **monocolor** de las tarjetas semanales refleja `kcal registradas / 1600` y utiliza progreso **gris carbón `#454b4b`**, pista **`#dcddda`**, **no** terracota de hidratos. La tarjeta abre el resumen rápido. Desayuno, comida, cena y postre **solo si existe**; viernes noche libre.
 
+Las frutas registradas como ingredientes directos se muestran con nombres breves en la semana y el resumen compacto: «Uvas», «Ciruelas» e «Higos». La abreviación se aplica por ID en la presentación, sin cambiar nombres canónicos, cantidades o nutrición. Los nombres de recetas y grupos culinarios se conservan.
+
 ### 3.2 Ficha diaria compacta: diseño ya validado
 
 Se abre en panel/bottom sheet, con cierre accesible, devolución de foco y botón «Ver día completo». Conservar **solo los nombres de platos**, sin desplegables ni cantidades de ingredientes. Para las preparaciones **realmente publicadas**, incluir una flecha **↗ independiente** enlazada a la receta, no convertir todo el nombre en hipervínculo. La visualización respeta los grupos y el orden exportados de Airtable.
