@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "6b70d92e69b39e7d2a5bd201c9ffb3d79b62cb80",
-  "generated_at_utc": "2026-10-12T20:32:22Z",
+  "source_commit_sha": "cd751d409f5073e885ad61c270213264735a4540",
+  "generated_at_utc": "2026-10-12T20:39:20Z",
   "total_recetas": 35,
   "recetas": [
     {
@@ -1348,7 +1348,7 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tortilla-de-bacalao/"
     },
     {
-      "nombre": "Tortilla de patata tradicional con cebolla",
+      "nombre": "Tortilla de patata y cebolla",
       "slug": "tortilla-de-patata-tradicional-con-cebolla",
       "categoria": "huevos-tortillas",
       "descripcion": "Tortilla de patata y cebolla fritas, bien escurridas y doradas antes de mezclarlas con el huevo y cuajarlas sin aceite añadido.",
@@ -1375,7 +1375,7 @@
           "unidad": "ml"
         },
         {
-          "nombre": "Sal yodada",
+          "nombre": "Sal",
           "cantidad": null,
           "unidad": ""
         }
