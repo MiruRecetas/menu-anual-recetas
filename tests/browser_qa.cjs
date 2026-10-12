@@ -607,6 +607,8 @@ const assert = require('node:assert/strict');
         assert.ok(geometry.bottom<2&&geometry.top<2&&geometry.separated,'Nombre abajo y kcal arriba del lateral');
         assert.deepEqual(geometry.styles,['vertical-rl','vertical-rl'],'Etiqueta y kcal giradas');
         assert.equal(geometry.border,'2px','Separador lateral');
+        const hierarchy=await title.evaluate(n=>{const a=getComputedStyle(n.firstChild),b=getComputedStyle(n.lastChild);return {size:parseFloat(b.fontSize)/parseFloat(a.fontSize),titleWeight:Number(a.fontWeight),kcalWeight:Number(b.fontWeight)}});
+        assert.ok(hierarchy.size<=.8&&hierarchy.kcalWeight===400&&hierarchy.titleWeight>hierarchy.kcalWeight,'Kcal laterales más pequeñas y ligeras que el título');
       }
     }
     assert.match(await page.locator('.daily-meal').first().locator('.component-name').innerText(),/^Café con leche$/,'Café abreviado');
