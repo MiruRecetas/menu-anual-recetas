@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "fe492f3c6c1735e6f20ca47ca74b56b322dd8825",
-  "generated_at_utc": "2026-10-12T09:11:09Z",
+  "source_commit_sha": "3e9a7ab604106ad3d94e08bc290b83f855b2a5b8",
+  "generated_at_utc": "2026-10-12T20:11:39Z",
   "total_recetas": 34,
   "recetas": [
     {
@@ -268,7 +268,7 @@
       "nombre": "Carne guisada",
       "slug": "carne-guisada",
       "categoria": "guisos-legumbres",
-      "descripcion": "",
+      "descripcion": "Guiso de aguja de ternera con patata, champiñones, guisantes y coles de Bruselas, cocinado en olla a presión con sofrito y vino blanco.",
       "raciones_base": 3,
       "ingredientes": [
         {
@@ -954,7 +954,7 @@
       "nombre": "Poke de salmón",
       "slug": "poke-de-salmon",
       "categoria": "ensaladas-frios",
-      "descripcion": "",
+      "descripcion": "Bowl de arroz con salmón cocinado en freidora de aire, edamame, mango, cebolla, tomates cherry y tzatziki.",
       "raciones_base": 1,
       "ingredientes": [
         {
@@ -1030,7 +1030,7 @@
       "nombre": "Puré de calabaza y calabacín",
       "slug": "pure-de-calabaza-y-calabacin",
       "categoria": "sopas-cremas-pures",
-      "descripcion": "",
+      "descripcion": "Puré cremoso de calabaza butternut, calabacín y patata asados al horno, triturados con nata líquida.",
       "raciones_base": 5,
       "ingredientes": [
         {
@@ -1125,7 +1125,7 @@
       "nombre": "Salchichas al vino",
       "slug": "salchichas-al-vino",
       "categoria": "guisos-legumbres",
-      "descripcion": "",
+      "descripcion": "Salchichas frescas blancas y rojas de cerdo, doradas con cebolla y cocinadas en vino blanco con laurel y pimienta negra.",
       "raciones_base": 3,
       "ingredientes": [
         {
@@ -1260,7 +1260,7 @@
       "nombre": "Tacos de gambón",
       "slug": "tacos-de-gambon",
       "categoria": "tostas-bocadillos-wraps",
-      "descripcion": "",
+      "descripcion": "Mini tacos de gambón salteado con cebolla y pimientos, acompañados de aguacate y tzatziki.",
       "raciones_base": 1,
       "ingredientes": [
         {
@@ -1311,7 +1311,7 @@
       "nombre": "Tortilla de bacalao",
       "slug": "tortilla-de-bacalao",
       "categoria": "huevos-tortillas",
-      "descripcion": "",
+      "descripcion": "Tortilla de bacalao desmigado con cebolla y puerro pochados, terminada con perejil.",
       "raciones_base": 1,
       "ingredientes": [
         {
