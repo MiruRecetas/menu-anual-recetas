@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "81213fc53a9e8d53e58d7b7f02bcfdbd89edd7de",
-  "generated_at_utc": "2026-10-12T20:43:53Z",
-  "total_recetas": 35,
+  "source_commit_sha": "be0328b32cf9eb5a394c3f03d35f61e49a159186",
+  "generated_at_utc": "2026-10-12T21:56:33Z",
+  "total_recetas": 36,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1065,6 +1065,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pure-de-calabaza-y-calabacin/"
+    },
+    {
+      "nombre": "Quesadillas vegetales",
+      "slug": "quesadillas-vegetales",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Mini quesadillas rellenas de espinacas y champiñones salteados, maíz dulce y mozzarella, doradas a la plancha hasta fundir el queso.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Mini tortillas de trigo",
+          "cantidad": 3,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Mozzarella rallada",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espinacas",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Champiñones",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Maíz dulce en conserva, escurrido",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/quesadillas-vegetales/"
     },
     {
       "nombre": "Quiche de puerro, champiñones y pavo",
