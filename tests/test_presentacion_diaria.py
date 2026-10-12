@@ -52,4 +52,25 @@ class DailyPresentation(unittest.TestCase):
                     if all(e['id'] in self.snapshot for e in elements):
                         for group in groups:self.assertIn('nutricion',group)
 
+    def test_enlace_exacto_publicado_sin_mutar_menu(self):
+        day=json.loads((ROOT/'datos/menus/10-1.json').read_text())['dias']['Jueves']
+        recipe=json.loads((ROOT/'datos/recetas/tostas-de-hummus-y-sardinillas.json').read_text())
+        original=copy.deepcopy(day)
+        result=enrich_day(day,self.snapshot,[recipe])
+        element=result['cena']['presentacion']['grupos'][0]['elementos'][0]
+        self.assertEqual(element['slug'],recipe['slug'])
+        self.assertEqual(day,original)
+        self.assertEqual(result['nutricion'],original['nutricion'])
+        self.assertEqual(result['cena']['nutricion'],original['cena']['nutricion'])
+
+    def test_no_enlaza_coincidencias_parciales_ambiguas_o_ingredientes(self):
+        day=json.loads((ROOT/'datos/menus/10-1.json').read_text())['dias']['Jueves']
+        element=day['cena']['presentacion']['grupos'][0]['elementos'][0]
+        def linked(recipes):
+            return enrich_day(day,self.snapshot,recipes)['cena']['presentacion']['grupos'][0]['elementos'][0]
+        self.assertNotIn('slug',linked([{'nombre':'Tostas de hummus','slug':'otra'}]))
+        self.assertNotIn('slug',linked([{'nombre':element['nombre'],'slug':'una'},{'nombre':element['nombre'],'slug':'otra'}]))
+        element['tipo']='ingrediente'
+        self.assertNotIn('slug',linked([{'nombre':element['nombre'],'slug':'otra'}]))
+
 if __name__=='__main__':unittest.main()

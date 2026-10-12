@@ -440,6 +440,8 @@ const assert = require('node:assert/strict');
       '/recetas/quiche-de-puerro-champinones-y-pavo/'
     ],'Miércoles: grupos de bacalao y quiche');
     await page.keyboard.press('Escape');
+    const thursday=page.getByRole('button',{name:'Ver resumen de Jueves'});
+    assert.deepEqual(await thursday.locator('.week-meal-slot-cena .week-meal-name').allTextContents(),['Tostas de hummus y sardinillas'],'Tostas como una única receta semanal');
     await page.getByRole('button',{name:'Ver resumen de Jueves'}).click();
     assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/canelones-de-carrilleras/',
@@ -591,6 +593,22 @@ const assert = require('node:assert/strict');
       assert.ok(recipeColors.ring.includes(color),'Anillo de receta usa el color '+color);
 
 
+    await page.close();
+  }
+
+  // Preparación publicada sin slug en el JSON: resolver enlace exacto en presentación.
+  for(const width of [390,1440]){
+    const page=await browser.newPage({viewport:{width,height:900}});
+    page.on('pageerror',e=>issues.push('tostas: '+e.message));
+    await page.goto('http://127.0.0.1:8765/menus/10-1/jueves/');
+    const dinner=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Cena")')});
+    assert.equal(await dinner.locator('.daily-component').count(),1,'Cena con una sola receta');
+    const link=dinner.getByRole('link',{name:'Tostas de hummus y sardinillas',exact:true});
+    assert.match(await link.getAttribute('href'),/recetas\/tostas-de-hummus-y-sardinillas\/$/);
+    assert.equal(await dinner.locator('details').count(),0,'Receta única sin desplegable');
+    assert.equal(await dinner.locator('.component-amount').innerText(),'1 ración');
+    await link.click();
+    assert.equal(await page.locator('h1[itemprop="name"]').innerText(),'Tostas de hummus y sardinillas','Enlace abre ficha publicada');
     await page.close();
   }
 
