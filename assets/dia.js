@@ -76,7 +76,7 @@ function entry(x,name=displayName(x)){
  const unit=x.tipo==='preparacion'?(servings===1?'ración':'raciones'):x.unidad;
  const title=el(x.tipo==='preparacion'&&x.slug?'a':'span',name,'component-name');
  if(title.tagName==='A')title.href=site+'/recetas/'+encodeURIComponent(x.slug)+'/';
- line.append(title,el('strong',fmt(servings)+' '+unit,'component-amount'));return line;
+ line.append(title,el('strong',Number(servings).toLocaleString('es-ES',{maximumFractionDigits:3})+' '+unit,'component-amount'));return line;
 }
 function heading(kind,nut){
  const h=el('h2',undefined,'daily-meal-title');h.append(el('span',kind));
