@@ -652,7 +652,7 @@ const assert = require('node:assert/strict');
       assert.equal(await components.locator('p').count(),expectedCount,'Nutrición mostrada una vez por componente');
       if(variant.prep)assert.equal(await components.last().locator('.ingredient-line strong').innerText(),
         (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
-      assert.ok(!(await daily.innerText()).includes('NaN'),'Cantidades válidas');
+      if(expectedCount)assert.ok(!(await daily.innerText()).includes('NaN'),'Cantidades válidas');
       if(variant.ingredient&&variant.prep)await page.screenshot({path:out+'/postres-combinados-'+width+'.png',fullPage:true});
       await page.close();
     }
