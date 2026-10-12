@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "91a8c53c4dbf1cb390eeeb88832d57b78a67d248",
-  "generated_at_utc": "2026-10-12T20:28:56Z",
+  "source_commit_sha": "6b70d92e69b39e7d2a5bd201c9ffb3d79b62cb80",
+  "generated_at_utc": "2026-10-12T20:32:22Z",
   "total_recetas": 35,
   "recetas": [
     {
@@ -1375,7 +1375,7 @@
           "unidad": "ml"
         },
         {
-          "nombre": "Sal",
+          "nombre": "Sal yodada",
           "cantidad": null,
           "unidad": ""
         }
