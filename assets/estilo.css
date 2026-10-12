@@ -8,7 +8,7 @@
 .weekly-bars-svg{display:block;width:100%;max-height:365px;overflow:visible}
 .weekly-bars-svg text{font-family:"Geist",system-ui,sans-serif;fill:var(--muted);font-size:12px}
 .weekly-bars-svg .chart-day-label{font-size:14px;font-weight:600;fill:var(--ink)}
-.weekly-bars-svg .chart-bar-value{font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:2px;stroke-linejoin:round}
+.weekly-bars-svg .chart-bar-value{font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:1.2px;stroke-linejoin:round}
 .weekly-bar-reference{fill:#e4ded8}
 .weekly-bars-svg .chart-reference-value{stroke:#e4ded8}
 .chart-baseline{stroke:var(--line);stroke-width:1}

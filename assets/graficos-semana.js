@@ -106,9 +106,9 @@
    title(g,bar.day+': '+fmt(bar.kcal)+' kcal registradas'+remainingText(bar));svg.append(g);
    const insideLabel=(value,top,height,cls,description)=>{
     if(height<=0)return;
-    const text=svgNode('text',{x,y:top+Math.min(17,height*.7),'text-anchor':'middle',class:cls,
-     'font-size':Math.min(12,height*.65),'aria-label':description});
-    text.style.fontSize=Math.min(12,height*.65)+'px';
+    const text=svgNode('text',{x,y:top+Math.min(21,height*.7),'text-anchor':'middle',class:cls,
+     'font-size':Math.min(16,height*.65),'aria-label':description});
+    text.style.fontSize=Math.min(16,height*.65)+'px';
     text.textContent=fmt(value);title(text,description);g.append(text);
    };
    insideLabel(bar.kcal,y(bar.kcal),plot.h*bar.kcal/limit,'chart-bar-value',fmt(bar.kcal)+' kcal registradas');
