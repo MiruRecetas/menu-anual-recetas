@@ -15,6 +15,7 @@ if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
+const mealIcon=(kind,item)=>kind==='Postre'&&item?.tipo==='preparacion'?'dessert':MEAL_ICONS[kind];
 // Nombres de presentación para frutas directas de los menús; fuente nutricional intacta.
 const FRUIT_NAMES={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
 const ingredientName=item=>item?.tipo==='ingrediente'?(FRUIT_NAMES[item.referencia_id]||item.nombre||''):(item?.nombre||'');
@@ -66,7 +67,7 @@ function summary(kind,meal,day){
  const box=el('section',undefined,'quick-meal');
  const heading=el('h3',undefined,'quick-meal-heading');
  const symbol=el('i');
- symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);
+ symbol.setAttribute('data-lucide',mealIcon(kind,meal));
  symbol.setAttribute('aria-hidden','true');
  heading.append(symbol,el('span',kind));
  const namesContainer=el('div',undefined,'quick-meal-names');
@@ -205,7 +206,7 @@ function calorieRing(kcal){
 }
 function mealRow(kind,item,day){
  const row=el('div',undefined,'week-meal-row');
- const label=el('span',undefined,'week-meal-label');const symbol=el('i');symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);symbol.setAttribute('aria-hidden','true');label.append(symbol);label.setAttribute('aria-label',kind);label.title=kind;
+ const label=el('span',undefined,'week-meal-label');const symbol=el('i');symbol.setAttribute('data-lucide',mealIcon(kind,item));symbol.setAttribute('aria-hidden','true');label.append(symbol);label.setAttribute('aria-label',kind);label.title=kind;
  const names=el('span',undefined,'week-meal-names');
  for(const name of compactName(kind,item,day))names.append(el('span',name,'week-meal-name'));
  row.classList.add('week-meal-slot-'+kind.toLowerCase(),kind==='Comida'||kind==='Cena'?'week-meal-main':'week-meal-secondary');if(item?.estado==='libre')row.classList.add('week-meal-free');row.append(label,names);
