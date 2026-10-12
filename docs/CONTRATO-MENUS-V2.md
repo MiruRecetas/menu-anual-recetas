@@ -6,7 +6,7 @@ Los menús completos proceden de Airtable: MENÚS → COMIDAS → COMIDA_ELEMENT
 
 `datos/menus/MM-N.json` con `schema_version: 2`, `mes` (septiembre-junio), `menu` (1-4), `airtable_menu_id` real, `estado: "Calculado"`, `dias` (solo Lunes-Viernes) y `nutricion_semana`. Cada día aporta `desayuno`, `comida`, `cena`, `postre` (objeto o null), `nutricion`.
 
-Desayuno y postre son objetos de INGREDIENTE con `tipo: "ingrediente"`, `nombre`, `cantidad`, `unidad`, `nutricion`. Comida y cena contienen `comida_id`, `nombre`, `estado: "Calculado"`, `nutricion`, y `presentacion`. Viernes: `cena: {"estado":"libre"}`. Sin postre: `postre: null`.
+Desayuno es un objeto de INGREDIENTE con `tipo: "ingrediente"`, `nombre`, `cantidad`, `unidad`, `nutricion`. Comida y cena contienen `comida_id`, `nombre`, `estado: "Calculado"`, `nutricion`, y `presentacion`. Viernes: `cena: {"estado":"libre"}`. Sin postre: `postre: null`.
 
 Cada `nutricion`: `kcal`, `proteinas_g`, `hidratos_g`, `grasas_g` numéricos oficiales de Airtable. Los totales diarios y semanales se **verifican**, no se reemplazan ni se recalculan como fuente de verdad.
 
@@ -24,6 +24,18 @@ Se valida con `scripts/validar_menus.py`. No debe agregarse a GitHub ningún JSO
 
 El generador sigue reconociendo v1 para no romper archivos heredados; las vistas nuevas solo presentan datos compuestos completos v2. Las fichas web `/recetas/<slug>/` continúan siendo independientes de las COMIDAS. Los datos de nutrición de la receta son diferentes de los totales de una COMIDA.
 
-## Publicación pendiente
+## Postres: contrato no excluyente vigente
 
-Falta la exportación auténtica, con mapeo comprobado de las columnas de MENÚS, COMIDAS y vínculos reales; el menú de octubre n.º 1 no se sustituirá por datos ilustrativos. Antes de fusionar: comprobar numeración, nutrición, grupos, enlaces, accesibilidad y aspecto visual con un menú exportado real.
+`postre: null` si no hay ninguno; si existen, `postre: {"componentes": [...]}` con como máximo un `tipo: "ingrediente"` y un `tipo: "preparacion"`. Pueden coexistir. Se admiten objetos únicos históricos por compatibilidad.
+
+El ingrediente usa cantidad y unidad g/ml y nutrición proporcional a su base de 100 g/ml. La preparación usa `raciones`, `estado: "Calculado"`, nutrición por ración × raciones y slug opcional de receta publicada. Se consultan ambos vínculos y Estado postre; ningún estado de error se publica como válido. Totales diarios y semanales integran ambos componentes una vez y siguen siendo los oficiales de Airtable.
+
+En web se muestran Fruta/apple y Postre/dessert como secciones opcionales independientes (sin iconos en ampliada). La nomenclatura de campos y JSON se conserva.
+
+## Aportes y enlaces de presentación
+
+Los elementos pueden incluir su nutrición oficial de COMIDA_ELEMENTOS. El generador puede enriquecer únicamente la copia de presentación con aportes verificados de `presentacion/aportes-componentes.json` y enlaces exactos únicos a recetas existentes. No reescribe el JSON canónico ni reemplaza totales. Consultar el protocolo de mantenimiento para condiciones de validez y fallback pendiente.
+
+## Publicación vigente
+
+El exportador auténtico y menús calculados ya están publicados. Otros menús permanecen Pendiente: no confundir posiciones del calendario con semanas completas. Consultar los JSON actuales en cada sesión. Antes de fusionar comprobar estados, numeración, nutrición, grupos, enlaces, accesibilidad y aspecto visual con datos reales.

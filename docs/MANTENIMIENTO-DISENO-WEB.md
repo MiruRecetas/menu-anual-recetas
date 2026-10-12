@@ -1,11 +1,12 @@
 # MiruRecetas · Protocolo vigente de mantenimiento y mejora de diseño web
 
-**Revisado:** 11 de octubre de 2026 · **Ámbito:** nuevo chat especializado en desarrollo web del proyecto «Menú anual».
-**Web:** https://mirurecetas.github.io/menu-anual-recetas/
+**Revisado:** 13 de octubre de 2026 · **Ámbito:** nuevo chat especializado en desarrollo web del proyecto «Menú anual».
+**Entrada corta:** https://mirurecetas.github.io/
+**Web de menús y recetario:** https://mirurecetas.github.io/menu-anual-recetas/
 **Repositorio:** https://github.com/MiruRecetas/menu-anual-recetas (rama `main`).
 **Fuente pública del Investigador:** https://mirurecetas.github.io/menu-anual-recetas/indice-recetas.json
 
-> **Prioridad documental:** este manual recoge decisiones ya implantadas y validadas durante la evolución de la web. Sustituye, para **mantenimiento y diseño del sitio**, las propuestas históricas del «Manual maestro de gestión y desarrollo web» del 10/10/2026 que contradigan el código actual. **Siempre se debe revisar `main`, sus contratos y sus tests antes de actuar.** Las cifras de inventario aquí mencionadas son fotografías del 11/10/2026, no constantes.
+> **Prioridad documental:** este manual recoge decisiones ya implantadas y validadas durante la evolución de la web. Sustituye, para **mantenimiento y diseño del sitio**, las propuestas históricas del «Manual maestro de gestión y desarrollo web» del 10/10/2026 que contradigan el código actual. **Siempre se debe revisar `main`, sus contratos y sus tests antes de actuar.** El inventario se consulta en los JSON vigentes y en el índice público, no en cifras históricas de este manual.
 
 ## 1. Instrucciones para el nuevo chat
 
@@ -26,7 +27,7 @@ El equipo web gestiona **HTML/CSS/JS, arquitectura de navegación, componentes, 
 
 **No editar directamente HTML generado** (`index.html`, `recetario/index.html`, `recetas/<slug>/index.html`, `menus/MM-N/<día>/index.html`) ni el archivo **autogenerado** `indice-recetas.json`. Cambiar plantillas, assets o datos autorizados, regenerar y verificar.
 
-A 11/10/2026: hay 40 posiciones de menús v2 (septiembre a junio, cuatro por mes); **09-4** y **10-1** están **Calculado**, las demás **Pendiente**; `indice-recetas.json` contiene **26 recetas**. Consultar la publicación actual antes de repetir números.
+No fijar como constantes el número de recetas ni las semanas calculadas. Los datos publicados y sus estados son la referencia; no presentar posiciones pendientes como menús completos.
 
 La publicación pública es estática, sobre GitHub Pages. `scripts/exportar_airtable.py` **no sincroniza en continuo**: la exportación de menús se ejecuta a demanda y bajo autorización. Los datos nutricionales oficiales no se recalculan en el navegador.
 
@@ -37,7 +38,7 @@ La publicación pública es estática, sobre GitHub Pages. `scripts/exportar_air
 - Página `/`: «TU COCINA, A TU RITMO», «¿Qué cocinamos esta semana?», selectores de mes y menú, cinco días y galería de Batch cooking; el recetario completo está separado en `/recetario/`.
 - Cinco tarjetas en escritorio con **anchura y altura idénticas**. Cabeceras **todas arriba**, de igual altura, con el nombre del día y anillo kcal alineados; comidas inmediatamente debajo, alineadas arriba. En días cortos puede sobrar espacio **abajo**. **Miércoles** debe caber en una línea sin aumentar la anchura de su tarjeta; aplicar reducción tipográfica coherente a todos los días.
 - Adaptación responsive: **5 columnas** en escritorio ancho y en móvil/tablet horizontal desde 600 px, con cabeceras/anillos/textos compactos hasta 1090 px. Entre 600 y 799 px horizontales, el anillo va debajo del nombre del día. En vertical se conservan **2 columnas** en anchuras intermedias y **1 columna** en móvil; por debajo de 600 px horizontal se mantiene la disposición anterior para no forzar columnas ilegibles. Sin scroll horizontal. El panel individual conserva sus estilos y comportamiento.
-- El anillo **monocolor** de las tarjetas semanales refleja `kcal registradas / 1600` y utiliza progreso **gris carbón `#454b4b`**, pista **`#dcddda`**, **no** terracota de hidratos. La tarjeta abre el resumen rápido. Desayuno, comida, cena y postre **solo si existe**; viernes noche libre.
+- El anillo **monocolor** de las tarjetas semanales refleja `kcal registradas / 1600` y utiliza progreso **gris carbón `#454b4b`**, pista **`#dcddda`**, **no** terracota de hidratos. La tarjeta abre el resumen rápido. Desayuno, comida, cena, Fruta y Postre **solo si existen**; viernes noche libre.
 
 Las frutas registradas como ingredientes directos se muestran con nombres breves en la semana y el resumen compacto: «Uvas», «Ciruelas» e «Higos». La abreviación se aplica por ID en la presentación, sin cambiar nombres canónicos, cantidades o nutrición. Los nombres de recetas y grupos culinarios se conservan.
 
@@ -51,7 +52,9 @@ Anillo nutricional idéntico al de la vista ampliada: progreso de kcal registrad
 
 ### 3.3 Ficha diaria ampliada
 
-En `/menus/MM-N/<día>/`: línea de título con «OCTUBRE · MENÚ 1» **izquierda** y día **derecha**, sin párrafo redundante «Valores correspondientes...». Misma representación tricolor nutricional de la compacta; fichas de ingestas con nutrición registrada y **grupos/ingredientes desplegables** y enlaces de recetas.
+En `/menus/MM-N/<día>/`: línea de título con «OCTUBRE · MENÚ 1» **izquierda** y día **derecha**, sin párrafo redundante «Valores correspondientes...». Misma representación tricolor nutricional de la compacta. Las fichas muestran únicamente componentes, sin el título largo redundante de COMIDA/CENA. Un grupo de un solo elemento se presenta directamente con nombre, cantidad/raciones y aportes; una preparación publicada enlaza a su ficha sin desplegable. Los grupos de varios elementos despliegan composición y cantidades, manteniendo visibles sus aportes al cerrarlos.
+
+Cada tarjeta lleva título abajo y kcal oficiales arriba en un lateral girado 90°, con separador terracota. Las kcal laterales usan Geist regular al 78 % del título. Los nombres destacan sobre los aportes pequeños; kcal de componentes en negrita y PR/HC/GR con sus colores oficiales. No incluir iconos de Fruta/Postre ni líneas divisorias internas.
 
 Navegación táctil **limitada**: deslizar **derecha→izquierda** para avanzar de lunes a viernes, **izquierda→derecha** para retroceder de viernes a lunes. **No es circular**: al llegar a los extremos se detiene. No interferir con desplazamiento vertical ni interacción con controles. Mantener enlaces inferiores accesibles por ratón/teclado con nombres de los días.
 
@@ -59,11 +62,11 @@ Navegación táctil **limitada**: deslizar **derecha→izquierda** para avanzar 
 
 El grupo es **presentación editorial**, no una nueva preparación ni fuente nutricional. Agrupar por **`Visual · Grupo ID` dentro de cada COMIDA**. Ordenar grupos por **`Visual · Orden grupo`** y elementos por **`Visual · Orden elemento`**. Mostrar **`Visual · Nombre grupo`**. No ordenar por la cadena del ID ni deducir grupos por intuición.
 
-**Caso obligatorio: cena del lunes de Octubre · Menú 1**, en este orden: 1) `plato-1`: **Carpaccio con parmesano y AOVE**, producto comercial completo con aceite incluido, sin duplicarlo; 2) `acompanamiento-1`: **Puerros con mayonesa**, 175 g de puerros escurridos + 10 g de mayonesa (desplegables solo en ampliada); 3) `plato-2`: **Bowl de yogur con miel y granola**, una ración **dentro de CENA**, no en Postre. Referencia de regresión: cena 847,04 kcal y semana 6685,88 kcal, salvo modificación posterior **autorizada** en la fuente oficial. No tocar valores por arreglos de interfaz.
+**Caso de regresión según el JSON vigente de Octubre · Menú 1:** Cena del lunes contiene Carpaccio con parmesano y AOVE, seguido de Puerros con mayonesa. El producto comercial ya incluye su aceite; no duplicarlo. El bowl de yogur ahora está en Postre. La orden antigua de mantenerlo en Cena y sus totales históricos quedaron superados por los datos publicados; no trasladar alimentos por recuperar un ejemplo documental. El jueves, Tostas de hummus y sardinillas es una sola preparación, no dos platos independientes.
 
 ### 3.5 Recetario y fichas
 
-- `/recetario/`: buscador por título, descripción, etiquetas, 10 resultados iniciales + «Mostrar 10 más», miniaturas de fotografía principal, cabecera con **icono Lucide calendar-days** junto a «Mis menús» y **book-open** junto a «Recetario», igual que la portada y fichas de receta. **El script de Lucide debe estar cargado e inicializado**.
+- `/recetario/`: buscador por título, descripción, etiquetas, 10 resultados iniciales + «Mostrar 10 más», buscador alineado con ambos bordes del conjunto de tarjetas en móvil/tablet/escritorio (`catalog-search-tools`), miniaturas de fotografía principal, cabecera con **icono Lucide calendar-days** junto a «Mis menús» y **book-open** junto a «Recetario», igual que la portada y fichas de receta. **El script de Lucide debe estar cargado e inicializado**.
 - `/recetas/<slug>/`: conservar selector de raciones, anverso/reverso, modo cocina, pasos y temporizador, etiquetas, fotografías válidas, enlaces entre preparaciones, nutrición por ración cuando exista y Schema.org Recipe; importación a Bring! dependiente del servicio, **no una integración propia**.
 - Batch cooking: galería deducida de las etiquetas **web** `batchcooking` y dependencias reales, con deduplicación. **Una foto principal por receta** en `imagenes/`, compartida por ficha, recetario y Batch cooking. No crear imágenes independientes en `imagenes/batchcooking/`; no pedir a la usuaria que realice subidas que corresponden al agente de imágenes.
 - Pie de **portada y recetario**: **«MiruRecetas · Menús estacionales, siempre reutilizables»**. Las fichas de día/receta tienen de momento otros textos explicativos; no afirmar que todos los pies están unificados.
@@ -113,3 +116,43 @@ Los cambios visuales exploratorios —p. ej. tres fondos para elegir— requiere
 ### Ajuste de ficha ampliada · 12/10/2026
 
 Las ingestas llevan un lateral con nombre abajo, kcal oficiales arriba, ambos girados 90° y separador terracota. Los componentes tienen nombres más destacados que sus aportes nutricionales. Los alimentos se abrevian por ID únicamente al mostrarlos, incluidos los desplegables; se eliminan marcas conservando el tipo de producto. Equivalencias visuales autorizadas: el pan de molde registrado de 36,5 g se muestra como 1 rebanada; el huevo registrado de 100 g como 2 unidades (50 g comestibles/unidad). Otras cantidades conservan g/ml cuando no hay equivalencia confirmada. No cambian datos canónicos, nutrición ni registros de Airtable.
+
+
+## 9. Contrato de postres y aportes de presentación
+
+Consultar ambos vínculos de MENÚS: `<Día> · Postre` (ingrediente, cantidad/unidad g/ml) y `<Día> · Postre preparación` (preparación, raciones). Se admiten ambos simultáneamente, solo uno o ninguno; como máximo un ingrediente y una preparación. No volver a imponer exclusión mutua. El exportador verifica Estado postre y no publica estados de error como válidos. El JSON vigente usa `postre: null` o `postre: {"componentes": [...]}`, manteniendo compatibilidad con objetos únicos históricos.
+
+La semana y compacta muestran **Fruta/apple** para ingredientes y **Postre/dessert** para preparaciones, omitiendo cada sección ausente. En ampliada son secciones independientes sin iconos. La preparación solo enlaza si la receta está publicada. El ingrediente aporta su nutrición proporcional a 100 g/ml y la preparación la nutrición oficial por ración × raciones. Los totales oficiales diarios/semanales de Airtable se leen y verifican; no sustituirlos con cálculos de interfaz ni contar dos veces el mismo componente.
+
+`presentacion/aportes-componentes.json` es una instantánea de aportaciones calculadas de COMIDA_ELEMENTOS, vinculadas por elemento, COMIDA, referencia, tipo, cantidad y unidad. `scripts/presentacion_diaria.py` prefiere aportes exportados y usa esa instantánea solo cuando toda la identidad coincide y el desglose concuerda con los cuatro totales oficiales (tolerancia 0,11). En caso incompleto/obsoleto se muestra «Desglose nutricional pendiente». El generador trabaja sobre una copia: no modifica menús ni convierte esa instantánea en catálogo de ingredientes.
+
+Si falta slug en una preparación, `enrich_day` puede añadir el enlace en esa copia mediante nombre exacto normalizado y único en el catálogo publicado. Nunca enlazar ingredientes o deducir coincidencias parciales/ambiguas. Caso validado: tostas del jueves de Octubre · Menú 1. Mantener coherencia con la flecha de la compacta.
+
+## 10. Cena libre y gráfico Energía diaria
+
+El nuevo tratamiento solo se activa con `cena.estado === "libre"`. En compacta se conserva Cena y su icono moon, con «Noche libre» en banda salvia redondeada. En ampliada se conserva el lateral y separador, una tarjeta de menor altura y banda salvia con Lucide moon-star, «Noche libre» y «Sin planificación nutricional». No mostrar kcal, macros ni cantidades ficticias. Conservar las tarjetas semanales de viernes aprobadas.
+
+En Energía diaria, los segmentos de macros siguen exactamente sus proporciones originales sobre las kcal registradas. Solo el viernes con cena libre se apila un tramo de referencia `Math.max(0, 1600 - kcalRegistradas)` gris #e4ded8, idéntico a daily-energy-track. Ese tramo tiene `data-remaining-kcal`, separado de los aportes oficiales: no entra en totales, circulares ni registros.
+
+Las cifras reales se sitúan dentro de las barras cerca de su extremo superior; el viernes dentro del tramo nutricional real y la diferencia dentro del gris. Centrar y ajustar para cuatro dígitos en móvil, sin duplicarlas encima. Las ayudas accesibles llaman al gris «kcal restantes hasta la referencia de 1.600 kcal». Con 1600 o más no hay diferencia negativa ni tramo gris. La línea discontinua conserva valor, posición y estilo, sin etiqueta ni fondo. Variedad y energía por ingesta permanecen independientes; variedad por protagonista sigue siendo provisional.
+
+## 11. Dos repositorios: raíz pública y aplicación
+
+| Repositorio | Responsabilidad |
+| --- | --- |
+| `MiruRecetas/menu-anual-recetas` | Fuentes de recetas/menús, fotografías, generador y aplicación bajo `/menu-anual-recetas/`. |
+| `MiruRecetas/mirurecetas.github.io` | Dirección raíz `https://mirurecetas.github.io/`. Pages: Deploy from a branch, main, /(root). Actualmente redirige a la aplicación. |
+
+La raíz requiere el repositorio con el nombre exacto del sitio de usuario; otra rama main del repositorio de aplicación no resuelve el prefijo. Se creó y activó Pages por la usuaria; la publicación posterior se realizó mediante rama y PR. La redirección fija conserva parámetros/fragmento y sustituye historial con JavaScript; tiene meta refresh y enlace sin JavaScript. Se comprobó HTTP 200, archivo público idéntico al probado y destino disponible. El navegador termina mostrando la ruta canónica de la aplicación.
+
+**Futura landing:** implementarla en el repositorio raíz, sustituyendo allí la redirección y enlazando al recetario/menús existentes. Es una posibilidad futura, no una landing ya publicada. No duplicar datos ni mover slugs/enlaces de la aplicación sin encargo. Consultar ambos main antes de cambios relacionados. El código raíz vigente se mantiene allí; `hosting/github-pages-root/` en la aplicación es el modelo preparado, no una sincronización automática entre repositorios.
+
+La raíz tiene su propio workflow Validar acceso raíz: seis casos Chromium (390, 820, 1440 px, con/sin JavaScript) hasta la web real. Cambiar la futura landing exigirá adaptar esas expectativas de redirección. Mantener branch/PR, pruebas y verificación de Pages en cada repositorio. El conector permite escribir en repositorios existentes, pero no ofrece crear repositorios o activar Pages; ante una operación no disponible explicar el bloqueo concreto y solicitar únicamente la intervención necesaria, respetando autorizaciones ya dadas.
+
+## 12. Verificación y coordinación aprendidas
+
+No dar por completado un cambio solo porque se fusionó: diferenciar SHA de la corrección, commit de páginas generadas y despliegue público. Comprobar versión de caché, contenido servido y rutas destino. Si Pages falla con error de servidor 500, revisar logs y reintentar el trabajo fallido; no alterar datos o diseño para solucionar un fallo externo.
+
+Las pruebas de navegador deben comprobar comportamiento y estilos computados, también casos límite y rutas de enlace reales. Al abrir una receta, distinguir `h1[itemprop="name"]` del título duplicado dentro del modo cocina oculto. Un fallo de selector de prueba se corrige en el test, no rediseñando la ficha. No anunciar pruebas locales de navegador si Chromium solo se ejecutó en CI.
+
+Preservar commits concurrentes de los especialistas. No reexportar Airtable, cambiar recetas o fotografías para corregir presentación. Las equivalencias de unidades visibles son específicas y verificadas; mantener g/ml si no existe evidencia. No ampliar alcance con mejoras no solicitadas.
