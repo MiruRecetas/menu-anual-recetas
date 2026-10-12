@@ -7,7 +7,7 @@ const assert = require('node:assert/strict');
   // Entrada por la raíz: redirección, parámetros y alternativa sin JavaScript.
   const rootHtml=fs.readFileSync('hosting/github-pages-root/index.html','utf8').replaceAll('https://mirurecetas.github.io/menu-anual-recetas/','http://127.0.0.1:8765/');
   for(const javaScriptEnabled of [true,false]){
-    const context=await browser.newContext({javaScriptEnabled});
+    const context=await browser.newContext({serviceWorkers:"block",javaScriptEnabled});
     const page=await context.newPage();
     await page.route('**/__root-entry/**',route=>route.fulfill({contentType:'text/html',body:rootHtml}));
     const entered='http://127.0.0.1:8765/__root-entry/?origen=raiz#menus';
@@ -20,7 +20,7 @@ const assert = require('node:assert/strict');
   const issues=[];
   const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
   for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390},{name:'mobile-small-horizontal',width:667,height:375},{name:'tablet-compact-horizontal',width:1024,height:768}]){
-    const page=await browser.newPage({viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
+    const page=await browser.newPage({serviceWorkers:"block",viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
     page.on('pageerror',e=>issues.push(test.name+': error JS: '+e.message));
     await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
     // Fijar el menú de regresión: el sitio ya dispone de otros menús calculados
@@ -614,7 +614,7 @@ const assert = require('node:assert/strict');
 
   // Preparación publicada sin slug en el JSON: resolver enlace exacto en presentación.
   for(const width of [390,1440]){
-    const page=await browser.newPage({viewport:{width,height:900}});
+    const page=await browser.newPage({serviceWorkers:"block",viewport:{width,height:900}});
     page.on('pageerror',e=>issues.push('tostas: '+e.message));
     await page.goto('http://127.0.0.1:8765/menus/10-1/jueves/');
     const dinner=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Cena")')});
@@ -630,7 +630,7 @@ const assert = require('node:assert/strict');
 
   // Cena libre: tratamiento exclusivo de las vistas diarias y referencia sin negativos.
   for(const width of [390,820,1440]){
-    const page=await browser.newPage({viewport:{width,height:950}});
+    const page=await browser.newPage({serviceWorkers:"block",viewport:{width,height:950}});
     page.on('pageerror',e=>issues.push('noche libre: '+e.message));
     await page.goto('http://127.0.0.1:8765/menus/10-1/viernes/');
     const free=page.locator('.daily-meal-free');
@@ -661,7 +661,7 @@ const assert = require('node:assert/strict');
 
   // Caso de aceptación aportado por la usuaria: principal enlazado + dos guarniciones.
   for(const width of [1440,390]){
-    const page=await browser.newPage({viewport:{width,height:900}});
+    const page=await browser.newPage({serviceWorkers:"block",viewport:{width,height:900}});
     page.on('pageerror',e=>issues.push('componentes: '+e.message));
     await page.goto('http://127.0.0.1:8765/menus/09-3/lunes/');
     const payload=await page.locator('#daily-data').evaluate(node=>JSON.parse(node.textContent));
@@ -720,7 +720,7 @@ const assert = require('node:assert/strict');
       {ingredient:true},{prep:true,linked:true,raciones:0.5},
       {prep:true,linked:false,raciones:2},{ingredient:true,prep:true,linked:true,raciones:1},{}
     ]){
-      const page=await browser.newPage({viewport:{width,height:900}});
+      const page=await browser.newPage({serviceWorkers:"block",viewport:{width,height:900}});
       page.on('pageerror',e=>issues.push('postres: '+e.message));
       const expectedCount=Number(Boolean(variant.ingredient))+Number(Boolean(variant.prep));
       const expectedIcons=[...(variant.ingredient?['apple']:[]),...(variant.prep?['dessert']:[])];
@@ -819,7 +819,7 @@ const assert = require('node:assert/strict');
 
   // Gestos táctiles reales en Chromium: límites, todos los días, scroll vertical
   // y compatibilidad con controles de ingredientes y navegación de teclado.
-  const context=await browser.newContext({
+  const context=await browser.newContext({serviceWorkers:"block",
     viewport:{width:390,height:844},deviceScaleFactor:1,hasTouch:true,isMobile:true
   });
   const touchPage=await context.newPage();

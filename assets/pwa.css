@@ -1,0 +1,1 @@
+.pwa-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}.pwa-tools button{border:1px solid #516f5d;border-radius:12px;background:#fffcf7;color:#29352e;padding:10px 14px;min-height:44px;text-align:left}.pwa-tools button[hidden]{display:none}.pwa-tools button:focus-visible{outline:3px solid #b96c4a;outline-offset:3px}.pwa-tools p{margin:0;flex-basis:100%}

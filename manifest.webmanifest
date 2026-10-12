@@ -1,0 +1,32 @@
+{
+  "id": "/menu-anual-recetas/",
+  "name": "MiruRecetas",
+  "short_name": "MiruRecetas",
+  "lang": "es",
+  "description": "Menús estacionales y recetario personal. Consulta limitada de contenido visitado sin conexión.",
+  "start_url": "/menu-anual-recetas/",
+  "scope": "/menu-anual-recetas/",
+  "display": "standalone",
+  "background_color": "#f6f2eb",
+  "theme_color": "#516f5d",
+  "icons": [
+    {
+      "src": "assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/pwa/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
