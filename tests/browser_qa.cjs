@@ -603,9 +603,10 @@ const assert = require('node:assert/strict');
     for(const section of await page.locator('.daily-meal').all()){
       const title=section.locator('.daily-meal-title');
       if(await title.locator('.daily-meal-kcal').count()){
-        const geometry=await title.evaluate(node=>{const a=node.firstChild.getBoundingClientRect(),b=node.lastChild.getBoundingClientRect();return {y:Math.abs(a.y-b.y),right:Math.abs(node.getBoundingClientRect().right-b.right),fonts:[...node.children].map(x=>getComputedStyle(x).fontSize)}});
-        assert.ok(geometry.y<2&&geometry.right<2,'Kcal en la misma línea y alineadas a la derecha');
-        assert.equal(geometry.fonts[0],geometry.fonts[1],'Etiqueta y total de ingesta en mismo tamaño');
+        const geometry=await title.evaluate(node=>{const a=node.firstChild.getBoundingClientRect(),b=node.lastChild.getBoundingClientRect(),r=node.getBoundingClientRect();return {bottom:Math.abs(a.bottom-r.bottom),top:Math.abs(b.top-r.top),separated:b.bottom<a.top,styles:[...node.children].map(x=>getComputedStyle(x).writingMode),border:getComputedStyle(node).borderRightWidth}});
+        assert.ok(geometry.bottom<2&&geometry.top<2&&geometry.separated,'Nombre abajo y kcal arriba del lateral');
+        assert.deepEqual(geometry.styles,['vertical-rl','vertical-rl'],'Etiqueta y kcal giradas');
+        assert.equal(geometry.border,'2px','Separador lateral');
       }
     }
     assert.match(await page.locator('.daily-meal').first().locator('.component-name').innerText(),/^Café con leche$/,'Café abreviado');
@@ -616,6 +617,15 @@ const assert = require('node:assert/strict');
     assert.equal(await components.nth(2).locator('.ingredient-line').count(),3,'Ensalada muestra sus tres ingredientes');
     assert.ok(await page.locator('.daily-page-main .ingredient-line').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).borderBottomWidth==='0px')),'Sin líneas divisorias en ingredientes');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Sin desbordamiento');
+    const dinner=page.locator('.daily-meal').filter({has:page.locator('.daily-meal-title > span:text-is("Cena")')});
+    await dinner.locator('summary').click();
+    assert.ok((await dinner.innerText()).includes('Huevos'), 'Huevos con nombre breve');
+    assert.ok((await dinner.innerText()).includes('2 unidades'), 'Dos huevos en unidades');
+    assert.ok((await dinner.innerText()).includes('Pan de molde'), 'Pan genérico');
+    assert.ok((await dinner.innerText()).includes('1 rebanada'), 'Cantidad culinaria original');
+    assert.ok(!/Oroweat|Nuestra Alacena|Dia Láctea|entero crudo/.test(await dinner.innerText()), 'Sin marcas ni nombres técnicos');
+    const hierarchy=await components.first().evaluate(n=>({name:parseFloat(getComputedStyle(n.querySelector('.component-name')).fontSize),nutrition:parseFloat(getComputedStyle(n.querySelector('.component-nutrition')).fontSize)}));
+    assert.ok(hierarchy.nutrition<hierarchy.name*.8,'Nutrición subordinada al nombre');
     await page.screenshot({path:out+'/dia-componentes-'+width+'.png',fullPage:true});
     await page.close();
   }
