@@ -145,7 +145,6 @@ const assert = require('node:assert/strict');
       assert.equal(await flip.getAttribute('aria-pressed'),'false','Regreso a vertical empieza por barras');
       await page.screenshot({path:out+'/graficos-anverso-'+test.name+'.png',fullPage:true});
     }else assert.equal(await flip.isVisible(),false,'Sin control de giro fuera de móvil vertical');
-    const frontBar=await charts.locator('.weekly-bars').boundingBox();
     if(compact)await flip.click();
     const geometry=await charts.evaluate(container=>{
       const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
@@ -161,7 +160,7 @@ const assert = require('node:assert/strict');
       assert.ok(geometry.pies[0].x>geometry.bar.right,'Barras izquierda y pies derecha');
       assert.ok(Math.abs(geometry.bar.y-geometry.pies[0].y)<2,'Columnas alineadas arriba');
     }else if(compact){
-      assert.ok(geometry.pies[0].y<frontBar.y+frontBar.height,'Círculos ocupan el reverso, no debajo de barras');
+      assert.ok(geometry.pies[0].y<geometry.bar.bottom,'Círculos ocupan el reverso, no debajo de barras');
     }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'Pantalla estrecha horizontal apilada');
     if(compact){
       assert.ok(Math.abs(geometry.pies[0].y-geometry.pies[1].y)<1,'Dos círculos alineados en paralelo');
