@@ -1,6 +1,6 @@
 # MiruRecetas · Protocolo maestro de procesamiento integral de recetas
 
-**Versión 1.2 · 11 de octubre de 2026.** Fuente operativa del flujo de **creación, auditoría, actualización y publicación de recetas** del proyecto *Menú anual*. Esta versión incorpora las decisiones posteriores al documento maestro de 10/10/2026 y **sustituye sus instrucciones contradictorias**. Leer siempre las versiones de `main` de [NUEVA-RECETA.md](NUEVA-RECETA.md), [FORMATO.md](../datos/FORMATO.md), [IMAGENES-BATCHCOOKING.md](IMAGENES-BATCHCOOKING.md) y el código real del generador; las preferencias expresas más recientes de la usuaria prevalecen en su receta.
+**Versión 1.3 · 12 de octubre de 2026.** Fuente operativa del flujo de **creación, auditoría, actualización y publicación de recetas** del proyecto *Menú anual*. Esta versión consolida las decisiones hasta el 12/10/2026 y **sustituye los documentos maestros anteriores de procesamiento de recetas**, incluidas las versiones 1.1 y 1.2. Incorpora descripciones cortas, pasos sin dosificaciones, rectificaciones de etiquetas, reutilización de productos y el procedimiento vigente de aceite retenido. Leer siempre las versiones de `main` de [NUEVA-RECETA.md](NUEVA-RECETA.md), [FORMATO.md](../datos/FORMATO.md), [IMAGENES-BATCHCOOKING.md](IMAGENES-BATCHCOOKING.md) y el código real del generador; las preferencias expresas más recientes de la usuaria prevalecen en su receta.
 
 ## 1. Alcance y fuentes de verdad
 
@@ -11,6 +11,18 @@ El flujo de recetas ejecuta el trabajo completo, no solo lo propone: interpreta 
 - Productos específicos: `MiruRecetas/datos-productos/productos.json` es el catálogo comercial verificado. **No** dar de alta o alterar productos allí desde este flujo; sí enlazar un artículo verificado como INGREDIENTE en Airtable con su referencia `PROPIOS:<id>` y ficha de trazabilidad. Diferenciar ingrediente genérico de producto comercial realmente identificado.
 - Fuentes nutricionales de consulta: BEDCA, USDA, AESAN y los protocolos de `MiruRecetas/motor-nutricional` y `datos-productos`. No alterar originales; no interpretar valores ausentes como cero ni completar micronutrientes sin fuente comprobable. BEDCA tiene prioridad para genéricos adecuados y USDA se emplea cuando no existe equivalencia BEDCA o como complemento validado.
 - El agente **de imágenes**, separado de este flujo, genera el único `imagenes/<slug>.webp`, lo publica y después modifica **solo** `imagen`. La usuaria no tiene que descargar ni subir las fotografías. Conservar las existentes y no encargar al agente cambios nutricionales, ingredientes o etiquetas.
+
+### Jerarquía de instrucciones y accesos
+
+1. Petición expresa actual de la usuaria, dentro de su alcance autorizado.
+2. Este protocolo maestro vigente en `main`.
+3. Contratos y procedimientos complementarios vigentes.
+4. Esquemas, registros y funcionamiento real de Airtable y GitHub.
+5. Fuentes históricas del proyecto, únicamente cuando no contradigan lo anterior.
+
+Consultar primero el estado actual de los sistemas; no prometer accesos de escritura basándose en otro chat. Al iniciar un Work nuevo, leer los protocolos, comprobar accesos y generación/publicación sin crear recetas de prueba ni modificar datos; resumir los accesos reales y esperar la primera receta. Ante una solicitud suficiente, ejecutar de principio a fin y preguntar solo por ambigüedades materiales.
+
+**Repositorios nutricionales de solo lectura:** `MiruRecetas/datos-bedca` (BEDCA v1.0, extracción archivada de agosto de 2026), `MiruRecetas/datos-usda` (Foundation abril de 2026 y SR Legacy abril de 2018) y `MiruRecetas/datos-aesan` (AESAN 2022). El motor `MiruRecetas/motor-nutricional` devuelve candidatos y fichas: no sincroniza por sí mismo con Airtable ni valida una equivalencia por parecido nominal.
 
 ## 2. Interpretación fiel de recetas, cantidades y envases
 
@@ -32,9 +44,20 @@ El flujo de recetas ejecuta el trabajo completo, no solo lo propone: interpreta 
 - **Alcohol de guiso**: conservar la ficha del vino; poner el tiempo de cocción con alcohol de la **preparación**. La fórmula aplica retención USDA aproximada y descuenta **solo** las kcal del etanol evaporado (7 kcal/g), nunca gramos de proteínas/hidratos/grasas; no descontar de nuevo en subpreparaciones. El ejemplo «Guisantes con jamón» usa 125 ml vino y 15 min de reducción **estimados**, no demuestra evaporación del 100 % del alcohol: que desaparezca el líquido libre no significa que haya desaparecido todo el etanol.
 - Ante cualquier modificación, recorrer las preparaciones descendientes y sus JSON para evitar valores antiguos. No asumir que GitHub se actualiza al editar Airtable ni viceversa.
 
+### Resolución de ingredientes y micronutrientes
+
+- Buscar primero en INGREDIENTES y PREPARACIONES; reutilizar la ficha existente que represente el mismo alimento, estado, base y producto. Una diferencia de nombre culinario no justifica duplicarla.
+- Para comerciales, consultar primero `datos-productos/productos.json` y contrastar la ficha de Airtable con el producto verificado. Mini tortillas IFA Eliges (`PROPIOS:ifa-eliges-mini-tortillas-trigo`, 25 g por unidad) y mozzarella rallada DIA Láctea (`PROPIOS:dia-lactea-mozzarella-rallada`) se reutilizan; no crear productos o ingredientes duplicados. Si un comercial identificado falta o está pendiente, tramitar su ficha con el flujo especializado y continuar solo las dependencias independientes.
+- Para genéricos, usar BEDCA cuando corresponda al alimento real; USDA cuando no exista una referencia BEDCA adecuada, o como complemento individual validado. No convertir congelado, conserva o hervido en fresco sin validar y documentar la equivalencia. Un corte de carne distinto tampoco es equivalente por defecto. Lifesum solo cuando esté facilitado o autorizado y quede identificado.
+- Conservar los pesos comestibles crudos o escurridos indicados. Edamame: contar solo granos, no vainas. No trasladar pesos por lata o densidades entre productos distintos.
+- Guardar la ficha JSON completa y la procedencia exacta. Distinguir consulta de API oficial, lectura de originales y consulta de una reproducción secundaria; no afirmar una verificación de ZIP que no se realizó.
+- Aplicar el vocabulario canónico vigente `datos-productos/vocabulario_nutricional.json`: cada micronutriente mantiene valor, unidad, procedencia, fuente, método y confianza cuando proceda. Desconocido = `null`, no cero. Separar vitamina A RAE de vitamina A sin definición, D total de D3, EPA de DHA y omega-3 total; toda conversión de unidades debe quedar trazada. Conservar los componentes originales adicionales, aunque no estén mapeados.
+- Las estimaciones por equivalencia o formulación no son valores analíticos de la compra concreta. No copiar micronutrientes de otro producto sin una equivalencia defendible ni interpretar una cobertura de campos como cobertura de valores conocidos.
+- En Quesadillas vegetales se reutilizan cinco ingredientes y se incorpora espinaca cruda `USDA:168462` (API oficial, «Spinach, raw»), porque BEDCA no contiene una entrada específica de fresco. Esta decisión no obliga a usar la misma referencia si una receta futura especifica congelado o cocido.
+
 ## 4. Fichas web: contrato estricto
 
-- Solo editar `datos/recetas/<slug>.json`, no `recetas/<slug>/index.html`, `recetario/index.html`, `index.html` o `indice-recetas.json` generados. Campos obligatorios: `slug`, `nombre`, `raciones`, `ingredientes`, `pasos`. Campos opcionales según contrato: categoría, etiquetas, descripción, tiempos, notas, nutrición, imagen.
+- Solo editar `datos/recetas/<slug>.json`, no `recetas/<slug>/index.html`, `recetario/index.html`, `index.html` o `indice-recetas.json` generados. Campos obligatorios: `slug`, `nombre`, `raciones`, `ingredientes`, `pasos`. Campos adicionales según contrato: categoría, etiquetas, descripción, tiempos, notas, nutrición, imagen. Aunque el generador admite omitir `descripcion`, **la publicación editorial debe incluir siempre una descripción corta fiel**, sin cantidades base, marcas, datos internos ni contenido inventado. No publicar una nueva receta con este campo vacío.
 - **Nutrición**: publicar `kcal`, `proteinas_g`, `hidratos_g`, `grasas_g` **por ración**, a partir del cálculo auditado de Airtable. **Redondear cada cifra a dos decimales en el JSON público**; no copiar 15 decimales como ocurrió con la primera vinagreta. No redondear, alterar ni reescribir para ello las fórmulas/datos nutricionales internos de Airtable. Verificar también las cifras de Schema.org Recipe y la ficha HTML.
 - **Interna ≠ pública**: las bases internas deben desplegarse en el JSON de la receta que las consume, agregando ingredientes iguales y sus cantidades; nunca enlazar `Sofrito clásico` sin ficha. Las **subpreparaciones publicadas** sí se muestran con `{"nombre":"Vinagreta de pimientos y cebolla","cantidad":1,"unidad":"ración","preparacion":"vinagreta-de-pimientos-y-cebolla"}`, o «Salteado de pollo y verduras» con su slug existente. La web no expande automáticamente subingredientes en Bring!.
 - La elaboración debe ser coherente con los ingredientes y técnicas, **sin repetir cantidades** de la receta base. Al modificar cantidades, mantenerlas en `ingredientes` y comprobar que los pasos no contienen cifras ni números escritos de dosificación. No añadir pasos o tiempos inventados; los que sean orientativos deben identificarse.
@@ -54,7 +77,9 @@ Las funcionales son `congelable`, `microondas`, `tupper`, `batchcooking`, `rapid
 **Precedentes expresos** (no generalizarlos a todas las recetas similares):
 - Marmitako de bonito: `tupper`, `batchcooking`, `microondas`, `pescado`; el cambio de microondas fue solicitado expresamente, **no** se marcó congelable.
 - Guisantes con jamón: `rapida`, `legumbres` **únicamente**; eliminar congelable, microondas, tupper, batchcooking por solicitud. Contenido vigente **100 g guisantes**, no 200 g, y volver a calcular macros.
-- Ensalada campera: `tupper`, `batchcooking`, `rapida`, `pescado`. Su vinagreta es subreceta pública; las latas se muestran como unidades y se computan en gramos escurridos.
+- Ensalada campera: `tupper`, `rapida`, `pescado`; **sin `batchcooking`**, por rectificación expresa del 12/10/2026. Su vinagreta es subreceta pública; las latas se muestran como unidades y se computan en gramos escurridos.
+- Poke de salmón: `tupper`, `rapida`, `pescado`; **sin `batchcooking`**, por rectificación expresa del 12/10/2026.
+- Quesadillas vegetales: `rapida`, `verduras`; categoría `tostas-bocadillos-wraps`. No heredar otras etiquetas por defecto.
 - Huevos rotos: solo etiqueta principal `huevos`; no asignar automáticamente etiquetas funcionales.
 - Vinagreta de pimientos y cebolla: etiqueta principal `verduras`; una ración N0, 10 ml AOVE y 20 g de cada cebolla/pimiento, con sal/vinagre no cuantificados. Su ficha publica **95,47 kcal, 0,66 g PR, 2,89 g HC y 9,27 g GR** (dos decimales).
 
@@ -81,3 +106,11 @@ Cuando este chat también esté encargado de comidas y menús, aplicará el [pro
 Para frituras con escurrido en las que no se conoce el consumo real de aceite, seguir obligatoriamente el procedimiento reusable documentado en [PROCEDIMIENTO-ACEITE-RETENIDO-FRITURAS.md](PROCEDIMIENTO-ACEITE-RETENIDO-FRITURAS.md). El aceite nutricional es el estimado *retenido* por los alimentos, nunca todo el aceite inicial ni cero. En PREPARACION_ELEMENTOS, registrar masa cruda tratada, coeficiente específico por técnica y densidad del aceite; calcular la cantidad equivalente y comprobar `TEC_Fritura · Control aceite retenido = Coincide` antes de aceptar los macros. Para la tortilla de patata con cebolla, el coeficiente provisional documentado es 5 % de 600 g de patata y cebolla doblemente escurridas, sin aceite añadido en el dorado ni cuajado. Este 5 % no se generaliza a otros alimentos.
 
 **Norma editorial sobre la sal yodada (12/10/2026).** En las fichas públicas del recetario usar el nombre genérico **«Sal»** para la sal sin cantidad, aunque la usuaria utilice habitualmente sal yodada. No añadir «yodada» salvo que sea relevante como requisito concreto de una receta y así se indique explícitamente. Esta decisión no altera las preferencias de uso doméstico, los cálculos ni los ingredientes cuantificados.
+
+## Decisiones editoriales consolidadas del 12/10/2026
+
+- **Tortilla de bacalao:** el cálculo reutiliza la ficha de bacalao desalado existente; la web muestra sencillamente «Bacalao», «Puerro» y «Perejil». Perejil sin cantidad, solo culinario. Los huevos usan la convención de 50 g comestibles por unidad definida para este caso; no crear otro bacalao por el nombre visible.
+- **Descripciones:** Carne guisada, Poke de salmón, Puré de calabaza y calabacín, Salchichas al vino, Tortilla de bacalao y Tacos de gambón ya tienen descripción corta. Mantenerla al actualizar otros campos y comprobarla también en recetario e índice. La norma se aplica a nuevas altas.
+- **Pasos estáticos:** todas las recetas se redactan sin gramos, ml, cantidades de subpreparaciones, números de unidades o raciones base, tanto en cifras como en palabras. Ejemplos: «Añadir el tzatziki» y «Repartir el relleno entre las tortillas». Conservar tiempos, temperaturas y relaciones proporcionales necesarias. No modificar ingredientes, nutrición o Airtable para una corrección exclusivamente editorial.
+- **Cantidades escalables:** Quesadillas vegetales muestra tres mini tortillas como unidades escalables y calcula 75 g en Airtable; el maíz son 70 g escurridos. En los pasos no repetir esos números. Las marcas se conservan en trazabilidad, no en los nombres públicos.
+- **Preservación:** cualquier corrección editorial o documental mantiene intactos los datos no afectados, fotografías y cambios concurrentes. Los casos citados son precedentes de interpretación; sus nutrientes se consultan de nuevo en Airtable cuando corresponda, no se usan como cifras eternas.

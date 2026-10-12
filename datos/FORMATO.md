@@ -1,5 +1,7 @@
 # MiruRecetas · Contrato de datos
 
+**Revisión editorial: 12/10/2026 · Coordinada con el protocolo maestro v1.3.** Esta revisión no modifica el esquema del generador ni el contrato de menús.
+
 Este documento describe **fichas web de recetas**, no la exportación de menús. En el proyecto, Airtable conserva la base alimentaria, las preparaciones y los cálculos nutricionales; `datos/recetas/*.json` es la fuente estructurada de publicación de recetas en la web. No existe una sincronización automática continua Airtable ↔ JSON. El flujo especializado de recetas edita categorías y etiquetas **en los JSON web**; no las gestiona Airtable ni el agente de imágenes.
 
 Contratos vigentes: [protocolo maestro de recetas](../docs/PROTOCOLO-MAESTRO-RECETAS.md), [README principal](../README.md), [alta de recetas](../docs/NUEVA-RECETA.md), [fotografía principal y Batch cooking](../docs/IMAGENES-BATCHCOOKING.md) y el generador `scripts/generar.py`. Antes de modificar, comprobar `main`.
@@ -7,6 +9,8 @@ Contratos vigentes: [protocolo maestro de recetas](../docs/PROTOCOLO-MAESTRO-REC
 ## Receta: `datos/recetas/<slug>.json`
 
 **Obligatorios para el generador:** `slug`, `nombre`, `raciones` (entero positivo), `ingredientes` (lista no vacía) y `pasos` (lista no vacía de textos). El `slug` coincide con el nombre del archivo y sigue `[a-z0-9]+(?:-[a-z0-9]+)*`. Cada ingrediente tiene `nombre` (texto), `cantidad` (número positivo o `null` para aromáticos sin cantidad) y `unidad` (texto; vacío solo con `cantidad: null`). Las cantidades son **totales para las raciones base**, en crudo salvo indicación expresa; no deben confundirse con cantidades por ración. El generador permite escalar las cantidades visibles.
+
+**Descripción corta:** `descripcion` es técnicamente opcional para el generador, pero **obligatoria por norma editorial** al publicar nuevas recetas. Mantener una frase breve y fiel sin cantidades base, marcas ni información interna; conservarla al editar otros campos y verificar su aparición en ficha, recetario e índice.
 
 **Campos adicionales de publicación:** `categoria` (una del catálogo culinario vigente), `etiquetas` (lista de slugs del catálogo), `descripcion`, `imagen`, `preparacion_min`, `coccion_min`, `notas` y `nutricion`. Los tiempos, si se incluyen, deben ser enteros no negativos y se exportan a Schema.org como minutos. Las etiquetas son gestionadas por el **flujo de recetas**, no por Airtable. La convención editorial exige **una categoría y una etiqueta principal de ingrediente**, y admite cero o varias etiquetas funcionales **antes** de la principal; el generador valida el vocabulario, aunque no impone por sí mismo esa unicidad.
 
@@ -28,7 +32,7 @@ Contratos vigentes: [protocolo maestro de recetas](../docs/PROTOCOLO-MAESTRO-REC
 - **Aceite y huevo:** las cantidades de AOVE se cuentan **una sola vez** aunque la elaboración las reparta en dos fases. En el ejemplo de Huevos rotos 20 ml = 10 ml airfryer + 10 ml sartén; los dos huevos M se muestran como 2 unidades en web y se calculan a partir de 100 g comestibles estimados en Airtable.
 - **Condimentos no cuantificados:** `Vinagre`, `Pimentón`, `Azafrán`, `Sal` usan `cantidad:null, unidad:""` cuando faltan gramos/ml; no crear aportes numéricos falsos ni confundir omisión por falta de datos con certeza de valor cero.
 - **Modificación puntual = propagación coherente:** al reducir Guisantes con jamón de 200 g a **100 g**, cambiar el elemento correspondiente en Airtable y las cantidades del JSON, mantener los pasos sin dosificaciones y trasladar sus macros nuevas, preservar imagen y etiquetas. La sincronización no es automática. Al cambiar una base, comprobar descendientes N1/N2.
-- **La etiqueta es una decisión editorial independiente:** `batchcooking` no implica `microondas`, `congelable` o `tupper`; `rapida` no tiene un umbral universal automático de minutos. Las instrucciones **expresas** de la usuaria para una receta prevalecen sobre la asignación inicial. Ejemplos aprobados: Marmitako `["tupper","batchcooking","microondas","pescado"]`; Guisantes con jamón `["rapida","legumbres"]`; Ensalada campera `["tupper","batchcooking","rapida","pescado"]`; Huevos rotos `["huevos"]`.
+- **La etiqueta es una decisión editorial independiente:** `batchcooking` no implica `microondas`, `congelable` o `tupper`; `rapida` no tiene un umbral universal automático de minutos. Las instrucciones **expresas** de la usuaria para una receta prevalecen sobre la asignación inicial. Ejemplos aprobados: Marmitako `["tupper","batchcooking","microondas","pescado"]`; Guisantes con jamón `["rapida","legumbres"]`; Ensalada campera y Poke de salmón `["tupper","rapida","pescado"]`, sin `batchcooking` por rectificación expresa del 12/10/2026; Huevos rotos `["huevos"]`.
 - **Reducción del vino:** describir que se reduce el **líquido**, nunca prometer desaparición del 100 % del etanol. En Airtable la fracción retenida (p. ej., 40 % con 15 min estimados) ajusta **solo kcal** de alcohol; los macros permanecen y la reducción se aplica una sola vez en la preparación que cocina el vino.
 
 ## Límite del contrato: menús v2
