@@ -1,0 +1,52 @@
+{
+  "slug": "tortilla-de-patata-tradicional-con-cebolla",
+  "nombre": "Tortilla de patata tradicional con cebolla",
+  "descripcion": "Tortilla de patata y cebolla fritas, bien escurridas y doradas antes de mezclarlas con el huevo y cuajarlas sin aceite añadido.",
+  "raciones": 2,
+  "categoria": "huevos-tortillas",
+  "etiquetas": [
+    "huevos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Huevos",
+      "cantidad": 5,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Patatas",
+      "cantidad": 500,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 100,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE retenido tras la fritura (estimado)",
+      "cantidad": 33,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Preparar las patatas y la cebolla y freírlas juntas en AOVE.",
+    "Escurrir completamente las patatas y la cebolla para retirar el aceite libre.",
+    "Devolverlas a la sartén y dorarlas sin añadir más aceite. Escurrir de nuevo.",
+    "Batir los huevos con sal e incorporar las patatas y la cebolla.",
+    "Dejar reposar la mezcla durante 15 minutos.",
+    "Cuajar la tortilla en una sartén sin añadir aceite."
+  ],
+  "notas": "Para freír utiliza el AOVE necesario. La cantidad indicada en los ingredientes es una estimación del aceite que permanece en el alimento tras el doble escurrido, no el volumen que debes poner inicialmente en la sartén.",
+  "nutricion": {
+    "kcal": 513.05,
+    "proteinas_g": 21.69,
+    "hidratos_g": 41.55,
+    "grasas_g": 29.42
+  }
+}
