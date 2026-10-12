@@ -2,7 +2,7 @@
 
 **Versión 1.0 · 12 de octubre de 2026**  
 **Ámbito:** PREPARACIONES / PREPARACION_ELEMENTOS de Airtable y publicación nutricional de recetas.  
-**Caso piloto:** «Tortilla de patata tradicional con cebolla», PREPARACIÓN `recSXvtjlxhcr6r2L`.
+**Caso piloto:** «Tortilla de patata y cebolla», PREPARACIÓN `recSXvtjlxhcr6r2L`.
 
 ## 1. Principio y limitaciones
 
@@ -54,7 +54,7 @@ La fórmula `TEC_Ingrediente válido N0` (`fldtR5L07W39Q1OWx`) ahora exige `Coin
 
 Para una receta con varios grupos de fritura, usar una fila de aceite retenido por operación que requiera **factores distintos**. No aplicar el porcentaje dos veces si los mismos alimentos se escurren o doran posteriormente sin aceite nuevo.
 
-## 4. Caso piloto: tortilla de patata tradicional con cebolla
+## 4. Caso piloto: Tortilla de patata y cebolla
 
 - Patata cruda: **500 g**.
 - Cebolla cruda: **100 g**.
