@@ -2,9 +2,9 @@
 
 **MiruRecetas** es la web personal de planificación alimentaria del proyecto **Menú anual**: menús de lunes a viernes reutilizables, recetario, resúmenes nutricionales y preparaciones de batch cooking. Está construida como sitio estático, generado desde archivos JSON y publicado en GitHub Pages.
 
-**[Abrir MiruRecetas](https://mirurecetas.github.io/menu-anual-recetas/)** · [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) · [Repositorio](https://github.com/MiruRecetas/menu-anual-recetas)
+**[Abrir MiruRecetas](https://mirurecetas.github.io/)** · [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) · [Repositorio](https://github.com/MiruRecetas/menu-anual-recetas)
 
-> **Estado revisado el 11/10/2026:** hay dos menús v2 en estado **Calculado**: **Septiembre · Menú 4** y **Octubre · Menú 1**. Los restantes menús del calendario estacional están **Pendiente**, no preparados. El índice público lista **26 recetas** en esta revisión; consulta el JSON para el total y el SHA actuales, pues seguirán evolucionando.
+> **Revisión de diseño y publicación: 13/10/2026.** El contenido evoluciona en paralelo: consultar `datos/menus/` y el índice público para saber qué menús y recetas están publicados, sin tratar cifras antiguas del README como inventario vigente.
 
 **Índice público de recetas:** [consultar `indice-recetas.json`](https://mirurecetas.github.io/menu-anual-recetas/indice-recetas.json). Se actualiza automáticamente desde las fichas JSON originales.
 
@@ -14,7 +14,7 @@
 ### 1. Menús semanales
 
 - Cinco tarjetas, de lunes a viernes, **sin fechas**: los menús de un mismo mes están pensados para poder intercambiarse.
-- Desayuno, comida, cena y postre cuando esté registrado. El **viernes tiene cena libre**, fuera del total nutricional mostrado; los postres no se inventan cuando no existen.
+- Desayuno, comida, cena y las secciones independientes **Fruta** y **Postre** cuando existan. El **viernes tiene cena libre**, fuera del total nutricional mostrado; los postres no se inventan cuando no existen.
 - Nombres breves e iconos en las tarjetas. En escritorio, las cinco tarjetas tienen **igual altura y ancho**, con encabezados y comidas **alineados arriba**, día en una sola línea (incluido «Miércoles») y espacio libre al final de las más cortas. El anillo semanal de kcal es **gris carbón** (`#454b4b`), no un color de macronutriente, frente a la referencia de **1600 kcal**.
 - Al tocar un día se abre la **ficha diaria compacta**: anillo tricolor de avance energético, gramos de proteínas/hidratos/grasas y **barras de cumplimiento de objetivos**, además de **solo los nombres de los platos**. Los ingredientes **no** se despliegan en esta vista.
 - Los platos con receta publicada ofrecen una **flecha `↗` independiente** para abrirla, manteniendo el nombre como texto. El icono `maximize-2` lleva al día completo y la X cierra el panel. Se conserva acceso por teclado y retorno del foco al origen.
@@ -23,7 +23,7 @@ En móvil y tablet horizontal desde 600 px, los cinco días se muestran en una m
 
 ### Gráficos semanales
 
-Debajo de los selectores aparecen barras apiladas de kcal por día (L/M/X/J/V), con los colores de macros y una línea discontinua a **1600 kcal**. A la derecha hay dos gráficos circulares semanales: **variedad nutricional provisional por protagonista** y **energía por ingesta**, ambos con leyenda a su derecha. En móvil vertical estrecho se presentan en una tarjeta: barras compactas delante y dos círculos detrás, accesibles mediante el botón de giro superior derecho. Las kcal oficiales se conservan; las ingestas pendientes o libres no se inventan.
+Debajo de los selectores aparecen barras apiladas de kcal por día (L/M/X/J/V), con los colores de macros y una línea discontinua a **1600 kcal**, sin texto ni fondo de etiqueta. Las cifras se muestran dentro de las barras. Solo el viernes con cena libre añade un tramo gris `#e4ded8` de `Math.max(0, 1600 - kcalRegistradas)`: es referencia visual, no nutrición. La cifra real permanece dentro de los colores y la restante dentro del gris; no se suma a totales ni a los circulares. A la derecha hay dos gráficos circulares semanales: **variedad nutricional provisional por protagonista** y **energía por ingesta**, ambos con leyenda a su derecha. En móvil vertical estrecho se presentan en una tarjeta: barras compactas delante y dos círculos detrás, accesibles mediante el botón de giro superior derecho. Las kcal oficiales se conservan; las ingestas pendientes o libres no se inventan.
 
 La variedad es una **aproximación**, todavía no el aporte real de cada ingrediente. El [contrato y plan de evolución](docs/GRAFICOS-SEMANA.md) explica el cálculo actual y los datos que requerirá el desglose real. Esta primera versión no cambia el procedimiento de publicación de recetas o menús.
 
@@ -33,7 +33,7 @@ Las rutas `menus/MM-N/<día>/` presentan el mes/menú y el día **en una misma l
 
 En móvil, **deslizar de derecha a izquierda** avanza lunes→viernes y **de izquierda a derecha** retrocede; la navegación **se detiene en los extremos**, sin vuelta circular. El desplazamiento vertical y los desplegables no deben quedar bloqueados; existen enlaces inferiores accesibles con el nombre del día de destino.
 
-Los grupos se identifican por `Visual · Grupo ID` **dentro de cada COMIDA**, se ordenan por `Visual · Orden grupo`, y sus ingredientes por `Visual · Orden elemento`; se muestran con `Visual · Nombre grupo`. **No** ordenar los IDs lexicográficamente. Ejemplo vinculante para la cena del lunes de Octubre · Menú 1: **Carpaccio con parmesano y AOVE → Puerros con mayonesa → Bowl de yogur con miel y granola**. El bowl permanece **dentro de CENA**, no pasa a Postre; el carpaccio comercial incluye su AOVE (no duplicar aceite). La agrupación **no cambia nutrición, referencias ni cantidades**.
+Los grupos se identifican por `Visual · Grupo ID` **dentro de cada COMIDA**, se ordenan por `Visual · Orden grupo`, y sus ingredientes por `Visual · Orden elemento`; se muestran con `Visual · Nombre grupo`. **No** ordenar los IDs lexicográficamente. Ejemplo vigente de cena del lunes de Octubre · Menú 1: **Carpaccio con parmesano y AOVE → Puerros con mayonesa**. El bowl de yogur actualmente está registrado como **Postre**, independiente de Cena; respetar su ubicación real en el JSON y no restaurar agrupaciones históricas; el carpaccio comercial incluye su AOVE (no duplicar aceite). La agrupación **no cambia nutrición, referencias ni cantidades**.
 
 ### 3. Batch cooking
 
@@ -46,7 +46,7 @@ En la portada se construye automáticamente una **galería de fotografías** a p
 
 ### 4. Recetario y fichas
 
-- [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) con búsqueda por nombre, descripción y etiquetas; carga inicial de diez resultados y opción de mostrar más.
+- [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) con búsqueda por nombre, descripción y etiquetas; el buscador ocupa todo el ancho del conjunto de tarjetas en móvil, tablet y escritorio; carga inicial de diez resultados y opción de mostrar más.
 - **Una ficha por receta** en `recetas/<slug>/`, con fotografía, ingredientes, raciones, elaboración, categoría, etiquetas y nutrición cuando exista.
 - Selector de raciones para **escalar las cantidades visibles**, anverso/reverso en **modo cocina**, pasos marcables y temporizador.
 - Marcado estructurado **Schema.org Recipe** para facilitar compartir/importar recetas desde el navegador, incluido el flujo de **Compartir → Bring!** en Android. La importación depende del comportamiento de Bring!; no existe una integración propia ni sincronización automática de listas de compra.
@@ -203,8 +203,32 @@ Semana, resumen compacto y día completo muestran cada postre por separado, con 
 
 ### Día ampliado: componentes y aportaciones
 
-La cabecera de cada ingesta muestra su nombre y las **kcal oficiales alineadas a la derecha**. Se omiten los títulos completos redundantes de COMIDA/CENA: la ficha muestra sus componentes en orden. Una preparación única se presenta como nombre enlazado, cantidad/raciones y nutrición, sin desplegable. Los grupos de varios elementos conservan un desplegable con composición y cantidades; sus aportes permanecen visibles al cerrarlo. Kcal en negrita y cantidades de macros con sus colores oficiales. Café y frutas usan las mismas abreviaciones por ID que la ficha compacta. Fruta/Postre no llevan iconos en esta vista. Los bordes exteriores se conservan; no se dibujan divisores internos.
+Cada ingesta lleva un **lateral girado 90°**, con nombre abajo, kcal oficiales arriba y separador terracota. Las kcal laterales usan **Geist regular al 78 %** del tamaño del título. Se omiten los títulos completos redundantes de COMIDA/CENA: la ficha muestra sus componentes en orden. Una preparación única se presenta como nombre enlazado, cantidad/raciones y nutrición, sin desplegable. Los grupos de varios elementos conservan un desplegable con composición y cantidades; sus aportes permanecen visibles al cerrarlo. Kcal de componentes en negrita y cantidades de macros con sus colores oficiales; los aportes tienen menor tamaño/peso que el nombre del plato. Café y frutas usan las mismas abreviaciones por ID que la ficha compacta. Fruta/Postre no llevan iconos en esta vista. Los bordes exteriores se conservan; no se dibujan divisores internos.
 
 Los valores por componente proceden de las fórmulas `Kcal/Proteínas/Hidratos/Grasas aportadas` de COMIDA_ELEMENTOS. El exportador los incluye en `nutricion` de cada elemento en exportaciones futuras, sin cambiar cantidades ni totales. Para los menús anteriores, `presentacion/aportes-componentes.json` conserva una instantánea mínima de estas aportaciones oficiales, vinculada a ID de elemento, COMIDA, referencia, tipo, cantidad y unidad. No es un catálogo nutricional de ingredientes ni modifica los JSON canónicos de menús. El generador trabaja sobre una copia y suma únicamente esos aportes para representar un grupo.
 
 `scripts/presentacion_diaria.py` solo utiliza la instantánea cuando coincide la identidad completa y el desglose de la comida concuerda con sus cuatro totales oficiales. Prefiere aportes ya incluidos en el JSON exportado; si faltan o dejan de coincidir, muestra el desglose pendiente en lugar de inventar cifras o reemplazar los totales. Al actualizar un menú antiguo, el flujo operativo puede reexportarlo con el exportador vigente para incorporar sus aportes directamente; el equipo web no reexporta menús sin encargo. Cambios en `presentacion/` también activan la generación de páginas.
+
+
+### Cena libre en las vistas diarias
+
+Solo cuando `cena.estado === "libre"`, el panel compacto conserva el encabezado Cena y su icono moon, con «Noche libre» sobre una banda salvia redondeada. La ampliada conserva el lateral Cena y el separador terracota, reduce la altura de la tarjeta y muestra Lucide `moon-star`, «Noche libre» y «Sin planificación nutricional». No aporta kcal, macros ni cantidades. El diseño aprobado de las tarjetas semanales de viernes permanece intacto.
+
+### Nombres, cantidades visibles y enlaces
+
+La ampliada abrevia alimentos y elimina marcas por ID, incluso en desplegables, conservando el tipo de producto y sus datos originales. Equivalencias visuales confirmadas: pan de molde de 36,5 g → **1 rebanada**; huevo de 100 g → **2 unidades**. No generalizar estas conversiones a cantidades o productos no verificados. Café con leche, Uvas, Ciruelas e Higos usan nombres breves.
+
+El generador enlaza una preparación sin `slug` solo si su nombre coincide exactamente, tras normalizar acentos, mayúsculas y espacios, con una única receta del catálogo publicado. Trabaja sobre una copia de presentación; no cambia el menú ni enlaza ingredientes o coincidencias ambiguas/parciales. «Tostas de hummus y sardinillas» es una sola receta, tanto en la semana como en el día ampliado, con enlace a su ficha y 1 ración en el caso publicado de Octubre · Menú 1 · Jueves.
+
+## Dirección raíz y futura landing
+
+| Repositorio | Función y dirección |
+| --- | --- |
+| [`MiruRecetas/mirurecetas.github.io`](https://github.com/MiruRecetas/mirurecetas.github.io) | Entrada por `https://mirurecetas.github.io/`; actualmente redirige automáticamente al sitio de menús. Lugar recomendado para una futura landing independiente. |
+| [`MiruRecetas/menu-anual-recetas`](https://github.com/MiruRecetas/menu-anual-recetas) | Aplicación existente, datos, generador, recetario y menús bajo `/menu-anual-recetas/`. Sigue siendo el repositorio principal del producto. |
+
+GitHub Pages requiere el nombre exacto `mirurecetas.github.io` para el sitio de usuario en la raíz; una rama main de otro repositorio no elimina su prefijo de URL. El repositorio raíz publica `main` → `/(root)` y contiene `index.html` y `.nojekyll`. Su redirección conserva parámetros y fragmento con JavaScript, reemplaza el historial y ofrece meta refresh/enlace sin JavaScript. La barra de direcciones pasa a la URL canónica actual.
+
+Una futura landing sustituirá la redirección del repositorio raíz y enlazará a menús/recetario existentes. No está implementada todavía. Mantener una sola fuente de datos y evitar copias de la aplicación. La configuración raíz vigente se mantiene en aquel repositorio; `hosting/github-pages-root/` de este repositorio conserva el modelo preparado y su prueba de redirección, no despliega automáticamente el otro sitio.
+
+Ambos repositorios usan rama y PR. Aquí se esperan Validar web y QA navegador; en el sitio raíz, Validar acceso raíz comprueba seis casos (390/820/1440 px, con/sin JavaScript). Después de fusionar, esperar Pages y verificar por HTTP público la página real y su destino. Los cambios solo de documentación se verifican en GitHub y no necesitan regeneración HTML.
