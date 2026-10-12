@@ -19,6 +19,8 @@
 - Al tocar un día se abre la **ficha diaria compacta**: anillo tricolor de avance energético, gramos de proteínas/hidratos/grasas y **barras de cumplimiento de objetivos**, además de **solo los nombres de los platos**. Los ingredientes **no** se despliegan en esta vista.
 - Los platos con receta publicada ofrecen una **flecha `↗` independiente** para abrirla, manteniendo el nombre como texto. El icono `maximize-2` lleva al día completo y la X cierra el panel. Se conserva acceso por teclado y retorno del foco al origen.
 
+En móvil y tablet horizontal desde 600 px, los cinco días se muestran en una misma fila, con elementos más compactos. En pantallas horizontales de 600–799 px, el anillo de kcal queda debajo del nombre del día. La ficha individual mantiene su comportamiento.
+
 ### Gráficos semanales
 
 Debajo de los selectores aparecen barras apiladas de kcal por día (L/M/X/J/V), con los colores de macros y una línea discontinua a **1600 kcal**. A la derecha hay dos gráficos circulares semanales: **variedad nutricional provisional por protagonista** y **energía por ingesta**, ambos con leyenda a su derecha. En móvil vertical estrecho se presentan en una tarjeta: barras compactas delante y dos círculos detrás, accesibles mediante el botón de giro superior derecho. Las kcal oficiales se conservan; las ingestas pendientes o libres no se inventan.
