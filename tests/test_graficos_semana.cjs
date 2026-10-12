@@ -36,7 +36,8 @@ zero.estado='Pendiente';
 for(const day of Object.values(zero.dias)){
  day.nutricion={kcal:0,proteinas_g:0,hidratos_g:0,grasas_g:0};
  for(const kind of ['desayuno','comida','cena','postre']){
-  if(day[kind]?.nutricion)day[kind].nutricion={...day.nutricion};
+  const components=kind==='postre'?(day[kind]?.componentes||(day[kind]?[day[kind]]:[])):[day[kind]];
+  for(const item of components)if(item?.nutricion)item.nutricion={...day.nutricion};
  }
 }
 const empty=model(zero,recipes);
@@ -46,15 +47,19 @@ assert.equal(empty.meals.length,0);
 assert.ok(empty.bars.every(b=>b.segments.every(s=>s.kcal===0&&s.share===0)),'Ceros sin NaN');
 const combined=structuredClone(menu);
 const original=combined.dias.Lunes.postre;
+const originalComponents=original.componentes||[original];
+const ingredient=originalComponents.find(x=>x.tipo==='ingrediente');
+const previousPrep=originalComponents.find(x=>x.tipo==='preparacion');
+const delta=123-(previousPrep?.nutricion.kcal||0);
 const prep={tipo:'preparacion',nombre:'Postre',slug:'bowl-de-yogur-con-miel-y-granola',
  raciones:0.5,nutricion:{kcal:123,proteinas_g:5,hidratos_g:6,grasas_g:7}};
-combined.dias.Lunes.postre={componentes:[original,prep]};
-combined.dias.Lunes.nutricion.kcal+=123;
-combined.nutricion_semana.kcal+=123;
+combined.dias.Lunes.postre={componentes:[ingredient,prep]};
+combined.dias.Lunes.nutricion.kcal+=delta;
+combined.nutricion_semana.kcal+=delta;
 const combinedModel=model(combined,recipes);
-near(combinedModel.total,data.total+123);
-near(combinedModel.meals.find(e=>e.key==='postre').kcal,data.meals.find(e=>e.key==='postre').kcal+123);
+near(combinedModel.total,data.total+delta);
+near(combinedModel.meals.find(e=>e.key==='postre').kcal,data.meals.find(e=>e.key==='postre').kcal+delta);
 near(combinedModel.meals.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
 near(combinedModel.variety.entries.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
-assert.equal(menu.dias.Lunes.postre.tipo,'ingrediente','La prueba no cambia el menú real');
+assert.equal(JSON.stringify(menu),JSON.stringify(JSON.parse(source)),'La prueba no cambia el menú real');
 console.log('PASS: gráficos semanales: kcal oficiales, proporciones 4/4/9, sumas semanales, protagonista, cena libre y datos ausentes.');
