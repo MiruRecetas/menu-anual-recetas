@@ -457,7 +457,7 @@ button[hidden]{display:none!important}
  #week .week-card-head{grid-template-columns:minmax(0,1fr) 50px;gap:5px;height:50px;min-height:50px;flex-basis:50px;margin-bottom:10px}
  #week .week-card-title{font-size:clamp(.85rem,1.5vw,1rem)}
  #week .week-kcal-ring{width:50px;height:50px;flex-basis:50px}
- #week .week-kcal-ring strong{font-size:.74rem}
+ #week .week-kcal-ring strong{font-size:.68rem}
  #week .week-kcal-ring small{font-size:.48rem;margin-top:2px}
  #week .week-meal-row{grid-template-columns:16px minmax(0,1fr);gap:5px;margin:8px 0}
  #week .week-meal-label{width:16px;min-height:24px}
