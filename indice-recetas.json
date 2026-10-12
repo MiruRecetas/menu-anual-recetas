@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "3e9a7ab604106ad3d94e08bc290b83f855b2a5b8",
-  "generated_at_utc": "2026-10-12T20:11:39Z",
-  "total_recetas": 34,
+  "source_commit_sha": "91a8c53c4dbf1cb390eeeb88832d57b78a67d248",
+  "generated_at_utc": "2026-10-12T20:28:56Z",
+  "total_recetas": 35,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1346,6 +1346,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tortilla-de-bacalao/"
+    },
+    {
+      "nombre": "Tortilla de patata tradicional con cebolla",
+      "slug": "tortilla-de-patata-tradicional-con-cebolla",
+      "categoria": "huevos-tortillas",
+      "descripcion": "Tortilla de patata y cebolla fritas, bien escurridas y doradas antes de mezclarlas con el huevo y cuajarlas sin aceite añadido.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Huevos",
+          "cantidad": 5,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Patatas",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE retenido tras la fritura (estimado)",
+          "cantidad": 33,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tortilla-de-patata-tradicional-con-cebolla/"
     },
     {
       "nombre": "Tostas de hummus y sardinillas",
