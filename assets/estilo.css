@@ -470,3 +470,32 @@ button[hidden]{display:none!important}
  #week .week-card-head{grid-template-columns:minmax(0,1fr);grid-template-rows:20px 50px;justify-items:center;gap:6px;height:80px;min-height:80px;flex-basis:80px}
  #week .week-card-title{font-size:.9rem}
 }
+
+/* Tarjetas de día compactas solo en móvil vertical. */
+.week-card-meals{display:contents}
+.week-card-open{display:none}
+@media(orientation:portrait) and (max-width:700px){
+ #week .week-card{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr) 54px;grid-template-rows:minmax(0,1fr) 44px;column-gap:10px;align-items:center;padding:12px!important;height:var(--week-card-height,auto);border-radius:18px!important}
+ #week .week-card::before{content:"";position:absolute;left:46px;top:12px;bottom:12px;width:2px;background:var(--terra)}
+ #week .week-card-head{display:contents}
+ #week .week-card-title{grid-column:1;grid-row:1/3;writing-mode:vertical-rl;transform:rotate(180deg);justify-self:center;align-self:center;font-size:1.05rem;font-weight:700;line-height:1.1}
+ #week .week-card-meals{display:grid;grid-column:2;grid-row:1/3;align-self:center;grid-template-rows:repeat(4,minmax(26px,auto));row-gap:5px;padding-left:5px;min-width:0}
+ #week .week-meal-slot-desayuno{grid-row:1}
+ #week .week-meal-slot-comida{grid-row:2}
+ #week .week-meal-slot-cena{grid-row:3}
+ #week .week-meal-slot-postre{grid-row:4}
+ #week .week-meal-row{grid-template-columns:18px minmax(0,1fr);gap:7px;margin:0;align-items:center}
+ #week .week-meal-label{width:18px;min-height:26px}
+ #week .week-meal-label svg{width:18px;height:18px}
+ #week .week-meal-names{min-height:26px;gap:2px}
+ #week .week-meal-name{font-size:.8rem;line-height:1.28}
+ #week .week-meal-free{padding:5px 3px;margin:0}
+ #week .week-kcal-ring{grid-column:3;grid-row:1;justify-self:end;align-self:center;width:54px;height:54px;flex-basis:54px}
+ #week .week-kcal-ring strong{font-size:.8rem}
+ #week .week-kcal-ring small{font-size:.48rem}
+ #week .week-card-open{display:grid;place-items:center;grid-column:3;grid-row:2;justify-self:end;align-self:end;width:44px;height:44px;color:var(--green)}
+ #week .week-card-open svg{width:22px;height:22px}
+ .day-overlay:not([hidden]) .day-dialog{animation:daily-sheet-up .28s ease-out}
+}
+@keyframes daily-sheet-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.day-overlay:not([hidden]) .day-dialog{animation:none}}

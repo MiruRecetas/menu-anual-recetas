@@ -197,15 +197,35 @@ function mealRow(kind,item,day){
  const label=el('span',undefined,'week-meal-label');const symbol=el('i');symbol.setAttribute('data-lucide',MEAL_ICONS[kind]);symbol.setAttribute('aria-hidden','true');label.append(symbol);label.setAttribute('aria-label',kind);label.title=kind;
  const names=el('span',undefined,'week-meal-names');
  for(const name of compactName(kind,item,day))names.append(el('span',name,'week-meal-name'));
- row.classList.add(kind==='Comida'||kind==='Cena'?'week-meal-main':'week-meal-secondary');if(item?.estado==='libre')row.classList.add('week-meal-free');row.append(label,names);
+ row.classList.add('week-meal-slot-'+kind.toLowerCase(),kind==='Comida'||kind==='Cena'?'week-meal-main':'week-meal-secondary');if(item?.estado==='libre')row.classList.add('week-meal-free');row.append(label,names);
  return row;
 }
 function recipeLink(slug){const match=recipes.find(r=>r.slug===slug),a=el('a',match?.nombre||slug);a.href=site+'/recetas/'+slug+'/';return a}
+const verticalCards=window.matchMedia('(max-width:700px) and (orientation:portrait)');
+let weekObserver;
+function equalizeWeekCards(){
+ const week=$('#week');
+ if(!verticalCards.matches){week.style.removeProperty('--week-card-height');return}
+ const heights=[...week.querySelectorAll('.week-card')].map(card=>{
+  const style=getComputedStyle(card);
+  const padding=parseFloat(style.paddingTop)+parseFloat(style.paddingBottom)+parseFloat(style.borderTopWidth)+parseFloat(style.borderBottomWidth);
+  return Math.max(104,card.querySelector('.week-card-meals').offsetHeight)+padding;
+ });
+ if(heights.length)week.style.setProperty('--week-card-height',Math.ceil(Math.max(...heights))+'px');
+}
+function syncWeekCards(week){
+ weekObserver?.disconnect();
+ weekObserver=new ResizeObserver(equalizeWeekCards);
+ for(const meals of week.querySelectorAll('.week-card-meals'))weekObserver.observe(meals);
+ equalizeWeekCards();
+}
+verticalCards.addEventListener('change',equalizeWeekCards);
 function week(){const mes=Number(select.value),num=Number($('#menu-number').value),m=menus.find(x=>x.mes===mes&&x.menu===num),w=$('#week'),b=$('#batch');try{localStorage.setItem('miru-menu',JSON.stringify({mes,menu:num}))}catch{}w.replaceChildren();b.replaceChildren();const charts=$('#weekly-charts');charts.replaceChildren();charts.hidden=true;
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
 if(window.MiruWeeklyCharts)window.MiruWeeklyCharts.render(charts,window.MiruWeeklyCharts.model(m,recipes));
-for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;button.append(mealRow(kind,item,day))}button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
+for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);const meals=el('span',undefined,'week-card-meals');if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;meals.append(mealRow(kind,item,day))}const opener=el('span',undefined,'week-card-open');opener.setAttribute('aria-hidden','true');const openIcon=el('i');openIcon.setAttribute('data-lucide','panel-bottom-open');opener.append(openIcon);button.append(meals,opener);button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
+syncWeekCards(w);
 const prepMap=new Map((data.preparaciones||[]).map(p=>[p.slug,p]));
 const counts=new Map();
 function traverse(slug,visited){
