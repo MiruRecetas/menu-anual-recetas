@@ -499,3 +499,8 @@ button[hidden]{display:none!important}
 }
 @keyframes daily-sheet-up{from{transform:translateY(100%)}to{transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.day-overlay:not([hidden]) .day-dialog{animation:none}}
+
+/* Batch cooking siempre en tres columnas en móvil vertical. */
+@media(orientation:portrait) and (max-width:700px){
+ #batch .batch-gallery{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}
+}

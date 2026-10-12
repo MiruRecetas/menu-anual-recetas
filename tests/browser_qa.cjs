@@ -276,6 +276,23 @@ const assert = require('node:assert/strict');
       const rows=await gallery.locator('.batch-tile').evaluateAll(els=>els.map(el=>Math.round(el.getBoundingClientRect().top)));
       assert.ok(new Set(rows.slice(0,Math.min(5,rows.length))).size===1,'Hasta cinco miniaturas en primera fila');
     }
+    if(verticalDayCards){
+      for(const count of [1,2,4,6]){
+        const layout=await gallery.evaluate((el,count)=>{
+          const originals=[...el.children],oldClass=el.className;
+          const sample=originals[0];el.replaceChildren();
+          for(let i=0;i<count;i++)el.append(sample.cloneNode(true));
+          el.className='batch-gallery batch-cols-'+(count===1?1:count===4?2:3);
+          const style=getComputedStyle(el),width=el.getBoundingClientRect().width;
+          const sizes=[...el.children].map(e=>e.getBoundingClientRect().width);
+          const result={columns:style.gridTemplateColumns.split(' ').length,overflow:el.scrollWidth>el.clientWidth+1,sizes,width};
+          el.replaceChildren(...originals);el.className=oldClass;return result;
+        },count);
+        assert.equal(layout.columns,3,'Tres columnas incluso con '+count+' miniaturas');
+        assert.equal(layout.overflow,false,'Sin desbordamiento en galería vertical');
+        assert.ok(layout.sizes.every(w=>w<layout.width/3+1),'Miniaturas respetan tres posiciones');
+      }
+    }
     assert.ok(await gallery.evaluate(el=>el.classList.contains('batch-cols-'+(el.children.length===1?1:(el.children.length%3===0||el.children.length%5===0||el.children.length%2!==0)?3:2))),'Columnas de galería correctas');
     await page.screenshot({path:out+'/semana-'+test.name+'.png',fullPage:true});
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
