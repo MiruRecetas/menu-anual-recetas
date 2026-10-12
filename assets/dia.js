@@ -69,14 +69,23 @@ function dailyNutrition(nut){
  group.append(energy,macros);return group;
 }
 const shortNames={recIa7zpasm2s0mgH:'Café con leche',recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
-const displayName=x=>shortNames[x.referencia_id]||(/^Café con leche/i.test(x.nombre)?'Café con leche':x.nombre);
+const foodNames={recSPOXZkbn9PSbHI:'Huevos',recG7EOA99Wt7MiRC:'Mozzarella rallada',recVfgOdXad3Ns6po:'Pechuga de pollo loncheada',rec4QWbZX5KJIhQyW:'Aceite de oliva virgen extra',recjq8IrRWXTVjRKg:'Tomate',recrGNY88zOIOcRom:'Cebolla',recSE81b9WjkURbXi:'Patata',recZ6WhTcrZDhRgKI:'Pan de molde',recpHKx8XrOpBd8zW:'Salmón',reccZQ0blNFQ0THdM:'Arroz blanco cocido',recJq3z3foutu1hOx:'Queso curado de oveja',recJoLfb85Oe5dxXq:'Carpaccio con parmesano y AOVE',rec3RHqUWRFk0FIJ1:'Puerros al natural',recEtJBidxvvxhoAg:'Mayonesa con cebolla caramelizada y ajo',recgTA0LAJrz7rD8B:'Boniato',recHiBRS3Ikrzb1mt:'Boquerones aliñados'};
+// Equivalencias de presentación verificadas: no modifican cantidad ni nutrición de origen.
+function displayAmount(x){
+ if(x.tipo==='ingrediente'&&x.unidad==='g'){
+  if(x.referencia_id==='recZ6WhTcrZDhRgKI'&&x.cantidad===36.5)return '1 rebanada';
+  if(x.referencia_id==='recSPOXZkbn9PSbHI'&&x.cantidad===100)return '2 unidades';
+ }
+ const amount=x.raciones??x.cantidad;
+ const unit=x.tipo==='preparacion'?(amount===1?'ración':'raciones'):x.unidad;
+ return Number(amount).toLocaleString('es-ES',{maximumFractionDigits:3})+' '+unit;
+}
+const displayName=x=>foodNames[x.referencia_id]||shortNames[x.referencia_id]||(/^Café con leche/i.test(x.nombre)?'Café con leche':x.nombre);
 function entry(x,name=displayName(x)){
  const line=el('div',undefined,'ingredient-line');
- const servings=x.raciones!==undefined?x.raciones:x.cantidad;
- const unit=x.tipo==='preparacion'?(servings===1?'ración':'raciones'):x.unidad;
  const title=el(x.tipo==='preparacion'&&x.slug?'a':'span',name,'component-name');
  if(title.tagName==='A')title.href=site+'/recetas/'+encodeURIComponent(x.slug)+'/';
- line.append(title,el('strong',Number(servings).toLocaleString('es-ES',{maximumFractionDigits:3})+' '+unit,'component-amount'));return line;
+ line.append(title,el('strong',displayAmount(x),'component-amount'));return line;
 }
 function heading(kind,nut){
  const h=el('h2',undefined,'daily-meal-title');h.append(el('span',kind));
@@ -87,7 +96,7 @@ function component(x,nut=x.nutricion,name=displayName(x)){
  const box=el('div',undefined,'daily-component');box.append(entry(x,name),macros(nut));return box;
 }
 function group(g){
- if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,g.nombre);
+ if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,foodNames[g.elementos[0].referencia_id]||g.nombre);
  const details=el('details',undefined,'culinary-group daily-component');
  const summary=el('summary');summary.append(el('span',g.nombre,'component-name'),macros(g.nutricion,'span'));
  const inside=el('div',undefined,'group-entries');
@@ -96,15 +105,17 @@ function group(g){
 }
 function meal(kind,x){
  const section=el('section',undefined,'daily-meal');section.append(heading(kind,x.nutricion));
- if(x.estado==='libre'){section.append(el('p','Libre · No incluida en la nutrición registrada.'));return section}
- if(x.estado==='pendiente'){section.append(el('p','Pendiente de asignar.','muted'));return section}
- for(const g of [...x.presentacion.grupos].sort((a,b)=>a.orden-b.orden))section.append(group(g));
- for(const item of x.presentacion.elementos_sin_grupo)section.append(component(item));
+ const body=el('div',undefined,'daily-meal-body');section.append(body);
+ if(x.estado==='libre'){body.append(el('p','Libre · No incluida en la nutrición registrada.'));return section}
+ if(x.estado==='pendiente'){body.append(el('p','Pendiente de asignar.','muted'));return section}
+ for(const g of [...x.presentacion.grupos].sort((a,b)=>a.orden-b.orden))body.append(group(g));
+ for(const item of x.presentacion.elementos_sin_grupo)body.append(component(item));
  return section;
 }
 function simple(kind,x){
  if(!x)return;const section=el('section',undefined,'daily-meal');
- section.append(heading(kind,x.nutricion),component(x));root.append(section);
+ const body=el('div',undefined,'daily-meal-body');body.append(component(x));
+ section.append(heading(kind,x.nutricion),body);root.append(section);
 }
 const total=el('section',undefined,'daily-total');total.append(dailyNutrition(day.nutricion));
 if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));

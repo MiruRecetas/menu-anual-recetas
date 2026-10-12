@@ -516,20 +516,25 @@ button[hidden]{display:none!important}
 
 .week-desserts{display:flex;flex-direction:column;gap:5px;min-width:0}
 
-/* Día ampliado: componentes, aportes oficiales y encabezados de ingesta. */
-.daily-page-main .daily-meal-title{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
-.daily-page-main .daily-meal-kcal{font:inherit;font-weight:700;white-space:nowrap;text-align:right}
-.daily-page-main .daily-component{margin-top:18px}
-.daily-page-main .ingredient-line{border:0;padding:0;gap:15px}
-.daily-page-main .component-name{font-size:1.02rem;font-weight:500;line-height:1.4;overflow-wrap:anywhere}
-.daily-page-main .component-amount{font-size:1rem;white-space:nowrap}
-.daily-page-main .component-nutrition{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 12px;margin:5px 0 0;font-size:.88rem;line-height:1.5;font-weight:400;color:var(--muted)}
+/* Día ampliado: lateral de ingesta y jerarquía de componentes. */
+.daily-page-main .daily-meal{display:grid;grid-template-columns:34px minmax(0,1fr);gap:18px;padding:22px 24px;min-height:190px}
+.daily-page-main .daily-meal-title{display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:16px;border-right:2px solid #b96c4a;padding-right:12px;margin:0;font-size:1rem;line-height:1.1;color:var(--green)}
+.daily-page-main .daily-meal-title>span,.daily-page-main .daily-meal-kcal{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.daily-page-main .daily-meal-title>span{order:2}
+.daily-page-main .daily-meal-kcal{order:1;font:inherit;font-weight:600;color:var(--muted)}
+.daily-page-main .daily-meal-body{min-width:0;align-self:center}
+.daily-page-main .daily-component+.daily-component{margin-top:24px}
+.daily-page-main .ingredient-line{border:0;padding:0;gap:12px}
+.daily-page-main .component-name{font-size:1.08rem;font-weight:500;line-height:1.4;overflow-wrap:anywhere}
+.daily-page-main .component-amount{font-size:.9rem;font-weight:500;white-space:nowrap}
+.daily-page-main .component-nutrition{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:5px 0 0;font-size:.76rem;line-height:1.5;font-weight:400;color:var(--muted)}
+.daily-page-main .component-nutrition .component-macro strong{font-weight:500}
 .daily-page-main .component-kcal{color:var(--ink)}
 .daily-page-main .component-macro-protein{color:var(--macro-protein)}
 .daily-page-main .component-macro-carbs{color:var(--macro-carbs)}
 .daily-page-main .component-macro-fat{color:var(--macro-fat)}
 .daily-page-main .culinary-group{border:0;padding:0}
 .daily-page-main .culinary-group summary{min-height:0;color:var(--ink);font-weight:500}
-.daily-page-main .group-entries{padding:12px 0 0 17px;display:flex;flex-direction:column;gap:9px}
-.daily-page-main .group-entries .component-name{font-size:.94rem;color:var(--muted)}
-@media(max-width:540px){.daily-page-main .daily-meal-title{font-size:1.15rem;gap:12px}.daily-page-main .component-nutrition{gap:4px 10px;font-size:.84rem}}
+.daily-page-main .group-entries{padding:13px 0 0 14px;display:flex;flex-direction:column;gap:10px}
+.daily-page-main .group-entries .component-name{font-size:.9rem;color:var(--muted)}
+@media(max-width:540px){.daily-page-main .daily-meal{padding:18px 18px;gap:14px;grid-template-columns:30px minmax(0,1fr)}.daily-page-main .daily-meal-title{font-size:.95rem;padding-right:10px}.daily-page-main .component-name{font-size:1rem}.daily-page-main .component-amount{font-size:.82rem}.daily-page-main .component-nutrition{gap:3px 8px;font-size:.72rem}}

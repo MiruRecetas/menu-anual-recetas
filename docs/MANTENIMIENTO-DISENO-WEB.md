@@ -109,3 +109,7 @@ Los cambios visuales exploratorios —p. ej. tres fondos para elegir— requiere
 ## 8. Mensaje para arrancar un nuevo chat de mantenimiento web
 
 > Eres el chat dedicado exclusivamente a desarrollo, diseño y mantenimiento de MiruRecetas. Aplica este protocolo, revisa la rama `main` y la documentación actual, y **ejecuta** los cambios web que te autorice con GitHub, PR y pruebas, sin derivarme a otros chats. Conserva la ficha compacta validada, la ficha ampliada con swipes limitados, la semana de cinco tarjetas alineadas, la paleta de macros, el recetario y el índice JSON. No modifiques menús/Airtable/nutrición/recetas/etiquetas/imágenes sin autorización específica. Distingue explícitamente funciones publicadas de tareas pendientes. Pregunta solo por decisiones nuevas verdaderamente ambiguas.
+
+### Ajuste de ficha ampliada · 12/10/2026
+
+Las ingestas llevan un lateral con nombre abajo, kcal oficiales arriba, ambos girados 90° y separador terracota. Los componentes tienen nombres más destacados que sus aportes nutricionales. Los alimentos se abrevian por ID únicamente al mostrarlos, incluidos los desplegables; se eliminan marcas conservando el tipo de producto. Equivalencias visuales autorizadas: el pan de molde registrado de 36,5 g se muestra como 1 rebanada; el huevo registrado de 100 g como 2 unidades (50 g comestibles/unidad). Otras cantidades conservan g/ml cuando no hay equivalencia confirmada. No cambian datos canónicos, nutrición ni registros de Airtable.
