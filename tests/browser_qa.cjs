@@ -608,7 +608,7 @@ const assert = require('node:assert/strict');
     assert.equal(await dinner.locator('details').count(),0,'Receta única sin desplegable');
     assert.equal(await dinner.locator('.component-amount').innerText(),'1 ración');
     await link.click();
-    assert.equal(await page.locator('h1').innerText(),'Tostas de hummus y sardinillas','Enlace abre ficha publicada');
+    assert.equal(await page.locator('h1[itemprop="name"]').innerText(),'Tostas de hummus y sardinillas','Enlace abre ficha publicada');
     await page.close();
   }
 
