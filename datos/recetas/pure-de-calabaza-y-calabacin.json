@@ -2,6 +2,7 @@
   "slug": "pure-de-calabaza-y-calabacin",
   "imagen": "pure-de-calabaza-y-calabacin.webp",
   "nombre": "Puré de calabaza y calabacín",
+  "descripcion": "Puré cremoso de calabaza butternut, calabacín y patata asados al horno, triturados con nata líquida.",
   "raciones": 5,
   "categoria": "sopas-cremas-pures",
   "etiquetas": [
@@ -45,9 +46,9 @@
   ],
   "pasos": [
     "Precalentar el horno a 180 °C. Pelar las patatas, el calabacín y la calabaza y cortarlos en dados grandes.",
-    "Colocar las verduras sobre una bandeja de horno forrada con papel sulfurizado. Pulverizar con los 10 ml de AOVE y salar.",
+    "Colocar las verduras sobre una bandeja de horno forrada con papel sulfurizado. Pulverizar con el AOVE y salar.",
     "Hornear a 180 °C durante 30 minutos.",
-    "Triturar las verduras junto con los 300 ml de nata líquida para cocinar hasta obtener una textura cremosa."
+    "Triturar las verduras junto con la nata líquida para cocinar hasta obtener una textura cremosa."
   ],
   "nutricion": {
     "kcal": 215.56,

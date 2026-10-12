@@ -2,6 +2,7 @@
   "slug": "salchichas-al-vino",
   "imagen": "salchichas-al-vino.webp",
   "nombre": "Salchichas al vino",
+  "descripcion": "Salchichas frescas blancas y rojas de cerdo, doradas con cebolla y cocinadas en vino blanco con laurel y pimienta negra.",
   "raciones": 3,
   "categoria": "guisos-legumbres",
   "etiquetas": [
@@ -49,9 +50,9 @@
     }
   ],
   "pasos": [
-    "Sofreír la cebolla picada con los 15 ml de AOVE.",
+    "Sofreír la cebolla picada con el AOVE.",
     "Cortar las salchichas en porciones, añadirlas a la cebolla y sofreír todo hasta que estén doradas.",
-    "Añadir los 150 ml de vino blanco, el laurel y unos granos de pimienta negra. Dejar cocinar hasta que las salchichas estén hechas.",
+    "Añadir el vino blanco, el laurel y unos granos de pimienta negra. Dejar cocinar hasta que las salchichas estén hechas.",
     "Si la salsa reduce demasiado, añadir el agua necesaria."
   ],
   "nutricion": {

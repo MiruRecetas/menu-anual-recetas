@@ -2,6 +2,7 @@
   "slug": "tacos-de-gambon",
   "imagen": "tacos-de-gambon.webp",
   "nombre": "Tacos de gambón",
+  "descripcion": "Mini tacos de gambón salteado con cebolla y pimientos, acompañados de aguacate y tzatziki.",
   "raciones": 1,
   "categoria": "tostas-bocadillos-wraps",
   "etiquetas": [
@@ -52,9 +53,9 @@
     }
   ],
   "pasos": [
-    "Cortar la cebolla y los pimientos en juliana y pocharlos con los 7,5 ml de AOVE.",
+    "Cortar la cebolla y los pimientos en juliana y pocharlos con el AOVE.",
     "Añadir los gambones a las verduras pochadas y saltear hasta que estén hechos.",
-    "Cortar el aguacate en láminas. Montar los tres tacos con las verduras, los gambones, el aguacate y media ración de tzatziki."
+    "Cortar el aguacate en láminas. Montar los tacos con las verduras, los gambones, el aguacate y el tzatziki."
   ],
   "nutricion": {
     "kcal": 586.11,
