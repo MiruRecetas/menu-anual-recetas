@@ -4,6 +4,19 @@ const assert = require('node:assert/strict');
 
 (async () => {
   const browser = await chromium.launch({headless:true});
+  // Entrada por la raíz: redirección, parámetros y alternativa sin JavaScript.
+  const rootHtml=fs.readFileSync('hosting/github-pages-root/index.html','utf8').replaceAll('https://mirurecetas.github.io/menu-anual-recetas/','http://127.0.0.1:8765/');
+  for(const javaScriptEnabled of [true,false]){
+    const context=await browser.newContext({javaScriptEnabled});
+    const page=await context.newPage();
+    await page.route('**/__root-entry/**',route=>route.fulfill({contentType:'text/html',body:rootHtml}));
+    const entered='http://127.0.0.1:8765/__root-entry/?origen=raiz#menus';
+    const target=javaScriptEnabled?'http://127.0.0.1:8765/?origen=raiz#menus':'http://127.0.0.1:8765/';
+    await page.goto(entered);
+    await page.waitForURL(javaScriptEnabled?target:url=>url.origin==='http://127.0.0.1:8765'&&url.pathname==='/');
+    assert.equal(await page.locator('h1').innerText(),'¿Qué cocinamos esta semana?','Raíz abre la web');
+    await context.close();
+  }
   const issues=[];
   const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
   for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390},{name:'mobile-small-horizontal',width:667,height:375},{name:'tablet-compact-horizontal',width:1024,height:768}]){
