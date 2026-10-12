@@ -3,7 +3,7 @@
   "mes": 9,
   "menu": 3,
   "airtable_menu_id": "recoroSa93XtdWN8C",
-  "estado": "Pendiente",
+  "estado": "Calculado",
   "dias": {
     "Lunes": {
       "desayuno": {
@@ -214,7 +214,66 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recUetQb5HaOrXJkj",
+        "nombre": "Salmón con arroz blanco y pisto",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 653.2426093239325,
+          "proteinas_g": 34.23375,
+          "hidratos_g": 69.83,
+          "grasas_g": 26.560833333333335
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Salmón",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recWq0zOWPyBJvIEI",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recpHKx8XrOpBd8zW",
+                  "nombre": "Salmón crudo (parte comestible)",
+                  "cantidad": 130,
+                  "unidad": "g"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Arroz blanco",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recRiOfX0rx05Y1CP",
+                  "tipo": "ingrediente",
+                  "referencia_id": "reccZQ0blNFQ0THdM",
+                  "nombre": "DIA Al Punto Arroz blanco cocido",
+                  "cantidad": 125,
+                  "unidad": "g"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-2",
+              "nombre": "Pisto",
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "recUVmgv678dYPJmE",
+                  "tipo": "preparacion",
+                  "referencia_id": "recG1UJ6vBcK3NBaE",
+                  "nombre": "Pisto",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "slug": "pisto"
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
         "comida_id": "recqHPRCZmS834meh",
@@ -266,10 +325,10 @@
       },
       "postre": null,
       "nutricion": {
-        "kcal": 832.228302950121,
-        "proteinas_g": 29.861166666666662,
-        "hidratos_g": 30.729333333333333,
-        "grasas_g": 65.97399999999999
+        "kcal": 1485.4709122740537,
+        "proteinas_g": 64.09491666666666,
+        "hidratos_g": 100.55933333333333,
+        "grasas_g": 92.53483333333332
       }
     },
     "Miércoles": {
@@ -604,9 +663,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 5909.638775856813,
-    "proteinas_g": 282.64766041666667,
-    "hidratos_g": 374.48878333333334,
-    "grasas_g": 361.6201749999999
+    "kcal": 6562.881385180745,
+    "proteinas_g": 316.88141041666665,
+    "hidratos_g": 444.31878333333333,
+    "grasas_g": 388.1810083333333
   }
 }
