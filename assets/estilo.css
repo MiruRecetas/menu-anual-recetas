@@ -504,3 +504,14 @@ button[hidden]{display:none!important}
 @media(orientation:portrait) and (max-width:700px){
  #batch .batch-gallery{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}
 }
+
+/* Cada componente de postre conserva su icono, nombre y aporte propio. */
+#quick-content .quick-meal:has(.dessert-component) .quick-meal-names{padding-left:0}
+#quick-content .dessert-component{display:flex;align-items:center;gap:10px}
+#quick-content .dessert-component svg{width:20px;height:20px;flex:0 0 20px;stroke:var(--green)}
+.daily-meal .dessert-component+.dessert-component{margin-top:14px}
+.daily-meal .dessert-component .ingredient-line{display:flex;justify-content:flex-start;align-items:center;gap:10px}
+.daily-meal .dessert-component .ingredient-line strong{margin-left:auto}
+.daily-meal .dessert-component svg{width:22px;height:22px;flex:0 0 22px;stroke:var(--green)}
+
+.week-desserts{display:flex;flex-direction:column;gap:5px;min-width:0}

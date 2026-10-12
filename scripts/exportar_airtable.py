@@ -80,25 +80,37 @@ def ingredient(ref,ingredients,quantity,unit,official):
             "cantidad":quantity,"unidad":unit,"nutricion":official}
 
 def dessert(menu, day, ingredients, preps, slugs):
-    """Exporta un único postre validado; los rollups son bases, no porciones."""
+    """Exporta hasta un ingrediente y una preparación, sin sumar los totales."""
     ir = single_link(menu, day+" · Postre", True)
     pr = single_link(menu, day+" · Postre preparación", True)
     state = value(menu.get(day+" · Estado postre"))
-    if ir and pr:
-        error("Doble postre: "+day)
+    if not ir and any(menu.get(day+" · Postre "+f) for f in ("cantidad", "unidad")):
+        error("Cantidad o unidad sin postre ingrediente: "+day)
+    if not pr and menu.get(day+" · Postre raciones"):
+        error("Raciones sin postre preparación: "+day)
     if not ir and not pr:
-        if state != "Sin postre" or any(menu.get(day+" · Postre "+field) for field in ("cantidad", "unidad", "raciones")):
+        if state != "Sin postre":
             error("Estado de postre inválido: "+day)
         return None
     if state != "Calculado":
         error("Postre no calculado: "+day)
+    components = []
+    if ir:
+        quantity = numeric(menu.get(day+" · Postre cantidad"), day)
+        unit = value(menu.get(day+" · Postre unidad"))
+        if quantity <= 0 or unit not in ("g", "ml"):
+            error("Cantidad o unidad de postre ingrediente inválida: "+day)
+        if value(ingredients[ir].get("Base nutricional")) != "100 "+unit:
+            error("Base nutricional de postre incompatible: "+day)
+        base = macros(menu, tuple("TEC "+day+" Postre "+k for k in FIELD_MACROS), day)
+        components.append(ingredient(ir, ingredients, quantity, unit, {k:v*quantity/100 for k,v in base.items()}))
     if pr:
         source = preps[pr]
         if value(source.get("Estado cálculo")) != "Calculado":
             error("Preparación de postre no calculada: "+day)
         servings = numeric(menu.get(day+" · Postre raciones"), day)
-        if servings <= 0 or menu.get(day+" · Postre cantidad") or menu.get(day+" · Postre unidad"):
-            error("Raciones o campos de postre preparación inválidos: "+day)
+        if servings <= 0:
+            error("Raciones de postre preparación inválidas: "+day)
         per_serving = macros(source, ("Kcal/ración", "Proteínas/ración", "Hidratos/ración", "Grasas/ración"), pr)
         post = {"tipo":"preparacion", "referencia_id":pr, "nombre":source["Nombre"],
                 "raciones":servings, "estado":"Calculado",
@@ -106,15 +118,8 @@ def dessert(menu, day, ingredients, preps, slugs):
         match = re.search(r"/recetas/([a-z0-9-]+)/?(?:$|[?#])", source.get("Enlace receta") or "")
         if match and match.group(1) in slugs:
             post["slug"] = match.group(1)
-        return post
-    quantity = numeric(menu.get(day+" · Postre cantidad"), day)
-    unit = value(menu.get(day+" · Postre unidad"))
-    if quantity <= 0 or unit not in ("g", "ml") or menu.get(day+" · Postre raciones"):
-        error("Cantidad o unidad de postre ingrediente inválida: "+day)
-    if value(ingredients[ir].get("Base nutricional")) != "100 "+unit:
-        error("Base nutricional de postre incompatible: "+day)
-    base = macros(menu, tuple("TEC "+day+" Postre "+k for k in FIELD_MACROS), day)
-    return ingredient(ir, ingredients, quantity, unit, {k:v*quantity/100 for k,v in base.items()})
+        components.append(post)
+    return {"componentes":components}
 
 def meal(ref,comidas,elementos,ingredientes,preps,slugs):
     row=comidas[ref]

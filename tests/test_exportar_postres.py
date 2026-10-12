@@ -27,22 +27,34 @@ class Desserts(unittest.TestCase):
 
     def test_ingredient_portion_not_base(self):
         for amount in (50,100,150):
-            post=self.export(row('ingrediente',amount))
+            post=self.export(row('ingrediente',amount))['componentes'][0]
             self.assertEqual(post['cantidad'],amount)
             self.assertEqual(post['nutricion'],{k:v*amount/100 for k,v in N.items()})
         r=row('ingrediente',50);r['Lunes · Postre unidad']='ml'
         with patch.dict(ING,{'Base nutricional':'100 ml'}):
-            self.assertEqual(self.export(r)['nutricion']['kcal'],50)
+            self.assertEqual(self.export(r)['componentes'][0]['nutricion']['kcal'],50)
 
     def test_preparation_portions_and_real_link(self):
         for amount in (0.5,1,2):
-            post=self.export(row('preparacion',amount),slugs={'postre-prueba'})
+            post=self.export(row('preparacion',amount),slugs={'postre-prueba'})['componentes'][0]
             self.assertEqual(post['raciones'],amount)
             self.assertEqual(post['slug'],'postre-prueba')
             self.assertEqual(post['nutricion'],{k:v*amount for k,v in N.items()})
             self.assertNotIn('cantidad',post)
             self.assertNotIn('unidad',post)
-        self.assertNotIn('slug',self.export(row('preparacion')))
+        self.assertNotIn('slug',self.export(row('preparacion'))['componentes'][0])
+
+    def test_both_are_valid_and_independent(self):
+        r=row('ingrediente',50);r.update(row('preparacion',0.5))
+        post=self.export(r,slugs={'postre-prueba'})
+        self.assertEqual(set(post),{'componentes'})
+        self.assertEqual([p['tipo'] for p in post['componentes']],['ingrediente','preparacion'])
+        self.assertEqual([p['nutricion']['kcal'] for p in post['componentes']],[50,50])
+        for field,bad in (('Lunes · Postre cantidad',0),('Lunes · Postre raciones',0),
+                          ('Lunes · Postre',['ing','ing']),('Lunes · Postre preparación',['prep','prep']),
+                          ('Lunes · Estado postre','Error: revisar postre preparación')):
+            invalid=copy.deepcopy(r);invalid[field]=bad
+            with self.assertRaises(ValueError):self.export(invalid)
 
     def test_no_dessert(self):
         self.assertIsNone(self.export(row()))
@@ -74,18 +86,22 @@ class Desserts(unittest.TestCase):
                 menu['TEC '+day+' Desayuno '+field]=N[key]/1.3
                 menu[day+' · '+field+' totales']=N[key]+0.01
         for field,key in zip(exporter.FIELD_MACROS,N):menu['Menú · '+field]=(N[key]+0.01)*5
+        menu.update(row('ingrediente',50));menu.update(row('preparacion',0.5))
+        for field,key in zip(exporter.FIELD_MACROS,N):
+            menu['Lunes · '+field+' totales']+=N[key]
+            menu['Menú · '+field]+=N[key]
         tables={name:{} for name in exporter.TABLES}
-        tables['menus']={'menu':menu};tables['ingredientes']={'ing':ING}
+        tables['menus']={'menu':menu};tables['ingredientes']={'ing':ING};tables['preparaciones']={'prep':PREP}
         with tempfile.TemporaryDirectory() as tmp, patch.object(exporter,'ROOT',Path(tmp)), \
              patch.object(exporter,'retrieve',side_effect=lambda name,token:tables[name]), \
              patch.dict('os.environ',{'AIRTABLE_TOKEN':'test','AIRTABLE_MENU_IDS':'menu'}):
             exporter.main()
             target=Path(tmp)/'datos/menus/10-1.json'
             result=json.loads(target.read_text())
-            self.assertEqual(result['dias']['Lunes']['nutricion']['kcal'],100.01)
-            self.assertEqual(result['nutricion_semana']['kcal'],500.05)
+            self.assertEqual(result['dias']['Lunes']['nutricion']['kcal'],200.01)
+            self.assertEqual(result['nutricion_semana']['kcal'],600.05)
             before=target.read_bytes()
-            menu['Lunes · Estado postre']='Error: doble postre'
+            menu['Lunes · Estado postre']='Error: revisar postre ingrediente'
             with self.assertRaises(ValueError):exporter.main()
             self.assertEqual(target.read_bytes(),before)
 
