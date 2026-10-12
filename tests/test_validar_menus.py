@@ -57,6 +57,21 @@ class MenuV2(unittest.TestCase):
                     broken["dias"]["Lunes"]["postre"][field]=bad
                     with self.assertRaises(ValueError):validate_menu(broken,"10-1.json",{"receta-real"})
 
+    def test_postres_combinados_y_limite_por_tipo(self):
+        ing={"tipo":"ingrediente","nombre":"Fruta","cantidad":50,"unidad":"g","nutricion":copy.deepcopy(N)}
+        prep={"tipo":"preparacion","referencia_id":"rec-postre","nombre":"Postre","raciones":0.5,"nutricion":copy.deepcopy(N)}
+        for components in ([ing],[prep],[ing,prep]):
+            m=fixture();m["dias"]["Lunes"]["postre"]={"componentes":copy.deepcopy(components)}
+            for k,v in N.items():
+                m["dias"]["Lunes"]["nutricion"][k]+=v*len(components)
+                m["nutricion_semana"][k]+=v*len(components)
+            validate_menu(m,"10-1.json",{"receta-real"})
+        for components in ([],[ing,ing],[prep,prep],[ing,prep,prep]):
+            m=fixture();m["dias"]["Lunes"]["postre"]={"componentes":components}
+            with self.assertRaises(ValueError):validate_menu(m,"10-1.json",{"receta-real"})
+        m=fixture();m["dias"]["Lunes"]["postre"]={"componentes":[ing],"nutricion":N}
+        with self.assertRaises(ValueError):validate_menu(m,"10-1.json",{"receta-real"})
+
     def test_sin_ficha_se_conserva_sin_enlace(self):
         m=fixture()
         for day in DAYS:

@@ -50,7 +50,7 @@ def check_simple(x):
     ensure(type(x.get("cantidad")) in (int, float) and math.isfinite(x["cantidad"]) and x["cantidad"] > 0 and x.get("unidad") in ("g", "ml"), "ingesta sin cantidad")
     check_macros(x.get("nutricion"), "ingesta")
 
-def check_dessert(x, slugs):
+def check_dessert_component(x, slugs):
     ensure(isinstance(x, dict), "postre inválido")
     ensure(x.get("estado", "Calculado") == "Calculado", "postre sin calcular")
     if x.get("tipo") == "ingrediente":
@@ -63,6 +63,22 @@ def check_dessert(x, slugs):
         ensure("cantidad" not in x and "unidad" not in x, "postre preparación con campos de ingrediente")
         ensure(not x.get("slug") or x["slug"] in slugs, "postre con receta inexistente")
         check_macros(x.get("nutricion"), "postre")
+
+def dessert_components(x):
+    # Compatibilidad con el postre único publicado antes de esta ampliación v2.
+    return x.get("componentes", [x]) if x is not None else []
+
+def check_dessert(x, slugs):
+    ensure(isinstance(x, dict), "postre inválido")
+    components = dessert_components(x)
+    ensure(isinstance(components, list) and 1 <= len(components) <= 2, "componentes de postre inválidos")
+    if "componentes" in x:
+        ensure(set(x) == {"componentes"}, "postre compuesto con datos duplicados")
+    kinds = set()
+    for component in components:
+        check_dessert_component(component, slugs)
+        ensure(component["tipo"] not in kinds, "más de un postre del mismo tipo")
+        kinds.add(component["tipo"])
 
 def validate_menu(m, filename, slugs):
     ensure(isinstance(m, dict) and m.get("schema_version") == 2, "schema_version inválida")
@@ -91,7 +107,7 @@ def validate_menu(m, filename, slugs):
             if d[kind].get("estado") == "Calculado":
                 ingestas.append(d[kind])
         if d.get("postre") is not None:
-            ingestas.append(d["postre"])
+            ingestas.extend(dessert_components(d["postre"]))
         for key in MACROS:
             total = sum(x["nutricion"][key] for x in ingestas)
             ensure(abs(total - d["nutricion"][key]) <= .11, day + ": descuadre " + key)

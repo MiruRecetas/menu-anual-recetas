@@ -14,6 +14,7 @@ select.value=available?.mes||10;
 if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
+const dessertComponents=x=>x?.componentes||(x?[x]:[]);
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Postre:'apple'};
 const mealIcon=(kind,item)=>kind==='Postre'&&item?.tipo==='preparacion'?'dessert':MEAL_ICONS[kind];
 // Nombres de presentación para frutas directas de los menús; fuente nutricional intacta.
@@ -69,19 +70,23 @@ function summary(kind,meal,day){
  const symbol=el('i');
  symbol.setAttribute('data-lucide',mealIcon(kind,meal));
  symbol.setAttribute('aria-hidden','true');
- heading.append(symbol,el('span',kind));
+ if(kind!=='Postre')heading.append(symbol);
+ heading.append(el('span',kind));
  const namesContainer=el('div',undefined,'quick-meal-names');
- if(kind==='Postre'&&meal?.tipo==='preparacion'){
-  const line=el('div',undefined,'quick-group');
-  line.append(el('span',meal.nombre,'quick-meal-name'));
-  const recipe=recipes.find(r=>r.slug===meal.slug);
-  if(recipe){
-   const link=el('a','↗','quick-group-recipe');
-   link.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
-   link.setAttribute('aria-label','Abrir receta: '+recipe.nombre);
-   line.append(link);
+ if(kind==='Postre'){
+  for(const component of dessertComponents(meal)){
+   const line=el('div',undefined,'quick-group dessert-component');
+   const icon=el('i');icon.setAttribute('data-lucide',mealIcon(kind,component));icon.setAttribute('aria-hidden','true');
+   line.append(icon,el('span',ingredientName(component),'quick-meal-name'));
+   const recipe=component.tipo==='preparacion'?recipes.find(r=>r.slug===component.slug):null;
+   if(recipe){
+    const link=el('a','↗','quick-group-recipe');
+    link.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
+    link.setAttribute('aria-label','Abrir receta: '+recipe.nombre);
+    line.append(link);
+   }
+   namesContainer.append(line);
   }
-  namesContainer.append(line);
  }else if(meal?.presentacion?.grupos?.length){
   for(const g of [...meal.presentacion.grupos].sort((a,b)=>a.orden-b.orden))namesContainer.append(displayGroup(g));
   for(const item of meal.presentacion.elementos_sin_grupo||[]){
@@ -236,7 +241,7 @@ function week(){const mes=Number(select.value),num=Number($('#menu-number').valu
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
 if(window.MiruWeeklyCharts)window.MiruWeeklyCharts.render(charts,window.MiruWeeklyCharts.model(m,recipes));
-for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);const meals=el('span',undefined,'week-card-meals');if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;meals.append(mealRow(kind,item,day))}const opener=el('span',undefined,'week-card-open');opener.setAttribute('aria-hidden','true');const openIcon=el('i');openIcon.setAttribute('data-lucide','panel-bottom-open');opener.append(openIcon);button.append(meals,opener);button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
+for(const day of days){const d=m.dias[day],button=el('button',undefined,'day day-button week-card');button.type='button';button.setAttribute('aria-label','Ver resumen de '+day);const head=el('span',undefined,'week-card-head');head.append(el('span',day,'week-card-title'),calorieRing(d.nutricion.kcal));button.append(head);const meals=el('span',undefined,'week-card-meals');if(day==='Viernes')button.classList.add('week-card-friday');for(const [kind,item] of [['Desayuno',d.desayuno],['Comida',d.comida],['Cena',d.cena],['Postre',d.postre]]){if(!item)continue;if(kind==='Postre'){const slot=el('span',undefined,'week-desserts week-meal-slot-postre');slot.setAttribute('role','group');slot.setAttribute('aria-label','Postre');for(const component of dessertComponents(item)){const row=mealRow(kind,component,day);row.classList.remove('week-meal-slot-postre');slot.append(row)}meals.append(slot)}else meals.append(mealRow(kind,item,day))}const opener=el('span',undefined,'week-card-open');opener.setAttribute('aria-hidden','true');const openIcon=el('i');openIcon.setAttribute('data-lucide','panel-bottom-open');opener.append(openIcon);button.append(meals,opener);button.addEventListener('click',()=>open(day,m,button));w.append(button)}if(window.lucide?.createIcons)window.lucide.createIcons();
 syncWeekCards(w);
 const prepMap=new Map((data.preparaciones||[]).map(p=>[p.slug,p]));
 const counts=new Map();
@@ -253,7 +258,8 @@ for(const day of days){
   const meal=m.dias[day][kind];
   if(!meal)continue;
   const inMeal=new Set();
-  if(meal.tipo==='preparacion'&&meal.slug)traverse(meal.slug,inMeal);
+  for(const component of kind==='postre'?dessertComponents(meal):[meal])
+   if(component.tipo==='preparacion'&&component.slug)traverse(component.slug,inMeal);
   if(!meal.presentacion)continue;
   for(const group of meal.presentacion.grupos)
    for(const item of group.elementos)

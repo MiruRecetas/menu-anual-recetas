@@ -34,10 +34,13 @@
    const total=energy.reduce((a,b)=>a+b,0);
    for(const kind of Object.keys(MEALS)){
     const meal=d[kind];
-    if(!meal?.nutricion)continue; // Cena libre e ingestas ausentes no aportan ceros ficticios.
-    const value=amount(meal.nutricion.kcal);
-    byMeal[kind]+=value;
-    byGroup[mainGroup(meal,recipes)]+=value;
+    const components=kind==='postre'?(meal?.componentes||(meal?[meal]:[])):[meal];
+    for(const component of components){
+     if(!component?.nutricion)continue; // Ingestas ausentes/libres no aportan ceros ficticios.
+     const value=amount(component.nutricion.kcal);
+     byMeal[kind]+=value;
+     byGroup[mainGroup(component,recipes)]+=value;
+    }
    }
    return {day,letter:['L','M','X','J','V'][i],kcal,
     segments:MACROS.map((m,j)=>({...m,share:total?energy[j]/total:0,kcal:total?kcal*energy[j]/total:0}))};

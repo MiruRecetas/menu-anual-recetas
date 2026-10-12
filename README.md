@@ -188,14 +188,15 @@ node tests/test_graficos_semana.cjs
 - Tras fusionar un cambio de diseño, esperar el commit del bot **«Publicar páginas generadas»**, comprobar las plantillas y la **versión de caché** `?v=...` en los HTML generados y distinguir esa comprobación de una verificación externa en GitHub Pages.
 - Para un nuevo chat web, usar [MANTENIMIENTO-DISENO-WEB.md](docs/MANTENIMIENTO-DISENO-WEB.md) y contrastarlo con `main` en cada sesión. Las propuestas antiguas del manual maestro web del 10/10/2026 pueden haber quedado superadas.
 
-### Postres: ingrediente o preparación
+### Postres: ingrediente, preparación o ambos
 
-El exportador consulta `<Día> · Postre` y `<Día> · Postre preparación` como alternativas excluyentes. Solo acepta `Estado postre = Calculado` (o `Sin postre` con ambos vínculos vacíos). Rechaza errores, vínculos múltiples, cantidades/raciones inválidas y preparaciones pendientes antes de escribir ningún menú.
+El exportador consulta `<Día> · Postre` (INGREDIENTE) y `<Día> · Postre preparación` (PREPARACIÓN) de forma **no excluyente**. Se admite como máximo un vínculo de cada tipo: ninguno, ingrediente, preparación o ambos. `Estado postre` debe ser `Calculado`, o `Sin postre` con ambos vínculos y cantidades vacíos. Los estados de error bloquean la exportación antes de escribir menús.
 
-- Ingrediente: `tipo: "ingrediente"`, `cantidad`, `unidad` (`g`/`ml`); los rollups por 100 g/ml se escalan a la cantidad registrada.
+El JSON v2 nuevo contiene `postre: {"componentes": [...]}` si hay uno o dos postres, y `postre: null` si no existe ninguno. Cada componente conserva identidad, tipo y nutrición propios:
+
+- Ingrediente: `tipo: "ingrediente"`, `referencia_id`, `nombre`, `cantidad`, `unidad` (`g`/`ml`) y `nutricion`. Los rollups por 100 g/ml se escalan a la cantidad registrada.
 - Preparación: `tipo: "preparacion"`, `referencia_id`, `nombre`, `raciones`, `estado: "Calculado"` y `nutricion` por las raciones consumidas. `slug` es opcional y se exporta solo si el enlace de Airtable corresponde a una receta publicada.
-- Ausencia de postre: `null`. No se crean ingestas ni valores ficticios.
 
-El día completo muestra las raciones y el enlace de la preparación publicada; el resumen compacto conserva nombre y flecha independiente. Batch cooking incluye también los postres con etiqueta funcional y sus dependencias, sin duplicados por ingesta. Los totales diarios y semanales se conservan directamente de las fórmulas oficiales de Airtable, incluso en menús parciales; las sumas del validador solo comprueban coherencia y nunca los sustituyen. Esta actualización del contrato no modifica los menús existentes ni ejecuta una exportación automática.
+La colección no almacena un segundo total nutricional: el validador comprueba cada componente y contrasta la suma de ingestas con los totales oficiales de Airtable. Estos totales diarios y semanales nunca se sustituyen, también en menús parciales. La web y el validador siguen aceptando el postre único del formato v2 anterior para conservar los menús publicados.
 
-Los postres usan el icono Lucide `dessert` para preparaciones y `apple` para ingredientes en la semana, ficha compacta y día completo. La ausencia de postre no genera un icono ni una ingesta.
+Semana, resumen compacto y día completo muestran cada postre por separado, con `apple` para ingrediente y `dessert` para preparación. Las vistas diarias reúnen ambos en una única sección Postre, omitida si no hay ninguno. La ampliada muestra cantidad/raciones y nutrición de cada componente; la compacta conserva los nombres y la flecha a receta. Batch cooking consulta las preparaciones de postre etiquetadas y sus dependencias; los gráficos suman ambas aportaciones una sola vez. Esta actualización no modifica ni reexporta menús existentes.

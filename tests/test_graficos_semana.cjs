@@ -44,4 +44,17 @@ assert.equal(empty.partial,true);
 assert.equal(empty.variety.entries.length,0);
 assert.equal(empty.meals.length,0);
 assert.ok(empty.bars.every(b=>b.segments.every(s=>s.kcal===0&&s.share===0)),'Ceros sin NaN');
+const combined=structuredClone(menu);
+const original=combined.dias.Lunes.postre;
+const prep={tipo:'preparacion',nombre:'Postre',slug:'bowl-de-yogur-con-miel-y-granola',
+ raciones:0.5,nutricion:{kcal:123,proteinas_g:5,hidratos_g:6,grasas_g:7}};
+combined.dias.Lunes.postre={componentes:[original,prep]};
+combined.dias.Lunes.nutricion.kcal+=123;
+combined.nutricion_semana.kcal+=123;
+const combinedModel=model(combined,recipes);
+near(combinedModel.total,data.total+123);
+near(combinedModel.meals.find(e=>e.key==='postre').kcal,data.meals.find(e=>e.key==='postre').kcal+123);
+near(combinedModel.meals.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
+near(combinedModel.variety.entries.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
+assert.equal(menu.dias.Lunes.postre.tipo,'ingrediente','La prueba no cambia el menú real');
 console.log('PASS: gráficos semanales: kcal oficiales, proporciones 4/4/9, sumas semanales, protagonista, cena libre y datos ausentes.');

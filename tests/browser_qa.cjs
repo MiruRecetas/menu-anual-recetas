@@ -302,7 +302,7 @@ const assert = require('node:assert/strict');
     assert.equal(await dailyMeals.count(),4,'Las cuatro ingestas del lunes');
     assert.deepEqual(await dailyMeals.locator('.quick-meal-heading').allInnerTexts(),['Desayuno','Comida','Cena','Postre'],'Etiquetas de las ingestas');
     for(const icon of ['coffee','utensils','moon','apple'])
-      assert.equal(await dailyMeals.locator('.quick-meal-heading svg.lucide-'+icon).count(),1,'Icono de '+icon+' igual que en semanal');
+      assert.equal(await dailyMeals.locator('svg.lucide-'+icon).count(),1,'Icono de '+icon+' igual que en semanal');
     assert.deepEqual(await dailyMeals.nth(0).locator('.quick-meal-name').allInnerTexts(),['Café con leche'],'Desayuno simplificado');
     assert.deepEqual(await dailyMeals.nth(1).locator('.quick-group .quick-meal-name').allInnerTexts(),['Bacalao a la vizcaína','Patatas panadera'],'Solo nombres del almuerzo');
     assert.deepEqual(await dailyMeals.nth(2).locator('.quick-group .quick-meal-name').allInnerTexts(),['Carpaccio con parmesano y AOVE','Puerros con mayonesa','Bowl de yogur con miel y granola'],'Nombres y orden de cena Airtable');
@@ -575,18 +575,28 @@ const assert = require('node:assert/strict');
     await page.close();
   }
 
-  // Contrato nuevo probado sobre respuestas aisladas: ningún menú real se edita.
+  // Respuestas aisladas: las cuatro combinaciones y compatibilidad con postres únicos v2.
   for(const width of [1440,390]){
-    for(const variant of [{tipo:'ingrediente'},{raciones:1,linked:true},{raciones:0.5,linked:true},{raciones:2,linked:false},null]){
+    for(const variant of [
+      {ingredient:true,legacy:true},{prep:true,legacy:true,linked:true,raciones:1},
+      {ingredient:true},{prep:true,linked:true,raciones:0.5},
+      {prep:true,linked:false,raciones:2},{ingredient:true,prep:true,linked:true,raciones:1},{}
+    ]){
       const page=await browser.newPage({viewport:{width,height:900}});
       page.on('pageerror',e=>issues.push('postres: '+e.message));
-      const expectedIcon=variant?.tipo==='ingrediente'?'apple':'dessert';
-      const makePost=original=>variant?.tipo==='ingrediente'?original:variant?{
-        tipo:'preparacion',referencia_id:'rec-postre-qa',
-        nombre:variant.linked?'Bowl de yogur con miel y granola':'Postre sin ficha pública',
-        raciones:variant.raciones,estado:'Calculado',nutricion:original.nutricion,
-        ...(variant.linked?{slug:'bowl-de-yogur-con-miel-y-granola'}:{})
-      }:null;
+      const expectedCount=Number(Boolean(variant.ingredient))+Number(Boolean(variant.prep));
+      const expectedIcons=[...(variant.ingredient?['apple']:[]),...(variant.prep?['dessert']:[])];
+      const makePost=original=>{
+        const components=[];
+        if(variant.ingredient)components.push(original);
+        if(variant.prep)components.push({
+          tipo:'preparacion',referencia_id:'rec-postre-qa',
+          nombre:variant.linked?'Bowl de yogur con miel y granola':'Postre sin ficha pública',
+          raciones:variant.raciones,estado:'Calculado',nutricion:original.nutricion,
+          ...(variant.linked?{slug:'bowl-de-yogur-con-miel-y-granola'}:{})
+        });
+        return components.length?(variant.legacy?components[0]:{componentes:components}):null;
+      };
       await page.route('http://127.0.0.1:8765/',async route=>{
         const response=await route.fetch();let html=await response.text();
         html=html.replace(/(<script type="application\/json" id="site-data">)([\s\S]*?)(<\/script>)/,(all,a,json,b)=>{
@@ -594,13 +604,11 @@ const assert = require('node:assert/strict');
           menu.dias.Lunes.postre=makePost(menu.dias.Lunes.postre);
           for(const day of Object.values(menu.dias)){
             for(const kind of ['comida','cena']){
-              const pres=day[kind].presentacion;
-              if(!pres)continue;
+              const pres=day[kind].presentacion;if(!pres)continue;
               pres.grupos=pres.grupos.filter(g=>!g.elementos.some(e=>e.slug==='bowl-de-yogur-con-miel-y-granola'));
               pres.elementos_sin_grupo=pres.elementos_sin_grupo.filter(e=>e.slug!=='bowl-de-yogur-con-miel-y-granola');
             }
           }
-          // La marca de Batch cooking solo se altera dentro de la prueba.
           data.preparaciones.find(p=>p.slug==='bowl-de-yogur-con-miel-y-granola').batchcooking=true;
           return a+JSON.stringify(data).replace(/</g,'\\u003c')+b;
         });
@@ -609,24 +617,22 @@ const assert = require('node:assert/strict');
       await page.goto('http://127.0.0.1:8765/');
       await page.locator('#month').selectOption('10');await page.locator('#menu-number').selectOption('1');
       const monday=page.locator('#week .day-button').first();
-      assert.equal(await monday.locator('.week-meal-slot-postre').count(),variant?1:0,'Postre opcional en semana');
-      if(variant){
-        await monday.locator('.week-meal-slot-postre svg.lucide-'+expectedIcon).waitFor({state:'visible'});
-        assert.equal(await monday.locator('.week-meal-slot-postre svg').count(),1,'Un solo icono de postre semanal');
-        if(variant.tipo!=='ingrediente')assert.ok((await monday.innerText()).includes(variant.linked?'Bowl de yogur':'Postre sin ficha pública'));
-      }
+      const rows=monday.locator('.week-desserts .week-meal-row');
+      assert.equal(await rows.count(),expectedCount,'Un componente semanal por postre');
+      for(const icon of expectedIcons)await rows.locator('svg.lucide-'+icon).waitFor({state:'visible'});
+      assert.equal(await rows.locator('svg').count(),expectedCount,'Sin iconos duplicados');
+      if(expectedCount===2){const first=await rows.first().boundingBox(),second=await rows.last().boundingBox();assert.ok(first.y+first.height<=second.y+1,'Los dos postres no se superponen');}
       const batchDessert=page.locator('#batch a[href$="/recetas/bowl-de-yogur-con-miel-y-granola/"]');
-      assert.equal(await batchDessert.count(),variant?.linked?1:0,'Batch cooking incluye una vez el postre publicado y etiquetado');
+      assert.equal(await batchDessert.count(),variant.linked?1:0,'Batch cooking incluye una vez el postre de preparación');
       await monday.click();
       const post=page.locator('#quick-content .quick-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
-      assert.equal(await post.count(),variant?1:0,'Postre opcional en ficha compacta');
-      if(variant){
-        await post.locator('.quick-meal-heading svg.lucide-'+expectedIcon).waitFor({state:'visible'});
-        assert.equal(await post.locator('.quick-meal-heading svg').count(),1,'Un solo icono de postre compacto');
-        assert.equal(await post.locator('a').count(),variant.linked?1:0,'Solo recetas publicadas enlazadas');
-        assert.equal(await post.locator('details').count(),0,'Compacta sin desplegable');
-        if(variant.linked)assert.match(await post.locator('a').getAttribute('href'),/recetas\/bowl-de-yogur-con-miel-y-granola\/$/);
-      }
+      assert.equal(await post.count(),expectedCount?1:0,'Una sección compacta opcional');
+      assert.equal(await post.locator('.dessert-component').count(),expectedCount,'Componentes separados en compacta');
+      for(const icon of expectedIcons)await post.locator('svg.lucide-'+icon).waitFor({state:'visible'});
+      assert.equal(await post.locator('svg').count(),expectedCount,'Icono correcto por componente compacto');
+      assert.equal(await post.locator('a').count(),variant.linked?1:0,'Solo preparación publicada enlazada');
+      assert.equal(await post.locator('details').count(),0,'Compacta sin desplegables');
+      if(variant.linked)assert.match(await post.locator('a').getAttribute('href'),/recetas\/bowl-de-yogur-con-miel-y-granola\/$/);
       await page.route('http://127.0.0.1:8765/menus/10-1/lunes/',async route=>{
         const response=await route.fetch();let html=await response.text();
         html=html.replace(/(<script type="application\/json" id="daily-data">)([\s\S]*?)(<\/script>)/,(all,a,json,b)=>{
@@ -637,15 +643,17 @@ const assert = require('node:assert/strict');
       });
       await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
       const daily=page.locator('.daily-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
-      assert.equal(await daily.count(),variant?1:0,'Postre opcional en día completo');
-      if(variant){
-        await daily.locator('h2 svg.lucide-'+expectedIcon).waitFor({state:'visible'});
-        assert.equal(await daily.locator('h2 svg').count(),1,'Un solo icono de postre ampliado');
-        assert.equal(await daily.locator('a').count(),variant.linked?1:0,'Enlace de postre en ampliada');
-        if(variant.tipo!=='ingrediente')assert.equal(await daily.locator('.ingredient-line strong').innerText(),
-          (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
-        assert.ok(!(await daily.innerText()).includes('NaN'),'Raciones válidas sin cantidad de ingrediente');
-      }
+      assert.equal(await daily.count(),expectedCount?1:0,'Una sección ampliada opcional');
+      const components=daily.locator('.dessert-component');
+      assert.equal(await components.count(),expectedCount,'Componentes separados en ampliada');
+      for(const icon of expectedIcons)await daily.locator('svg.lucide-'+icon).waitFor({state:'visible'});
+      assert.equal(await daily.locator('svg').count(),expectedCount,'Icono correcto por componente ampliado');
+      assert.equal(await daily.locator('a').count(),variant.linked?1:0,'Enlace de receta independiente');
+      assert.equal(await components.locator('p').count(),expectedCount,'Nutrición mostrada una vez por componente');
+      if(variant.prep)assert.equal(await components.last().locator('.ingredient-line strong').innerText(),
+        (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
+      if(expectedCount)assert.ok(!(await daily.innerText()).includes('NaN'),'Cantidades válidas');
+      if(variant.ingredient&&variant.prep)await page.screenshot({path:out+'/postres-combinados-'+width+'.png',fullPage:true});
       await page.close();
     }
   }
