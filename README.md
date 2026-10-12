@@ -142,7 +142,7 @@ La **fuente de verdad de la publicación web** son los JSON de `datos/`, los arc
 ### Añadir o modificar un menú
 
 1. El contenido y los totales nutricionales se preparan/calculan en la base de trabajo correspondiente. Este repositorio **no recalcula por su cuenta** el valor nutricional de las comidas.
-2. Publicar el menú como `datos/menus/MM-N.json`. El **formato vigente v2** contiene `schema_version: 2`, mes, número, ID del menú, estado calculado, **Lunes–Viernes**, desayuno, COMIDA, cena, postre opcional, nutrición de cada ingesta, totales diarios/semanales y componentes de presentación.
+2. Publicar el menú como `datos/menus/MM-N.json`. El **formato vigente v2** contiene `schema_version: 2`, mes, número, ID del menú, estado calculado, **Lunes–Viernes**, desayuno, COMIDA, cena, postre opcional (ingrediente en g/ml o preparación en raciones), nutrición de cada ingesta, totales diarios/semanales y componentes de presentación.
 3. Validar el esquema con `scripts/validar_menus.py` y generar las páginas. La cena del viernes se registra como libre y no entra en sus totales.
 4. Mantener los enlaces entre las preparaciones y los slugs reales del recetario; la vista diaria **solo enlaza recetas realmente publicadas**.
 
@@ -187,3 +187,13 @@ node tests/test_graficos_semana.cjs
 - Comprobar la generación, las pruebas y la publicación antes de dar por terminada una modificación.
 - Tras fusionar un cambio de diseño, esperar el commit del bot **«Publicar páginas generadas»**, comprobar las plantillas y la **versión de caché** `?v=...` en los HTML generados y distinguir esa comprobación de una verificación externa en GitHub Pages.
 - Para un nuevo chat web, usar [MANTENIMIENTO-DISENO-WEB.md](docs/MANTENIMIENTO-DISENO-WEB.md) y contrastarlo con `main` en cada sesión. Las propuestas antiguas del manual maestro web del 10/10/2026 pueden haber quedado superadas.
+
+### Postres: ingrediente o preparación
+
+El exportador consulta `<Día> · Postre` y `<Día> · Postre preparación` como alternativas excluyentes. Solo acepta `Estado postre = Calculado` (o `Sin postre` con ambos vínculos vacíos). Rechaza errores, vínculos múltiples, cantidades/raciones inválidas y preparaciones pendientes antes de escribir ningún menú.
+
+- Ingrediente: `tipo: "ingrediente"`, `cantidad`, `unidad` (`g`/`ml`); los rollups por 100 g/ml se escalan a la cantidad registrada.
+- Preparación: `tipo: "preparacion"`, `referencia_id`, `nombre`, `raciones`, `estado: "Calculado"` y `nutricion` por las raciones consumidas. `slug` es opcional y se exporta solo si el enlace de Airtable corresponde a una receta publicada.
+- Ausencia de postre: `null`. No se crean ingestas ni valores ficticios.
+
+El día completo muestra las raciones y el enlace de la preparación publicada; el resumen compacto conserva nombre y flecha independiente. Batch cooking incluye también los postres con etiqueta funcional y sus dependencias, sin duplicados por ingesta. Los totales diarios y semanales se conservan directamente de las fórmulas oficiales de Airtable, incluso en menús parciales; las sumas del validador solo comprueban coherencia y nunca los sustituyen. Esta actualización del contrato no modifica los menús existentes ni ejecuta una exportación automática.
