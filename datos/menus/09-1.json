@@ -23,14 +23,114 @@
         "estado": "pendiente"
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "recVZdbSDQMWENSZZ",
+        "nombre": "Tortilla de patata con ensalada de tomate y cebolla",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 598.6447028437067,
+          "proteinas_g": 23.825,
+          "hidratos_g": 50.14,
+          "grasas_g": 34.204985
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Tortilla de patata con cebolla",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "rec3CyEViklcEN8ZT",
+                  "tipo": "preparacion",
+                  "referencia_id": "recSXvtjlxhcr6r2L",
+                  "nombre": "Tortilla de patata y cebolla",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "nutricion": {
+                    "kcal": 513.0525667700929,
+                    "proteinas_g": 21.6875,
+                    "hidratos_g": 41.55,
+                    "grasas_g": 29.424985
+                  },
+                  "slug": "tortilla-de-patata-tradicional-con-cebolla"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Ensalada de tomate y cebolla",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recxkbRDTiq3tpB0u",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recjq8IrRWXTVjRKg",
+                  "nombre": "Tomate crudo",
+                  "cantidad": 200,
+                  "unidad": "g",
+                  "nutricion": {
+                    "kcal": 37.523900573613766,
+                    "proteinas_g": 1.8,
+                    "hidratos_g": 7,
+                    "grasas_g": 0.2
+                  }
+                },
+                {
+                  "id": "recOCfv1Wm3n0P7Sf",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recrGNY88zOIOcRom",
+                  "nombre": "Cebolla fresca (cruda)",
+                  "cantidad": 30,
+                  "unidad": "g",
+                  "nutricion": {
+                    "kcal": 7.83162,
+                    "proteinas_g": 0.3375,
+                    "hidratos_g": 1.59,
+                    "grasas_g": 0.03
+                  }
+                },
+                {
+                  "id": "recrP6ODU0dQShqtq",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 5,
+                  "unidad": "ml",
+                  "nutricion": {
+                    "kcal": 40.2366155,
+                    "proteinas_g": 0,
+                    "hidratos_g": 0,
+                    "grasas_g": 4.55
+                  }
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
-      "postre": null,
+      "postre": {
+        "componentes": [
+          {
+            "tipo": "ingrediente",
+            "referencia_id": "rec8Qjo12MyyUQ3Rc",
+            "nombre": "Melón crudo (parte comestible)",
+            "cantidad": 200,
+            "unidad": "g",
+            "nutricion": {
+              "kcal": 53.63288718929254,
+              "proteinas_g": 1.2,
+              "hidratos_g": 12.0,
+              "grasas_g": 0.28
+            }
+          }
+        ]
+      },
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 699.7845700329992,
+        "proteinas_g": 28.357,
+        "hidratos_g": 66.878,
+        "grasas_g": 36.138985000000005
       }
     },
     "Martes": {
@@ -81,12 +181,28 @@
       "cena": {
         "estado": "pendiente"
       },
-      "postre": null,
+      "postre": {
+        "componentes": [
+          {
+            "tipo": "ingrediente",
+            "referencia_id": "rec8Qjo12MyyUQ3Rc",
+            "nombre": "Melón crudo (parte comestible)",
+            "cantidad": 200,
+            "unidad": "g",
+            "nutricion": {
+              "kcal": 53.63288718929254,
+              "proteinas_g": 1.2,
+              "hidratos_g": 12.0,
+              "grasas_g": 0.28
+            }
+          }
+        ]
+      },
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 101.13986718929254,
+        "proteinas_g": 4.532,
+        "hidratos_g": 16.738,
+        "grasas_g": 1.934
       }
     },
     "Jueves": {
@@ -132,24 +248,115 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recxT1MP6Re9ncAwZ",
+        "nombre": "Gazpacho, pollo al limón y patatas gajo",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 645.4862093421606,
+          "proteinas_g": 34.93718749999999,
+          "hidratos_g": 41.933499999999995,
+          "grasas_g": 37.314350000000005
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "plato-1",
+              "nombre": "Gazpacho",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recJUK6FRra5x2QfY",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recNBV9PEVdfiMCza",
+                  "nombre": "Gazpacho fresco DIA Al Punto refrigerado",
+                  "cantidad": 330,
+                  "unidad": "ml",
+                  "nutricion": {
+                    "kcal": 207.9,
+                    "proteinas_g": 3.3,
+                    "hidratos_g": 9.9,
+                    "grasas_g": 17.820000000000004
+                  }
+                }
+              ]
+            },
+            {
+              "id": "plato-2",
+              "nombre": "Pollo al limón",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recGppeo2B7WG5ub7",
+                  "tipo": "preparacion",
+                  "referencia_id": "recICiJsEPbILPHQS",
+                  "nombre": "Pollo al limón",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "nutricion": {
+                    "kcal": 212.1798999421606,
+                    "proteinas_g": 27.237187499999997,
+                    "hidratos_g": 1.6335000000000002,
+                    "grasas_g": 9.99435
+                  },
+                  "slug": "pollo-al-limon"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Patatas gajo",
+              "orden": 3,
+              "elementos": [
+                {
+                  "id": "recbajABowKNK72n4",
+                  "tipo": "ingrediente",
+                  "referencia_id": "recSE81b9WjkURbXi",
+                  "nombre": "Patata, cruda (parte comestible)",
+                  "cantidad": 200,
+                  "unidad": "g",
+                  "nutricion": {
+                    "kcal": 144.9330784,
+                    "proteinas_g": 4.4,
+                    "hidratos_g": 30.4,
+                    "grasas_g": 0.4
+                  }
+                },
+                {
+                  "id": "recLQZpQvr6J8DE1c",
+                  "tipo": "ingrediente",
+                  "referencia_id": "rec4QWbZX5KJIhQyW",
+                  "nombre": "Aceite de oliva virgen extra",
+                  "cantidad": 10,
+                  "unidad": "ml",
+                  "nutricion": {
+                    "kcal": 80.473231,
+                    "proteinas_g": 0,
+                    "hidratos_g": 0,
+                    "grasas_g": 9.1
+                  }
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
         "estado": "libre"
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 692.9931893421606,
+        "proteinas_g": 38.269187499999994,
+        "hidratos_g": 46.671499999999995,
+        "grasas_g": 38.96835
       }
     }
   },
   "nutricion_semana": {
-    "kcal": 237.5349,
-    "proteinas_g": 16.66,
-    "hidratos_g": 23.69,
-    "grasas_g": 8.27
+    "kcal": 1588.9315865644523,
+    "proteinas_g": 77.8221875,
+    "hidratos_g": 139.7635,
+    "grasas_g": 80.34933500000001
   }
 }
