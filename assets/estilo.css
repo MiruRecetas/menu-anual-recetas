@@ -8,11 +8,11 @@
 .weekly-bars-svg{display:block;width:100%;max-height:365px;overflow:visible}
 .weekly-bars-svg text{font-family:"Geist",system-ui,sans-serif;fill:var(--muted);font-size:12px}
 .weekly-bars-svg .chart-day-label{font-size:14px;font-weight:600;fill:var(--ink)}
-.weekly-bars-svg .chart-bar-value{font-size:12px;font-weight:500;fill:var(--ink)}
+.weekly-bars-svg .chart-bar-value{font-weight:600;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:1.2px;stroke-linejoin:round}
+.weekly-bar-reference{fill:#e4ded8}
+.weekly-bars-svg .chart-reference-value{stroke:#e4ded8}
 .chart-baseline{stroke:var(--line);stroke-width:1}
 .chart-goal{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 4;vector-effect:non-scaling-stroke}
-.chart-goal-label-bg{fill:var(--bg)}
-.weekly-bars-svg .chart-goal-label{font-size:11px}
 .chart-macro-protein{fill:var(--macro-protein)}
 .chart-macro-carbs{fill:var(--macro-carbs)}
 .chart-macro-fat{fill:var(--macro-fat)}
@@ -538,3 +538,13 @@ button[hidden]{display:none!important}
 .daily-page-main .group-entries{padding:13px 0 0 14px;display:flex;flex-direction:column;gap:10px}
 .daily-page-main .group-entries .component-name{font-size:.9rem;color:var(--muted)}
 @media(max-width:540px){.daily-page-main .daily-meal{padding:18px 18px;gap:14px;grid-template-columns:30px minmax(0,1fr)}.daily-page-main .daily-meal-title{font-size:.95rem;padding-right:10px}.daily-page-main .component-name{font-size:1rem}.daily-page-main .component-amount{font-size:.82rem}.daily-page-main .component-nutrition{gap:3px 8px;font-size:.72rem}}
+
+/* Cena libre: banda salvia exclusiva de las fichas diarias. */
+.daily-page-main .daily-meal.daily-meal-free{min-height:116px}
+.daily-page-main .free-night-band,#quick-content .quick-meal-free .free-night-band{background:var(--sage);border-radius:12px;padding:14px 16px;color:var(--green)}
+.daily-page-main .free-night-title{display:flex;align-items:center;gap:10px;font-size:1.05rem;line-height:1.35}
+.daily-page-main .free-night-title svg{width:23px;height:23px;flex:0 0 23px;stroke:var(--green);stroke-width:1.8}
+.daily-page-main .free-night-note{margin:5px 0 0 33px;font-size:.78rem;line-height:1.4;color:var(--muted)}
+#quick-content .quick-meal-free .free-night-band{margin-left:30px;padding:9px 12px}
+#quick-content .quick-meal-free .quick-meal-name{font-style:normal;font-weight:600}
+@media(max-width:540px){.daily-page-main .daily-meal.daily-meal-free{min-height:110px}.daily-page-main .free-night-band{padding:12px}.daily-page-main .free-night-title{font-size:1rem}.daily-page-main .free-night-note{font-size:.74rem}}

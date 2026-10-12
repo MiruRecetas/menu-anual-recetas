@@ -181,9 +181,9 @@ const assert = require('node:assert/strict');
     const chartValues=await charts.evaluate(container=>{
       const source=JSON.parse(document.querySelector('#site-data').textContent).menus.find(m=>m.mes===10&&m.menu===1);
       const bars=[...container.querySelectorAll('.weekly-bar')].map(g=>({
-        kcal:Number(g.dataset.kcal),heights:[...g.querySelectorAll('rect')].map(r=>Number(r.getAttribute('height'))),
-        values:[...g.querySelectorAll('rect')].map(r=>Number(r.dataset.kcal)),
-        colors:[...g.querySelectorAll('rect')].map(r=>getComputedStyle(r).fill)
+        kcal:Number(g.dataset.kcal),heights:[...g.querySelectorAll('.weekly-bar-segment')].map(r=>Number(r.getAttribute('height'))),
+        values:[...g.querySelectorAll('.weekly-bar-segment')].map(r=>Number(r.dataset.kcal)),
+        colors:[...g.querySelectorAll('.weekly-bar-segment')].map(r=>getComputedStyle(r).fill)
       }));
       const goal=container.querySelector('.chart-goal');
       return {bars,expected:Object.values(source.dias).map(d=>d.nutricion.kcal),
@@ -196,6 +196,20 @@ const assert = require('node:assert/strict');
       assert.ok(Math.abs(b.values.reduce((a,v)=>a+v,0)-b.kcal)<1e-7,'Apilado suma kcal oficiales');
       assert.deepEqual(b.colors,['rgb(116, 141, 118)','rgb(184, 111, 84)','rgb(208, 163, 110)'],'Colores renderizados de macros');
     }
+    const references=await charts.locator('.weekly-bar-reference').evaluateAll(nodes=>nodes.map(n=>({day:n.parentNode.dataset.day,kcal:Number(n.dataset.remainingKcal),color:getComputedStyle(n).fill,title:n.querySelector('title').textContent})));
+    assert.equal(references.length,1,'Solo viernes con tramo de referencia');
+    assert.equal(references[0].day,'Viernes');
+    assert.ok(Math.abs(references[0].kcal-(1600-chartValues.expected[4]))<1e-7,'Diferencia hasta 1600');
+    assert.equal(references[0].color,'rgb(228, 222, 216)','Gris de pista diaria');
+    assert.match(references[0].title,/kcal restantes hasta la referencia de 1.600 kcal/);
+    assert.equal(await charts.locator('.chart-goal-label,.chart-goal-label-bg').count(),0,'Referencia sin etiqueta ni fondo');
+    const labels=await charts.locator('.weekly-bar').evaluateAll(bars=>bars.map(g=>{
+      const real=[...g.querySelectorAll('.weekly-bar-segment')],gray=g.querySelector('.weekly-bar-reference');
+      const box=nodes=>({left:Math.min(...nodes.map(n=>n.getBBox().x)),right:Math.max(...nodes.map(n=>n.getBBox().x+n.getBBox().width)),top:Math.min(...nodes.map(n=>n.getBBox().y)),bottom:Math.max(...nodes.map(n=>n.getBBox().y+n.getBBox().height))});
+      return [...g.querySelectorAll('.chart-bar-value')].map(t=>{const r=t.getBBox(),b=box(t.classList.contains('chart-reference-value')?[gray]:real);return r.x>=b.left-1&&r.x+r.width<=b.right+1&&r.y>=b.top-1&&r.y+r.height<=b.bottom+1});
+    }));
+    assert.ok(labels.every(items=>items.every(Boolean)),'Cifras dentro de sus tramos, sin desbordar');
+    assert.deepEqual(labels.map(x=>x.length),[1,1,1,1,2],'Sin duplicar etiquetas encima');
     assert.equal(chartValues.goal.value,'1600');
     assert.notEqual(chartValues.goal.dash,'none','Objetivo discontinuo');
     assert.equal(chartValues.goal.width,'1px','Línea fina');
@@ -435,6 +449,8 @@ const assert = require('node:assert/strict');
     await page.getByRole('button',{name:'Ver resumen de Viernes'}).click();
     assert.equal(await page.locator('#quick-content .quick-meal').count(),3,'Viernes sin postre');
     assert.deepEqual(await page.locator('#quick-content .quick-meal').last().locator('.quick-meal-name').allInnerTexts(),['Noche libre'],'Cena libre');
+    assert.equal(await page.locator('#quick-content .quick-meal-free .free-night-band').evaluate(n=>getComputedStyle(n).backgroundColor),'rgb(229, 235, 225)','Banda salvia compacta');
+    await page.screenshot({path:out+'/noche-libre-compacta-'+test.name+'.png'});
     assert.deepEqual(await page.locator('#quick-content a.quick-group-recipe').evaluateAll(els=>els.map(el=>new URL(el.href).pathname)),[
       '/recetas/wok-de-gambones-y-pisto/'
     ],'Viernes: wok enlazado');
@@ -575,6 +591,37 @@ const assert = require('node:assert/strict');
       assert.ok(recipeColors.ring.includes(color),'Anillo de receta usa el color '+color);
 
 
+    await page.close();
+  }
+
+  // Cena libre: tratamiento exclusivo de las vistas diarias y referencia sin negativos.
+  for(const width of [390,820,1440]){
+    const page=await browser.newPage({viewport:{width,height:950}});
+    page.on('pageerror',e=>issues.push('noche libre: '+e.message));
+    await page.goto('http://127.0.0.1:8765/menus/10-1/viernes/');
+    const free=page.locator('.daily-meal-free');
+    await free.locator('svg.lucide-moon-star').waitFor();
+    assert.equal(await free.locator('.daily-meal-title > span').innerText(),'Cena');
+    assert.equal(await free.locator('.free-night-title').innerText(),'Noche libre');
+    assert.equal(await free.locator('.free-night-note').innerText(),'Sin planificación nutricional');
+    assert.equal(await free.locator('.daily-meal-kcal,.component-nutrition,.component-amount').count(),0,'Cena libre sin valores inventados');
+    assert.equal(await free.locator('.free-night-band').evaluate(n=>getComputedStyle(n).backgroundColor),'rgb(229, 235, 225)');
+    const heights=await page.locator('.daily-meal').evaluateAll(nodes=>nodes.map(n=>({free:n.classList.contains('daily-meal-free'),height:n.getBoundingClientRect().height})));
+    assert.ok(heights.find(n=>n.free).height<heights.find(n=>!n.free).height,'Cena libre más baja');
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Cena libre sin desbordamiento');
+    await page.screenshot({path:out+'/noche-libre-ampliada-'+width+'.png',fullPage:true});
+    await page.goto('http://127.0.0.1:8765/');
+    await page.locator('#weekly-charts .weekly-bar').first().waitFor();
+    const checks=await page.evaluate(()=>{
+      const container=document.querySelector('#weekly-charts');
+      const source=JSON.parse(document.querySelector('#site-data').textContent).menus.find(m=>m.mes===10&&m.menu===1);
+      return [1600,1800].map(kcal=>{
+        const variant=structuredClone(source);variant.dias.Viernes.nutricion.kcal=kcal;
+        const data=MiruWeeklyCharts.model(variant,[]);MiruWeeklyCharts.render(container,data);
+        return {gray:container.querySelectorAll('.weekly-bar-reference').length,real:Number(container.querySelector('[data-day="Viernes"]').dataset.kcal)};
+      });
+    });
+    assert.deepEqual(checks,[{gray:0,real:1600},{gray:0,real:1800}],'Viernes de 1600 o más sin tramo gris');
     await page.close();
   }
 

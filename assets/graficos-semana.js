@@ -43,6 +43,7 @@
     }
    }
    return {day,letter:['L','M','X','J','V'][i],kcal,
+    remaining:day==='Viernes'&&d.cena?.estado==='libre'?Math.max(0,1600-kcal):0,
     segments:MACROS.map((m,j)=>({...m,share:total?energy[j]/total:0,kcal:total?kcal*energy[j]/total:0}))};
   });
   const entries=(values,labels)=>Object.entries(values).filter(([,v])=>v>0).map(([key,kcal])=>({key,label:labels[key],kcal}));
@@ -77,7 +78,8 @@
   const limit=Math.ceil((peak+step*.2)/step)*step;
   const plot={x:52,y:25,w:420,h:286},bottom=plot.y+plot.h;
   const y=value=>bottom-plot.h*value/limit;
-  const svg=makeSvg('0 0 490 353','Kcal diarias de lunes a viernes. Objetivo: 1600 kcal. '+data.bars.map(b=>b.day+': '+fmt(b.kcal)+' kcal').join('; '));
+  const remainingText=bar=>bar.remaining?'; '+fmt(bar.remaining)+' kcal restantes hasta la referencia de 1.600 kcal':'';
+  const svg=makeSvg('0 0 490 353','Kcal diarias registradas de lunes a viernes. Referencia: 1600 kcal. '+data.bars.map(b=>b.day+': '+fmt(b.kcal)+' kcal registradas'+remainingText(b)).join('; '));
   svg.classList.add('weekly-bars-svg');
   const label=(text,x,yy,attrs={})=>{const t=svgNode('text',{x,y:yy,...attrs});t.textContent=text;svg.append(t)};
   label('kcal',plot.x-8,12,{'text-anchor':'end',class:'chart-axis-label'});
@@ -96,15 +98,26 @@
    }
    // Con macros nulos, conservar las kcal conocidas sin atribuirles un macro.
    if(bar.kcal>0&&!start){g.append(svgNode('rect',{x:x-w/2,y:y(bar.kcal),width:w,height:plot.h*bar.kcal/limit,class:'chart-unclassified'}))}
-   title(g,bar.day+': '+fmt(bar.kcal)+' kcal');svg.append(g);
-   label(fmt(bar.kcal),x,y(bar.kcal)-8,{'text-anchor':'middle',class:'chart-bar-value'});
+   if(bar.remaining){
+    const rect=svgNode('rect',{x:x-w/2,y:y(bar.kcal+bar.remaining),width:w,height:plot.h*bar.remaining/limit,
+     class:'weekly-bar-reference','data-remaining-kcal':bar.remaining});
+    title(rect,fmt(bar.remaining)+' kcal restantes hasta la referencia de 1.600 kcal');g.append(rect);
+   }
+   title(g,bar.day+': '+fmt(bar.kcal)+' kcal registradas'+remainingText(bar));svg.append(g);
+   const insideLabel=(value,top,height,cls,description)=>{
+    if(height<=0)return;
+    const text=svgNode('text',{x,y:top+Math.min(21,height*.7),'text-anchor':'middle',class:cls,
+     'font-size':Math.min(16,height*.65),'aria-label':description});
+    text.style.fontSize=Math.min(16,height*.65)+'px';
+    text.textContent=fmt(value);title(text,description);g.append(text);
+   };
+   insideLabel(bar.kcal,y(bar.kcal),plot.h*bar.kcal/limit,'chart-bar-value',fmt(bar.kcal)+' kcal registradas');
+   if(bar.remaining)insideLabel(bar.remaining,y(bar.kcal+bar.remaining),plot.h*bar.remaining/limit,
+    'chart-bar-value chart-reference-value',fmt(bar.remaining)+' kcal restantes hasta la referencia de 1.600 kcal');
    label(bar.letter,x,bottom+25,{'text-anchor':'middle',class:'chart-day-label'});
   });
   const goal=svgNode('line',{x1:plot.x,y1:y(1600),x2:plot.x+plot.w,y2:y(1600),class:'chart-goal','data-kcal':1600});
   svg.append(goal);
-  // Etiqueta con superficie de fondo para que la línea no dificulte la lectura.
-  svg.append(svgNode('rect',{x:plot.x+plot.w-71,y:y(1600)-21,width:74,height:17,class:'chart-goal-label-bg'}));
-  label('1600 kcal',plot.x+plot.w,y(1600)-9,{'text-anchor':'end',class:'chart-goal-label'});
   left.append(svg);
   const macroLegend=node('ul',undefined,'chart-legend chart-macro-legend');
   for(const m of MACROS)macroLegend.append(legendItem(m.label,'','var(--macro-'+m.kind+')'));

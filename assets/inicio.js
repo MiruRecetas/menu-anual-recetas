@@ -105,7 +105,7 @@ function summary(kind,meal,day){
    namesContainer.append(node);
   }
  }
- if(meal?.estado==='libre')box.classList.add('quick-meal-free');
+ if(kind==='Cena'&&meal?.estado==='libre'){box.classList.add('quick-meal-free');namesContainer.classList.add('free-night-band')}
  box.append(heading,namesContainer);return box;
 }
 function dismiss(){modal.hidden=true;document.body.classList.remove('modal-open');origin?.focus()}
