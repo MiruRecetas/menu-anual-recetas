@@ -12,8 +12,12 @@ import sys
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from agrupar_componentes import agrupar_comida
-from validar_menus import validate_menu, DAYS, MACROS
+if __package__:
+    from .agrupar_componentes import agrupar_comida
+    from .validar_menus import validate_menu, DAYS, MACROS
+else:
+    from agrupar_componentes import agrupar_comida
+    from validar_menus import validate_menu, DAYS, MACROS
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "apprzwAwMVhkn3oHh"
@@ -74,6 +78,43 @@ def ingredient(ref,ingredients,quantity,unit,official):
     row=ingredients[ref]
     return {"tipo":"ingrediente","referencia_id":ref,"nombre":row["Nombre"],
             "cantidad":quantity,"unidad":unit,"nutricion":official}
+
+def dessert(menu, day, ingredients, preps, slugs):
+    """Exporta un único postre validado; los rollups son bases, no porciones."""
+    ir = single_link(menu, day+" · Postre", True)
+    pr = single_link(menu, day+" · Postre preparación", True)
+    state = value(menu.get(day+" · Estado postre"))
+    if ir and pr:
+        error("Doble postre: "+day)
+    if not ir and not pr:
+        if state != "Sin postre" or any(menu.get(day+" · Postre "+field) for field in ("cantidad", "unidad", "raciones")):
+            error("Estado de postre inválido: "+day)
+        return None
+    if state != "Calculado":
+        error("Postre no calculado: "+day)
+    if pr:
+        source = preps[pr]
+        if value(source.get("Estado cálculo")) != "Calculado":
+            error("Preparación de postre no calculada: "+day)
+        servings = numeric(menu.get(day+" · Postre raciones"), day)
+        if servings <= 0 or menu.get(day+" · Postre cantidad") or menu.get(day+" · Postre unidad"):
+            error("Raciones o campos de postre preparación inválidos: "+day)
+        per_serving = macros(source, ("Kcal/ración", "Proteínas/ración", "Hidratos/ración", "Grasas/ración"), pr)
+        post = {"tipo":"preparacion", "referencia_id":pr, "nombre":source["Nombre"],
+                "raciones":servings, "estado":"Calculado",
+                "nutricion":{k:v*servings for k,v in per_serving.items()}}
+        match = re.search(r"/recetas/([a-z0-9-]+)/?(?:$|[?#])", source.get("Enlace receta") or "")
+        if match and match.group(1) in slugs:
+            post["slug"] = match.group(1)
+        return post
+    quantity = numeric(menu.get(day+" · Postre cantidad"), day)
+    unit = value(menu.get(day+" · Postre unidad"))
+    if quantity <= 0 or unit not in ("g", "ml") or menu.get(day+" · Postre raciones"):
+        error("Cantidad o unidad de postre ingrediente inválida: "+day)
+    if value(ingredients[ir].get("Base nutricional")) != "100 "+unit:
+        error("Base nutricional de postre incompatible: "+day)
+    base = macros(menu, tuple("TEC "+day+" Postre "+k for k in FIELD_MACROS), day)
+    return ingredient(ir, ingredients, quantity, unit, {k:v*quantity/100 for k,v in base.items()})
 
 def meal(ref,comidas,elementos,ingredientes,preps,slugs):
     row=comidas[ref]
@@ -141,29 +182,15 @@ def main():
             dinner=({"estado":"libre"} if day=="Viernes" else
                     meal(dinner_ref,tables["comidas"],tables["elementos"],tables["ingredientes"],tables["preparaciones"],existing)
                     if dinner_ref else {"estado":"pendiente"})
-            postref=single_link(m,day+" · Postre",True)
-            post=None
-            if postref:
-                quantity=numeric(m.get(day+" · Postre cantidad"),day)
-                unit=value(m.get(day+" · Postre unidad"))
-                if not isinstance(unit,str) or not unit:error("Unidad de postre inválida: "+day)
-                post=ingredient(postref,tables["ingredientes"],quantity,unit,
-                                macros(m,tuple("TEC "+day+" Postre "+k for k in FIELD_MACROS),day))
-            components=[breakfast["nutricion"]]
-            for entry in (lunch,dinner):
-                if entry.get("estado")=="Calculado": components.append(entry["nutricion"])
-            if post: components.append(post["nutricion"])
-            calculated={key:sum(item[key] for item in components) for key in KEY_MACROS}
+            post=dessert(m,day,tables["ingredientes"],tables["preparaciones"],existing)
+            # Se conservan las fórmulas oficiales también en los menús parciales.
             days[day]={"desayuno":breakfast,"comida":lunch,"cena":dinner,"postre":post,
-                       "nutricion":calculated}
+                       "nutricion":macros(m,tuple(day+" · "+k+" totales" for k in FIELD_MACROS),day)}
         complete=all(days[d][k].get("estado")!="pendiente"
                      for d in DAYS for k in ("comida","cena"))
-        if complete and m.get("Estado menú")=="Calculado":
-            daily={d:macros(m,tuple(d+" · "+k+" totales" for k in FIELD_MACROS),d) for d in DAYS}
-            for d in DAYS: days[d]["nutricion"]=daily[d]
-            weekly=macros(m,("Menú · Kcal","Menú · Proteínas","Menú · Hidratos","Menú · Grasas"),mid)
-        else:
-            weekly={key:sum(days[d]["nutricion"][key] for d in DAYS) for key in KEY_MACROS}
+        if complete and m.get("Estado menú") != "Calculado":
+            error("Menú completo sin estado calculado: "+mid)
+        weekly=macros(m,("Menú · Kcal","Menú · Proteínas","Menú · Hidratos","Menú · Grasas"),mid)
         week={"schema_version":2,"mes":month,"menu":number,"airtable_menu_id":mid,
               "estado":"Calculado" if complete else "Pendiente","dias":days,
               "nutricion_semana":weekly}

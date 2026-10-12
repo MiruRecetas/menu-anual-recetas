@@ -575,6 +575,72 @@ const assert = require('node:assert/strict');
     await page.close();
   }
 
+  // Contrato nuevo probado sobre respuestas aisladas: ningún menú real se edita.
+  for(const width of [1440,390]){
+    for(const variant of [{raciones:1,linked:true},{raciones:0.5,linked:true},{raciones:2,linked:false},null]){
+      const page=await browser.newPage({viewport:{width,height:900}});
+      page.on('pageerror',e=>issues.push('postres: '+e.message));
+      const makePost=original=>variant?{
+        tipo:'preparacion',referencia_id:'rec-postre-qa',
+        nombre:variant.linked?'Bowl de yogur con miel y granola':'Postre sin ficha pública',
+        raciones:variant.raciones,estado:'Calculado',nutricion:original.nutricion,
+        ...(variant.linked?{slug:'bowl-de-yogur-con-miel-y-granola'}:{})
+      }:null;
+      await page.route('http://127.0.0.1:8765/',async route=>{
+        const response=await route.fetch();let html=await response.text();
+        html=html.replace(/(<script type="application\/json" id="site-data">)([\s\S]*?)(<\/script>)/,(all,a,json,b)=>{
+          const data=JSON.parse(json),menu=data.menus.find(m=>m.mes===10&&m.menu===1);
+          menu.dias.Lunes.postre=makePost(menu.dias.Lunes.postre);
+          for(const day of Object.values(menu.dias)){
+            for(const kind of ['comida','cena']){
+              const pres=day[kind].presentacion;
+              if(!pres)continue;
+              pres.grupos=pres.grupos.filter(g=>!g.elementos.some(e=>e.slug==='bowl-de-yogur-con-miel-y-granola'));
+              pres.elementos_sin_grupo=pres.elementos_sin_grupo.filter(e=>e.slug!=='bowl-de-yogur-con-miel-y-granola');
+            }
+          }
+          // La marca de Batch cooking solo se altera dentro de la prueba.
+          data.preparaciones.find(p=>p.slug==='bowl-de-yogur-con-miel-y-granola').batchcooking=true;
+          return a+JSON.stringify(data).replace(/</g,'\\u003c')+b;
+        });
+        await route.fulfill({response,body:html});
+      });
+      await page.goto('http://127.0.0.1:8765/');
+      await page.locator('#month').selectOption('10');await page.locator('#menu-number').selectOption('1');
+      const monday=page.locator('#week .day-button').first();
+      assert.equal(await monday.locator('.week-meal-slot-postre').count(),variant?1:0,'Postre opcional en semana');
+      if(variant)assert.ok((await monday.innerText()).includes(variant.linked?'Bowl de yogur':'Postre sin ficha pública'));
+      const batchDessert=page.locator('#batch a[href$="/recetas/bowl-de-yogur-con-miel-y-granola/"]');
+      assert.equal(await batchDessert.count(),variant?.linked?1:0,'Batch cooking incluye una vez el postre publicado y etiquetado');
+      await monday.click();
+      const post=page.locator('#quick-content .quick-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
+      assert.equal(await post.count(),variant?1:0,'Postre opcional en ficha compacta');
+      if(variant){
+        assert.equal(await post.locator('a').count(),variant.linked?1:0,'Solo recetas publicadas enlazadas');
+        assert.equal(await post.locator('details').count(),0,'Compacta sin desplegable');
+        if(variant.linked)assert.match(await post.locator('a').getAttribute('href'),/recetas\/bowl-de-yogur-con-miel-y-granola\/$/);
+      }
+      await page.route('http://127.0.0.1:8765/menus/10-1/lunes/',async route=>{
+        const response=await route.fetch();let html=await response.text();
+        html=html.replace(/(<script type="application\/json" id="daily-data">)([\s\S]*?)(<\/script>)/,(all,a,json,b)=>{
+          const data=JSON.parse(json);data.dia.postre=makePost(data.dia.postre);
+          return a+JSON.stringify(data).replace(/</g,'\\u003c')+b;
+        });
+        await route.fulfill({response,body:html});
+      });
+      await page.goto('http://127.0.0.1:8765/menus/10-1/lunes/');
+      const daily=page.locator('.daily-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
+      assert.equal(await daily.count(),variant?1:0,'Postre opcional en día completo');
+      if(variant){
+        assert.equal(await daily.locator('a').count(),variant.linked?1:0,'Enlace de postre en ampliada');
+        assert.equal(await daily.locator('.ingredient-line strong').innerText(),
+          (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
+        assert.ok(!(await daily.innerText()).includes('NaN'),'Raciones válidas sin cantidad de ingrediente');
+      }
+      await page.close();
+    }
+  }
+
   // Gestos táctiles reales en Chromium: límites, todos los días, scroll vertical
   // y compatibilidad con controles de ingredientes y navegación de teclado.
   const context=await browser.newContext({

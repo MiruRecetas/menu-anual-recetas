@@ -38,6 +38,25 @@ class MenuV2(unittest.TestCase):
         with self.assertRaises(ValueError):validate_menu(m,"10-1.json",{"receta-real"})
     def test_sin_postre_es_valido(self):
         validate_menu(fixture(),"10-1.json",{"receta-real"})
+    def test_postre_preparacion_y_fracciones(self):
+        for servings in (0.5, 1, 2):
+            for linked in (True, False):
+                m=fixture()
+                post={"tipo":"preparacion","referencia_id":"rec-postre","nombre":"Postre",
+                      "raciones":servings,"nutricion":copy.deepcopy(N)}
+                if linked:post["slug"]="receta-real"
+                m["dias"]["Lunes"]["postre"]=post
+                for k,v in N.items():
+                    m["dias"]["Lunes"]["nutricion"][k]+=v
+                    m["nutricion_semana"][k]+=v
+                validate_menu(m,"10-1.json",{"receta-real"})
+                for field,bad in (("raciones",0),("raciones",-1),("raciones",float("inf")),
+                                  ("raciones",True),("cantidad",1),("unidad","g"),
+                                  ("estado","Error: doble postre"),("slug","no-existe")):
+                    broken=copy.deepcopy(m)
+                    broken["dias"]["Lunes"]["postre"][field]=bad
+                    with self.assertRaises(ValueError):validate_menu(broken,"10-1.json",{"receta-real"})
+
     def test_sin_ficha_se_conserva_sin_enlace(self):
         m=fixture()
         for day in DAYS:

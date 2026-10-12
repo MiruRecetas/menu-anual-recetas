@@ -70,7 +70,18 @@ function summary(kind,meal,day){
  symbol.setAttribute('aria-hidden','true');
  heading.append(symbol,el('span',kind));
  const namesContainer=el('div',undefined,'quick-meal-names');
- if(meal?.presentacion?.grupos?.length){
+ if(kind==='Postre'&&meal?.tipo==='preparacion'){
+  const line=el('div',undefined,'quick-group');
+  line.append(el('span',meal.nombre,'quick-meal-name'));
+  const recipe=recipes.find(r=>r.slug===meal.slug);
+  if(recipe){
+   const link=el('a','↗','quick-group-recipe');
+   link.href=site+'/recetas/'+encodeURIComponent(recipe.slug)+'/';
+   link.setAttribute('aria-label','Abrir receta: '+recipe.nombre);
+   line.append(link);
+  }
+  namesContainer.append(line);
+ }else if(meal?.presentacion?.grupos?.length){
   for(const g of [...meal.presentacion.grupos].sort((a,b)=>a.orden-b.orden))namesContainer.append(displayGroup(g));
   for(const item of meal.presentacion.elementos_sin_grupo||[]){
    const line=el('span',ingredientName(item),'quick-meal-name');namesContainer.append(line);
@@ -237,10 +248,12 @@ function traverse(slug,visited){
  for(const dependency of prep.dependencias||[])traverse(dependency,visited)
 }
 for(const day of days){
- for(const kind of ['comida','cena']){
+ for(const kind of ['comida','cena','postre']){
   const meal=m.dias[day][kind];
-  if(!meal?.presentacion)continue;
+  if(!meal)continue;
   const inMeal=new Set();
+  if(meal.tipo==='preparacion'&&meal.slug)traverse(meal.slug,inMeal);
+  if(!meal.presentacion)continue;
   for(const group of meal.presentacion.grupos)
    for(const item of group.elementos)
     if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);

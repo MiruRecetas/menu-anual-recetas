@@ -47,8 +47,22 @@ def check_meal(m, slugs):
 
 def check_simple(x):
     ensure(isinstance(x, dict) and x.get("tipo") == "ingrediente" and bool(x.get("nombre")), "ingesta simple inválida")
-    ensure(type(x.get("cantidad")) in (int, float) and x["cantidad"] > 0 and bool(x.get("unidad")), "ingesta sin cantidad")
+    ensure(type(x.get("cantidad")) in (int, float) and math.isfinite(x["cantidad"]) and x["cantidad"] > 0 and x.get("unidad") in ("g", "ml"), "ingesta sin cantidad")
     check_macros(x.get("nutricion"), "ingesta")
+
+def check_dessert(x, slugs):
+    ensure(isinstance(x, dict), "postre inválido")
+    ensure(x.get("estado", "Calculado") == "Calculado", "postre sin calcular")
+    if x.get("tipo") == "ingrediente":
+        check_simple(x)
+        ensure(not x.get("slug") and "raciones" not in x, "postre ingrediente con campos de preparación")
+    else:
+        ensure(x.get("tipo") == "preparacion" and bool(x.get("nombre")) and bool(x.get("referencia_id")), "postre preparación sin identidad")
+        r = x.get("raciones")
+        ensure(type(r) in (int, float) and math.isfinite(r) and r > 0, "raciones de postre inválidas")
+        ensure("cantidad" not in x and "unidad" not in x, "postre preparación con campos de ingrediente")
+        ensure(not x.get("slug") or x["slug"] in slugs, "postre con receta inexistente")
+        check_macros(x.get("nutricion"), "postre")
 
 def validate_menu(m, filename, slugs):
     ensure(isinstance(m, dict) and m.get("schema_version") == 2, "schema_version inválida")
@@ -70,7 +84,7 @@ def validate_menu(m, filename, slugs):
             else:
                 check_meal(entry, slugs)
         if d.get("postre") is not None:
-            check_simple(d["postre"])
+            check_dessert(d["postre"], slugs)
         check_macros(d.get("nutricion"), day)
         ingestas = [d["desayuno"]]
         for kind in ("comida", "cena"):
