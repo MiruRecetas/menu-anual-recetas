@@ -8,6 +8,7 @@ on:
       - 'plantillas/**'
       - 'scripts/**'
       - 'assets/**'
+      - 'presentacion/**'
       - 'imagenes/**'
       - '.github/workflows/publicar-recetas.yml'
   workflow_dispatch:

@@ -75,6 +75,19 @@ class Desserts(unittest.TestCase):
         prep=copy.deepcopy(PREP);prep['Estado cálculo']='Pendiente'
         with self.assertRaises(ValueError):self.export(row('preparacion'),{'prep':prep})
 
+    def test_meal_exports_official_element_contributions(self):
+        meals={'meal':{'Nombre':'Plato','Estado cálculo':'Calculado','COMIDA_ELEMENTOS':['element'],
+                      **dict(zip(('Kcal','Proteínas (g)','Hidratos (g)','Grasas (g)'),N.values()))}}
+        elements={'element':{'Comida':['meal'],'Ingrediente':['ing'],'Cantidad':50,'Unidad':'g',
+                            'TEC_Estado elemento':'Calculado',
+                            **dict(zip(('Kcal aportadas','Proteínas aportadas','Hidratos aportadas','Grasas aportadas'),N.values()))}}
+        before=copy.deepcopy(elements)
+        result=exporter.meal('meal',meals,elements,{'ing':ING},{},set())
+        self.assertEqual(result['presentacion']['elementos_sin_grupo'][0]['nutricion'],N)
+        self.assertEqual(elements,before)
+        elements['element']['TEC_Estado elemento']='Pendiente'
+        with self.assertRaises(ValueError):exporter.meal('meal',meals,elements,{'ing':ING},{},set())
+
     def test_main_preserves_official_partial_totals_and_writes_nothing_on_error(self):
         menu={'Mes':'Octubre','Número':1,
               'Estado menú':'Pendiente: revisar vínculos, desayunos, postres o nutrición'}

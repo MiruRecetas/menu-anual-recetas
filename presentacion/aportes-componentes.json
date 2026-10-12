@@ -1,0 +1,708 @@
+{
+  "schema_version": 1,
+  "origen": "Airtable COMIDA_ELEMENTOS: aportaciones calculadas",
+  "elementos": {
+    "recKct8Feydq5uOWK": {
+      "comida_id": "recA4wTQMp98Nyfg6",
+      "referencia_id": "rec47mxlTu5yQmzJ9",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 650.9157357664435,
+        "proteinas_g": 33.17361,
+        "hidratos_g": 67.25945999999999,
+        "grasas_g": 26.49408
+      }
+    },
+    "recyLPc7QkRfF6gsp": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recSPOXZkbn9PSbHI",
+      "tipo": "ingrediente",
+      "cantidad": 100,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 148.94837476099426,
+        "proteinas_g": 12.5,
+        "hidratos_g": 0.72,
+        "grasas_g": 11.1
+      }
+    },
+    "recQqmLTyqTwTGwrD": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recG7EOA99Wt7MiRC",
+      "tipo": "ingrediente",
+      "cantidad": 20,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 60.8,
+        "proteinas_g": 4.9,
+        "hidratos_g": 0.36,
+        "grasas_g": 4.5
+      }
+    },
+    "recWeMgIERbcSFSpE": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recVfgOdXad3Ns6po",
+      "tipo": "ingrediente",
+      "cantidad": 30,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 29.1,
+        "proteinas_g": 5.7,
+        "hidratos_g": 0.24,
+        "grasas_g": 0.6
+      }
+    },
+    "recpe2UH99hPcrvNk": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "recH15RsuAlLbBfN7": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recjq8IrRWXTVjRKg",
+      "tipo": "ingrediente",
+      "cantidad": 200,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 37.523900573613766,
+        "proteinas_g": 1.8,
+        "hidratos_g": 7,
+        "grasas_g": 0.2
+      }
+    },
+    "recs1ibnJotcKXcjU": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recrGNY88zOIOcRom",
+      "tipo": "ingrediente",
+      "cantidad": 25,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 6.52635,
+        "proteinas_g": 0.28125,
+        "hidratos_g": 1.325,
+        "grasas_g": 0.025
+      }
+    },
+    "recyW9Dr7sRJfqxeg": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "rechpki363tlntx4o": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "recSE81b9WjkURbXi",
+      "tipo": "ingrediente",
+      "cantidad": 200,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 144.9330784,
+        "proteinas_g": 4.4,
+        "hidratos_g": 30.4,
+        "grasas_g": 0.4
+      }
+    },
+    "recx7Oo7jtKrz9Kz5": {
+      "comida_id": "recqmJdXCeO3QbUsf",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 10,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 80.473231,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 9.1
+      }
+    },
+    "recnolncv1Kw50zOy": {
+      "comida_id": "recFLOBo1lFjDbQ3r",
+      "referencia_id": "recdhYBKhV8omXHcm",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 373.27675998,
+        "proteinas_g": 36.03640625,
+        "hidratos_g": 21.6933,
+        "grasas_g": 14.842855
+      }
+    },
+    "recryRbKAkRE7iBf0": {
+      "comida_id": "recYQK9laTI7xwU9j",
+      "referencia_id": "rectQxxBv1ZcQubFf",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 620.7378929440727,
+        "proteinas_g": 43.50875,
+        "hidratos_g": 51.595,
+        "grasas_g": 25.707500000000003
+      }
+    },
+    "rec6ugRoh2KVGd36l": {
+      "comida_id": "recivR1i1qpdWpw6d",
+      "referencia_id": "reca5LPuv0JjonuTN",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 716.1152577664435,
+        "proteinas_g": 42.02361,
+        "hidratos_g": 70.58946,
+        "grasas_g": 28.562736
+      }
+    },
+    "recGSumQSJL0aty8a": {
+      "comida_id": "recCHeKRTpYCHjsT4",
+      "referencia_id": "recRGUe7xVCtmkOhn",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 454.8279151609943,
+        "proteinas_g": 16.9,
+        "hidratos_g": 31.119999999999997,
+        "grasas_g": 29.699999999999996
+      }
+    },
+    "recA2pwtkOx3IZJ4E": {
+      "comida_id": "recCHeKRTpYCHjsT4",
+      "referencia_id": "recsBVowHkPdUR68N",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 323.669191,
+        "proteinas_g": 21.04375,
+        "hidratos_g": 18.308,
+        "grasas_g": 16.0138
+      }
+    },
+    "rectaQmLoSm6D4iTj": {
+      "comida_id": "recJ65PhnlNtAlrsF",
+      "referencia_id": "rec6P29ERo53gCiUE",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 728.5342600568833,
+        "proteinas_g": 49.313075,
+        "hidratos_g": 74.69895,
+        "grasas_g": 23.1465
+      }
+    },
+    "recOImWRvQqUkDNxO": {
+      "comida_id": "rec8G3X3ssg0PEKt6",
+      "referencia_id": "rec1sZvJEs4TKZIKO",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 399.04469341529636,
+        "proteinas_g": 20.907,
+        "hidratos_g": 38.538,
+        "grasas_g": 17.863999999999997
+      }
+    },
+    "recWH2AkGXuQeR6UN": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "recaX3R7koMTr5nrn",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 522.9230838642447,
+        "proteinas_g": 34.64799166666667,
+        "hidratos_g": 10.406933333333333,
+        "grasas_g": 36.163833333333336
+      }
+    },
+    "rec8mnbXKIpQZWvF1": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "recSE81b9WjkURbXi",
+      "tipo": "ingrediente",
+      "cantidad": 200,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 144.9330784,
+        "proteinas_g": 4.4,
+        "hidratos_g": 30.4,
+        "grasas_g": 0.4
+      }
+    },
+    "recfsHI0uGpb2pB9W": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "reckqTHkmhoQ21ZRc": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "recjq8IrRWXTVjRKg",
+      "tipo": "ingrediente",
+      "cantidad": 200,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 37.523900573613766,
+        "proteinas_g": 1.8,
+        "hidratos_g": 7,
+        "grasas_g": 0.2
+      }
+    },
+    "recRUuWNWLmWTz70e": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "recrGNY88zOIOcRom",
+      "tipo": "ingrediente",
+      "cantidad": 25,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 6.52635,
+        "proteinas_g": 0.28125,
+        "hidratos_g": 1.325,
+        "grasas_g": 0.025
+      }
+    },
+    "recJHFp2EjqjXn3FO": {
+      "comida_id": "recisgOzomUjkPYsa",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "rec6knYz4PCFa7u2u": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "recSPOXZkbn9PSbHI",
+      "tipo": "ingrediente",
+      "cantidad": 100,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 148.94837476099426,
+        "proteinas_g": 12.5,
+        "hidratos_g": 0.72,
+        "grasas_g": 11.1
+      }
+    },
+    "recK24uPxhKxTQLLJ": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "recG7EOA99Wt7MiRC",
+      "tipo": "ingrediente",
+      "cantidad": 20,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 60.8,
+        "proteinas_g": 4.9,
+        "hidratos_g": 0.36,
+        "grasas_g": 4.5
+      }
+    },
+    "recW2jZafsKDRaTck": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "recVfgOdXad3Ns6po",
+      "tipo": "ingrediente",
+      "cantidad": 30,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 29.1,
+        "proteinas_g": 5.7,
+        "hidratos_g": 0.24,
+        "grasas_g": 0.6
+      }
+    },
+    "recWUAOKxq42uU4WN": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "recl4uPUsyH8G5eVU": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "recZ6WhTcrZDhRgKI",
+      "tipo": "ingrediente",
+      "cantidad": 36.5,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 98.915,
+        "proteinas_g": 4.015,
+        "hidratos_g": 14.6,
+        "grasas_g": 1.9710000000000003
+      }
+    },
+    "recLUF7XrBrj6nKKn": {
+      "comida_id": "rec8qQq7tWoFYdvGm",
+      "referencia_id": "reccvBMaeXJoSvdSf",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 215.5596557611472,
+        "proteinas_g": 4.4399999999999995,
+        "hidratos_g": 22.308,
+        "grasas_g": 12.919999999999998
+      }
+    },
+    "recWq0zOWPyBJvIEI": {
+      "comida_id": "recUetQb5HaOrXJkj",
+      "referencia_id": "recpHKx8XrOpBd8zW",
+      "tipo": "ingrediente",
+      "cantidad": 130,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 235.14340344168258,
+        "proteinas_g": 23.92,
+        "hidratos_g": 0,
+        "grasas_g": 15.6
+      }
+    },
+    "recRiOfX0rx05Y1CP": {
+      "comida_id": "recUetQb5HaOrXJkj",
+      "referencia_id": "reccZQ0blNFQ0THdM",
+      "tipo": "ingrediente",
+      "cantidad": 125,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 253.75,
+        "proteinas_g": 4.625,
+        "hidratos_g": 51.25,
+        "grasas_g": 3.125
+      }
+    },
+    "recUVmgv678dYPJmE": {
+      "comida_id": "recUetQb5HaOrXJkj",
+      "referencia_id": "recG1UJ6vBcK3NBaE",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 164.34920588224983,
+        "proteinas_g": 5.68875,
+        "hidratos_g": 18.580000000000002,
+        "grasas_g": 7.835833333333334
+      }
+    },
+    "rec54RdqOTeEKC5PU": {
+      "comida_id": "recqHPRCZmS834meh",
+      "referencia_id": "reccvBMaeXJoSvdSf",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 215.5596557611472,
+        "proteinas_g": 4.4399999999999995,
+        "hidratos_g": 22.308,
+        "grasas_g": 12.919999999999998
+      }
+    },
+    "recgamLU5G0iB9YKr": {
+      "comida_id": "recqHPRCZmS834meh",
+      "referencia_id": "rec3wB5bagR1Kf3MX",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 569.1616671889738,
+        "proteinas_g": 22.08916666666666,
+        "hidratos_g": 3.6833333333333336,
+        "grasas_g": 51.4
+      }
+    },
+    "recTFMxMvllWALmdt": {
+      "comida_id": "rectJVzQDp8Joz3q2",
+      "referencia_id": "rec42ABMLlPI87ZUA",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 586.1071010880748,
+        "proteinas_g": 34.73578125,
+        "hidratos_g": 54.43475,
+        "grasas_g": 24.184225
+      }
+    },
+    "recO9SuFO76ROnfnh": {
+      "comida_id": "recj1RnIxnYs8zQ23",
+      "referencia_id": "recFEsGk5Ptwey4i5",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 622.6770989839893,
+        "proteinas_g": 36.4353125,
+        "hidratos_g": 58.1895,
+        "grasas_g": 27.13345
+      }
+    },
+    "rec2esnydy5TXBWU0": {
+      "comida_id": "recLLUICFD1e1Lxcz",
+      "referencia_id": "recRGUe7xVCtmkOhn",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 454.8279151609943,
+        "proteinas_g": 16.9,
+        "hidratos_g": 31.119999999999997,
+        "grasas_g": 29.699999999999996
+      }
+    },
+    "reckqa2gMu0w6oTir": {
+      "comida_id": "recLLUICFD1e1Lxcz",
+      "referencia_id": "recG1UJ6vBcK3NBaE",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 164.34920588224983,
+        "proteinas_g": 5.68875,
+        "hidratos_g": 18.580000000000002,
+        "grasas_g": 7.835833333333334
+      }
+    },
+    "recyHiag9LGj5IsSS": {
+      "comida_id": "recLLUICFD1e1Lxcz",
+      "referencia_id": "recJq3z3foutu1hOx",
+      "tipo": "ingrediente",
+      "cantidad": 20,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 96.38097514340345,
+        "proteinas_g": 5.356,
+        "hidratos_g": 0,
+        "grasas_g": 8.437999999999999
+      }
+    },
+    "rec6yQ4Z2SbrnVuLs": {
+      "comida_id": "rec6pQ1IKkMn3Eqyf",
+      "referencia_id": "rec2zKHAUl6XFjWrX",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 354.6924781414914,
+        "proteinas_g": 53.869375,
+        "hidratos_g": 9.3705,
+        "grasas_g": 10.231300000000001
+      }
+    },
+    "recGGRphM3Lx4otXr": {
+      "comida_id": "rec6pQ1IKkMn3Eqyf",
+      "referencia_id": "recSE81b9WjkURbXi",
+      "tipo": "ingrediente",
+      "cantidad": 200,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 144.9330784,
+        "proteinas_g": 4.4,
+        "hidratos_g": 30.4,
+        "grasas_g": 0.4
+      }
+    },
+    "rec8xgtFTRS7Iz0PK": {
+      "comida_id": "rec6pQ1IKkMn3Eqyf",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "recmU1URfb1OBEL07": {
+      "comida_id": "recnyx5GwQGLPf1pr",
+      "referencia_id": "recJoLfb85Oe5dxXq",
+      "tipo": "ingrediente",
+      "cantidad": 120,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 269.80984650000005,
+        "proteinas_g": 23.835,
+        "hidratos_g": 0.5,
+        "grasas_g": 19.74
+      }
+    },
+    "recImdO7ueFMlnxaE": {
+      "comida_id": "recnyx5GwQGLPf1pr",
+      "referencia_id": "rec3RHqUWRFk0FIJ1",
+      "tipo": "ingrediente",
+      "cantidad": 175,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 36.925000000000004,
+        "proteinas_g": 0.35,
+        "hidratos_g": 5.425,
+        "grasas_g": 0.175
+      }
+    },
+    "recfa0XvtV5Ah8ZRb": {
+      "comida_id": "recnyx5GwQGLPf1pr",
+      "referencia_id": "recEtJBidxvvxhoAg",
+      "tipo": "ingrediente",
+      "cantidad": 10,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 55.1,
+        "proteinas_g": 0.14,
+        "hidratos_g": 0.57,
+        "grasas_g": 5.8
+      }
+    },
+    "rec0ETgeB2SkeupKs": {
+      "comida_id": "recV2xhndk7uXp3j3",
+      "referencia_id": "recb11ZAHayvOIBWU",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 430.45042,
+        "proteinas_g": 43.488875,
+        "hidratos_g": 7.830125,
+        "grasas_g": 24.160550000000004
+      }
+    },
+    "recqG3M3bIVP5xJ2p": {
+      "comida_id": "recV2xhndk7uXp3j3",
+      "referencia_id": "recgTA0LAJrz7rD8B",
+      "tipo": "ingrediente",
+      "cantidad": 150,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 151.46988524999998,
+        "proteinas_g": 1.8,
+        "hidratos_g": 34.5,
+        "grasas_g": 0.45
+      }
+    },
+    "recpG2hj6COERpX1p": {
+      "comida_id": "recV2xhndk7uXp3j3",
+      "referencia_id": "rec4QWbZX5KJIhQyW",
+      "tipo": "ingrediente",
+      "cantidad": 5,
+      "unidad": "ml",
+      "nutricion": {
+        "kcal": 40.2366155,
+        "proteinas_g": 0,
+        "hidratos_g": 0,
+        "grasas_g": 4.55
+      }
+    },
+    "reckvWQszelpW0u01": {
+      "comida_id": "recV0I2zP8kowNyNk",
+      "referencia_id": "rec9cxis2Yndtrq6K",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 477.3692743311371,
+        "proteinas_g": 16.047822916666668,
+        "hidratos_g": 65.12660666666666,
+        "grasas_g": 16.538448333333335
+      }
+    },
+    "recGt7r2zE5WbHRbu": {
+      "comida_id": "recV0I2zP8kowNyNk",
+      "referencia_id": "recHiBRS3Ikrzb1mt",
+      "tipo": "ingrediente",
+      "cantidad": 100,
+      "unidad": "g",
+      "nutricion": {
+        "kcal": 165.85000000000002,
+        "proteinas_g": 21.08,
+        "hidratos_g": 0.992,
+        "grasas_g": 8.369999999999997
+      }
+    },
+    "recLIFxlaD1FoVSxy": {
+      "comida_id": "recU0Tg6O9eGXVUaB",
+      "referencia_id": "recfl98fDfDp6ApRO",
+      "tipo": "preparacion",
+      "cantidad": 2,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 947.9707455014393,
+        "proteinas_g": 45.69,
+        "hidratos_g": 59.315,
+        "grasas_g": 57.245000000000005
+      }
+    },
+    "rec9TImdQlBmsDPOa": {
+      "comida_id": "rec5CulygOWu2rNnB",
+      "referencia_id": "rec7qUQ85hy3AQ753",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 894.5008831666667,
+        "proteinas_g": 63.23970833333334,
+        "hidratos_g": 67.91179166666667,
+        "grasas_g": 40.138148666666666
+      }
+    },
+    "recrzc4RyHhJ1vqNd": {
+      "comida_id": "recGuYLbhZjw8jNaX",
+      "referencia_id": "recxRAH9FD9GvayFF",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 652.4061611034411,
+        "proteinas_g": 37.11474194785276,
+        "hidratos_g": 56.7211,
+        "grasas_g": 29.48457717791411
+      }
+    },
+    "recNazflEl4CBV4MA": {
+      "comida_id": "rec8CnfzjZfgyZRIX",
+      "referencia_id": "recl8ijk3FI18QqNj",
+      "tipo": "preparacion",
+      "cantidad": 1,
+      "unidad": "ración",
+      "nutricion": {
+        "kcal": 634.147566789316,
+        "proteinas_g": 47.92089285714285,
+        "hidratos_g": 77.33464285714285,
+        "grasas_g": 14.735833333333336
+      }
+    }
+  }
+}

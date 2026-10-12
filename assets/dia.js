@@ -1,4 +1,14 @@
-(()=>{'use strict';const root=document.querySelector('#daily-content'),payload=JSON.parse(document.querySelector('#daily-data').textContent),day=payload.dia,site='https://mirurecetas.github.io/menu-anual-recetas';const el=(tag,txt,cls)=>{const node=document.createElement(tag);if(txt!==undefined)node.textContent=txt;if(cls)node.className=cls;return node};const fmt=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:1});function macros(x){if(!x)return el('p','Datos pendientes','muted');return el('p',fmt(x.kcal)+' kcal · P '+fmt(x.proteinas_g)+' g · HC '+fmt(x.hidratos_g)+' g · G '+fmt(x.grasas_g)+' g','muted small')}const GOAL_KCAL=1600;const fmtDaily=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:0});const MACRO_GOALS={proteinas_g:93,hidratos_g:147,grasas_g:65};
+(()=>{'use strict';const root=document.querySelector('#daily-content'),payload=JSON.parse(document.querySelector('#daily-data').textContent),day=payload.dia,site='https://mirurecetas.github.io/menu-anual-recetas';const el=(tag,txt,cls)=>{const node=document.createElement(tag);if(txt!==undefined)node.textContent=txt;if(cls)node.className=cls;return node};const fmt=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:1});function macros(x,tag='p'){
+ const line=el(tag,undefined,'component-nutrition');
+ if(!x){line.textContent='Desglose nutricional pendiente';return line}
+ line.dataset.kcal=String(x.kcal);
+ line.append(el('strong',fmt(x.kcal)+' kcal','component-kcal'));
+ for(const [label,key,kind] of [['PR','proteinas_g','protein'],['HC','hidratos_g','carbs'],['GR','grasas_g','fat']]){
+  const part=el('span',undefined,'component-macro component-macro-'+kind);
+  part.append(document.createTextNode(label+' '),el('strong',fmt(x[key])+' g'));line.append(part);
+ }
+ return line;
+}const GOAL_KCAL=1600;const fmtDaily=x=>Number(x).toLocaleString('es-ES',{maximumFractionDigits:0});const MACRO_GOALS={proteinas_g:93,hidratos_g:147,grasas_g:65};
 function dailyNutrition(nut){
  const group=el('section',undefined,'daily-nutrition');
  group.setAttribute('aria-label','Resumen nutricional del día');
@@ -58,8 +68,49 @@ function dailyNutrition(nut){
  macros.append(el('p','Barras: % del objetivo diario · PR 93 g · HC 147 g · GR 65 g','daily-macro-note'));
  group.append(energy,macros);return group;
 }
-function entry(x){const line=el('div',undefined,'ingredient-line'),name=el('span',x.nombre),amount=el('strong',(x.tipo==='preparacion'&&x.raciones!==undefined?fmt(x.raciones)+' '+(x.raciones===1?'ración':'raciones'):fmt(x.cantidad)+' '+x.unidad));if(x.tipo==='preparacion'&&x.slug){const a=el('a',x.nombre);a.href=site+'/recetas/'+encodeURIComponent(x.slug)+'/';line.append(a,amount);return line}line.append(name,amount);return line}function meal(kind,x){const block=el('section',undefined,'daily-meal');block.append(el('h2',kind));if(x?.estado==='libre'){block.append(el('p','Libre · No incluida en la nutrición registrada.'));return block}if(x?.estado==='pendiente'){block.append(el('p','Pendiente de asignar.','muted'));return block}block.append(el('h3',x.nombre),macros(x.nutricion));for(const g of [...x.presentacion.grupos].sort((a,b)=>a.orden-b.orden)){const details=el('details',undefined,'culinary-group'),summary=el('summary',g.nombre);if(g.elementos.some(e=>e.tipo==='preparacion') && /^(principal|plato-[0-9]+)$/.test(g.id))details.open=true;details.append(summary);const inside=el('div',undefined,'group-entries');g.elementos.forEach(e=>inside.append(entry(e)));details.append(inside);block.append(details)}for(const e of x.presentacion.elementos_sin_grupo)block.append(entry(e));return block}function simple(kind,x){if(!x)return;const section=el('section',undefined,'daily-meal');const heading=el('h2',kind);if(kind==='Fruta'||kind==='Postre'){const icon=el('i');icon.setAttribute('data-lucide',kind==='Fruta'?'apple':'dessert');icon.setAttribute('aria-hidden','true');heading.prepend(icon,document.createTextNode(' '))}section.append(heading,entry(x),macros(x.nutricion));root.append(section)}const total=el('section',undefined,'daily-total');total.append(dailyNutrition(day.nutricion));if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));if(payload.nombre_dia==='Viernes')total.append(el('p','Cena libre no incluida.','muted small'));root.append(total);simple('Desayuno',day.desayuno);root.append(meal('Comida',day.comida),meal('Cena',day.cena));for(const component of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(component.tipo==='ingrediente'?'Fruta':'Postre',component);
-if(window.lucide?.createIcons)window.lucide.createIcons();
+const shortNames={recIa7zpasm2s0mgH:'Café con leche',recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
+const displayName=x=>shortNames[x.referencia_id]||(/^Café con leche/i.test(x.nombre)?'Café con leche':x.nombre);
+function entry(x,name=displayName(x)){
+ const line=el('div',undefined,'ingredient-line');
+ const servings=x.raciones!==undefined?x.raciones:x.cantidad;
+ const unit=x.tipo==='preparacion'?(servings===1?'ración':'raciones'):x.unidad;
+ const title=el(x.tipo==='preparacion'&&x.slug?'a':'span',name,'component-name');
+ if(title.tagName==='A')title.href=site+'/recetas/'+encodeURIComponent(x.slug)+'/';
+ line.append(title,el('strong',Number(servings).toLocaleString('es-ES',{maximumFractionDigits:3})+' '+unit,'component-amount'));return line;
+}
+function heading(kind,nut){
+ const h=el('h2',undefined,'daily-meal-title');h.append(el('span',kind));
+ if(nut)h.append(el('strong',fmt(nut.kcal)+' kcal','daily-meal-kcal'));
+ return h;
+}
+function component(x,nut=x.nutricion,name=displayName(x)){
+ const box=el('div',undefined,'daily-component');box.append(entry(x,name),macros(nut));return box;
+}
+function group(g){
+ if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,g.nombre);
+ const details=el('details',undefined,'culinary-group daily-component');
+ const summary=el('summary');summary.append(el('span',g.nombre,'component-name'),macros(g.nutricion,'span'));
+ const inside=el('div',undefined,'group-entries');
+ for(const item of g.elementos)inside.append(entry(item));
+ details.append(summary,inside);return details;
+}
+function meal(kind,x){
+ const section=el('section',undefined,'daily-meal');section.append(heading(kind,x.nutricion));
+ if(x.estado==='libre'){section.append(el('p','Libre · No incluida en la nutrición registrada.'));return section}
+ if(x.estado==='pendiente'){section.append(el('p','Pendiente de asignar.','muted'));return section}
+ for(const g of [...x.presentacion.grupos].sort((a,b)=>a.orden-b.orden))section.append(group(g));
+ for(const item of x.presentacion.elementos_sin_grupo)section.append(component(item));
+ return section;
+}
+function simple(kind,x){
+ if(!x)return;const section=el('section',undefined,'daily-meal');
+ section.append(heading(kind,x.nutricion),component(x));root.append(section);
+}
+const total=el('section',undefined,'daily-total');total.append(dailyNutrition(day.nutricion));
+if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));
+if(payload.nombre_dia==='Viernes')total.append(el('p','Cena libre no incluida.','muted small'));
+root.append(total);simple('Desayuno',day.desayuno);root.append(meal('Comida',day.comida),meal('Cena',day.cena));
+for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.tipo==='ingrediente'?'Fruta':'Postre',item);
 function enableSwipeNavigation(){
  const main=document.querySelector('main.main');
  const navigation=document.querySelector('.daily-navigation');

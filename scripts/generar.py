@@ -92,6 +92,9 @@ def make(r):
     return {"slug":s,"nombre":n,"imagen":img,"descripcion":desc,"etiquetas":[tags_catalog[t][0] for t in tags],"etiquetas_principales":[t for t in tags if tags_catalog[t][2]=="main"]}
 def main():
     (R/"datos"/"recetas").mkdir(parents=True,exist_ok=True);(R/"datos"/"menus").mkdir(parents=True,exist_ok=True)
+    from presentacion_diaria import enrich_day
+    snapshot_path=R/'presentacion'/'aportes-componentes.json'
+    snapshot=json.loads(snapshot_path.read_text(encoding='utf-8'))['elementos'] if snapshot_path.exists() else {}
     recipes=[];rs={}
     for p in sorted((R/"datos"/"recetas").glob("*.json")):
         record=json.loads(p.read_text(encoding="utf-8"))
@@ -139,7 +142,7 @@ def main():
                     text=(arrow+" "+target) if cls=="prev" else (target+" "+arrow)
                     label=("Ir al día anterior: " if cls=="prev" else "Ir al día siguiente: ")+target
                     navigation.append('<a class="daily-nav-link daily-nav-'+cls+'" aria-label="'+e(label)+'" href="'+SITE+'/menus/'+menu_key+'/'+target.lower()+'/">'+e(text)+'</a>')
-            payload={"dia":m["dias"][day],"nombre_dia":day}
+            payload={"dia":enrich_day(m["dias"][day],snapshot),"nombre_dia":day}
             content=template
             replacements={"DAY":e(day),"MENU_TITLE":e(menu_title),"SITE":SITE,"NAVIGATION":" ".join(navigation),"DAY_JSON":json.dumps(payload,ensure_ascii=False).replace("<",r"\u003c")}
             for key,value in replacements.items():
