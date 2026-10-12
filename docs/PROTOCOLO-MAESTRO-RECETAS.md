@@ -75,3 +75,7 @@ Comunicar de forma breve y comprobable: receta y raciones; qué se creó o cambi
 ## Integración con el flujo de menús
 
 Cuando este chat también esté encargado de comidas y menús, aplicará el [protocolo v2 de registro y publicación incremental de menús](PROTOCOLO-MAESTRO-REGISTRO-COMIDAS.md): publicar cada comida completa tras validación en Airtable y GitHub, sin esperar a cerrar la semana. Las correcciones de preparaciones requieren revisar las COMIDAS/menús dependientes; no sustituir las cifras calculadas por estimaciones. La creación de recetas completas, su registro y publicación no debe esperar una solicitud adicional de la usuaria si ya ha facilitado los datos necesarios.
+
+## Anexo · Aceite retenido en frituras (12/10/2026)
+
+Para frituras con escurrido en las que no se conoce el consumo real de aceite, seguir obligatoriamente el procedimiento reusable documentado en [PROCEDIMIENTO-ACEITE-RETENIDO-FRITURAS.md](PROCEDIMIENTO-ACEITE-RETENIDO-FRITURAS.md). El aceite nutricional es el estimado *retenido* por los alimentos, nunca todo el aceite inicial ni cero. En PREPARACION_ELEMENTOS, registrar masa cruda tratada, coeficiente específico por técnica y densidad del aceite; calcular la cantidad equivalente y comprobar `TEC_Fritura · Control aceite retenido = Coincide` antes de aceptar los macros. Para la tortilla de patata con cebolla, el coeficiente provisional documentado es 5 % de 600 g de patata y cebolla doblemente escurridas, sin aceite añadido en el dorado ni cuajado. Este 5 % no se generaliza a otros alimentos.
