@@ -576,6 +576,9 @@ const assert = require('node:assert/strict');
       'Iconos de navegación no ocultos ni colapsados');
 
     assert.ok(await page.locator('#recipe-catalog .recipe-tile').count()>=10,'10 recetas iniciales');
+    const searchAlignment=await page.locator('#search').evaluate(input=>{const a=input.getBoundingClientRect(),b=document.querySelector('#recipe-catalog').getBoundingClientRect();return {left:Math.abs(a.left-b.left),right:Math.abs(a.right-b.right),overflow:document.documentElement.scrollWidth>innerWidth+2}});
+    assert.ok(searchAlignment.left<2&&searchAlignment.right<2,test.name+': buscador alineado con ambos bordes del recetario');
+    assert.equal(searchAlignment.overflow,false,'Buscador sin desbordamiento');
     await page.screenshot({path:out+'/recetario-'+test.name+'.png',fullPage:true});
     await page.goto('http://127.0.0.1:8765/');
     assert.equal(await page.locator('footer.footer').innerText(),expectedFooter,
