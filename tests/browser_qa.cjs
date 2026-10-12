@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
   const browser = await chromium.launch({headless:true});
   const issues=[];
   const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
-  for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390}]){
+  for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390},{name:'mobile-small-horizontal',width:667,height:375},{name:'tablet-compact-horizontal',width:1024,height:768}]){
     const page=await browser.newPage({viewport:{width:test.width,height:test.height},deviceScaleFactor:1});
     page.on('pageerror',e=>issues.push(test.name+': error JS: '+e.message));
     await page.goto('http://127.0.0.1:8765/',{waitUntil:'load'});
@@ -45,11 +45,15 @@ const assert = require('node:assert/strict');
       'Anillos semanales en gris carbón, distintos de la paleta de macros');
     assert.ok(weeklyLayout.every(x=>x.track==='rgb(220, 221, 218)'),
       'Pista neutra en los cinco anillos');
-    if(test.width>=1091){
+    const fiveColumns=test.width>=1091||(test.width>=600&&test.width>test.height);
+    if(fiveColumns){
       const close=(values,tolerance=1)=>Math.max(...values)-Math.min(...values)<=tolerance;
       assert.ok(close(weeklyLayout.map(x=>x.card.top)),test.name+': cinco tarjetas empiezan a la misma altura');
       assert.ok(close(weeklyLayout.map(x=>x.card.height)),test.name+': cinco tarjetas mantienen igual altura');
       assert.ok(close(weeklyLayout.map(x=>x.card.width)),test.name+': cinco tarjetas mantienen igual anchura');
+      assert.equal(await page.locator('#week').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length),5,'Cinco columnas reales');
+      assert.equal(await page.locator('#week').evaluate(e=>e.scrollWidth>e.clientWidth+1),false,'Semana completa sin desplazamiento horizontal');
+      assert.equal(await page.locator('#week .week-meal-name').evaluateAll(names=>names.some(e=>e.scrollWidth>e.clientWidth+1)),false,'Nombres completos sin desbordamiento');
       assert.ok(close(weeklyLayout.map(x=>x.head.top)),test.name+': encabezados alineados arriba');
       assert.ok(close(weeklyLayout.map(x=>x.head.height)),test.name+': encabezados de altura idéntica');
       assert.ok(close(weeklyLayout.map(x=>x.first.top)),test.name+': primeras comidas alineadas arriba');

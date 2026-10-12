@@ -36,7 +36,7 @@ La publicación pública es estática, sobre GitHub Pages. `scripts/exportar_air
 
 - Página `/`: «TU COCINA, A TU RITMO», «¿Qué cocinamos esta semana?», selectores de mes y menú, cinco días y galería de Batch cooking; el recetario completo está separado en `/recetario/`.
 - Cinco tarjetas en escritorio con **anchura y altura idénticas**. Cabeceras **todas arriba**, de igual altura, con el nombre del día y anillo kcal alineados; comidas inmediatamente debajo, alineadas arriba. En días cortos puede sobrar espacio **abajo**. **Miércoles** debe caber en una línea sin aumentar la anchura de su tarjeta; aplicar reducción tipográfica coherente a todos los días.
-- Adaptación responsive: **5 columnas** en escritorio ancho, **2 columnas** en anchuras intermedias, **1 columna** en móvil vertical, sin scroll horizontal. Probar horizontal y vertical.
+- Adaptación responsive: **5 columnas** en escritorio ancho y en móvil/tablet horizontal desde 600 px, con cabeceras/anillos/textos compactos hasta 1090 px. Entre 600 y 799 px horizontales, el anillo va debajo del nombre del día. En vertical se conservan **2 columnas** en anchuras intermedias y **1 columna** en móvil; por debajo de 600 px horizontal se mantiene la disposición anterior para no forzar columnas ilegibles. Sin scroll horizontal. El panel individual conserva sus estilos y comportamiento.
 - El anillo **monocolor** de las tarjetas semanales refleja `kcal registradas / 1600` y utiliza progreso **gris carbón `#454b4b`**, pista **`#dcddda`**, **no** terracota de hidratos. La tarjeta abre el resumen rápido. Desayuno, comida, cena y postre **solo si existe**; viernes noche libre.
 
 ### 3.2 Ficha diaria compacta: diseño ya validado
