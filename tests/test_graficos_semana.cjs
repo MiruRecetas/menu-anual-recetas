@@ -63,3 +63,17 @@ near(combinedModel.meals.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
 near(combinedModel.variety.entries.reduce((n,e)=>n+e.kcal,0),combinedModel.total);
 assert.equal(JSON.stringify(menu),JSON.stringify(JSON.parse(source)),'La prueba no cambia el menú real');
 console.log('PASS: gráficos semanales: kcal oficiales, proporciones 4/4/9, sumas semanales, protagonista, cena libre y datos ausentes.');
+
+near(data.bars[4].remaining,Math.max(0,1600-menu.dias.Viernes.nutricion.kcal));
+assert.ok(data.bars.slice(0,4).every(b=>b.remaining===0),'Resto de días sin referencia apilada');
+for(const kcal of [1600,1800]){
+ const variant=structuredClone(menu);variant.dias.Viernes.nutricion.kcal=kcal;
+ const result=model(variant,recipes);
+ assert.equal(result.bars[4].remaining,0,'Referencia sin diferencia negativa');
+ near(result.bars[4].segments.reduce((n,s)=>n+s.kcal,0),kcal);
+}
+const planned=structuredClone(menu);planned.dias.Viernes.cena.estado='calculado';
+assert.equal(model(planned,recipes).bars[4].remaining,0,'Solo viernes con cena libre');
+const otherDay=structuredClone(menu);otherDay.dias.Lunes.cena={estado:'libre'};
+assert.equal(model(otherDay,recipes).bars[0].remaining,0,'Cena libre de lunes sin tramo gris');
+assert.deepEqual(menu,JSON.parse(source),'Fuente nutricional intacta');

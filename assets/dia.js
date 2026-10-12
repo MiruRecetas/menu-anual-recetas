@@ -104,8 +104,16 @@ function group(g){
  details.append(summary,inside);return details;
 }
 function meal(kind,x){
- const section=el('section',undefined,'daily-meal');section.append(heading(kind,x.nutricion));
+ const section=el('section',undefined,'daily-meal');section.append(heading(kind,kind==='Cena'&&x.estado==='libre'?null:x.nutricion));
  const body=el('div',undefined,'daily-meal-body');section.append(body);
+ if(kind==='Cena'&&x.estado==='libre'){
+  section.classList.add('daily-meal-free');
+  const band=el('div',undefined,'free-night-band');
+  const title=el('div',undefined,'free-night-title'),icon=el('i');
+  icon.setAttribute('data-lucide','moon-star');icon.setAttribute('aria-hidden','true');
+  title.append(icon,el('strong','Noche libre'));
+  band.append(title,el('p','Sin planificación nutricional','free-night-note'));body.append(band);return section;
+ }
  if(x.estado==='libre'){body.append(el('p','Libre · No incluida en la nutrición registrada.'));return section}
  if(x.estado==='pendiente'){body.append(el('p','Pendiente de asignar.','muted'));return section}
  for(const g of [...x.presentacion.grupos].sort((a,b)=>a.orden-b.orden))body.append(group(g));
@@ -122,6 +130,7 @@ if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append
 if(payload.nombre_dia==='Viernes')total.append(el('p','Cena libre no incluida.','muted small'));
 root.append(total);simple('Desayuno',day.desayuno);root.append(meal('Comida',day.comida),meal('Cena',day.cena));
 for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.tipo==='ingrediente'?'Fruta':'Postre',item);
+if(day.cena?.estado==='libre'&&window.lucide?.createIcons)window.lucide.createIcons();
 function enableSwipeNavigation(){
  const main=document.querySelector('main.main');
  const navigation=document.querySelector('.daily-navigation');
