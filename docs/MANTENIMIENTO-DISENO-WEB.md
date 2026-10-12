@@ -41,6 +41,8 @@ La publicación pública es estática, sobre GitHub Pages. `scripts/exportar_air
 
 Las frutas registradas como ingredientes directos se muestran con nombres breves en la semana y el resumen compacto: «Uvas», «Ciruelas» e «Higos». La abreviación se aplica por ID en la presentación, sin cambiar nombres canónicos, cantidades o nutrición. Los nombres de recetas y grupos culinarios se conservan.
 
+En móvil vertical hasta 700 px, las tarjetas semanales usan tres columnas: día girado 90° a la izquierda con separador terracota; centro con cuatro posiciones de desayuno/comida/cena/postre, sin inventar ingestas ausentes; derecha con anillo y `panel-bottom-open` abajo. El centro se alinea en vertical. Las cinco tarjetas igualan automáticamente su altura a la mayor del menú, recalculando al cambiar anchura, tipografía o menú. Pulsar el icono o la tarjeta abre la misma ficha individual con animación desde abajo (sin animación con movimiento reducido). Horizontal, tablet vertical ancha y escritorio conservan el diseño anterior.
+
 ### 3.2 Ficha diaria compacta: diseño ya validado
 
 Se abre en panel/bottom sheet, con cierre accesible, devolución de foco y botón «Ver día completo». Conservar **solo los nombres de platos**, sin desplegables ni cantidades de ingredientes. Para las preparaciones **realmente publicadas**, incluir una flecha **↗ independiente** enlazada a la receta, no convertir todo el nombre en hipervínculo. La visualización respeta los grupos y el orden exportados de Airtable.

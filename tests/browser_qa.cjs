@@ -18,6 +18,8 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('#week .day-button').count(),5,test.name+': días');
     assert.equal(await page.locator('#week .week-kcal-ring').count(),5,'Cinco anillos');
     assert.equal(await page.locator('#week .week-meal-row').count(),17,'Ingestas existentes');
+    const verticalDayCards=test.width<=700&&test.height>test.width;
+    if(verticalDayCards)await page.waitForFunction(()=>{const hs=[...document.querySelectorAll('#week .week-card')].map(e=>e.getBoundingClientRect().height);return Math.max(...hs)-Math.min(...hs)<1});
     const weeklyLayout=await page.locator('#week .week-card').evaluateAll(cards=>cards.map(card=>{
       const rect=node=>{const r=node.getBoundingClientRect();return {top:r.top,bottom:r.bottom,height:r.height,width:r.width}};
       const head=card.querySelector('.week-card-head');
@@ -36,7 +38,7 @@ const assert = require('node:assert/strict');
       };
     }));
     assert.equal(weeklyLayout.length,5,'Cinco tarjetas semanales evaluadas');
-    assert.ok(weeklyLayout.every(x=>x.cardDisplay==='flex'&&x.cardJustify==='flex-start'),
+    assert.ok(weeklyLayout.every(x=>x.cardDisplay===(verticalDayCards?'grid':'flex')&&x.cardJustify==='flex-start'),
       'Todo el contenido semanal se alinea arriba');
     assert.ok(weeklyLayout.every(x=>x.titleWhiteSpace==='nowrap'&&
       x.titleScroll<=x.titleClient+1),'Todos los días caben en una sola línea, incluido Miércoles');
@@ -65,6 +67,31 @@ const assert = require('node:assert/strict');
       const size=await page.locator('#week .week-kcal-ring strong').first().evaluate(e=>parseFloat(getComputedStyle(e).fontSize));
       assert.ok(size>=10&&size<11,'Kcal ligeramente menores en anillos horizontales');
     }
+    if(verticalDayCards){
+      const geometry=await page.locator('#week .week-card').evaluateAll(cards=>cards.map(card=>{
+        const box=e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,height:r.height}};
+        const title=card.querySelector('.week-card-title'),meals=card.querySelector('.week-card-meals'),ring=card.querySelector('.week-kcal-ring'),opener=card.querySelector('.week-card-open');
+        return {card:box(card),title:box(title),meals:box(meals),ring:box(ring),opener:box(opener),
+          writing:getComputedStyle(title).writingMode,separator:getComputedStyle(card,'::before').backgroundColor,
+          rows:getComputedStyle(meals).gridTemplateRows.split(' ').length,
+          overflow:[...card.querySelectorAll('.week-meal-name')].some(e=>e.scrollWidth>e.clientWidth+1)};
+      }));
+      assert.ok(Math.max(...geometry.map(g=>g.card.height))-Math.min(...geometry.map(g=>g.card.height))<1,'Cinco tarjetas verticales de igual altura');
+      assert.ok(geometry.every(g=>g.card.height<320),'Tarjetas mucho más compactas que el diseño anterior');
+      assert.ok(geometry.every(g=>g.writing==='vertical-rl'&&g.separator==='rgb(185, 108, 74)'),'Día vertical con separador terracota');
+      assert.ok(geometry.every(g=>g.title.right<g.meals.left&&g.meals.right<g.ring.left),'Tres columnas sin solapamientos');
+      assert.ok(geometry.every(g=>g.rows===4&&!g.overflow),'Cuatro posiciones de ingestas sin cortar nombres');
+      assert.ok(geometry.every(g=>Math.abs((g.meals.top+g.meals.bottom)-(g.card.top+g.card.bottom))<2),'Comidas centradas verticalmente');
+      assert.ok(geometry.every(g=>g.opener.top>=g.ring.bottom&&g.card.bottom-g.opener.bottom<15),'Icono bajo anillo en esquina inferior derecha');
+      await page.locator('#week .week-card-open svg.lucide-panel-bottom-open').first().waitFor();
+      await page.locator('#week .week-card-open').first().click();
+      assert.equal(await page.locator('#day-modal').isVisible(),true,'Icono abre ficha individual');
+      assert.equal(await page.locator('#day-dialog').evaluate(e=>getComputedStyle(e).animationName),'daily-sheet-up','Animación de apertura desde abajo');
+      await page.waitForTimeout(320);
+      const sheet=await page.locator('#day-dialog').boundingBox();
+      assert.ok(Math.abs(sheet.y+sheet.height-test.height)<1,'Ficha desplegada desde el borde inferior');
+      await page.keyboard.press('Escape');
+    }else assert.equal(await page.locator('#week .week-card-open').first().isVisible(),false,'Sin nuevo control fuera del móvil vertical');
     const charts=page.locator('#weekly-charts');
     assert.equal(await charts.isVisible(),true,'Gráficos visibles para el menú');
     assert.equal(await charts.locator('figure').count(),3,'Tres gráficos');
@@ -118,7 +145,6 @@ const assert = require('node:assert/strict');
       assert.equal(await flip.getAttribute('aria-pressed'),'false','Regreso a vertical empieza por barras');
       await page.screenshot({path:out+'/graficos-anverso-'+test.name+'.png',fullPage:true});
     }else assert.equal(await flip.isVisible(),false,'Sin control de giro fuera de móvil vertical');
-    const frontBar=await charts.locator('.weekly-bars').boundingBox();
     if(compact)await flip.click();
     const geometry=await charts.evaluate(container=>{
       const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};
@@ -134,7 +160,7 @@ const assert = require('node:assert/strict');
       assert.ok(geometry.pies[0].x>geometry.bar.right,'Barras izquierda y pies derecha');
       assert.ok(Math.abs(geometry.bar.y-geometry.pies[0].y)<2,'Columnas alineadas arriba');
     }else if(compact){
-      assert.ok(geometry.pies[0].y<frontBar.y+frontBar.height,'Círculos ocupan el reverso, no debajo de barras');
+      assert.ok(geometry.pies[0].y<geometry.bar.bottom,'Círculos ocupan el reverso, no debajo de barras');
     }else assert.ok(geometry.pies[0].y>=geometry.bar.bottom,'Pantalla estrecha horizontal apilada');
     if(compact){
       assert.ok(Math.abs(geometry.pies[0].y-geometry.pies[1].y)<1,'Dos círculos alineados en paralelo');
