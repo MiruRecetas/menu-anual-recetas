@@ -197,3 +197,5 @@ El exportador consulta `<Día> · Postre` y `<Día> · Postre preparación` como
 - Ausencia de postre: `null`. No se crean ingestas ni valores ficticios.
 
 El día completo muestra las raciones y el enlace de la preparación publicada; el resumen compacto conserva nombre y flecha independiente. Batch cooking incluye también los postres con etiqueta funcional y sus dependencias, sin duplicados por ingesta. Los totales diarios y semanales se conservan directamente de las fórmulas oficiales de Airtable, incluso en menús parciales; las sumas del validador solo comprueban coherencia y nunca los sustituyen. Esta actualización del contrato no modifica los menús existentes ni ejecuta una exportación automática.
+
+Los postres usan el icono Lucide `dessert` para preparaciones y `apple` para ingredientes en la semana, ficha compacta y día completo. La ausencia de postre no genera un icono ni una ingesta.

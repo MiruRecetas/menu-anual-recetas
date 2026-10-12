@@ -577,10 +577,11 @@ const assert = require('node:assert/strict');
 
   // Contrato nuevo probado sobre respuestas aisladas: ningún menú real se edita.
   for(const width of [1440,390]){
-    for(const variant of [{raciones:1,linked:true},{raciones:0.5,linked:true},{raciones:2,linked:false},null]){
+    for(const variant of [{tipo:'ingrediente'},{raciones:1,linked:true},{raciones:0.5,linked:true},{raciones:2,linked:false},null]){
       const page=await browser.newPage({viewport:{width,height:900}});
       page.on('pageerror',e=>issues.push('postres: '+e.message));
-      const makePost=original=>variant?{
+      const expectedIcon=variant?.tipo==='ingrediente'?'apple':'dessert';
+      const makePost=original=>variant?.tipo==='ingrediente'?original:variant?{
         tipo:'preparacion',referencia_id:'rec-postre-qa',
         nombre:variant.linked?'Bowl de yogur con miel y granola':'Postre sin ficha pública',
         raciones:variant.raciones,estado:'Calculado',nutricion:original.nutricion,
@@ -609,13 +610,19 @@ const assert = require('node:assert/strict');
       await page.locator('#month').selectOption('10');await page.locator('#menu-number').selectOption('1');
       const monday=page.locator('#week .day-button').first();
       assert.equal(await monday.locator('.week-meal-slot-postre').count(),variant?1:0,'Postre opcional en semana');
-      if(variant)assert.ok((await monday.innerText()).includes(variant.linked?'Bowl de yogur':'Postre sin ficha pública'));
+      if(variant){
+        await monday.locator('.week-meal-slot-postre svg.lucide-'+expectedIcon).waitFor({state:'visible'});
+        assert.equal(await monday.locator('.week-meal-slot-postre svg').count(),1,'Un solo icono de postre semanal');
+        if(variant.tipo!=='ingrediente')assert.ok((await monday.innerText()).includes(variant.linked?'Bowl de yogur':'Postre sin ficha pública'));
+      }
       const batchDessert=page.locator('#batch a[href$="/recetas/bowl-de-yogur-con-miel-y-granola/"]');
       assert.equal(await batchDessert.count(),variant?.linked?1:0,'Batch cooking incluye una vez el postre publicado y etiquetado');
       await monday.click();
       const post=page.locator('#quick-content .quick-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
       assert.equal(await post.count(),variant?1:0,'Postre opcional en ficha compacta');
       if(variant){
+        await post.locator('.quick-meal-heading svg.lucide-'+expectedIcon).waitFor({state:'visible'});
+        assert.equal(await post.locator('.quick-meal-heading svg').count(),1,'Un solo icono de postre compacto');
         assert.equal(await post.locator('a').count(),variant.linked?1:0,'Solo recetas publicadas enlazadas');
         assert.equal(await post.locator('details').count(),0,'Compacta sin desplegable');
         if(variant.linked)assert.match(await post.locator('a').getAttribute('href'),/recetas\/bowl-de-yogur-con-miel-y-granola\/$/);
@@ -632,8 +639,10 @@ const assert = require('node:assert/strict');
       const daily=page.locator('.daily-meal').filter({has:page.getByRole('heading',{name:'Postre',exact:true})});
       assert.equal(await daily.count(),variant?1:0,'Postre opcional en día completo');
       if(variant){
+        await daily.locator('h2 svg.lucide-'+expectedIcon).waitFor({state:'visible'});
+        assert.equal(await daily.locator('h2 svg').count(),1,'Un solo icono de postre ampliado');
         assert.equal(await daily.locator('a').count(),variant.linked?1:0,'Enlace de postre en ampliada');
-        assert.equal(await daily.locator('.ingredient-line strong').innerText(),
+        if(variant.tipo!=='ingrediente')assert.equal(await daily.locator('.ingredient-line strong').innerText(),
           (variant.raciones===0.5?'0,5':String(variant.raciones))+' '+(variant.raciones===1?'ración':'raciones'));
         assert.ok(!(await daily.innerText()).includes('NaN'),'Raciones válidas sin cantidad de ingrediente');
       }
