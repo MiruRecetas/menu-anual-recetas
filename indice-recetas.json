@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "be0328b32cf9eb5a394c3f03d35f61e49a159186",
-  "generated_at_utc": "2026-10-12T21:56:33Z",
-  "total_recetas": 36,
+  "source_commit_sha": "9e623fc0d8f0a56349cc584e917c2e02dd522730",
+  "generated_at_utc": "2026-10-13T06:38:04Z",
+  "total_recetas": 37,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1160,6 +1160,76 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/quiche-de-puerro-champinones-y-pavo/"
+    },
+    {
+      "nombre": "Ragú a la boloñesa",
+      "slug": "ragu-a-la-bolonesa",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Salsa de ternera y verduras cocinada a fuego lento, con tomate y un toque cremoso de leche y queso.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 7.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Carne picada de ternera",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate triturado",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Queso crema",
+          "cantidad": 35,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ragu-a-la-bolonesa/"
     },
     {
       "nombre": "Salchichas al vino",
