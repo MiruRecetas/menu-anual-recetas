@@ -1,0 +1,90 @@
+{
+  "slug": "ragu-a-la-bolonesa",
+  "nombre": "Ragú a la boloñesa",
+  "descripcion": "Salsa de ternera y verduras cocinada a fuego lento, con tomate y un toque cremoso de leche y queso.",
+  "raciones": 4,
+  "categoria": "salsas-aderezos",
+  "etiquetas": [
+    "congelable",
+    "microondas",
+    "batchcooking",
+    "carne"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Pimiento verde",
+      "cantidad": 75,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Pimiento rojo",
+      "cantidad": 75,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 75,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 7.5,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Carne picada de ternera",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Zanahoria",
+      "cantidad": 75,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tomate triturado",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Vino blanco de guiso",
+      "cantidad": 50,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Leche semidesnatada",
+      "cantidad": 50,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Queso crema",
+      "cantidad": 35,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Picar finamente los pimientos, la cebolla y la zanahoria y saltearlos con el AOVE a fuego suave.",
+    "Subir el fuego y dorar la carne picada hasta que esté casi cocinada.",
+    "Sin bajar el fuego, añadir el vino blanco y dejar que se reduzca.",
+    "Añadir el tomate triturado, remover y tapar la sartén o la cazuela hasta que empiece a hervir.",
+    "Bajar enseguida el fuego al mínimo y cocinar la salsa durante unas 2 horas, removiendo de vez en cuando. Si necesita líquido, añadir un poco de agua durante la cocción.",
+    "Cuando la salsa esté casi lista, añadir la leche y el queso crema y remover para integrarlos bien. Cocinar durante unos 3–4 minutos.",
+    "Añadir la sal y la pimienta negra recién molida, remover para integrar y apagar el fuego."
+  ],
+  "nutricion": {
+    "kcal": 251.89,
+    "proteinas_g": 16.65,
+    "hidratos_g": 10.67,
+    "grasas_g": 15.78
+  }
+}
