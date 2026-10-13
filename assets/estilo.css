@@ -549,3 +549,9 @@ button[hidden]{display:none!important}
 /* Buscador del recetario alineado con el conjunto de tarjetas. */
 .catalog-search-tools .field{flex:1;min-width:0}
 .catalog-search-tools input{width:100%;min-width:0}
+
+/* Isotipo aprobado: su dibujo visible tiene la altura de la mayúscula M. */
+.logo{display:inline-flex;align-items:baseline;gap:.35em;white-space:nowrap}
+.logo .logo-wordmark{color:var(--ink)}
+.logo-isotipo{display:block;flex:none;height:.72em;height:1cap;width:auto}
+@media(max-width:359px){.topbar{gap:8px}.nav{gap:8px}.nav a{font-size:.75rem;gap:4px}}
