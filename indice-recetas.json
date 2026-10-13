@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "e8a44587642ff1c3773588f5f5142fce0f382eba",
-  "generated_at_utc": "2026-10-13T11:56:40Z",
-  "total_recetas": 38,
+  "source_commit_sha": "03774e17474e313d30b2bf928ef2cf7d8ca87fa5",
+  "generated_at_utc": "2026-10-13T12:11:53Z",
+  "total_recetas": 39,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -180,6 +180,32 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bechamel/"
+    },
+    {
+      "nombre": "Berenjenas rellenas",
+      "slug": "berenjenas-rellenas",
+      "categoria": "asados-horno",
+      "descripcion": "Berenjenas asadas rellenas de ragú a la boloñesa y su propia pulpa, con mozzarella rallada gratinada.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Ragú a la boloñesa",
+          "cantidad": 4,
+          "unidad": "raciones",
+          "preparacion": "ragu-a-la-bolonesa"
+        },
+        {
+          "nombre": "Berenjena",
+          "cantidad": 600,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mozzarella rallada",
+          "cantidad": 120,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/berenjenas-rellenas/"
     },
     {
       "nombre": "Bowl de yogur con miel y granola",
