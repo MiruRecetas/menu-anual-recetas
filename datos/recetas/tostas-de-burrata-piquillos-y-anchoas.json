@@ -1,0 +1,44 @@
+{
+  "slug": "tostas-de-burrata-piquillos-y-anchoas",
+  "nombre": "Tostas de burrata, piquillos y anchoas",
+  "descripcion": "Pan tostado con piquillos, burrata fresca y anchoas, montado justo antes de servir.",
+  "raciones": 1,
+  "categoria": "tostas-bocadillos-wraps",
+  "etiquetas": [
+    "rapida",
+    "lacteos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Pan de molde de 12 cereales y semillas",
+      "cantidad": 2,
+      "unidad": "rebanadas"
+    },
+    {
+      "nombre": "Burrata",
+      "cantidad": 1,
+      "unidad": "unidad"
+    },
+    {
+      "nombre": "Pimientos del piquillo (escurridos)",
+      "cantidad": 80,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Anchoas en aceite (escurridas)",
+      "cantidad": 20,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Condimentos al gusto",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Tostar el pan.",
+    "Colocar los pimientos del piquillo escurridos sobre el pan tostado.",
+    "Repartir la burrata entre las tostas y terminar con las anchoas escurridas y los condimentos al gusto.",
+    "Servir recién montadas."
+  ]
+}
