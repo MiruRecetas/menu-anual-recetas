@@ -34,11 +34,11 @@ const server=http.createServer((req,res)=>{
     assert.equal(await page.locator('#weekly-charts').isVisible(),false);
     await nutrition.click();assert.equal(await page.locator('#weekly-charts').isVisible(),true);
     await nutrition.click();assert.equal(await nutrition.getAttribute('aria-expanded'),'false');
-    await context.setOffline(true);await page.reload();
+    unavailable=true;await context.setOffline(true);await page.reload();
     await page.locator('[data-miru-offline]').waitFor();
     await nutrition.click();assert.equal(await page.locator('#weekly-charts').isVisible(),true);
     await nutrition.click();assert.equal(await page.locator('#weekly-charts').isVisible(),false);
-    await context.setOffline(false);
+    unavailable=false;await context.setOffline(false);
     const url=origin+base+'recetas/tortilla-de-patata-tradicional-con-cebolla/';
     await page.goto(url);await page.locator('#portion-plus').click();
     const before=await page.locator('#portion-value').innerText();
