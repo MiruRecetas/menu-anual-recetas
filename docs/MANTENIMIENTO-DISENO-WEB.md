@@ -156,3 +156,8 @@ No dar por completado un cambio solo porque se fusionó: diferenciar SHA de la c
 Las pruebas de navegador deben comprobar comportamiento y estilos computados, también casos límite y rutas de enlace reales. Al abrir una receta, distinguir `h1[itemprop="name"]` del título duplicado dentro del modo cocina oculto. Un fallo de selector de prueba se corrige en el test, no rediseñando la ficha. No anunciar pruebas locales de navegador si Chromium solo se ejecutó en CI.
 
 Preservar commits concurrentes de los especialistas. No reexportar Airtable, cambiar recetas o fotografías para corregir presentación. Las equivalencias de unidades visibles son específicas y verificadas; mantener g/ml si no existe evidencia. No ampliar alcance con mejoras no solicitadas.
+
+
+### Tarjeta nutricional desplegable · 13/10/2026
+
+Después del selector de menú, el botón salvia «Ver información nutricional» / «Ocultar información nutricional» controla toda la tarjeta con `aria-controls` y `aria-expanded`. Empieza oculta en cada visita; la elección se conserva al cambiar de menú durante esa visita, sin persistencia adicional. Si no hay gráficos disponibles, el botón se desactiva. En tablet, escritorio y horizontal, los tres gráficos comparten superficie, borde y márgenes de tarjeta, conservando barras a la izquierda y circulares a la derecha (o su apilado responsive). En móvil vertical se conserva la tarjeta de dos caras y su giro, sin añadir otro marco. Es el mismo componente en web y PWA.
