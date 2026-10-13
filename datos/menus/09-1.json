@@ -20,7 +20,35 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recX78IBpIQjULBCa",
+        "nombre": "Ensalada César",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 562.9217331953579,
+          "proteinas_g": 50.15083333333333,
+          "hidratos_g": 27.655,
+          "grasas_g": 26.7375
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recIxQBHaSX0ezyRW",
+              "tipo": "preparacion",
+              "referencia_id": "reczjPTJULtTJdquQ",
+              "nombre": "Ensalada César",
+              "cantidad": 1,
+              "unidad": "ración",
+              "nutricion": {
+                "kcal": 562.9217331953579,
+                "proteinas_g": 50.15083333333333,
+                "hidratos_g": 27.655,
+                "grasas_g": 26.7375
+              },
+              "slug": "ensalada-cesar"
+            }
+          ]
+        }
       },
       "cena": {
         "comida_id": "recVZdbSDQMWENSZZ",
@@ -127,10 +155,10 @@
         ]
       },
       "nutricion": {
-        "kcal": 699.7845700329992,
-        "proteinas_g": 28.357,
-        "hidratos_g": 66.878,
-        "grasas_g": 36.138985000000005
+        "kcal": 1262.7063032283572,
+        "proteinas_g": 78.50783333333332,
+        "hidratos_g": 94.533,
+        "grasas_g": 62.876485
       }
     },
     "Martes": {
@@ -148,17 +176,101 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recpgCNkMZmwjwEFx",
+        "nombre": "Berenjenas rellenas con arroz blanco",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 626.9224051289436,
+          "proteinas_g": 29.6779375,
+          "hidratos_g": 68.156,
+          "grasas_g": 25.954124999999998
+        },
+        "presentacion": {
+          "grupos": [
+            {
+              "id": "principal",
+              "nombre": "Berenjenas rellenas",
+              "orden": 1,
+              "elementos": [
+                {
+                  "id": "recnSVxTtcfMzFmiq",
+                  "tipo": "preparacion",
+                  "referencia_id": "recaVkzuZrFim3Mgb",
+                  "nombre": "Berenjenas rellenas",
+                  "cantidad": 1,
+                  "unidad": "ración",
+                  "nutricion": {
+                    "kcal": 373.1724051289436,
+                    "proteinas_g": 25.0529375,
+                    "hidratos_g": 16.906,
+                    "grasas_g": 22.829124999999998
+                  },
+                  "slug": "berenjenas-rellenas"
+                }
+              ]
+            },
+            {
+              "id": "acompanamiento-1",
+              "nombre": "Arroz blanco",
+              "orden": 2,
+              "elementos": [
+                {
+                  "id": "recPwf14wqGSBu42G",
+                  "tipo": "ingrediente",
+                  "referencia_id": "reccZQ0blNFQ0THdM",
+                  "nombre": "DIA Al Punto Arroz blanco cocido",
+                  "cantidad": 125,
+                  "unidad": "g",
+                  "nutricion": {
+                    "kcal": 253.75,
+                    "proteinas_g": 4.625,
+                    "hidratos_g": 51.25,
+                    "grasas_g": 3.125
+                  }
+                }
+              ]
+            }
+          ],
+          "elementos_sin_grupo": []
+        }
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "recsXTiRT7DPjoIwm",
+        "nombre": "Quesadillas vegetales",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 578.7555447543022,
+          "proteinas_g": 29.823,
+          "hidratos_g": 62.128,
+          "grasas_g": 25.534000000000002
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "rechB23iLBdQ1qUlE",
+              "tipo": "preparacion",
+              "referencia_id": "recQFE9AVNV3bxQW9",
+              "nombre": "Quesadillas vegetales",
+              "cantidad": 1,
+              "unidad": "ración",
+              "nutricion": {
+                "kcal": 578.7555447543022,
+                "proteinas_g": 29.823,
+                "hidratos_g": 62.128,
+                "grasas_g": 25.534000000000002
+              },
+              "slug": "quesadillas-vegetales"
+            }
+          ]
+        }
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 1253.1849298832458,
+        "proteinas_g": 62.8329375,
+        "hidratos_g": 135.022,
+        "grasas_g": 53.14212499999999
       }
     },
     "Miércoles": {
@@ -220,17 +332,73 @@
         }
       },
       "comida": {
-        "estado": "pendiente"
+        "comida_id": "recZ6ywkFaaOp0mBt",
+        "nombre": "Pasta boloñesa",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 617.4596422360181,
+          "proteinas_g": 35.3029375,
+          "hidratos_g": 60.29600000000001,
+          "grasas_g": 25.492556999999998
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recAThugQ8ImWDwNr",
+              "tipo": "preparacion",
+              "referencia_id": "recfx1gMP7hdzyxLk",
+              "nombre": "Pasta boloñesa",
+              "cantidad": 1,
+              "unidad": "ración",
+              "nutricion": {
+                "kcal": 617.4596422360181,
+                "proteinas_g": 35.3029375,
+                "hidratos_g": 60.29600000000001,
+                "grasas_g": 25.492556999999998
+              },
+              "slug": "pasta-bolonesa"
+            }
+          ]
+        }
       },
       "cena": {
-        "estado": "pendiente"
+        "comida_id": "recLtSNJ8pRgBSF7D",
+        "nombre": "Tostas de burrata, piquillos y anchoas",
+        "estado": "Calculado",
+        "nutricion": {
+          "kcal": 658.4800956022945,
+          "proteinas_g": 26.927999999999997,
+          "hidratos_g": 39.239999999999995,
+          "grasas_g": 42.284
+        },
+        "presentacion": {
+          "grupos": [],
+          "elementos_sin_grupo": [
+            {
+              "id": "recljgyH0MM1rMQ8K",
+              "tipo": "preparacion",
+              "referencia_id": "reccxnsKZ2d2HTNRp",
+              "nombre": "Tostas de burrata, piquillos y anchoas",
+              "cantidad": 1,
+              "unidad": "ración",
+              "nutricion": {
+                "kcal": 658.4800956022945,
+                "proteinas_g": 26.927999999999997,
+                "hidratos_g": 39.239999999999995,
+                "grasas_g": 42.284
+              },
+              "slug": "tostas-de-burrata-piquillos-y-anchoas"
+            }
+          ]
+        }
       },
       "postre": null,
       "nutricion": {
-        "kcal": 47.50698,
-        "proteinas_g": 3.332,
-        "hidratos_g": 4.738,
-        "grasas_g": 1.654
+        "kcal": 1323.4467178383125,
+        "proteinas_g": 65.56293749999999,
+        "hidratos_g": 104.274,
+        "grasas_g": 69.430557
       }
     },
     "Viernes": {
@@ -354,9 +522,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 1588.9315865644523,
-    "proteinas_g": 77.8221875,
-    "hidratos_g": 139.7635,
-    "grasas_g": 80.34933500000001
+    "kcal": 4633.471007481368,
+    "proteinas_g": 249.7048958333333,
+    "hidratos_g": 397.2385,
+    "grasas_g": 226.351517
   }
 }
