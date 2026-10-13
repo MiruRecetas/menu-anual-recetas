@@ -60,3 +60,11 @@ Autorizado el 13/10/2026 tras la prueba real de la usuaria: título, desglose, e
 Prueba real: pulsar Prueba 2, comprobar la frase, el apartado despensa y sal/pimienta; confirmar título, autor, ingredientes, cantidades a 1 y 2 porciones, iconos, Favoritos y Ver receta. Probar también Control para observar si el tagline HTML se importa conservando el escalado conocido. La web no valida el resultado dentro de la app.
 
 Documentación: https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration y https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration/alternative-button-integration .
+
+## Estado actualizado y prueba 3
+
+Resultados reales confirmados por la usuaria el 13/10/2026: JSON importa descripción, stock, escalado también de stock, iconos y enlace en Android. Las advertencias documentales del ensayo 2 no sustituyen esta evidencia; no extrapolar a iOS o al escalado inicial por parámetros.
+
+Prueba 3 añade solo descripción en cinco líneas con las comidas reales y una variante base 2 con cantidades duplicadas. No modifica v2, agrupación, redondeo, AOVE, stock o datos fuente. Usar los enlaces Prueba 3 de la página; la interpretación de saltos de línea y base 2 queda pendiente de prueba real.
+
+Todo el expediente de traspaso, evidencia, límites, decisiones y prompt para nuevo agente está en [AGENTE-BRING.md](AGENTE-BRING.md).
