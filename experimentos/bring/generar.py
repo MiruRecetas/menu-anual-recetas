@@ -178,6 +178,18 @@ def build(root=ROOT):
                             **({} if x['cantidad'] is None else
                                {'spec': f"{formatted(x['cantidad'])} {x['unidad']}"}))
                         for x in ingredients]}
+    multiline = '\n'.join(day['dia'].upper() + ': ' + next(
+        meal['nombre'] for meal in day['ingestas'] if meal['ingesta'] == 'comida') for day in days)
+    v3 = dict(native, tagline=multiline)
+    v3_two = dict(v3)
+    v3_two['yield'] = '2'
+    v3_two['items'] = [dict(item, **({} if source['cantidad'] is None else
+        {'spec': f"{formatted(source['cantidad'] * 2)} {source['unidad']}"}))
+        for item, source in zip(native['items'], ingredients)]
+    def trial_link(filename, servings):
+        return 'https://api.getbring.com/rest/bringrecipes/deeplink?' + urlencode(
+            {'url': URL + filename, 'source': 'web', 'baseQuantity': servings,
+             'requestedQuantity': servings})
     page = f'''<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Menú 1 - Octubre · MiruRecetas · Prueba Bring!</title>
@@ -186,6 +198,11 @@ def build(root=ROOT):
 <script type="application/ld+json">{json.dumps(recipe, ensure_ascii=False).replace('<', chr(92) + 'u003c')}</script>
 </head><body>
 <p>Prueba temporal de importación a Bring! · Ensayo 2: descripción y despensa · Sin diseño definitivo.</p>
+<section><h2>Prueba 3: saltos de línea y base de dos porciones</h2>
+<pre>{e(multiline)}</pre>
+<p><a href="{e(trial_link('bring-v3.json', 1), quote=True)}">Prueba 3: descripción en líneas · 1 porción</a></p>
+<p><a href="{e(trial_link('bring-v3-2.json', 2), quote=True)}">Prueba 3: descripción en líneas · 2 porciones base</a></p>
+<p>La segunda opción contiene el doble de las cantidades y declara rendimiento 2. Bring! debería mostrar 2 porciones inicialmente: bacalao 800 g, huevos 4 y yogur 3 unidades de 125 g. Al bajar a 1 porción deberían volver a 400 g, 2 huevos y 1,5 yogures. No se aplican redondeos ni nuevas agrupaciones.</p></section>
 <article itemscope itemtype="https://schema.org/Recipe">
 <h1 itemprop="name">Menú 1 - Octubre</h1><p>Por <span itemprop="author">MiruRecetas</span></p>
 <p>Rendimiento: <span itemprop="recipeYield">1</span> porción = el menú completo de lunes a viernes para 1 persona.</p>
@@ -218,7 +235,9 @@ document.getElementById('share').addEventListener('click',async()=>{{
              'ingredientes': [dict(x, cantidad=None if x['cantidad'] is None else formatted(x['cantidad']),
                                   cantidad_exacta=None if x['cantidad'] is None else str(x['cantidad'])) for x in ingredients]}
     return {'index.html': page, 'calculo.json': json.dumps(audit, ensure_ascii=False, indent=2) + '\n',
-            'bring-v2.json': json.dumps(native, ensure_ascii=False, indent=2) + '\n'}
+            'bring-v2.json': json.dumps(native, ensure_ascii=False, indent=2) + '\n',
+            'bring-v3.json': json.dumps(v3, ensure_ascii=False, indent=2) + '\n',
+            'bring-v3-2.json': json.dumps(v3_two, ensure_ascii=False, indent=2) + '\n'}
 
 
 def main():

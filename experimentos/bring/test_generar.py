@@ -101,6 +101,25 @@ class MenuTest(unittest.TestCase):
         self.assertIn('itemprop="tagline"', self.output['index.html'])
         self.assertEqual(native['linkOutUrl'], self.parser.schemas[0]['url'])
 
+    def test_trial_three_multiline_and_two_base_servings(self):
+        one = json.loads(self.output['bring-v3.json'])
+        two = json.loads(self.output['bring-v3-2.json'])
+        control = json.loads(self.output['bring-v2.json'])
+        self.assertEqual(len(one['tagline'].splitlines()), 5)
+        self.assertTrue(one['tagline'].startswith('LUNES: '))
+        self.assertIn('\nVIERNES: ', one['tagline'])
+        self.assertEqual(one['items'], control['items'])
+        self.assertEqual(two['yield'], '2')
+        self.assertEqual(one['tagline'], two['tagline'])
+        for a, b, source in zip(one['items'], two['items'], self.audit['ingredientes']):
+            self.assertEqual(a['itemId'], b['itemId'])
+            self.assertEqual(a['stock'], b['stock'])
+            if source['cantidad_exacta'] is None:
+                self.assertNotIn('spec', b)
+            else:
+                expected = float(Fraction(source['cantidad_exacta']) * 2)
+                self.assertAlmostEqual(float(b['spec'].split(' ', 1)[0]), expected, places=5)
+
 
 if __name__ == '__main__':
     unittest.main()

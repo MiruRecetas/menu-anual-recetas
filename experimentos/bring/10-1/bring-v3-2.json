@@ -1,0 +1,333 @@
+{
+  "author": "MiruRecetas",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/10-1/",
+  "name": "Menú 1 - Octubre",
+  "tagline": "LUNES: Bacalao a la vizcaína con patatas panadera\nMARTES: Carrilleras al vino con boniato al horno\nMIÉRCOLES: Bacalao a la vizcaína con patatas panadera\nJUEVES: Canelones de carrilleras\nVIERNES: Wok de gambones y pisto",
+  "yield": "2",
+  "items": [
+    {
+      "itemId": "Aceite de oliva virgen extra",
+      "stock": false,
+      "spec": "30 ml"
+    },
+    {
+      "itemId": "Agua",
+      "stock": false,
+      "spec": "330 g"
+    },
+    {
+      "itemId": "Ajo",
+      "stock": false,
+      "spec": "13.666667 dientes"
+    },
+    {
+      "itemId": "Almendras crudas",
+      "stock": false,
+      "spec": "50 g"
+    },
+    {
+      "itemId": "AOVE",
+      "stock": false,
+      "spec": "25 g"
+    },
+    {
+      "itemId": "AOVE",
+      "stock": false,
+      "spec": "110 ml"
+    },
+    {
+      "itemId": "Bacalao",
+      "stock": false,
+      "spec": "800 g"
+    },
+    {
+      "itemId": "Boniato, crudo (parte comestible)",
+      "stock": false,
+      "spec": "300 g"
+    },
+    {
+      "itemId": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
+      "stock": false,
+      "spec": "200 g"
+    },
+    {
+      "itemId": "Calabacín",
+      "stock": false,
+      "spec": "191.666667 g"
+    },
+    {
+      "itemId": "Caldo de carne",
+      "stock": false,
+      "spec": "300 ml"
+    },
+    {
+      "itemId": "Carne de pimiento choricero",
+      "stock": false,
+      "spec": "60 g"
+    },
+    {
+      "itemId": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
+      "stock": false,
+      "spec": "240 g"
+    },
+    {
+      "itemId": "Carrilleras de cerdo",
+      "stock": false,
+      "spec": "800 g"
+    },
+    {
+      "itemId": "Cebolla",
+      "stock": false,
+      "spec": "765 g"
+    },
+    {
+      "itemId": "Champiñones",
+      "stock": false,
+      "spec": "200 g"
+    },
+    {
+      "itemId": "Cilantro fresco",
+      "stock": false,
+      "spec": "5 g"
+    },
+    {
+      "itemId": "Ciruela fresca con piel (cruda)",
+      "stock": false,
+      "spec": "200 g"
+    },
+    {
+      "itemId": "Comino en polvo",
+      "stock": true,
+      "spec": "7 g"
+    },
+    {
+      "itemId": "Dados de pechuga de pavo",
+      "stock": false,
+      "spec": "250 g"
+    },
+    {
+      "itemId": "Gambones",
+      "stock": false,
+      "spec": "300 g"
+    },
+    {
+      "itemId": "Garbanzos cocidos",
+      "stock": false,
+      "spec": "180 g"
+    },
+    {
+      "itemId": "Garbanzos secos",
+      "stock": false,
+      "spec": "60 g"
+    },
+    {
+      "itemId": "Granola",
+      "stock": false,
+      "spec": "60 g"
+    },
+    {
+      "itemId": "Harina de trigo",
+      "stock": false,
+      "spec": "20.7 g"
+    },
+    {
+      "itemId": "Harina de trigo para enharinar",
+      "stock": false,
+      "spec": "8 g"
+    },
+    {
+      "itemId": "Higo fresco (higos y brevas)",
+      "stock": false,
+      "spec": "200 g"
+    },
+    {
+      "itemId": "Huevos M",
+      "stock": false,
+      "spec": "4 unidades"
+    },
+    {
+      "itemId": "Laurel",
+      "stock": true,
+      "spec": "1 hoja"
+    },
+    {
+      "itemId": "Leche semidesnatada",
+      "stock": false,
+      "spec": "166.666667 ml"
+    },
+    {
+      "itemId": "Mantequilla",
+      "stock": false,
+      "spec": "16.666667 g"
+    },
+    {
+      "itemId": "Masa quebrada",
+      "stock": false,
+      "spec": "1 unidad (230 g)"
+    },
+    {
+      "itemId": "Mayonesa Heinz con cebolla caramelizada y ajo",
+      "stock": false,
+      "spec": "20 g"
+    },
+    {
+      "itemId": "Menta o hierbabuena",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "stock": false,
+      "spec": "30 g"
+    },
+    {
+      "itemId": "Mini tortillas de trigo",
+      "stock": false,
+      "spec": "6 unidades"
+    },
+    {
+      "itemId": "Mozzarella rallada",
+      "stock": false,
+      "spec": "60 g"
+    },
+    {
+      "itemId": "Noodles de arroz",
+      "stock": false,
+      "spec": "140 g"
+    },
+    {
+      "itemId": "Nuez moscada",
+      "stock": true
+    },
+    {
+      "itemId": "Pan",
+      "stock": false,
+      "spec": "20 g"
+    },
+    {
+      "itemId": "Pan de molde multicereales y semillas",
+      "stock": false,
+      "spec": "4 rebanadas"
+    },
+    {
+      "itemId": "Patata, cruda (parte comestible)",
+      "stock": false,
+      "spec": "800 g"
+    },
+    {
+      "itemId": "Pepino",
+      "stock": false,
+      "spec": "30 g"
+    },
+    {
+      "itemId": "Perejil",
+      "stock": false,
+      "spec": "5 g"
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true,
+      "spec": "0.8 g"
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "stock": false,
+      "spec": "150 g"
+    },
+    {
+      "itemId": "Pimiento verde",
+      "stock": false,
+      "spec": "150 g"
+    },
+    {
+      "itemId": "Placas de canelones",
+      "stock": false,
+      "spec": "140 g"
+    },
+    {
+      "itemId": "Puerro",
+      "stock": false,
+      "spec": "200 g"
+    },
+    {
+      "itemId": "Puerros al natural Conservas Morán (escurridos)",
+      "stock": false,
+      "spec": "350 g"
+    },
+    {
+      "itemId": "Queso crema",
+      "stock": false,
+      "spec": "70 g"
+    },
+    {
+      "itemId": "Romero",
+      "stock": true
+    },
+    {
+      "itemId": "Rúcula",
+      "stock": false,
+      "spec": "40 g"
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true,
+      "spec": "2.333333 g"
+    },
+    {
+      "itemId": "Salsa de soja",
+      "stock": false,
+      "spec": "30 g"
+    },
+    {
+      "itemId": "Sardinillas en aceite de oliva, escurridas",
+      "stock": false,
+      "spec": "16 unidades"
+    },
+    {
+      "itemId": "Tahini",
+      "stock": false,
+      "spec": "30 g"
+    },
+    {
+      "itemId": "Tomate",
+      "stock": false,
+      "spec": "433.333333 g"
+    },
+    {
+      "itemId": "Tomillo",
+      "stock": true
+    },
+    {
+      "itemId": "Vino blanco de guiso",
+      "stock": false,
+      "spec": "50 ml"
+    },
+    {
+      "itemId": "Vino tinto",
+      "stock": false,
+      "spec": "250 ml"
+    },
+    {
+      "itemId": "Yogur griego natural",
+      "stock": false,
+      "spec": "3 unidad (125 g)"
+    },
+    {
+      "itemId": "Zanahoria",
+      "stock": false,
+      "spec": "150 g"
+    },
+    {
+      "itemId": "Zumo de limón",
+      "stock": false,
+      "spec": "45 g"
+    }
+  ]
+}
