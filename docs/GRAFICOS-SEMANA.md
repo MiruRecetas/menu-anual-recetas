@@ -26,3 +26,8 @@ La dificultad se concentra en la exportación de datos, no en el dibujo del grá
 5. Coordinar con el chat que publica menús para recalcular ese resumen con cada publicación. Los cambios de ingredientes/recetas que afectan a menús requieren refrescar sus datos y resumen conjuntamente: no existe sincronización continua actualmente. El chat de recetas no tendría que escribir porcentajes ni desgloses manuales adicionales; el exportador los derivaría de los vínculos y datos existentes.
 
 Tras esa ampliación, el mantenimiento habitual se limitaría a clasificar ingredientes nuevos o resolver productos compuestos. La función actual sigue siendo provisional hasta que se implemente, pruebe y apruebe el nuevo suministro de datos.
+
+
+### Tarjeta nutricional desplegable · 13/10/2026
+
+Después del selector de menú, el botón salvia «Ver información nutricional» / «Ocultar información nutricional» controla toda la tarjeta con `aria-controls` y `aria-expanded`. Empieza oculta en cada visita; la elección se conserva al cambiar de menú durante esa visita, sin persistencia adicional. Si no hay gráficos disponibles, el botón se desactiva. En tablet, escritorio y horizontal, los tres gráficos comparten superficie, borde y márgenes de tarjeta, conservando barras a la izquierda y circulares a la derecha (o su apilado responsive). En móvil vertical se conserva la tarjeta de dos caras y su giro, sin añadir otro marco. Es el mismo componente en web y PWA.
