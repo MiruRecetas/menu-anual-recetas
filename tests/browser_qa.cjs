@@ -612,6 +612,33 @@ const assert = require('node:assert/strict');
     await page.close();
   }
 
+  // Compactas: nombres siempre como texto y flecha independiente para cada receta.
+  for(const width of [390,820,1440]){
+    const page=await browser.newPage({viewport:{width,height:950},serviceWorkers:'block'});
+    page.on('pageerror',e=>issues.push('compacta flechas: '+e.message));
+    await page.goto('http://127.0.0.1:8765/');
+    await page.locator('#month').selectOption('9');
+    await page.locator('#menu-number').selectOption('1');
+    for(const [day,slugs] of [
+      ['Lunes',['ensalada-cesar','tortilla-de-patata-tradicional-con-cebolla']],
+      ['Martes',['berenjenas-rellenas','quesadillas-vegetales']],
+      ['Jueves',['pasta-bolonesa','tostas-de-burrata-piquillos-y-anchoas']]
+    ]){
+      await page.getByRole('button',{name:'Ver resumen de '+day}).click();
+      const links=page.locator('#quick-content a.quick-group-recipe');
+      assert.deepEqual(await links.evaluateAll(nodes=>nodes.map(n=>new URL(n.href).pathname.split('/').filter(Boolean).at(-1))),slugs,day+': todas las recetas tienen flecha');
+      assert.equal(await page.locator('#quick-content a.quick-meal-name,#quick-content .quick-meal-link').count(),0,'Nombres sin hipervínculo');
+      assert.ok(await links.evaluateAll(nodes=>nodes.every(n=>n.textContent==='↗'&&n.getAttribute('aria-label').startsWith('Abrir receta: '))),'Solo flecha enlazada con nombre accesible');
+      assert.ok(await page.locator('#quick-content .quick-meal-name').evaluateAll(nodes=>nodes.every(n=>n.tagName==='SPAN'&&getComputedStyle(n).textDecorationLine==='none')),'Nombres sin subrayado');
+      await page.screenshot({path:out+'/compacta-septiembre1-'+day+'-'+width+'.png'});
+      await page.keyboard.press('Escape');
+    }
+    await page.getByRole('button',{name:'Ver resumen de Jueves'}).click();
+    await page.locator('#quick-content a.quick-group-recipe').first().click();
+    assert.match(page.url(),/recetas\/pasta-bolonesa\/$/,'La flecha abre la receta correcta');
+    await page.close();
+  }
+
   // Preparación publicada sin slug en el JSON: resolver enlace exacto en presentación.
   for(const width of [390,1440]){
     const page=await browser.newPage({serviceWorkers:"block",viewport:{width,height:900}});
