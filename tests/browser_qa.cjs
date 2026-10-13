@@ -352,6 +352,28 @@ const assert = require('node:assert/strict');
         assert.ok(layout.sizes.every(w=>w<layout.width/3+1),'Miniaturas respetan tres posiciones');
       }
     }
+    if(test.name==='tablet'){
+      for(const width of [701,768,820,1024,1099]){
+        await page.setViewportSize({width,height:1366});
+        for(const count of [1,2,4,5,6,8,9]){
+          const layout=await gallery.evaluate((el,count)=>{
+            const originals=[...el.children],oldClass=el.className,sample=originals[0];
+            el.replaceChildren();for(let i=0;i<count;i++)el.append(sample.cloneNode(true));
+            el.className='batch-gallery batch-cols-'+(count===1?1:count%2===0?2:3);
+            const rows=[...el.children].map(e=>e.getBoundingClientRect());
+            const result={columns:getComputedStyle(el).gridTemplateColumns.split(' ').length,
+              overflow:el.scrollWidth>el.clientWidth+1,widths:rows.map(r=>r.width),tops:rows.map(r=>r.top)};
+            el.replaceChildren(...originals);el.className=oldClass;return result;
+          },count);
+          assert.equal(layout.columns,4,'Tablet vertical '+width+' px: cuatro columnas con '+count+' miniaturas');
+          assert.equal(layout.overflow,false,'Galería tablet sin desbordamiento');
+          assert.ok(Math.max(...layout.widths)-Math.min(...layout.widths)<1,'Miniaturas tablet de igual tamaño');
+          assert.equal(new Set(layout.tops.slice(0,4)).size,1,'Hasta cuatro miniaturas en la primera fila');
+          if(count>4)assert.ok(layout.tops[4]>layout.tops[0],'La quinta miniatura pasa a otra fila');
+        }
+      }
+      await page.setViewportSize({width:test.width,height:test.height});
+    }
     assert.ok(await gallery.evaluate(el=>el.classList.contains('batch-cols-'+(el.children.length===1?1:(el.children.length%3===0||el.children.length%5===0||el.children.length%2!==0)?3:2))),'Columnas de galería correctas');
     await page.screenshot({path:out+'/semana-'+test.name+'.png',fullPage:true});
     await page.getByRole('button',{name:'Ver resumen de Lunes'}).click();
