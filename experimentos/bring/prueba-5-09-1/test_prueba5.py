@@ -41,6 +41,17 @@ class Trial5(unittest.TestCase):
         self.assertTrue(self.item(3,'Aceite de oliva')['stock'])
         self.assertEqual(self.item(1,'Pechuga de pollo')['spec'],'270 g')
 
+    def test_anchovies_and_display_precision_regression(self):
+        self.assertEqual(self.item(4,'Anchoas')['spec'],'120 g')
+        self.assertEqual(self.item(5,'Anchoas')['spec'],'150 g')
+        views=json.loads(self.files['vista.json'])
+        r=next(x for x in views[3]['ingredientes'] if 'Anchoas' in x['nombre'])
+        self.assertEqual(r['cantidad_real'],'113.3 g')
+        self.assertEqual(F(r['cantidad_exacta']),F(340,3))
+        for v in views:
+            for row in v['ingredientes']:
+                self.assertRegex(row['cantidad_real'],r'^\d+(?:\.\d)? ')
+
     def test_yield_link_quantities_and_real_need(self):
         views=json.loads(self.files['vista.json'])
         for n in range(1,21):

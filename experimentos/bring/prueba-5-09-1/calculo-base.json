@@ -1583,26 +1583,10 @@
   "reglas_prueba_5": {
     "orden": "agrupar por ID/unidad, multiplicar cantidades exactas por porciones, convertir presentación y redondear al final",
     "exportacion": "spec contiene únicamente cantidad y unidad; sin cantidades secundarias",
-    "frescos": [
-      "rec0zazpvEsFuV0x4",
-      "rec1Xb6nuoyFWAxvF",
-      "rec4QWbZX5KJIhQyW",
-      "rec7ray2LYDB4u7UC",
-      "rec8Qjo12MyyUQ3Rc",
-      "recENcfvg6SEEWS6F",
-      "recSE81b9WjkURbXi",
-      "recWu3cmRxB6uzGOH",
-      "recebLI940bDa1XRS",
-      "recjq8IrRWXTVjRKg",
-      "reclKQvB48lfBN4PL",
-      "recrGNY88zOIOcRom",
-      "recssXY1xQnfwtRkJ",
-      "recw8aSxhSx0aSH93",
-      "reczgvNmAbXxN7Rs3"
-    ],
+    "redondeo_g_ml": "todos los pesos/volúmenes sin presentación unitaria verificada",
     "aceite_stock_id": "rec4QWbZX5KJIhQyW",
     "max_porciones_experimento": 20,
-    "estado_real": "Prueba 5 en Bring! pendiente; pruebas automáticas no acreditan importación",
+    "estado_real": "La usuaria confirma el 14/10/2026 que prueba 5 funciona en Bring! como esperaba; corrige anchoas y precisión visual, no la importación",
     "limite": "Para cambiar porciones volver a esta página y hacer una nueva importación. Bring! puede escalar de nuevo cifras ya redondeadas."
   }
 }
