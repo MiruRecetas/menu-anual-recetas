@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "03774e17474e313d30b2bf928ef2cf7d8ca87fa5",
-  "generated_at_utc": "2026-10-13T12:11:53Z",
-  "total_recetas": 39,
+  "source_commit_sha": "06553499c866c5ba4b363604a031de6c4d82e90f",
+  "generated_at_utc": "2026-10-13T12:50:42Z",
+  "total_recetas": 40,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -586,6 +586,71 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-campera/"
+    },
+    {
+      "nombre": "Ensalada César",
+      "slug": "ensalada-cesar",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada de lechuga y pollo a la plancha con picatostes, Grana Padano y una salsa cremosa de yogur y anchoas.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de pollo",
+          "cantidad": 450,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Lechuga",
+          "cantidad": 360,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pan blanco",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Grana Padano",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Yogur griego natural",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Anchoas en aceite (escurridas)",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mostaza de Dijon",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Salsa Worcestershire",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Ajo en polvo",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-cesar/"
     },
     {
       "nombre": "Fajitas de pollo",
