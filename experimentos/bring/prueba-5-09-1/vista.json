@@ -6,7 +6,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/250000000000000",
-        "cantidad_real": "58.722511 ml",
+        "cantidad_real": "58.7 ml",
         "stock": true,
         "cantidad_compra": 60,
         "unidad_compra": "ml",
@@ -30,12 +30,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "85/3",
-        "cantidad_real": "28.333333 g",
+        "cantidad_real": "28.3 g",
         "stock": false,
-        "cantidad_compra": "28.333333",
+        "cantidad_compra": 30,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "28.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "30 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -174,9 +174,9 @@
         "cantidad_exacta": "70",
         "cantidad_real": "70 g",
         "stock": false,
-        "cantidad_compra": "70",
+        "cantidad_compra": 70,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "70 g"
       },
       {
@@ -235,9 +235,9 @@
         "cantidad_exacta": "50",
         "cantidad_real": "50 g",
         "stock": false,
-        "cantidad_compra": "50",
+        "cantidad_compra": 50,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "50 g"
       },
       {
@@ -259,9 +259,9 @@
         "cantidad_exacta": "70",
         "cantidad_real": "70 g",
         "stock": false,
-        "cantidad_compra": "70",
+        "cantidad_compra": 70,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "70 g"
       },
       {
@@ -340,9 +340,9 @@
         "cantidad_exacta": "150",
         "cantidad_real": "150 g",
         "stock": false,
-        "cantidad_compra": "150",
+        "cantidad_compra": 150,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "150 g"
       },
       {
@@ -362,9 +362,9 @@
         "cantidad_exacta": "150",
         "cantidad_real": "150 g",
         "stock": false,
-        "cantidad_compra": "150",
+        "cantidad_compra": 150,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "150 g"
       },
       {
@@ -384,7 +384,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "125/3",
-        "cantidad_real": "41.666667 g",
+        "cantidad_real": "41.7 g",
         "stock": false,
         "equivalencia_exacta": "1/3",
         "cantidad_compra": 1,
@@ -408,7 +408,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "55/3",
-        "cantidad_real": "18.333333 g",
+        "cantidad_real": "18.3 g",
         "stock": false,
         "cantidad_compra": 20,
         "unidad_compra": "g",
@@ -425,7 +425,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/125000000000000",
-        "cantidad_real": "117.445022 ml",
+        "cantidad_real": "117.4 ml",
         "stock": true,
         "cantidad_compra": 120,
         "unidad_compra": "ml",
@@ -449,12 +449,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "170/3",
-        "cantidad_real": "56.666667 g",
+        "cantidad_real": "56.7 g",
         "stock": false,
-        "cantidad_compra": "56.666667",
+        "cantidad_compra": 60,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "56.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "60 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -593,9 +593,9 @@
         "cantidad_exacta": "140",
         "cantidad_real": "140 g",
         "stock": false,
-        "cantidad_compra": "140",
+        "cantidad_compra": 140,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "140 g"
       },
       {
@@ -654,9 +654,9 @@
         "cantidad_exacta": "100",
         "cantidad_real": "100 g",
         "stock": false,
-        "cantidad_compra": "100",
+        "cantidad_compra": 100,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "100 g"
       },
       {
@@ -678,9 +678,9 @@
         "cantidad_exacta": "140",
         "cantidad_real": "140 g",
         "stock": false,
-        "cantidad_compra": "140",
+        "cantidad_compra": 140,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "140 g"
       },
       {
@@ -759,9 +759,9 @@
         "cantidad_exacta": "300",
         "cantidad_real": "300 g",
         "stock": false,
-        "cantidad_compra": "300",
+        "cantidad_compra": 300,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "300 g"
       },
       {
@@ -781,9 +781,9 @@
         "cantidad_exacta": "300",
         "cantidad_real": "300 g",
         "stock": false,
-        "cantidad_compra": "300",
+        "cantidad_compra": 300,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "300 g"
       },
       {
@@ -803,7 +803,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "250/3",
-        "cantidad_real": "83.333333 g",
+        "cantidad_real": "83.3 g",
         "stock": false,
         "equivalencia_exacta": "2/3",
         "cantidad_compra": 1,
@@ -827,7 +827,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "110/3",
-        "cantidad_real": "36.666667 g",
+        "cantidad_real": "36.7 g",
         "stock": false,
         "cantidad_compra": 40,
         "unidad_compra": "g",
@@ -844,7 +844,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "44041883241758241/250000000000000",
-        "cantidad_real": "176.167533 ml",
+        "cantidad_real": "176.2 ml",
         "stock": true,
         "cantidad_compra": 180,
         "unidad_compra": "ml",
@@ -870,10 +870,10 @@
         "cantidad_exacta": "85",
         "cantidad_real": "85 g",
         "stock": false,
-        "cantidad_compra": "85",
+        "cantidad_compra": 90,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "85 g"
+        "regla": "decena superior tras escalado",
+        "spec": "90 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -1012,9 +1012,9 @@
         "cantidad_exacta": "210",
         "cantidad_real": "210 g",
         "stock": false,
-        "cantidad_compra": "210",
+        "cantidad_compra": 210,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "210 g"
       },
       {
@@ -1073,9 +1073,9 @@
         "cantidad_exacta": "150",
         "cantidad_real": "150 g",
         "stock": false,
-        "cantidad_compra": "150",
+        "cantidad_compra": 150,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "150 g"
       },
       {
@@ -1097,9 +1097,9 @@
         "cantidad_exacta": "210",
         "cantidad_real": "210 g",
         "stock": false,
-        "cantidad_compra": "210",
+        "cantidad_compra": 210,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "210 g"
       },
       {
@@ -1178,9 +1178,9 @@
         "cantidad_exacta": "450",
         "cantidad_real": "450 g",
         "stock": false,
-        "cantidad_compra": "450",
+        "cantidad_compra": 450,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "450 g"
       },
       {
@@ -1200,9 +1200,9 @@
         "cantidad_exacta": "450",
         "cantidad_real": "450 g",
         "stock": false,
-        "cantidad_compra": "450",
+        "cantidad_compra": 450,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "450 g"
       },
       {
@@ -1263,7 +1263,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/62500000000000",
-        "cantidad_real": "234.890044 ml",
+        "cantidad_real": "234.9 ml",
         "stock": true,
         "cantidad_compra": 240,
         "unidad_compra": "ml",
@@ -1287,12 +1287,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "340/3",
-        "cantidad_real": "113.333333 g",
+        "cantidad_real": "113.3 g",
         "stock": false,
-        "cantidad_compra": "113.333333",
+        "cantidad_compra": 120,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "113.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "120 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -1431,9 +1431,9 @@
         "cantidad_exacta": "280",
         "cantidad_real": "280 g",
         "stock": false,
-        "cantidad_compra": "280",
+        "cantidad_compra": 280,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "280 g"
       },
       {
@@ -1492,9 +1492,9 @@
         "cantidad_exacta": "200",
         "cantidad_real": "200 g",
         "stock": false,
-        "cantidad_compra": "200",
+        "cantidad_compra": 200,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "200 g"
       },
       {
@@ -1516,9 +1516,9 @@
         "cantidad_exacta": "280",
         "cantidad_real": "280 g",
         "stock": false,
-        "cantidad_compra": "280",
+        "cantidad_compra": 280,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "280 g"
       },
       {
@@ -1597,9 +1597,9 @@
         "cantidad_exacta": "600",
         "cantidad_real": "600 g",
         "stock": false,
-        "cantidad_compra": "600",
+        "cantidad_compra": 600,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "600 g"
       },
       {
@@ -1619,9 +1619,9 @@
         "cantidad_exacta": "600",
         "cantidad_real": "600 g",
         "stock": false,
-        "cantidad_compra": "600",
+        "cantidad_compra": 600,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "600 g"
       },
       {
@@ -1641,7 +1641,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "500/3",
-        "cantidad_real": "166.666667 g",
+        "cantidad_real": "166.7 g",
         "stock": false,
         "equivalencia_exacta": "4/3",
         "cantidad_compra": 2,
@@ -1665,7 +1665,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "220/3",
-        "cantidad_real": "73.333333 g",
+        "cantidad_real": "73.3 g",
         "stock": false,
         "cantidad_compra": 80,
         "unidad_compra": "g",
@@ -1682,7 +1682,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/50000000000000",
-        "cantidad_real": "293.612555 ml",
+        "cantidad_real": "293.6 ml",
         "stock": true,
         "cantidad_compra": 300,
         "unidad_compra": "ml",
@@ -1706,12 +1706,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "425/3",
-        "cantidad_real": "141.666667 g",
+        "cantidad_real": "141.7 g",
         "stock": false,
-        "cantidad_compra": "141.666667",
+        "cantidad_compra": 150,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "141.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "150 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -1850,9 +1850,9 @@
         "cantidad_exacta": "350",
         "cantidad_real": "350 g",
         "stock": false,
-        "cantidad_compra": "350",
+        "cantidad_compra": 350,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "350 g"
       },
       {
@@ -1911,9 +1911,9 @@
         "cantidad_exacta": "250",
         "cantidad_real": "250 g",
         "stock": false,
-        "cantidad_compra": "250",
+        "cantidad_compra": 250,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "250 g"
       },
       {
@@ -1935,9 +1935,9 @@
         "cantidad_exacta": "350",
         "cantidad_real": "350 g",
         "stock": false,
-        "cantidad_compra": "350",
+        "cantidad_compra": 350,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "350 g"
       },
       {
@@ -2016,9 +2016,9 @@
         "cantidad_exacta": "750",
         "cantidad_real": "750 g",
         "stock": false,
-        "cantidad_compra": "750",
+        "cantidad_compra": 750,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "750 g"
       },
       {
@@ -2038,9 +2038,9 @@
         "cantidad_exacta": "750",
         "cantidad_real": "750 g",
         "stock": false,
-        "cantidad_compra": "750",
+        "cantidad_compra": 750,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "750 g"
       },
       {
@@ -2060,7 +2060,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "625/3",
-        "cantidad_real": "208.333333 g",
+        "cantidad_real": "208.3 g",
         "stock": false,
         "equivalencia_exacta": "5/3",
         "cantidad_compra": 2,
@@ -2084,7 +2084,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "275/3",
-        "cantidad_real": "91.666667 g",
+        "cantidad_real": "91.7 g",
         "stock": false,
         "cantidad_compra": 100,
         "unidad_compra": "g",
@@ -2101,7 +2101,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "44041883241758241/125000000000000",
-        "cantidad_real": "352.335066 ml",
+        "cantidad_real": "352.3 ml",
         "stock": true,
         "cantidad_compra": 360,
         "unidad_compra": "ml",
@@ -2127,9 +2127,9 @@
         "cantidad_exacta": "170",
         "cantidad_real": "170 g",
         "stock": false,
-        "cantidad_compra": "170",
+        "cantidad_compra": 170,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "170 g"
       },
       {
@@ -2269,9 +2269,9 @@
         "cantidad_exacta": "420",
         "cantidad_real": "420 g",
         "stock": false,
-        "cantidad_compra": "420",
+        "cantidad_compra": 420,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "420 g"
       },
       {
@@ -2330,9 +2330,9 @@
         "cantidad_exacta": "300",
         "cantidad_real": "300 g",
         "stock": false,
-        "cantidad_compra": "300",
+        "cantidad_compra": 300,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "300 g"
       },
       {
@@ -2354,9 +2354,9 @@
         "cantidad_exacta": "420",
         "cantidad_real": "420 g",
         "stock": false,
-        "cantidad_compra": "420",
+        "cantidad_compra": 420,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "420 g"
       },
       {
@@ -2435,9 +2435,9 @@
         "cantidad_exacta": "900",
         "cantidad_real": "900 g",
         "stock": false,
-        "cantidad_compra": "900",
+        "cantidad_compra": 900,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "900 g"
       },
       {
@@ -2457,9 +2457,9 @@
         "cantidad_exacta": "900",
         "cantidad_real": "900 g",
         "stock": false,
-        "cantidad_compra": "900",
+        "cantidad_compra": 900,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "900 g"
       },
       {
@@ -2520,7 +2520,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "102764394230769229/250000000000000",
-        "cantidad_real": "411.057577 ml",
+        "cantidad_real": "411.1 ml",
         "stock": true,
         "cantidad_compra": 420,
         "unidad_compra": "ml",
@@ -2544,12 +2544,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "595/3",
-        "cantidad_real": "198.333333 g",
+        "cantidad_real": "198.3 g",
         "stock": false,
-        "cantidad_compra": "198.333333",
+        "cantidad_compra": 200,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "198.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "200 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -2688,9 +2688,9 @@
         "cantidad_exacta": "490",
         "cantidad_real": "490 g",
         "stock": false,
-        "cantidad_compra": "490",
+        "cantidad_compra": 490,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "490 g"
       },
       {
@@ -2749,9 +2749,9 @@
         "cantidad_exacta": "350",
         "cantidad_real": "350 g",
         "stock": false,
-        "cantidad_compra": "350",
+        "cantidad_compra": 350,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "350 g"
       },
       {
@@ -2773,9 +2773,9 @@
         "cantidad_exacta": "490",
         "cantidad_real": "490 g",
         "stock": false,
-        "cantidad_compra": "490",
+        "cantidad_compra": 490,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "490 g"
       },
       {
@@ -2854,9 +2854,9 @@
         "cantidad_exacta": "1050",
         "cantidad_real": "1050 g",
         "stock": false,
-        "cantidad_compra": "1050",
+        "cantidad_compra": 1050,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1050 g"
       },
       {
@@ -2876,9 +2876,9 @@
         "cantidad_exacta": "1050",
         "cantidad_real": "1050 g",
         "stock": false,
-        "cantidad_compra": "1050",
+        "cantidad_compra": 1050,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1050 g"
       },
       {
@@ -2898,7 +2898,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "875/3",
-        "cantidad_real": "291.666667 g",
+        "cantidad_real": "291.7 g",
         "stock": false,
         "equivalencia_exacta": "7/3",
         "cantidad_compra": 3,
@@ -2922,7 +2922,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "385/3",
-        "cantidad_real": "128.333333 g",
+        "cantidad_real": "128.3 g",
         "stock": false,
         "cantidad_compra": 130,
         "unidad_compra": "g",
@@ -2939,7 +2939,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/31250000000000",
-        "cantidad_real": "469.780088 ml",
+        "cantidad_real": "469.8 ml",
         "stock": true,
         "cantidad_compra": 470,
         "unidad_compra": "ml",
@@ -2963,12 +2963,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "680/3",
-        "cantidad_real": "226.666667 g",
+        "cantidad_real": "226.7 g",
         "stock": false,
-        "cantidad_compra": "226.666667",
+        "cantidad_compra": 230,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "226.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "230 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -3107,9 +3107,9 @@
         "cantidad_exacta": "560",
         "cantidad_real": "560 g",
         "stock": false,
-        "cantidad_compra": "560",
+        "cantidad_compra": 560,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "560 g"
       },
       {
@@ -3168,9 +3168,9 @@
         "cantidad_exacta": "400",
         "cantidad_real": "400 g",
         "stock": false,
-        "cantidad_compra": "400",
+        "cantidad_compra": 400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "400 g"
       },
       {
@@ -3192,9 +3192,9 @@
         "cantidad_exacta": "560",
         "cantidad_real": "560 g",
         "stock": false,
-        "cantidad_compra": "560",
+        "cantidad_compra": 560,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "560 g"
       },
       {
@@ -3273,9 +3273,9 @@
         "cantidad_exacta": "1200",
         "cantidad_real": "1200 g",
         "stock": false,
-        "cantidad_compra": "1200",
+        "cantidad_compra": 1200,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1200 g"
       },
       {
@@ -3295,9 +3295,9 @@
         "cantidad_exacta": "1200",
         "cantidad_real": "1200 g",
         "stock": false,
-        "cantidad_compra": "1200",
+        "cantidad_compra": 1200,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1200 g"
       },
       {
@@ -3317,7 +3317,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "1000/3",
-        "cantidad_real": "333.333333 g",
+        "cantidad_real": "333.3 g",
         "stock": false,
         "equivalencia_exacta": "8/3",
         "cantidad_compra": 3,
@@ -3341,7 +3341,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "440/3",
-        "cantidad_real": "146.666667 g",
+        "cantidad_real": "146.7 g",
         "stock": false,
         "cantidad_compra": 150,
         "unidad_compra": "g",
@@ -3358,7 +3358,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "132125649725274723/250000000000000",
-        "cantidad_real": "528.502599 ml",
+        "cantidad_real": "528.5 ml",
         "stock": true,
         "cantidad_compra": 530,
         "unidad_compra": "ml",
@@ -3384,10 +3384,10 @@
         "cantidad_exacta": "255",
         "cantidad_real": "255 g",
         "stock": false,
-        "cantidad_compra": "255",
+        "cantidad_compra": 260,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "255 g"
+        "regla": "decena superior tras escalado",
+        "spec": "260 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -3526,9 +3526,9 @@
         "cantidad_exacta": "630",
         "cantidad_real": "630 g",
         "stock": false,
-        "cantidad_compra": "630",
+        "cantidad_compra": 630,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "630 g"
       },
       {
@@ -3587,9 +3587,9 @@
         "cantidad_exacta": "450",
         "cantidad_real": "450 g",
         "stock": false,
-        "cantidad_compra": "450",
+        "cantidad_compra": 450,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "450 g"
       },
       {
@@ -3611,9 +3611,9 @@
         "cantidad_exacta": "630",
         "cantidad_real": "630 g",
         "stock": false,
-        "cantidad_compra": "630",
+        "cantidad_compra": 630,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "630 g"
       },
       {
@@ -3692,9 +3692,9 @@
         "cantidad_exacta": "1350",
         "cantidad_real": "1350 g",
         "stock": false,
-        "cantidad_compra": "1350",
+        "cantidad_compra": 1350,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1350 g"
       },
       {
@@ -3714,9 +3714,9 @@
         "cantidad_exacta": "1350",
         "cantidad_real": "1350 g",
         "stock": false,
-        "cantidad_compra": "1350",
+        "cantidad_compra": 1350,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1350 g"
       },
       {
@@ -3777,7 +3777,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/25000000000000",
-        "cantidad_real": "587.22511 ml",
+        "cantidad_real": "587.2 ml",
         "stock": true,
         "cantidad_compra": 590,
         "unidad_compra": "ml",
@@ -3801,12 +3801,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "850/3",
-        "cantidad_real": "283.333333 g",
+        "cantidad_real": "283.3 g",
         "stock": false,
-        "cantidad_compra": "283.333333",
+        "cantidad_compra": 290,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "283.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "290 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -3945,9 +3945,9 @@
         "cantidad_exacta": "700",
         "cantidad_real": "700 g",
         "stock": false,
-        "cantidad_compra": "700",
+        "cantidad_compra": 700,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "700 g"
       },
       {
@@ -4006,9 +4006,9 @@
         "cantidad_exacta": "500",
         "cantidad_real": "500 g",
         "stock": false,
-        "cantidad_compra": "500",
+        "cantidad_compra": 500,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "500 g"
       },
       {
@@ -4030,9 +4030,9 @@
         "cantidad_exacta": "700",
         "cantidad_real": "700 g",
         "stock": false,
-        "cantidad_compra": "700",
+        "cantidad_compra": 700,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "700 g"
       },
       {
@@ -4111,9 +4111,9 @@
         "cantidad_exacta": "1500",
         "cantidad_real": "1500 g",
         "stock": false,
-        "cantidad_compra": "1500",
+        "cantidad_compra": 1500,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1500 g"
       },
       {
@@ -4133,9 +4133,9 @@
         "cantidad_exacta": "1500",
         "cantidad_real": "1500 g",
         "stock": false,
-        "cantidad_compra": "1500",
+        "cantidad_compra": 1500,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1500 g"
       },
       {
@@ -4155,7 +4155,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "1250/3",
-        "cantidad_real": "416.666667 g",
+        "cantidad_real": "416.7 g",
         "stock": false,
         "equivalencia_exacta": "10/3",
         "cantidad_compra": 4,
@@ -4179,7 +4179,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "550/3",
-        "cantidad_real": "183.333333 g",
+        "cantidad_real": "183.3 g",
         "stock": false,
         "cantidad_compra": 190,
         "unidad_compra": "g",
@@ -4196,7 +4196,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "161486905219780217/250000000000000",
-        "cantidad_real": "645.947621 ml",
+        "cantidad_real": "645.9 ml",
         "stock": true,
         "cantidad_compra": 650,
         "unidad_compra": "ml",
@@ -4220,12 +4220,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "935/3",
-        "cantidad_real": "311.666667 g",
+        "cantidad_real": "311.7 g",
         "stock": false,
-        "cantidad_compra": "311.666667",
+        "cantidad_compra": 320,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "311.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "320 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -4364,9 +4364,9 @@
         "cantidad_exacta": "770",
         "cantidad_real": "770 g",
         "stock": false,
-        "cantidad_compra": "770",
+        "cantidad_compra": 770,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "770 g"
       },
       {
@@ -4425,9 +4425,9 @@
         "cantidad_exacta": "550",
         "cantidad_real": "550 g",
         "stock": false,
-        "cantidad_compra": "550",
+        "cantidad_compra": 550,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "550 g"
       },
       {
@@ -4449,9 +4449,9 @@
         "cantidad_exacta": "770",
         "cantidad_real": "770 g",
         "stock": false,
-        "cantidad_compra": "770",
+        "cantidad_compra": 770,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "770 g"
       },
       {
@@ -4530,9 +4530,9 @@
         "cantidad_exacta": "1650",
         "cantidad_real": "1650 g",
         "stock": false,
-        "cantidad_compra": "1650",
+        "cantidad_compra": 1650,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1650 g"
       },
       {
@@ -4552,9 +4552,9 @@
         "cantidad_exacta": "1650",
         "cantidad_real": "1650 g",
         "stock": false,
-        "cantidad_compra": "1650",
+        "cantidad_compra": 1650,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1650 g"
       },
       {
@@ -4574,7 +4574,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "1375/3",
-        "cantidad_real": "458.333333 g",
+        "cantidad_real": "458.3 g",
         "stock": false,
         "equivalencia_exacta": "11/3",
         "cantidad_compra": 4,
@@ -4598,7 +4598,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "605/3",
-        "cantidad_real": "201.666667 g",
+        "cantidad_real": "201.7 g",
         "stock": false,
         "cantidad_compra": 210,
         "unidad_compra": "g",
@@ -4615,7 +4615,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "44041883241758241/62500000000000",
-        "cantidad_real": "704.670132 ml",
+        "cantidad_real": "704.7 ml",
         "stock": true,
         "cantidad_compra": 710,
         "unidad_compra": "ml",
@@ -4641,9 +4641,9 @@
         "cantidad_exacta": "340",
         "cantidad_real": "340 g",
         "stock": false,
-        "cantidad_compra": "340",
+        "cantidad_compra": 340,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "340 g"
       },
       {
@@ -4783,9 +4783,9 @@
         "cantidad_exacta": "840",
         "cantidad_real": "840 g",
         "stock": false,
-        "cantidad_compra": "840",
+        "cantidad_compra": 840,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "840 g"
       },
       {
@@ -4844,9 +4844,9 @@
         "cantidad_exacta": "600",
         "cantidad_real": "600 g",
         "stock": false,
-        "cantidad_compra": "600",
+        "cantidad_compra": 600,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "600 g"
       },
       {
@@ -4868,9 +4868,9 @@
         "cantidad_exacta": "840",
         "cantidad_real": "840 g",
         "stock": false,
-        "cantidad_compra": "840",
+        "cantidad_compra": 840,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "840 g"
       },
       {
@@ -4949,9 +4949,9 @@
         "cantidad_exacta": "1800",
         "cantidad_real": "1800 g",
         "stock": false,
-        "cantidad_compra": "1800",
+        "cantidad_compra": 1800,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1800 g"
       },
       {
@@ -4971,9 +4971,9 @@
         "cantidad_exacta": "1800",
         "cantidad_real": "1800 g",
         "stock": false,
-        "cantidad_compra": "1800",
+        "cantidad_compra": 1800,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1800 g"
       },
       {
@@ -5034,7 +5034,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "190848160714285711/250000000000000",
-        "cantidad_real": "763.392643 ml",
+        "cantidad_real": "763.4 ml",
         "stock": true,
         "cantidad_compra": 770,
         "unidad_compra": "ml",
@@ -5058,12 +5058,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1105/3",
-        "cantidad_real": "368.333333 g",
+        "cantidad_real": "368.3 g",
         "stock": false,
-        "cantidad_compra": "368.333333",
+        "cantidad_compra": 370,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "368.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "370 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -5202,9 +5202,9 @@
         "cantidad_exacta": "910",
         "cantidad_real": "910 g",
         "stock": false,
-        "cantidad_compra": "910",
+        "cantidad_compra": 910,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "910 g"
       },
       {
@@ -5263,9 +5263,9 @@
         "cantidad_exacta": "650",
         "cantidad_real": "650 g",
         "stock": false,
-        "cantidad_compra": "650",
+        "cantidad_compra": 650,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "650 g"
       },
       {
@@ -5287,9 +5287,9 @@
         "cantidad_exacta": "910",
         "cantidad_real": "910 g",
         "stock": false,
-        "cantidad_compra": "910",
+        "cantidad_compra": 910,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "910 g"
       },
       {
@@ -5368,9 +5368,9 @@
         "cantidad_exacta": "1950",
         "cantidad_real": "1950 g",
         "stock": false,
-        "cantidad_compra": "1950",
+        "cantidad_compra": 1950,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1950 g"
       },
       {
@@ -5390,9 +5390,9 @@
         "cantidad_exacta": "1950",
         "cantidad_real": "1950 g",
         "stock": false,
-        "cantidad_compra": "1950",
+        "cantidad_compra": 1950,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1950 g"
       },
       {
@@ -5412,7 +5412,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "1625/3",
-        "cantidad_real": "541.666667 g",
+        "cantidad_real": "541.7 g",
         "stock": false,
         "equivalencia_exacta": "13/3",
         "cantidad_compra": 5,
@@ -5436,7 +5436,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "715/3",
-        "cantidad_real": "238.333333 g",
+        "cantidad_real": "238.3 g",
         "stock": false,
         "cantidad_compra": 240,
         "unidad_compra": "g",
@@ -5453,7 +5453,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "102764394230769229/125000000000000",
-        "cantidad_real": "822.115154 ml",
+        "cantidad_real": "822.1 ml",
         "stock": true,
         "cantidad_compra": 830,
         "unidad_compra": "ml",
@@ -5477,12 +5477,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1190/3",
-        "cantidad_real": "396.666667 g",
+        "cantidad_real": "396.7 g",
         "stock": false,
-        "cantidad_compra": "396.666667",
+        "cantidad_compra": 400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "396.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "400 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -5621,9 +5621,9 @@
         "cantidad_exacta": "980",
         "cantidad_real": "980 g",
         "stock": false,
-        "cantidad_compra": "980",
+        "cantidad_compra": 980,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "980 g"
       },
       {
@@ -5682,9 +5682,9 @@
         "cantidad_exacta": "700",
         "cantidad_real": "700 g",
         "stock": false,
-        "cantidad_compra": "700",
+        "cantidad_compra": 700,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "700 g"
       },
       {
@@ -5706,9 +5706,9 @@
         "cantidad_exacta": "980",
         "cantidad_real": "980 g",
         "stock": false,
-        "cantidad_compra": "980",
+        "cantidad_compra": 980,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "980 g"
       },
       {
@@ -5787,9 +5787,9 @@
         "cantidad_exacta": "2100",
         "cantidad_real": "2100 g",
         "stock": false,
-        "cantidad_compra": "2100",
+        "cantidad_compra": 2100,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2100 g"
       },
       {
@@ -5809,9 +5809,9 @@
         "cantidad_exacta": "2100",
         "cantidad_real": "2100 g",
         "stock": false,
-        "cantidad_compra": "2100",
+        "cantidad_compra": 2100,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2100 g"
       },
       {
@@ -5831,7 +5831,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "1750/3",
-        "cantidad_real": "583.333333 g",
+        "cantidad_real": "583.3 g",
         "stock": false,
         "equivalencia_exacta": "14/3",
         "cantidad_compra": 5,
@@ -5855,7 +5855,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "770/3",
-        "cantidad_real": "256.666667 g",
+        "cantidad_real": "256.7 g",
         "stock": false,
         "cantidad_compra": 260,
         "unidad_compra": "g",
@@ -5872,7 +5872,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "44041883241758241/50000000000000",
-        "cantidad_real": "880.837665 ml",
+        "cantidad_real": "880.8 ml",
         "stock": true,
         "cantidad_compra": 890,
         "unidad_compra": "ml",
@@ -5898,10 +5898,10 @@
         "cantidad_exacta": "425",
         "cantidad_real": "425 g",
         "stock": false,
-        "cantidad_compra": "425",
+        "cantidad_compra": 430,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "425 g"
+        "regla": "decena superior tras escalado",
+        "spec": "430 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -6040,9 +6040,9 @@
         "cantidad_exacta": "1050",
         "cantidad_real": "1050 g",
         "stock": false,
-        "cantidad_compra": "1050",
+        "cantidad_compra": 1050,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1050 g"
       },
       {
@@ -6101,9 +6101,9 @@
         "cantidad_exacta": "750",
         "cantidad_real": "750 g",
         "stock": false,
-        "cantidad_compra": "750",
+        "cantidad_compra": 750,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "750 g"
       },
       {
@@ -6125,9 +6125,9 @@
         "cantidad_exacta": "1050",
         "cantidad_real": "1050 g",
         "stock": false,
-        "cantidad_compra": "1050",
+        "cantidad_compra": 1050,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1050 g"
       },
       {
@@ -6206,9 +6206,9 @@
         "cantidad_exacta": "2250",
         "cantidad_real": "2250 g",
         "stock": false,
-        "cantidad_compra": "2250",
+        "cantidad_compra": 2250,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2250 g"
       },
       {
@@ -6228,9 +6228,9 @@
         "cantidad_exacta": "2250",
         "cantidad_real": "2250 g",
         "stock": false,
-        "cantidad_compra": "2250",
+        "cantidad_compra": 2250,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2250 g"
       },
       {
@@ -6291,7 +6291,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/15625000000000",
-        "cantidad_real": "939.560176 ml",
+        "cantidad_real": "939.6 ml",
         "stock": true,
         "cantidad_compra": 940,
         "unidad_compra": "ml",
@@ -6315,12 +6315,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1360/3",
-        "cantidad_real": "453.333333 g",
+        "cantidad_real": "453.3 g",
         "stock": false,
-        "cantidad_compra": "453.333333",
+        "cantidad_compra": 460,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "453.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "460 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -6459,9 +6459,9 @@
         "cantidad_exacta": "1120",
         "cantidad_real": "1120 g",
         "stock": false,
-        "cantidad_compra": "1120",
+        "cantidad_compra": 1120,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1120 g"
       },
       {
@@ -6520,9 +6520,9 @@
         "cantidad_exacta": "800",
         "cantidad_real": "800 g",
         "stock": false,
-        "cantidad_compra": "800",
+        "cantidad_compra": 800,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "800 g"
       },
       {
@@ -6544,9 +6544,9 @@
         "cantidad_exacta": "1120",
         "cantidad_real": "1120 g",
         "stock": false,
-        "cantidad_compra": "1120",
+        "cantidad_compra": 1120,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1120 g"
       },
       {
@@ -6625,9 +6625,9 @@
         "cantidad_exacta": "2400",
         "cantidad_real": "2400 g",
         "stock": false,
-        "cantidad_compra": "2400",
+        "cantidad_compra": 2400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2400 g"
       },
       {
@@ -6647,9 +6647,9 @@
         "cantidad_exacta": "2400",
         "cantidad_real": "2400 g",
         "stock": false,
-        "cantidad_compra": "2400",
+        "cantidad_compra": 2400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2400 g"
       },
       {
@@ -6669,7 +6669,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "2000/3",
-        "cantidad_real": "666.666667 g",
+        "cantidad_real": "666.7 g",
         "stock": false,
         "equivalencia_exacta": "16/3",
         "cantidad_compra": 6,
@@ -6693,7 +6693,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "880/3",
-        "cantidad_real": "293.333333 g",
+        "cantidad_real": "293.3 g",
         "stock": false,
         "cantidad_compra": 300,
         "unidad_compra": "g",
@@ -6710,7 +6710,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "249570671703296699/250000000000000",
-        "cantidad_real": "998.282687 ml",
+        "cantidad_real": "998.3 ml",
         "stock": true,
         "cantidad_compra": 1000,
         "unidad_compra": "ml",
@@ -6734,12 +6734,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1445/3",
-        "cantidad_real": "481.666667 g",
+        "cantidad_real": "481.7 g",
         "stock": false,
-        "cantidad_compra": "481.666667",
+        "cantidad_compra": 490,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "481.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "490 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -6878,9 +6878,9 @@
         "cantidad_exacta": "1190",
         "cantidad_real": "1190 g",
         "stock": false,
-        "cantidad_compra": "1190",
+        "cantidad_compra": 1190,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1190 g"
       },
       {
@@ -6939,9 +6939,9 @@
         "cantidad_exacta": "850",
         "cantidad_real": "850 g",
         "stock": false,
-        "cantidad_compra": "850",
+        "cantidad_compra": 850,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "850 g"
       },
       {
@@ -6963,9 +6963,9 @@
         "cantidad_exacta": "1190",
         "cantidad_real": "1190 g",
         "stock": false,
-        "cantidad_compra": "1190",
+        "cantidad_compra": 1190,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1190 g"
       },
       {
@@ -7044,9 +7044,9 @@
         "cantidad_exacta": "2550",
         "cantidad_real": "2550 g",
         "stock": false,
-        "cantidad_compra": "2550",
+        "cantidad_compra": 2550,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2550 g"
       },
       {
@@ -7066,9 +7066,9 @@
         "cantidad_exacta": "2550",
         "cantidad_real": "2550 g",
         "stock": false,
-        "cantidad_compra": "2550",
+        "cantidad_compra": 2550,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2550 g"
       },
       {
@@ -7088,7 +7088,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "2125/3",
-        "cantidad_real": "708.333333 g",
+        "cantidad_real": "708.3 g",
         "stock": false,
         "equivalencia_exacta": "17/3",
         "cantidad_compra": 6,
@@ -7112,7 +7112,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "935/3",
-        "cantidad_real": "311.666667 g",
+        "cantidad_real": "311.7 g",
         "stock": false,
         "cantidad_compra": 320,
         "unidad_compra": "g",
@@ -7129,7 +7129,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "132125649725274723/125000000000000",
-        "cantidad_real": "1057.005198 ml",
+        "cantidad_real": "1057 ml",
         "stock": true,
         "cantidad_compra": 1060,
         "unidad_compra": "ml",
@@ -7155,9 +7155,9 @@
         "cantidad_exacta": "510",
         "cantidad_real": "510 g",
         "stock": false,
-        "cantidad_compra": "510",
+        "cantidad_compra": 510,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "510 g"
       },
       {
@@ -7297,9 +7297,9 @@
         "cantidad_exacta": "1260",
         "cantidad_real": "1260 g",
         "stock": false,
-        "cantidad_compra": "1260",
+        "cantidad_compra": 1260,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1260 g"
       },
       {
@@ -7358,9 +7358,9 @@
         "cantidad_exacta": "900",
         "cantidad_real": "900 g",
         "stock": false,
-        "cantidad_compra": "900",
+        "cantidad_compra": 900,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "900 g"
       },
       {
@@ -7382,9 +7382,9 @@
         "cantidad_exacta": "1260",
         "cantidad_real": "1260 g",
         "stock": false,
-        "cantidad_compra": "1260",
+        "cantidad_compra": 1260,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1260 g"
       },
       {
@@ -7463,9 +7463,9 @@
         "cantidad_exacta": "2700",
         "cantidad_real": "2700 g",
         "stock": false,
-        "cantidad_compra": "2700",
+        "cantidad_compra": 2700,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2700 g"
       },
       {
@@ -7485,9 +7485,9 @@
         "cantidad_exacta": "2700",
         "cantidad_real": "2700 g",
         "stock": false,
-        "cantidad_compra": "2700",
+        "cantidad_compra": 2700,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2700 g"
       },
       {
@@ -7548,7 +7548,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "278931927197802193/250000000000000",
-        "cantidad_real": "1115.727709 ml",
+        "cantidad_real": "1115.7 ml",
         "stock": true,
         "cantidad_compra": 1120,
         "unidad_compra": "ml",
@@ -7572,12 +7572,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1615/3",
-        "cantidad_real": "538.333333 g",
+        "cantidad_real": "538.3 g",
         "stock": false,
-        "cantidad_compra": "538.333333",
+        "cantidad_compra": 540,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "538.333333 g"
+        "regla": "decena superior tras escalado",
+        "spec": "540 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -7716,9 +7716,9 @@
         "cantidad_exacta": "1330",
         "cantidad_real": "1330 g",
         "stock": false,
-        "cantidad_compra": "1330",
+        "cantidad_compra": 1330,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1330 g"
       },
       {
@@ -7777,9 +7777,9 @@
         "cantidad_exacta": "950",
         "cantidad_real": "950 g",
         "stock": false,
-        "cantidad_compra": "950",
+        "cantidad_compra": 950,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "950 g"
       },
       {
@@ -7801,9 +7801,9 @@
         "cantidad_exacta": "1330",
         "cantidad_real": "1330 g",
         "stock": false,
-        "cantidad_compra": "1330",
+        "cantidad_compra": 1330,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1330 g"
       },
       {
@@ -7882,9 +7882,9 @@
         "cantidad_exacta": "2850",
         "cantidad_real": "2850 g",
         "stock": false,
-        "cantidad_compra": "2850",
+        "cantidad_compra": 2850,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2850 g"
       },
       {
@@ -7904,9 +7904,9 @@
         "cantidad_exacta": "2850",
         "cantidad_real": "2850 g",
         "stock": false,
-        "cantidad_compra": "2850",
+        "cantidad_compra": 2850,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "2850 g"
       },
       {
@@ -7926,7 +7926,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "2375/3",
-        "cantidad_real": "791.666667 g",
+        "cantidad_real": "791.7 g",
         "stock": false,
         "equivalencia_exacta": "19/3",
         "cantidad_compra": 7,
@@ -7950,7 +7950,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "1045/3",
-        "cantidad_real": "348.333333 g",
+        "cantidad_real": "348.3 g",
         "stock": false,
         "cantidad_compra": 350,
         "unidad_compra": "g",
@@ -7967,7 +7967,7 @@
         "id": "rec4QWbZX5KJIhQyW",
         "nombre": "Aceite de oliva virgen extra",
         "cantidad_exacta": "14680627747252747/12500000000000",
-        "cantidad_real": "1174.45022 ml",
+        "cantidad_real": "1174.5 ml",
         "stock": true,
         "cantidad_compra": 1180,
         "unidad_compra": "ml",
@@ -7991,12 +7991,12 @@
         "id": "rec5FqFslqUdjaiiX",
         "nombre": "Anchoas en aceite escurridas (genéricas)",
         "cantidad_exacta": "1700/3",
-        "cantidad_real": "566.666667 g",
+        "cantidad_real": "566.7 g",
         "stock": false,
-        "cantidad_compra": "566.666667",
+        "cantidad_compra": 570,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
-        "spec": "566.666667 g"
+        "regla": "decena superior tras escalado",
+        "spec": "570 g"
       },
       {
         "id": "reclKQvB48lfBN4PL",
@@ -8135,9 +8135,9 @@
         "cantidad_exacta": "1400",
         "cantidad_real": "1400 g",
         "stock": false,
-        "cantidad_compra": "1400",
+        "cantidad_compra": 1400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1400 g"
       },
       {
@@ -8196,9 +8196,9 @@
         "cantidad_exacta": "1000",
         "cantidad_real": "1000 g",
         "stock": false,
-        "cantidad_compra": "1000",
+        "cantidad_compra": 1000,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1000 g"
       },
       {
@@ -8220,9 +8220,9 @@
         "cantidad_exacta": "1400",
         "cantidad_real": "1400 g",
         "stock": false,
-        "cantidad_compra": "1400",
+        "cantidad_compra": 1400,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "1400 g"
       },
       {
@@ -8301,9 +8301,9 @@
         "cantidad_exacta": "3000",
         "cantidad_real": "3000 g",
         "stock": false,
-        "cantidad_compra": "3000",
+        "cantidad_compra": 3000,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "3000 g"
       },
       {
@@ -8323,9 +8323,9 @@
         "cantidad_exacta": "3000",
         "cantidad_real": "3000 g",
         "stock": false,
-        "cantidad_compra": "3000",
+        "cantidad_compra": 3000,
         "unidad_compra": "g",
-        "regla": "cantidad en unidad original",
+        "regla": "decena superior tras escalado",
         "spec": "3000 g"
       },
       {
@@ -8345,7 +8345,7 @@
         "id": "recBse4SOxBOPwYEQ",
         "nombre": "Yogur griego natural DIA Fidias",
         "cantidad_exacta": "2500/3",
-        "cantidad_real": "833.333333 g",
+        "cantidad_real": "833.3 g",
         "stock": false,
         "equivalencia_exacta": "20/3",
         "cantidad_compra": 7,
@@ -8369,7 +8369,7 @@
         "id": "rec7ray2LYDB4u7UC",
         "nombre": "Zumo de limón fresco",
         "cantidad_exacta": "1100/3",
-        "cantidad_real": "366.666667 g",
+        "cantidad_real": "366.7 g",
         "stock": false,
         "cantidad_compra": 370,
         "unidad_compra": "g",

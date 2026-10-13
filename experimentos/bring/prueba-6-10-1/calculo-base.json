@@ -1,0 +1,2500 @@
+{
+  "menu_id": "reci0EmSxZE2WlJ1K",
+  "main_sha": "02b91249cbb9a4049f1fcd92d37d97774108e403",
+  "catalogo_blob": "193f1ba3b51a4b7941e3120ec30ffcca16d936a0",
+  "entrada_sha256": "581df19f2ba06730af5f7bb81ed035e48960254587191ef2cf75fc31836f6c93",
+  "personas": 1,
+  "pendientes": [],
+  "preparaciones_recorridas": [
+    {
+      "id": "rec2zKHAUl6XFjWrX",
+      "nombre": "Bacalao a la vizcaína",
+      "raciones": "1",
+      "factor": "1/2",
+      "origen": "Lunes · Comida"
+    },
+    {
+      "id": "recyWwEozW2iOM9Ax",
+      "nombre": "Salsa vizcaína",
+      "raciones": "1",
+      "factor": "1/2",
+      "origen": "Lunes · Comida"
+    },
+    {
+      "id": "recACTMx4Sfoy1Sv7",
+      "nombre": "Bowl de yogur con miel y granola",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Lunes · Postre"
+    },
+    {
+      "id": "recb11ZAHayvOIBWU",
+      "nombre": "Carrilleras de cerdo al vino",
+      "raciones": "1",
+      "factor": "1/4",
+      "origen": "Martes · Comida"
+    },
+    {
+      "id": "rec9cxis2Yndtrq6K",
+      "nombre": "Mini wraps de falafel",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Martes · Cena"
+    },
+    {
+      "id": "recYwT8ThENiOpHF9",
+      "nombre": "Falafel",
+      "raciones": "1",
+      "factor": "1/6",
+      "origen": "Martes · Cena"
+    },
+    {
+      "id": "recgi0wLvd7EOUa6E",
+      "nombre": "Tzatziki",
+      "raciones": "1",
+      "factor": "1/2",
+      "origen": "Martes · Cena"
+    },
+    {
+      "id": "rec2zKHAUl6XFjWrX",
+      "nombre": "Bacalao a la vizcaína",
+      "raciones": "1",
+      "factor": "1/2",
+      "origen": "Miércoles · Comida"
+    },
+    {
+      "id": "recyWwEozW2iOM9Ax",
+      "nombre": "Salsa vizcaína",
+      "raciones": "1",
+      "factor": "1/2",
+      "origen": "Miércoles · Comida"
+    },
+    {
+      "id": "recfl98fDfDp6ApRO",
+      "nombre": "Quiche de puerro, champiñones y pavo",
+      "raciones": "2",
+      "factor": "1/2",
+      "origen": "Miércoles · Cena"
+    },
+    {
+      "id": "rec7qUQ85hy3AQ753",
+      "nombre": "Canelones de carrilleras",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Jueves · Comida"
+    },
+    {
+      "id": "recb11ZAHayvOIBWU",
+      "nombre": "Carrilleras de cerdo al vino",
+      "raciones": "1",
+      "factor": "1/4",
+      "origen": "Jueves · Comida"
+    },
+    {
+      "id": "recMnUeZgMK7hH9Xw",
+      "nombre": "Bechamel",
+      "raciones": "1",
+      "factor": "1/6",
+      "origen": "Jueves · Comida"
+    },
+    {
+      "id": "recxRAH9FD9GvayFF",
+      "nombre": "Tostas de hummus y sardinillas",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Jueves · Cena"
+    },
+    {
+      "id": "recFVyiowroB8vane",
+      "nombre": "Hummus",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Jueves · Cena"
+    },
+    {
+      "id": "recl8ijk3FI18QqNj",
+      "nombre": "Wok de gambones y pisto",
+      "raciones": "1",
+      "factor": "1",
+      "origen": "Viernes · Comida"
+    },
+    {
+      "id": "recG1UJ6vBcK3NBaE",
+      "nombre": "Pisto",
+      "raciones": "1",
+      "factor": "1/6",
+      "origen": "Viernes · Comida"
+    },
+    {
+      "id": "recZ9MGL7IIEy9LWG",
+      "nombre": "Sofrito clásico",
+      "raciones": "1",
+      "factor": "1/4",
+      "origen": "Viernes · Comida"
+    }
+  ],
+  "ingredientes": [
+    {
+      "id": "rec4QWbZX5KJIhQyW",
+      "nombre": "Aceite de oliva virgen extra",
+      "unidad": "ml",
+      "cantidad_exacta": "66989010989010989/800000000000000",
+      "cantidad": "83.736264",
+      "aportes": [
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recXJcS15DhYLUsY6"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recHu5yLmt9UTwLpp"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec8xgtFTRS7Iz0PK"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "10",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "rec85yDdDJ4h98JNL"
+          ],
+          "cantidad_exacta": "10"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "recpG2hj6COERpX1p"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "2.747253",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec87adaQWwpSMmKW",
+            "recgi0wLvd7EOUa6E",
+            "recmYYueJPHffaYax"
+          ],
+          "cantidad_exacta": "10989010989010989/4000000000000000"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recXJcS15DhYLUsY6"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recHu5yLmt9UTwLpp"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec8xgtFTRS7Iz0PK"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5.494505",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recDoNVxCLfCalcYS"
+          ],
+          "cantidad_exacta": "10989010989010989/2000000000000000"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "10",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "rec85yDdDJ4h98JNL"
+          ],
+          "cantidad_exacta": "10"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "7.5",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "recK7NPrvSUYmI11H"
+          ],
+          "cantidad_exacta": "15/2"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "7.5",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recaicM32fzHzM6ze",
+            "recZ9MGL7IIEy9LWG",
+            "recb5nPKz4GVDPPXI"
+          ],
+          "cantidad_exacta": "15/2"
+        },
+        {
+          "id": "rec4QWbZX5KJIhQyW",
+          "unidad": "ml",
+          "cantidad": "5.494505",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "recV91ClnOLHSnKmE"
+          ],
+          "cantidad_exacta": "10989010989010989/2000000000000000"
+        }
+      ],
+      "specs": {
+        "a": "83.736264 ml",
+        "b": "83.736264 ml",
+        "c": "83.736264 ml"
+      }
+    },
+    {
+      "id": "recoM4LY51MoUUkJm",
+      "nombre": "Ajo fresco (crudo)",
+      "unidad": "g",
+      "cantidad_exacta": "393/20",
+      "cantidad": "19.65",
+      "aportes": [
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "3",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recUZtUgJEMcWRP0K"
+          ],
+          "cantidad_exacta": "3"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "3",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recsKh8UUwhrxvWv9"
+          ],
+          "cantidad_exacta": "3"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "1.5",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "receuUOu0KJ8BnFZs"
+          ],
+          "cantidad_exacta": "3/2"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "0.45",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "reczQuRiCa6WEuMLb"
+          ],
+          "cantidad_exacta": "9/20"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "1.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec87adaQWwpSMmKW",
+            "recgi0wLvd7EOUa6E",
+            "recQfcwNCHV8anUzN"
+          ],
+          "cantidad_exacta": "3/2"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "3",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recUZtUgJEMcWRP0K"
+          ],
+          "cantidad_exacta": "3"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "3",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recsKh8UUwhrxvWv9"
+          ],
+          "cantidad_exacta": "3"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "1.5",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "receuUOu0KJ8BnFZs"
+          ],
+          "cantidad_exacta": "3/2"
+        },
+        {
+          "id": "recoM4LY51MoUUkJm",
+          "unidad": "g",
+          "cantidad": "2.7",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "recMmYnoXmWEYDLz5"
+          ],
+          "cantidad_exacta": "27/10"
+        }
+      ],
+      "specs": {
+        "a": "19.65 g",
+        "b": "19.65 g",
+        "c": "19.65 g"
+      }
+    },
+    {
+      "id": "recjque4ToGqcHqHE",
+      "nombre": "Almendras crudas",
+      "unidad": "g",
+      "cantidad_exacta": "25",
+      "cantidad": "25",
+      "aportes": [
+        {
+          "id": "recjque4ToGqcHqHE",
+          "unidad": "g",
+          "cantidad": "25",
+          "origen": "Lunes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recACTMx4Sfoy1Sv7",
+            "recZfHCK8lz8wKbHl"
+          ],
+          "cantidad_exacta": "25"
+        }
+      ],
+      "specs": {
+        "a": "25 g",
+        "b": "25 g",
+        "c": "25 g"
+      }
+    },
+    {
+      "id": "rec8i7dH9EyB0AlVT",
+      "nombre": "Bacalao desalado (crudo)",
+      "unidad": "g",
+      "cantidad_exacta": "400",
+      "cantidad": "400",
+      "aportes": [
+        {
+          "id": "rec8i7dH9EyB0AlVT",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recXK8ras2nPzGkCv"
+          ],
+          "cantidad_exacta": "200"
+        },
+        {
+          "id": "rec8i7dH9EyB0AlVT",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recXK8ras2nPzGkCv"
+          ],
+          "cantidad_exacta": "200"
+        }
+      ],
+      "specs": {
+        "a": "400 g",
+        "b": "400 g",
+        "c": "400 g"
+      }
+    },
+    {
+      "id": "recgTA0LAJrz7rD8B",
+      "nombre": "Boniato, crudo (parte comestible)",
+      "unidad": "g",
+      "cantidad_exacta": "150",
+      "cantidad": "150",
+      "aportes": [
+        {
+          "id": "recgTA0LAJrz7rD8B",
+          "unidad": "g",
+          "cantidad": "150",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "recqG3M3bIVP5xJ2p"
+          ],
+          "cantidad_exacta": "150"
+        }
+      ],
+      "specs": {
+        "a": "150 g",
+        "b": "150 g",
+        "c": "150 g"
+      }
+    },
+    {
+      "id": "recHiBRS3Ikrzb1mt",
+      "nombre": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "recHiBRS3Ikrzb1mt",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "recGt7r2zE5WbHRbu"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "equivalencia_exacta": "2/5",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "250",
+      "evidencia": "arteinaki-filete-boqueron-alinado",
+      "specs": {
+        "a": "1 envase (100 g necesarios; 250 g por envase)",
+        "b": "1 envase; necesario: 100 g; formato: 250 g",
+        "c": "1 envase (0.4 envase necesarios; 100 g)"
+      }
+    },
+    {
+      "id": "recDKPl7cPStT6WnA",
+      "nombre": "Calabacín crudo",
+      "unidad": "g",
+      "cantidad_exacta": "575/6",
+      "cantidad": "95.833333",
+      "aportes": [
+        {
+          "id": "recDKPl7cPStT6WnA",
+          "unidad": "g",
+          "cantidad": "95.833333",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recG2Ko0LtokodhJW"
+          ],
+          "cantidad_exacta": "575/6"
+        }
+      ],
+      "specs": {
+        "a": "95.833333 g",
+        "b": "95.833333 g",
+        "c": "95.833333 g"
+      }
+    },
+    {
+      "id": "recygYoPJ94rffceZ",
+      "nombre": "Carne de pimiento choricero Serrano",
+      "unidad": "g",
+      "cantidad_exacta": "30",
+      "cantidad": "30",
+      "aportes": [
+        {
+          "id": "recygYoPJ94rffceZ",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recBEAcoaH70A2gLw"
+          ],
+          "cantidad_exacta": "15"
+        },
+        {
+          "id": "recygYoPJ94rffceZ",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recBEAcoaH70A2gLw"
+          ],
+          "cantidad_exacta": "15"
+        }
+      ],
+      "equivalencia_exacta": "6/25",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "125",
+      "evidencia": "serrano-carne-pimiento-choricero",
+      "specs": {
+        "a": "1 envase (30 g necesarios; 125 g por envase)",
+        "b": "1 envase; necesario: 30 g; formato: 125 g",
+        "c": "1 envase (0.24 envase necesarios; 30 g)"
+      }
+    },
+    {
+      "id": "recJoLfb85Oe5dxXq",
+      "nombre": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
+      "unidad": "g",
+      "cantidad_exacta": "120",
+      "cantidad": "120",
+      "aportes": [
+        {
+          "id": "recJoLfb85Oe5dxXq",
+          "unidad": "g",
+          "cantidad": "120",
+          "origen": "Lunes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recnyx5GwQGLPf1pr",
+            "recmU1URfb1OBEL07"
+          ],
+          "cantidad_exacta": "120"
+        }
+      ],
+      "equivalencia_exacta": "1",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "120",
+      "evidencia": "dia-seleccion-carpaccio-vacuno-parmigiano",
+      "specs": {
+        "a": "1 envase (120 g necesarios; 120 g por envase)",
+        "b": "1 envase; necesario: 120 g; formato: 120 g",
+        "c": "1 envase (1 envase necesarios; 120 g)"
+      }
+    },
+    {
+      "id": "reckrgbmpjdK4nvOa",
+      "nombre": "Carrillera de cerdo ibérico limpia (referencia COVAP)",
+      "unidad": "g",
+      "cantidad_exacta": "400",
+      "cantidad": "400",
+      "aportes": [
+        {
+          "id": "reckrgbmpjdK4nvOa",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "recAVv3SDk0GMpO94"
+          ],
+          "cantidad_exacta": "200"
+        },
+        {
+          "id": "reckrgbmpjdK4nvOa",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "recAVv3SDk0GMpO94"
+          ],
+          "cantidad_exacta": "200"
+        }
+      ],
+      "specs": {
+        "a": "400 g",
+        "b": "400 g",
+        "c": "400 g"
+      }
+    },
+    {
+      "id": "recrGNY88zOIOcRom",
+      "nombre": "Cebolla fresca (cruda)",
+      "unidad": "g",
+      "cantidad_exacta": "765/2",
+      "cantidad": "382.5",
+      "aportes": [
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "87.5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recoJWuaC6HIXfsDj"
+          ],
+          "cantidad_exacta": "175/2"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "50",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "reczz1Xs3THoZnub1"
+          ],
+          "cantidad_exacta": "50"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "12.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "recGZmSAsB9OgtXQk"
+          ],
+          "cantidad_exacta": "25/2"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "20",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "recmBAgMDJwFMZyko"
+          ],
+          "cantidad_exacta": "20"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "87.5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recoJWuaC6HIXfsDj"
+          ],
+          "cantidad_exacta": "175/2"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "50",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "reczz1Xs3THoZnub1"
+          ],
+          "cantidad_exacta": "50"
+        },
+        {
+          "id": "recrGNY88zOIOcRom",
+          "unidad": "g",
+          "cantidad": "75",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recaicM32fzHzM6ze",
+            "recZ9MGL7IIEy9LWG",
+            "recxgm4BVpJDzFiuZ"
+          ],
+          "cantidad_exacta": "75"
+        }
+      ],
+      "specs": {
+        "a": "382.5 g",
+        "b": "382.5 g",
+        "c": "382.5 g"
+      }
+    },
+    {
+      "id": "recssXY1xQnfwtRkJ",
+      "nombre": "Champiñones crudos",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "recssXY1xQnfwtRkJ",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "rec7ugzz3xXt71k11"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "specs": {
+        "a": "100 g",
+        "b": "100 g",
+        "c": "100 g"
+      }
+    },
+    {
+      "id": "recb81Fp9dfXr81sE",
+      "nombre": "Cilantro fresco",
+      "unidad": "g",
+      "cantidad_exacta": "5/2",
+      "cantidad": "2.5",
+      "aportes": [
+        {
+          "id": "recb81Fp9dfXr81sE",
+          "unidad": "g",
+          "cantidad": "2.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "recN2tmvpdhpRHnMf"
+          ],
+          "cantidad_exacta": "5/2"
+        }
+      ],
+      "specs": {
+        "a": "2.5 g",
+        "b": "2.5 g",
+        "c": "2.5 g"
+      }
+    },
+    {
+      "id": "rec4H9nVK34mLywwy",
+      "nombre": "Ciruela fresca con piel (cruda)",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "rec4H9nVK34mLywwy",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Lunes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec4H9nVK34mLywwy"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "specs": {
+        "a": "100 g",
+        "b": "100 g",
+        "c": "100 g"
+      }
+    },
+    {
+      "id": "recZmy5VtKavv2D9U",
+      "nombre": "Comino molido",
+      "unidad": "g",
+      "cantidad_exacta": "7/2",
+      "cantidad": "3.5",
+      "aportes": [
+        {
+          "id": "recZmy5VtKavv2D9U",
+          "unidad": "g",
+          "cantidad": "0.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "recSOPlNuqWm9Rtov"
+          ],
+          "cantidad_exacta": "1/2"
+        },
+        {
+          "id": "recZmy5VtKavv2D9U",
+          "unidad": "g",
+          "cantidad": "3",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "recGTa20DYSOCaI96"
+          ],
+          "cantidad_exacta": "3"
+        }
+      ],
+      "specs": {
+        "a": "3.5 g",
+        "b": "3.5 g",
+        "c": "3.5 g"
+      }
+    },
+    {
+      "id": "recnb56npTyY2KJ3K",
+      "nombre": "Dados de pechuga de pavo DIA Nuestra Alacena",
+      "unidad": "g",
+      "cantidad_exacta": "125",
+      "cantidad": "125",
+      "aportes": [
+        {
+          "id": "recnb56npTyY2KJ3K",
+          "unidad": "g",
+          "cantidad": "125",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recuvFQW9QiGFSYsQ"
+          ],
+          "cantidad_exacta": "125"
+        }
+      ],
+      "equivalencia_exacta": "1",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "125",
+      "evidencia": "dia-nuestra-alacena-dados-pechuga-pavo",
+      "specs": {
+        "a": "1 envase (125 g necesarios; 125 g por envase)",
+        "b": "1 envase; necesario: 125 g; formato: 125 g",
+        "c": "1 envase (1 envase necesarios; 125 g)"
+      }
+    },
+    {
+      "id": "reczCKdI4NsjoJH3X",
+      "nombre": "Gallina Blanca Caldo Casero de Carne 100 % Natural",
+      "unidad": "ml",
+      "cantidad_exacta": "150",
+      "cantidad": "150",
+      "aportes": [
+        {
+          "id": "reczCKdI4NsjoJH3X",
+          "unidad": "ml",
+          "cantidad": "75",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "recbziydiPjXA14iK"
+          ],
+          "cantidad_exacta": "75"
+        },
+        {
+          "id": "reczCKdI4NsjoJH3X",
+          "unidad": "ml",
+          "cantidad": "75",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "recbziydiPjXA14iK"
+          ],
+          "cantidad_exacta": "75"
+        }
+      ],
+      "equivalencia_exacta": "3/20",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "1000",
+      "evidencia": "gallina-blanca-caldo-casero-carne-natural",
+      "specs": {
+        "a": "1 envase (150 ml necesarios; 1000 ml por envase)",
+        "b": "1 envase; necesario: 150 ml; formato: 1000 ml",
+        "c": "1 envase (0.15 envase necesarios; 150 ml)"
+      }
+    },
+    {
+      "id": "recqxFuwYNQJdjAaB",
+      "nombre": "Gambones crudos, parte comestible (equivalencia langostino)",
+      "unidad": "g",
+      "cantidad_exacta": "150",
+      "cantidad": "150",
+      "aportes": [
+        {
+          "id": "recqxFuwYNQJdjAaB",
+          "unidad": "g",
+          "cantidad": "150",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "recL1Wh8tn0wYqdYC"
+          ],
+          "cantidad_exacta": "150"
+        }
+      ],
+      "specs": {
+        "a": "150 g",
+        "b": "150 g",
+        "c": "150 g"
+      }
+    },
+    {
+      "id": "recuumabv4qaMUXNE",
+      "nombre": "Garbanzo cocido (hervido, sin sal)",
+      "unidad": "g",
+      "cantidad_exacta": "90",
+      "cantidad": "90",
+      "aportes": [
+        {
+          "id": "recuumabv4qaMUXNE",
+          "unidad": "g",
+          "cantidad": "90",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "recWb2ez1F0hzbmNF"
+          ],
+          "cantidad_exacta": "90"
+        }
+      ],
+      "specs": {
+        "a": "90 g",
+        "b": "90 g",
+        "c": "90 g"
+      }
+    },
+    {
+      "id": "recQJX7aiVeoHJvep",
+      "nombre": "Garbanzo seco crudo",
+      "unidad": "g",
+      "cantidad_exacta": "30",
+      "cantidad": "30",
+      "aportes": [
+        {
+          "id": "recQJX7aiVeoHJvep",
+          "unidad": "g",
+          "cantidad": "30",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "rec3cX0JmIdlDpb87"
+          ],
+          "cantidad_exacta": "30"
+        }
+      ],
+      "specs": {
+        "a": "30 g",
+        "b": "30 g",
+        "c": "30 g"
+      }
+    },
+    {
+      "id": "recxWAcioUS6lSSgb",
+      "nombre": "Granola Classic con avena Kellogg's Special K",
+      "unidad": "g",
+      "cantidad_exacta": "30",
+      "cantidad": "30",
+      "aportes": [
+        {
+          "id": "recxWAcioUS6lSSgb",
+          "unidad": "g",
+          "cantidad": "30",
+          "origen": "Lunes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recACTMx4Sfoy1Sv7",
+            "recKP3uFs2x8flWPR"
+          ],
+          "cantidad_exacta": "30"
+        }
+      ],
+      "equivalencia_exacta": "3/32",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "320",
+      "evidencia": "special-k-granola-avena",
+      "specs": {
+        "a": "1 envase (30 g necesarios; 320 g por envase)",
+        "b": "1 envase; necesario: 30 g; formato: 320 g",
+        "c": "1 envase (0.09375 envase necesarios; 30 g)"
+      }
+    },
+    {
+      "id": "recyVu5pom0nNHSu9",
+      "nombre": "Harina de trigo (blanca)",
+      "unidad": "g",
+      "cantidad_exacta": "287/20",
+      "cantidad": "14.35",
+      "aportes": [
+        {
+          "id": "recyVu5pom0nNHSu9",
+          "unidad": "g",
+          "cantidad": "2",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "recpZJrJPQPVmFIlP"
+          ],
+          "cantidad_exacta": "2"
+        },
+        {
+          "id": "recyVu5pom0nNHSu9",
+          "unidad": "g",
+          "cantidad": "2.016667",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "reczpyOyOJY03zGEf"
+          ],
+          "cantidad_exacta": "121/60"
+        },
+        {
+          "id": "recyVu5pom0nNHSu9",
+          "unidad": "g",
+          "cantidad": "2",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "recpZJrJPQPVmFIlP"
+          ],
+          "cantidad_exacta": "2"
+        },
+        {
+          "id": "recyVu5pom0nNHSu9",
+          "unidad": "g",
+          "cantidad": "8.333333",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recL7icaT4bEhkOcR",
+            "recMnUeZgMK7hH9Xw",
+            "recjFEHZmkErkTTJx"
+          ],
+          "cantidad_exacta": "25/3"
+        }
+      ],
+      "specs": {
+        "a": "14.35 g",
+        "b": "14.35 g",
+        "c": "14.35 g"
+      }
+    },
+    {
+      "id": "recPmxLD5hBc4rvSM",
+      "nombre": "Higo fresco (higos y brevas)",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "recPmxLD5hBc4rvSM",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Martes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recPmxLD5hBc4rvSM"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "specs": {
+        "a": "100 g",
+        "b": "100 g",
+        "c": "100 g"
+      }
+    },
+    {
+      "id": "recSPOXZkbn9PSbHI",
+      "nombre": "Huevo de gallina entero crudo",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "recSPOXZkbn9PSbHI",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recWLQhPNoGVYZcph"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "equivalencia_exacta": "2",
+      "compra_redondeada": 2,
+      "unidad_exportada": "huevos",
+      "contenido_unidad": "50",
+      "evidencia": "Quiche: 4 huevos = 200 g comestibles",
+      "specs": {
+        "a": "2 huevos (100 g necesarios; 50 g por huevo)",
+        "b": "2 huevos; necesario: 100 g; formato: 50 g",
+        "c": "2 huevos (2 huevo necesarios; 100 g)"
+      }
+    },
+    {
+      "id": "recw8aSxhSx0aSH93",
+      "nombre": "Leche semidesnatada",
+      "unidad": "ml",
+      "cantidad_exacta": "250/3",
+      "cantidad": "83.333333",
+      "aportes": [
+        {
+          "id": "recw8aSxhSx0aSH93",
+          "unidad": "ml",
+          "cantidad": "83.333333",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recL7icaT4bEhkOcR",
+            "recMnUeZgMK7hH9Xw",
+            "recXAG2yKUAbImnaz"
+          ],
+          "cantidad_exacta": "250/3"
+        }
+      ],
+      "specs": {
+        "a": "83.333333 ml",
+        "b": "83.333333 ml",
+        "c": "83.333333 ml"
+      }
+    },
+    {
+      "id": "recVkirCtPhd0YuWx",
+      "nombre": "Mantequilla sin sal",
+      "unidad": "g",
+      "cantidad_exacta": "25/3",
+      "cantidad": "8.333333",
+      "aportes": [
+        {
+          "id": "recVkirCtPhd0YuWx",
+          "unidad": "g",
+          "cantidad": "8.333333",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recL7icaT4bEhkOcR",
+            "recMnUeZgMK7hH9Xw",
+            "reclvg8kApoqwhUXj"
+          ],
+          "cantidad_exacta": "25/3"
+        }
+      ],
+      "specs": {
+        "a": "8.333333 g",
+        "b": "8.333333 g",
+        "c": "8.333333 g"
+      }
+    },
+    {
+      "id": "recw64fm2wb94CzGI",
+      "nombre": "Masa quebrada DIA Al Punto",
+      "unidad": "g",
+      "cantidad_exacta": "115",
+      "cantidad": "115",
+      "aportes": [
+        {
+          "id": "recw64fm2wb94CzGI",
+          "unidad": "g",
+          "cantidad": "115",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recr2GzGEw6DAW00g"
+          ],
+          "cantidad_exacta": "115"
+        }
+      ],
+      "equivalencia_exacta": "1/2",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "230",
+      "evidencia": "dia-al-punto-masa-quebrada",
+      "specs": {
+        "a": "1 envase (115 g necesarios; 230 g por envase)",
+        "b": "1 envase; necesario: 115 g; formato: 230 g",
+        "c": "1 envase (0.5 envase necesarios; 115 g)"
+      }
+    },
+    {
+      "id": "recEtJBidxvvxhoAg",
+      "nombre": "Mayonesa Heinz con cebolla caramelizada y ajo",
+      "unidad": "g",
+      "cantidad_exacta": "10",
+      "cantidad": "10",
+      "aportes": [
+        {
+          "id": "recEtJBidxvvxhoAg",
+          "unidad": "g",
+          "cantidad": "10",
+          "origen": "Lunes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recnyx5GwQGLPf1pr",
+            "recfa0XvtV5Ah8ZRb"
+          ],
+          "cantidad_exacta": "10"
+        }
+      ],
+      "equivalencia_exacta": "2/79",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "395",
+      "evidencia": "heinz-mayonesa-cebolla-caramelizada-ajo",
+      "specs": {
+        "a": "1 envase (10 g necesarios; 395 g por envase)",
+        "b": "1 envase; necesario: 10 g; formato: 395 g",
+        "c": "1 envase (0.025316 envase necesarios; 10 g)"
+      }
+    },
+    {
+      "id": "recGpy51QX8MYe0j9",
+      "nombre": "Miel natural",
+      "unidad": "g",
+      "cantidad_exacta": "15",
+      "cantidad": "15",
+      "aportes": [
+        {
+          "id": "recGpy51QX8MYe0j9",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Lunes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recACTMx4Sfoy1Sv7",
+            "recA2Ep69L557o4pW"
+          ],
+          "cantidad_exacta": "15"
+        }
+      ],
+      "specs": {
+        "a": "15 g",
+        "b": "15 g",
+        "c": "15 g"
+      }
+    },
+    {
+      "id": "receShdIxklq3Ht6E",
+      "nombre": "Mini tortillas de trigo IFA Eliges",
+      "unidad": "g",
+      "cantidad_exacta": "75",
+      "cantidad": "75",
+      "aportes": [
+        {
+          "id": "receShdIxklq3Ht6E",
+          "unidad": "g",
+          "cantidad": "75",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "recXy5wnWfTtVJS0E"
+          ],
+          "cantidad_exacta": "75"
+        }
+      ],
+      "equivalencia_exacta": "3",
+      "compra_redondeada": 3,
+      "unidad_exportada": "tortillas",
+      "contenido_unidad": "25",
+      "evidencia": "ifa-eliges-mini-tortillas-trigo",
+      "specs": {
+        "a": "3 tortillas (75 g necesarios; 25 g por tortilla)",
+        "b": "3 tortillas; necesario: 75 g; formato: 25 g",
+        "c": "3 tortillas (3 tortilla necesarios; 75 g)"
+      }
+    },
+    {
+      "id": "recG7EOA99Wt7MiRC",
+      "nombre": "Mozzarella rallada Dia Láctea",
+      "unidad": "g",
+      "cantidad_exacta": "30",
+      "cantidad": "30",
+      "aportes": [
+        {
+          "id": "recG7EOA99Wt7MiRC",
+          "unidad": "g",
+          "cantidad": "30",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recFEfSz7YGLjTWRO"
+          ],
+          "cantidad_exacta": "30"
+        }
+      ],
+      "equivalencia_exacta": "3/20",
+      "compra_redondeada": 1,
+      "unidad_exportada": "bolsa",
+      "contenido_unidad": "200",
+      "evidencia": "dia-lactea-mozzarella-rallada",
+      "specs": {
+        "a": "1 bolsa (30 g necesarios; 200 g por bolsa)",
+        "b": "1 bolsa; necesario: 30 g; formato: 200 g",
+        "c": "1 bolsa (0.15 bolsa necesarios; 30 g)"
+      }
+    },
+    {
+      "id": "recFHgB3fbsVuDJaM",
+      "nombre": "Noodles de arroz DIA Selección Mundial",
+      "unidad": "g",
+      "cantidad_exacta": "70",
+      "cantidad": "70",
+      "aportes": [
+        {
+          "id": "recFHgB3fbsVuDJaM",
+          "unidad": "g",
+          "cantidad": "70",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rece4K7gcGXXS7jzF"
+          ],
+          "cantidad_exacta": "70"
+        }
+      ],
+      "equivalencia_exacta": "7/20",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "200",
+      "evidencia": "dia-seleccion-mundial-noodles-arroz",
+      "specs": {
+        "a": "1 envase (70 g necesarios; 200 g por envase)",
+        "b": "1 envase; necesario: 70 g; formato: 200 g",
+        "c": "1 envase (0.35 envase necesarios; 70 g)"
+      }
+    },
+    {
+      "id": "rectCVvH0I4lf6zlq",
+      "nombre": "Pan blanco de barra",
+      "unidad": "g",
+      "cantidad_exacta": "10",
+      "cantidad": "10",
+      "aportes": [
+        {
+          "id": "rectCVvH0I4lf6zlq",
+          "unidad": "g",
+          "cantidad": "5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recQ9DAykubax4jkJ"
+          ],
+          "cantidad_exacta": "5"
+        },
+        {
+          "id": "rectCVvH0I4lf6zlq",
+          "unidad": "g",
+          "cantidad": "5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recQ9DAykubax4jkJ"
+          ],
+          "cantidad_exacta": "5"
+        }
+      ],
+      "specs": {
+        "a": "10 g",
+        "b": "10 g",
+        "c": "10 g"
+      }
+    },
+    {
+      "id": "recZ6WhTcrZDhRgKI",
+      "nombre": "Pan de molde 12 cereales y semillas Oroweat",
+      "unidad": "g",
+      "cantidad_exacta": "73",
+      "cantidad": "73",
+      "aportes": [
+        {
+          "id": "recZ6WhTcrZDhRgKI",
+          "unidad": "g",
+          "cantidad": "73",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "recYZd7oYkQ77btRY"
+          ],
+          "cantidad_exacta": "73"
+        }
+      ],
+      "equivalencia_exacta": "2",
+      "compra_redondeada": 2,
+      "unidad_exportada": "rebanadas",
+      "contenido_unidad": "36.5",
+      "evidencia": "oroweat-pan-molde-12-cereales-semillas",
+      "specs": {
+        "a": "2 rebanadas (73 g necesarios; 36.5 g por rebanada)",
+        "b": "2 rebanadas; necesario: 73 g; formato: 36.5 g",
+        "c": "2 rebanadas (2 rebanada necesarios; 73 g)"
+      }
+    },
+    {
+      "id": "recSwV1UZnmQhKQ7R",
+      "nombre": "Pasta",
+      "unidad": "g",
+      "cantidad_exacta": "70",
+      "cantidad": "70",
+      "aportes": [
+        {
+          "id": "recSwV1UZnmQhKQ7R",
+          "unidad": "g",
+          "cantidad": "70",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "reckTq9CAgwGWgXZa"
+          ],
+          "cantidad_exacta": "70"
+        }
+      ],
+      "specs": {
+        "a": "70 g",
+        "b": "70 g",
+        "c": "70 g"
+      }
+    },
+    {
+      "id": "recSE81b9WjkURbXi",
+      "nombre": "Patata, cruda (parte comestible)",
+      "unidad": "g",
+      "cantidad_exacta": "400",
+      "cantidad": "400",
+      "aportes": [
+        {
+          "id": "recSE81b9WjkURbXi",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "recGGRphM3Lx4otXr"
+          ],
+          "cantidad_exacta": "200"
+        },
+        {
+          "id": "recSE81b9WjkURbXi",
+          "unidad": "g",
+          "cantidad": "200",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "recGGRphM3Lx4otXr"
+          ],
+          "cantidad_exacta": "200"
+        }
+      ],
+      "specs": {
+        "a": "400 g",
+        "b": "400 g",
+        "c": "400 g"
+      }
+    },
+    {
+      "id": "rec7pFZddheVALlvz",
+      "nombre": "Pepino crudo",
+      "unidad": "g",
+      "cantidad_exacta": "15",
+      "cantidad": "15",
+      "aportes": [
+        {
+          "id": "rec7pFZddheVALlvz",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec87adaQWwpSMmKW",
+            "recgi0wLvd7EOUa6E",
+            "recqjvZeDogqGeqXS"
+          ],
+          "cantidad_exacta": "15"
+        }
+      ],
+      "specs": {
+        "a": "15 g",
+        "b": "15 g",
+        "c": "15 g"
+      }
+    },
+    {
+      "id": "rec7hDpNr3GCJaxWr",
+      "nombre": "Perejil fresco",
+      "unidad": "g",
+      "cantidad_exacta": "5/2",
+      "cantidad": "2.5",
+      "aportes": [
+        {
+          "id": "rec7hDpNr3GCJaxWr",
+          "unidad": "g",
+          "cantidad": "2.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "recxkUYwnlo29n8AO"
+          ],
+          "cantidad_exacta": "5/2"
+        }
+      ],
+      "specs": {
+        "a": "2.5 g",
+        "b": "2.5 g",
+        "c": "2.5 g"
+      }
+    },
+    {
+      "id": "rec70jSFploNVyMCF",
+      "nombre": "Pimienta negra",
+      "unidad": "g",
+      "cantidad_exacta": "2/5",
+      "cantidad": "0.4",
+      "aportes": [
+        {
+          "id": "rec70jSFploNVyMCF",
+          "unidad": "g",
+          "cantidad": "0.4",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec3ddSzQ7nFSFYv2",
+            "recYwT8ThENiOpHF9",
+            "recTJVRb38QBtXjHO"
+          ],
+          "cantidad_exacta": "2/5"
+        }
+      ],
+      "specs": {
+        "a": "0.4 g",
+        "b": "0.4 g",
+        "c": "0.4 g"
+      }
+    },
+    {
+      "id": "recENcfvg6SEEWS6F",
+      "nombre": "Pimiento rojo crudo",
+      "unidad": "g",
+      "cantidad_exacta": "75",
+      "cantidad": "75",
+      "aportes": [
+        {
+          "id": "recENcfvg6SEEWS6F",
+          "unidad": "g",
+          "cantidad": "75",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recaicM32fzHzM6ze",
+            "recZ9MGL7IIEy9LWG",
+            "recLLW3mAqqG1pbs2"
+          ],
+          "cantidad_exacta": "75"
+        }
+      ],
+      "specs": {
+        "a": "75 g",
+        "b": "75 g",
+        "c": "75 g"
+      }
+    },
+    {
+      "id": "rec0zazpvEsFuV0x4",
+      "nombre": "Pimiento verde crudo",
+      "unidad": "g",
+      "cantidad_exacta": "75",
+      "cantidad": "75",
+      "aportes": [
+        {
+          "id": "rec0zazpvEsFuV0x4",
+          "unidad": "g",
+          "cantidad": "75",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recaicM32fzHzM6ze",
+            "recZ9MGL7IIEy9LWG",
+            "recWQrHA6vQvbIki7"
+          ],
+          "cantidad_exacta": "75"
+        }
+      ],
+      "specs": {
+        "a": "75 g",
+        "b": "75 g",
+        "c": "75 g"
+      }
+    },
+    {
+      "id": "recX9PBW2LfpO44hY",
+      "nombre": "Puerro crudo (equivalencia congelado)",
+      "unidad": "g",
+      "cantidad_exacta": "100",
+      "cantidad": "100",
+      "aportes": [
+        {
+          "id": "recX9PBW2LfpO44hY",
+          "unidad": "g",
+          "cantidad": "100",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recXphmVPobK4t3uL"
+          ],
+          "cantidad_exacta": "100"
+        }
+      ],
+      "specs": {
+        "a": "100 g",
+        "b": "100 g",
+        "c": "100 g"
+      }
+    },
+    {
+      "id": "rec3RHqUWRFk0FIJ1",
+      "nombre": "Puerros al natural Conservas Morán (escurridos)",
+      "unidad": "g",
+      "cantidad_exacta": "175",
+      "cantidad": "175",
+      "aportes": [
+        {
+          "id": "rec3RHqUWRFk0FIJ1",
+          "unidad": "g",
+          "cantidad": "175",
+          "origen": "Lunes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recnyx5GwQGLPf1pr",
+            "recImdO7ueFMlnxaE"
+          ],
+          "cantidad_exacta": "175"
+        }
+      ],
+      "equivalencia_exacta": "35/76",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "380",
+      "evidencia": "conservas-moran-puerros-natural",
+      "specs": {
+        "a": "1 envase (175 g necesarios; 380 g por envase)",
+        "b": "1 envase; necesario: 175 g; formato: 380 g",
+        "c": "1 envase (0.460526 envase necesarios; 175 g)"
+      }
+    },
+    {
+      "id": "recYmQvMp2kBIW1Ju",
+      "nombre": "Queso crema Philadelphia",
+      "unidad": "g",
+      "cantidad_exacta": "35",
+      "cantidad": "35",
+      "aportes": [
+        {
+          "id": "recYmQvMp2kBIW1Ju",
+          "unidad": "g",
+          "cantidad": "35",
+          "origen": "Miércoles · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recU0Tg6O9eGXVUaB",
+            "recLIFxlaD1FoVSxy",
+            "recfl98fDfDp6ApRO",
+            "recgFuq9JSBQ43HNr"
+          ],
+          "cantidad_exacta": "35"
+        }
+      ],
+      "equivalencia_exacta": "7/50",
+      "compra_redondeada": 1,
+      "unidad_exportada": "tarrina",
+      "contenido_unidad": "250",
+      "evidencia": "philadelphia-queso-crema-original",
+      "specs": {
+        "a": "1 tarrina (35 g necesarios; 250 g por tarrina)",
+        "b": "1 tarrina; necesario: 35 g; formato: 250 g",
+        "c": "1 tarrina (0.14 tarrina necesarios; 35 g)"
+      }
+    },
+    {
+      "id": "recwKRObhGoxOtI8g",
+      "nombre": "Rúcula cruda",
+      "unidad": "g",
+      "cantidad_exacta": "20",
+      "cantidad": "20",
+      "aportes": [
+        {
+          "id": "recwKRObhGoxOtI8g",
+          "unidad": "g",
+          "cantidad": "20",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "recJcXenFOsoy8OX0"
+          ],
+          "cantidad_exacta": "20"
+        }
+      ],
+      "specs": {
+        "a": "20 g",
+        "b": "20 g",
+        "c": "20 g"
+      }
+    },
+    {
+      "id": "recpst98trSqZIPSe",
+      "nombre": "Salsa de soja Salseo",
+      "unidad": "ml",
+      "cantidad_exacta": "6696428571428571/500000000000000",
+      "cantidad": "13.392857",
+      "aportes": [
+        {
+          "id": "recpst98trSqZIPSe",
+          "unidad": "ml",
+          "cantidad": "13.392857",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "recewMFuYWK3ai6yt"
+          ],
+          "cantidad_exacta": "6696428571428571/500000000000000"
+        }
+      ],
+      "equivalencia_exacta": "6696428571428571/125000000000000000",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "250",
+      "evidencia": "salseo-salsa-soja-dia",
+      "specs": {
+        "a": "1 envase (13.392857 ml necesarios; 250 ml por envase)",
+        "b": "1 envase; necesario: 13.392857 ml; formato: 250 ml",
+        "c": "1 envase (0.053571 envase necesarios; 13.392857 ml)"
+      }
+    },
+    {
+      "id": "recBR5gKXgTzxIPy9",
+      "nombre": "Sardinillas en aceite escurridas (balance estimado)",
+      "unidad": "g",
+      "cantidad_exacta": "58",
+      "cantidad": "58",
+      "aportes": [
+        {
+          "id": "recBR5gKXgTzxIPy9",
+          "unidad": "g",
+          "cantidad": "58",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "recizN83odYqYRU5z"
+          ],
+          "cantidad_exacta": "58"
+        }
+      ],
+      "equivalencia_exacta": "58/163",
+      "compra_redondeada": 1,
+      "unidad_exportada": "lata",
+      "contenido_unidad": "163",
+      "evidencia": "portonovo-sardinillas-aceite-oliva",
+      "specs": {
+        "a": "1 lata (58 g necesarios; 163 g por lata)",
+        "b": "1 lata; necesario: 58 g; formato: 163 g",
+        "c": "1 lata (0.355828 lata necesarios; 58 g)"
+      }
+    },
+    {
+      "id": "rechMDQXS4hW2JBYg",
+      "nombre": "Tahini NaturGreen",
+      "unidad": "g",
+      "cantidad_exacta": "15",
+      "cantidad": "15",
+      "aportes": [
+        {
+          "id": "rechMDQXS4hW2JBYg",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "reciwguwkz2gpE3sW"
+          ],
+          "cantidad_exacta": "15"
+        }
+      ],
+      "equivalencia_exacta": "1/18",
+      "compra_redondeada": 1,
+      "unidad_exportada": "envase",
+      "contenido_unidad": "270",
+      "evidencia": "naturgreen-tahini-sesamo-pelado",
+      "specs": {
+        "a": "1 envase (15 g necesarios; 270 g por envase)",
+        "b": "1 envase; necesario: 15 g; formato: 270 g",
+        "c": "1 envase (0.055556 envase necesarios; 15 g)"
+      }
+    },
+    {
+      "id": "recjq8IrRWXTVjRKg",
+      "nombre": "Tomate crudo",
+      "unidad": "g",
+      "cantidad_exacta": "650/3",
+      "cantidad": "216.666667",
+      "aportes": [
+        {
+          "id": "recjq8IrRWXTVjRKg",
+          "unidad": "g",
+          "cantidad": "50",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "recaM7dv3rnohf8ra"
+          ],
+          "cantidad_exacta": "50"
+        },
+        {
+          "id": "recjq8IrRWXTVjRKg",
+          "unidad": "g",
+          "cantidad": "166.666667",
+          "origen": "Viernes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec8CnfzjZfgyZRIX",
+            "recNazflEl4CBV4MA",
+            "recl8ijk3FI18QqNj",
+            "rec18XTnBvg0PCBTP",
+            "recG1UJ6vBcK3NBaE",
+            "recTNv9Dqh2hBTBQX"
+          ],
+          "cantidad_exacta": "500/3"
+        }
+      ],
+      "specs": {
+        "a": "216.666667 g",
+        "b": "216.666667 g",
+        "c": "216.666667 g"
+      }
+    },
+    {
+      "id": "recpmmQpWkGhfDadm",
+      "nombre": "Vino blanco para guisar de Alberto",
+      "unidad": "ml",
+      "cantidad_exacta": "25",
+      "cantidad": "25",
+      "aportes": [
+        {
+          "id": "recpmmQpWkGhfDadm",
+          "unidad": "ml",
+          "cantidad": "12.5",
+          "origen": "Lunes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recFVknFi4HaA6K7E"
+          ],
+          "cantidad_exacta": "25/2"
+        },
+        {
+          "id": "recpmmQpWkGhfDadm",
+          "unidad": "ml",
+          "cantidad": "12.5",
+          "origen": "Miércoles · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec6pQ1IKkMn3Eqyf",
+            "rec6yQ4Z2SbrnVuLs",
+            "rec2zKHAUl6XFjWrX",
+            "recUeMnwlIh29aflP",
+            "recyWwEozW2iOM9Ax",
+            "recFVknFi4HaA6K7E"
+          ],
+          "cantidad_exacta": "25/2"
+        }
+      ],
+      "equivalencia_exacta": "1/200",
+      "compra_redondeada": 1,
+      "unidad_exportada": "caja",
+      "contenido_unidad": "5000",
+      "evidencia": "de-alberto-vino-blanco-bag-in-box",
+      "specs": {
+        "a": "1 caja (25 ml necesarios; 5000 ml por caja)",
+        "b": "1 caja; necesario: 25 ml; formato: 5000 ml",
+        "c": "1 caja (0.005 caja necesarios; 25 ml)"
+      }
+    },
+    {
+      "id": "recWI9QK4SWspG83g",
+      "nombre": "Vino tinto",
+      "unidad": "ml",
+      "cantidad_exacta": "125",
+      "cantidad": "125",
+      "aportes": [
+        {
+          "id": "recWI9QK4SWspG83g",
+          "unidad": "ml",
+          "cantidad": "62.5",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "recg3NZdfOmyWFNNf"
+          ],
+          "cantidad_exacta": "125/2"
+        },
+        {
+          "id": "recWI9QK4SWspG83g",
+          "unidad": "ml",
+          "cantidad": "62.5",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "recg3NZdfOmyWFNNf"
+          ],
+          "cantidad_exacta": "125/2"
+        }
+      ],
+      "specs": {
+        "a": "125 ml",
+        "b": "125 ml",
+        "c": "125 ml"
+      }
+    },
+    {
+      "id": "recBse4SOxBOPwYEQ",
+      "nombre": "Yogur griego natural DIA Fidias",
+      "unidad": "g",
+      "cantidad_exacta": "375/2",
+      "cantidad": "187.5",
+      "aportes": [
+        {
+          "id": "recBse4SOxBOPwYEQ",
+          "unidad": "g",
+          "cantidad": "125",
+          "origen": "Lunes · Postre",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recACTMx4Sfoy1Sv7",
+            "rect4hWMQTvHmil4u"
+          ],
+          "cantidad_exacta": "125"
+        },
+        {
+          "id": "recBse4SOxBOPwYEQ",
+          "unidad": "g",
+          "cantidad": "62.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec87adaQWwpSMmKW",
+            "recgi0wLvd7EOUa6E",
+            "recyaWdwqmFrnWLlS"
+          ],
+          "cantidad_exacta": "125/2"
+        }
+      ],
+      "equivalencia_exacta": "3/2",
+      "compra_redondeada": 2,
+      "unidad_exportada": "vasitos",
+      "contenido_unidad": "125",
+      "evidencia": "dia-fidias-yogur-griego-natural",
+      "specs": {
+        "a": "2 vasitos (187.5 g necesarios; 125 g por vasito)",
+        "b": "2 vasitos; necesario: 187.5 g; formato: 125 g",
+        "c": "2 vasitos (1.5 vasito necesarios; 187.5 g)"
+      }
+    },
+    {
+      "id": "recebLI940bDa1XRS",
+      "nombre": "Zanahoria fresca (cruda)",
+      "unidad": "g",
+      "cantidad_exacta": "75",
+      "cantidad": "75",
+      "aportes": [
+        {
+          "id": "recebLI940bDa1XRS",
+          "unidad": "g",
+          "cantidad": "37.5",
+          "origen": "Martes · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV2xhndk7uXp3j3",
+            "rec0ETgeB2SkeupKs",
+            "recb11ZAHayvOIBWU",
+            "recoMWTPpPdoV4Ff8"
+          ],
+          "cantidad_exacta": "75/2"
+        },
+        {
+          "id": "recebLI940bDa1XRS",
+          "unidad": "g",
+          "cantidad": "37.5",
+          "origen": "Jueves · Comida",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "rec5CulygOWu2rNnB",
+            "rec9TImdQlBmsDPOa",
+            "rec7qUQ85hy3AQ753",
+            "recaemF4LsW9yrGgS",
+            "recb11ZAHayvOIBWU",
+            "recoMWTPpPdoV4Ff8"
+          ],
+          "cantidad_exacta": "75/2"
+        }
+      ],
+      "specs": {
+        "a": "75 g",
+        "b": "75 g",
+        "c": "75 g"
+      }
+    },
+    {
+      "id": "rec7ray2LYDB4u7UC",
+      "nombre": "Zumo de limón fresco",
+      "unidad": "g",
+      "cantidad_exacta": "45/2",
+      "cantidad": "22.5",
+      "aportes": [
+        {
+          "id": "rec7ray2LYDB4u7UC",
+          "unidad": "g",
+          "cantidad": "7.5",
+          "origen": "Martes · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recV0I2zP8kowNyNk",
+            "reckvWQszelpW0u01",
+            "rec9cxis2Yndtrq6K",
+            "rec87adaQWwpSMmKW",
+            "recgi0wLvd7EOUa6E",
+            "rec8kTdIVNurDq9LF"
+          ],
+          "cantidad_exacta": "15/2"
+        },
+        {
+          "id": "rec7ray2LYDB4u7UC",
+          "unidad": "g",
+          "cantidad": "15",
+          "origen": "Jueves · Cena",
+          "ruta": [
+            "reci0EmSxZE2WlJ1K",
+            "recGuYLbhZjw8jNaX",
+            "recrzc4RyHhJ1vqNd",
+            "recxRAH9FD9GvayFF",
+            "rec09YsX6gK3rHqCY",
+            "recFVyiowroB8vane",
+            "rec1GpEBgFR0qHw6i"
+          ],
+          "cantidad_exacta": "15"
+        }
+      ],
+      "specs": {
+        "a": "22.5 g",
+        "b": "22.5 g",
+        "c": "22.5 g"
+      }
+    }
+  ],
+  "condimentos": [
+    {
+      "nombre": "Menta o hierbabuena",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "tzatziki"
+      ]
+    },
+    {
+      "nombre": "Nuez moscada",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "quiche-de-puerro-champinones-y-pavo",
+        "bechamel"
+      ]
+    },
+    {
+      "nombre": "Pimienta negra",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "carrilleras-de-cerdo-al-vino",
+        "quiche-de-puerro-champinones-y-pavo",
+        "bechamel"
+      ]
+    },
+    {
+      "nombre": "Romero",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "carrilleras-de-cerdo-al-vino"
+      ]
+    },
+    {
+      "nombre": "Sal",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "carrilleras-de-cerdo-al-vino",
+        "salsa-vizcaina",
+        "tzatziki",
+        "bechamel"
+      ]
+    },
+    {
+      "nombre": "Tomillo",
+      "stock": true,
+      "cantidad": null,
+      "airtable_id": null,
+      "origenes": [
+        "carrilleras-de-cerdo-al-vino"
+      ]
+    }
+  ],
+  "exclusiones": [
+    "Café de oficina",
+    "Viernes cena libre"
+  ],
+  "aviso": "Bring! puede escalar los enteros ya redondeados y no redondear después. Escalado de anotaciones pendiente de prueba real.",
+  "resultado_prueba_4": "La usuaria confirmó el 14/10/2026 en Android que 4A/4B/4C no escalan las anotaciones. Capturas muestran 1 y 3 porciones: solo cambia la cantidad inicial, el texto añadido permanece fijo.",
+  "reglas_prueba_6": {
+    "orden": "agrupar por ID/unidad, multiplicar cantidades exactas por porciones, convertir presentación y redondear al final",
+    "exportacion": "spec contiene únicamente cantidad y unidad; sin cantidades secundarias",
+    "redondeo_g_ml": "todos los pesos/volúmenes sin presentación unitaria verificada",
+    "aceite_stock_id": "rec4QWbZX5KJIhQyW",
+    "max_porciones_experimento": 20,
+    "estado_real": "Prueba 6 en Bring! pendiente; prueba 5 validada por la usuaria en Android",
+    "limite": "Para cambiar porciones volver a esta página y hacer una nueva importación. Bring! puede escalar de nuevo cifras ya redondeadas."
+  },
+  "resultado_prueba_5": "La usuaria confirma importación perfecta en Bring!; adopta selector previo, escalado exacto y redondeo antes de exportar. Corrige anchoas y necesidad real a un decimal."
+}

@@ -16,10 +16,12 @@ Se conserva exactamente la instantánea de lectura de prueba 4, identificada por
 2. Sumar por `(ID Airtable de ingrediente, unidad literal)`.
 3. Multiplicar la cantidad exacta agregada por las porciones elegidas.
 4. Convertir al formato comercial registrado y aplicar entero superior al resultado. Una cantidad ya entera permanece entera. Pan, mini tortillas y vasitos conservan su unidad individual registrada, aunque pertenezcan a packs.
-5. Los frescos expresados en gramos o ml se redondean a la decena superior, conservando las decenas exactas. El AOVE sigue esta regla y recibe siempre `stock: true` por su ID, no por buscar palabras en el nombre.
+5. Los ingredientes sin presentación comercial/unidad culinaria verificada expresados en gramos o ml se redondean a la decena superior, conservando las decenas exactas. El AOVE sigue esta regla y recibe siempre `stock: true` por su ID, no por buscar palabras en el nombre.
 6. `spec` contiene solo cantidad y unidad; no hay paréntesis, segunda cifra, formato de envase ni necesidades reales. La cantidad real se puede consultar en la tabla de la página antes de exportar.
 
-Los IDs de frescos son explícitos en `FRESH_IDS`: verduras/fruta frescas, patata, pechuga cruda, zumo de limón, leche y aceite. Los genéricos de conserva sin presentación comercial verificada (por ejemplo anchoas) conservan sus cantidades originales; no se les inventan envases. Las presentaciones culinarias de huevo y ajo ya verificadas en prueba 4 conservan huevo/diente enteros, calculados después del escalado, en vez de convertirlas a pesos de compra.
+La corrección del 14/10/2026 amplía el redondeo a toda cantidad en g/ml que no tenga una presentación unitaria verificada, incluidas anchoas genéricas y conservas sin formato. Anchoas a 4 porciones: necesidad exacta 340/3 g, visual 113,3 g y exportación 120 g; a 5: 425/3 g, visual 141,7 g y compra 150 g. Las presentaciones culinarias verificadas de huevo/diente siguen usando unidades enteras después del escalado.
+
+«Necesidad real» se muestra con cero o un decimal; el cálculo sigue usando fracciones exactas sin ese redondeo visual. La usuaria confirmó que la importación de prueba 5 funciona perfectamente en su Android y fija este procedimiento para las futuras pruebas. Eso no valida todavía el nuevo menú de octubre.
 
 Ejemplos: una persona = cebolla 120 g, AOVE 60 ml en despensa, Philadelphia 1 tarrina, 2 rebanadas de pan. Tres personas = cebolla 360 g, AOVE 180 ml, Philadelphia 1 tarrina para 52,5 g reales, mozzarella 2 bolsas para 270 g reales, yogur 1 vasito para 125 g, pan 6 rebanadas. No multiplicar las compras ya redondeadas de una persona.
 

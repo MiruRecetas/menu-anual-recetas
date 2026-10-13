@@ -3,6 +3,7 @@ import argparse
 import html
 import json
 from fractions import Fraction as F
+from decimal import Decimal, localcontext, ROUND_HALF_UP
 from pathlib import Path
 from urllib.parse import urlencode
 from calcular_base import build as base_build, ceil, fmt
@@ -11,14 +12,12 @@ ROOT = Path(__file__).resolve().parent
 URL = 'https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-5-09-1/'
 MAX_PERSONAS = 20
 OIL_ID = 'rec4QWbZX5KJIhQyW'
-# Explicit classifications by Airtable ingredient ID; no fuzzy name matching.
-FRESH_IDS = {
- OIL_ID, 'reclKQvB48lfBN4PL', 'recrGNY88zOIOcRom', 'recssXY1xQnfwtRkJ',
- 'reczgvNmAbXxN7Rs3', 'rec1Xb6nuoyFWAxvF', 'rec8Qjo12MyyUQ3Rc',
- 'recSE81b9WjkURbXi', 'recWu3cmRxB6uzGOH', 'recENcfvg6SEEWS6F',
- 'rec0zazpvEsFuV0x4', 'recjq8IrRWXTVjRKg', 'recebLI940bDa1XRS',
- 'rec7ray2LYDB4u7UC', 'recw8aSxhSx0aSH93',
-}
+def display_real(q):
+    with localcontext() as ctx:
+        ctx.prec = 40
+        value = (Decimal(q.numerator) / Decimal(q.denominator)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP)
+    return format(value, 'f').rstrip('0').rstrip('.') if '.' in format(value, 'f') else format(value, 'f')
+
 
 def for_people(base, n):
     if isinstance(n, bool) or not isinstance(n, int) or not 1 <= n <= MAX_PERSONAS:
@@ -27,7 +26,7 @@ def for_people(base, n):
     for r in base['ingredientes']:
         real = F(r['cantidad_exacta']) * n
         row = dict(id=r['id'], nombre=r['nombre'], cantidad_exacta=str(real),
-                   cantidad_real=fmt(real)+' '+r['unidad'], stock=r['id']==OIL_ID)
+                   cantidad_real=display_real(real)+' '+r['unidad'], stock=r['id']==OIL_ID)
         if 'equivalencia_exacta' in r:
             equivalent = F(r['equivalencia_exacta']) * n
             buy = ceil(equivalent)
@@ -41,7 +40,7 @@ def for_people(base, n):
             spec = f'{buy} {unit}'
             row.update(equivalencia_exacta=str(equivalent), cantidad_compra=buy, unidad_compra=unit,
                        regla='unidades enteras tras escalado', contenido_unidad=r['contenido_unidad'])
-        elif r['id'] in FRESH_IDS and r['unidad'] in ('g','ml'):
+        elif r['unidad'] in ('g','ml'):
             buy = ceil(real / 10) * 10
             spec = f'{buy} {r["unidad"]}'
             row.update(cantidad_compra=buy, unidad_compra=r['unidad'], regla='decena superior tras escalado')
@@ -74,8 +73,8 @@ def build(data):
     base['reglas_prueba_5']={
         'orden':'agrupar por ID/unidad, multiplicar cantidades exactas por porciones, convertir presentación y redondear al final',
         'exportacion':'spec contiene únicamente cantidad y unidad; sin cantidades secundarias',
-        'frescos':sorted(FRESH_IDS), 'aceite_stock_id':OIL_ID, 'max_porciones_experimento':MAX_PERSONAS,
-        'estado_real':'Prueba 5 en Bring! pendiente; pruebas automáticas no acreditan importación',
+        'redondeo_g_ml':'todos los pesos/volúmenes sin presentación unitaria verificada', 'aceite_stock_id':OIL_ID, 'max_porciones_experimento':MAX_PERSONAS,
+        'estado_real':'La usuaria confirma el 14/10/2026 que prueba 5 funciona en Bring! como esperaba; corrige anchoas y precisión visual, no la importación' ,
         'limite':'Para cambiar porciones volver a esta página y hacer una nueva importación. Bring! puede escalar de nuevo cifras ya redondeadas.'}
     files['calculo-base.json']=json.dumps(base,ensure_ascii=False,indent=2)+'\n'
     e=html.escape
@@ -88,7 +87,7 @@ def build(data):
 <h1>Septiembre · Menú 1 · Prueba 5</h1><p>Menú registrado parcialmente. <strong>Miércoles comida y cena pendientes.</strong> Los postres registrados están incluidos; el café de oficina está excluido.</p>
 <div class="selector"><label for="porciones">Porciones</label><button id="menos" type="button" aria-label="Reducir porciones">−</button><input id="porciones" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"><button id="mas" type="button" aria-label="Aumentar porciones">+</button></div>
 <p id="estado" role="status">Cargando el selector…</p><p><a id="exportar" class="button" aria-disabled="true">Exportar a Bring!</a></p>
-<p>Elige aquí las porciones antes de importar. Los envases fraccionados se redondean hacia arriba después del escalado. Los frescos expresados en g/ml se redondean a la decena superior; las decenas exactas se conservan. El AOVE aparece en despensa.</p>
+<p>Elige aquí las porciones antes de importar. Los envases fraccionados se redondean hacia arriba después del escalado. Los ingredientes sin presentación unitaria expresados en g/ml se redondean a la decena superior; las decenas exactas se conservan. El AOVE aparece en despensa.</p>
 <p>Para comprobar lo que tienes en casa, consulta la cantidad real de la tabla. Bring! recibirá únicamente la cantidad de compra y su unidad.</p>
 <h2 id="titulo-lista">Cantidades para 1 porción</h2><div class="scroll"><table><thead><tr><th>Ingrediente</th><th>Necesidad real</th><th>Se exporta</th><th>Lista</th></tr></thead><tbody id="lista">{rows}</tbody></table></div>
 <h2>Condimentos · despensa</h2><ul>{stock}</ul><p>Sin cantidad inventada. Se exportan con stock: true y sin spec.</p>
