@@ -14,6 +14,11 @@ from urllib.parse import urlencode
 ROOT = Path(__file__).resolve().parents[2]
 SITE = 'https://mirurecetas.github.io/menu-anual-recetas/'
 URL = SITE + 'experimentos/bring/10-1/'
+JSON_URL = URL + 'bring-v2.json'
+TAGLINE = 'Menú de octubre de lunes a viernes para una persona.'
+# Explicit test selection: pantry items remain necessary for cooking.
+STOCK_NAMES = {'sal', 'pimienta negra', 'comino en polvo', 'laurel',
+               'nuez moscada', 'romero', 'tomillo'}
 DAYS = ('Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes')
 KINDS = ('desayuno', 'comida', 'cena', 'postre')
 
@@ -113,6 +118,8 @@ def build(root=ROOT):
                 quantity = number(element.get('cantidad', element.get('raciones')))
                 unit = element.get('unidad', 'ración')
                 displayed.append(ingredient_text(element['nombre'], quantity, unit))
+                if kind == 'desayuno' and normalized(element['nombre']) == normalized('Café con leche (oficina, Incapto)'):
+                    continue  # Office coffee is outside this shopping export; no milk substitution.
                 if element['tipo'] == 'preparacion':
                     slug = element.get('slug')
                     if not slug:
@@ -146,8 +153,7 @@ def build(root=ROOT):
         item['aportes'].append({'origen': leaf['origen'], 'receta': leaf['receta'], 'unidad_original': leaf['unidad'],
                                'cantidad_exacta': None if leaf['cantidad'] is None else str(leaf['cantidad'])})
     ingredients = [grouped[key] for key in sorted(grouped)]
-    description = 'Menú completo de lunes a viernes para 1 persona. ' + ' | '.join(
-        day['dia'] + ': ' + day['resumen'] for day in days)
+    description = TAGLINE
     texts = [ingredient_text(x['nombre'], x['cantidad'], x['unidad']) for x in ingredients]
     recipe = {'@context': 'https://schema.org', '@type': 'Recipe',
               'name': 'Menú 1 - Octubre', 'description': description, 'url': URL,
@@ -163,6 +169,15 @@ def build(root=ROOT):
         for meal in day['ingestas']) + '</section>' for day in days)
     bring = 'https://api.getbring.com/rest/bringrecipes/deeplink?' + urlencode(
         {'url': URL, 'source': 'web', 'baseQuantity': 1, 'requestedQuantity': 1})
+    bring_json = 'https://api.getbring.com/rest/bringrecipes/deeplink?' + urlencode(
+        {'url': JSON_URL, 'source': 'web', 'baseQuantity': 1, 'requestedQuantity': 1})
+    native = {'author': 'MiruRecetas', 'linkOutUrl': URL,
+              'name': 'Menú 1 - Octubre', 'tagline': TAGLINE, 'yield': '1',
+              'items': [dict({'itemId': x['nombre'],
+                             'stock': normalized(x['nombre']) in STOCK_NAMES},
+                            **({} if x['cantidad'] is None else
+                               {'spec': f"{formatted(x['cantidad'])} {x['unidad']}"}))
+                        for x in ingredients]}
     page = f'''<!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Menú 1 - Octubre · MiruRecetas · Prueba Bring!</title>
@@ -170,16 +185,20 @@ def build(root=ROOT):
 <link rel="canonical" href="{URL}">
 <script type="application/ld+json">{json.dumps(recipe, ensure_ascii=False).replace('<', chr(92) + 'u003c')}</script>
 </head><body>
-<p>Prueba temporal de importación a Bring! · Sin diseño definitivo · Sin fotografía de menú.</p>
+<p>Prueba temporal de importación a Bring! · Ensayo 2: descripción y despensa · Sin diseño definitivo.</p>
 <article itemscope itemtype="https://schema.org/Recipe">
 <h1 itemprop="name">Menú 1 - Octubre</h1><p>Por <span itemprop="author">MiruRecetas</span></p>
 <p>Rendimiento: <span itemprop="recipeYield">1</span> porción = el menú completo de lunes a viernes para 1 persona.</p>
-<p itemprop="description">{e(description)}</p>
-<p><button id="share" type="button">Compartir esta prueba</button> · <a href="{e(bring, quote=True)}">Abrir importación en Bring! (1 persona)</a></p>
-<p id="share-status" role="status">Para la primera prueba: usa Compartir del navegador y elige Bring!.</p>
+<p itemprop="tagline">{e(TAGLINE)}</p>
+<p><a href="{e(bring_json, quote=True)}">Prueba 2: importar descripción y despensa en Bring! (JSON)</a></p>
+<p><a href="{e(bring, quote=True)}">Control: importar desde esta página (HTML)</a> · <button id="share" type="button">Compartir esta página HTML</button></p>
+<p>Para probar stock: true, usa el enlace Prueba 2 (JSON). Compartir la página usa el importador HTML y no envía ese campo explícito.</p>
+<p>Frase esperada: {e(TAGLINE)} Condimentos de despensa: sal, pimienta negra, comino, laurel, nuez moscada, romero y tomillo. Son necesarios para cocinar; la marca significa que probablemente ya los tienes.</p>
+<p>Comprueba también 1 y 2 porciones, cantidades, iconos, Favoritos y Ver receta. La documentación de Bring! advierte limitaciones de escalado e iconos en la vía JSON; este ensayo busca observar su comportamiento real.</p>
+<p id="share-status" role="status">La segunda prueba se inicia con el enlace JSON de arriba.</p>
 <h2>Lista completa para la compra ({len(texts)} entradas)</h2>
 <ul>{''.join('<li itemprop="recipeIngredient">' + e(line) + '</li>' for line in texts)}</ul>
-<p>Se suman nombres exactamente iguales y unidades compatibles. Diente/dientes de ajo se cuentan juntos; g y ml se conservan separados. Las cantidades desconocidas no se inventan. Los productos comerciales y el café de oficina conservan su nombre publicado.</p>
+<p>Se suman nombres exactamente iguales y unidades compatibles. Diente/dientes de ajo se cuentan juntos; g y ml se conservan separados. Las cantidades desconocidas no se inventan. El café de oficina se excluye de la compra; permanece en el resumen del menú. Agrupación por identidad Airtable, conversión de AOVE y redondeo de compra quedan para otra fase.</p>
 <h2>Comidas y cantidades para 1 persona</h2>{plan}
 </article>
 <p><a id="open-menu" href="{SITE}">Ver Octubre · Menú 1 en la vista semanal</a> · <a href="{SITE}recetario/">Recetario</a></p>
@@ -198,7 +217,8 @@ document.getElementById('share').addEventListener('click',async()=>{{
                                for path in sorted(used)}, 'dias': days,
              'ingredientes': [dict(x, cantidad=None if x['cantidad'] is None else formatted(x['cantidad']),
                                   cantidad_exacta=None if x['cantidad'] is None else str(x['cantidad'])) for x in ingredients]}
-    return {'index.html': page, 'calculo.json': json.dumps(audit, ensure_ascii=False, indent=2) + '\n'}
+    return {'index.html': page, 'calculo.json': json.dumps(audit, ensure_ascii=False, indent=2) + '\n',
+            'bring-v2.json': json.dumps(native, ensure_ascii=False, indent=2) + '\n'}
 
 
 def main():

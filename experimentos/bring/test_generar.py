@@ -74,12 +74,32 @@ class MenuTest(unittest.TestCase):
 
     def test_weekly_menu_not_batch_gallery_and_idempotence(self):
         self.assertEqual(len(self.audit['dias']), 5)
-        self.assertEqual(self.quantity('Café con leche (oficina, Incapto)', 'ml'), 650)
+        self.assertFalse(any('Café' in x['nombre'] for x in self.audit['ingredientes']))
         self.assertEqual(build(), self.output)
         for ingredient in self.audit['ingredientes']:
             if ingredient['cantidad_exacta'] is not None:
                 self.assertEqual(Fraction(ingredient['cantidad_exacta']), sum(
                     (Fraction(part['cantidad_exacta']) for part in ingredient['aportes']), Fraction(0)))
+
+    def test_native_description_stock_and_control_quantities(self):
+        native = json.loads(self.output['bring-v2.json'])
+        self.assertEqual(native['yield'], '1')
+        self.assertEqual(native['tagline'], self.parser.schemas[0]['description'])
+        self.assertNotIn('\n', native['tagline'])
+        self.assertEqual(len(native['items']), len(self.audit['ingredientes']))
+        for item, source in zip(native['items'], self.audit['ingredientes']):
+            self.assertEqual(item['itemId'], source['nombre'])
+            self.assertIsInstance(item['stock'], bool)
+            if source['cantidad'] is not None:
+                self.assertEqual(item['spec'], source['cantidad'] + ' ' + source['unidad'])
+            else:
+                self.assertNotIn('spec', item)
+        self.assertTrue(all(i['stock'] for i in native['items'] if i['itemId'] == 'Sal'))
+        self.assertTrue(all(i['stock'] for i in native['items'] if i['itemId'] == 'Pimienta negra'))
+        self.assertFalse(any(i['stock'] for i in native['items'] if i['itemId'] in ('Bacalao', 'Carrilleras de cerdo', 'Yogur griego natural')))
+        self.assertIn('bring-v2.json', self.output['index.html'])
+        self.assertIn('itemprop="tagline"', self.output['index.html'])
+        self.assertEqual(native['linkOutUrl'], self.parser.schemas[0]['url'])
 
 
 if __name__ == '__main__':
