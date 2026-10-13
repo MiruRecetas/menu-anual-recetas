@@ -2,11 +2,11 @@
 // Public same-origin resources only. No third-party interception or credentials.
 const BASE = new URL('./', self.location.href);
 const PREFIX = 'mirurecetas-pwa-';
-const CORE = PREFIX + 'core-7da38f78bbfccceab506';
+const CORE = PREFIX + 'core-dd69f20b4f1b0772a8c9';
 const RUNTIME = PREFIX + 'public-v1';
 const MAX_AGE = 30 * 86400000;
 const LIMITS = {page: 40, asset: 64, image: 40, json: 2};
-const PRECACHE = ['offline.html', 'manifest.webmanifest', 'assets/pwa/icon-192.png', 'assets/pwa/icon-512.png'];
+const PRECACHE = ["offline.html", "manifest.webmanifest", "assets/pwa/icon-192.png?v=10d60cfd076eaecb80e41808746dfbab2641670b10098a515df102bc1691cba6", "assets/pwa/icon-512.png?v=ebca609236d2bcbd70bda84fff12f35df218c40ef6e5c260e3ddcef2f33805a4", "assets/pwa/maskable-512.png?v=78eb7dea61bde883bd8ced1df8301c1472ddd92c0a9178dd0fdc5f90b577426d"];
 self.addEventListener('install', event => event.waitUntil((async () => {
   const cache = await caches.open(CORE);
   for (const path of PRECACHE) {
@@ -143,7 +143,7 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname) || request.headers.has('Authorization')) return;
   const type = kind(url, request);
   if (type) event.respondWith(respond(request, url, type));
-  else if (!url.search && PRECACHE.includes(url.pathname.slice(BASE.pathname.length))) {
+  else if (PRECACHE.includes(url.pathname.slice(BASE.pathname.length) + url.search)) {
     event.respondWith((async () => {
       try { const response = await fetch(request, {cache:'no-store', credentials:'omit'}); if (response.ok && !response.redirected) return response; } catch {}
       return await (await caches.open(CORE)).match(url) || Response.error();
