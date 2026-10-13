@@ -1,0 +1,45 @@
+{
+  "slug": "berenjenas-rellenas",
+  "nombre": "Berenjenas rellenas",
+  "descripcion": "Berenjenas asadas rellenas de ragú a la boloñesa y su propia pulpa, con mozzarella rallada gratinada.",
+  "raciones": 4,
+  "categoria": "asados-horno",
+  "etiquetas": [
+    "congelable",
+    "microondas",
+    "tupper",
+    "batchcooking",
+    "carne"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Ragú a la boloñesa",
+      "cantidad": 4,
+      "unidad": "raciones",
+      "preparacion": "ragu-a-la-bolonesa"
+    },
+    {
+      "nombre": "Berenjena",
+      "cantidad": 600,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Mozzarella rallada",
+      "cantidad": 120,
+      "unidad": "g"
+    }
+  ],
+  "pasos": [
+    "Cortar las berenjenas por la mitad, colocarlas en una fuente de horno y asarlas hasta que estén tiernas, orientativamente durante 40 minutos a 180 °C.",
+    "Vaciar las berenjenas asadas y reservar las pieles.",
+    "Picar la pulpa de las berenjenas, añadirla al ragú y cocinar durante 5 minutos para que se mezclen los sabores.",
+    "Rellenar las pieles de berenjena con el ragú y repartir la mozzarella rallada por encima.",
+    "Hornear durante unos minutos, hasta que el queso se funda y se dore."
+  ],
+  "nutricion": {
+    "kcal": 373.17,
+    "proteinas_g": 25.05,
+    "hidratos_g": 16.91,
+    "grasas_g": 22.83
+  }
+}
