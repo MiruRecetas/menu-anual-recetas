@@ -40,5 +40,11 @@
     "Colocar los pimientos del piquillo escurridos sobre el pan tostado.",
     "Repartir la burrata entre las tostas y terminar con las anchoas escurridas y los condimentos al gusto.",
     "Servir recién montadas."
-  ]
+  ],
+  "nutricion": {
+    "kcal": 658.48,
+    "proteinas_g": 26.93,
+    "hidratos_g": 39.24,
+    "grasas_g": 42.28
+  }
 }
