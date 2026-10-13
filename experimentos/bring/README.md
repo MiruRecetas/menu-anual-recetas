@@ -10,10 +10,10 @@ Base consultada: `02d81e09f2d1eb071e201fa4537a92ccfb456347` (main).
 
 - `generar.py` es independiente del generador de producción. Lee exclusivamente los JSON públicos del menú y sus recetas; escribe únicamente `experimentos/bring/10-1/index.html` y `calculo.json`.
 - La prueba es una instantánea: no se regenera automáticamente con publicaciones de recetas. `calculo.json` identifica las fuentes mediante SHA-256 y permite detectar cambios.
-- Título importable: **Menú 1 - Octubre**; autor MiruRecetas; descripción con las ingestas de cada día; rendimiento **1**: menú semanal completo para una persona. Se incluyen desayuno, comida, cena y los postres presentes; viernes noche libre no añade ingredientes.
+- Título importable: **Menú 1 - Octubre**; autor MiruRecetas; descripción breve para probar tagline; rendimiento **1**: menú semanal completo para una persona. Se incluyen comida, cena y los postres presentes; el desayuno de café de oficina aparece en el resumen pero se excluye de la lista de compra; viernes noche libre no añade ingredientes.
 - Recorrer cada ingesta y preparación por las raciones reales del menú, expandiendo referencias con `cantidad × raciones_solicitadas / raciones_base`. Detectar ciclos y preparaciones inexistentes. Una preparación repetida en dos días aporta ambos usos; una preparación anidada aporta solo los ingredientes requeridos por esa referencia.
 - Resolver el slug ausente de las tostas del jueves por nombre completo normalizado y único en las recetas publicadas.
-- Sumar nombres exactos y unidades compatibles; única equivalencia de unidades de conteo aplicada: dientes de ajo, singular/plural y anotación publicada de 2,7 g. No convertir g/ml ni inferir sinónimos/productos. Conservar aparte cantidades conocidas y desconocidas. Los productos compuestos comerciales y el café de oficina siguen siendo ingredientes, no preparaciones web desglosables.
+- Sumar nombres exactos y unidades compatibles; única equivalencia de unidades de conteo aplicada: dientes de ajo, singular/plural y anotación publicada de 2,7 g. No convertir g/ml ni inferir sinónimos/productos. Conservar aparte cantidades conocidas y desconocidas. Los productos compuestos comerciales siguen siendo ingredientes, no preparaciones web desglosables. Se excluye el café de oficina sin añadir leche equivalente.
 - JSON-LD y microdatos describen los mismos ingredientes visibles. No se inventan una imagen de menú, tiempos de cocina ni nutrición. Los pasos importables son el resumen de las ingestas reales, enlazados a los días publicados.
 - No se carga CSS/JS compartido, manifiesto o registro PWA; no se inserta en recetario, portada ni navegación principal. `noindex, nofollow` evita solicitar indexación; la URL sigue siendo pública.
 - No existe todavía un enlace público directo que seleccione octubre/1 en portada: la selección de producción usa `localStorage`. **Ver receta en Bring! tiene como destino previsto esta página de prueba.** Su enlace «Ver Octubre · Menú 1» guarda la selección existente y abre la portada. Se debe observar si Bring! conserva la URL y abre el navegador/PWA. No se modifica la selección hasta pulsar ese enlace.
@@ -44,3 +44,19 @@ No declarar la integración validada hasta estas comprobaciones reales. No intro
 ## Retirada
 
 Eliminar exclusivamente `experimentos/bring/` mediante rama y PR. Comprobar que Pages devuelve 404 para la URL y que recetas/menús continúan accesibles. Una copia guardada en Favoritos en Bring! no se borra al retirar la página web. La PWA existente podría haber guardado una visita a la URL; no se ha añadido al precaché y no se cambia ni purga el almacenamiento del usuario.
+
+## Ensayo 2 — tagline y stock
+
+Autorizado el 13/10/2026 tras la prueba real de la usuaria: título, desglose, escalado HTML y enlace directo funcionan; descripción ausente y despensa sin marcar.
+
+- HTML conserva Schema.org con `description` breve y el párrafo visible `itemprop="tagline"` del ejemplo Bring!: «Menú de octubre de lunes a viernes para una persona.»
+- Nuevo `bring-v2.json` usa el formato propio documentado de Bring! (no es JSON-LD): `author`, `name`, `tagline`, `yield`, `linkOutUrl`, e `items` con `itemId`, `spec` y `stock`. Se excluye el café de oficina en ambas vías.
+- `stock: true` se aplica explícitamente a Sal, Pimienta negra, Comino en polvo, Laurel, Nuez moscada, Romero y Tomillo. Son ingredientes necesarios que probablemente ya se tienen; no opcionales culinarios. Los demás reciben `false`. Cantidades conocidas y desconocidas se conservan sin inventar valores.
+- El enlace «Prueba 2» envía el JSON con `baseQuantity=1&requestedQuantity=1`. El enlace «Control» y Compartir envían el HTML. No se finge que Schema.org tenga un campo stock equivalente.
+- La guía oficial advierte que el JSON no soporta cantidades solicitadas como el parser HTML y limita iconos de artículos fuera del catálogo. **No afirmar que la vía JSON mantiene el escalado:** observar tanto la importación como el selector posterior en Bring!. Si no lo mantiene, conservar HTML y analizar los dos sitios que facilitará la usuaria.
+- `linkOutUrl` apunta a esta página de prueba. No se añade foto ficticia ni se cambian web, PWA o navegación de producción.
+- Cantidades y agrupación siguen siendo las de la primera prueba salvo el café excluido. Identidad Airtable, conversión de AOVE y redondeo por personas/envases no se implementan en este ensayo. Los formatos de compra comerciales están en Airtable según la usuaria; no se deducen de los nombres.
+
+Prueba real: pulsar Prueba 2, comprobar la frase, el apartado despensa y sal/pimienta; confirmar título, autor, ingredientes, cantidades a 1 y 2 porciones, iconos, Favoritos y Ver receta. Probar también Control para observar si el tagline HTML se importa conservando el escalado conocido. La web no valida el resultado dentro de la app.
+
+Documentación: https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration y https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration/alternative-button-integration .

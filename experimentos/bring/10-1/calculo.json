@@ -1,7 +1,7 @@
 {
   "menu": "10-1",
   "base_personas": 1,
-  "entradas_exportadas": 67,
+  "entradas_exportadas": 66,
   "fuentes_sha256": {
     "datos/menus/10-1.json": "8eef49972571418c012e5e874a1786338507dbffc358a70b648b38d1f1fff272",
     "datos/recetas/bacalao-a-la-vizcaina.json": "cc8a1d56ffe11bfb7c8b56e41f309ac9c324808c5318efe6a80359508c16e406",
@@ -30,15 +30,7 @@
           "componentes": [
             "130 ml de Café con leche (oficina, Incapto)"
           ],
-          "ingredientes": [
-            {
-              "nombre": "Café con leche (oficina, Incapto)",
-              "unidad": "ml",
-              "cantidad": "130",
-              "origen": "Lunes · desayuno",
-              "receta": null
-            }
-          ]
+          "ingredientes": []
         },
         {
           "ingesta": "comida",
@@ -231,15 +223,7 @@
           "componentes": [
             "130 ml de Café con leche (oficina, Incapto)"
           ],
-          "ingredientes": [
-            {
-              "nombre": "Café con leche (oficina, Incapto)",
-              "unidad": "ml",
-              "cantidad": "130",
-              "origen": "Martes · desayuno",
-              "receta": null
-            }
-          ]
+          "ingredientes": []
         },
         {
           "ingesta": "comida",
@@ -542,15 +526,7 @@
           "componentes": [
             "130 ml de Café con leche (oficina, Incapto)"
           ],
-          "ingredientes": [
-            {
-              "nombre": "Café con leche (oficina, Incapto)",
-              "unidad": "ml",
-              "cantidad": "130",
-              "origen": "Miércoles · desayuno",
-              "receta": null
-            }
-          ]
+          "ingredientes": []
         },
         {
           "ingesta": "comida",
@@ -738,15 +714,7 @@
           "componentes": [
             "130 ml de Café con leche (oficina, Incapto)"
           ],
-          "ingredientes": [
-            {
-              "nombre": "Café con leche (oficina, Incapto)",
-              "unidad": "ml",
-              "cantidad": "130",
-              "origen": "Jueves · desayuno",
-              "receta": null
-            }
-          ]
+          "ingredientes": []
         },
         {
           "ingesta": "comida",
@@ -988,15 +956,7 @@
           "componentes": [
             "130 ml de Café con leche (oficina, Incapto)"
           ],
-          "ingredientes": [
-            {
-              "nombre": "Café con leche (oficina, Incapto)",
-              "unidad": "ml",
-              "cantidad": "130",
-              "origen": "Viernes · desayuno",
-              "receta": null
-            }
-          ]
+          "ingredientes": []
         },
         {
           "ingesta": "comida",
@@ -1361,46 +1321,6 @@
         }
       ],
       "cantidad_exacta": "100"
-    },
-    {
-      "nombre": "Café con leche (oficina, Incapto)",
-      "unidad": "ml",
-      "cantidad": "650",
-      "origen": "Lunes · desayuno",
-      "receta": null,
-      "aportes": [
-        {
-          "origen": "Lunes · desayuno",
-          "receta": null,
-          "unidad_original": "ml",
-          "cantidad_exacta": "130"
-        },
-        {
-          "origen": "Martes · desayuno",
-          "receta": null,
-          "unidad_original": "ml",
-          "cantidad_exacta": "130"
-        },
-        {
-          "origen": "Miércoles · desayuno",
-          "receta": null,
-          "unidad_original": "ml",
-          "cantidad_exacta": "130"
-        },
-        {
-          "origen": "Jueves · desayuno",
-          "receta": null,
-          "unidad_original": "ml",
-          "cantidad_exacta": "130"
-        },
-        {
-          "origen": "Viernes · desayuno",
-          "receta": null,
-          "unidad_original": "ml",
-          "cantidad_exacta": "130"
-        }
-      ],
-      "cantidad_exacta": "650"
     },
     {
       "nombre": "Calabacín",
