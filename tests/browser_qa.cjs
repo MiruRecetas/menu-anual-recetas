@@ -120,6 +120,7 @@ const assert = require('node:assert/strict');
     assert.equal(await charts.isVisible(),true,'Gráficos visibles al desplegar');
     assert.equal(await nutritionToggle.innerText(),'Ocultar información nutricional');
     assert.equal(await nutritionToggle.getAttribute('aria-expanded'),'true');
+    await page.waitForFunction(y=>document.querySelector('#week').getBoundingClientRect().y>y+100,collapsedWeek.y);
     assert.ok((await page.locator('#week').boundingBox()).y>collapsedWeek.y+100,'Ocultar recupera espacio para la semana');
     if(test.width>=700||test.width>test.height){
       const surface=await charts.evaluate(e=>{const s=getComputedStyle(e);return [s.backgroundColor,s.borderTopWidth,s.borderRadius]});
