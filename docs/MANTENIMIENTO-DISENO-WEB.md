@@ -46,7 +46,7 @@ En móvil vertical hasta 700 px, las tarjetas semanales usan tres columnas: día
 
 ### 3.2 Ficha diaria compacta: diseño ya validado
 
-Se abre en panel/bottom sheet, con cierre accesible, devolución de foco y botón «Ver día completo». Conservar **solo los nombres de platos**, sin desplegables ni cantidades de ingredientes. Para las preparaciones **realmente publicadas**, incluir una flecha **↗ independiente** enlazada a la receta, no convertir todo el nombre en hipervínculo. La visualización respeta los grupos y el orden exportados de Airtable.
+Se abre en panel/bottom sheet, con cierre accesible, devolución de foco y botón «Ver día completo». Conservar **solo los nombres de platos**, sin desplegables ni cantidades de ingredientes. Para las preparaciones **realmente publicadas**, incluir una flecha **↗ independiente** enlazada a la receta, no convertir todo el nombre en hipervínculo. La visualización respeta los grupos y el orden exportados de Airtable. La regla de texto sin enlace y flecha independiente se aplica también a preparaciones sin grupo visual y al formato histórico de resumen; no conservar rutas alternativas con nombres subrayados.
 
 Anillo nutricional idéntico al de la vista ampliada: progreso de kcal registradas frente a **1600 kcal** y, dentro del arco pintado, proporciones de energía calculadas por macros (P 4 kcal/g, HC 4 kcal/g y GR 9 kcal/g). Tres barras inferiores de **cumplimiento sobre objetivos diarios**: **93 g proteínas**, **147 g hidratos**, **65 g grasas**. La anchura visual de cada barra no supera 100 %, pero el porcentaje textual sí puede ser mayor de 100 %. No representar en estas barras porcentajes del reparto energético ni convertir las kcal oficiales en energía estimada por macros.
 
