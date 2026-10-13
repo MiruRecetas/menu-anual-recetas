@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "2792a29624ebca3e8c293c8be27dbee1e85f9b02",
-  "generated_at_utc": "2026-10-13T08:38:06Z",
-  "total_recetas": 37,
+  "source_commit_sha": "e8a44587642ff1c3773588f5f5142fce0f382eba",
+  "generated_at_utc": "2026-10-13T11:56:40Z",
+  "total_recetas": 38,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -883,6 +883,37 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/mini-wraps-de-falafel/"
+    },
+    {
+      "nombre": "Pasta boloñesa",
+      "slug": "pasta-bolonesa",
+      "categoria": "arroces-pastas",
+      "descripcion": "Pasta al dente con ragú de ternera y verduras, ligada con su agua de cocción y terminada con Grana Padano.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Ragú a la boloñesa",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "ragu-a-la-bolonesa"
+        },
+        {
+          "nombre": "Pasta",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Grana Padano",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pasta-bolonesa/"
     },
     {
       "nombre": "Pasta con chili",
