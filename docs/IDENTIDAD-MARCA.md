@@ -26,3 +26,7 @@ El nombre se escribe MiruRecetas. Los SVG horizontales conservan texto editable 
 
 ## Traspaso
 Esta entrega sustituye el paquete anterior. El Work web/PWA debe usar exclusivamente estos archivos corregidos y verificar rutas y presentación. No se ha modificado GitHub, Airtable, recetas, fotografías, web o PWA. La exploración original pudo incluir imágenes por IA; el maestro entregado se obtiene trazando la imagen aprobada, sin generación de una nueva propuesta.
+
+
+## Integración de cabeceras · 13/10/2026
+El original `assets/marca/isotipo.svg` conserva exactamente los bytes del vector aprobado. El generador lo inserta como SVG decorativo en portada, recetario, recetas y días. Ajusta solo el viewBox a los límites exactos de las piezas, conservando sus paths y colores; el espacio de seguridad lo proporciona la separación CSS. La altura visible usa `1cap`, equivalente a la mayúscula M de la fuente del texto (fallback 0,72em). El símbolo queda a la izquierda y comparte línea base con MiruRecetas; el nombre conserva tipografía y colores. Al estar incluido en el HTML también funciona en páginas almacenadas offline, sin nuevas dependencias de red. Los iconos de instalación permanecen independientes.

@@ -17,6 +17,30 @@ const assert = require('node:assert/strict');
     assert.equal(await page.locator('h1').innerText(),'¿Qué cocinamos esta semana?','Raíz abre la web');
     await context.close();
   }
+  // All four page families share the approved mark, sized to the capital M.
+  for(const width of [320,390,820,1440]){
+    const page=await browser.newPage({serviceWorkers:'block',viewport:{width,height:1100}});
+    for(const route of ['/','/recetario/','/recetas/hummus/','/menus/10-1/lunes/']){
+      await page.goto('http://127.0.0.1:8765'+route);
+      await page.evaluate(()=>document.fonts.ready);
+      const mark=await page.locator('header .logo').evaluate(logo=>{
+        const icon=logo.querySelector('.logo-isotipo'),text=logo.querySelector('.logo-wordmark');
+        const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d'),style=getComputedStyle(text);
+        ctx.font=style.fontWeight+' '+style.fontSize+' '+style.fontFamily;
+        const m=ctx.measureText('M'),a=icon.getBoundingClientRect(),b=text.getBoundingClientRect(),paths=icon.getBBox(),v=icon.viewBox.baseVal;
+        return {text:logo.textContent,hidden:icon.getAttribute('aria-hidden'),height:a.height,capital:m.actualBoundingBoxAscent,
+          left:a.right<=b.left,paths:icon.querySelectorAll('path').length,
+          fitted:Math.abs(paths.y-v.y)<.01&&Math.abs(paths.height-v.height)<.01,
+          overflow:document.documentElement.scrollWidth>innerWidth+2};
+      });
+      assert.equal(mark.text,'MiruRecetas');assert.equal(mark.hidden,'true');
+      assert.equal(mark.paths,6,'Seis piezas del isotipo aprobado');
+      assert.ok(mark.left&&mark.fitted,'Isotipo a la izquierda con lienzo ajustado al dibujo');
+      assert.ok(Math.abs(mark.height-mark.capital)<1.5,'Altura visible igual a M: '+route+' '+width+' px');
+      assert.equal(mark.overflow,false,'Cabecera sin desbordamiento en '+width+' px');
+    }
+    await page.close();
+  }
   const issues=[];
   const out='qa-screenshots';fs.mkdirSync(out,{recursive:true});
   for(const test of [{name:'desktop',width:1440,height:900},{name:'tablet',width:820,height:1100},{name:'mobile',width:390,height:844},{name:'tablet-horizontal',width:1100,height:820},{name:'mobile-horizontal',width:844,height:390},{name:'mobile-small-horizontal',width:667,height:375},{name:'tablet-compact-horizontal',width:1024,height:768}]){

@@ -36,6 +36,7 @@ const server=http.createServer((req,res)=>{
     await nutrition.click();assert.equal(await nutrition.getAttribute('aria-expanded'),'false');
     unavailable=true;await context.setOffline(true);await page.reload();
     await page.locator('[data-miru-offline]').waitFor();
+    assert.equal(await page.locator('header .logo-isotipo').isVisible(),true,'Isotipo de cabecera disponible sin conexión');
     await nutrition.click();assert.equal(await page.locator('#weekly-charts').isVisible(),true);
     await nutrition.click();assert.equal(await page.locator('#weekly-charts').isVisible(),false);
     unavailable=false;await context.setOffline(false);
