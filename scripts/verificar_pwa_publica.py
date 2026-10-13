@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SITE='https://mirurecetas.github.io/menu-anual-recetas/'
 
 def verify():
-    paths=['manifest.webmanifest','sw.js','offline.html','assets/pwa/icon-192.png','assets/pwa/icon-512.png','assets/pwa/maskable-512.png','assets/pwa/apple-touch-icon.png','index.html','recetario/index.html','menus/10-1/lunes/index.html','recetas/tortilla-de-patata-tradicional-con-cebolla/index.html']
+    paths=['manifest.webmanifest','sw.js','offline.html','assets/pwa/icon-192.png','assets/pwa/icon-512.png','assets/pwa/maskable-512.png','assets/pwa/apple-touch-icon.png','assets/pwa/favicon-16.png','assets/pwa/favicon-32.png','index.html','recetario/index.html','menus/10-1/lunes/index.html','recetas/tortilla-de-patata-tradicional-con-cebolla/index.html']
     for p in paths:
         expected=(ROOT/p).read_bytes();revision=hashlib.sha256(expected).hexdigest()
         request=urllib.request.Request(SITE+p+'?verify='+revision,headers={'User-Agent':'MiruRecetas-PWA-Verification','Cache-Control':'no-cache'})

@@ -15,7 +15,7 @@ class PWA(unittest.TestCase):
         for k in ('id','scope','start_url'): self.assertEqual(m[k],'/menu-anual-recetas/')
         self.assertEqual(m['display'],'standalone')
         for icon in m['icons']:
-            data=(R/icon['src']).read_bytes()
+            data=(R/icon['src'].split('?')[0]).read_bytes()
             self.assertEqual(data[:8],b'\x89PNG\r\n\x1a\n')
             size=struct.unpack('>II',data[16:24])
             self.assertEqual(icon['sizes'],f'{size[0]}x{size[1]}')
