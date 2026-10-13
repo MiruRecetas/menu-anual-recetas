@@ -235,4 +235,4 @@ Ambos repositorios usan rama y PR. Aquí se esperan Validar web y QA navegador; 
 
 ## PWA
 
-Instalación, actualización consentida, consulta offline limitada y recuperación: [contrato técnico PWA](docs/PWA.md). Los iconos de instalación son provisionales hasta la entrega de la identidad definitiva. Las pruebas automáticas no acreditan instalación física en Android, iOS o escritorio.
+Instalación, actualización consentida, consulta offline limitada y recuperación: [contrato técnico PWA](docs/PWA.md). Los iconos de instalación y favicon usan la [identidad definitiva entregada](docs/IDENTIDAD-MARCA.md). Las pruebas automáticas no acreditan instalación física en Android, iOS o escritorio.
