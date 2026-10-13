@@ -161,3 +161,8 @@ Preservar commits concurrentes de los especialistas. No reexportar Airtable, cam
 ### Tarjeta nutricional desplegable · 13/10/2026
 
 Después del selector de menú, el botón salvia «Ver información nutricional» / «Ocultar información nutricional» controla toda la tarjeta con `aria-controls` y `aria-expanded`. Empieza oculta en cada visita; la elección se conserva al cambiar de menú durante esa visita, sin persistencia adicional. Si no hay gráficos disponibles, el botón se desactiva. En tablet, escritorio y horizontal, los tres gráficos comparten superficie, borde y márgenes de tarjeta, conservando barras a la izquierda y circulares a la derecha (o su apilado responsive). En móvil vertical se conserva la tarjeta de dos caras y su giro, sin añadir otro marco. Es el mismo componente en web y PWA.
+
+
+### Batch cooking en tablet vertical · 13/10/2026
+
+En orientación vertical entre 701 y 1099 px, Batch cooking utiliza siempre cuatro columnas de miniaturas iguales, con independencia de la cantidad de preparaciones. La quinta pasa a la fila siguiente. Se conservan las tres columnas de móvil vertical hasta 700 px y la disposición de horizontal/escritorio. Este ajuste solo afecta al CSS de la galería, sin cambiar recetas, fotografías ni selección de preparaciones.

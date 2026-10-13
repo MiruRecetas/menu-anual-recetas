@@ -497,6 +497,11 @@ button[hidden]{display:none!important}
  #batch .batch-gallery{grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}
 }
 
+/* Tablet vertical: cuatro miniaturas por fila, independientemente del lote. */
+@media(orientation:portrait) and (min-width:701px) and (max-width:1099px){
+ #batch .batch-gallery{grid-template-columns:repeat(4,minmax(0,1fr));justify-content:stretch}
+}
+
 /* Cada componente de postre conserva su icono, nombre y aporte propio. */
 #quick-content .quick-meal:has(.dessert-component) .quick-meal-names{padding-left:0}
 #quick-content .dessert-component{display:flex;align-items:center;gap:10px}
