@@ -1,0 +1,204 @@
+{
+  "author": "MiruRecetas",
+  "name": "Septiembre · Menú 1 · Prueba 5 · 2 porciones",
+  "tagline": "Menú incompleto de septiembre para 2 porciones. Compra calculada antes de exportar. Miércoles comida y cena pendientes.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-5-09-1/?porciones=2",
+  "items": [
+    {
+      "itemId": "Aceite de oliva virgen extra",
+      "spec": "120 ml",
+      "stock": true
+    },
+    {
+      "itemId": "Ajo fresco (crudo)",
+      "spec": "3 dientes",
+      "stock": false
+    },
+    {
+      "itemId": "Anchoas en aceite escurridas (genéricas)",
+      "spec": "56.666667 g",
+      "stock": false
+    },
+    {
+      "itemId": "Berenjena cruda (parte comestible)",
+      "spec": "300 g",
+      "stock": false
+    },
+    {
+      "itemId": "Burrata fresca DIA Selección Mundial (escurridos)",
+      "spec": "2 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla fresca (cruda)",
+      "spec": "240 g",
+      "stock": false
+    },
+    {
+      "itemId": "Champiñones crudos",
+      "spec": "200 g",
+      "stock": false
+    },
+    {
+      "itemId": "DIA Al Punto Arroz blanco cocido",
+      "spec": "2 vasitos",
+      "stock": false
+    },
+    {
+      "itemId": "Espinacas crudas",
+      "spec": "400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Gazpacho fresco DIA Al Punto refrigerado",
+      "spec": "2 botellas",
+      "stock": false
+    },
+    {
+      "itemId": "Grana Padano DOP rallado DIA Selección Mundial",
+      "spec": "1 paquete",
+      "stock": false
+    },
+    {
+      "itemId": "Huevo de gallina entero crudo",
+      "spec": "5 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche semidesnatada",
+      "spec": "50 ml",
+      "stock": false
+    },
+    {
+      "itemId": "Lechuga cruda (parte comestible)",
+      "spec": "240 g",
+      "stock": false
+    },
+    {
+      "itemId": "Maíz dulce en conserva escurrido",
+      "spec": "140 g",
+      "stock": false
+    },
+    {
+      "itemId": "Melón crudo (parte comestible)",
+      "spec": "800 g",
+      "stock": false
+    },
+    {
+      "itemId": "Mini tortillas de trigo IFA Eliges",
+      "spec": "6 tortillas",
+      "stock": false
+    },
+    {
+      "itemId": "Mostaza de Dijon Original Maille",
+      "spec": "1 tarro",
+      "stock": false
+    },
+    {
+      "itemId": "Mozzarella rallada Dia Láctea",
+      "spec": "1 bolsa",
+      "stock": false
+    },
+    {
+      "itemId": "Pan blanco de barra",
+      "spec": "100 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde 12 cereales y semillas Oroweat",
+      "spec": "4 rebanadas",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "140 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patata, cruda (parte comestible)",
+      "spec": "900 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo sin piel, cruda (parte comestible)",
+      "spec": "540 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento rojo crudo",
+      "spec": "80 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde crudo",
+      "spec": "80 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimientos del piquillo D.O.P. de Lodosa Delicias de DIA (escurridos)",
+      "spec": "1 frasco",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema Philadelphia",
+      "spec": "1 tarrina",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera picada cruda (85 % magra, 15 % grasa)",
+      "spec": "300 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate crudo",
+      "spec": "400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate triturado en conserva",
+      "spec": "300 g",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco para guisar de Alberto",
+      "spec": "1 caja",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur griego natural DIA Fidias",
+      "spec": "1 vasito",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria fresca (cruda)",
+      "spec": "80 g",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón fresco",
+      "spec": "40 g",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo en polvo",
+      "stock": true
+    },
+    {
+      "itemId": "Condimentos al gusto",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Salsa Worcestershire",
+      "stock": true
+    }
+  ],
+  "yield": "2"
+}
