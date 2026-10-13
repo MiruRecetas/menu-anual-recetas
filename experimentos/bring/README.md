@@ -65,6 +65,6 @@ Documentación: https://sites.google.com/getbring.com/bring-import-dev-guide/web
 
 Resultados reales confirmados por la usuaria el 13/10/2026: JSON importa descripción, stock, escalado también de stock, iconos y enlace en Android. Las advertencias documentales del ensayo 2 no sustituyen esta evidencia; no extrapolar a iOS o al escalado inicial por parámetros.
 
-Prueba 3 añade solo descripción en cinco líneas con las comidas reales y una variante base 2 con cantidades duplicadas. No modifica v2, agrupación, redondeo, AOVE, stock o datos fuente. Usar los enlaces Prueba 3 de la página; la interpretación de saltos de línea y base 2 queda pendiente de prueba real.
+Prueba 3 añade solo descripción en cinco líneas con las comidas reales y una variante base 2 con cantidades duplicadas. No modifica v2, agrupación, redondeo, AOVE, stock o datos fuente. Usar los enlaces Prueba 3 de la página; la prueba real de la usuaria confirma texto completo sin saltos de línea y reconocimiento de base 2. Al pasar a 1, bacalao 400 g, huevos 2 y yogur 1,5 unidades. 4 huevos → 2 es escalado exacto, no evidencia de redondeo especial; ajo fraccionario en ambas bases confirma que el redondeo de compra no está resuelto.
 
 Todo el expediente de traspaso, evidencia, límites, decisiones y prompt para nuevo agente está en [AGENTE-BRING.md](AGENTE-BRING.md).

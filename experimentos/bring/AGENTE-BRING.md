@@ -23,7 +23,8 @@ Actúa como responsable de la integración Bring! de MiruRecetas. Lee íntegrame
 3. Prueba real de la usuaria en Android: título, fuente MiruRecetas, expansión, escalado y enlace directo funcionan; descripción no se importa; nombres de ingredientes generan duplicados. Fotos de menú no se inventaron.
 4. PR #71: tagline breve y JSON propio de Bring! con stock. Merge `ee4e76400eecb2d3675f5aedfc1efd6d912c11cd`. HTML y JSON públicos verificados.
 5. Prueba real de la usuaria: **JSON funciona con descripción, stock, escalado incluso de stock, iconos y enlace**. Capturas muestran 1 y 4 porciones con cantidades proporcionales. Esto acredita ese flujo en su Android, no todas las plataformas ni todos los ingredientes.
-6. Prueba 3 del presente encargo: líneas por día y JSON con cantidades ya duplicadas y base 2. La importación real, los saltos de línea y el reconocimiento de esa base quedan pendientes de la usuaria hasta que informe resultados.
+6. PR #72: descripción en cinco líneas y variante con cantidades duplicadas/base 2. Merge `8dd572d58f56dcf4fccfff58493a503554c3622a`; ambas variantes JSON públicas verificadas.
+7. Resultado real comunicado por la usuaria a las 22:43 del 13/10/2026 en Android: Bring! conserva todo el texto del tagline pero elimina los saltos de línea originales; el ajuste visual de líneas depende del ancho. La variante base 2 reconoce 2 porciones y cantidades correctas (bacalao 800 g y huevos 4). Al bajar a 1 muestra bacalao 400 g, huevos 2 y yogur 1,5 unidades de 125 g. Las capturas muestran ajo 13,666667 dientes a 2 y 6,833333 a 1: no se aplica redondeo general a unidades de compra.
 
 ## Contrato técnico probado
 
@@ -67,7 +68,11 @@ JUEVES: Canelones de carrilleras
 VIERNES: Wok de gambones y pisto
 ```
 
-Prueba 3: observar líneas en Bring!, rendimiento inicial 2 y bacalao 800 g, carrilleras 800 g, huevos 4, yogur 3 unidades de 125 g; al bajar a 1 deberían volver a las cantidades base. Mantener stock e iconos. No usar un favorito antiguo para valorar el cambio: iniciar una importación nueva del enlace correspondiente.
+Prueba 3: texto completo y base 2 validados por la usuaria, pero los saltos explícitos no se conservan. El texto se presenta como un párrafo. Para futuras descripciones puede probarse un separador visible como « · » o « | » entre días; es una propuesta, no un cambio implementado.
+
+**No atribuir redondeo especial de huevos a Bring! con esta evidencia:** 4 huevos × 1/2 = 2 huevos, sin redondeo. Para distinguir una regla propia sería necesaria una prueba con resultado fraccionario, por ejemplo 3 huevos para 2 porciones al pasar a 1. No se ha ejecutado ni autorizado esa prueba. Ajo fraccionario y 1,5 yogures demuestran que no hay redondeo universal a unidades/envases. Sigue pendiente calcular redondeo de compra en MiruRecetas si la usuaria lo solicita.
+
+Las pruebas reales no acreditan iOS ni todos los ingredientes. No usar un favorito antiguo para valorar cambios posteriores: iniciar una importación nueva del enlace correspondiente.
 
 ## Cálculo actual y límites
 
