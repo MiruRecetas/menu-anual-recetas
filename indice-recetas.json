@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "d3fe973598058d2d7d2b072d8cf27523c6dce419",
-  "generated_at_utc": "2026-10-13T21:30:22Z",
-  "total_recetas": 41,
+  "source_commit_sha": "7adbb32e2adcab0464b82342da4ecda474623045",
+  "generated_at_utc": "2026-10-14T17:38:19Z",
+  "total_recetas": 42,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -651,6 +651,66 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-cesar/"
+    },
+    {
+      "nombre": "Ensalada mediterránea de pasta con atún",
+      "slug": "ensalada-mediterranea-de-pasta-con-atun",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada fría de pasta con atún, tomate cherry, piquillos, aceitunas, maíz y aguacate, aliñada con AOVE, limón y orégano.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pasta seca",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Atún al natural",
+          "cantidad": 2,
+          "unidad": "latas"
+        },
+        {
+          "nombre": "Tomate cherry",
+          "cantidad": 120,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimientos del piquillo escurridos",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceitunas verdes rellenas de anchoa",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Maíz dulce en conserva escurrido",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aguacate, pulpa",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-mediterranea-de-pasta-con-atun/"
     },
     {
       "nombre": "Fajitas de pollo",
