@@ -4,7 +4,7 @@ Contrato de implementación del 14/10/2026. Esta guía describe el código perma
 
 ## Alcance y rutas
 
-Solo `10-1` está habilitado en `datos/compra/activos.json`. No añadir otros menús antes de la revisión y autorización de Lucía.
+Están habilitados `10-1` y `09-4` en `datos/compra/activos.json`. Lucía solicitó Septiembre · Menú 4 el 15/10/2026. No añadir otros menús sin su autorización.
 
 - Fuente: `datos/compra/10-1.json`, contrato v1 independiente de nutrición y menú v2.
 - Página: `menus/10-1/compra/`; entrada contextual junto al selector del menú semanal.
@@ -57,3 +57,14 @@ Ajustes visuales se concentran en compra.css y compra.html. La tabla muestra nom
 Si hay error de compra: corregir origen, reexportar, regenerar y publicar mediante PR. Para retirar temporalmente el acceso, quitar `10-1` de activos y regenerar; los enlaces ya guardados seguirán accesibles hasta retirar explícitamente sus salidas. Para retirar también la página y JSON, incluir su eliminación en esa PR. No borrar ingredientes, campos Airtable, recetas, fotos o experimentos. Los favoritos importados en Bring! mantienen la versión previa: hacer nueva importación para comprobar la corrección.
 
 Para revertir toda integración, revertir la PR mediante otra PR y restaurar el generador y acceso a su versión anterior, manteniendo cambios simultáneos. El SW no ha cambiado: no es necesario borrar ni desregistrar la PWA. Si en un futuro se toca, aplicar docs/PWA.md. Nunca borrar almacenamiento/cachés ajenos ni forzar recargas de cocina.
+
+
+## Ampliación Septiembre · Menú 4 · 15/10/2026
+
+Nueva fuente `datos/compra/09-4.json`, página `menus/09-4/compra/` y veinte JSON de exportación. Imagen única nueva `imagenes/menus/09-4.webp` de 1024 × 1024 y menos de 350 KB, sin cambiar octubre ni fotografías de recetas. Contrato generado desde las seis tablas leídas actualmente; 35 filas por ID/unidad, 12 preparaciones y 41 artículos Bring! (33 compra, 8 despensa). La repetición semanal del marmitako, chili y salteado aporta todas sus cantidades. Las dos pechugas de pollo conservan IDs, características y cantidades independientes.
+
+El exportador admite tanto el postre simple de los menús v2 previos como el envoltorio de componentes, sin reescribir menús ni nutrientes. Consume además `formato_unidades`: atún 6 × 60 g escurridos y aceitunas 3 × 50 g escurridos se compran por lata individual; las cantidades totales del pack no se confunden con una unidad. La referencia exacta de chipotles La Costeña usa sus 220 g netos porque la preparación incorpora el adobo; no aplica 121 g escurridos a esa receta. Alubias Cidacos: 400 g escurridos por frasco. No se inventa formato para el maíz genérico USDA.
+
+Pimentón dulce `recI8AwaRp7BOa9GZ` se añade explícitamente a despensa. El pimentón literal sin cantidad no duplica ese artículo cuantificado. El laurel del marmitako carece de vínculo a INGREDIENTES: se conserva como checklist literal de despensa sin inventar ID, gramos ni nutrientes, con procedencia y sus dos hojas culinarias originales en la fuente. Se trata del criterio por preparación verificada `recdhYBKhV8omXHcm`; no migra cantidades de otras recetas. Agua, guindilla, ras el hanout, sal y vinagre sin cantidad también quedan como checklist de despensa.
+
+Dieciocho ingredientes nuevos recibieron únicamente los campos de presentación existentes: expediente en AIRTABLE-SEPTIEMBRE4-2026-10-15.json. La nueva imagen y sus fuentes están en IMAGEN-SEPTIEMBRE4.json. La prueba física Android de esta nueva ruta permanece pendiente, separada de CI, HTTP y navegador.

@@ -10,7 +10,7 @@ from urllib.parse import urlencode
 
 DAYS = ('Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes')
 STOCK = frozenset(('rec4QWbZX5KJIhQyW','recGpy51QX8MYe0j9','rechMDQXS4hW2JBYg',
-                   'recpst98trSqZIPSe','recZmy5VtKavv2D9U','rec70jSFploNVyMCF'))
+                   'recpst98trSqZIPSe','recZmy5VtKavv2D9U','rec70jSFploNVyMCF','recI8AwaRp7BOa9GZ'))
 OFFICE_COFFEE = 'recIa7zpasm2s0mgH'
 MAX_PEOPLE = 20
 # Nombre de unidad comercial explícito, nunca inferido por similitud de ingrediente.
@@ -28,6 +28,9 @@ NOUNS = {
  'dia-al-punto-arroz-blanco-cocido': ('vasito','vasitos'),
  'maille-mostaza-dijon-original-215': ('tarro','tarros'),
  'portonovo-sardinillas-aceite-oliva': ('lata','latas'),
+ 'dia-mari-marinera-atun-claro-natural': ('lata','latas'),
+ 'dia-vegcampo-aceitunas-rellenas-anchoa': ('lata','latas'),
+ 'cidacos-alubias-rojas-extra': ('frasco','frascos'),
 }
 DERIVED = {
  'recHiBRS3Ikrzb1mt': 'arteinaki-filete-boqueron-alinado',
@@ -71,12 +74,20 @@ def presentation(ingredient,unit,products):
         size=p.get('presentacion',{}).get('contenido_unidad') or p.get('cantidad_envase')
         if p.get('peso_escurrido_g'):size={'valor':p['peso_escurrido_g'],'unidad':'g'}
         elif p.get('peso_escurrido'):size=p['peso_escurrido']
+        base='escurrida' if p.get('peso_escurrido_g') or p.get('peso_escurrido') else 'contenido individual'
+        individual=p.get('formato_unidades',{})
+        if individual.get('escurrido_por_unidad_g') is not None:
+            size={'valor':individual['escurrido_por_unidad_g'],'unidad':'g'}
+            base='escurrida por unidad individual'
+        # El chili incorpora también el adobo: el envase comprado aporta 220 g netos, no solo chiles escurridos.
+        if ingredient['id']=='recNnfHxJO9aFN7gF' and pid=='la-costena-chipotles-adobo':
+            size=p['cantidad_envase'];base='neto con adobo'
         if not size or size['unidad']!=unit:raise ValueError('Formato/unidad no verificado: '+pid)
         return {'contenido':str(positive(size['valor'])),'unidad':unit,
                 'singular':NOUNS.get(pid,('envase','envases'))[0],
                 'plural':NOUNS.get(pid,('envase','envases'))[1],
                 'producto_id':pid,'referencia':ref,'fuente':p.get('fuente'),
-                'base':'escurrida' if p.get('peso_escurrido_g') or p.get('peso_escurrido') else 'contenido individual',
+                'base':base,
                 'verificado':True}
     if ingredient['id']=='recSPOXZkbn9PSbHI' and unit=='g':
         return {'contenido':'50','unidad':'g','singular':'huevo','plural':'huevos',

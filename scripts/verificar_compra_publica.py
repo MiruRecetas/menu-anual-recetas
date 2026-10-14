@@ -5,7 +5,8 @@ ROOT=Path(__file__).resolve().parents[1]
 SITE='https://mirurecetas.github.io/menu-anual-recetas/'
 def verify():
  files=[]
- for key in json.loads((ROOT/'datos/compra/activos.json').read_text()):
+ active=json.loads((ROOT/'datos/compra/activos.json').read_text())
+ for key in active:
   files += [f'menus/{key}/compra/index.html',f'datos/compra/{key}.json']
   files += [f'menus/{key}/compra/exports/{n}.json' for n in range(1,21)]
   files += [json.loads((ROOT/f'datos/compra/{key}.json').read_text())['imagen']]
@@ -22,7 +23,7 @@ def verify():
    if name.endswith('.json'):json.loads(remote)
   except (urllib.error.URLError,ValueError) as ex:failures.append((name,str(ex)))
  if failures:raise ValueError(str(failures))
- print('Compra: HTTP anónimo, MIME y bytes verificados en',len(files),'archivos (20 selecciones e imagen).')
+ print('Compra: HTTP anónimo, MIME y bytes verificados en',len(files),'archivos ('+str(len(active)*20)+' selecciones e imágenes).' )
 if __name__=='__main__':
  for attempt in range(24):
   try:verify();break
