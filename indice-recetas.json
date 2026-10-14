@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "d9d173ed81003088a17cbee44de01f3fe75e8173",
-  "generated_at_utc": "2026-10-14T22:46:00Z",
+  "source_commit_sha": "4083eba88f696dea2ae2d286efe8c9af5ff9e573",
+  "generated_at_utc": "2026-10-14T22:58:07Z",
   "total_recetas": 46,
   "recetas": [
     {
@@ -204,9 +204,9 @@
           "unidad": "g"
         },
         {
-          "nombre": "AOVE para freír",
-          "cantidad": null,
-          "unidad": ""
+          "nombre": "AOVE retenido tras la fritura (estimado, aproximadamente)",
+          "cantidad": 54,
+          "unidad": "g"
         },
         {
           "nombre": "Sal",
