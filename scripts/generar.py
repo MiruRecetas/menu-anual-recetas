@@ -4,6 +4,7 @@ from validar_menus import validate_menu
 from indice_publico import update_json_index, source_commit
 from pathlib import Path
 from pwa import decorate, build
+from compra import generate as generate_purchase
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
 DAYS=["Lunes","Martes","Miércoles","Jueves","Viernes"]
@@ -126,7 +127,8 @@ def main():
         if not isinstance(batch,list) or any(x not in rs for x in batch):raise ValueError("Batch cooking inválido")
         menus.append(m)
     batch_index=[{"slug":r["slug"],"nombre":r["nombre"],"batchcooking":"batchcooking" in r.get("etiquetas",[]),"dependencias":[x["preparacion"] for x in entries(r) if x.get("preparacion")]} for r in rs.values()]
-    sitejson=json.dumps({"menus":menus,"recetas":recipes,"preparaciones":batch_index},ensure_ascii=False).replace("<",r"\u003c")
+    purchase_urls=generate_purchase(R,SITE,decorate,branded)
+    sitejson=json.dumps({"compras":purchase_urls,"menus":menus,"recetas":recipes,"preparaciones":batch_index},ensure_ascii=False).replace("<",r"\u003c")
     page=(R/"plantillas"/"inicio.html").read_text(encoding="utf-8").replace("{{SITE_JSON}}",sitejson).replace("{{SITE}}",SITE)
     (R/"index.html").write_text(decorate(branded(page),R,SITE),encoding="utf-8")
     catalog=(R/"plantillas"/"recetario.html").read_text(encoding="utf-8").replace("{{SITE}}",SITE).replace("{{RECIPES_JSON}}",json.dumps(recipes,ensure_ascii=False).replace("<",r"\u003c"))

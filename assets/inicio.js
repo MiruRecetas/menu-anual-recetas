@@ -13,6 +13,7 @@ const available=menus.find(m=>m.schema_version===2);
 select.value=available?.mes||10;
 if(available)$('#menu-number').value=available.menu;
 try{const stored=JSON.parse(localStorage.getItem('miru-menu'));if(stored&&months[stored.mes]&&stored.menu>=1&&stored.menu<=4&&menus.some(x=>x.mes===Number(stored.mes)&&x.menu===Number(stored.menu))){select.value=stored.mes;$('#menu-number').value=stored.menu}}catch{}
+const menuQuery=new URLSearchParams(location.search);const requested=menus.find(x=>x.mes===Number(menuQuery.get('mes'))&&x.menu===Number(menuQuery.get('menu')));if(requested){select.value=requested.mes;$('#menu-number').value=requested.menu;}
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const dessertComponents=x=>x?.componentes||(x?[x]:[]);
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Fruta:'apple',Postre:'dessert'};
@@ -226,7 +227,7 @@ function syncWeekCards(week){
  equalizeWeekCards();
 }
 verticalCards.addEventListener('change',equalizeWeekCards);
-function week(){const mes=Number(select.value),num=Number($('#menu-number').value),m=menus.find(x=>x.mes===mes&&x.menu===num),w=$('#week'),b=$('#batch');try{localStorage.setItem('miru-menu',JSON.stringify({mes,menu:num}))}catch{}w.replaceChildren();b.replaceChildren();const charts=$('#weekly-charts');charts.replaceChildren();syncNutritionVisibility();
+function week(){const mes=Number(select.value),num=Number($('#menu-number').value),m=menus.find(x=>x.mes===mes&&x.menu===num),w=$('#week'),b=$('#batch');try{localStorage.setItem('miru-menu',JSON.stringify({mes,menu:num}))}catch{}w.replaceChildren();b.replaceChildren();const purchase=$('#menu-shopping');if(purchase){const key=String(mes).padStart(2,'0')+'-'+num;const url=data.compras?.[key];purchase.hidden=!url;if(url)purchase.href=url;else purchase.removeAttribute('href');}const charts=$('#weekly-charts');charts.replaceChildren();syncNutritionVisibility();
 if(!m){w.append(el('p','Este menú aún no está publicado.','empty-state'));b.textContent='No hay preparaciones publicadas.';return}
 if(m.schema_version!==2){w.append(el('p','Este menú utiliza un formato antiguo y necesita actualización.','empty-state'));b.textContent='Pendiente de actualización.';return}
 if(window.MiruWeeklyCharts)window.MiruWeeklyCharts.render(charts,window.MiruWeeklyCharts.model(m,recipes));

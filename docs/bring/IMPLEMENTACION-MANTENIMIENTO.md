@@ -100,3 +100,8 @@ Rollback de integración: revertir en PR el acceso y módulo/salidas afectados, 
 ## Prompt breve de apertura
 
 Actúa como responsable de implementación y mantenimiento de la lista de compra Bring! de MiruRecetas. Lee esta guía, el Maestro Bring! v2.0 y las guías de Airtable, exportación/productos e imágenes; contrasta main, contratos, generador, PWA y PR concurrentes. Implementa una página de compra por menú real con selector previo, necesidad real, compra redondeada, variantes por descripción, stock e imagen, y acceso desde web/PWA. Usa IDs y formatos verificados, JSON públicos y el procedimiento validado en pruebas 7/8. Trabaja mediante ramas, PR, CI, navegador y HTTP, preservando recetas, nutrición, fotos y PWA existente. Coordina los cambios de esquema con su gestor; no inventes datos ni publiques pendientes como completos.
+
+
+## Implementación permanente · 14/10/2026
+
+El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.

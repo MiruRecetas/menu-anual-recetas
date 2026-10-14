@@ -1,0 +1,300 @@
+{
+  "author": "MiruRecetas",
+  "name": "Octubre · Menú 1 · 8 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/10-1/compra/?porciones=8",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/10-1.png",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "670 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "160 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Almendras",
+      "spec": "200 g, crudas",
+      "stock": false
+    },
+    {
+      "itemId": "Bacalao",
+      "spec": "3200 g, desalado",
+      "stock": false
+    },
+    {
+      "itemId": "Boniato",
+      "spec": "1200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Boquerones",
+      "spec": "4 envases, aliñados, ArteIñaki",
+      "stock": false
+    },
+    {
+      "itemId": "Calabacín",
+      "spec": "770 g",
+      "stock": false
+    },
+    {
+      "itemId": "Caldo de carne",
+      "spec": "2 envases, Gallina Blanca, casero natural",
+      "stock": false
+    },
+    {
+      "itemId": "Carne de pimiento choricero",
+      "spec": "2 envases, Serrano",
+      "stock": false
+    },
+    {
+      "itemId": "Carpaccio",
+      "spec": "8 envases, completo con Parmigiano y AOVE, Selección DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Carrilleras de cerdo",
+      "spec": "3200 g, ibéricas, limpias",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "3060 g",
+      "stock": false
+    },
+    {
+      "itemId": "Champiñones",
+      "spec": "800 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cilantro",
+      "spec": "20 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Ciruelas",
+      "spec": "800 g, frescas",
+      "stock": false
+    },
+    {
+      "itemId": "Comino",
+      "spec": "30 g, molido",
+      "stock": true
+    },
+    {
+      "itemId": "Gambones",
+      "spec": "1200 g, crudos, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Garbanzos",
+      "spec": "240 g, secos",
+      "stock": false
+    },
+    {
+      "itemId": "Garbanzos",
+      "spec": "720 g, cocidos, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Granola",
+      "spec": "1 envase, avena, Kellogg’s Special K",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "120 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Higos",
+      "spec": "800 g, frescos",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "16 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "670 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Mantequilla",
+      "spec": "70 g, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Masa quebrada",
+      "spec": "4 envases, DIA Al Punto",
+      "stock": false
+    },
+    {
+      "itemId": "Mayonesa",
+      "spec": "1 envase, cebolla caramelizada y ajo, Heinz",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "120 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Mozzarella",
+      "spec": "2 bolsas, rallada, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Noodles de arroz",
+      "spec": "3 envases, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Pan",
+      "spec": "80 g, blanco de barra",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde",
+      "spec": "16 rebanadas, cereales y semillas, Oroweat",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "560 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "3200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pavo",
+      "spec": "8 envases, dados de pechuga, DIA Nuestra Alacena",
+      "stock": false
+    },
+    {
+      "itemId": "Pepino",
+      "spec": "120 g",
+      "stock": false
+    },
+    {
+      "itemId": "Perejil",
+      "spec": "20 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Pimienta negra",
+      "spec": "10 g",
+      "stock": true
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Puerro",
+      "spec": "800 g, crudo o congelado",
+      "stock": false
+    },
+    {
+      "itemId": "Puerros",
+      "spec": "4 envases, al natural, escurridos, Conservas Morán",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema",
+      "spec": "2 tarrinas, Philadelphia",
+      "stock": false
+    },
+    {
+      "itemId": "Rúcula",
+      "spec": "160 g",
+      "stock": false
+    },
+    {
+      "itemId": "Salsa de soja",
+      "spec": "1 envase, Salseo",
+      "stock": true
+    },
+    {
+      "itemId": "Sardinillas",
+      "spec": "3 latas, en aceite de oliva, escurridas, Portonovo",
+      "stock": false
+    },
+    {
+      "itemId": "Tahini",
+      "spec": "1 envase, NaturGreen",
+      "stock": true
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "1740 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tortillas de trigo",
+      "spec": "24 tortillas, mini, IFA Eliges",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Vino tinto",
+      "spec": "1000 ml",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "12 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria",
+      "spec": "600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón",
+      "spec": "180 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Menta o hierbabuena",
+      "stock": true
+    },
+    {
+      "itemId": "Nuez moscada",
+      "stock": true
+    },
+    {
+      "itemId": "Romero",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Tomillo",
+      "stock": true
+    }
+  ],
+  "yield": "8"
+}

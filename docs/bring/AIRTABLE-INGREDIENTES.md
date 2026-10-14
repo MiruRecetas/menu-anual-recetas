@@ -65,3 +65,8 @@ No exponer tokens, URLs de adjuntos privados caducables o estructura completa de
 ## Prompt breve de apertura
 
 Actúa como gestor de Airtable de MiruRecetas. Lee esta guía y el Maestro Bring! v2.0 y verifica el esquema actual. Implementa en INGREDIENTES Nombre de visualización y Descripción de compra, reutilizando campos si ya existen y conservando Nombre técnico, IDs, enlaces, cantidades, fórmulas y nutrientes. Usa nombres genéricos cortos y características por comas; las variantes con nombre común siguen siendo registros separados. Verifica los nueve casos probados y prepara el inventario restante dentro del alcance acordado. Entrega IDs/tipos de campos y correspondencias verificadas al exportador, sin modificar web/PWA ni recetas y sin crear registros duplicados.
+
+
+## Implementación permanente · 14/10/2026
+
+El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.
