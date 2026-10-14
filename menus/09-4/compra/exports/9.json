@@ -1,0 +1,209 @@
+{
+  "author": "MiruRecetas",
+  "name": "Septiembre · Menú 4 · 9 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/09-4/compra/?porciones=9",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/09-4.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "850 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Aceitunas",
+      "spec": "9 latas, verdes rellenas de anchoa, escurridas, Vegcampo DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "80 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Almendras",
+      "spec": "230 g, crudas",
+      "stock": false
+    },
+    {
+      "itemId": "Alubias rojas",
+      "spec": "4 frascos, cocidas, escurridas y enjuagadas, Cidacos",
+      "stock": false
+    },
+    {
+      "itemId": "Atún",
+      "spec": "9 latas, claro al natural, escurrido, Mari Marinera DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Bonito",
+      "spec": "2700 g, del norte, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Carne de pimiento choricero",
+      "spec": "8 envases, Serrano",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "3600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Chipotles",
+      "spec": "2 envases, en adobo, La Costeña",
+      "stock": false
+    },
+    {
+      "itemId": "Ciruelas",
+      "spec": "1800 g, frescas",
+      "stock": false
+    },
+    {
+      "itemId": "Cuscús",
+      "spec": "540 g, de trigo, seco",
+      "stock": false
+    },
+    {
+      "itemId": "Fumet de pescado y marisco",
+      "spec": "3 envases, de roca, Gallina Blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Guisantes",
+      "spec": "900 g, congelados",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "36 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Jalapeños",
+      "spec": "90 g, en conserva, picados",
+      "stock": false
+    },
+    {
+      "itemId": "Jamón serrano",
+      "spec": "450 g, curado",
+      "stock": false
+    },
+    {
+      "itemId": "Maíz",
+      "spec": "230 g, dulce en conserva, escurrido",
+      "stock": false
+    },
+    {
+      "itemId": "Mozzarella",
+      "spec": "3 bolsas, rallada, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Pasas",
+      "spec": "180 g, sin semillas",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "540 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "6570 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "3 envases, loncheada, Nuestra Alacena DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "2700 g, cruda, sin piel",
+      "stock": false
+    },
+    {
+      "itemId": "Pimentón",
+      "spec": "50 g, dulce",
+      "stock": true
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "2340 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "2880 g",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema",
+      "spec": "2 tarrinas, Philadelphia",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera picada",
+      "spec": "1800 g, hasta quince por ciento de grasa",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "3150 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate triturado",
+      "spec": "1580 g, en conserva",
+      "stock": false
+    },
+    {
+      "itemId": "Tortillas de trigo",
+      "spec": "54 tortillas, mini, IFA Eliges",
+      "stock": false
+    },
+    {
+      "itemId": "Uvas",
+      "spec": "900 g, frescas",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria",
+      "spec": "360 g",
+      "stock": false
+    },
+    {
+      "itemId": "Agua",
+      "stock": true
+    },
+    {
+      "itemId": "Guindilla",
+      "stock": true
+    },
+    {
+      "itemId": "Laurel",
+      "stock": true
+    },
+    {
+      "itemId": "Ras el hanout",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Vinagre",
+      "stock": true
+    }
+  ],
+  "yield": "9"
+}

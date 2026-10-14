@@ -62,7 +62,7 @@ def make_source(tables,catalog,root,key,catalog_sha):
             a=sorted((r['id'],r['referencia_id'],str(positive(r['cantidad'])),r['unidad']) for r in expected)
             b=sorted((eid,one(tables['elementos'][eid],'Ingrediente',True) or one(tables['elementos'][eid],'Preparación'),str(positive(tables['elementos'][eid]['Cantidad'])),scalar(tables['elementos'][eid]['Unidad'])) for eid in ids(tables['comidas'][one(m,day+' · '+kind.title())]['COMIDA_ELEMENTOS']))
             if a!=b:raise ValueError('Componentes públicos desactualizados: '+day+' '+kind)
-        expected=public.get('postre');expected=expected['componentes'] if expected else []
+        expected=public.get('postre');expected=expected.get('componentes',[expected]) if expected else []
         a=sorted((x['referencia_id'],str(positive(x.get('cantidad',x.get('raciones')))),x.get('unidad','ración')) for x in expected)
         b=[]
         if ir:b.append((ir,str(positive(m[day+' · Postre cantidad'])),scalar(m[day+' · Postre unidad'])))
@@ -79,7 +79,7 @@ def make_source(tables,catalog,root,key,catalog_sha):
     products=[]
     for p in catalog:
         if p['id'] in product_ids:
-            products.append({k:v for k,v in p.items() if k in ('id','cantidad_envase','peso_escurrido','peso_escurrido_g','presentacion','componentes_envase','fuente','estado')})
+            products.append({k:v for k,v in p.items() if k in ('id','cantidad_envase','peso_escurrido','peso_escurrido_g','presentacion','formato_unidades','componentes_envase','fuente','estado')})
     if {p['id'] for p in products}!=product_ids:raise ValueError('Productos no resueltos')
     condiments=[];recipe_hashes={}
     for p in graph['preparaciones']:
@@ -89,7 +89,11 @@ def make_source(tables,catalog,root,key,catalog_sha):
         if not path.exists():raise ValueError('Ficha no disponible: '+slug)
         recipe=json.loads(path.read_text());recipe_hashes[slug]=digest(culinary(recipe))
         for ingredient in recipe['ingredientes']:
-            if ingredient['cantidad'] is None:condiments.append({'nombre':ingredient['nombre'],'preparacion_id':p['id'],'fuente':slug})
+            if ingredient['cantidad'] is None or (p['id']=='recdhYBKhV8omXHcm' and ingredient['nombre']=='Laurel' and ingredient['unidad'] in ('hoja','hojas')):
+                line={'nombre':ingredient['nombre'],'preparacion_id':p['id'],'fuente':slug}
+                if ingredient['cantidad'] is not None:
+                    line.update(cantidad_culinaria=ingredient['cantidad'],unidad_culinaria=ingredient['unidad'],criterio='Checklist literal sin ID de ingrediente; cantidad conservada en ficha, sin conversión a peso')
+                condiments.append(line)
     candidates=[f'imagenes/menus/{key}.{ext}' for ext in ('webp','png','jpg') if (root/f'imagenes/menus/{key}.{ext}').is_file()]
     if len(candidates)!=1:raise ValueError('Se requiere una única imagen canónica de menú')
     image=candidates[0]

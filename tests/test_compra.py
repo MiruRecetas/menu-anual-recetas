@@ -48,7 +48,7 @@ class Compra(unittest.TestCase):
   self.row('rec4QWbZX5KJIhQyW')['nombre']='Etiqueta nueva';p,_=compra.selection(self.s,1,SITE)
   self.assertTrue(next(x['stock'] for x in p['items'] if x['itemId']=='Etiqueta nueva'))
   self.assertEqual(next(x for x in p['items'] if x['itemId']=='Sal'),{'itemId':'Sal','stock':True})
-  for iid in compra.STOCK:self.assertTrue(self.row(iid)['stock'])
+  for iid in compra.STOCK & {x['id'] for x in self.s['calculo']['ingredientes']}:self.assertTrue(self.row(iid)['stock'])
  def test_presentations_and_selections(self):
   for iid,size in [('receShdIxklq3Ht6E','25'),('recHiBRS3Ikrzb1mt','250'),('recBR5gKXgTzxIPy9','163'),('recZ6WhTcrZDhRgKI','73/2')]:self.assertEqual(self.row(iid)['presentacion']['contenido'],size)
   for n in range(1,21):
@@ -63,8 +63,8 @@ class Compra(unittest.TestCase):
   self.assertEqual(make_source(tables,self.s['productos'],R,'10-1',self.s['fuentes']['catalogo_blob']),self.s)
   tables['menus'][g['menu']['id']]['Lunes · Postre cantidad']=101
   with self.assertRaisesRegex(ValueError,'Postre público'):make_source(tables,self.s['productos'],R,'10-1',self.s['fuentes']['catalogo_blob'])
- def test_only_october_and_image(self):
-  self.assertEqual(json.loads((R/'datos/compra/activos.json').read_text()),['10-1'])
+ def test_approved_menus_and_original_image(self):
+  self.assertEqual(json.loads((R/'datos/compra/activos.json').read_text()),['10-1','09-4'])
   data=(R/self.s['imagen']).read_bytes();self.assertEqual(hashlib.sha256(data).hexdigest(),'c7952019f9e9b24a3c1bba2f376e5b354a91c518464b2e85d6276a48252c62c7')
   self.assertEqual(data,(R/'experimentos/bring/prueba-8-10-1/menu-octubre-1.png').read_bytes())
  def test_reproducibility(self):
