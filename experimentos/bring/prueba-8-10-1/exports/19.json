@@ -1,0 +1,300 @@
+{
+  "author": "MiruRecetas",
+  "name": "Octubre · Menú 1 · Prueba 8 · 19 porciones",
+  "tagline": "Menú de octubre de lunes a viernes para 19 porciones. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-8-10-1/?porciones=19",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "1600 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Ajo fresco (crudo)",
+      "spec": "380 g",
+      "stock": false
+    },
+    {
+      "itemId": "Almendras crudas",
+      "spec": "480 g",
+      "stock": false
+    },
+    {
+      "itemId": "Bacalao desalado (crudo)",
+      "spec": "7600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Boniato, crudo (parte comestible)",
+      "spec": "2850 g",
+      "stock": false
+    },
+    {
+      "itemId": "Boquerones ArteIñaki escurridos con 25 % del aliño proporcional",
+      "spec": "8 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Calabacín crudo",
+      "spec": "1830 g",
+      "stock": false
+    },
+    {
+      "itemId": "Carne de pimiento choricero Serrano",
+      "spec": "5 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Carpaccio completo Selección DIA con Parmigiano y AOVE",
+      "spec": "19 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Carrillera de cerdo ibérico limpia (referencia COVAP)",
+      "spec": "7600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla fresca (cruda)",
+      "spec": "7270 g",
+      "stock": false
+    },
+    {
+      "itemId": "Champiñones crudos",
+      "spec": "1900 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cilantro fresco",
+      "spec": "50 g",
+      "stock": false
+    },
+    {
+      "itemId": "Ciruela fresca con piel (cruda)",
+      "spec": "1900 g",
+      "stock": false
+    },
+    {
+      "itemId": "Comino molido",
+      "spec": "70 g",
+      "stock": true
+    },
+    {
+      "itemId": "Dados de pechuga de pavo DIA Nuestra Alacena",
+      "spec": "19 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Gallina Blanca Caldo Casero de Carne 100 % Natural",
+      "spec": "3 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Gambones crudos, parte comestible (equivalencia langostino)",
+      "spec": "2850 g",
+      "stock": false
+    },
+    {
+      "itemId": "Garbanzos",
+      "spec": "1710 g, cocidos, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Garbanzos",
+      "spec": "570 g, secos",
+      "stock": false
+    },
+    {
+      "itemId": "Granola Classic con avena Kellogg's Special K",
+      "spec": "2 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo (blanca)",
+      "spec": "280 g",
+      "stock": false
+    },
+    {
+      "itemId": "Higos",
+      "spec": "1900 g, frescos",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "38 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche semidesnatada",
+      "spec": "1590 ml",
+      "stock": false
+    },
+    {
+      "itemId": "Mantequilla sin sal",
+      "spec": "160 g",
+      "stock": false
+    },
+    {
+      "itemId": "Masa quebrada DIA Al Punto",
+      "spec": "10 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Mayonesa Heinz con cebolla caramelizada y ajo",
+      "spec": "1 envase",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "290 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Mini tortillas de trigo IFA Eliges",
+      "spec": "57 tortillas",
+      "stock": false
+    },
+    {
+      "itemId": "Mozzarella rallada Dia Láctea",
+      "spec": "3 bolsas",
+      "stock": false
+    },
+    {
+      "itemId": "Noodles de arroz DIA Selección Mundial",
+      "spec": "7 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Pan blanco de barra",
+      "spec": "190 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde 12 cereales y semillas Oroweat",
+      "spec": "38 rebanadas",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "1330 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patata, cruda (parte comestible)",
+      "spec": "7600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pepino crudo",
+      "spec": "290 g",
+      "stock": false
+    },
+    {
+      "itemId": "Perejil fresco",
+      "spec": "50 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimienta negra",
+      "spec": "10 g",
+      "stock": true
+    },
+    {
+      "itemId": "Pimiento rojo crudo",
+      "spec": "1430 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde crudo",
+      "spec": "1430 g",
+      "stock": false
+    },
+    {
+      "itemId": "Puerro crudo (equivalencia congelado)",
+      "spec": "1900 g",
+      "stock": false
+    },
+    {
+      "itemId": "Puerros al natural Conservas Morán (escurridos)",
+      "spec": "9 envases",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema Philadelphia",
+      "spec": "3 tarrinas",
+      "stock": false
+    },
+    {
+      "itemId": "Rúcula cruda",
+      "spec": "380 g",
+      "stock": false
+    },
+    {
+      "itemId": "Salsa de soja",
+      "spec": "2 envases, Salseo",
+      "stock": true
+    },
+    {
+      "itemId": "Sardinillas en aceite escurridas (balance estimado)",
+      "spec": "7 latas",
+      "stock": false
+    },
+    {
+      "itemId": "Tahini",
+      "spec": "2 envases, NaturGreen",
+      "stock": true
+    },
+    {
+      "itemId": "Tomate crudo",
+      "spec": "4120 g",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco para guisar de Alberto",
+      "spec": "1 caja",
+      "stock": false
+    },
+    {
+      "itemId": "Vino tinto",
+      "spec": "2380 ml",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "29 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria fresca (cruda)",
+      "spec": "1430 g",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón fresco",
+      "spec": "430 g",
+      "stock": false
+    },
+    {
+      "itemId": "Menta o hierbabuena",
+      "stock": true
+    },
+    {
+      "itemId": "Nuez moscada",
+      "stock": true
+    },
+    {
+      "itemId": "Romero",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Tomillo",
+      "stock": true
+    }
+  ],
+  "yield": "19",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-8-10-1/menu-octubre-1.png"
+}
