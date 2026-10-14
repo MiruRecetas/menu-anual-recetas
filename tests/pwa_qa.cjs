@@ -132,6 +132,22 @@ const server=http.createServer((req,res)=>{
     assert.equal(await page.evaluate(async()=>Boolean(await(await caches.open('mirurecetas-pwa-public-v1')).match('/expired'))),false);
     assert.ok(await page.evaluate(async()=>Boolean(await(await caches.open('unrelated-app')).match('/other'))));
     await other.close();await page.waitForLoadState('networkidle');
+    // Permanent purchase runs inside the existing worker scope without a second app.
+    const purchase=await context.newPage();
+    await purchase.goto(origin+base+'menus/10-1/compra/');
+    assert.ok(await purchase.evaluate(()=>Boolean(navigator.serviceWorker.controller)));
+    await purchase.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false');
+    await purchase.locator('#porciones').fill('3');
+    await purchase.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false'&&document.querySelector('#exportar').textContent.includes(' 3 '));
+    assert.equal(await purchase.evaluate(async()=> (await navigator.serviceWorker.getRegistrations()).length),1);
+    const purchaseLink=new URL(await purchase.locator('#exportar').getAttribute('href'));
+    assert.equal(purchaseLink.searchParams.get('baseQuantity'),'3');
+    await context.setOffline(true);
+    await purchase.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='true');
+    assert.equal(await purchase.locator('#lista tr').count(),54);
+    await context.setOffline(false);
+    await purchase.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false');
+    await purchase.close();
     // Real rollback fixture at the original registration URL.
     changes.set('sw.js',{body:fs.readFileSync(path.join(root,'scripts/pwa-rollback.js'),'utf8')});
     await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await r.update();});

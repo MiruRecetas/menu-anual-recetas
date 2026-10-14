@@ -5,6 +5,7 @@ on:
     paths:
       - 'datos/recetas/**'
       - 'datos/menus/**'
+      - 'datos/compra/**'
       - 'plantillas/**'
       - 'scripts/**'
       - 'assets/**'
@@ -33,6 +34,7 @@ jobs:
           python -m unittest discover -s tests -v
       - name: Comprobar sintaxis JavaScript
         run: |
+          node --check assets/compra.js
           node --check assets/inicio.js
           node --check assets/dia.js
           node --check assets/recetario.js
@@ -81,3 +83,6 @@ jobs:
           PY
       - name: Verificar PWA y rutas públicas sin autenticación
         run: python scripts/verificar_pwa_publica.py
+
+      - name: Verificar compra Bring! pública sin autenticación
+        run: python scripts/verificar_compra_publica.py

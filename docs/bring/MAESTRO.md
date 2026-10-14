@@ -192,3 +192,8 @@ Documentar por cambio fecha, main SHA, fuentes, PR, suites reales, Pages/HTTP, o
 - Guía oficial: https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration/alternative-button-integration (ejemplo imageUrl); https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration .
 
 No se ha solicitado adhesión a recipe partners/Inspiration Stream. No añadir cuentas, backend, tiendas, analítica, publicidad ni sincronización privada como parte de esta integración.
+
+
+## Implementación permanente · 14/10/2026
+
+El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.

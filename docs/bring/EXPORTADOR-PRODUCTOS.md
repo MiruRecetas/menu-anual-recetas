@@ -96,3 +96,8 @@ Actúa como responsable del exportador de menús de MiruRecetas. Lee esta guía,
 ## Prompt breve — productos comerciales
 
 Actúa como registrador de productos comerciales de MiruRecetas. Lee esta guía y tu protocolo vigente. Revisa las fichas vinculadas necesarias para la compra Bring!: contenido neto/escurrido, unidades individuales y pack, denominación de compra y referencia exacta. Reutiliza registros validados; documenta únicamente formatos faltantes o cambios reales con evidencia, sin duplicar productos ni inventar equivalencias. Respeta el flujo de aprobación de fichas, no modifiques Airtable, web/PWA o recetas y entrega al exportador las correspondencias verificadas por ID/EAN.
+
+
+## Implementación permanente · 14/10/2026
+
+El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.

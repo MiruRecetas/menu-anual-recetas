@@ -24,6 +24,7 @@ jobs:
           python -m unittest discover -s tests -v
           node --check assets/pwa.js
           node --check sw.js
+          node --check assets/compra.js
           node --check assets/inicio.js
           node --check assets/recetario.js
           node --check assets/dia.js

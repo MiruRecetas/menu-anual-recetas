@@ -52,3 +52,8 @@ Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MA
 Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
 
 Seguir con misma publicación, manifest, iconos, scope y actualización consentida. Revisar rutas/caché/tamaños de página y JSON nuevos y bloquear promesas de importación offline: el importador remoto necesita red y JSON público. PNG de ensayo 8 >2 MiB no acredita cacheabilidad dentro de límites PWA. Validación de Bring! no es instalación/offline real de PWA.
+
+
+## Compra Bring! permanente · Octubre · Menú 1
+
+Nueva familia de página en `menus/10-1/compra/`, decorada por el mismo pipeline de assets/manifest/registro. Acceso contextual en el menú; misma PWA, iconos, scope y SW. No se precachean payloads. La importación requiere red y valida el JSON público seleccionado; pérdida de conexión bloquea el enlace. La consulta de la página abierta permanece disponible, sin garantizar reapertura offline de URLs con parámetros ni caché del PNG aprobado (>2 MiB). Contrato de operación y recuperación: [docs/bring/OPERACION.md](bring/OPERACION.md). Validación física de las rutas nuevas pendiente; el expediente Bring! distingue CI/HTTP de Android real.

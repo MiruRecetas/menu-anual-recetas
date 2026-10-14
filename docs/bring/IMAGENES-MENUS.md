@@ -58,3 +58,8 @@ Entregar por menú: MM-N y ID Airtable si disponible, fuente/SHA del menú y rec
 ## Prompt breve de apertura
 
 Actúa como responsable de imágenes de menús de MiruRecetas. Lee esta guía y el Maestro Bring! v2.0; contrástalos con main. Genera una imagen cuadrada 1:1 por menú real publicado, cenital de sus platos sobre una superficie crema, fiel a recetas y guarniciones y al estilo aportado. Guarda una única imagen en imagenes/menus/MM-N.webp mediante rama, PR, CI y verificación pública. Reutiliza imágenes válidas; no inventes menús, sobrescribas fotos aprobadas ni cambies Airtable, recetas, nutrición, web/PWA o el exportador. Entrega rutas y URLs verificadas para enlazarlas desde la compra. Continúa con el encargo concreto de menús que indique la usuaria.
+
+
+## Implementación permanente · 14/10/2026
+
+El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.
