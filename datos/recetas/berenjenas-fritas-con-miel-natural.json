@@ -1,0 +1,43 @@
+{
+  "slug": "berenjenas-fritas-con-miel-natural",
+  "nombre": "Berenjenas fritas con miel natural",
+  "descripcion": "Rodajas de berenjena ligeramente enharinadas, fritas en AOVE y bien escurridas, servidas con miel natural de abeja.",
+  "raciones": 1,
+  "categoria": "aperitivos-guarniciones",
+  "etiquetas": [
+    "verduras"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Berenjena",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Harina de trigo",
+      "cantidad": 20,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Miel natural de abeja",
+      "cantidad": 15,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE para freír",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Cortar la berenjena en rodajas de unos 8 mm de grosor.",
+    "Secar las rodajas, salar y enharinar ligeramente.",
+    "Freír en AOVE caliente hasta dorar.",
+    "Escurrir bien y añadir la miel natural de abeja al servir."
+  ]
+}
