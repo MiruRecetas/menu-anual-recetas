@@ -24,9 +24,9 @@
       "unidad": "g"
     },
     {
-      "nombre": "AOVE para freír",
-      "cantidad": null,
-      "unidad": ""
+      "nombre": "AOVE retenido tras la fritura (estimado, aproximadamente)",
+      "cantidad": 54,
+      "unidad": "g"
     },
     {
       "nombre": "Sal",
@@ -39,5 +39,11 @@
     "Secar las rodajas, salar y enharinar ligeramente.",
     "Freír en AOVE caliente hasta dorar.",
     "Escurrir bien y añadir la miel natural de abeja al servir."
-  ]
+  ],
+  "nutricion": {
+    "kcal": 627.18,
+    "proteinas_g": 3.48,
+    "hidratos_g": 33.42,
+    "grasas_g": 54.17
+  }
 }
