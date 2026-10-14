@@ -1,0 +1,73 @@
+{
+  "slug": "pollo-madras",
+  "nombre": "Pollo Madrás",
+  "descripcion": "Pechuga de pollo con cebolla y ajo sofritos en aceite de coco, curry Madrás y tomate frito, cocinada a fuego lento.",
+  "raciones": 3,
+  "categoria": "guisos-legumbres",
+  "etiquetas": [
+    "congelable",
+    "microondas",
+    "tupper",
+    "batchcooking",
+    "carne"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Aceite de coco",
+      "cantidad": 30,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 4,
+      "unidad": "dientes"
+    },
+    {
+      "nombre": "Pechuga de pollo",
+      "cantidad": 300,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Tomate frito",
+      "cantidad": 1,
+      "unidad": "lata"
+    },
+    {
+      "nombre": "Curry Madrás en polvo",
+      "cantidad": 10,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Chile triturado",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Pimienta negra",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Sofreír la cebolla y el ajo en el aceite de coco a fuego lento hasta que se doren.",
+    "Subir el fuego, añadir el pollo y dorarlo.",
+    "Añadir el curry Madrás, el chile triturado y un poco de pimienta negra. Mezclar durante 2 o 3 minutos a fuego bajo para potenciar los aromas.",
+    "Añadir el tomate frito y cocinar al mínimo hasta que reduzca, unos 20 minutos. Sazonar con sal al gusto."
+  ],
+  "nutricion": {
+    "kcal": 361.58,
+    "proteinas_g": 25.65,
+    "hidratos_g": 18.39,
+    "grasas_g": 19.21
+  }
+}
