@@ -1,0 +1,203 @@
+{
+  "author": "MiruRecetas",
+  "name": "Septiembre · Menú 3 · 16 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/09-3/compra/?porciones=16",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/09-3.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "1730 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Aguacate",
+      "spec": "800 g, pulpa comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "140 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Arroz",
+      "spec": "800 g, blanco, grano corto, crudo",
+      "stock": false
+    },
+    {
+      "itemId": "Arroz",
+      "spec": "16 vasitos, blanco, cocido, DIA Al Punto",
+      "stock": false
+    },
+    {
+      "itemId": "Calabacín",
+      "spec": "5950 g",
+      "stock": false
+    },
+    {
+      "itemId": "Calabaza",
+      "spec": "5760 g, butternut, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "6400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Edamame",
+      "spec": "800 g, congelado, granos sin vaina",
+      "stock": false
+    },
+    {
+      "itemId": "Gambones",
+      "spec": "1600 g, crudos, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "220 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "75 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "110 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Mango",
+      "spec": "800 g, sin piel ni hueso",
+      "stock": false
+    },
+    {
+      "itemId": "Mozzarella",
+      "spec": "2 bolsas, rallada, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Nata",
+      "spec": "15 envases, para cocinar, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Pan",
+      "spec": "110 g, blanco de barra",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde",
+      "spec": "16 rebanadas, cereales y semillas, Oroweat",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "11040 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "4 envases, loncheada, Nuestra Alacena DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Pepino",
+      "spec": "360 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "3600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "3600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Queso de oveja",
+      "spec": "320 g, curado",
+      "stock": false
+    },
+    {
+      "itemId": "Salchichas",
+      "spec": "5340 g, frescas, de cerdo, blancas y rojas",
+      "stock": false
+    },
+    {
+      "itemId": "Salmón",
+      "spec": "4160 g, crudo, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera picada",
+      "spec": "5340 g, hasta quince por ciento de grasa",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "12860 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tortillas de trigo",
+      "spec": "48 tortillas, mini, IFA Eliges",
+      "stock": false
+    },
+    {
+      "itemId": "Uvas",
+      "spec": "4800 g, frescas",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "12 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón",
+      "spec": "180 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Laurel",
+      "stock": true
+    },
+    {
+      "itemId": "Menta o hierbabuena",
+      "stock": true
+    },
+    {
+      "itemId": "Perejil",
+      "stock": true
+    },
+    {
+      "itemId": "Pimentón",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Vinagre",
+      "stock": true
+    }
+  ],
+  "yield": "16"
+}

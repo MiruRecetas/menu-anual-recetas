@@ -39,24 +39,24 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    await page.locator('#month').selectOption('9');assert.equal(await page.locator('#menu-shopping').isVisible(),false);
    assert.deepEqual(errors,[]);await context.close();
   }
-  for(const width of [390,820,1440]){
+  for(const menu of [4,3]) for(const width of [390,820,1440]){
    const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height:1100}});
    await context.route(/https:\/\/(fonts.googleapis.com|fonts.gstatic.com)\//,r=>r.abort());
    const page=await context.newPage();
-   await page.goto('http://127.0.0.1:8765/?mes=9&menu=4');
+   await page.goto(`http://127.0.0.1:8765/?mes=9&menu=${menu}`);
    await page.locator('#menu-shopping').waitFor({state:'visible'});
    await page.locator('#menu-shopping').click();
    await page.waitForFunction(()=>document.querySelector('#exportar')?.getAttribute('aria-disabled')==='false');
    assert.ok(await page.locator('.purchase-intro img').evaluate(x=>x.complete&&x.naturalWidth===1024));
-   assert.equal(await page.locator('#lista tr').count(),35);
+   assert.equal(await page.locator('#lista tr').count(),menu===4?35:33);
    await page.locator('#porciones').fill('3');
    await page.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false'&&document.querySelector('#exportar').textContent.includes(' 3 '));
    const link=new URL(await page.locator('#exportar').getAttribute('href'));
-   assert.ok(link.searchParams.get('url').endsWith('/menus/09-4/compra/exports/3.json'));
-   assert.ok((await page.locator('#lista').innerText()).includes('3 latas'));
-   await page.screenshot({path:`qa-screenshots/compra-septiembre4-${width}.png`,fullPage:true});
-   await page.getByRole('link',{name:'← Volver a Septiembre · Menú 4'}).click();
-   await page.waitForFunction(()=>document.querySelector('#month').value==='9'&&document.querySelector('#menu-number').value==='4');
+   assert.ok(link.searchParams.get('url').endsWith(`/menus/09-${menu}/compra/exports/3.json`));
+   assert.ok((await page.locator('#lista').innerText()).includes(menu===4?'3 latas':'3 vasitos'));
+   await page.screenshot({path:`qa-screenshots/compra-septiembre${menu}-${width}.png`,fullPage:true});
+   await page.getByRole('link',{name:`← Volver a Septiembre · Menú ${menu}`}).click();
+   await page.waitForFunction(n=>document.querySelector('#month').value==='9'&&document.querySelector('#menu-number').value===String(n),menu);
    await context.close();
   }
   console.log('Compra: móvil/tablet/escritorio, selector, errores, red, imagen y acceso contextual OK');
