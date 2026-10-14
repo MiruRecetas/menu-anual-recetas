@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "7adbb32e2adcab0464b82342da4ecda474623045",
-  "generated_at_utc": "2026-10-14T17:38:19Z",
-  "total_recetas": 42,
+  "source_commit_sha": "ce7bdf840768b0e7e1323cac73ec15bff357ab12",
+  "generated_at_utc": "2026-10-14T18:04:29Z",
+  "total_recetas": 43,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -180,6 +180,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bechamel/"
+    },
+    {
+      "nombre": "Berenjenas fritas con miel natural",
+      "slug": "berenjenas-fritas-con-miel-natural",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Rodajas de berenjena ligeramente enharinadas, fritas en AOVE y bien escurridas, servidas con miel natural de abeja.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Berenjena",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Miel natural de abeja",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE para freír",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/berenjenas-fritas-con-miel-natural/"
     },
     {
       "nombre": "Berenjenas rellenas",
