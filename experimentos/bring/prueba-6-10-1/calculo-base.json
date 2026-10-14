@@ -2492,8 +2492,16 @@
     "exportacion": "spec contiene únicamente cantidad y unidad; sin cantidades secundarias",
     "redondeo_g_ml": "todos los pesos/volúmenes sin presentación unitaria verificada",
     "aceite_stock_id": "rec4QWbZX5KJIhQyW",
+    "stock_siempre_ids": [
+      "rec4QWbZX5KJIhQyW",
+      "rec70jSFploNVyMCF",
+      "recGpy51QX8MYe0j9",
+      "recZmy5VtKavv2D9U",
+      "rechMDQXS4hW2JBYg",
+      "recpst98trSqZIPSe"
+    ],
     "max_porciones_experimento": 20,
-    "estado_real": "Prueba 6 en Bring! pendiente; prueba 5 validada por la usuaria en Android",
+    "estado_real": "La usuaria confirma prueba 6 en Bring! para 1 y 3 porciones con capturas; la nueva clasificación de miel, tahini y soja requiere nueva importación",
     "limite": "Para cambiar porciones volver a esta página y hacer una nueva importación. Bring! puede escalar de nuevo cifras ya redondeadas."
   },
   "resultado_prueba_5": "La usuaria confirma importación perfecta en Bring!; adopta selector previo, escalado exacto y redondeo antes de exportar. Corrige anchoas y necesidad real a un decimal."

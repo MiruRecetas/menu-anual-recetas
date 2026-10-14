@@ -8,7 +8,7 @@ Autorizada el 14/10/2026 para contrastar con octubre el procedimiento adoptado d
 
 La usuaria confirma que prueba 5 funciona perfectamente en su Bring! y adopta ese procedimiento. Señala dos errores de salida: anchoas genéricas sin redondear y «Necesidad real» con seis decimales. Se corrigen en la carpeta experimental de septiembre: 4 porciones = 113,3 g visibles y 120 g exportados; 5 = 141,7 g visibles y 150 g exportados. La precisión interna sigue siendo exacta. La captura adjunta muestra el caso de 5 porciones.
 
-La nueva prueba 6 física en Bring! sigue pendiente; no extrapolar la confirmación de septiembre a octubre o a otras plataformas.
+La usuaria confirma la importación real de prueba 6 en Bring! para 1 y 3 porciones y aporta capturas. No extrapolar a otras plataformas. Solicita después que miel, tahini y salsa de soja sean siempre stock: true: se aplica por ID Airtable en esta carpeta experimental, conservando cantidades y nombres. Esta nueva clasificación requiere una nueva importación; no cambia listas ya importadas.
 
 ## Datos e identidad
 
@@ -26,7 +26,7 @@ Los formatos comerciales proceden de la ficha vinculada por `PROPIOS:<id>`. Las 
 
 Pan Oroweat usa rebanadas de 36,5 g aproximados; mini tortillas 25 g/unidad; yogur 125 g/vasito. Los demás comerciales sin unidad individual usan el contenido del envase registrado. Huevos: cuatro huevos equivalen a 200 g comestibles en la quiche, por lo que 50 g/unidad es una equivalencia explícita. Ajo se mantiene en gramos: las recetas de octubre documentan tamaños de diente diferentes (2,7 y 3 g); no se impone una equivalencia universal.
 
-Stock: AOVE siempre true. Condimentos sin cantidad true, sin spec. Comino y pimienta cuantificados se conservan como despensa con su cantidad de compra. Cuando la etiqueta literal «Pimienta negra» ya aparece como artículo cuantificado de despensa, se evita un segundo elemento sin cantidad: no se suma ni modifica su cantidad, y sus orígenes culinarios sin peso se conservan en auditoría.
+Stock: AOVE, miel (`recGpy51QX8MYe0j9`), tahini (`rechMDQXS4hW2JBYg`) y salsa de soja (`recpst98trSqZIPSe`) siempre true, independientemente de las porciones y de su nombre. Condimentos sin cantidad true, sin spec. Comino y pimienta cuantificados se conservan como despensa con su cantidad de compra. Cuando la etiqueta literal «Pimienta negra» ya aparece como artículo cuantificado de despensa, se evita un segundo elemento sin cantidad: no se suma ni modifica su cantidad, y sus orígenes culinarios sin peso se conservan en auditoría.
 
 ## Selector y exportación
 
