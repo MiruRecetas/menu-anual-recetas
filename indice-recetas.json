@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "252a57f1641883d92f2cb6d375d78082abc5d1fa",
-  "generated_at_utc": "2026-10-14T18:19:44Z",
-  "total_recetas": 43,
+  "source_commit_sha": "c90623f8b4b49a62d880bb484308d3543cb76a33",
+  "generated_at_utc": "2026-10-14T19:13:38Z",
+  "total_recetas": 44,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -827,6 +827,51 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Gambones al horno con ajo, perejil y limón",
+      "slug": "gambones-al-horno-con-ajo-perejil-y-limon",
+      "categoria": "asados-horno",
+      "descripcion": "Gambones enteros horneados con un majado de ajo, perejil, limón, vino blanco y AOVE, pelados al servir.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Gambones (peso de carne cruda, sin cabeza ni cáscara)",
+          "cantidad": 170,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Vino blanco",
+          "cantidad": 15,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/gambones-al-horno-con-ajo-perejil-y-limon/"
     },
     {
       "nombre": "Guisantes con jamón",
