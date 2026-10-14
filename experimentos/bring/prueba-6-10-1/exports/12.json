@@ -147,7 +147,7 @@
     {
       "itemId": "Miel natural",
       "spec": "180 g",
-      "stock": false
+      "stock": true
     },
     {
       "itemId": "Mini tortillas de trigo IFA Eliges",
@@ -232,7 +232,7 @@
     {
       "itemId": "Salsa de soja Salseo",
       "spec": "1 envase",
-      "stock": false
+      "stock": true
     },
     {
       "itemId": "Sardinillas en aceite escurridas (balance estimado)",
@@ -242,7 +242,7 @@
     {
       "itemId": "Tahini NaturGreen",
       "spec": "1 envase",
-      "stock": false
+      "stock": true
     },
     {
       "itemId": "Tomate crudo",

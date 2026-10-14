@@ -12,6 +12,14 @@ ROOT = Path(__file__).resolve().parent
 URL = 'https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-6-10-1/'
 MAX_PERSONAS = 20
 OIL_ID = 'rec4QWbZX5KJIhQyW'
+ALWAYS_STOCK_IDS = frozenset({
+    OIL_ID,
+    'rec70jSFploNVyMCF',  # Pimienta negra
+    'recZmy5VtKavv2D9U',  # Comino molido
+    'recGpy51QX8MYe0j9',  # Miel
+    'rechMDQXS4hW2JBYg',  # Tahini
+    'recpst98trSqZIPSe',  # Salsa de soja
+})
 def display_real(q):
     with localcontext() as ctx:
         ctx.prec = 40
@@ -26,7 +34,7 @@ def for_people(base, n):
     for r in base['ingredientes']:
         real = F(r['cantidad_exacta']) * n
         row = dict(id=r['id'], nombre=r['nombre'], cantidad_exacta=str(real),
-                   cantidad_real=display_real(real)+' '+r['unidad'], stock=r['id'] in {OIL_ID, 'rec70jSFploNVyMCF', 'recZmy5VtKavv2D9U'})
+                   cantidad_real=display_real(real)+' '+r['unidad'], stock=r['id'] in ALWAYS_STOCK_IDS)
         if 'equivalencia_exacta' in r:
             equivalent = F(r['equivalencia_exacta']) * n
             buy = ceil(equivalent)
@@ -75,8 +83,8 @@ def build(data):
     base['reglas_prueba_6']={
         'orden':'agrupar por ID/unidad, multiplicar cantidades exactas por porciones, convertir presentación y redondear al final',
         'exportacion':'spec contiene únicamente cantidad y unidad; sin cantidades secundarias',
-        'redondeo_g_ml':'todos los pesos/volúmenes sin presentación unitaria verificada', 'aceite_stock_id':OIL_ID, 'max_porciones_experimento':MAX_PERSONAS,
-        'estado_real':'Prueba 6 en Bring! pendiente; prueba 5 validada por la usuaria en Android'  ,
+        'redondeo_g_ml':'todos los pesos/volúmenes sin presentación unitaria verificada', 'aceite_stock_id':OIL_ID, 'stock_siempre_ids':sorted(ALWAYS_STOCK_IDS), 'max_porciones_experimento':MAX_PERSONAS,
+        'estado_real':'La usuaria confirma prueba 6 en Bring! para 1 y 3 porciones con capturas; la nueva clasificación de miel, tahini y soja requiere nueva importación'  ,
         'limite':'Para cambiar porciones volver a esta página y hacer una nueva importación. Bring! puede escalar de nuevo cifras ya redondeadas.'}
     base['resultado_prueba_5']='La usuaria confirma importación perfecta en Bring!; adopta selector previo, escalado exacto y redondeo antes de exportar. Corrige anchoas y necesidad real a un decimal.'
     files['calculo-base.json']=json.dumps(base,ensure_ascii=False,indent=2)+'\n'
@@ -90,7 +98,7 @@ def build(data):
 <h1>Octubre · Menú 1 · Prueba 6</h1><p>Menú completo registrado de lunes a viernes. Se incluyen los postres vinculados, incluido el bowl de yogur y la fruta. El café de oficina está excluido.</p>
 <div class="selector"><label for="porciones">Porciones</label><button id="menos" type="button" aria-label="Reducir porciones">−</button><input id="porciones" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"><button id="mas" type="button" aria-label="Aumentar porciones">+</button></div>
 <p id="estado" role="status">Cargando el selector…</p><p><a id="exportar" class="button" aria-disabled="true">Exportar a Bring!</a></p>
-<p>Elige aquí las porciones antes de importar. Los envases fraccionados se redondean hacia arriba después del escalado. Los ingredientes sin presentación unitaria expresados en g/ml se redondean a la decena superior; las decenas exactas se conservan. El AOVE aparece en despensa.</p>
+<p>Elige aquí las porciones antes de importar. Los envases fraccionados se redondean hacia arriba después del escalado. Los ingredientes sin presentación unitaria expresados en g/ml se redondean a la decena superior; las decenas exactas se conservan. El AOVE, la miel, el tahini y la salsa de soja aparecen siempre en despensa.</p>
 <p>Para comprobar lo que tienes en casa, consulta la cantidad real de la tabla. Bring! recibirá únicamente la cantidad de compra y su unidad.</p>
 <h2 id="titulo-lista">Cantidades para 1 porción</h2><div class="scroll"><table><thead><tr><th>Ingrediente</th><th>Necesidad real</th><th>Se exporta</th><th>Lista</th></tr></thead><tbody id="lista">{rows}</tbody></table></div>
 <h2>Condimentos · despensa</h2><ul>{stock}</ul><p>Sin cantidad inventada. Se exportan con stock: true y sin spec.</p>

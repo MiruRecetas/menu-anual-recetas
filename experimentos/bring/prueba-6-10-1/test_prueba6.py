@@ -68,6 +68,22 @@ class Trial6(unittest.TestCase):
             with self.assertRaises(ValueError):for_people(self.base,n)
         self.assertEqual(build(self.data),self.files)
 
+    def test_always_stock_by_id_at_all_portions(self):
+        pantry = {'recGpy51QX8MYe0j9', 'rechMDQXS4hW2JBYg', 'recpst98trSqZIPSe'}
+        base = copy.deepcopy(self.base)
+        for r in base['ingredientes']:
+            if r['id'] in pantry:
+                r['nombre'] = 'Etiqueta modificada ' + r['id']
+        for n in range(1,21):
+            payload, view = for_people(base,n)
+            rows = {r['id']:r for r in view['ingredientes']}
+            items = {r['itemId']:r for r in payload['items']}
+            for ingredient_id in pantry:
+                row = rows[ingredient_id]
+                self.assertTrue(row['stock'])
+                self.assertTrue(items[row['nombre']]['stock'])
+                self.assertEqual(items[row['nombre']]['spec'],row['spec'])
+
     def test_stock_and_isolation(self):
         p,_=for_people(self.base,1)
         ids=[x['itemId'] for x in p['items']]
