@@ -14,7 +14,16 @@ Imagen nueva generada con herramienta integrada, referencia exclusivamente esté
 
 Pruebas locales: 55 tests Python correctos; generación repetida; sintaxis JavaScript y diff check. Añadidos tests de repetición, postres simples, formatos individuales, adobo y variantes; QA navegador para septiembre en móvil/tablet/escritorio.
 
-Estado inicial del expediente: preparado para PR, CI, Pages y verificación pública. Completar el cierre con resultados efectivos; este párrafo no acredita una publicación anterior a su ejecución.
+## Publicación y verificaciones realizadas
+
+- [PR #90](https://github.com/MiruRecetas/menu-anual-recetas/pull/90), fusionada en `fe9424ad37a292d1408630d6b7375827f1b75fe7`; código `d755e887a7878ab68ea3e7758918885b14bcec27`.
+- [Validar web](https://github.com/MiruRecetas/menu-anual-recetas/actions/runs/38648824907): success. [QA navegador](https://github.com/MiruRecetas/menu-anual-recetas/actions/runs/38648824883): success, incluidos septiembre en 390/820/1440 px y regresión web/PWA existente.
+- [Publicar recetas](https://github.com/MiruRecetas/menu-anual-recetas/actions/runs/38649040053): success. Su paso de compra confirma HTTP anónimo, MIME y bytes de 46 archivos: páginas/fuentes de ambos menús, cuarenta selecciones e imágenes. Los pasos de índice y PWA también finalizaron correctamente.
+- Navegador sobre la página pública: imagen WebP decodificada con naturalWidth 1024, selector 1 → 3, JSON seleccionado y baseQuantity/requestedQuantity 3; tabla de 35 filas y latas individuales coherentes. Regreso al menú selecciona mes 9 y menú 4; el acceso contextual vuelve a la lista. Captura pública revisada visualmente.
+- URL operativa verificada: https://mirurecetas.github.io/menu-anual-recetas/menus/09-4/compra/?porciones=1 .
+- El cierre documental toma main `ff2a4b3`, conservando la incorporación simultánea de Pollo Madrás (#91) y sus páginas generadas. La receta nueva no es dependencia de este menú y no se modifica ni se revierte.
+
+Son verificaciones técnicas y de navegador; no se ha simulado una importación física en Bring! Android.
 
 ## Pendiente físico
 
