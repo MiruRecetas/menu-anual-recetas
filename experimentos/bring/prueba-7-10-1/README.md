@@ -1,5 +1,11 @@
 # Prueba 7 — Octubre · Menú 1 · nombres y descripciones
 
+## Estado final de evidencia · 14/10/2026
+
+La usuaria confirmó físicamente: Garbanzos separados en receta y reunidos en cesta conservando ambas descripciones, iconos Huevos/Higos correctos, Yogur y despensa correctos. Escalado tanto desde web como dentro de Bring! comprobado; el segundo multiplica compra ya redondeada.
+
+Referencia vigente: [Maestro Bring! v2.0](../../../docs/bring/MAESTRO.md) y [guías de implementación](../../../docs/bring/README.md). El contenido inferior conserva el protocolo y estado en la fecha del ensayo; los pendientes históricos quedan actualizados por este apartado. No se cambian aquí generadores, snapshots ni payloads.
+
 Último ensayo autorizado el 14/10/2026. URL: https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-7-10-1/
 
 Carpeta autónoma y eliminable mediante rama/PR. No modifica Airtable, producción, exportador de menús, web/PWA, recetas, nutrición, fotos ni otras pruebas. No registra SW ni carga recursos compartidos. Comparte origen Pages, por lo que el SW existente podría cachear visitas; no se purga almacenamiento.
@@ -21,3 +27,4 @@ A 1 porción: Garbanzos 90 g cocidos y 30 g secos; Huevos 2 huevos; Higos 100 g;
 python generar.py; python generar.py --check; python -m unittest discover -s . -p 'test_*.py' -v
 
 Comparar los 20 payloads contra prueba 6: misma cantidad inicial, stock, orden de artículos y yield; solo nombres/descripciones/enlaces de prueba cambian. CI Validar web y QA navegador acreditan regresión de producción, no importación física. Publicar mediante PR y verificar HTTP contra archivos locales. Retirada: eliminar únicamente esta carpeta y comprobar 404; favoritos Bring! permanecen.
+

@@ -39,3 +39,11 @@ Los elementos pueden incluir su nutrición oficial de COMIDA_ELEMENTOS. El gener
 ## Publicación vigente
 
 El exportador auténtico y menús calculados ya están publicados. Otros menús permanecen Pendiente: no confundir posiciones del calendario con semanas completas. Consultar los JSON actuales en cada sesión. Antes de fusionar comprobar estados, numeración, nutrición, grupos, enlaces, accesibilidad y aspecto visual con datos reales.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+El exportador actual también contempla menús parciales con estado Pendiente; no inventar sus ingestas para compra ni presentarlos como completos. Propuesta separada datos/compra/MM-N.json: versión propia, IDs, cantidades exactas, formatos, presentación y auditoría. No modificar schema_version 2 ni nutrientes del menú para introducir compra.

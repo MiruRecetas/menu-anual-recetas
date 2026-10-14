@@ -1,116 +1,194 @@
-# MiruRecetas — Traspaso al agente de integración Bring!
+# MiruRecetas — Maestro Bring! y expediente de implementación
 
-Estado: 13 de octubre de 2026. Documento de resultados y continuidad; no autoriza nuevas funcionalidades de producción.
+Versión 2.0 · 14/10/2026 · Responsable de integración Bring!.
 
-## Prompt para abrir el agente
+Sustituye íntegramente el traspaso Bring! del 13/10/2026. Complementa los maestros de web, PWA, recetas, comidas y productos exclusivamente en materia de lista de compra. No sustituye sus contratos nutricionales, culinarios, editoriales ni de publicación.
 
-Actúa como responsable de la integración Bring! de MiruRecetas. Lee íntegramente este documento y `experimentos/bring/README.md` en la versión actual de main de `MiruRecetas/menu-anual-recetas`. Revisa el código y los resultados reales antes de actuar. Conserva el entorno de pruebas aislado y fácilmente eliminable; trabaja mediante ramas, PR, CI y verificación HTTP. No modifiques producción, Airtable, nutrición, recetas, menús, fotografías o PWA sin encargo específico. No confundas pruebas automáticas con resultados reales en Bring!. Continúa exclusivamente el siguiente encargo de la usuaria.
+Repositorio: https://github.com/MiruRecetas/menu-anual-recetas. Base inspeccionada: `ed60c8eaaabb000ed410ac2ed4bb055d0d1b4e39`. Leer main y PR abiertas al iniciar: esa base no es una instrucción de restauración. Documentación canónica nueva: `docs/bring/`.
 
-## Entorno y publicación
+## 1. Estado y autorización
 
-- Repositorio: https://github.com/MiruRecetas/menu-anual-recetas
-- Prueba: https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/10-1/
-- Carpeta autónoma: `experimentos/bring/`. No está enlazada desde portada, recetario, recetas o navegación normal.
-- `generar.py` lee los JSON públicos y escribe exclusivamente en `experimentos/bring/10-1/`. No modifica el generador de producción ni workflows.
-- `calculo.json` conserva cantidades exactas y huellas SHA-256 de las 15 fuentes usadas. Es una instantánea, no una sincronización automática con Airtable.
-- La página tiene `noindex, nofollow`; sigue siendo pública y visitable. No registra service worker ni carga recursos PWA compartidos. El service worker existente puede cachear una visita dentro de su alcance: aislamiento no significa otro origen ni otra política de caché.
-- `linkOutUrl` devuelve a la página de prueba. Desde ella, «Ver Octubre · Menú 1» guarda la selección existente `miru-menu` y abre la portada. No se ha incorporado selección de menú por URL a producción.
+La usuaria ha validado físicamente en Bring! Android las pruebas finales 7 y 8: nombres sencillos, características por comas, unión de variantes en cesta, escalado, despensa e imagen de menú. La validación de imagen se comunica el 14/10/2026 a las 19:47, hora de España peninsular, con captura de la receta importada.
 
-## Evidencia y cronología
+Este encargo actualiza documentación y prepara agentes para implementar; NO ejecuta todavía cambios de esquema/datos en Airtable, exportador de producción, interfaz web/PWA, nutrición, recetas, menús o imágenes canónicas. Los prompts al final de las guías son encargos concretos para cuando la usuaria los invoque. No enviar mensajes a otros agentes o servicios en su nombre.
 
-1. PWA publicada mediante PR #58; iconos definitivos mediante #60, según el trabajo previo. El presente agente no debe atribuirse pruebas físicas de instalación.
-2. PR #70: página de menú como receta única, ingredientes anidados expandidos, base 1 persona. Merge `45cd64cb5b019f6067f7405264150ccfea479675`. HTTP público verificado.
-3. Prueba real de la usuaria en Android: título, fuente MiruRecetas, expansión, escalado y enlace directo funcionan; descripción no se importa; nombres de ingredientes generan duplicados. Fotos de menú no se inventaron.
-4. PR #71: tagline breve y JSON propio de Bring! con stock. Merge `ee4e76400eecb2d3675f5aedfc1efd6d912c11cd`. HTML y JSON públicos verificados.
-5. Prueba real de la usuaria: **JSON funciona con descripción, stock, escalado incluso de stock, iconos y enlace**. Capturas muestran 1 y 4 porciones con cantidades proporcionales. Esto acredita ese flujo en su Android, no todas las plataformas ni todos los ingredientes.
-6. PR #72: descripción en cinco líneas y variante con cantidades duplicadas/base 2. Merge `8dd572d58f56dcf4fccfff58493a503554c3622a`; ambas variantes JSON públicas verificadas.
-7. Resultado real comunicado por la usuaria a las 22:43 del 13/10/2026 en Android: Bring! conserva todo el texto del tagline pero elimina los saltos de línea originales; el ajuste visual de líneas depende del ancho. La variante base 2 reconoce 2 porciones y cantidades correctas (bacalao 800 g y huevos 4). Al bajar a 1 muestra bacalao 400 g, huevos 2 y yogur 1,5 unidades de 125 g. Las capturas muestran ajo 13,666667 dientes a 2 y 6,833333 a 1: no se aplica redondeo general a unidades de compra.
+Implementado y publicado: únicamente experimentos públicos en `experimentos/bring/`. Falta implementar: campos de presentación en INGREDIENTES, extracción permanente del grafo de preparaciones/ingredientes, contrato de compra reproducible para cada menú, imágenes de menú en carpeta canónica, generación integrada y acceso desde web/PWA. No presentar esas propuestas como funciones actuales.
 
-## Contrato técnico probado
+## 2. Fuentes de verdad y límites
 
-El JSON propio de Bring! no es JSON-LD de Schema.org. Incluye:
+- MENÚS → COMIDAS → COMIDA_ELEMENTOS; PREPARACIONES → PREPARACION_ELEMENTOS → INGREDIENTES. Ambas ramas acaban en el ID real del ingrediente.
+- Nutrición: fórmulas oficiales de Airtable y procedimientos de recetas vigentes. Una lista de compra no modifica cantidades culinarias, retención de aceite, ajustes de alcohol ni nutrientes.
+- Productos propios: `MiruRecetas/datos-productos/productos.json`, ficha exacta vinculada por referencia PROPIOS, contenido neto/escurrido y unidades por presentación verificados. Una equivalencia comercial no cambia la identidad nutricional.
+- Elaboración y apariencia: fichas culinarias actuales, incluidas bases internas y subpreparaciones. Imagen generada = representación editorial, no prueba documental de ingredientes ni fotografía de la usuaria.
+- Instantáneas experimentales: congeladas, NO sincronizadas ni aptas para copiar como los menús actuales sin releer sus fuentes. Septiembre se ensayó incompleto; octubre con datos completos. Main puede haber cambiado después.
+- El café de oficina se excluye de la compra por la decisión ya fijada. No excluir toda la leche, el café culinario u otras bebidas por semejanza de nombre. Viernes cena libre no aporta artículos.
+
+## 3. Algoritmo definitivo de compra
+
+1. Validar todos los enlaces y cantidades del menú seleccionado; incluir comida, cena y ambos vínculos de postre cuando existan (ingrediente/fruta Y preparación). No excluir el bowl por coexistir con fruta.
+2. Expandir recursivamente cada preparación. En cada nivel aplicar cantidad base × raciones solicitadas / raciones base. Detectar ciclos, vínculos ausentes y bases no positivas. Cada uso en otro día aporta de nuevo; no deduplicar una preparación antes de contar consumos.
+3. Desglosar también bases internas como Sofrito clásico aunque no tengan slug/ficha. Deben terminar como ingredientes, nunca como artículo de compra. No expandir un producto comercial compuesto como si fuera preparación culinaria.
+4. Agregar cantidades exclusivamente por `(ID único real de INGREDIENTES, unidad compatible comprobada)`. Inicialmente conservar unidad literal: g y ml permanecen separados. Nombres y marcas no son claves de cálculo. Dos IDs distintos no se suman aunque compartan nombre.
+5. Multiplicar totales exactos por las porciones elegidas en MiruRecetas antes de convertir presentaciones y redondear. En los experimentos el menú base es una persona y el selector admite enteros 1–20; este límite es de ensayo, no requisito universal de Bring!.
+6. Convertir únicamente mediante equivalencias verificadas: 330 ml gazpacho = 1 botella si la ficha declara ese formato; 75 g mini tortillas de 25 g = 3 tortillas; pan en rebanadas; yogur en vasitos. Conservar la unidad individual si corresponde, no sustituirla automáticamente por un paquete exterior.
+7. Si la cantidad en presentación es entera, conservarla. Si es fraccionaria, techo matemático DESPUÉS del escalado: `compra = ceil(cantidad_escalada / contenido_unidad)`.
+8. Si no existe presentación unitaria verificada y la cantidad está en g/ml: `compra = ceil(cantidad_escalada / 10) × 10`. Una decena exacta se conserva. Se aplica también a conservas genéricas sin formato, como anchoas; no limitarlo a una categoría llamada «frescos».
+9. Para mostrar «Necesidad real», cero o como máximo un decimal. Esa cifra es solo visual; no alimenta sumas, escalado, conversión ni redondeo. Preservar precisión exacta o aritmética decimal controlada internamente.
+
+Ejemplos comprobados: cebolla 117,5 g → 120 g; AOVE aproximadamente 58,7 ml → 60 ml; anchoas a 4 porciones 340/3 g → necesidad visible 113,3 g → compra 120 g; a 5, 425/3 g → 141,7 g → 150 g. Philadelphia 17,5 g a 1 persona y 52,5 g a 3 → 1 tarrina en ambos casos si el formato es 250 g. Redondear 1 persona primero y multiplicar después daría una compra diferente.
+
+No convertir aceite g/ml por equivalencia 1:1 ni densidad supuesta. La conversión de unidades distintas queda para otro encargo. Equivalencias de huevo/diente requieren respaldo específico: los experimentos usan huevo 50 g comestibles/unidad; septiembre ajo 3 g/diente, pero octubre mantiene gramos porque las recetas indican dientes de 2,7 y 3 g. No generalizar esos tamaños.
+
+## 4. Despensa y cantidades desconocidas
+
+`stock: true` significa necesario para cocinar pero probablemente disponible en casa, NO prescindible culinariamente. Bring! lo presenta en su apartado de despensa/«Probablemente ya tienes».
+
+Siempre despensa, mediante identidad explícita y nunca búsqueda de palabras:
+
+| Ingrediente probado | ID Airtable observado |
+|---|---|
+| Aceite de oliva virgen extra | `rec4QWbZX5KJIhQyW` |
+| Miel | `recGpy51QX8MYe0j9` |
+| Tahini | `rechMDQXS4hW2JBYg` |
+| Salsa de soja | `recpst98trSqZIPSe` |
+
+Los cuatro son regla de producto para futuros registros equivalentes: ampliar el mapa con el ID real verificado, sin inferir por nombre ni fusionar registros. Comino `recZmy5VtKavv2D9U` y pimienta `rec70jSFploNVyMCF` cuantificados son despensa en octubre; sal y condimentos no cuantificados también.
+
+Condimentos al gusto sin peso: incluir en exportación como stock, sin asignar cero ni aportes nutricionales. Omitir `spec` si no hay cantidad ni característica útil. Si hay descripción verificada, puede incluirse sin inventar número, pero ese caso no se ensayó en las pruebas finales.
+
+Los condimentos literales sin vínculo Airtable presentes en las fichas web se conservaron como checklist no numérico, con origen auditable. No inventar IDs ni agrupar sus cantidades por nombre. Si un literal exacto ya existe como artículo cuantificado de despensa, las pruebas evitan repetir la misma etiqueta conservando los orígenes sin cantidad; no trasladar esta excepción a fusiones numéricas generales.
+
+## 5. Nombres, características y dos identidades distintas
+
+Campo propuesto en INGREDIENTES: `Nombre de visualización`; complementarlo con `Descripción de compra`. Conservar `Nombre` técnico y sus referencias. No hace falta un segundo nombre específico Bring! salvo una excepción demostrada posteriormente.
+
+El nombre corto determina reconocimiento y presentación en Bring!; las características van tras la cantidad, separadas por comas. Ejemplos reales de prueba 7:
+
+| ID | itemId | spec a 3 porciones |
+|---|---|---|
+| `recuumabv4qaMUXNE` | Garbanzos | `270 g, cocidos, sin sal` |
+| `recQJX7aiVeoHJvep` | Garbanzos | `90 g, secos` |
+| `recSPOXZkbn9PSbHI` | Huevos | `6 huevos` |
+| `recPmxLD5hBc4rvSM` | Higos | `300 g, frescos` |
+| `recBse4SOxBOPwYEQ` | Yogur | `5 vasitos, griego natural, DIA Fidias` |
+
+Ambos Garbanzos son artículos independientes en la receta importada. Al añadirlos a la cesta, Bring! los reúne como «Garbanzos» con `270 g, cocidos, sin sal + 90 g, secos`. Concatena descripciones: NO demuestra suma aritmética ni conversión entre seco/cocido. MiruRecetas mantiene cantidades y IDs separados hasta exportar.
+
+El ingrediente genérico cocido sin sal usado en octubre NO acredita un envase en conserva. No llamarlo «conserva» ni inventar formato comercial; ese texto pertenecía a la receta ficticia de la usuaria.
+
+No reintroducir cantidades reales secundarias entre paréntesis o tras punto y coma: fracasaron como texto escalable en prueba 4. El patrón validado es cantidad de compra inicial + características textuales por comas. La necesidad real queda en la página. No poner números secundarios innecesarios en la descripción.
+
+La descripción de compra puede conservar marca, estado y variedad para comprar. La ficha culinaria sigue sin marcas en campos visibles y con sus reglas editoriales (AOVE, Sal, presentaciones como Tomate cherry). No insertar auditorías en notas. El campo compartido no borra los matices del ingrediente en una receta: conservar las aclaraciones existentes de cada uso, sin convertirlas en otra clave de suma.
+
+## 6. Contrato Bring! validado
+
+JSON propio, distinto de JSON-LD/Schema.org:
 
 ```json
 {
   "author": "MiruRecetas",
-  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/10-1/",
-  "name": "Menú 1 - Octubre",
-  "tagline": "Menú de octubre de lunes a viernes para una persona.",
-  "yield": "1",
+  "name": "Octubre · Menú 1 · 3 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "yield": "3",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-8-10-1/?porciones=3",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-8-10-1/menu-octubre-1.png",
   "items": [
-    {"itemId": "Bacalao", "spec": "400 g", "stock": false},
+    {"itemId": "Garbanzos", "spec": "270 g, cocidos, sin sal", "stock": false},
+    {"itemId": "Garbanzos", "spec": "90 g, secos", "stock": false},
     {"itemId": "Sal", "stock": true}
   ]
 }
 ```
 
-Importación directa mediante enlace, sin necesidad de widget externo:
-`https://api.getbring.com/rest/bringrecipes/deeplink?url=URL_JSON_CODIFICADA&source=web&baseQuantity=1&requestedQuantity=1`.
+Ejemplo de contrato, no un menú completo ni un fichero listo para publicar como datos reales. En producción cambiar URLs solo al implementar las rutas reales.
 
-Para cantidades desconocidas se omite `spec`, sin inventar ceros. Stock significa **necesario para cocinar, pero probablemente ya lo tienes**, nunca ingrediente prescindible. Bring! permite desmarcar artículos antes de añadirlos a la compra.
+Enlace probado: `https://api.getbring.com/rest/bringrecipes/deeplink?url=URL_JSON_CODIFICADA&source=web&baseQuantity=N&requestedQuantity=N` para un JSON YA calculado para N y `yield: "N"`. No volver a multiplicarlo mediante parámetros. `linkOutUrl` devuelve a la página y conserva porciones.
 
-La documentación antigua de Bring! desaconseja JSON por limitaciones de iconos y cantidades solicitadas. El ensayo real demuestra que en este caso el selector dentro de Android sí escala y hay iconos. No extrapolar ese resultado al escalado inicial por parámetros ni afirmar que todas las etiquetas tienen icono de catálogo: AOVE conserva un icono genérico.
+JSON e imagen deben ser públicos y accesibles sin sesión. El importador remoto no puede leer estado solo local o contenido que existe únicamente después de ejecutar JS. Publicar JSON estáticos válidos o una solución equivalente realmente accesible; no poner tokens Airtable/GitHub en navegador ni payload.
 
-## Archivos de comparación
+La usuaria confirma escalado dentro de Bring! con características por comas. Es correcto como multiplicación de la compra ya redondeada; no recalcula necesidades exactas ni envases mínimos. Procedimiento principal: cambiar personas en nuestra página y hacer nueva importación. Un favorito viejo conserva datos viejos; siempre nueva importación al comprobar cambios.
 
-- `bring-v2.json`: frase breve, base 1, cantidades exactas; control validado por la usuaria.
-- `bring-v3.json`: mismas cantidades y stock de v2; cambia únicamente tagline a cinco líneas con las comidas reales del menú.
-- `bring-v3-2.json`: mismo tagline multilínea y artículos; cantidades conocidas multiplicadas por 2 y `yield: "2"`. Enlace con `baseQuantity=2&requestedQuantity=2`; no volver a duplicarlas en el enlace.
-- HTML conserva control mediante Schema.org y microdato `tagline`. Compartir la URL HTML no es lo mismo que importar el JSON; stock explícito está en JSON.
+Tagline: Bring! mantiene el texto, elimina saltos originales y ajusta líneas visualmente. No depender de saltos. No atribuir redondeo universal de unidades al importador. No se valida iOS, todas las versiones ni todos los nombres/iconos del catálogo.
 
-Descripción de prueba 3, con caracteres de salto de línea reales en el texto JSON, serializados como `\n`:
+## 7. Imagen: contrato y validación final
 
-```text
-LUNES: Bacalao a la vizcaína con patatas panadera
-MARTES: Carrilleras al vino con boniato al horno
-MIÉRCOLES: Bacalao a la vizcaína con patatas panadera
-JUEVES: Canelones de carrilleras
-VIERNES: Wok de gambones y pisto
-```
+Prueba 8 usa el PNG ORIGINAL aportado: 1254 × 1254, sin editar, con SHA-256 `c7952019f9e9b24a3c1bba2f376e5b354a91c518464b2e85d6276a48252c62c7`.
 
-Prueba 3: texto completo y base 2 validados por la usuaria, pero los saltos explícitos no se conservan. El texto se presenta como un párrafo. Para futuras descripciones puede probarse un separador visible como « · » o « | » entre días; es una propuesta, no un cambio implementado.
+Ruta publicada: `experimentos/bring/prueba-8-10-1/menu-octubre-1.png`. La página lo muestra y los 20 payloads contienen la misma `imageUrl` absoluta. HTTP 200, MIME PNG y bytes idénticos verificados; captura física posterior confirma portada en Bring!. No implica que la imagen sea una representación culinaria exacta de cada plato: se aprobó para ensayar imagen y estilo.
 
-**No atribuir redondeo especial de huevos a Bring! con esta evidencia:** 4 huevos × 1/2 = 2 huevos, sin redondeo. Para distinguir una regla propia sería necesaria una prueba con resultado fraccionario, por ejemplo 3 huevos para 2 porciones al pasar a 1. No se ha ejecutado ni autorizado esa prueba. Ajo fraccionario y 1,5 yogures demuestran que no hay redondeo universal a unidades/envases. Sigue pendiente calcular redondeo de compra en MiruRecetas si la usuaria lo solicita.
+Para imágenes futuras: guía específica de imágenes de menú. Ruta NUEVA acordada documentalmente para implementar: `imagenes/menus/MM-N.webp`, 1:1, referencia 1024 × 1024, cenital de platos reales sobre una única superficie, cálido/editorial. No modificar fotos de recetas ni crear variantes en `imagenes/batchcooking/`. La carpeta canónica no está implementada por este encargo.
 
-Las pruebas reales no acreditan iOS ni todos los ingredientes. No usar un favorito antiguo para valorar cambios posteriores: iniciar una importación nueva del enlace correspondiente.
+## 8. Expediente de las ocho pruebas
 
-## Cálculo actual y límites
+| Prueba / publicación | Objetivo y resultado real | Decisión |
+|---|---|---|
+| 1 · PR #70 · octubre | HTML de menú como receta; expansión y enlace funcionaron; descripción ausente y nombres problemáticos | Probar JSON propio |
+| 2 · PR #71 | JSON importa título, autor, tagline, ingredientes, stock, iconos y enlace; escalado también de stock confirmado en Android | Usar contrato JSON |
+| 3 · PR #72; documentación #73 | Tagline multilínea pierde saltos; texto completo se conserva. Base 2 correcta; al bajar a 1: bacalao 400 g, huevos 2, yogur 1,5 unidades. Ajo fraccionario | No depender de saltos ni redondeo de Bring! |
+| 4 · PR #76 · septiembre incompleto | Identidad Airtable, recursión y compra por envases. 4A paréntesis, 4B punto y coma, 4C fracción + necesidad: cifras secundarias NO escalan. Usuaria rechaza las tres | Descartar esas anotaciones para cantidades reales |
+| 5 · PR #77; corrección #78 | Selector antes de importar, envases redondeados tras escalar, AOVE stock. Usuaria confirma procedimiento; detecta anchoas sin decena y necesidad con seis decimales | Corregir toda salida g/ml sin presentación y máximo un decimal visible |
+| 6 · PR #78 · octubre; despensa #79 | Menú completo con postres. Importación a 1 y 3 porciones confirmada. Miel/tahini/soja pasan a stock por IDs | Adoptar reglas de cantidades y despensa |
+| 7 · PR #80 | Nombres sencillos y características por comas. Garbanzos independientes en receta y combinados en cesta; huevos/higos con iconos correctos, yogur/despensa correctos, escalado web y Bring! confirmado | Adoptar nombre corto + descripción; NO fusionar cálculos por nombre |
+| 8 · PR #81 | Página con imagen y imageUrl. HTTP/binario verificados; usuaria confirma imagen visible en Bring! | Adoptar imagen única de menú para página y receta importada |
 
-- Se expanden preparaciones recursivamente por `raciones utilizadas / raciones base`, con detección de ciclos y referencias ausentes. Se cuentan usos repetidos en varios días; no se deduplica una preparación culinaria para la lista de compra.
-- Se incluyen comidas, cenas y postres registrados. Viernes noche libre no añade ingredientes. El café de oficina está excluido sin sustitución por leche; el resto de leche usado al cocinar permanece.
-- Se suman nombres exactos normalizados y unidades compatibles. Ajo singular/plural y anotación de 2,7 g se unifican como dientes. No hay equivalencias automáticas de productos ni conversiones g/ml.
-- Se mantienen separados los aportes conocidos y «al gusto»: de ahí duplicados de sal y pimienta. La agrupación final por identidad está pendiente.
-- Stock experimental: Sal, Pimienta negra, Comino en polvo, Laurel, Nuez moscada, Romero, Tomillo. Los demás reciben false. No se ha deducido automáticamente una despensa universal.
-- No se añadieron fotografías ficticias, tiempos ni nutrición de menú como receta. Tampoco cuenta de usuario, carrito, backend ni sincronización de dispositivos.
+PR #74 (etiquetas culinarias) y #75 (maestro recetas) no fueron pruebas Bring!. No incorporarlas como tales.
 
-## Decisiones para fases futuras, todavía NO implementadas
+Merges comprobados:
 
-1. Agrupar por ID de ingrediente vinculado en Airtable. Las fichas comerciales de productos propios contienen formato de compra, peso escurrido y unidades/pack según la usuaria. Leerlas cuando se autorice; no inventar tamaños de envase.
-2. Los ingredientes de recetas GitHub no siempre incluyen IDs, aunque los componentes de menús tienen `referencia_id`. Hace falta trasladar la identidad con un exportador o mapa verificable; no agrupar por intuición de nombres. Para registros distintos equivalentes, definir equivalencia explícita de compra.
-3. AOVE debería expresarse siempre en ml. La usuaria prevé pedir al exportador de recetas que actualice los g desde Airtable. No convertir g a ml 1:1 ni corregir datos canónicos desde este ensayo. Hoy AOVE 55 ml, AOVE 12,5 g y Aceite de oliva virgen extra 15 ml siguen separados.
-4. Redondear después de sumar y escalar. Unidades/envases enteros para compra, pesos/volúmenes con precisión práctica; preservar las cantidades culinarias y nutricionales exactas.
-5. La usuaria acepta redondeo completo porque el menú tiene objetivo energético fijo y quizá no necesita escalado Bring. Alternativa: elegir personas en MiruRecetas y calcular/redondear antes de exportar con rendimiento correcto. No implementado; tampoco un selector arbitrario en prueba 3.
-6. Al redondear la base y escalar luego en Bring!, puede comprarse de más: 1,2 yogures → 2 para una persona; multiplicarlos por 2 da 4, aunque el redondeo de 2,4 sería 3. Documentar ese comportamiento si se elige esa vía.
-7. Unificar sal/pimienta con cantidad y al gusto, conservando ambas informaciones sin asignar cantidad falsa. Excluir agua de compra o ampliar stock no está autorizado todavía.
-8. Descripción con todas las ingestas, estilo final, botones en recetas/semana y publicación permanente requieren siguiente encargo. Prueba 3 solo contiene comidas por día.
-9. Programa de recipe partners / Inspiration Stream es distinto del botón técnico: no se ha solicitado adhesión ni demostrado tráfico orgánico o elegibilidad en España.
+| PR | SHA de merge |
+|---|---|
+| 70 | `45cd64cb5b019f6067f7405264150ccfea479675` |
+| 71 | `ee4e76400eecb2d3675f5aedfc1efd6d912c11cd` |
+| 72 | `8dd572d58f56dcf4fccfff58493a503554c3622a` |
+| 73 | `e31b6c1763a4a432ce98182cd4d890363d2a0b48` |
+| 76 | `3ce807e1d2afbdd926b580f4490e16cf21161ce9` |
+| 77 | `02b91249cbb9a4049f1fcd92d37d97774108e403` |
+| 78 | `6ef1b79ffc722f4bec735bc053aa7f90267f4859` |
+| 79 | `66b9da5ee19d60ea870a66f649d8d3b2dfbc2675` |
+| 80 | `ed85534c6605e868e97138e6e68cd28bb5a31917` |
+| 81 | `97bd8fcfa197242e7411bdad2b3e482a5b42aec2` |
 
-## Comprobaciones y retirada
+URLs de ensayo bajo `https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/`: `10-1/` (1–3), `prueba-4-09-1/`, `prueba-5-09-1/`, `prueba-6-10-1/`, `prueba-7-10-1/`, `prueba-8-10-1/`.
 
-```sh
-python experimentos/bring/generar.py
-python experimentos/bring/generar.py --check
-python -m unittest discover -s experimentos/bring -p 'test_*.py' -v
-```
+El prototipo 4–8 incluye snapshot, auditoría exacta, generador y tests. 5–8 incluyen vista y 20 exports. Prueba 6: snapshot culinario de `02b91249cbb9a4049f1fcd92d37d97774108e403`, catálogo comercial blob `193f1ba3b51a4b7941e3120ec30ffcca16d936a0`; 54 filas agregadas de ingredientes cuantificados. La salida final contiene 59 artículos (48 compra y 11 despensa), con los garbanzos como dos artículos. No interpretar la unión posterior de cesta como un ingrediente menos en el cálculo.
 
-Esperar Validar web y QA navegador MiruRecetas en verde antes de fusionar. Pages sirve esta carpeta desde main; no requiere cambiar workflows ni regenerar producción. Comparar HTTP público con los archivos locales. CI existente valida regresión de producción; no acredita la UI de Bring! ni incluye automáticamente la página experimental en su navegador.
+Verificación técnica documentada: tests locales de recursión, identidad/unidad, ciclos, paquetes escurridos, redondeos y reproducibilidad; selector público comprobado en intervenciones previas; CI Validar web/QA navegador y Pages para cada PR final. Prueba 6: 6 tests tras cambio de stock; prueba 7: 2 tests y controles de los 20 exports; prueba 8: 3 tests e integridad PNG. HTTP final de prueba 7: 25 archivos; prueba 8: 24, incluidos PNG y 20 exports. No atribuir ejecución de tests experimentales al CI existente, que acredita regresión de producción, ni llamar a HTTP prueba física.
 
-Eliminar exclusivamente `experimentos/bring/` mediante rama y PR. Comprobar 404 público y continuidad de producción. Favoritos existentes en Bring! no se eliminan con la web; tampoco se purga almacenamiento del usuario. Ningún archivo de esta carpeta se usa como fuente en producción.
+## 9. Plan de implementación y coordinación
 
-## Fuentes oficiales consultadas
+1. Airtable: confirmar esquema actual; crear/reutilizar campos de presentación, poblar sin tocar cantidades/nutrientes/IDs; entregar nombres e IDs de campos, versión y correspondencias. No crear duplicados.
+2. Exportador/productos: extraer grafo y formatos en entorno autenticado; validar referencias y producir contrato estático por ID. No depender de slugs/nombres como identidad ni de acceso Airtable en cliente.
+3. Imágenes: generar una imagen fiel por menú real publicable; guardar y verificar binario en ruta canónica; registrar menú/SHA de fuentes. Coordinar con implementación para URL, sin editar nutrientes o recetas.
+4. Implementación/mantenimiento: convertir fuente de compra en página por menú, selector, tabla y payloads; integrar acceso desde menú web/PWA sin reemplazar ficha de receta ni PWA. Revisar caché/rutas y flujo desde modo standalone.
+5. Validar localmente, CI, publicación, HTTP, navegador y pruebas físicas que efectivamente se ejecuten. Registrar rollback y resultado.
 
-- https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration
-- https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration/alternative-button-integration
-- https://www.getbring.com/en/recipe-partners
+El orden permite avanzar diseño/tests mientras se esperan metadatos, pero no publicar cantidades o envases inventados para desbloquear dependencias. Resolver incompatibilidades de contrato antes de publicarlas; conservar fallback editorial cuando falte una etiqueta, con diagnóstico sin exponer detalles técnicos al usuario final.
 
-El JSON documenta `tagline`, `linkOutUrl`, `items`, `itemId`, `spec` y `stock`. No suponer que son propiedades Schema.org equivalentes. Mantener por separado evidencia documental, verificación automatizada y resultados reales de la usuaria.
+## 10. Condiciones de aceptación
+
+- Totales y trazabilidad por ID exactos, recursión completa sin doble conteo, ambos postres presentes; unidades incompatibles separadas.
+- Necesidad real ≤1 decimal visible, cantidad exportada calculada tras escalar, formatos verificados y stock estable.
+- Nombres sencillos sin marcas en fichas culinarias; marcas útiles solo en descripción de compra. Diferentes IDs pueden compartir itemId conservando specs separados.
+- Cada selección publicable tiene JSON público con yield correcto y parámetros coherentes; imagen pública real si declarada; sin secretos.
+- UI integrada con diseño y accesibilidad actuales, móvil/tablet/escritorio, selección coherente y exportación inválida bloqueada. Falta de datos o red no simula exportación correcta.
+- PWA sigue siendo la misma publicación. Importar requiere red y acceso remoto al JSON; no prometer Bring! offline ni almacenamiento de cesta propio.
+- No modificar macros, etiquetas culinarias, fotos de recetas, calendario, modo cocina o datos ajenos.
+
+## 11. Retirada y mantenimiento
+
+Experimentos independientes: no tienen registro SW propio ni navegación de producción, pero comparten origen/scope; el SW existente puede guardar una visita. No borrar cachés o favoritos para retirar pruebas.
+
+Tras implementar, no eliminar experimentos por iniciativa propia: conservarlos como controles hasta encargo de retirada. Borrar únicamente rutas acordadas mediante PR y verificar 404 y continuidad de producción. Favoritos Bring! no se borran con la web.
+
+Documentar por cambio fecha, main SHA, fuentes, PR, suites reales, Pages/HTTP, observación física y limitaciones. No afirmar sincronización automática con Airtable mientras no exista y esté configurada. El maestro es el contrato; el código y los datos actuales describen el estado implementado.
+
+## 12. Guías y fuentes
+
+- Imágenes de menú: `docs/bring/IMAGENES-MENUS.md`.
+- Cambios Airtable: `docs/bring/AIRTABLE-INGREDIENTES.md`.
+- Exportación y formatos: `docs/bring/EXPORTADOR-PRODUCTOS.md`.
+- Implementación y mantenimiento: `docs/bring/IMPLEMENTACION-MANTENIMIENTO.md`.
+- Prompts: `docs/bring/PROMPTS-AGENTES.md`.
+- Guía oficial: https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration/alternative-button-integration (ejemplo imageUrl); https://sites.google.com/getbring.com/bring-import-dev-guide/web-to-app-integration .
+
+No se ha solicitado adhesión a recipe partners/Inspiration Stream. No añadir cuentas, backend, tiendas, analítica, publicidad ni sincronización privada como parte de esta integración.

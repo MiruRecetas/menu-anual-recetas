@@ -44,3 +44,11 @@ Toda modificación de rutas, generador, alojamiento, assets o cabeceras requiere
 No basta borrar sw.js. `scripts/pwa-rollback.js` contiene un trabajador corrector, probado en fixture, sin interceptación de fetch, que activa inmediatamente por emergencia, elimina **solo** cachés `mirurecetas-pwa-*` y desregistra su registro. Las pestañas abiertas pueden conservar controlador hasta cerrarse/recargarse; no se fuerzan recargas de cocina.
 
 En rama/PR de recuperación, hacer que `scripts/pwa.py:build` escriba esos bytes bajo **la misma URL sw.js**, desactivar el registro en `assets/pwa.js`, regenerar y publicar conjuntamente; mantener el corrector públicamente disponible para instalaciones antiguas. Revalidar y verificar HTTP del corrector antes de declarar recuperación. No borrar localStorage/IndexedDB ni cachés ajenas. Para reactivar posteriormente, restaurar el registro y generación normal con nueva revisión y probar actualización nuevamente.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Seguir con misma publicación, manifest, iconos, scope y actualización consentida. Revisar rutas/caché/tamaños de página y JSON nuevos y bloquear promesas de importación offline: el importador remoto necesita red y JSON público. PNG de ensayo 8 >2 MiB no acredita cacheabilidad dentro de límites PWA. Validación de Bring! no es instalación/offline real de PWA.

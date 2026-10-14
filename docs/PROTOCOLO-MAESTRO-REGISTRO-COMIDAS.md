@@ -63,3 +63,11 @@ Menú Airtable `recavOScUQHdfVwro`, fuente `datos/menus/09-4.json`. Fue construi
 - Actualizar JSON del menú afectado y referencias reales a slugs de recetas, sin inventar enlaces.
 - Validar datos y revisar generación y disponibilidad; reportar exactamente qué se comprobó.
 - Comunicar resumen de altas, nutrición, modificaciones y lo que permanece pendiente; no solicitar permiso para proseguir con operaciones ordinarias.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+La compra reúne ingredientes de todas las ingestas registradas, ambos postres y preparaciones recursivas. Los grupos visuales de COMIDA_ELEMENTOS no son nuevas entidades nutricionales ni claves de sumas de compra. Preservar ID, raciones, ingredientes y estados oficiales.

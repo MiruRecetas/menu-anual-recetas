@@ -1,5 +1,11 @@
 # Prueba 4 — Septiembre · Menú 1
 
+## Estado final de evidencia · 14/10/2026
+
+La usuaria rechazó las tres variantes 4A/4B/4C: Bring! escalaba la cantidad inicial, pero las cantidades secundarias permanecían fijas. Se adoptó selector previo y necesidad real solo en página desde prueba 5. No reutilizar estos formatos como solución final.
+
+Referencia vigente: [Maestro Bring! v2.0](../../../docs/bring/MAESTRO.md) y [guías de implementación](../../../docs/bring/README.md). El contenido inferior conserva el protocolo y estado en la fecha del ensayo; los pendientes históricos quedan actualizados por este apartado. No se cambian aquí generadores, snapshots ni payloads.
+
 Autorizada el 14/10/2026: experimentación pública aislada con identidades Airtable, expansión recursiva, stock y unidades comerciales. URL: https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-4-09-1/
 
 ## Contrato y fuente
@@ -51,3 +57,4 @@ No se cargan manifiesto, assets PWA ni service worker. La carpeta comparte orige
 Eliminar exclusivamente `experimentos/bring/prueba-4-09-1/` mediante rama y PR; comprobar 404 público y continuidad de producción. Los favoritos guardados en Bring! permanecen en la app.
 
 Estado inicial: prueba 4 física en Bring! pendiente; no confundir publicación HTTP ni tests automáticos con resultados reales.
+

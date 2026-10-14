@@ -1,5 +1,11 @@
 # Prueba 6 — Octubre · Menú 1
 
+## Estado final de evidencia · 14/10/2026
+
+La usuaria confirmó importación de octubre a 1 y 3 porciones. PR #79 aplica miel, tahini y salsa de soja como stock por ID. La prueba 7 confirmó físicamente nombres, descripciones y despensa; la prueba 8 añadió imagen validada.
+
+Referencia vigente: [Maestro Bring! v2.0](../../../docs/bring/MAESTRO.md) y [guías de implementación](../../../docs/bring/README.md). El contenido inferior conserva el protocolo y estado en la fecha del ensayo; los pendientes históricos quedan actualizados por este apartado. No se cambian aquí generadores, snapshots ni payloads.
+
 URL: https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-6-10-1/
 
 Autorizada el 14/10/2026 para contrastar con octubre el procedimiento adoptado después de prueba 5. Selector autónomo 1–20 porciones; no modifica registros, Airtable, recetas, menús, PWA, workflows o pantallas de producción. Todos los archivos están dentro de esta carpeta y pueden retirarse conjuntamente.
@@ -43,3 +49,4 @@ python -m unittest discover -s experimentos/bring/prueba-6-10-1 -p 'test_*.py' -
 Tests verifican sumas de control (400 g bacalao/carrilleras/patata; 2 huevos), expansión del bowl y bases internas, tamaños escurridos, escalado antes de redondear, necesidad visual de un decimal, stock, identidad y unidades, ciclos e inputs. CI existente acredita regresión de web/PWA, no el importador Bring! ni la página experimental automáticamente. Verificar selector público, HTTP y JSON tras PR/CI/merge.
 
 No se cargan recursos, almacenamiento, manifiesto ni registro service worker compartidos. La prueba comparte origen Pages; el service worker existente podría cachear visitas dentro de su ámbito. No se cambia ni purga almacenamiento. Retirar eliminando solo esta carpeta mediante rama/PR y comprobar 404 y continuidad de producción; favoritos Bring! permanecen.
+

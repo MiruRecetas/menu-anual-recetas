@@ -1,5 +1,11 @@
 # Prueba 5 — Septiembre · Menú 1
 
+## Estado final de evidencia · 14/10/2026
+
+La usuaria confirmó el procedimiento de compra y selector previo. La PR #78 corrigió anchoas (113,3 g visibles / 120 g exportados a 4 porciones) y máximo un decimal visible. Octubre se contrastó después en pruebas 6–8.
+
+Referencia vigente: [Maestro Bring! v2.0](../../../docs/bring/MAESTRO.md) y [guías de implementación](../../../docs/bring/README.md). El contenido inferior conserva el protocolo y estado en la fecha del ensayo; los pendientes históricos quedan actualizados por este apartado. No se cambian aquí generadores, snapshots ni payloads.
+
 URL: https://mirurecetas.github.io/menu-anual-recetas/experimentos/bring/prueba-5-09-1/
 
 Autorizada el 14/10/2026. Página autónoma de pruebas con selector de 1 a 20 porciones y JSON públicos estáticos generados para cada selección. No se actualiza producción, Airtable ni PWA.
@@ -50,3 +56,4 @@ Esperar CI «Validar web» y «QA navegador MiruRecetas» antes de fusionar la P
 No hay CSS/JS, manifiesto, registro service worker ni almacenamiento compartidos de producción. Sigue siendo el mismo origen Pages: el service worker existente puede cachear una visita dentro de su ámbito; no se modifica ni purga su caché. La cantidad de aceite de tortilla sigue siendo el retenido estimado del cálculo origen, no volumen inicial de fritura.
 
 Retirada: eliminar únicamente esta carpeta mediante rama/PR, verificar 404 público y continuidad de producción. Los favoritos en Bring! permanecen en la app.
+

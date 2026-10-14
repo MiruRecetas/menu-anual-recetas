@@ -50,3 +50,11 @@ Cada ejecución debe leer `main` y el documento técnico vigente, inventariar to
 ### Cierre verificable
 
 Separar «generada», «subida», «enlazada», «desplegada» y «visible». Validar WebP real sRGB, 1:1, referencia 1024 × 1024 y objetivo <350 KB; la calidad de ficha prevalece sobre compresión extrema. Comprobar todas las URLs públicas y uso compartido en ficha/recetario/Batch cooking cuando corresponda. La revisión HTTP o HTML no equivale a una inspección visual: declarar expresamente escritorio o móvil no comprobados. Entregar enlaces reales y pendientes concretos.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Nueva guía [Imágenes de menús](bring/IMAGENES-MENUS.md): una imagen 1:1 cenital de platos reales por menú en imagenes/menus/MM-N.webp. Es un uso diferente de la fotografía de receta compartida entre ficha/recetario/Batch cooking. No crear imágenes independientes en imagenes/batchcooking/ ni modificar fotografías válidas. No cambiar automatizaciones de recetas para generar menús.
