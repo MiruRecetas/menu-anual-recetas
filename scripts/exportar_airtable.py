@@ -56,13 +56,13 @@ def single_link(row,field,optional=False):
     link=links[0]
     return link["id"] if isinstance(link,dict) else link
 
-def retrieve(table,token):
+def retrieve(table,token,table_id=None):
     records=[]
     offset=None
     while True:
         args={"pageSize":100}
         if offset:args["offset"]=offset
-        url="https://api.airtable.com/v0/"+BASE+"/"+TABLES[table]+"?"+urllib.parse.urlencode(args)
+        url="https://api.airtable.com/v0/"+BASE+"/"+(table_id or TABLES[table])+"?"+urllib.parse.urlencode(args)
         req=urllib.request.Request(url,headers={"Authorization":"Bearer "+token})
         with urllib.request.urlopen(req,timeout=25) as response:
             data=json.load(response)

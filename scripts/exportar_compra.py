@@ -8,10 +8,11 @@ import os
 import re
 from pathlib import Path
 from compra import positive, digest, expand_graph, ids, one, scalar, DERIVED
-from exportar_airtable import retrieve, TABLES
+from exportar_airtable import retrieve as menu_retrieve, TABLES as MENU_TABLES
 
 ROOT=Path(__file__).resolve().parents[1]
-TABLES['preparacion_elementos']='tbl2FpmTvBgbzjZ1T'
+TABLES={**MENU_TABLES,'preparacion_elementos':'tbl2FpmTvBgbzjZ1T'}
+def retrieve(table,token):return menu_retrieve(table,token,TABLES[table])
 FIELDS={
  'menus':['Menú','Mes','Número','Estado menú']+[d+' · '+s for d in ('Lunes','Martes','Miércoles','Jueves','Viernes') for s in ('Comida','Cena','Desayuno','Postre','Postre cantidad','Postre unidad','Postre preparación','Postre raciones','Estado postre')],
  'comidas':['Nombre','COMIDA_ELEMENTOS','Estado cálculo'],
