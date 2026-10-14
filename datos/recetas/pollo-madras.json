@@ -29,7 +29,7 @@
     },
     {
       "nombre": "Pechuga de pollo",
-      "cantidad": 300,
+      "cantidad": 500,
       "unidad": "g"
     },
     {
@@ -65,9 +65,9 @@
     "Añadir el tomate frito y cocinar al mínimo hasta que reduzca, unos 20 minutos. Sazonar con sal al gusto."
   ],
   "nutricion": {
-    "kcal": 361.58,
-    "proteinas_g": 25.65,
+    "kcal": 441.58,
+    "proteinas_g": 40.65,
     "hidratos_g": 18.39,
-    "grasas_g": 19.21
+    "grasas_g": 20.96
   }
 }
