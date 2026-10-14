@@ -1,5 +1,8 @@
 # MiruRecetas — Guía de imágenes de menús para Bring!
 
+> **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
+
+
 Versión 1.0 · 14/10/2026. Complementa el Maestro Bring! v2.0 y los protocolos de imágenes de recetas. Este documento prepara el encargo; no acredita generación ni publicación de las futuras imágenes.
 
 ## Misión y diferencia respecto de fotos de recetas

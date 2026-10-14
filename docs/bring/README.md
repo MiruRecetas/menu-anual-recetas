@@ -1,5 +1,8 @@
 # Bring! — documentación de implementación
 
+> **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
+
+
 Estado al 14/10/2026: ensayos 1–8 documentados y formato final validado físicamente en Android. Implementación permanente pendiente; actualización actual exclusivamente documental.
 
 - [Maestro v2.0: reglas, evidencia de todas las pruebas y plan](MAESTRO.md).

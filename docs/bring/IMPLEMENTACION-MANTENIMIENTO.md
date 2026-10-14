@@ -1,5 +1,8 @@
 # MiruRecetas — Guía del responsable de implementación y mantenimiento de compra Bring!
 
+> **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
+
+
 Versión 1.0 · 14/10/2026. Documento de ejecución para el agente que implemente la página de compra por menú y mantenga la integración. Leer íntegramente el Maestro Bring! v2.0 y las guías de Airtable, exportación/productos e imágenes de menú.
 
 ## Mandato y punto de partida
