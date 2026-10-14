@@ -25,7 +25,7 @@
     },
     {
       "nombre": "AOVE retenido tras la fritura (estimado, aproximadamente)",
-      "cantidad": 54,
+      "cantidad": 36,
       "unidad": "g"
     },
     {
@@ -41,9 +41,9 @@
     "Escurrir bien y añadir la miel natural de abeja al servir."
   ],
   "nutricion": {
-    "kcal": 627.18,
+    "kcal": 471.8,
     "proteinas_g": 3.48,
     "hidratos_g": 33.42,
-    "grasas_g": 54.17
+    "grasas_g": 36.6
   }
 }
