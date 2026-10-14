@@ -1,0 +1,4493 @@
+{
+  "schema_version": 1,
+  "estado": "completo",
+  "pendientes": [],
+  "menu_key": "09-3",
+  "titulo": "Septiembre · Menú 3",
+  "porciones_base": 1,
+  "imagen": "imagenes/menus/09-3.webp",
+  "fuentes": {
+    "menu_sha256": "7af14a5444bf559ec4296ff2cd9e7c2cf537a3bed47541c53c1f327ef4d7cba1",
+    "recetas_sha256": {
+      "salchichas-al-vino": "a79b804b4bd780d3e197bcc536f4c75d775ed78502056f90ae341b481130ae09",
+      "tacos-de-gambon": "e77647381394feebcc042dd85a41441f0d49c4ac838df712a74c6d429ac509f9",
+      "poke-de-salmon": "ec36b8f77c9b5e04d8f2b3da5b1b612c8ce3f006d73f5ac993748d84fc18f308",
+      "pisto": "fb3e6eb217717968b1af09615eb13e6158fee4d3432efab5d4938c6773e16527",
+      "huevos-rotos": "6b1b952d108563cbf36658e8f0aca34be2b355fc9092c92aebfb8852dcd16297",
+      "albondigas-en-salsa-rubia": "fdccf71e8f3ca4d7a266cba2ab85e4f5ec255c8bd1bb285ba8d91f9f3490c3f4",
+      "pure-de-calabaza-y-calabacin": "354d431794c21b9bd0c449463075b177762c0c34c4ae5423c4ab68fbd4cc4dfc",
+      "tzatziki": "cc60c3c078d690f4b607a16a88c682abff330473f20c59a2fe3a5beac974d66e"
+    },
+    "catalogo_blob": "d5e7abcf219c30ad3e6f55cc855b0c89c59f3afd",
+    "grafo_sha256": "63c4f070f7a83f0b27f5a4221a07bc06a67c0fce738f04804343fc23cad28878",
+    "imagen_sha256": "ac3c0a7b8507539979c38a918d615810fcc793f9af91309108d01cb939b132ca"
+  },
+  "grafo": {
+    "menu": {
+      "id": "recoroSa93XtdWN8C",
+      "Menú": "Septiembre · Menú 3",
+      "Mes": {
+        "id": "sel9Sa4CwPcACj2lx",
+        "name": "Septiembre",
+        "color": "grayLight2"
+      },
+      "Número": 3,
+      "Lunes · Comida": [
+        {
+          "id": "recisgOzomUjkPYsa",
+          "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+        }
+      ],
+      "Lunes · Cena": [
+        {
+          "id": "rec8qQq7tWoFYdvGm",
+          "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+        }
+      ],
+      "Lunes · Desayuno": [
+        {
+          "id": "recIa7zpasm2s0mgH",
+          "name": "Café con leche"
+        }
+      ],
+      "Lunes · Postre": [
+        {
+          "id": "recrQuW0jedsqM35u",
+          "name": "Uvas frescas crudas (rojas o verdes)"
+        }
+      ],
+      "Lunes · Postre cantidad": 100,
+      "Lunes · Postre unidad": {
+        "id": "selPOH2m7oKtRvPSq",
+        "name": "g",
+        "color": "grayLight2"
+      },
+      "Martes · Comida": [
+        {
+          "id": "recUetQb5HaOrXJkj",
+          "name": "Salmón con arroz blanco y pisto"
+        }
+      ],
+      "Martes · Cena": [
+        {
+          "id": "recqHPRCZmS834meh",
+          "name": "Puré de calabaza y calabacín y salchichas al vino"
+        }
+      ],
+      "Martes · Desayuno": [
+        {
+          "id": "recIa7zpasm2s0mgH",
+          "name": "Café con leche"
+        }
+      ],
+      "Martes · Postre": [
+        {
+          "id": "recrQuW0jedsqM35u",
+          "name": "Uvas frescas crudas (rojas o verdes)"
+        }
+      ],
+      "Martes · Postre cantidad": 100,
+      "Martes · Postre unidad": {
+        "id": "seltNA4RClKN6wbqi",
+        "name": "g",
+        "color": "grayLight2"
+      },
+      "Miércoles · Comida": [
+        {
+          "id": "recqHPRCZmS834meh",
+          "name": "Puré de calabaza y calabacín y salchichas al vino"
+        }
+      ],
+      "Miércoles · Cena": [
+        {
+          "id": "rectJVzQDp8Joz3q2",
+          "name": "Tacos de gambón"
+        }
+      ],
+      "Miércoles · Desayuno": [
+        {
+          "id": "recIa7zpasm2s0mgH",
+          "name": "Café con leche"
+        }
+      ],
+      "Jueves · Comida": [
+        {
+          "id": "recj1RnIxnYs8zQ23",
+          "name": "Poke de salmón"
+        }
+      ],
+      "Jueves · Cena": [
+        {
+          "id": "recLLUICFD1e1Lxcz",
+          "name": "Huevos rotos con pisto y queso curado de oveja"
+        }
+      ],
+      "Jueves · Desayuno": [
+        {
+          "id": "recIa7zpasm2s0mgH",
+          "name": "Café con leche"
+        }
+      ],
+      "Jueves · Postre": [
+        {
+          "id": "recrQuW0jedsqM35u",
+          "name": "Uvas frescas crudas (rojas o verdes)"
+        }
+      ],
+      "Jueves · Postre cantidad": 100,
+      "Jueves · Postre unidad": {
+        "id": "selGJL6rELvvDTyFr",
+        "name": "g",
+        "color": "grayLight2"
+      },
+      "Viernes · Comida": [
+        {
+          "id": "recisgOzomUjkPYsa",
+          "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+        }
+      ],
+      "Viernes · Desayuno": [
+        {
+          "id": "recIa7zpasm2s0mgH",
+          "name": "Café con leche"
+        }
+      ],
+      "Lunes · Estado postre": "Calculado",
+      "Martes · Estado postre": "Calculado",
+      "Miércoles · Estado postre": "Sin postre",
+      "Jueves · Estado postre": "Calculado",
+      "Viernes · Estado postre": "Sin postre",
+      "Estado menú": "Calculado"
+    },
+    "comidas": [
+      {
+        "id": "rec8qQq7tWoFYdvGm",
+        "Nombre": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "rec6knYz4PCFa7u2u",
+            "name": "Huevos M (2 unidades, 100 g comestibles)"
+          },
+          {
+            "id": "recK24uPxhKxTQLLJ",
+            "name": "Mozzarella rallada DIA Láctea"
+          },
+          {
+            "id": "recW2jZafsKDRaTck",
+            "name": "Pechuga pollo Nuestra Alacena DIA"
+          },
+          {
+            "id": "recWUAOKxq42uU4WN",
+            "name": "AOVE tortilla"
+          },
+          {
+            "id": "recl4uPUsyH8G5eVU",
+            "name": "Pan Oroweat (1 rebanada, 36,5 g aproximados)"
+          },
+          {
+            "id": "recLUF7XrBrj6nKKn",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recLLUICFD1e1Lxcz",
+        "Nombre": "Huevos rotos con pisto y queso curado de oveja",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "rec2esnydy5TXBWU0",
+            "name": "Huevos rotos"
+          },
+          {
+            "id": "reckqa2gMu0w6oTir",
+            "name": "Pisto"
+          },
+          {
+            "id": "recyHiag9LGj5IsSS",
+            "name": "Queso curado de oveja"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recUetQb5HaOrXJkj",
+        "Nombre": "Salmón con arroz blanco y pisto",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "recWq0zOWPyBJvIEI",
+            "name": "Salmón"
+          },
+          {
+            "id": "recRiOfX0rx05Y1CP",
+            "name": "Arroz blanco (1 vasito DIA Al Punto, 125 g)"
+          },
+          {
+            "id": "recUVmgv678dYPJmE",
+            "name": "Pisto"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recisgOzomUjkPYsa",
+        "Nombre": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "recWH2AkGXuQeR6UN",
+            "name": "Albóndigas en salsa rubia"
+          },
+          {
+            "id": "rec8mnbXKIpQZWvF1",
+            "name": "Patatas panadera · Patata"
+          },
+          {
+            "id": "recfsHI0uGpb2pB9W",
+            "name": "Patatas panadera · AOVE"
+          },
+          {
+            "id": "reckqTHkmhoQ21ZRc",
+            "name": "Ensalada de tomate y cebolla · Tomate"
+          },
+          {
+            "id": "recRUuWNWLmWTz70e",
+            "name": "Ensalada de tomate y cebolla · Cebolla"
+          },
+          {
+            "id": "recJHFp2EjqjXn3FO",
+            "name": "Ensalada de tomate y cebolla · AOVE"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recj1RnIxnYs8zQ23",
+        "Nombre": "Poke de salmón",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "recO9SuFO76ROnfnh",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recqHPRCZmS834meh",
+        "Nombre": "Puré de calabaza y calabacín y salchichas al vino",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "rec54RdqOTeEKC5PU",
+            "name": "Puré de calabaza y calabacín"
+          },
+          {
+            "id": "recgamLU5G0iB9YKr",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "rectJVzQDp8Joz3q2",
+        "Nombre": "Tacos de gambón",
+        "COMIDA_ELEMENTOS": [
+          {
+            "id": "recTFMxMvllWALmdt",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      }
+    ],
+    "comida_elementos": [
+      {
+        "id": "rec2esnydy5TXBWU0",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recLLUICFD1e1Lxcz",
+            "name": "Huevos rotos con pisto y queso curado de oveja"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "recRGUe7xVCtmkOhn",
+            "name": "Huevos rotos"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec54RdqOTeEKC5PU",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recqHPRCZmS834meh",
+            "name": "Puré de calabaza y calabacín y salchichas al vino"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec6knYz4PCFa7u2u",
+        "Cantidad": 100,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "name": "Huevo de gallina entero crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec8mnbXKIpQZWvF1",
+        "Cantidad": 200,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSE81b9WjkURbXi",
+            "name": "Patata, cruda (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recJHFp2EjqjXn3FO",
+        "Cantidad": 5,
+        "Unidad": {
+          "id": "seljO6xWeaOxqZIVN",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recK24uPxhKxTQLLJ",
+        "Cantidad": 20,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recG7EOA99Wt7MiRC",
+            "name": "Mozzarella rallada Dia Láctea"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recLUF7XrBrj6nKKn",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recO9SuFO76ROnfnh",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recj1RnIxnYs8zQ23",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recRUuWNWLmWTz70e",
+        "Cantidad": 25,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "name": "Cebolla fresca (cruda)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recRiOfX0rx05Y1CP",
+        "Cantidad": 125,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recUetQb5HaOrXJkj",
+            "name": "Salmón con arroz blanco y pisto"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "reccZQ0blNFQ0THdM",
+            "name": "DIA Al Punto Arroz blanco cocido"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recTFMxMvllWALmdt",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rectJVzQDp8Joz3q2",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recUVmgv678dYPJmE",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recUetQb5HaOrXJkj",
+            "name": "Salmón con arroz blanco y pisto"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "recG1UJ6vBcK3NBaE",
+            "name": "Pisto"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recW2jZafsKDRaTck",
+        "Cantidad": 30,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recVfgOdXad3Ns6po",
+            "name": "Pechuga de pollo Nuestra Alacena DIA (95 %, loncheada)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recWH2AkGXuQeR6UN",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recWUAOKxq42uU4WN",
+        "Cantidad": 5,
+        "Unidad": {
+          "id": "seljO6xWeaOxqZIVN",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recWq0zOWPyBJvIEI",
+        "Cantidad": 130,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recUetQb5HaOrXJkj",
+            "name": "Salmón con arroz blanco y pisto"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recpHKx8XrOpBd8zW",
+            "name": "Salmón crudo (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recfsHI0uGpb2pB9W",
+        "Cantidad": 5,
+        "Unidad": {
+          "id": "seljO6xWeaOxqZIVN",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recgamLU5G0iB9YKr",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recqHPRCZmS834meh",
+            "name": "Puré de calabaza y calabacín y salchichas al vino"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "reckqTHkmhoQ21ZRc",
+        "Cantidad": 200,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recisgOzomUjkPYsa",
+            "name": "Albóndigas en salsa rubia con patatas panadera y ensalada de tomate y cebolla"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "name": "Tomate crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "reckqa2gMu0w6oTir",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "selECK1jRmZbsxOqh",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recLLUICFD1e1Lxcz",
+            "name": "Huevos rotos con pisto y queso curado de oveja"
+          }
+        ],
+        "Preparación": [
+          {
+            "id": "recG1UJ6vBcK3NBaE",
+            "name": "Pisto"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recl4uPUsyH8G5eVU",
+        "Cantidad": 36.5,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "rec8qQq7tWoFYdvGm",
+            "name": "Tortilla francesa de queso y pollo con pan Oroweat y puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recZ6WhTcrZDhRgKI",
+            "name": "Pan de molde 12 cereales y semillas Oroweat"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recyHiag9LGj5IsSS",
+        "Cantidad": 20,
+        "Unidad": {
+          "id": "sel5RtE5gtGg3ZxPI",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Comida": [
+          {
+            "id": "recLLUICFD1e1Lxcz",
+            "name": "Huevos rotos con pisto y queso curado de oveja"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recJq3z3foutu1hOx",
+            "name": "Queso curado de oveja (genérico)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      }
+    ],
+    "preparaciones": [
+      {
+        "id": "rec3wB5bagR1Kf3MX",
+        "Nombre": "Salchichas al vino",
+        "Raciones base": 3,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salchichas-al-vino/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recLLDAz7SHs6iLkb",
+            "name": "Salchichas frescas blancas"
+          },
+          {
+            "id": "recOl4ALLIe7jjP3P",
+            "name": "Salchichas frescas rojas"
+          },
+          {
+            "id": "recc3xUdur279JZzJ",
+            "name": "Cebolla"
+          },
+          {
+            "id": "recIiSxX9bHVvtIjn",
+            "name": "AOVE"
+          },
+          {
+            "id": "recJjVDvqGQYBFL5j",
+            "name": "Vino blanco de guiso"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "rec42ABMLlPI87ZUA",
+        "Nombre": "Tacos de gambón",
+        "Raciones base": 1,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tacos-de-gambon/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "reco8N4EEfFCnJdtE",
+            "name": "Mini tortillas de trigo"
+          },
+          {
+            "id": "recl019v6UhwNzYCn",
+            "name": "Aguacate"
+          },
+          {
+            "id": "recxnglCECxbXs1sn",
+            "name": "Gambón"
+          },
+          {
+            "id": "recfkeHYOtqgOfiIo",
+            "name": "Sofrito clásico"
+          },
+          {
+            "id": "recNXghdtn4OHmmmq",
+            "name": "Tzatziki"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recFEsGk5Ptwey4i5",
+        "Nombre": "Poke de salmón",
+        "Raciones base": 1,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/poke-de-salmon/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recZKfZ13E8bgCyLv",
+            "name": "Arroz blanco"
+          },
+          {
+            "id": "rec2337I9mYZpDCDP",
+            "name": "Salmón"
+          },
+          {
+            "id": "recixJmkJlSwORAQZ",
+            "name": "Cebolla"
+          },
+          {
+            "id": "recQP9HMEAzRB1Bvx",
+            "name": "Edamame sin vaina"
+          },
+          {
+            "id": "recHtt1J6T4VqKfJj",
+            "name": "Mango"
+          },
+          {
+            "id": "recJrE4hHw9PhHFky",
+            "name": "Tomates cherry (equivalencia tomate)"
+          },
+          {
+            "id": "recWkKZSQ5LnWKB4k",
+            "name": "Tzatziki"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recG1UJ6vBcK3NBaE",
+        "Nombre": "Pisto",
+        "Raciones base": 6,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pisto/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recTNv9Dqh2hBTBQX",
+            "name": "Pisto · Tomate"
+          },
+          {
+            "id": "recaicM32fzHzM6ze",
+            "name": "Pisto · Sofrito clásico"
+          },
+          {
+            "id": "recG2Ko0LtokodhJW",
+            "name": "Pisto · Calabacín"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recRGUe7xVCtmkOhn",
+        "Nombre": "Huevos rotos",
+        "Raciones base": 1,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/huevos-rotos/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recT9SONfh5ChIMq3",
+            "name": "Huevos rotos · Patata cruda"
+          },
+          {
+            "id": "recyWxXS0u3GjRr9F",
+            "name": "Huevos rotos · AOVE total"
+          },
+          {
+            "id": "recJorqqzamNzKiZh",
+            "name": "Huevos rotos · Huevos M (2 unidades, peso comestible estimado)"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recZ9MGL7IIEy9LWG",
+        "Nombre": "Sofrito clásico",
+        "Raciones base": 4,
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recWQrHA6vQvbIki7",
+            "name": "Sofrito clásico · Pimiento verde"
+          },
+          {
+            "id": "recLLW3mAqqG1pbs2",
+            "name": "Sofrito clásico · Pimiento rojo"
+          },
+          {
+            "id": "recxgm4BVpJDzFiuZ",
+            "name": "Sofrito clásico · Cebolla"
+          },
+          {
+            "id": "recb5nPKz4GVDPPXI",
+            "name": "Sofrito clásico · AOVE"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recaX3R7koMTr5nrn",
+        "Nombre": "Albóndigas en salsa rubia",
+        "Raciones base": 3,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/albondigas-en-salsa-rubia/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recOw26hix85me4rh",
+            "name": "Albóndigas en salsa rubia · Harina de trigo"
+          },
+          {
+            "id": "rechiEd1xN9U5MR40",
+            "name": "Albóndigas en salsa rubia · Ajo (3 dientes, 9 g)"
+          },
+          {
+            "id": "recm8lPUNKv6dHuHp",
+            "name": "Albóndigas en salsa rubia · Huevo M (1 unidad, 50 g comestibles)"
+          },
+          {
+            "id": "recdOCWqJtLwmaECG",
+            "name": "Albóndigas en salsa rubia · Pan blanco de barra"
+          },
+          {
+            "id": "reccdDOmrkuDQELWZ",
+            "name": "Albóndigas en salsa rubia · Leche semidesnatada"
+          },
+          {
+            "id": "rectqhN07l5dDRpH4",
+            "name": "Albóndigas en salsa rubia · Ternera picada (85 % magra)"
+          },
+          {
+            "id": "recTGYgXdxhrgWwRR",
+            "name": "Albóndigas en salsa rubia · Cebolla"
+          },
+          {
+            "id": "rec4jneIKpsiuw7t3",
+            "name": "Albóndigas en salsa rubia · Vino blanco de guiso"
+          },
+          {
+            "id": "rec2PJjxdSRtSC7j0",
+            "name": "Albóndigas en salsa rubia · AOVE total"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "reccvBMaeXJoSvdSf",
+        "Nombre": "Puré de calabaza y calabacín",
+        "Raciones base": 5,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pure-de-calabaza-y-calabacin/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recwML7r0aTNQeSew",
+            "name": "Patata"
+          },
+          {
+            "id": "recQqpoqAYgN9ApXY",
+            "name": "Calabacín"
+          },
+          {
+            "id": "recCCPSriC5eNan4E",
+            "name": "Calabaza butternut"
+          },
+          {
+            "id": "reckPBLhj38Nnqjav",
+            "name": "Nata líquida para cocinar"
+          },
+          {
+            "id": "recNSoMdVwwAG1WR9",
+            "name": "AOVE"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      },
+      {
+        "id": "recgi0wLvd7EOUa6E",
+        "Nombre": "Tzatziki",
+        "Raciones base": 2,
+        "Enlace receta": "https://mirurecetas.github.io/menu-anual-recetas/recetas/tzatziki/",
+        "PREPARACION_ELEMENTOS": [
+          {
+            "id": "recyaWdwqmFrnWLlS",
+            "name": "Tzatziki · Yogur griego natural"
+          },
+          {
+            "id": "recqjvZeDogqGeqXS",
+            "name": "Tzatziki · Pepino"
+          },
+          {
+            "id": "rec8kTdIVNurDq9LF",
+            "name": "Tzatziki · Zumo de limón"
+          },
+          {
+            "id": "recQfcwNCHV8anUzN",
+            "name": "Tzatziki · Ajo"
+          },
+          {
+            "id": "recmYYueJPHffaYax",
+            "name": "Tzatziki · AOVE"
+          }
+        ],
+        "Estado cálculo": "Calculado"
+      }
+    ],
+    "preparacion_elementos": [
+      {
+        "id": "rec2337I9mYZpDCDP",
+        "Cantidad": 130,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recpHKx8XrOpBd8zW",
+            "name": "Salmón crudo (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec2PJjxdSRtSC7j0",
+        "Cantidad": 30,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec4jneIKpsiuw7t3",
+        "Cantidad": 150,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "name": "Vino blanco para guisar de Alberto"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rec8kTdIVNurDq9LF",
+        "Cantidad": 15,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec7ray2LYDB4u7UC",
+            "name": "Zumo de limón fresco"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recCCPSriC5eNan4E",
+        "Cantidad": 600,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recOYCX563rWZgvWh",
+            "name": "Calabaza butternut, cruda (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recG2Ko0LtokodhJW",
+        "Cantidad": 575,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recG1UJ6vBcK3NBaE",
+            "name": "Pisto"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "name": "Calabacín crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recHtt1J6T4VqKfJj",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec9WDb977coILvP1",
+            "name": "Mango crudo (sin piel ni hueso)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recIiSxX9bHVvtIjn",
+        "Cantidad": 15,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recJjVDvqGQYBFL5j",
+        "Cantidad": 150,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "name": "Vino blanco para guisar de Alberto"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recJorqqzamNzKiZh",
+        "Cantidad": 100,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recRGUe7xVCtmkOhn",
+            "name": "Huevos rotos"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "name": "Huevo de gallina entero crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recJrE4hHw9PhHFky",
+        "Cantidad": 70,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "name": "Tomate crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recLLDAz7SHs6iLkb",
+        "Cantidad": 250,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recl0KweclZiBy98h",
+            "name": "Salchicha fresca de cerdo, cruda (referencia genérica)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recLLW3mAqqG1pbs2",
+        "Cantidad": 300,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recENcfvg6SEEWS6F",
+            "name": "Pimiento rojo crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recNSoMdVwwAG1WR9",
+        "Cantidad": 10,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recNXghdtn4OHmmmq",
+        "Cantidad": 0.5,
+        "Unidad": {
+          "id": "sellmgLq5lK7ZVyxI",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Preparación incluida": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recOl4ALLIe7jjP3P",
+        "Cantidad": 250,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recl0KweclZiBy98h",
+            "name": "Salchicha fresca de cerdo, cruda (referencia genérica)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recOw26hix85me4rh",
+        "Cantidad": 20,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recyVu5pom0nNHSu9",
+            "name": "Harina de trigo (blanca)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recQP9HMEAzRB1Bvx",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recDZ4rW6XqS7v9TL",
+            "name": "Edamame congelado, sin preparar (granos sin vaina)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recQfcwNCHV8anUzN",
+        "Cantidad": 3,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "name": "Ajo fresco (crudo)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recQqpoqAYgN9ApXY",
+        "Cantidad": 300,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "name": "Calabacín crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recT9SONfh5ChIMq3",
+        "Cantidad": 200,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recRGUe7xVCtmkOhn",
+            "name": "Huevos rotos"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSE81b9WjkURbXi",
+            "name": "Patata, cruda (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recTGYgXdxhrgWwRR",
+        "Cantidad": 100,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "name": "Cebolla fresca (cruda)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recTNv9Dqh2hBTBQX",
+        "Cantidad": 1000,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recG1UJ6vBcK3NBaE",
+            "name": "Pisto"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "name": "Tomate crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recWQrHA6vQvbIki7",
+        "Cantidad": 300,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec0zazpvEsFuV0x4",
+            "name": "Pimiento verde crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recWkKZSQ5LnWKB4k",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "sellmgLq5lK7ZVyxI",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Preparación incluida": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recZKfZ13E8bgCyLv",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec2ds3lrGGTSSER0",
+            "name": "Arroz blanco de grano corto, crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recaicM32fzHzM6ze",
+        "Cantidad": 6,
+        "Unidad": {
+          "id": "sellmgLq5lK7ZVyxI",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recG1UJ6vBcK3NBaE",
+            "name": "Pisto"
+          }
+        ],
+        "Preparación incluida": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recb5nPKz4GVDPPXI",
+        "Cantidad": 30,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recc3xUdur279JZzJ",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec3wB5bagR1Kf3MX",
+            "name": "Salchichas al vino"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "name": "Cebolla fresca (cruda)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "reccdDOmrkuDQELWZ",
+        "Cantidad": 10,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recw8aSxhSx0aSH93",
+            "name": "Leche semidesnatada"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recdOCWqJtLwmaECG",
+        "Cantidad": 10,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rectCVvH0I4lf6zlq",
+            "name": "Pan blanco de barra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recfkeHYOtqgOfiIo",
+        "Cantidad": 1,
+        "Unidad": {
+          "id": "sellmgLq5lK7ZVyxI",
+          "name": "ración",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Preparación incluida": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rechiEd1xN9U5MR40",
+        "Cantidad": 9,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "name": "Ajo fresco (crudo)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recixJmkJlSwORAQZ",
+        "Cantidad": 25,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recFEsGk5Ptwey4i5",
+            "name": "Poke de salmón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "name": "Cebolla fresca (cruda)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "reckPBLhj38Nnqjav",
+        "Cantidad": 300,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recMpMB5G7N8U3xQb",
+            "name": "Nata para cocinar DIA Láctea 18 % M.G."
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recl019v6UhwNzYCn",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec93EACh8a1dzIis",
+            "name": "Aguacate crudo (pulpa comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recm8lPUNKv6dHuHp",
+        "Cantidad": 50,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "name": "Huevo de gallina entero crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recmYYueJPHffaYax",
+        "Cantidad": 5.4945054945054945,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "reco8N4EEfFCnJdtE",
+        "Cantidad": 75,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "receShdIxklq3Ht6E",
+            "name": "Mini tortillas de trigo IFA Eliges"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recqjvZeDogqGeqXS",
+        "Cantidad": 30,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec7pFZddheVALlvz",
+            "name": "Pepino crudo"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "rectqhN07l5dDRpH4",
+        "Cantidad": 500,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recaX3R7koMTr5nrn",
+            "name": "Albóndigas en salsa rubia"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recqRhWfhNW5TZb77",
+            "name": "Ternera picada cruda (85 % magra, 15 % grasa)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recwML7r0aTNQeSew",
+        "Cantidad": 150,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "reccvBMaeXJoSvdSf",
+            "name": "Puré de calabaza y calabacín"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recSE81b9WjkURbXi",
+            "name": "Patata, cruda (parte comestible)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recxgm4BVpJDzFiuZ",
+        "Cantidad": 300,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recZ9MGL7IIEy9LWG",
+            "name": "Sofrito clásico"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "name": "Cebolla fresca (cruda)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recxnglCECxbXs1sn",
+        "Cantidad": 100,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "rec42ABMLlPI87ZUA",
+            "name": "Tacos de gambón"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recqxFuwYNQJdjAaB",
+            "name": "Gambones crudos, parte comestible (equivalencia langostino)"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recyWxXS0u3GjRr9F",
+        "Cantidad": 20,
+        "Unidad": {
+          "id": "sel6UTt8WO62oQhtS",
+          "name": "ml",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recRGUe7xVCtmkOhn",
+            "name": "Huevos rotos"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "name": "Aceite de oliva virgen extra"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      },
+      {
+        "id": "recyaWdwqmFrnWLlS",
+        "Cantidad": 125,
+        "Unidad": {
+          "id": "selmcnBfFBNO4qHbh",
+          "name": "g",
+          "color": "grayLight2"
+        },
+        "Preparación principal": [
+          {
+            "id": "recgi0wLvd7EOUa6E",
+            "name": "Tzatziki"
+          }
+        ],
+        "Ingrediente": [
+          {
+            "id": "recBse4SOxBOPwYEQ",
+            "name": "Yogur griego natural DIA Fidias"
+          }
+        ],
+        "TEC_Estado elemento": "Calculado"
+      }
+    ],
+    "ingredientes": [
+      {
+        "id": "rec0zazpvEsFuV0x4",
+        "Nombre": "Pimiento verde crudo",
+        "Referencia GitHub": "USDA:170427",
+        "Nombre de visualización": "Pimiento verde"
+      },
+      {
+        "id": "rec2ds3lrGGTSSER0",
+        "Nombre": "Arroz blanco de grano corto, crudo",
+        "Referencia GitHub": "USDA:168931",
+        "Nombre de visualización": "Arroz",
+        "Descripción de compra": "blanco, grano corto, crudo"
+      },
+      {
+        "id": "rec4QWbZX5KJIhQyW",
+        "Nombre": "Aceite de oliva virgen extra",
+        "Referencia GitHub": "BEDCA:2544",
+        "Nombre de visualización": "Aceite de oliva",
+        "Descripción de compra": "virgen extra"
+      },
+      {
+        "id": "rec7pFZddheVALlvz",
+        "Nombre": "Pepino crudo",
+        "Referencia GitHub": "BEDCA:2407",
+        "Nombre de visualización": "Pepino"
+      },
+      {
+        "id": "rec7ray2LYDB4u7UC",
+        "Nombre": "Zumo de limón fresco",
+        "Referencia GitHub": "BEDCA:937",
+        "Nombre de visualización": "Zumo de limón",
+        "Descripción de compra": "fresco"
+      },
+      {
+        "id": "rec93EACh8a1dzIis",
+        "Nombre": "Aguacate crudo (pulpa comestible)",
+        "Referencia GitHub": "BEDCA:2216",
+        "Nombre de visualización": "Aguacate",
+        "Descripción de compra": "pulpa comestible"
+      },
+      {
+        "id": "rec9WDb977coILvP1",
+        "Nombre": "Mango crudo (sin piel ni hueso)",
+        "Referencia GitHub": "BEDCA:1186",
+        "Nombre de visualización": "Mango",
+        "Descripción de compra": "sin piel ni hueso"
+      },
+      {
+        "id": "recBse4SOxBOPwYEQ",
+        "Nombre": "Yogur griego natural DIA Fidias",
+        "Referencia GitHub": "PROPIOS:dia-fidias-yogur-griego-natural",
+        "Nombre de visualización": "Yogur",
+        "Descripción de compra": "griego natural, DIA Fidias"
+      },
+      {
+        "id": "recDKPl7cPStT6WnA",
+        "Nombre": "Calabacín crudo",
+        "Referencia GitHub": "BEDCA:2376",
+        "Nombre de visualización": "Calabacín"
+      },
+      {
+        "id": "recDZ4rW6XqS7v9TL",
+        "Nombre": "Edamame congelado, sin preparar (granos sin vaina)",
+        "Referencia GitHub": "USDA:168410",
+        "Nombre de visualización": "Edamame",
+        "Descripción de compra": "congelado, granos sin vaina"
+      },
+      {
+        "id": "recENcfvg6SEEWS6F",
+        "Nombre": "Pimiento rojo crudo",
+        "Referencia GitHub": "BEDCA:2409",
+        "Nombre de visualización": "Pimiento rojo"
+      },
+      {
+        "id": "recG7EOA99Wt7MiRC",
+        "Nombre": "Mozzarella rallada Dia Láctea",
+        "Referencia GitHub": "PROPIOS:dia-lactea-mozzarella-rallada",
+        "Nombre de visualización": "Mozzarella",
+        "Descripción de compra": "rallada, DIA Láctea"
+      },
+      {
+        "id": "recJq3z3foutu1hOx",
+        "Nombre": "Queso curado de oveja (genérico)",
+        "Referencia GitHub": "BEDCA:719",
+        "Nombre de visualización": "Queso de oveja",
+        "Descripción de compra": "curado"
+      },
+      {
+        "id": "recMpMB5G7N8U3xQb",
+        "Nombre": "Nata para cocinar DIA Láctea 18 % M.G.",
+        "Referencia GitHub": "PROPIOS:dia-lactea-nata-cocinar-18",
+        "Nombre de visualización": "Nata",
+        "Descripción de compra": "para cocinar, DIA Láctea"
+      },
+      {
+        "id": "recOYCX563rWZgvWh",
+        "Nombre": "Calabaza butternut, cruda (parte comestible)",
+        "Referencia GitHub": "USDA:169295",
+        "Nombre de visualización": "Calabaza",
+        "Descripción de compra": "butternut, parte comestible"
+      },
+      {
+        "id": "recSE81b9WjkURbXi",
+        "Nombre": "Patata, cruda (parte comestible)",
+        "Referencia GitHub": "BEDCA:2403",
+        "Nombre de visualización": "Patatas"
+      },
+      {
+        "id": "recSPOXZkbn9PSbHI",
+        "Nombre": "Huevo de gallina entero crudo",
+        "Referencia GitHub": "BEDCA:2127",
+        "Nombre de visualización": "Huevos"
+      },
+      {
+        "id": "recVfgOdXad3Ns6po",
+        "Nombre": "Pechuga de pollo Nuestra Alacena DIA (95 %, loncheada)",
+        "Referencia GitHub": "PROPIOS:dia-nuestra-alacena-pechuga-pollo-95",
+        "Nombre de visualización": "Pechuga de pollo",
+        "Descripción de compra": "loncheada, Nuestra Alacena DIA"
+      },
+      {
+        "id": "recZ6WhTcrZDhRgKI",
+        "Nombre": "Pan de molde 12 cereales y semillas Oroweat",
+        "Referencia GitHub": "PROPIOS:oroweat-pan-molde-12-cereales-semillas",
+        "Nombre de visualización": "Pan de molde",
+        "Descripción de compra": "cereales y semillas, Oroweat"
+      },
+      {
+        "id": "reccZQ0blNFQ0THdM",
+        "Nombre": "DIA Al Punto Arroz blanco cocido",
+        "Referencia GitHub": "PROPIOS:dia-al-punto-arroz-blanco-cocido",
+        "Nombre de visualización": "Arroz",
+        "Descripción de compra": "blanco, cocido, DIA Al Punto"
+      },
+      {
+        "id": "receShdIxklq3Ht6E",
+        "Nombre": "Mini tortillas de trigo IFA Eliges",
+        "Referencia GitHub": "PROPIOS:ifa-eliges-mini-tortillas-trigo",
+        "Nombre de visualización": "Tortillas de trigo",
+        "Descripción de compra": "mini, IFA Eliges"
+      },
+      {
+        "id": "recjq8IrRWXTVjRKg",
+        "Nombre": "Tomate crudo",
+        "Referencia GitHub": "BEDCA:2421",
+        "Nombre de visualización": "Tomate"
+      },
+      {
+        "id": "recl0KweclZiBy98h",
+        "Nombre": "Salchicha fresca de cerdo, cruda (referencia genérica)",
+        "Referencia GitHub": "BEDCA:2305",
+        "Nombre de visualización": "Salchichas",
+        "Descripción de compra": "frescas, de cerdo, blancas y rojas"
+      },
+      {
+        "id": "recoM4LY51MoUUkJm",
+        "Nombre": "Ajo fresco (crudo)",
+        "Referencia GitHub": "BEDCA:2361",
+        "Nombre de visualización": "Ajo",
+        "Descripción de compra": "fresco"
+      },
+      {
+        "id": "recpHKx8XrOpBd8zW",
+        "Nombre": "Salmón crudo (parte comestible)",
+        "Referencia GitHub": "BEDCA:2626",
+        "Nombre de visualización": "Salmón",
+        "Descripción de compra": "crudo, parte comestible"
+      },
+      {
+        "id": "recpmmQpWkGhfDadm",
+        "Nombre": "Vino blanco para guisar de Alberto",
+        "Referencia GitHub": "PROPIOS:de-alberto-vino-blanco-bag-in-box",
+        "Nombre de visualización": "Vino blanco",
+        "Descripción de compra": "para guisar, de Alberto"
+      },
+      {
+        "id": "recqRhWfhNW5TZb77",
+        "Nombre": "Ternera picada cruda (85 % magra, 15 % grasa)",
+        "Referencia GitHub": "USDA:171796",
+        "Nombre de visualización": "Ternera picada",
+        "Descripción de compra": "hasta quince por ciento de grasa"
+      },
+      {
+        "id": "recqxFuwYNQJdjAaB",
+        "Nombre": "Gambones crudos, parte comestible (equivalencia langostino)",
+        "Referencia GitHub": "BEDCA:2340",
+        "Nombre de visualización": "Gambones",
+        "Descripción de compra": "crudos, parte comestible"
+      },
+      {
+        "id": "recrGNY88zOIOcRom",
+        "Nombre": "Cebolla fresca (cruda)",
+        "Referencia GitHub": "BEDCA:2381",
+        "Nombre de visualización": "Cebolla"
+      },
+      {
+        "id": "recrQuW0jedsqM35u",
+        "Nombre": "Uvas frescas crudas (rojas o verdes)",
+        "Referencia GitHub": "USDA:174683",
+        "Nombre de visualización": "Uvas",
+        "Descripción de compra": "frescas"
+      },
+      {
+        "id": "rectCVvH0I4lf6zlq",
+        "Nombre": "Pan blanco de barra",
+        "Referencia GitHub": "BEDCA:2160",
+        "Nombre de visualización": "Pan",
+        "Descripción de compra": "blanco de barra"
+      },
+      {
+        "id": "recw8aSxhSx0aSH93",
+        "Nombre": "Leche semidesnatada",
+        "Referencia GitHub": "BEDCA:916",
+        "Nombre de visualización": "Leche",
+        "Descripción de compra": "semidesnatada"
+      },
+      {
+        "id": "recyVu5pom0nNHSu9",
+        "Nombre": "Harina de trigo (blanca)",
+        "Referencia GitHub": "BEDCA:2677",
+        "Nombre de visualización": "Harina de trigo",
+        "Descripción de compra": "blanca"
+      }
+    ]
+  },
+  "productos": [
+    {
+      "id": "dia-fidias-yogur-griego-natural",
+      "cantidad_envase": {
+        "valor": 125,
+        "unidad": "g"
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-10",
+        "url": "https://www.dia.es/yogures-y-postres/yogures-griegos/p/135285",
+        "notas": "Fotografías del envase físico aportadas por la usuaria el 10/10/2026: EAN 8480017079374; ingredientes leche, nata, leche desnatada en polvo, fermentos lácticos; presentación 6 vasitos individuales de 125 g, total pack 750 g; origen leche UE, transformación España, fabricación L.N.P.L.R. Guadalajara S.L.; etiqueta por 100 g 519 kJ/125 kcal, grasa 9,9 g, saturadas 6,4 g, hidratos 5,4 g, azúcares 5,4 g, proteínas 3,6 g, sal 0,10 g. Coincide con ficha registrada. Micronutrientes siguen siendo estimaciones por equivalencia USDA FDC 2259794, no declarados por fabricante. Aprobación global para ficha previa. Ajuste 10/10/2026: cantidad_envase se define por unidad individual (125 g), no por pack (750 g), para evitar contabilizar seis yogures al usar uno."
+      },
+      "estado": "verificado",
+      "presentacion": {
+        "unidades": 6,
+        "contenido_unidad": {
+          "valor": 125,
+          "unidad": "g"
+        },
+        "cantidad_total_pack": {
+          "valor": 750,
+          "unidad": "g"
+        }
+      }
+    },
+    {
+      "id": "dia-lactea-mozzarella-rallada",
+      "cantidad_envase": {
+        "valor": 200,
+        "unidad": "g"
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-09",
+        "notas": "Tres fotografías de envase facilitadas por usuaria; etiqueta 1263 kJ/304 kcal por 100 g. Leche UE. Alérgeno leche. Conservar entre 0 y 5 °C y consumir antes de 5 días tras apertura. Auditoría integral aprobada explícitamente por la usuaria; estimaciones USDA NO declaradas por fabricante.",
+        "url": null
+      },
+      "estado": "verificado"
+    },
+    {
+      "id": "de-alberto-vino-blanco-bag-in-box",
+      "cantidad_envase": {
+        "valor": 5000,
+        "unidad": "ml"
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-10",
+        "notas": "Fotografías de caja 5 L de Bodegas Hijos de Alberto Gutiérrez S.A. Indica 14,5 % vol, 330 kJ/79 kcal por 100 ml, contiene sulfitos. EAN 8413898833322. Una ficha comercial secundaria indica 15 % vol; prevalece el envase. Macros y sal no declarados: null. Usuario aprobó alta y estimaciones orientativas.",
+        "url": null
+      },
+      "estado": "verificado"
+    },
+    {
+      "id": "ifa-eliges-mini-tortillas-trigo",
+      "cantidad_envase": {
+        "valor": 25,
+        "unidad": "g"
+      },
+      "presentacion": {
+        "unidades": 12,
+        "contenido_unidad": {
+          "valor": 25,
+          "unidad": "g"
+        },
+        "cantidad_total_pack": {
+          "valor": 300,
+          "unidad": "g"
+        }
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-10",
+        "url": null,
+        "notas": "Fotografías del envase IFA Eliges; EAN 8480012038918. Paquete 12 tortillas de aprox. 25 g, total 300 g; cantidad_envase refiere a tortilla individual. Los valores por 100 g se tomaron directamente de la etiqueta. Minerales estimados por equivalencia con tortilla de trigo USDA sin calcio añadido, fuente estadounidense que puede contener enriquecimiento distinto de harina española, hierro especialmente incierto. Vitaminas desconocidas guardadas null. Auditoría global aprobada por usuaria."
+      },
+      "estado": "verificado"
+    },
+    {
+      "id": "oroweat-pan-molde-12-cereales-semillas",
+      "cantidad_envase": {
+        "valor": 36.5,
+        "unidad": "g"
+      },
+      "presentacion": {
+        "unidades": 15,
+        "contenido_unidad": {
+          "valor": 36.5,
+          "unidad": "g",
+          "aproximado": true
+        },
+        "cantidad_total_pack": {
+          "valor": 550,
+          "unidad": "g"
+        },
+        "nota": "15 rebanadas de peso medio aproximado 36,5 g. 15 × 36,5 g = 547,5 g; diferencia por redondeo."
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-10",
+        "url": "https://www.dia.es/panaderia/pan-de-molde-y-especiales/p/174067",
+        "notas": "Imágenes de producto aportadas por usuaria; EAN 8412600019832, 550 g y 15 rebanadas de 36,5 g aproximados. Macronutrientes de etiqueta por 100 g. Perfil de mono/poliinsaturadas atribuido a ficha DIA según auditoría aprobada (no visible en fotografía). Nueve minerales estimados de USDA FDC 168013, especialmente incierto hierro por posible enriquecimiento de harinas estadounidenses. Vitaminas null. Aprobación global de usuaria."
+      },
+      "estado": "verificado"
+    },
+    {
+      "id": "dia-nuestra-alacena-pechuga-pollo-95",
+      "cantidad_envase": {
+        "valor": 120,
+        "unidad": "g"
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-11",
+        "url": "https://www.dia.es/",
+        "notas": "Dos fotografías de la etiqueta física aportadas por usuaria y contraste comercial DIA. EAN, contenido neto, formulación, alérgenos/trazas, nutrición por 100 g, fabricante y conservación. Fibra ingrediente presente pero cantidad no declarada, por eso null. Aprobación global explícita."
+      },
+      "estado": "verificado"
+    },
+    {
+      "id": "dia-lactea-nata-cocinar-18",
+      "cantidad_envase": {
+        "valor": 200,
+        "unidad": "ml"
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-11",
+        "url": "https://www.dia.es/huevos-leche-y-mantequilla/nata/p/145042",
+        "notas": "Tres imágenes aportadas: presentación y laterales legibles. Tabla impresa por 100 ml; prevalece sobre encabezado web DIA por 100 g. Los macronutrientes, ingredientes y fabricante coinciden con DIA. Fibra no declarada, null. Producto no presente en catálogo consultado (34 registros). Micronutrientes son estimaciones por equivalencia, salvo sodio calculado."
+      },
+      "estado": "verificado",
+      "presentacion": {
+        "unidades": 3,
+        "contenido_unidad": {
+          "valor": 200,
+          "unidad": "ml"
+        },
+        "cantidad_total_pack": {
+          "valor": 600,
+          "unidad": "ml"
+        }
+      }
+    },
+    {
+      "id": "dia-al-punto-arroz-blanco-cocido",
+      "cantidad_envase": {
+        "valor": 125,
+        "unidad": "g"
+      },
+      "presentacion": {
+        "unidades": 2,
+        "contenido_unidad": {
+          "valor": 125,
+          "unidad": "g"
+        },
+        "cantidad_total_pack": {
+          "valor": 250,
+          "unidad": "g"
+        }
+      },
+      "fuente": {
+        "tipo": "etiqueta",
+        "fecha_verificacion": "2026-10-12",
+        "url": "https://www.dia.es/arroz-pastas-y-legumbres/arroz/p/250021",
+        "notas": "Fotografías de envase físico aportadas por la usuaria: EAN, SKU, 250 g (2 × 125 g), nutrición por 100 g y vasito, ingredientes, soja, sin gluten, fabricante y conservación legibles. Coincide con valores principales DIA. Fibra no declarada=null. Valores micronutricionales del arroz se conservan como escenarios parciales separados; no representan totales del producto."
+      },
+      "estado": "verificado"
+    }
+  ],
+  "condimentos": [
+    {
+      "nombre": "Laurel",
+      "preparacion_id": "rec3wB5bagR1Kf3MX",
+      "fuente": "salchichas-al-vino"
+    },
+    {
+      "nombre": "Pimienta negra",
+      "preparacion_id": "rec3wB5bagR1Kf3MX",
+      "fuente": "salchichas-al-vino"
+    },
+    {
+      "nombre": "Pimentón",
+      "preparacion_id": "recRGUe7xVCtmkOhn",
+      "fuente": "huevos-rotos"
+    },
+    {
+      "nombre": "Vinagre",
+      "preparacion_id": "recRGUe7xVCtmkOhn",
+      "fuente": "huevos-rotos"
+    },
+    {
+      "nombre": "Perejil",
+      "preparacion_id": "recaX3R7koMTr5nrn",
+      "fuente": "albondigas-en-salsa-rubia"
+    },
+    {
+      "nombre": "Sal",
+      "preparacion_id": "reccvBMaeXJoSvdSf",
+      "fuente": "pure-de-calabaza-y-calabacin"
+    },
+    {
+      "nombre": "Menta o hierbabuena",
+      "preparacion_id": "recgi0wLvd7EOUa6E",
+      "fuente": "tzatziki"
+    },
+    {
+      "nombre": "Sal",
+      "preparacion_id": "recgi0wLvd7EOUa6E",
+      "fuente": "tzatziki"
+    }
+  ],
+  "calculo": {
+    "ingredientes": [
+      {
+        "id": "rec4QWbZX5KJIhQyW",
+        "nombre_tecnico": "Aceite de oliva virgen extra",
+        "nombre": "Aceite de oliva",
+        "descripcion": "virgen extra",
+        "unidad": "ml",
+        "cantidad_exacta": "860967032967032967/8000000000000000",
+        "stock": true,
+        "aportes": [
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "10",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rec2PJjxdSRtSC7j0"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recfsHI0uGpb2pB9W"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recJHFp2EjqjXn3FO"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recWUAOKxq42uU4WN"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "2",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recLUF7XrBrj6nKKn",
+              "reccvBMaeXJoSvdSf",
+              "recNSoMdVwwAG1WR9"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "15/2",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recb5nPKz4GVDPPXI"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "2",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recNSoMdVwwAG1WR9"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recIiSxX9bHVvtIjn"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "2",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recNSoMdVwwAG1WR9"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recIiSxX9bHVvtIjn"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "15/2",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recfkeHYOtqgOfiIo",
+              "recZ9MGL7IIEy9LWG",
+              "recb5nPKz4GVDPPXI"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "10989010989010989/8000000000000000",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recNXghdtn4OHmmmq",
+              "recgi0wLvd7EOUa6E",
+              "recmYYueJPHffaYax"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "10989010989010989/4000000000000000",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recWkKZSQ5LnWKB4k",
+              "recgi0wLvd7EOUa6E",
+              "recmYYueJPHffaYax"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "20",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "rec2esnydy5TXBWU0",
+              "recRGUe7xVCtmkOhn",
+              "recyWxXS0u3GjRr9F"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "15/2",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recb5nPKz4GVDPPXI"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "10",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rec2PJjxdSRtSC7j0"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recfsHI0uGpb2pB9W"
+            ]
+          },
+          {
+            "id": "rec4QWbZX5KJIhQyW",
+            "unidad": "ml",
+            "cantidad_exacta": "5",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recJHFp2EjqjXn3FO"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rec93EACh8a1dzIis",
+        "nombre_tecnico": "Aguacate crudo (pulpa comestible)",
+        "nombre": "Aguacate",
+        "descripcion": "pulpa comestible",
+        "unidad": "g",
+        "cantidad_exacta": "50",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec93EACh8a1dzIis",
+            "unidad": "g",
+            "cantidad_exacta": "50",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recl019v6UhwNzYCn"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recoM4LY51MoUUkJm",
+        "nombre_tecnico": "Ajo fresco (crudo)",
+        "nombre": "Ajo",
+        "descripcion": "fresco",
+        "unidad": "g",
+        "cantidad_exacta": "33/4",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "unidad": "g",
+            "cantidad_exacta": "3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rechiEd1xN9U5MR40"
+            ]
+          },
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "unidad": "g",
+            "cantidad_exacta": "3/4",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recNXghdtn4OHmmmq",
+              "recgi0wLvd7EOUa6E",
+              "recQfcwNCHV8anUzN"
+            ]
+          },
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "unidad": "g",
+            "cantidad_exacta": "3/2",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recWkKZSQ5LnWKB4k",
+              "recgi0wLvd7EOUa6E",
+              "recQfcwNCHV8anUzN"
+            ]
+          },
+          {
+            "id": "recoM4LY51MoUUkJm",
+            "unidad": "g",
+            "cantidad_exacta": "3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rechiEd1xN9U5MR40"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rec2ds3lrGGTSSER0",
+        "nombre_tecnico": "Arroz blanco de grano corto, crudo",
+        "nombre": "Arroz",
+        "descripcion": "blanco, grano corto, crudo",
+        "unidad": "g",
+        "cantidad_exacta": "50",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec2ds3lrGGTSSER0",
+            "unidad": "g",
+            "cantidad_exacta": "50",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recZKfZ13E8bgCyLv"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reccZQ0blNFQ0THdM",
+        "nombre_tecnico": "DIA Al Punto Arroz blanco cocido",
+        "nombre": "Arroz",
+        "descripcion": "blanco, cocido, DIA Al Punto",
+        "unidad": "g",
+        "cantidad_exacta": "125",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "reccZQ0blNFQ0THdM",
+            "unidad": "g",
+            "cantidad_exacta": "125",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recRiOfX0rx05Y1CP"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "125",
+          "unidad": "g",
+          "singular": "vasito",
+          "plural": "vasitos",
+          "producto_id": "dia-al-punto-arroz-blanco-cocido",
+          "referencia": "PROPIOS:dia-al-punto-arroz-blanco-cocido",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-12",
+            "url": "https://www.dia.es/arroz-pastas-y-legumbres/arroz/p/250021",
+            "notas": "Fotografías de envase físico aportadas por la usuaria: EAN, SKU, 250 g (2 × 125 g), nutrición por 100 g y vasito, ingredientes, soja, sin gluten, fabricante y conservación legibles. Coincide con valores principales DIA. Fibra no declarada=null. Valores micronutricionales del arroz se conservan como escenarios parciales separados; no representan totales del producto."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recDKPl7cPStT6WnA",
+        "nombre_tecnico": "Calabacín crudo",
+        "nombre": "Calabacín",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "1115/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "unidad": "g",
+            "cantidad_exacta": "60",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recLUF7XrBrj6nKKn",
+              "reccvBMaeXJoSvdSf",
+              "recQqpoqAYgN9ApXY"
+            ]
+          },
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "unidad": "g",
+            "cantidad_exacta": "575/6",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recG2Ko0LtokodhJW"
+            ]
+          },
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "unidad": "g",
+            "cantidad_exacta": "60",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recQqpoqAYgN9ApXY"
+            ]
+          },
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "unidad": "g",
+            "cantidad_exacta": "60",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recQqpoqAYgN9ApXY"
+            ]
+          },
+          {
+            "id": "recDKPl7cPStT6WnA",
+            "unidad": "g",
+            "cantidad_exacta": "575/6",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recG2Ko0LtokodhJW"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recOYCX563rWZgvWh",
+        "nombre_tecnico": "Calabaza butternut, cruda (parte comestible)",
+        "nombre": "Calabaza",
+        "descripcion": "butternut, parte comestible",
+        "unidad": "g",
+        "cantidad_exacta": "360",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recOYCX563rWZgvWh",
+            "unidad": "g",
+            "cantidad_exacta": "120",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recLUF7XrBrj6nKKn",
+              "reccvBMaeXJoSvdSf",
+              "recCCPSriC5eNan4E"
+            ]
+          },
+          {
+            "id": "recOYCX563rWZgvWh",
+            "unidad": "g",
+            "cantidad_exacta": "120",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recCCPSriC5eNan4E"
+            ]
+          },
+          {
+            "id": "recOYCX563rWZgvWh",
+            "unidad": "g",
+            "cantidad_exacta": "120",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recCCPSriC5eNan4E"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recrGNY88zOIOcRom",
+        "nombre_tecnico": "Cebolla fresca (cruda)",
+        "nombre": "Cebolla",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "400",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "100/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recTGYgXdxhrgWwRR"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "25",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recRUuWNWLmWTz70e"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recxgm4BVpJDzFiuZ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "50/3",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recc3xUdur279JZzJ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "50/3",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recc3xUdur279JZzJ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recfkeHYOtqgOfiIo",
+              "recZ9MGL7IIEy9LWG",
+              "recxgm4BVpJDzFiuZ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "25",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recixJmkJlSwORAQZ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recxgm4BVpJDzFiuZ"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "100/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recTGYgXdxhrgWwRR"
+            ]
+          },
+          {
+            "id": "recrGNY88zOIOcRom",
+            "unidad": "g",
+            "cantidad_exacta": "25",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recRUuWNWLmWTz70e"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recDZ4rW6XqS7v9TL",
+        "nombre_tecnico": "Edamame congelado, sin preparar (granos sin vaina)",
+        "nombre": "Edamame",
+        "descripcion": "congelado, granos sin vaina",
+        "unidad": "g",
+        "cantidad_exacta": "50",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recDZ4rW6XqS7v9TL",
+            "unidad": "g",
+            "cantidad_exacta": "50",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recQP9HMEAzRB1Bvx"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recqxFuwYNQJdjAaB",
+        "nombre_tecnico": "Gambones crudos, parte comestible (equivalencia langostino)",
+        "nombre": "Gambones",
+        "descripcion": "crudos, parte comestible",
+        "unidad": "g",
+        "cantidad_exacta": "100",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recqxFuwYNQJdjAaB",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recxnglCECxbXs1sn"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recyVu5pom0nNHSu9",
+        "nombre_tecnico": "Harina de trigo (blanca)",
+        "nombre": "Harina de trigo",
+        "descripcion": "blanca",
+        "unidad": "g",
+        "cantidad_exacta": "40/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recyVu5pom0nNHSu9",
+            "unidad": "g",
+            "cantidad_exacta": "20/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recOw26hix85me4rh"
+            ]
+          },
+          {
+            "id": "recyVu5pom0nNHSu9",
+            "unidad": "g",
+            "cantidad_exacta": "20/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recOw26hix85me4rh"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recSPOXZkbn9PSbHI",
+        "nombre_tecnico": "Huevo de gallina entero crudo",
+        "nombre": "Huevos",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "700/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "unidad": "g",
+            "cantidad_exacta": "50/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recm8lPUNKv6dHuHp"
+            ]
+          },
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "rec6knYz4PCFa7u2u"
+            ]
+          },
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "rec2esnydy5TXBWU0",
+              "recRGUe7xVCtmkOhn",
+              "recJorqqzamNzKiZh"
+            ]
+          },
+          {
+            "id": "recSPOXZkbn9PSbHI",
+            "unidad": "g",
+            "cantidad_exacta": "50/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recm8lPUNKv6dHuHp"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "50",
+          "unidad": "g",
+          "singular": "huevo",
+          "plural": "huevos",
+          "fuente": "Quiche registrada: 4 huevos = 200 g comestibles; criterio ensayado 7/8",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recw8aSxhSx0aSH93",
+        "nombre_tecnico": "Leche semidesnatada",
+        "nombre": "Leche",
+        "descripcion": "semidesnatada",
+        "unidad": "ml",
+        "cantidad_exacta": "20/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recw8aSxhSx0aSH93",
+            "unidad": "ml",
+            "cantidad_exacta": "10/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "reccdDOmrkuDQELWZ"
+            ]
+          },
+          {
+            "id": "recw8aSxhSx0aSH93",
+            "unidad": "ml",
+            "cantidad_exacta": "10/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "reccdDOmrkuDQELWZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rec9WDb977coILvP1",
+        "nombre_tecnico": "Mango crudo (sin piel ni hueso)",
+        "nombre": "Mango",
+        "descripcion": "sin piel ni hueso",
+        "unidad": "g",
+        "cantidad_exacta": "50",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec9WDb977coILvP1",
+            "unidad": "g",
+            "cantidad_exacta": "50",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recHtt1J6T4VqKfJj"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recG7EOA99Wt7MiRC",
+        "nombre_tecnico": "Mozzarella rallada Dia Láctea",
+        "nombre": "Mozzarella",
+        "descripcion": "rallada, DIA Láctea",
+        "unidad": "g",
+        "cantidad_exacta": "20",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recG7EOA99Wt7MiRC",
+            "unidad": "g",
+            "cantidad_exacta": "20",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recK24uPxhKxTQLLJ"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "200",
+          "unidad": "g",
+          "singular": "bolsa",
+          "plural": "bolsas",
+          "producto_id": "dia-lactea-mozzarella-rallada",
+          "referencia": "PROPIOS:dia-lactea-mozzarella-rallada",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-09",
+            "notas": "Tres fotografías de envase facilitadas por usuaria; etiqueta 1263 kJ/304 kcal por 100 g. Leche UE. Alérgeno leche. Conservar entre 0 y 5 °C y consumir antes de 5 días tras apertura. Auditoría integral aprobada explícitamente por la usuaria; estimaciones USDA NO declaradas por fabricante.",
+            "url": null
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recMpMB5G7N8U3xQb",
+        "nombre_tecnico": "Nata para cocinar DIA Láctea 18 % M.G.",
+        "nombre": "Nata",
+        "descripcion": "para cocinar, DIA Láctea",
+        "unidad": "ml",
+        "cantidad_exacta": "180",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recMpMB5G7N8U3xQb",
+            "unidad": "ml",
+            "cantidad_exacta": "60",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recLUF7XrBrj6nKKn",
+              "reccvBMaeXJoSvdSf",
+              "reckPBLhj38Nnqjav"
+            ]
+          },
+          {
+            "id": "recMpMB5G7N8U3xQb",
+            "unidad": "ml",
+            "cantidad_exacta": "60",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "reckPBLhj38Nnqjav"
+            ]
+          },
+          {
+            "id": "recMpMB5G7N8U3xQb",
+            "unidad": "ml",
+            "cantidad_exacta": "60",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "reckPBLhj38Nnqjav"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "200",
+          "unidad": "ml",
+          "singular": "envase",
+          "plural": "envases",
+          "producto_id": "dia-lactea-nata-cocinar-18",
+          "referencia": "PROPIOS:dia-lactea-nata-cocinar-18",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-11",
+            "url": "https://www.dia.es/huevos-leche-y-mantequilla/nata/p/145042",
+            "notas": "Tres imágenes aportadas: presentación y laterales legibles. Tabla impresa por 100 ml; prevalece sobre encabezado web DIA por 100 g. Los macronutrientes, ingredientes y fabricante coinciden con DIA. Fibra no declarada, null. Producto no presente en catálogo consultado (34 registros). Micronutrientes son estimaciones por equivalencia, salvo sodio calculado."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "rectCVvH0I4lf6zlq",
+        "nombre_tecnico": "Pan blanco de barra",
+        "nombre": "Pan",
+        "descripcion": "blanco de barra",
+        "unidad": "g",
+        "cantidad_exacta": "20/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rectCVvH0I4lf6zlq",
+            "unidad": "g",
+            "cantidad_exacta": "10/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recdOCWqJtLwmaECG"
+            ]
+          },
+          {
+            "id": "rectCVvH0I4lf6zlq",
+            "unidad": "g",
+            "cantidad_exacta": "10/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "recdOCWqJtLwmaECG"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recZ6WhTcrZDhRgKI",
+        "nombre_tecnico": "Pan de molde 12 cereales y semillas Oroweat",
+        "nombre": "Pan de molde",
+        "descripcion": "cereales y semillas, Oroweat",
+        "unidad": "g",
+        "cantidad_exacta": "73/2",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recZ6WhTcrZDhRgKI",
+            "unidad": "g",
+            "cantidad_exacta": "73/2",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recl4uPUsyH8G5eVU"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "73/2",
+          "unidad": "g",
+          "singular": "rebanada",
+          "plural": "rebanadas",
+          "producto_id": "oroweat-pan-molde-12-cereales-semillas",
+          "referencia": "PROPIOS:oroweat-pan-molde-12-cereales-semillas",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-10",
+            "url": "https://www.dia.es/panaderia/pan-de-molde-y-especiales/p/174067",
+            "notas": "Imágenes de producto aportadas por usuaria; EAN 8412600019832, 550 g y 15 rebanadas de 36,5 g aproximados. Macronutrientes de etiqueta por 100 g. Perfil de mono/poliinsaturadas atribuido a ficha DIA según auditoría aprobada (no visible en fotografía). Nueve minerales estimados de USDA FDC 168013, especialmente incierto hierro por posible enriquecimiento de harinas estadounidenses. Vitaminas null. Aprobación global de usuaria."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recSE81b9WjkURbXi",
+        "nombre_tecnico": "Patata, cruda (parte comestible)",
+        "nombre": "Patatas",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "690",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "200",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "rec8mnbXKIpQZWvF1"
+            ]
+          },
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "30",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recLUF7XrBrj6nKKn",
+              "reccvBMaeXJoSvdSf",
+              "recwML7r0aTNQeSew"
+            ]
+          },
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "30",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recwML7r0aTNQeSew"
+            ]
+          },
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "30",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "rec54RdqOTeEKC5PU",
+              "reccvBMaeXJoSvdSf",
+              "recwML7r0aTNQeSew"
+            ]
+          },
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "200",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "rec2esnydy5TXBWU0",
+              "recRGUe7xVCtmkOhn",
+              "recT9SONfh5ChIMq3"
+            ]
+          },
+          {
+            "id": "recSE81b9WjkURbXi",
+            "unidad": "g",
+            "cantidad_exacta": "200",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "rec8mnbXKIpQZWvF1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recVfgOdXad3Ns6po",
+        "nombre_tecnico": "Pechuga de pollo Nuestra Alacena DIA (95 %, loncheada)",
+        "nombre": "Pechuga de pollo",
+        "descripcion": "loncheada, Nuestra Alacena DIA",
+        "unidad": "g",
+        "cantidad_exacta": "30",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recVfgOdXad3Ns6po",
+            "unidad": "g",
+            "cantidad_exacta": "30",
+            "origen": "Lunes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rec8qQq7tWoFYdvGm",
+              "recW2jZafsKDRaTck"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "120",
+          "unidad": "g",
+          "singular": "envase",
+          "plural": "envases",
+          "producto_id": "dia-nuestra-alacena-pechuga-pollo-95",
+          "referencia": "PROPIOS:dia-nuestra-alacena-pechuga-pollo-95",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-11",
+            "url": "https://www.dia.es/",
+            "notas": "Dos fotografías de la etiqueta física aportadas por usuaria y contraste comercial DIA. EAN, contenido neto, formulación, alérgenos/trazas, nutrición por 100 g, fabricante y conservación. Fibra ingrediente presente pero cantidad no declarada, por eso null. Aprobación global explícita."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "rec7pFZddheVALlvz",
+        "nombre_tecnico": "Pepino crudo",
+        "nombre": "Pepino",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "45/2",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec7pFZddheVALlvz",
+            "unidad": "g",
+            "cantidad_exacta": "15/2",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recNXghdtn4OHmmmq",
+              "recgi0wLvd7EOUa6E",
+              "recqjvZeDogqGeqXS"
+            ]
+          },
+          {
+            "id": "rec7pFZddheVALlvz",
+            "unidad": "g",
+            "cantidad_exacta": "15",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recWkKZSQ5LnWKB4k",
+              "recgi0wLvd7EOUa6E",
+              "recqjvZeDogqGeqXS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recENcfvg6SEEWS6F",
+        "nombre_tecnico": "Pimiento rojo crudo",
+        "nombre": "Pimiento rojo",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "225",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recENcfvg6SEEWS6F",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recLLW3mAqqG1pbs2"
+            ]
+          },
+          {
+            "id": "recENcfvg6SEEWS6F",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recfkeHYOtqgOfiIo",
+              "recZ9MGL7IIEy9LWG",
+              "recLLW3mAqqG1pbs2"
+            ]
+          },
+          {
+            "id": "recENcfvg6SEEWS6F",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recLLW3mAqqG1pbs2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "rec0zazpvEsFuV0x4",
+        "nombre_tecnico": "Pimiento verde crudo",
+        "nombre": "Pimiento verde",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "225",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec0zazpvEsFuV0x4",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recWQrHA6vQvbIki7"
+            ]
+          },
+          {
+            "id": "rec0zazpvEsFuV0x4",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recfkeHYOtqgOfiIo",
+              "recZ9MGL7IIEy9LWG",
+              "recWQrHA6vQvbIki7"
+            ]
+          },
+          {
+            "id": "rec0zazpvEsFuV0x4",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recaicM32fzHzM6ze",
+              "recZ9MGL7IIEy9LWG",
+              "recWQrHA6vQvbIki7"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recJq3z3foutu1hOx",
+        "nombre_tecnico": "Queso curado de oveja (genérico)",
+        "nombre": "Queso de oveja",
+        "descripcion": "curado",
+        "unidad": "g",
+        "cantidad_exacta": "20",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recJq3z3foutu1hOx",
+            "unidad": "g",
+            "cantidad_exacta": "20",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "recyHiag9LGj5IsSS"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recl0KweclZiBy98h",
+        "nombre_tecnico": "Salchicha fresca de cerdo, cruda (referencia genérica)",
+        "nombre": "Salchichas",
+        "descripcion": "frescas, de cerdo, blancas y rojas",
+        "unidad": "g",
+        "cantidad_exacta": "1000/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recl0KweclZiBy98h",
+            "unidad": "g",
+            "cantidad_exacta": "250/3",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recLLDAz7SHs6iLkb"
+            ]
+          },
+          {
+            "id": "recl0KweclZiBy98h",
+            "unidad": "g",
+            "cantidad_exacta": "250/3",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recOl4ALLIe7jjP3P"
+            ]
+          },
+          {
+            "id": "recl0KweclZiBy98h",
+            "unidad": "g",
+            "cantidad_exacta": "250/3",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recLLDAz7SHs6iLkb"
+            ]
+          },
+          {
+            "id": "recl0KweclZiBy98h",
+            "unidad": "g",
+            "cantidad_exacta": "250/3",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recOl4ALLIe7jjP3P"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recpHKx8XrOpBd8zW",
+        "nombre_tecnico": "Salmón crudo (parte comestible)",
+        "nombre": "Salmón",
+        "descripcion": "crudo, parte comestible",
+        "unidad": "g",
+        "cantidad_exacta": "260",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recpHKx8XrOpBd8zW",
+            "unidad": "g",
+            "cantidad_exacta": "130",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recWq0zOWPyBJvIEI"
+            ]
+          },
+          {
+            "id": "recpHKx8XrOpBd8zW",
+            "unidad": "g",
+            "cantidad_exacta": "130",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "rec2337I9mYZpDCDP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recqRhWfhNW5TZb77",
+        "nombre_tecnico": "Ternera picada cruda (85 % magra, 15 % grasa)",
+        "nombre": "Ternera picada",
+        "descripcion": "hasta quince por ciento de grasa",
+        "unidad": "g",
+        "cantidad_exacta": "1000/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recqRhWfhNW5TZb77",
+            "unidad": "g",
+            "cantidad_exacta": "500/3",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rectqhN07l5dDRpH4"
+            ]
+          },
+          {
+            "id": "recqRhWfhNW5TZb77",
+            "unidad": "g",
+            "cantidad_exacta": "500/3",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rectqhN07l5dDRpH4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recjq8IrRWXTVjRKg",
+        "nombre_tecnico": "Tomate crudo",
+        "nombre": "Tomate",
+        "descripcion": "",
+        "unidad": "g",
+        "cantidad_exacta": "2410/3",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "unidad": "g",
+            "cantidad_exacta": "200",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "reckqTHkmhoQ21ZRc"
+            ]
+          },
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "unidad": "g",
+            "cantidad_exacta": "500/3",
+            "origen": "Martes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recUetQb5HaOrXJkj",
+              "recUVmgv678dYPJmE",
+              "recG1UJ6vBcK3NBaE",
+              "recTNv9Dqh2hBTBQX"
+            ]
+          },
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "unidad": "g",
+            "cantidad_exacta": "70",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recJrE4hHw9PhHFky"
+            ]
+          },
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "unidad": "g",
+            "cantidad_exacta": "500/3",
+            "origen": "Jueves · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recLLUICFD1e1Lxcz",
+              "reckqa2gMu0w6oTir",
+              "recG1UJ6vBcK3NBaE",
+              "recTNv9Dqh2hBTBQX"
+            ]
+          },
+          {
+            "id": "recjq8IrRWXTVjRKg",
+            "unidad": "g",
+            "cantidad_exacta": "200",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "reckqTHkmhoQ21ZRc"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "receShdIxklq3Ht6E",
+        "nombre_tecnico": "Mini tortillas de trigo IFA Eliges",
+        "nombre": "Tortillas de trigo",
+        "descripcion": "mini, IFA Eliges",
+        "unidad": "g",
+        "cantidad_exacta": "75",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "receShdIxklq3Ht6E",
+            "unidad": "g",
+            "cantidad_exacta": "75",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "reco8N4EEfFCnJdtE"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "25",
+          "unidad": "g",
+          "singular": "tortilla",
+          "plural": "tortillas",
+          "producto_id": "ifa-eliges-mini-tortillas-trigo",
+          "referencia": "PROPIOS:ifa-eliges-mini-tortillas-trigo",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-10",
+            "url": null,
+            "notas": "Fotografías del envase IFA Eliges; EAN 8480012038918. Paquete 12 tortillas de aprox. 25 g, total 300 g; cantidad_envase refiere a tortilla individual. Los valores por 100 g se tomaron directamente de la etiqueta. Minerales estimados por equivalencia con tortilla de trigo USDA sin calcio añadido, fuente estadounidense que puede contener enriquecimiento distinto de harina española, hierro especialmente incierto. Vitaminas desconocidas guardadas null. Auditoría global aprobada por usuaria."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recrQuW0jedsqM35u",
+        "nombre_tecnico": "Uvas frescas crudas (rojas o verdes)",
+        "nombre": "Uvas",
+        "descripcion": "frescas",
+        "unidad": "g",
+        "cantidad_exacta": "300",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recrQuW0jedsqM35u",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Lunes · Postre ingrediente",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recrQuW0jedsqM35u"
+            ]
+          },
+          {
+            "id": "recrQuW0jedsqM35u",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Martes · Postre ingrediente",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recrQuW0jedsqM35u"
+            ]
+          },
+          {
+            "id": "recrQuW0jedsqM35u",
+            "unidad": "g",
+            "cantidad_exacta": "100",
+            "origen": "Jueves · Postre ingrediente",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recrQuW0jedsqM35u"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "recpmmQpWkGhfDadm",
+        "nombre_tecnico": "Vino blanco para guisar de Alberto",
+        "nombre": "Vino blanco",
+        "descripcion": "para guisar, de Alberto",
+        "unidad": "ml",
+        "cantidad_exacta": "200",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "unidad": "ml",
+            "cantidad_exacta": "50",
+            "origen": "Lunes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rec4jneIKpsiuw7t3"
+            ]
+          },
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "unidad": "ml",
+            "cantidad_exacta": "50",
+            "origen": "Martes · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recJjVDvqGQYBFL5j"
+            ]
+          },
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "unidad": "ml",
+            "cantidad_exacta": "50",
+            "origen": "Miércoles · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recqHPRCZmS834meh",
+              "recgamLU5G0iB9YKr",
+              "rec3wB5bagR1Kf3MX",
+              "recJjVDvqGQYBFL5j"
+            ]
+          },
+          {
+            "id": "recpmmQpWkGhfDadm",
+            "unidad": "ml",
+            "cantidad_exacta": "50",
+            "origen": "Viernes · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recisgOzomUjkPYsa",
+              "recWH2AkGXuQeR6UN",
+              "recaX3R7koMTr5nrn",
+              "rec4jneIKpsiuw7t3"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "5000",
+          "unidad": "ml",
+          "singular": "caja",
+          "plural": "cajas",
+          "producto_id": "de-alberto-vino-blanco-bag-in-box",
+          "referencia": "PROPIOS:de-alberto-vino-blanco-bag-in-box",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-10",
+            "notas": "Fotografías de caja 5 L de Bodegas Hijos de Alberto Gutiérrez S.A. Indica 14,5 % vol, 330 kJ/79 kcal por 100 ml, contiene sulfitos. EAN 8413898833322. Una ficha comercial secundaria indica 15 % vol; prevalece el envase. Macros y sal no declarados: null. Usuario aprobó alta y estimaciones orientativas.",
+            "url": null
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "recBse4SOxBOPwYEQ",
+        "nombre_tecnico": "Yogur griego natural DIA Fidias",
+        "nombre": "Yogur",
+        "descripcion": "griego natural, DIA Fidias",
+        "unidad": "g",
+        "cantidad_exacta": "375/4",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "recBse4SOxBOPwYEQ",
+            "unidad": "g",
+            "cantidad_exacta": "125/4",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recNXghdtn4OHmmmq",
+              "recgi0wLvd7EOUa6E",
+              "recyaWdwqmFrnWLlS"
+            ]
+          },
+          {
+            "id": "recBse4SOxBOPwYEQ",
+            "unidad": "g",
+            "cantidad_exacta": "125/2",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recWkKZSQ5LnWKB4k",
+              "recgi0wLvd7EOUa6E",
+              "recyaWdwqmFrnWLlS"
+            ]
+          }
+        ],
+        "presentacion": {
+          "contenido": "125",
+          "unidad": "g",
+          "singular": "vasito",
+          "plural": "vasitos",
+          "producto_id": "dia-fidias-yogur-griego-natural",
+          "referencia": "PROPIOS:dia-fidias-yogur-griego-natural",
+          "fuente": {
+            "tipo": "etiqueta",
+            "fecha_verificacion": "2026-10-10",
+            "url": "https://www.dia.es/yogures-y-postres/yogures-griegos/p/135285",
+            "notas": "Fotografías del envase físico aportadas por la usuaria el 10/10/2026: EAN 8480017079374; ingredientes leche, nata, leche desnatada en polvo, fermentos lácticos; presentación 6 vasitos individuales de 125 g, total pack 750 g; origen leche UE, transformación España, fabricación L.N.P.L.R. Guadalajara S.L.; etiqueta por 100 g 519 kJ/125 kcal, grasa 9,9 g, saturadas 6,4 g, hidratos 5,4 g, azúcares 5,4 g, proteínas 3,6 g, sal 0,10 g. Coincide con ficha registrada. Micronutrientes siguen siendo estimaciones por equivalencia USDA FDC 2259794, no declarados por fabricante. Aprobación global para ficha previa. Ajuste 10/10/2026: cantidad_envase se define por unidad individual (125 g), no por pack (750 g), para evitar contabilizar seis yogures al usar uno."
+          },
+          "base": "contenido individual",
+          "verificado": true
+        }
+      },
+      {
+        "id": "rec7ray2LYDB4u7UC",
+        "nombre_tecnico": "Zumo de limón fresco",
+        "nombre": "Zumo de limón",
+        "descripcion": "fresco",
+        "unidad": "g",
+        "cantidad_exacta": "45/4",
+        "stock": false,
+        "aportes": [
+          {
+            "id": "rec7ray2LYDB4u7UC",
+            "unidad": "g",
+            "cantidad_exacta": "15/4",
+            "origen": "Miércoles · Cena",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "rectJVzQDp8Joz3q2",
+              "recTFMxMvllWALmdt",
+              "rec42ABMLlPI87ZUA",
+              "recNXghdtn4OHmmmq",
+              "recgi0wLvd7EOUa6E",
+              "rec8kTdIVNurDq9LF"
+            ]
+          },
+          {
+            "id": "rec7ray2LYDB4u7UC",
+            "unidad": "g",
+            "cantidad_exacta": "15/2",
+            "origen": "Jueves · Comida",
+            "ruta": [
+              "recoroSa93XtdWN8C",
+              "recj1RnIxnYs8zQ23",
+              "recO9SuFO76ROnfnh",
+              "recFEsGk5Ptwey4i5",
+              "recWkKZSQ5LnWKB4k",
+              "recgi0wLvd7EOUa6E",
+              "rec8kTdIVNurDq9LF"
+            ]
+          }
+        ]
+      }
+    ],
+    "condimentos": [
+      {
+        "nombre": "Laurel",
+        "origenes": [
+          "salchichas-al-vino"
+        ]
+      },
+      {
+        "nombre": "Menta o hierbabuena",
+        "origenes": [
+          "tzatziki"
+        ]
+      },
+      {
+        "nombre": "Perejil",
+        "origenes": [
+          "albondigas-en-salsa-rubia"
+        ]
+      },
+      {
+        "nombre": "Pimentón",
+        "origenes": [
+          "huevos-rotos"
+        ]
+      },
+      {
+        "nombre": "Pimienta negra",
+        "origenes": [
+          "salchichas-al-vino"
+        ]
+      },
+      {
+        "nombre": "Sal",
+        "origenes": [
+          "pure-de-calabaza-y-calabacin",
+          "tzatziki"
+        ]
+      },
+      {
+        "nombre": "Vinagre",
+        "origenes": [
+          "huevos-rotos"
+        ]
+      }
+    ],
+    "cobertura": [
+      {
+        "ingesta": "Lunes · Comida",
+        "estado": "completa",
+        "id": "recisgOzomUjkPYsa"
+      },
+      {
+        "ingesta": "Lunes · Cena",
+        "estado": "completa",
+        "id": "rec8qQq7tWoFYdvGm"
+      },
+      {
+        "ingesta": "Lunes · Postre",
+        "estado": "completo",
+        "componentes": 1
+      },
+      {
+        "ingesta": "Martes · Comida",
+        "estado": "completa",
+        "id": "recUetQb5HaOrXJkj"
+      },
+      {
+        "ingesta": "Martes · Cena",
+        "estado": "completa",
+        "id": "recqHPRCZmS834meh"
+      },
+      {
+        "ingesta": "Martes · Postre",
+        "estado": "completo",
+        "componentes": 1
+      },
+      {
+        "ingesta": "Miércoles · Comida",
+        "estado": "completa",
+        "id": "recqHPRCZmS834meh"
+      },
+      {
+        "ingesta": "Miércoles · Cena",
+        "estado": "completa",
+        "id": "rectJVzQDp8Joz3q2"
+      },
+      {
+        "ingesta": "Miércoles · Postre",
+        "estado": "sin postre",
+        "componentes": 0
+      },
+      {
+        "ingesta": "Jueves · Comida",
+        "estado": "completa",
+        "id": "recj1RnIxnYs8zQ23"
+      },
+      {
+        "ingesta": "Jueves · Cena",
+        "estado": "completa",
+        "id": "recLLUICFD1e1Lxcz"
+      },
+      {
+        "ingesta": "Jueves · Postre",
+        "estado": "completo",
+        "componentes": 1
+      },
+      {
+        "ingesta": "Viernes · Comida",
+        "estado": "completa",
+        "id": "recisgOzomUjkPYsa"
+      },
+      {
+        "ingesta": "Viernes · Cena",
+        "estado": "libre"
+      },
+      {
+        "ingesta": "Viernes · Postre",
+        "estado": "sin postre",
+        "componentes": 0
+      }
+    ],
+    "exclusiones": [
+      {
+        "origen": "Lunes · Desayuno",
+        "id": "recIa7zpasm2s0mgH",
+        "motivo": "Café de oficina"
+      },
+      {
+        "origen": "Martes · Desayuno",
+        "id": "recIa7zpasm2s0mgH",
+        "motivo": "Café de oficina"
+      },
+      {
+        "origen": "Miércoles · Desayuno",
+        "id": "recIa7zpasm2s0mgH",
+        "motivo": "Café de oficina"
+      },
+      {
+        "origen": "Jueves · Desayuno",
+        "id": "recIa7zpasm2s0mgH",
+        "motivo": "Café de oficina"
+      },
+      {
+        "origen": "Viernes · Desayuno",
+        "id": "recIa7zpasm2s0mgH",
+        "motivo": "Café de oficina"
+      }
+    ],
+    "preparaciones": [
+      "rec3wB5bagR1Kf3MX",
+      "rec42ABMLlPI87ZUA",
+      "recFEsGk5Ptwey4i5",
+      "recG1UJ6vBcK3NBaE",
+      "recRGUe7xVCtmkOhn",
+      "recZ9MGL7IIEy9LWG",
+      "recaX3R7koMTr5nrn",
+      "reccvBMaeXJoSvdSf",
+      "recgi0wLvd7EOUa6E"
+    ]
+  }
+}

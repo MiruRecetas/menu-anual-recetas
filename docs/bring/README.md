@@ -1,5 +1,7 @@
 # Bring! — documentación de implementación
 
+> **Ampliación autorizada · 15/10/2026:** «Septiembre menú 3». Se incorpora `09-3`, conservando octubre 1 y septiembre 4. [Expediente](PUBLICACION-SEPTIEMBRE3.md). Solo estas tres claves quedan activas.
+
 > **Ampliación autorizada · 15/10/2026:** Lucía solicita Septiembre · Menú 4. Se incorpora `09-4` manteniendo `10-1`, con fuente actual, imagen propia, veinte selecciones y los mismos contratos de cálculo/PWA. [Operación vigente](OPERACION.md) · [Expediente de septiembre](PUBLICACION-SEPTIEMBRE4.md). Las restricciones anteriores a octubre describen el primer despliegue y quedan ampliadas solo a este segundo menú.
 
 

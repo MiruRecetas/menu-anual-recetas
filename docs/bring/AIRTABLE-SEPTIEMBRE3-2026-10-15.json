@@ -1,0 +1,143 @@
+{
+  "fecha": "2026-10-15",
+  "base": "apprzwAwMVhkn3oHh",
+  "tabla": "tblJ7cjOhGBHLMWxv",
+  "campos": {
+    "nombre": "fldr6piAwwi3gHG7x",
+    "descripcion": "fldXb73P5SLE5syZe",
+    "tipo": "singleLineText"
+  },
+  "registros": [
+    {
+      "id": "rec2ds3lrGGTSSER0",
+      "nombre_tecnico": "Arroz blanco de grano corto, crudo",
+      "referencia": "USDA:168931",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Arroz",
+        "descripcion": "blanco, grano corto, crudo"
+      }
+    },
+    {
+      "id": "rec93EACh8a1dzIis",
+      "nombre_tecnico": "Aguacate crudo (pulpa comestible)",
+      "referencia": "BEDCA:2216",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Aguacate",
+        "descripcion": "pulpa comestible"
+      }
+    },
+    {
+      "id": "rec9WDb977coILvP1",
+      "nombre_tecnico": "Mango crudo (sin piel ni hueso)",
+      "referencia": "BEDCA:1186",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Mango",
+        "descripcion": "sin piel ni hueso"
+      }
+    },
+    {
+      "id": "recDZ4rW6XqS7v9TL",
+      "nombre_tecnico": "Edamame congelado, sin preparar (granos sin vaina)",
+      "referencia": "USDA:168410",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Edamame",
+        "descripcion": "congelado, granos sin vaina"
+      }
+    },
+    {
+      "id": "recJq3z3foutu1hOx",
+      "nombre_tecnico": "Queso curado de oveja (genérico)",
+      "referencia": "BEDCA:719",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Queso de oveja",
+        "descripcion": "curado"
+      }
+    },
+    {
+      "id": "recMpMB5G7N8U3xQb",
+      "nombre_tecnico": "Nata para cocinar DIA Láctea 18 % M.G.",
+      "referencia": "PROPIOS:dia-lactea-nata-cocinar-18",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Nata",
+        "descripcion": "para cocinar, DIA Láctea"
+      }
+    },
+    {
+      "id": "recOYCX563rWZgvWh",
+      "nombre_tecnico": "Calabaza butternut, cruda (parte comestible)",
+      "referencia": "USDA:169295",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Calabaza",
+        "descripcion": "butternut, parte comestible"
+      }
+    },
+    {
+      "id": "reccZQ0blNFQ0THdM",
+      "nombre_tecnico": "DIA Al Punto Arroz blanco cocido",
+      "referencia": "PROPIOS:dia-al-punto-arroz-blanco-cocido",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Arroz",
+        "descripcion": "blanco, cocido, DIA Al Punto"
+      }
+    },
+    {
+      "id": "recl0KweclZiBy98h",
+      "nombre_tecnico": "Salchicha fresca de cerdo, cruda (referencia genérica)",
+      "referencia": "BEDCA:2305",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Salchichas",
+        "descripcion": "frescas, de cerdo, blancas y rojas"
+      }
+    },
+    {
+      "id": "recpHKx8XrOpBd8zW",
+      "nombre_tecnico": "Salmón crudo (parte comestible)",
+      "referencia": "BEDCA:2626",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Salmón",
+        "descripcion": "crudo, parte comestible"
+      }
+    }
+  ],
+  "verificacion": "Relectura de los seis conjuntos. make_source inicial tras etiquetas y segunda extracción idénticas semánticamente para todas las dependencias. Nuevas comidas ajenas al menú se excluyen de la proyección. No se escribieron campos técnicos, cantidades, enlaces, fórmulas ni nutrientes."
+}

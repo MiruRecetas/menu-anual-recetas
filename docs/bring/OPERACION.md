@@ -4,7 +4,7 @@ Contrato de implementación del 14/10/2026. Esta guía describe el código perma
 
 ## Alcance y rutas
 
-Están habilitados `10-1` y `09-4` en `datos/compra/activos.json`. Lucía solicitó Septiembre · Menú 4 el 15/10/2026. No añadir otros menús sin su autorización.
+Están habilitados `10-1`, `09-4` y `09-3` en `datos/compra/activos.json`. Lucía solicitó Septiembre · Menú 4 el 15/10/2026. No añadir otros menús sin su autorización.
 
 - Fuente: `datos/compra/10-1.json`, contrato v1 independiente de nutrición y menú v2.
 - Página: `menus/10-1/compra/`; entrada contextual junto al selector del menú semanal.
@@ -68,3 +68,12 @@ El exportador admite tanto el postre simple de los menús v2 previos como el env
 Pimentón dulce `recI8AwaRp7BOa9GZ` se añade explícitamente a despensa. El pimentón literal sin cantidad no duplica ese artículo cuantificado. El laurel del marmitako carece de vínculo a INGREDIENTES: se conserva como checklist literal de despensa sin inventar ID, gramos ni nutrientes, con procedencia y sus dos hojas culinarias originales en la fuente. Se trata del criterio por preparación verificada `recdhYBKhV8omXHcm`; no migra cantidades de otras recetas. Agua, guindilla, ras el hanout, sal y vinagre sin cantidad también quedan como checklist de despensa.
 
 Dieciocho ingredientes nuevos recibieron únicamente los campos de presentación existentes: expediente en AIRTABLE-SEPTIEMBRE4-2026-10-15.json. La nueva imagen y sus fuentes están en IMAGEN-SEPTIEMBRE4.json. La prueba física Android de esta nueva ruta permanece pendiente, separada de CI, HTTP y navegador.
+
+
+## Ampliación Septiembre · Menú 3 · 15/10/2026
+
+Solicitud expresa «Septiembre menú 3». Fuente `datos/compra/09-3.json`; página `menus/09-3/compra/`, veinte selecciones e imagen propia `imagenes/menus/09-3.webp` (1024 cuadrado, 341.548 bytes). Se conserva la PWA única y el resto de menús activos.
+
+33 ingredientes por ID/unidad, 9 preparaciones, 40 artículos (32 compra, 8 despensa). Albóndigas dos usos, salchichas dos, puré tres; se expanden sofrito clásico y tzatziki. Las variantes de arroz permanecen como dos artículos con el mismo nombre sencillo: crudo genérico en gramos y cocido DIA en vasitos individuales de 125 g. Nata: 200 ml por envase individual del pack verificado, 180 ml reales para una porción semanal y 540 ml para tres; se exportan uno y tres envases respectivamente. No se inventan formatos para salchichas, salmón, aguacate o mango genéricos. Las dos líneas culinarias de salchichas blancas/rojas comparten el mismo ID y unidad: se suman, manteniendo ambas características en su descripción.
+
+Diez etiquetas de presentación adicionales, sin cambio técnico; expediente AIRTABLE-SEPTIEMBRE3-2026-10-15.json. Imagen, prompt y huellas: IMAGEN-SEPTIEMBRE3.json. Cálculo exacto, redondeo posterior al selector y exclusión de los cinco cafés de oficina conservados. QA incluye acceso y regreso contextual en 390/820/1440 px, arroz por vasito y variantes; las pruebas históricas 7/8 no se modifican. Publicación, HTTP y navegador en PUBLICACION-SEPTIEMBRE3.md. Pendiente físico separado: importaciones nuevas Android a 1 y 3 porciones desde web y PWA, portada, arroz, nata, huevos, despensa y retorno.
