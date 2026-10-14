@@ -127,3 +127,11 @@ Por instrucción expresa de la usuaria, cuando un producto declare un nutriente 
 - Conservar las kcal declaradas del producto; no sustituirlas por energía recalculada a partir del límite de grasa o de otros macros. Releer los elementos y las preparaciones afectadas, confirmar `Calculado` y trasladar las cuatro macros oficiales a sus JSON públicos, redondeadas a dos decimales. Revisar dependencias dentro del alcance autorizado.
 
 **Caso aplicado:** piquillos Delicias de DIA D.O.P. Lodosa, `PROPIOS:delicias-dia-pimientos-piquillo-dop-lodosa`: grasas y saturadas declaradas «<0,5 g/100 g escurridos» se conservan como cotas; ambas usan 0,5 g/100 g en la capa operativa. Las tostas de burrata, piquillos y anchoas pasan de nutrición pendiente a cálculo completo sin cambiar ingredientes ni cantidades.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Nombre técnico e ID siguen siendo identidad; Nombre de visualización será el texto editorial y Descripción de compra conservará variantes/marcas útiles para compra. No migrar fichas sin adaptar y verificar el flujo de publicación de recetas, que no es scripts/exportar_airtable.py. Las marcas permanecen fuera de campos culinarios visibles y notas; AOVE/Sal y aclaraciones del uso conservan sus reglas. Condimentos sin peso permanecen sin nutrientes inventados y se exportan como stock.

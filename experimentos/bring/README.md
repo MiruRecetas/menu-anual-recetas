@@ -1,3 +1,26 @@
+# Bring! — expediente de pruebas y paso a implementación
+
+Actualización vinculante · 14/10/2026. Las ocho pruebas están documentadas en [Maestro Bring! v2.0](../../docs/bring/MAESTRO.md), que sustituye las afirmaciones de estado antiguas del historial inferior. El [traspaso de agente](AGENTE-BRING.md) contiene el mismo maestro. Guías por rol en [docs/bring](../../docs/bring/README.md).
+
+Resultado actual: prueba 7 validada físicamente por la usuaria (nombres, variantes, unión de descripciones en cesta, iconos, escalados, yogur/despensa); prueba 8 validada con imagen visible en Bring! Android. Las anotaciones numéricas secundarias 4A/4B/4C no escalaron: descartadas. Se conserva como principal el selector antes de importar, cálculo por ID y redondeo final.
+
+Las carpetas son instantáneas de ensayo, no fuente de producción ni sincronización automática. No se implementan Airtable, exportador, web/PWA o imágenes canónicas en esta actualización documental. El siguiente agente ejecutará el alcance expresamente encargado. Los ensayos comparten origen Pages: no se garantiza separación de caché del SW existente.
+
+| Ensayo | Página | Estado real |
+|---|---|---|
+| 1–3 | [Octubre original](10-1/) | Lectura, JSON, stock, escalado; saltos tagline no conservados |
+| 4 | [Septiembre 4A/4B/4C](prueba-4-09-1/) | Cifras secundarias no escalan |
+| 5 | [Septiembre selector previo](prueba-5-09-1/) | Procedimiento validado; anchoas/decimales corregidos |
+| 6 | [Octubre completo](prueba-6-10-1/) | 1 y 3 porciones confirmadas; stock ampliado por ID |
+| 7 | [Nombres y características](prueba-7-10-1/) | Confirmado, variantes separadas en receta/unidas en cesta |
+| 8 | [Imagen de menú](prueba-8-10-1/) | Imagen visible en Bring! confirmada |
+
+## Historial de las pruebas 1–3 (estado de su fecha)
+
+El texto siguiente conserva la cronología y fuentes originales; sus pendientes no describen el estado final. Consultar el maestro para reglas vigentes y la diferencia entre evidencia automática y física.
+
+---
+
 # Prueba temporal Bring! — Octubre · Menú 1
 
 Autorización: página pública aislada para probar importación con Bring!, sin diseño definitivo y sin modificar las pantallas, fuentes de recetas/menús, fotografías ni comportamiento PWA.
@@ -68,3 +91,4 @@ Resultados reales confirmados por la usuaria el 13/10/2026: JSON importa descrip
 Prueba 3 añade solo descripción en cinco líneas con las comidas reales y una variante base 2 con cantidades duplicadas. No modifica v2, agrupación, redondeo, AOVE, stock o datos fuente. Usar los enlaces Prueba 3 de la página; la prueba real de la usuaria confirma texto completo sin saltos de línea y reconocimiento de base 2. Al pasar a 1, bacalao 400 g, huevos 2 y yogur 1,5 unidades. 4 huevos → 2 es escalado exacto, no evidencia de redondeo especial; ajo fraccionario en ambas bases confirma que el redondeo de compra no está resuelto.
 
 Todo el expediente de traspaso, evidencia, límites, decisiones y prompt para nuevo agente está en [AGENTE-BRING.md](AGENTE-BRING.md).
+

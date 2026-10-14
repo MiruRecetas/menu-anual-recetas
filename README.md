@@ -236,3 +236,11 @@ Ambos repositorios usan rama y PR. Aquí se esperan Validar web y QA navegador; 
 ## PWA
 
 Instalación, actualización consentida, consulta offline limitada y recuperación: [contrato técnico PWA](docs/PWA.md). Los iconos de instalación y favicon usan la [identidad definitiva entregada](docs/IDENTIDAD-MARCA.md). Las pruebas automáticas no acreditan instalación física en Android, iOS o escritorio.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](docs/bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Guías por rol y prompts en [docs/bring](docs/bring/README.md). Los archivos de experimentos permanecen aislados y no son generados por el flujo de producción.

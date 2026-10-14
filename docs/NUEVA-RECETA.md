@@ -74,3 +74,11 @@ Así está registrada la dependencia en [Tostas de hummus y sardinillas](../dato
 **Resultado al informar a la usuaria:** nombre, raciones, nutrición por ración y procedencia de cálculo, categoría/etiquetas, enlace público (solo si verificado) y estado de la fotografía («pendiente del agente de imágenes» o «publicada y verificada»). No tratar el estado de fotografía como dato culinario en `notas`.
 
 Para el vocabulario completo, las condiciones de validación y la frontera respecto de menús v2, consulta [datos/FORMATO.md](../datos/FORMATO.md).
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+El campo de visualización propuesto no elimina matices de un uso como Tomate cherry. La lista de compra completa necesita identidad por ID y grafo de preparaciones, incluso bases internas; no se garantiza esa expansión por Schema.org de una receta individual. No modificar ingredientes/recetas por este suplemento.

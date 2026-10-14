@@ -74,3 +74,11 @@ Las preparaciones enlazadas se muestran como ingredientes y enlaces a su ficha, 
 **Etiquetas de ingrediente protagonista (7, una por receta):** `carne` (`beef`), `huevos` (`egg`), `pescado` (`fish`), `marisco` (`shrimp`), `verduras` (`carrot`), `legumbres` (`bean`), `lacteos` (`carton`). Si una receta tiene funcionales, se ordenan **antes** de la etiqueta principal. No se fuerzan etiquetas funcionales cuando ninguna corresponde.
 
 **Ejemplo vigente:** [Quiche de puerro, champiñones y pavo](recetas/quiche-de-puerro-champinones-y-pavo.json) se clasifica como `huevos-tortillas` con `["tupper", "consumo-frio", "huevos"]`. Los iconos y nombres públicos los aplica `scripts/generar.py`.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](../docs/bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Este suplemento no añade campos ejecutables al contrato de recetas/menús. El contrato nuevo de compra se implementará por separado con sus validadores; ID y metadatos de presentación no se deducen de nombres. `imageUrl` pertenece a JSON Bring!, no al campo imagen de la ficha ni a Schema.org.

@@ -166,3 +166,11 @@ Después del selector de menú, el botón salvia «Ver información nutricional�
 ### Batch cooking en tablet vertical · 13/10/2026
 
 En orientación vertical entre 701 y 1099 px, Batch cooking utiliza siempre cuatro columnas de miniaturas iguales, con independencia de la cantidad de preparaciones. La quinta pasa a la fila siguiente. Se conservan las tres columnas de móvil vertical hasta 700 px y la disposición de horizontal/escritorio. Este ajuste solo afecta al CSS de la galería, sin cambiar recetas, fotografías ni selección de preparaciones.
+
+## Actualización de coordinación Bring! · 14/10/2026
+
+Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
+
+Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
+
+Futura página de compra integrada desde el menú, con selector previo y payload público por selección. Mantener diseño/navegación responsive y funcionalidades actuales. No implementar con una segunda PWA ni editar HTML generado; seguir [guía de implementación](bring/IMPLEMENTACION-MANTENIMIENTO.md). Imágenes de menú y campos de ingrediente pertenecen a sus responsables.
