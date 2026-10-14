@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "c90623f8b4b49a62d880bb484308d3543cb76a33",
-  "generated_at_utc": "2026-10-14T19:13:38Z",
-  "total_recetas": 44,
+  "source_commit_sha": "a43c73344951cf15764b15e42f2ba0a383187f14",
+  "generated_at_utc": "2026-10-14T20:27:48Z",
+  "total_recetas": 45,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -539,6 +539,31 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/chili-con-carne/"
+    },
+    {
+      "nombre": "Crepes",
+      "slug": "crepes",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Crepes de harina, huevo y leche semidesnatada, con masa reposada en frío y cocinados en sartén antiadherente.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 62,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo M",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 125,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crepes/"
     },
     {
       "nombre": "Cuscús de pollo y verduras",
