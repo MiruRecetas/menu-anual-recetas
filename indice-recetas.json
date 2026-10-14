@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "ce7bdf840768b0e7e1323cac73ec15bff357ab12",
-  "generated_at_utc": "2026-10-14T18:04:29Z",
+  "source_commit_sha": "252a57f1641883d92f2cb6d375d78082abc5d1fa",
+  "generated_at_utc": "2026-10-14T18:19:44Z",
   "total_recetas": 43,
   "recetas": [
     {
@@ -688,7 +688,7 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-cesar/"
     },
     {
-      "nombre": "Ensalada mediterránea de pasta con atún",
+      "nombre": "Ensalada de pasta con atún",
       "slug": "ensalada-mediterranea-de-pasta-con-atun",
       "categoria": "ensaladas-frios",
       "descripcion": "Ensalada fría de pasta con atún, tomate cherry, piquillos, aceitunas, maíz y aguacate, aliñada con AOVE, limón y orégano.",
