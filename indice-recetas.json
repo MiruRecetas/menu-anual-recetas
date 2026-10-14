@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "a43c73344951cf15764b15e42f2ba0a383187f14",
-  "generated_at_utc": "2026-10-14T20:27:48Z",
-  "total_recetas": 45,
+  "source_commit_sha": "92fc7edb3464588fcb37999eff16951a5bc9d7d0",
+  "generated_at_utc": "2026-10-14T22:39:50Z",
+  "total_recetas": 46,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1312,6 +1312,61 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pollo-al-limon/"
+    },
+    {
+      "nombre": "Pollo Madrás",
+      "slug": "pollo-madras",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Pechuga de pollo con cebolla y ajo sofritos en aceite de coco, curry Madrás y tomate frito, cocinada a fuego lento.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Aceite de coco",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 4,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Pechuga de pollo",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate frito",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Curry Madrás en polvo",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chile triturado",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pollo-madras/"
     },
     {
       "nombre": "Puré de calabaza y calabacín",
