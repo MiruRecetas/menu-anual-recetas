@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "92fc7edb3464588fcb37999eff16951a5bc9d7d0",
-  "generated_at_utc": "2026-10-14T22:39:50Z",
+  "source_commit_sha": "d9d173ed81003088a17cbee44de01f3fe75e8173",
+  "generated_at_utc": "2026-10-14T22:46:00Z",
   "total_recetas": 46,
   "recetas": [
     {
@@ -1337,7 +1337,7 @@
         },
         {
           "nombre": "Pechuga de pollo",
-          "cantidad": 300,
+          "cantidad": 500,
           "unidad": "g"
         },
         {
