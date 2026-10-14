@@ -34,6 +34,7 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Sin desbordamiento de página');
    await page.screenshot({path:`qa-screenshots/compra-${width}.png`,fullPage:true});
    await page.getByRole('link',{name:'← Volver a Octubre · Menú 1'}).click();
+   await page.waitForFunction(()=>document.querySelector('#month').value==='10'&&document.querySelector('#menu-number').value==='1');
    assert.equal(await page.locator('#month').inputValue(),'10');assert.equal(await page.locator('#menu-number').inputValue(),'1');
    await page.locator('#month').selectOption('9');assert.equal(await page.locator('#menu-shopping').isVisible(),false);
    assert.deepEqual(errors,[]);await context.close();
