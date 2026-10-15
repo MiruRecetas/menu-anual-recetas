@@ -1,0 +1,73 @@
+{
+  "slug": "salmon-con-naranja-y-azafran",
+  "nombre": "Salmón con naranja y azafrán",
+  "descripcion": "Salmón al horno o en freidora de aire con miel, ajo, ralladura de naranja, romero y azafrán.",
+  "raciones": 3,
+  "categoria": "asados-horno",
+  "etiquetas": [
+    "batchcooking",
+    "rapida",
+    "pescado"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Salmón",
+      "cantidad": 450,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Naranja (ralladura para el adobo y rodajas que se retiran)",
+      "cantidad": 1,
+      "unidad": "unidad"
+    },
+    {
+      "nombre": "Ajo",
+      "cantidad": 1,
+      "unidad": "diente"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Miel de abeja",
+      "cantidad": 20,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Pimienta",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Romero",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Azafrán",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Lavar la naranja, rallar la parte coloreada de la piel y cortarla en rodajas finas.",
+    "Mezclar el ajo picado, la ralladura de naranja, el romero, el azafrán, la miel, el AOVE, la sal y la pimienta.",
+    "Untar el salmón con la mezcla y colocar las rodajas de naranja encima.",
+    "Cocinar en el horno o en la freidora de aire, tomando 180 °C y 10–14 minutos como referencia estimada. Comprobar el punto interior según el grosor y prolongar la cocción si es necesario.",
+    "Retirar las rodajas de naranja antes de servir."
+  ],
+  "notas": "Rallar solo la parte coloreada de la piel para evitar el amargor de la parte blanca. Vigilar el dorado: la miel puede tostarse antes de que el centro del pescado esté hecho. Para adelantar trabajo, repartir el salmón cocinado con sus jugos en recipientes poco profundos y refrigerar pronto; consumir en un máximo de 48 horas. Mantener frío durante el transporte y recalentar solo la porción necesaria, tapada, hasta que el centro esté bien caliente, sin prolongarlo para no resecar el salmón.",
+  "nutricion": {
+    "kcal": 320.25,
+    "proteinas_g": 27.67,
+    "hidratos_g": 5.36,
+    "grasas_g": 21.04
+  }
+}
