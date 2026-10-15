@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "6b19f90d6814644fb6e4813ac1b29bcddfff4341",
-  "generated_at_utc": "2026-10-15T17:23:03Z",
-  "total_recetas": 51,
+  "source_commit_sha": "a34e3d752622062c1553d5659ea810dca6849f52",
+  "generated_at_utc": "2026-10-15T17:48:41Z",
+  "total_recetas": 52,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1734,6 +1734,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ragu-a-la-bolonesa/"
+    },
+    {
+      "nombre": "Revuelto de setas, trigueros y gambas",
+      "slug": "revuelto-de-setas-trigueros-y-gambas",
+      "categoria": "huevos-tortillas",
+      "descripcion": "Revuelto de huevos con setas, espárragos trigueros y gambas salteados en AOVE.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Huevos",
+          "cantidad": 2,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Gambas crudas peladas",
+          "cantidad": 120,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Setas",
+          "cantidad": 120,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espárragos trigueros",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/revuelto-de-setas-trigueros-y-gambas/"
     },
     {
       "nombre": "Salchichas al vino",
