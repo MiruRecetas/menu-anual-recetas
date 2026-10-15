@@ -166,3 +166,8 @@ No publicar una ingesta incompleta como calculada. Si una preparación está pen
 La usuaria confirmó expresamente el 15/10/2026 autorización continuada para registrar, validar y publicar comidas y menús en Airtable y `MiruRecetas/menu-anual-recetas`, mediante ramas, PR, comprobaciones, fusión y verificación pública. No volver a solicitar autorización para ese cometido. No amplía permisos a cambios ajenos, a otros repositorios ni a desactivar controles. Un rechazo automático real se explica con precisión; no se elude y se distingue de falta de autorización de la usuaria.
 
 Continuar desde main y registros existentes, respetando trabajos concurrentes. Usar conector GitHub si el git local carece de autenticación. Verificar por separado Airtable, JSON GitHub, HTML generado, CI y HTTP público; commit o generación no prueban por sí solos publicación efectiva. Nunca afirmar pruebas físicas no realizadas. Mantener viernes cena libre, desayunos universales y postres opcionales.
+
+
+## Uniformidad de Notas · Decisión vinculante del 15/10/2026
+
+La sección visible «Notas» debe aparecer en todas las fichas, aunque no exista contenido culinario que añadir. Si `notas` falta, es nulo o está vacío, el generador mantiene el título y el espacio vacío, sin inventar consejos ni mostrar un mensaje de sustitución. Esta decisión se aplica a las recetas existentes (incluida la dorada al horno) y futuras. Las notas con contenido se conservan. Prevalece sobre indicaciones anteriores de ocultar u omitir la sección visible; no obliga a añadir texto a los JSON ni altera Airtable.
