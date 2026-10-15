@@ -171,3 +171,10 @@ Continuar desde main y registros existentes, respetando trabajos concurrentes. U
 ## Uniformidad de Notas · Decisión vinculante del 15/10/2026
 
 La sección visible «Notas» debe aparecer en todas las fichas, aunque no exista contenido culinario que añadir. Si `notas` falta, es nulo o está vacío, el generador mantiene el título y el espacio vacío, sin inventar consejos ni mostrar un mensaje de sustitución. Esta decisión se aplica a las recetas existentes (incluida la dorada al horno) y futuras. Las notas con contenido se conservan. Prevalece sobre indicaciones anteriores de ocultar u omitir la sección visible; no obliga a añadir texto a los JSON ni altera Airtable.
+
+
+### Aclaración editorial sobre Notas · 15/10/2026
+
+El responsable de recetas debe valorar y redactar autónomamente las notas culinarias útiles de cada receta: elaboración, textura, servicio, conservación, transporte y recalentado, según proceda. No dejar Notas vacío por defecto ni trasladar esa redacción a la usuaria. La regla de uniformidad mantiene visible el apartado incluso cuando, tras evaluar la receta, no haya nada relevante que añadir; no suspende la responsabilidad editorial. Conservar notas existentes y respetar decisiones expresas previas, sin añadir etiquetas o modificar ingredientes, macros, tiempos o fotografías a raíz de los consejos.
+
+Revisión del 15/10/2026: se completan las 18 fichas con notas ausentes/vacías, incluida la dorada y el revuelto. Las recomendaciones de frío y transporte se contrastan con AESAN (FAMILIAS_COMIDAS_CENTRO_ESCOLAR.pdf, edición 2026); enfriado del arroz, conservación y recalentado con Food Standards Agency. Las indicaciones culinarias se adaptan a cada elaboración y no constituyen una validación de vida útil específica.
