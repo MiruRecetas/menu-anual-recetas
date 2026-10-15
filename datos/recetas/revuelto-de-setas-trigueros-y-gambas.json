@@ -1,0 +1,50 @@
+{
+  "slug": "revuelto-de-setas-trigueros-y-gambas",
+  "nombre": "Revuelto de setas, trigueros y gambas",
+  "descripcion": "Revuelto de huevos con setas, espárragos trigueros y gambas salteados en AOVE.",
+  "raciones": 1,
+  "categoria": "huevos-tortillas",
+  "etiquetas": [
+    "rapida",
+    "huevos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Huevos",
+      "cantidad": 2,
+      "unidad": "unidades"
+    },
+    {
+      "nombre": "Gambas crudas peladas",
+      "cantidad": 120,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Setas",
+      "cantidad": 120,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Espárragos trigueros",
+      "cantidad": 100,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 5,
+      "unidad": "ml"
+    }
+  ],
+  "pasos": [
+    "Trocear los espárragos trigueros y saltearlos junto con las setas en el AOVE.",
+    "Incorporar las gambas y cocinar hasta que estén hechas.",
+    "Añadir los huevos batidos y cuajar el revuelto al gusto."
+  ],
+  "notas": "",
+  "nutricion": {
+    "kcal": 352.88,
+    "proteinas_g": 39.16,
+    "hidratos_g": 7.52,
+    "grasas_g": 18.79
+  }
+}
