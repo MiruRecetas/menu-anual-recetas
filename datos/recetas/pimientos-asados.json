@@ -1,0 +1,54 @@
+{
+  "slug": "pimientos-asados",
+  "nombre": "Pimientos asados",
+  "descripcion": "Pimientos rojos asados con sus jugos, cebolla en juliana fina y vinagre al gusto.",
+  "raciones": 3,
+  "categoria": "aperitivos-guarniciones",
+  "etiquetas": [
+    "congelable",
+    "batchcooking",
+    "verduras"
+  ],
+  "coccion_min": 45,
+  "ingredientes": [
+    {
+      "nombre": "Pimientos rojos",
+      "cantidad": 750,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 60,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 5,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Vinagre",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Untar ligeramente los pimientos enteros con el AOVE, salarlos y asarlos en el horno a 180 °C durante 45 minutos.",
+    "Dejar templar; pelar, retirar las semillas y cortar en tiras con las manos.",
+    "Conservar los jugos del asado en la fuente.",
+    "Repartir los pimientos y sus jugos en porciones equivalentes.",
+    "Añadir la cebolla cortada en juliana fina, repartida por igual entre las porciones, y vinagre al gusto."
+  ],
+  "notas": "Si se preparan para congelar, guardar los pimientos con sus jugos y añadir la cebolla y el vinagre al servir.",
+  "nutricion": {
+    "kcal": 92.14,
+    "proteinas_g": 3.48,
+    "hidratos_g": 12.31,
+    "grasas_g": 3.19
+  }
+}
