@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "059db059e4f7d5698d5e8f4de2412abff9368a0d",
-  "generated_at_utc": "2026-10-15T18:59:18Z",
-  "total_recetas": 54,
+  "source_commit_sha": "daa3676b26f7bf5a57898244f4b5ded9be4fe76b",
+  "generated_at_utc": "2026-10-15T19:33:48Z",
+  "total_recetas": 55,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1900,6 +1900,61 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salchichas-al-vino/"
+    },
+    {
+      "nombre": "Salmón con naranja y azafrán",
+      "slug": "salmon-con-naranja-y-azafran",
+      "categoria": "asados-horno",
+      "descripcion": "Salmón al horno o en freidora de aire con miel, ajo, ralladura de naranja, romero y azafrán.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Salmón",
+          "cantidad": 450,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Naranja (ralladura para el adobo y rodajas que se retiran)",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Miel de abeja",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Romero",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Azafrán",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salmon-con-naranja-y-azafran/"
     },
     {
       "nombre": "Salsa vizcaína",
