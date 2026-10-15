@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "d12a35f91c17ec1814d9861b3e67bad879fe6a0d",
-  "generated_at_utc": "2026-10-15T13:06:38Z",
-  "total_recetas": 48,
+  "source_commit_sha": "89854d9d8b47ca2cbbfa9797a1051ad8ab18f103",
+  "generated_at_utc": "2026-10-15T14:13:55Z",
+  "total_recetas": 49,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1283,6 +1283,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pasta-con-chili/"
+    },
+    {
+      "nombre": "Pimientos asados",
+      "slug": "pimientos-asados",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Pimientos rojos asados con sus jugos, cebolla en juliana fina y vinagre al gusto.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Pimientos rojos",
+          "cantidad": 750,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vinagre",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pimientos-asados/"
     },
     {
       "nombre": "Pisto",
