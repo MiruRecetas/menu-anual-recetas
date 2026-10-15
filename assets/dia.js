@@ -129,7 +129,7 @@ const total=el('section',undefined,'daily-total');total.append(dailyNutrition(da
 if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));
 if(payload.nombre_dia==='Viernes')total.append(el('p','Cena libre no incluida.','muted small'));
 root.append(total);simple('Desayuno',day.desayuno);root.append(meal('Comida',day.comida),meal('Cena',day.cena));
-for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.tipo==='ingrediente'?'Fruta':'Postre',item);
+for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.tipo==='ingrediente'&&item.referencia_id!=='recw8aSxhSx0aSH93'?'Fruta':'Postre',item);
 if(day.cena?.estado==='libre'&&window.lucide?.createIcons)window.lucide.createIcons();
 function enableSwipeNavigation(){
  const main=document.querySelector('main.main');
