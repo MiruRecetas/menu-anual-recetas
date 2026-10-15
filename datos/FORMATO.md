@@ -71,7 +71,7 @@ Las preparaciones enlazadas se muestran como ingredientes y enlaces a su ficha, 
 
 **Etiquetas funcionales (6, opcionales):** `congelable` (`snowflake`), `microondas` (`waves-vertical`), `tupper` (`paper-bag`), `batchcooking` (`calendar-check`), `rapida` (`zap`), `consumo-frio` (`refrigerator`). `microondas` exige buen resultado de recalentado, no solo poder calentarse; `consumo-frio` se aplica a platos normalmente calientes que se comen bien fríos, no a preparaciones frías por naturaleza. `batchcooking` se asigna en la ficha web solo si tiene sentido adelantar la preparación como parte del sistema de menús.
 
-**Etiquetas de ingrediente protagonista (7, una por receta):** `carne` (`beef`), `huevos` (`egg`), `pescado` (`fish`), `marisco` (`shrimp`), `verduras` (`carrot`), `legumbres` (`bean`), `lacteos` (`carton`). Si una receta tiene funcionales, se ordenan **antes** de la etiqueta principal. No se fuerzan etiquetas funcionales cuando ninguna corresponde.
+**Etiquetas de ingrediente protagonista (8, una por receta):** `carne` (`beef`), `huevos` (`egg`), `pescado` (`fish`), `marisco` (`shrimp`), `verduras` (`carrot`), `legumbres` (`bean`), `lacteos` (`carton`), `dulces` (`candy`). Si una receta tiene funcionales, se ordenan **antes** de la etiqueta principal. No se fuerzan etiquetas funcionales cuando ninguna corresponde.
 
 **Ejemplo vigente:** [Quiche de puerro, champiñones y pavo](recetas/quiche-de-puerro-champinones-y-pavo.json) se clasifica como `huevos-tortillas` con `["tupper", "consumo-frio", "huevos"]`. Los iconos y nombres públicos los aplica `scripts/generar.py`.
 
@@ -82,3 +82,8 @@ Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](../docs/
 Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
 
 Este suplemento no añade campos ejecutables al contrato de recetas/menús. El contrato nuevo de compra se implementará por separado con sus validadores; ID y metadatos de presentación no se deducen de nombres. `imageUrl` pertenece a JSON Bring!, no al campo imagen de la ficha ni a Schema.org.
+
+
+## Etiqueta principal Dulces · 16/10/2026
+
+`dulces` se muestra como **Dulces**, con icono Lucide `candy`, y es una etiqueta principal, no funcional. Se aplica a elaboraciones de perfil dulce con una cantidad relevante de azúcar o ingredientes azucarados, valorando la receta completa. No existe un umbral numérico automático acordado; no deducir la etiqueta solo de la presencia de fruta ni de un pequeño toque de miel en un plato salado. Mantener exactamente una principal y colocar las funcionales antes. Las galletas de avena con chocolate usan `["rapida", "dulces"]`. Aplicar este criterio en nuevas altas y revisiones de recetas; no modifica nutrientes, Airtable ni menús por sí mismo.
