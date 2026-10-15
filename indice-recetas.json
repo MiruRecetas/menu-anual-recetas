@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "dc25f2e9702a7037f9faacdc58917eb7ba98a9cc",
-  "generated_at_utc": "2026-10-15T17:58:10Z",
-  "total_recetas": 52,
+  "source_commit_sha": "50ce3c53107db1a9064b28535c3b05c1f98fef58",
+  "generated_at_utc": "2026-10-15T18:44:16Z",
+  "total_recetas": 53,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -773,6 +773,57 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-cesar/"
+    },
+    {
+      "nombre": "Ensalada griega con caballa y pimientos",
+      "slug": "ensalada-griega-con-caballa-y-pimientos",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada de tomate, pepino, feta y cebolla con aceitunas, caballa escurrida y pimientos asados con sus jugos.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Tomate",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pepino",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso feta",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Aceitunas rellenas de anchoa (escurridas)",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Caballa en aceite de oliva (escurrida)",
+          "cantidad": 1,
+          "unidad": "lata"
+        },
+        {
+          "nombre": "Pimientos asados",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "pimientos-asados"
+        },
+        {
+          "nombre": "Orégano",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-griega-con-caballa-y-pimientos/"
     },
     {
       "nombre": "Ensalada de pasta con atún",
