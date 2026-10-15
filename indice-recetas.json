@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "50ce3c53107db1a9064b28535c3b05c1f98fef58",
-  "generated_at_utc": "2026-10-15T18:44:16Z",
-  "total_recetas": 53,
+  "source_commit_sha": "059db059e4f7d5698d5e8f4de2412abff9368a0d",
+  "generated_at_utc": "2026-10-15T18:59:18Z",
+  "total_recetas": 54,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1317,6 +1317,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/mini-wraps-de-falafel/"
+    },
+    {
+      "nombre": "Pa amb tomàquet con jamón ibérico",
+      "slug": "pa-amb-tomaquet-con-jamon-iberico",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Pan tostado restregado con ajo, cubierto con tomate natural, AOVE y jamón ibérico.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pan de molde de 12 cereales y semillas",
+          "cantidad": 2,
+          "unidad": "rebanadas"
+        },
+        {
+          "nombre": "Tomate natural (tarrinas de 22 g)",
+          "cantidad": 3,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Jamón ibérico",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 5,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pa-amb-tomaquet-con-jamon-iberico/"
     },
     {
       "nombre": "Pasta boloñesa",
