@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "daa3676b26f7bf5a57898244f4b5ded9be4fe76b",
-  "generated_at_utc": "2026-10-15T19:33:48Z",
-  "total_recetas": 55,
+  "source_commit_sha": "25b47afece099f3abc80ef95ec45281e477f1bb3",
+  "generated_at_utc": "2026-10-15T22:20:51Z",
+  "total_recetas": 56,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -965,6 +965,71 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Galletas de avena con chocolate",
+      "slug": "galletas-de-avena-con-chocolate",
+      "categoria": "postres",
+      "descripcion": "Galletas de copos de avena y mantequilla con vainilla, azúcar blanco y moreno y trozos de chocolate negro.",
+      "raciones_base": 10,
+      "ingredientes": [
+        {
+          "nombre": "Copos de avena",
+          "cantidad": 130,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mantequilla",
+          "cantidad": 115,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar blanco",
+          "cantidad": 115,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar moreno",
+          "cantidad": 85,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Extracto de vainilla",
+          "cantidad": 7,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chocolate negro 85 %",
+          "cantidad": 1,
+          "unidad": "tableta"
+        },
+        {
+          "nombre": "Levadura en polvo o bicarbonato",
+          "cantidad": 5,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Canela",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/galletas-de-avena-con-chocolate/"
     },
     {
       "nombre": "Gambones al horno con ajo, perejil y limón",
