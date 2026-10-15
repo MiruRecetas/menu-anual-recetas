@@ -63,7 +63,7 @@ Consultar primero el estado actual de los sistemas; no prometer accesos de escri
 - La elaboración debe ser coherente con los ingredientes y técnicas, **sin repetir cantidades** de la receta base. Al modificar cantidades, mantenerlas en `ingredientes` y comprobar que los pasos no contienen cifras ni números escritos de dosificación. No añadir pasos o tiempos inventados; los que sean orientativos deben identificarse.
 - La sección `notas` es **solo culinaria** (servicio, textura, conservación, recalentado), no auditorías de fuentes, marcas, IDs, cálculos ni estados de foto.
 - No exhibir marcas comerciales en la ficha; AOVE es la denominación pública. El dato `imagen` solo se establece cuando el WebP/JPG/PNG binario ya existe. Una sola fotografía sirve ficha, recetario y Batch cooking.
-- La categoría y los slugs de etiquetas se escogen exclusivamente del catálogo cerrado del contrato `datos/FORMATO.md`: **10 categorías**, **6 funcionales** y **7 principales**. Debe haber **exactamente una principal** y cero o varias funcionales, siempre antes de la principal.
+- La categoría y los slugs de etiquetas se escogen exclusivamente del catálogo cerrado del contrato `datos/FORMATO.md`: **10 categorías**, **6 funcionales** y **8 principales**. Debe haber **exactamente una principal** y cero o varias funcionales, siempre antes de la principal.
 
 ## 5. Etiquetas: criterios y excepciones ya decididas
 
@@ -178,3 +178,8 @@ La sección visible «Notas» debe aparecer en todas las fichas, aunque no exist
 El responsable de recetas debe valorar y redactar autónomamente las notas culinarias útiles de cada receta: elaboración, textura, servicio, conservación, transporte y recalentado, según proceda. No dejar Notas vacío por defecto ni trasladar esa redacción a la usuaria. La regla de uniformidad mantiene visible el apartado incluso cuando, tras evaluar la receta, no haya nada relevante que añadir; no suspende la responsabilidad editorial. Conservar notas existentes y respetar decisiones expresas previas, sin añadir etiquetas o modificar ingredientes, macros, tiempos o fotografías a raíz de los consejos.
 
 Revisión del 15/10/2026: se completan las 18 fichas con notas ausentes/vacías, incluida la dorada y el revuelto. Las recomendaciones de frío y transporte se contrastan con AESAN (FAMILIAS_COMIDAS_CENTRO_ESCOLAR.pdf, edición 2026); enfriado del arroz, conservación y recalentado con Food Standards Agency. Las indicaciones culinarias se adaptan a cada elaboración y no constituyen una validación de vida útil específica.
+
+
+## Etiqueta principal Dulces · Norma del 16/10/2026
+
+Por instrucción de la usuaria se incorpora `dulces` (Dulces), con icono Lucide `candy`, al catálogo cerrado de etiquetas principales. Aplicarla a partir de ahora a recetas de perfil dulce con bastante azúcar, considerando el conjunto de ingredientes y su uso culinario, sin imponer un umbral numérico no acordado. No basta la fruta por sí sola ni un toque de miel en una receta salada. Mantener exactamente una principal, precedida por las funcionales. Las galletas de avena con chocolate cambian de `lacteos` a `dulces`, conservando `rapida`. El criterio rige nuevas altas y revisiones futuras; no obliga a reclasificar retrospectivamente otras recetas sin encargo. Es clasificación editorial, no una declaración nutricional regulada ni una modificación de macros, ingredientes, Airtable o menús.

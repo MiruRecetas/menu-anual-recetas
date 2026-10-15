@@ -8,7 +8,7 @@
   {key:'grasas_g',label:'Grasas',factor:9,kind:'fat'}
  ];
  const GROUPS={carne:'Carne',huevos:'Huevos',pescado:'Pescado',marisco:'Marisco',
-  verduras:'Verduras',legumbres:'Legumbres',lacteos:'Lácteos',frutas:'Frutas',otros:'Sin clasificar'};
+  verduras:'Verduras',legumbres:'Legumbres',lacteos:'Lácteos',dulces:'Dulces',frutas:'Frutas',otros:'Sin clasificar'};
  // Clasificación editorial provisional de ingredientes directos ya publicados.
  // No expresa el desglose real del producto ni modifica sus datos de origen.
  const DIRECT_GROUPS={recIa7zpasm2s0mgH:'lacteos',recrQuW0jedsqM35u:'frutas',
@@ -124,7 +124,7 @@
   left.append(macroLegend);
   const right=node('div',undefined,'weekly-pies');
   const colors={carne:'#b86f54',huevos:'#d0a36e',pescado:'#708e9b',marisco:'#c38777',
-   verduras:'#748d76',legumbres:'#9b9570',lacteos:'#b3a591',frutas:'#a18b9e',otros:'#90968e',
+   verduras:'#748d76',legumbres:'#9b9570',lacteos:'#b3a591',dulces:'#d0a36e',frutas:'#a18b9e',otros:'#90968e',
    desayuno:'#b3a591',comida:'#748d76',cena:'#b86f54',postre:'#d0a36e'};
   function pie(name,entries,cls){
    const figure=node('figure',undefined,'weekly-pie '+cls);

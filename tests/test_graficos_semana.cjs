@@ -7,7 +7,7 @@ const source=fs.readFileSync(path.join(root,'datos/menus/10-1.json'),'utf8');
 const menu=JSON.parse(source);
 const recipes=fs.readdirSync(path.join(root,'datos/recetas')).filter(x=>x.endsWith('.json')).map(name=>{
  const recipe=JSON.parse(fs.readFileSync(path.join(root,'datos/recetas',name),'utf8'));
- return {...recipe,etiquetas_principales:recipe.etiquetas.filter(t=>['carne','huevos','pescado','marisco','verduras','legumbres','lacteos'].includes(t))};
+ return {...recipe,etiquetas_principales:recipe.etiquetas.filter(t=>['carne','huevos','pescado','marisco','verduras','legumbres','lacteos','dulces'].includes(t))};
 });
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-7,`${a} != ${b}`);
 const data=model(menu,recipes);
@@ -77,3 +77,10 @@ assert.equal(model(planned,recipes).bars[4].remaining,0,'Solo viernes con cena l
 const otherDay=structuredClone(menu);otherDay.dias.Lunes.cena={estado:'libre'};
 assert.equal(model(otherDay,recipes).bars[0].remaining,0,'Cena libre de lunes sin tramo gris');
 assert.deepEqual(menu,JSON.parse(source),'Fuente nutricional intacta');
+const sweetMenu=structuredClone(menu);
+sweetMenu.dias.Lunes.postre={componentes:[{tipo:'preparacion',nombre:'Galletas de avena con chocolate',
+ slug:'galletas-de-avena-con-chocolate',raciones:1,nutricion:{kcal:311.36,proteinas_g:4.92,hidratos_g:37.81,grasas_g:15.68}}]};
+const sweetModel=model(sweetMenu,recipes);
+near(sweetModel.variety.entries.find(e=>e.key==='dulces').kcal,311.36);
+assert.equal(sweetModel.variety.entries.find(e=>e.key==='dulces').label,'Dulces');
+assert.deepEqual(menu,JSON.parse(source),'Clasificar Dulces no modifica menús reales');
