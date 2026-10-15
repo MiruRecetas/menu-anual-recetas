@@ -406,23 +406,23 @@
             "tipo": "preparacion",
             "referencia_id": "recgAYwNYGSi8mF3w",
             "nombre": "Galletas de avena con chocolate",
-            "raciones": 2,
+            "raciones": 1.5,
             "estado": "Calculado",
             "nutricion": {
-              "kcal": 622.7148762332696,
-              "proteinas_g": 9.8395,
-              "hidratos_g": 75.6238,
-              "grasas_g": 31.3553
+              "kcal": 467.0361571749522,
+              "proteinas_g": 7.379624999999999,
+              "hidratos_g": 56.71785,
+              "grasas_g": 23.516475
             },
             "slug": "galletas-de-avena-con-chocolate"
           }
         ]
       },
       "nutricion": {
-        "kcal": 1762.246982611054,
-        "proteinas_g": 86.892625,
-        "hidratos_g": 145.6738,
-        "grasas_g": 91.24101666666667
+        "kcal": 1606.5682635527364,
+        "proteinas_g": 84.43275,
+        "hidratos_g": 126.76785,
+        "grasas_g": 83.40219166666668
       }
     },
     "Jueves": {
@@ -612,9 +612,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 5853.086079232752,
-    "proteinas_g": 356.0056583333333,
-    "hidratos_g": 504.52575,
-    "grasas_g": 261.643248
+    "kcal": 5697.407360174435,
+    "proteinas_g": 353.5457833333333,
+    "hidratos_g": 485.6198,
+    "grasas_g": 253.804423
   }
 }

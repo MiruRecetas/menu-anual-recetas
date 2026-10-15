@@ -1019,7 +1019,7 @@ const assert = require('node:assert/strict');
     assert.equal(headings.filter(x=>x==='Postre').length,2,'Leche y galletas como postre');
     assert.ok(!headings.includes('Fruta'),'Leche no se etiqueta como fruta');
     assert.ok((await page.locator('body').innerText()).includes('200 ml'),'Vaso de leche');
-    assert.ok((await page.locator('body').innerText()).includes('2 raciones'),'Dos raciones de galletas');
+    assert.ok((await page.locator('body').innerText()).includes('1,5 raciones'),'Una ración y media de galletas');
     await page.close();
   }
   await browser.close();
