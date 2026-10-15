@@ -2,14 +2,15 @@
 
 Fuente: encargo de la usuaria de 16/10/2026, Airtable consultado el 15/10/2026
 a las 22:32 UTC. Menú `recszLULYqeN04sPl`. Publicación incremental, todavía
-Pendiente: falta comida del viernes y cantidad de galletas del miércoles.
-No se inventan estas ingestas ni se incluyen las galletas en los subtotales.
+Pendiente: falta comida del viernes.
+Actualización del miércoles: 2 raciones (4 galletas) y 200 ml de leche
+semidesnatada, ambas en los campos de postre correspondientes.
 
 | Día | Comida | Cena | Fruta / postre confirmado |
 |---|---|---|---|
 | Lunes | Lentejas estofadas con chorizo | Dorada con patatas + 1 rebanada Oroweat | Melocotón 180 g |
 | Martes | Solomillo a las dos mostazas + boniato 200 g + brócoli 200 g | Revuelto de setas, trigueros y gambas | Bowl de yogur, 1 ración |
-| Miércoles | Ensalada griega con caballa | Pa amb tomàquet con jamón ibérico | Galletas pendientes de cantidad |
+| Miércoles | Ensalada griega con caballa | Pa amb tomàquet con jamón ibérico | Galletas 2 raciones (4 unidades) + leche semidesnatada 200 ml |
 | Jueves | Misma COMIDA de lentejas del lunes | Salmón con naranja y azafrán + patata 200 g + pimientos asados, 1 ración | Melocotón 180 g |
 | Viernes | Pendiente | Libre | Sin postre registrado |
 
@@ -40,12 +41,25 @@ Ingredientes genéricos creados tras revisar los 113 registros previos:
 
 Las cuatro macros de cada COMIDA y cada día se leyeron de Airtable tras
 registrar. Las fórmulas semanales son BLANK por menú incompleto: el JSON
-publica un subtotal de días oficiales (5135,957243 kcal; 339,574158 g proteína;
-419,42595 g hidratos; 226,991948 g grasa), sin galletas ni comida del viernes.
+publica un subtotal de días oficiales (5853,086079 kcal; 356,005658 g proteína;
+504,52575 g hidratos; 261,643248 g grasa), sin comida del viernes.
 No sustituir ese subtotal por una semana completa ni alterar las fórmulas.
 
 Galletas existentes `recgAYwNYGSi8mF3w`: receta de 10 raciones / 20 galletas,
-por tanto 1 ración = 2 galletas. Esperar cantidad explícita de consumo.
+por tanto 1 ración = 2 galletas. Se registran 2 raciones por indicación expresa: 4 galletas.
+Leche semidesnatada existente `recw8aSxhSx0aSH93`, 200 ml; no se
+crea una preparación artificial para juntar los dos componentes.
+Postre conjunto: 717,128836 kcal; 16,4315 g proteína; 85,0998 g hidratos;
+34,6513 g grasa. Total del miércoles: 1762,246983 kcal; 86,892625 g proteína;
+145,6738 g hidratos; 91,241017 g grasa.
+
+La fórmula de proteínas del miércoles `fld7koIr5ofdQ5HTB` mantenía la
+exclusión histórica: si había preparación, omitía el ingrediente. Se corrige
+para sumar ambos aportes una sola vez, como ya hacen kcal/hidratos/grasas,
+sin modificar los datos de ingredientes ni recetas. Relectura de los 40
+menús: solo 09-2 tiene ambos componentes de postre el miércoles; los demás
+resultados no cambian. La leche se etiqueta visualmente como Postre, no
+Fruta, manteniendo separados los componentes y las cantidades.
 El bowl del martes conserva su campo de postre PREPARACIÓN separado.
 
 No se activa compra Bring! para este menú ni se modifican fotografías,

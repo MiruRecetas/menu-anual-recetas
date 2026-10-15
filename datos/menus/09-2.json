@@ -387,12 +387,42 @@
           "elementos_sin_grupo": []
         }
       },
-      "postre": null,
+      "postre": {
+        "componentes": [
+          {
+            "tipo": "ingrediente",
+            "referencia_id": "recw8aSxhSx0aSH93",
+            "nombre": "Leche semidesnatada",
+            "cantidad": 200,
+            "unidad": "ml",
+            "nutricion": {
+              "kcal": 94.41396,
+              "proteinas_g": 6.592,
+              "hidratos_g": 9.476,
+              "grasas_g": 3.296
+            }
+          },
+          {
+            "tipo": "preparacion",
+            "referencia_id": "recgAYwNYGSi8mF3w",
+            "nombre": "Galletas de avena con chocolate",
+            "raciones": 2,
+            "estado": "Calculado",
+            "nutricion": {
+              "kcal": 622.7148762332696,
+              "proteinas_g": 9.8395,
+              "hidratos_g": 75.6238,
+              "grasas_g": 31.3553
+            },
+            "slug": "galletas-de-avena-con-chocolate"
+          }
+        ]
+      },
       "nutricion": {
-        "kcal": 1045.1181463777843,
-        "proteinas_g": 70.461125,
-        "hidratos_g": 60.574,
-        "grasas_g": 56.589716666666675
+        "kcal": 1762.246982611054,
+        "proteinas_g": 86.892625,
+        "hidratos_g": 145.6738,
+        "grasas_g": 91.24101666666667
       }
     },
     "Jueves": {
@@ -582,9 +612,9 @@
     }
   },
   "nutricion_semana": {
-    "kcal": 5135.957242999482,
-    "proteinas_g": 339.5741583333333,
-    "hidratos_g": 419.42595,
-    "grasas_g": 226.991948
+    "kcal": 5853.086079232752,
+    "proteinas_g": 356.0056583333333,
+    "hidratos_g": 504.52575,
+    "grasas_g": 261.643248
   }
 }

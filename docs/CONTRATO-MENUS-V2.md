@@ -32,6 +32,11 @@ El ingrediente usa cantidad y unidad g/ml y nutrición proporcional a su base de
 
 En web se muestran Fruta/apple y Postre/dessert como secciones opcionales independientes (sin iconos en ampliada). La nomenclatura de campos y JSON se conserva.
 
+La leche semidesnatada (`recw8aSxhSx0aSH93`) en el componente INGREDIENTE
+es un complemento de Postre, no una fruta: se muestra como Postre/dessert.
+Puede coexistir con las galletas del componente PREPARACIÓN, conservando
+sus cantidades, vínculos y aportes separados sin crear otra preparación.
+
 ## Aportes y enlaces de presentación
 
 Los elementos pueden incluir su nutrición oficial de COMIDA_ELEMENTOS. El generador puede enriquecer únicamente la copia de presentación con aportes verificados de `presentacion/aportes-componentes.json` y enlaces exactos únicos a recetas existentes. No reescribe el JSON canónico ni reemplaza totales. Consultar el protocolo de mantenimiento para condiciones de validez y fallback pendiente.

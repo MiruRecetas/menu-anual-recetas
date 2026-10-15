@@ -1010,6 +1010,18 @@ const assert = require('node:assert/strict');
     }
     await page.close();
   }
+  // Postre mixto: leche y galletas conservan campos independientes, sin fruta ficticia.
+  {
+    const page=await browser.newPage({serviceWorkers:'block'});
+    await page.goto('http://127.0.0.1:8765/menus/09-2/mi%C3%A9rcoles/');
+    await page.waitForSelector('.daily-component');
+    const headings=await page.locator('.daily-meal-title > span').allTextContents();
+    assert.equal(headings.filter(x=>x==='Postre').length,2,'Leche y galletas como postre');
+    assert.ok(!headings.includes('Fruta'),'Leche no se etiqueta como fruta');
+    assert.ok((await page.locator('body').innerText()).includes('200 ml'),'Vaso de leche');
+    assert.ok((await page.locator('body').innerText()).includes('2 raciones'),'Dos raciones de galletas');
+    await page.close();
+  }
   await browser.close();
   if(issues.length)throw new Error(issues.join('\n'));
   console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
