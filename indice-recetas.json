@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "4d86065f7ed71d1a98c68a01c3e7baf5a66c3362",
-  "generated_at_utc": "2026-10-15T17:05:17Z",
-  "total_recetas": 50,
+  "source_commit_sha": "6b19f90d6814644fb6e4813ac1b29bcddfff4341",
+  "generated_at_utc": "2026-10-15T17:23:03Z",
+  "total_recetas": 51,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -632,6 +632,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/cuscus-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Dorada al horno con cama de patata y cebolla",
+      "slug": "dorada-al-horno-con-cama-de-patata-y-cebolla",
+      "categoria": "asados-horno",
+      "descripcion": "Dorada entera al horno sobre una cama de patata y cebolla, con AOVE y rodajas de limón.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Dorada entera limpia, con cabeza y espinas (350 g de compra por pieza)",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Patata",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Limón (para aromatizar, no se consume)",
+          "cantidad": 1,
+          "unidad": "unidad"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/dorada-al-horno-con-cama-de-patata-y-cebolla/"
     },
     {
       "nombre": "Ensalada campera",
