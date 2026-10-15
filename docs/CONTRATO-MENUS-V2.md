@@ -38,6 +38,14 @@ Los elementos pueden incluir su nutrición oficial de COMIDA_ELEMENTOS. El gener
 
 ## Publicación vigente
 
+En menús parciales (`estado: "Pendiente"`), las cuatro fórmulas semanales de
+Airtable permanecen vacías hasta completar las nueve comidas/cenas.
+`nutricion_semana` contiene entonces exclusivamente el **subtotal** de los cinco
+totales diarios oficiales leídos de Airtable, sin imputar ingestas pendientes.
+No es un total semanal emitido por Airtable ni un menú completo. Al cerrar el
+menú se exigen y conservan los cuatro totales semanales oficiales. Esta regla
+no modifica fórmulas ni permite recalcular nutrientes de comidas en la web.
+
 El exportador auténtico y menús calculados ya están publicados. Otros menús permanecen Pendiente: no confundir posiciones del calendario con semanas completas. Consultar los JSON actuales en cada sesión. Antes de fusionar comprobar estados, numeración, nutrición, grupos, enlaces, accesibilidad y aspecto visual con datos reales.
 
 ## Actualización de coordinación Bring! · 14/10/2026

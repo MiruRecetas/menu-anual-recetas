@@ -96,7 +96,7 @@ function component(x,nut=x.nutricion,name=displayName(x)){
  const box=el('div',undefined,'daily-component');box.append(entry(x,name),macros(nut));return box;
 }
 function group(g){
- if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,foodNames[g.elementos[0].referencia_id]||g.nombre);
+ if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,g.nombre==='Pan Oroweat'?'Pan de molde':g.nombre);
  const details=el('details',undefined,'culinary-group daily-component');
  const summary=el('summary');summary.append(el('span',g.nombre,'component-name'),macros(g.nutricion,'span'));
  const inside=el('div',undefined,'group-entries');

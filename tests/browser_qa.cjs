@@ -998,6 +998,18 @@ const assert = require('node:assert/strict');
   assert.equal(await touchPage.locator('.daily-page-heading h1').innerText(),'Martes','Navegación inferior accesible por teclado');
   await context.close();
 
+  // Un ingrediente en un grupo conserva su preparación culinaria visible.
+  for(const width of [390,820,1440]){
+    const page=await browser.newPage({viewport:{width,height:1000},serviceWorkers:'block'});
+    for(const [day,names] of [['martes',['Boniato asado','Brócoli al vapor']],['jueves',['Cachelos con pimentón','Pimientos asados']]]){
+      await page.goto('http://127.0.0.1:8765/menus/09-2/'+day+'/');
+      await page.waitForSelector('.daily-component');
+      const namesShown=await page.locator('.daily-component .component-name').allTextContents();
+      for(const name of names)assert.ok(namesShown.includes(name),'Grupo culinario: '+name);
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),'Sin desbordamiento en menú 09-2');
+    }
+    await page.close();
+  }
   await browser.close();
   if(issues.length)throw new Error(issues.join('\n'));
   console.log('PASS: Navegación y estructura en desktop/tablet/mobile; 12 capturas creadas.');
