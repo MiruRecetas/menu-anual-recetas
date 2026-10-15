@@ -1,0 +1,37 @@
+{
+  "slug": "crep-de-pollo-al-curry",
+  "nombre": "Crep de pollo al curry",
+  "descripcion": "Crep relleno de pollo Madrás con cebolla, tomate y curry.",
+  "raciones": 1,
+  "categoria": "tostas-bocadillos-wraps",
+  "etiquetas": [
+    "tupper",
+    "microondas",
+    "carne"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Pollo Madrás",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "pollo-madras"
+    },
+    {
+      "nombre": "Crepes",
+      "cantidad": 1,
+      "unidad": "ración",
+      "preparacion": "crepes"
+    }
+  ],
+  "pasos": [
+    "Preparar el pollo Madrás y los crepes siguiendo sus recetas.",
+    "Repartir el pollo Madrás caliente sobre los crepes y doblarlos para contener el relleno.",
+    "Servir caliente."
+  ],
+  "nutricion": {
+    "kcal": 610.97,
+    "proteinas_g": 48.93,
+    "hidratos_g": 43.69,
+    "grasas_g": 25.06
+  }
+}
