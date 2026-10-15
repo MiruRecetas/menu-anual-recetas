@@ -1,0 +1,87 @@
+{
+  "slug": "galletas-de-avena-con-chocolate",
+  "nombre": "Galletas de avena con chocolate",
+  "descripcion": "Galletas de copos de avena y mantequilla con vainilla, azúcar blanco y moreno y trozos de chocolate negro.",
+  "raciones": 10,
+  "categoria": "postres",
+  "etiquetas": [
+    "rapida",
+    "lacteos"
+  ],
+  "ingredientes": [
+    {
+      "nombre": "Copos de avena",
+      "cantidad": 130,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Mantequilla",
+      "cantidad": 115,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Azúcar blanco",
+      "cantidad": 115,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Azúcar moreno",
+      "cantidad": 85,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Extracto de vainilla",
+      "cantidad": 7,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Huevo",
+      "cantidad": 1,
+      "unidad": "unidad"
+    },
+    {
+      "nombre": "Harina de trigo",
+      "cantidad": 100,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Chocolate negro 85 %",
+      "cantidad": 1,
+      "unidad": "tableta"
+    },
+    {
+      "nombre": "Levadura en polvo o bicarbonato",
+      "cantidad": 5,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Canela",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    }
+  ],
+  "pasos": [
+    "Precalentar el horno a 180 °C.",
+    "En un bol mediano, combinar los copos de avena, la harina, la canela, la sal y la levadura en polvo o el bicarbonato elegidos.",
+    "En otro bol grande, batir la mantequilla a temperatura ambiente con el azúcar blanco y el azúcar moreno, con varillas eléctricas o manuales, hasta que la mezcla esté ligera y aireada.",
+    "Incorporar el huevo y la vainilla y mezclar bien.",
+    "Añadir los ingredientes secos al bol grande e integrarlos con una espátula o cuchara, sin batir en exceso.",
+    "Picar el chocolate e incorporar los trozos a la masa.",
+    "Preparar una bandeja con papel de horno o un tapete de silicona. Colocar cucharadas de masa, dejando unos 5 cm entre ellas.",
+    "Hornear entre 10 y 12 minutos, según el horno y el punto de dorado deseado.",
+    "Sacar la bandeja y dejar enfriar unos minutos. Pasar las galletas a una rejilla para que terminen de enfriarse."
+  ],
+  "coccion_min": 12,
+  "notas": "El lote está previsto para 20 galletas: cada ración corresponde a 2 galletas de unos 30 g cada una; el peso final puede variar con el tamaño y la pérdida de humedad. Repartir la masa en porciones similares para que se horneen de forma uniforme. Dejar que se enfríen por completo antes de guardarlas. Se conservan hasta una semana a temperatura ambiente, en un lugar fresco y seco, dentro de un envase con tapa o caja de lata. Las bolitas de masa sin hornear pueden congelarse hasta tres meses, primero separadas en una bandeja y después en un envase cerrado. No probar la masa cruda, que contiene huevo y harina sin cocinar.",
+  "nutricion": {
+    "kcal": 311.36,
+    "proteinas_g": 4.92,
+    "hidratos_g": 37.81,
+    "grasas_g": 15.68
+  }
+}
