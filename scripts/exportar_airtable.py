@@ -79,6 +79,16 @@ def ingredient(ref,ingredients,quantity,unit,official):
     return {"tipo":"ingrediente","referencia_id":ref,"nombre":row["Nombre"],
             "cantidad":quantity,"unidad":unit,"nutricion":official}
 
+def weekly_macros(menu, days, complete, context):
+    """Total oficial al cerrar; subtotal de días oficiales en menús parciales.
+
+    Las cuatro fórmulas semanales de Airtable devuelven BLANK mientras falte
+    una ingesta. No sustituirlas ni atribuirles un subtotal que no han emitido.
+    """
+    if complete:
+        return macros(menu, ("Menú · Kcal", "Menú · Proteínas", "Menú · Hidratos", "Menú · Grasas"), context)
+    return {key: sum(days[day]["nutricion"][key] for day in DAYS) for key in KEY_MACROS}
+
 def dessert(menu, day, ingredients, preps, slugs):
     """Exporta hasta un ingrediente y una preparación, sin sumar los totales."""
     ir = single_link(menu, day+" · Postre", True)
@@ -198,7 +208,7 @@ def main():
                      for d in DAYS for k in ("comida","cena"))
         if complete and m.get("Estado menú") != "Calculado":
             error("Menú completo sin estado calculado: "+mid)
-        weekly=macros(m,("Menú · Kcal","Menú · Proteínas","Menú · Hidratos","Menú · Grasas"),mid)
+        weekly=weekly_macros(m,days,complete,mid)
         week={"schema_version":2,"mes":month,"menu":number,"airtable_menu_id":mid,
               "estado":"Calculado" if complete else "Pendiente","dias":days,
               "nutricion_semana":weekly}
