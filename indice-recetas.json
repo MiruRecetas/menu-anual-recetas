@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "89854d9d8b47ca2cbbfa9797a1051ad8ab18f103",
-  "generated_at_utc": "2026-10-15T14:13:55Z",
-  "total_recetas": 49,
+  "source_commit_sha": "6d63a0739846f7270cfada850a34ee25320cbcd3",
+  "generated_at_utc": "2026-10-15T14:32:37Z",
+  "total_recetas": 50,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1829,6 +1829,41 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salteado-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Solomillo de cerdo a la miel y dos mostazas",
+      "slug": "solomillo-de-cerdo-a-la-miel-y-dos-mostazas",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Solomillo de cerdo dorado en sartén y terminado en una salsa de miel, mostaza de Dijon y mostaza a la antigua.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Solomillo de cerdo crudo",
+          "cantidad": 360,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mostaza de Dijon Original",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mostaza a la antigua",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Miel",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/solomillo-de-cerdo-a-la-miel-y-dos-mostazas/"
     },
     {
       "nombre": "Tacos de gambón",
