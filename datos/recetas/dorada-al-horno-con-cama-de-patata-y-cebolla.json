@@ -1,0 +1,55 @@
+{
+  "slug": "dorada-al-horno-con-cama-de-patata-y-cebolla",
+  "nombre": "Dorada al horno con cama de patata y cebolla",
+  "descripcion": "Dorada entera al horno sobre una cama de patata y cebolla, con AOVE y rodajas de limón.",
+  "raciones": 1,
+  "categoria": "asados-horno",
+  "etiquetas": [
+    "pescado"
+  ],
+  "coccion_min": 42,
+  "ingredientes": [
+    {
+      "nombre": "Dorada entera limpia, con cabeza y espinas (350 g de compra por pieza)",
+      "cantidad": 1,
+      "unidad": "unidad"
+    },
+    {
+      "nombre": "Patata",
+      "cantidad": 200,
+      "unidad": "g"
+    },
+    {
+      "nombre": "Cebolla",
+      "cantidad": 60,
+      "unidad": "g"
+    },
+    {
+      "nombre": "AOVE",
+      "cantidad": 10,
+      "unidad": "ml"
+    },
+    {
+      "nombre": "Sal",
+      "cantidad": null,
+      "unidad": ""
+    },
+    {
+      "nombre": "Limón (para aromatizar, no se consume)",
+      "cantidad": 1,
+      "unidad": "unidad"
+    }
+  ],
+  "pasos": [
+    "Cortar la patata en rodajas de unos 5 mm y la cebolla en juliana.",
+    "Colocar la patata y la cebolla en una bandeja de horno con el AOVE y la sal. Hornear durante 30 minutos a 180 °C.",
+    "Cuando las patatas casi estén, colocar la dorada sobre la cama de patata y cebolla y disponer unas rodajas de limón encima.",
+    "Terminar de hornear unos 12 minutos. Comprobar el punto interior y prolongar el horneado si es necesario."
+  ],
+  "nutricion": {
+    "kcal": 389.29,
+    "proteinas_g": 37.8,
+    "hidratos_g": 33.58,
+    "grasas_g": 11.49
+  }
+}
