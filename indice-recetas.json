@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "eeeb40e7c4035010c734277a1a2bb38e712615ef",
-  "generated_at_utc": "2026-10-15T12:29:11Z",
-  "total_recetas": 47,
+  "source_commit_sha": "d12a35f91c17ec1814d9861b3e67bad879fe6a0d",
+  "generated_at_utc": "2026-10-15T13:06:38Z",
+  "total_recetas": 48,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1034,6 +1034,71 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/hummus/"
+    },
+    {
+      "nombre": "Lentejas estofadas con chorizo",
+      "slug": "lentejas-estofadas-con-chorizo",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Lentejas estofadas en olla a presión con chorizo picante y verduras trituradas.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Lentejas secas (antes del remojo)",
+          "cantidad": 250,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chorizo picante",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate fresco",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 15,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Zanahoria",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/lentejas-estofadas-con-chorizo/"
     },
     {
       "nombre": "Marmitako de bonito",
