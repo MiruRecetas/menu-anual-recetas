@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "893923ac11c6f6e7966e179221196dc69bad0ea6",
-  "generated_at_utc": "2026-10-15T10:57:32Z",
-  "total_recetas": 46,
+  "source_commit_sha": "8af5e1699d16c2127d9ffd0c515126e212560b82",
+  "generated_at_utc": "2026-10-15T11:47:03Z",
+  "total_recetas": 47,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -539,6 +539,28 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/chili-con-carne/"
+    },
+    {
+      "nombre": "Crep de pollo al curry",
+      "slug": "crep-de-pollo-al-curry",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Crep relleno de pollo Madrás con cebolla, tomate y curry.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pollo Madrás",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "pollo-madras"
+        },
+        {
+          "nombre": "Crepes",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "crepes"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crep-de-pollo-al-curry/"
     },
     {
       "nombre": "Crepes",
