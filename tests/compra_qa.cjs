@@ -1,11 +1,24 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict'), fs=require('node:fs');
+async function checkCoverLayout(page){
+ const layout=await page.locator('.purchase-intro').evaluate(intro=>{
+  const figure=intro.querySelector('figure').getBoundingClientRect();
+  const box=intro.getBoundingClientRect();
+  const text=intro.querySelector(':scope > div').getBoundingClientRect();
+  return {portrait:matchMedia('(max-width:540px) and (orientation:portrait)').matches,
+   columns:innerWidth>540,centerDifference:Math.abs(figure.x+figure.width/2-box.x-box.width/2),
+   figureLeft:figure.left,textRight:text.right};
+ });
+ if(layout.portrait) assert.ok(layout.centerDifference<=1,'Portada centrada en móvil vertical');
+ else if(layout.columns) assert.ok(layout.figureLeft>=layout.textRight,'Portada a la derecha en horizontal y escritorio');
+}
+
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try {
   fs.mkdirSync('qa-screenshots',{recursive:true});
-  for(const width of [320,390,820,1440]){
-   const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height:1100}});
+  for(const {width,height} of [{width:320,height:900},{width:390,height:1100},{width:540,height:960},{width:820,height:390},{width:1440,height:1100}]){
+   const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height}});
    await context.route(/https:\/\/(fonts.googleapis.com|fonts.gstatic.com)\//,r=>r.abort());
    const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));
    await page.goto('http://127.0.0.1:8765/?mes=10&menu=1');
@@ -14,6 +27,7 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    const link=page.locator('#exportar'),input=page.locator('#porciones');
    await page.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false');
    assert.ok(await page.locator('.purchase-intro img').evaluate(x=>x.complete&&x.naturalWidth===1254));
+   await checkCoverLayout(page);
    assert.equal(await page.locator('#lista tr').count(),54);
    for(const n of [3,20,1]){
     await input.fill(String(n));
@@ -39,8 +53,8 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    await page.locator('#month').selectOption('11');assert.equal(await page.locator('#menu-shopping').isVisible(),false);
    assert.deepEqual(errors,[]);await context.close();
   }
-  for(const menu of [4,3,1,2]) for(const width of [390,820,1440]){
-   const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height:1100}});
+  for(const menu of [4,3,1,2]) for(const {width,height} of [{width:390,height:1100},{width:820,height:390},{width:1440,height:1100}]){
+   const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height}});
    await context.route(/https:\/\/(fonts.googleapis.com|fonts.gstatic.com)\//,r=>r.abort());
    const page=await context.newPage();
    await page.goto(`http://127.0.0.1:8765/?mes=9&menu=${menu}`);
@@ -48,6 +62,7 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    await page.locator('#menu-shopping').click();
    await page.waitForFunction(()=>document.querySelector('#exportar')?.getAttribute('aria-disabled')==='false');
    assert.ok(await page.locator('.purchase-intro img').evaluate(x=>x.complete&&x.naturalWidth===1024));
+   await checkCoverLayout(page);
    assert.equal(await page.locator('#lista tr').count(),({4:35,3:33,1:41,2:45})[menu]);
    await page.locator('#porciones').fill('3');
    await page.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false'&&document.querySelector('#exportar').textContent.includes(' 3 '));

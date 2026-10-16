@@ -15,3 +15,9 @@ Publicación: rama/PR → Validar web + QA navegador → fusión → Publicar re
 Mantenimiento: nuevas extracciones autenticadas, doble lectura y huellas; invalidar fuentes afectadas por menú/subpreparación/producto, revisar portada si cambian platos. No sincronización automática de Airtable. Recuperación por PR corrigiendo origen o retirando clave activa; eliminar salidas antiguas solo si se solicita. Preservar recetas, macros, campos y experimentos; no borrar caches/favoritos. AGENTE-INTEGRACION contiene comandos y criterios de aceptación.
 
 Validación real vigente: históricas 7/8 y confirmación expresa de importaciones septiembre 3/4 el 16/10/2026. No reabrirlas. Septiembre 1/2 es nuevo despliegue con comprobación física pendiente.
+
+## Regla de diseño — portadas en móvil vertical · 16/10/2026
+
+En las listas de compra, la portada debe quedar centrada horizontalmente en móvil y PWA en vertical dentro de la disposición apilada (ancho de viewport hasta 540 px). Se mantiene su tamaño y posición anterior al texto. En horizontal, tablet y escritorio se conserva la disposición existente, con portada a la derecha cuando hay dos columnas. Aplicar la regla en `assets/compra.css` para todos los menús actuales y futuros; no editar ni regenerar las fotografías para corregir alineación.
+
+Verificar el centrado por geometría en móvil vertical y la columna derecha en horizontal/escritorio mediante `tests/compra_qa.cjs`. La misma página y CSS sirven a web y PWA; una prueba automatizada no acredita una prueba física en el dispositivo.
