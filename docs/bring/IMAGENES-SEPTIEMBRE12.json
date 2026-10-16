@@ -1,0 +1,58 @@
+{
+  "fecha": "2026-10-16",
+  "metodo": "Herramienta integrada image_gen, referencia 09-3 exclusivamente estética. Nueva imagen por menú; adaptación técnica RGB/WebP 1024. No sustitución de fotos existentes.",
+  "menus": [
+    {
+      "key": "09-1",
+      "prompt": "Photorealistic-natural. New square overhead photograph for MiruRecetas Septiembre Menú 1. Reference image is ONLY for style: warm daylight, cream stone continuous tabletop, cream ceramics mixed with glass meal prep containers. Do NOT copy reference dishes.\nRepresent ALL these distinct dishes in one harmonious continuous overhead scene, no collage: Caesar salad with romaine lettuce, grilled chicken strips, bread croutons, Grana Padano and creamy yogurt anchovy dressing; golden Spanish potato and onion tortilla wedge alongside tomato and onion salad; roasted aubergine half filled with beef vegetable ragù and gratinated shredded mozzarella, with white rice; three small folded vegetable quesadillas with spinach, mushrooms, corn and melted mozzarella; cold short-pasta salad with tuna, cherry tomatoes, red piquillo peppers, green olives, corn and avocado; WHOLE large prawns with heads and shells oven baked with garlic parsley lemon, alongside thin fried aubergine rounds lightly floured and drizzled with honey (no thick batter); pasta with beef ragù and grated Grana Padano; two seeded-bread toasts with piquillos, fresh white burrata and anchovies; lemon chicken STRIPS with golden potato wedges and a small glass of gazpacho. Small bowl of melon pieces if space. Realistic portions and texture. The two pasta dishes must be visually distinct (cold colorful tuna salad versus hot red beef ragù). Each dish once. No text, logos, watermark, people or hands, decorative foods absent from menu or grid divider lines. Square 1:1, professional editorial food photography, food clear and legible.",
+      "archivo": "imagenes/menus/09-1.webp",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "bytes": 338250,
+      "sha256": "bdc8e0b04fa0eb8c0e11e6add6f750710d83cc8a338f43d3a82ec91f56306659",
+      "menu_sha256": "a6fce074f1fcd85d655f03abfba32b9d7a336a3e7fbb62de53ca4a78d1bb0dea",
+      "recetas_sha256": {
+        "gambones-al-horno-con-ajo-perejil-y-limon": "53a0bf297f5a523f225555653a15e21fd7f5773c422ce4fc0793488d6f70c182",
+        "ragu-a-la-bolonesa": "b8730a1dd7b79d4a9d55757aa06468bf6ca2a38a9df1fea7161be7491963d528",
+        "pollo-al-limon": "383d8d533081d4dddf877f4db5bb557da9ed682e133c36f0d9c5914e92a4e382",
+        "quesadillas-vegetales": "65fd56723ce033f412a567eada103cf12928e3dd83413bd1a701dbfc775b304c",
+        "tortilla-de-patata-tradicional-con-cebolla": "f12cdfe76cd52d35e7217ef8d23896ace8a270459b8ab301fca6952263c5df85",
+        "berenjenas-rellenas": "307eb308eb1d0d464306c28d400a515d08b6a2ae7ab37cc8034b430d07b616d4",
+        "tostas-de-burrata-piquillos-y-anchoas": "be9a7707f97c8feba501d50aea38b116c07841005fe7dd98b95b978cd8a5bc78",
+        "ensalada-mediterranea-de-pasta-con-atun": "741cbbbcb47c99328617c3f182c2e144d3dc79de08fee4c765520f086ef66c45",
+        "pasta-bolonesa": "30406f5b8497b3e1e6c02a144804d99b6597a608a5f69e2662e244384ecec8c1",
+        "berenjenas-fritas-con-miel-natural": "3a099e3912b1b3ba35b59ea61b3ab1f7771f6416e529ae07c3bedb6efb06793c",
+        "ensalada-cesar": "99c4a008f1c4e5680411ad8d3e9bfa266cd36d2f80b7bd328625b710e1de1d98"
+      }
+    },
+    {
+      "key": "09-2",
+      "prompt": "Photorealistic-natural. Create NEW square overhead editorial food photograph of MiruRecetas Septiembre Menú 2. Input image reference ONLY photographic style (warm natural light, continuous cream stone tabletop, cream pottery and glass meal prep); all dishes must change to the following real menu.\nOne single continuous scene arranged with readable dishes: brown lentil stew with slices of spicy chorizo in a glass container (vegetables blended into sauce, no large vegetable chunks); WHOLE oven baked gilthead sea bream with head and skin on sliced potatoes and onion, a seeded bread slice beside it; pork tenderloin medallions glazed in honey and two mustards with orange sweet potato cubes and steamed broccoli; scrambled eggs with mixed mushrooms, green asparagus and peeled prawns; Greek salad of tomato cucumber white feta cubes onion green stuffed olives, mackerel fillets and ROASTED red pepper strips; two seeded bread toasts spread with crushed tomato and topped with sliced Iberian ham; cooked salmon fillet with saffron orange zest glaze (orange slices REMOVED), boiled potato chunks dusted with paprika, roasted red peppers; a baguette sandwich with pork tenderloin, roasted red pepper strips and fresh arugula. Add a small Greek yogurt bowl topped with granola, honey and toasted almonds, and THREE oatmeal chocolate cookies beside a small glass of milk; small peach pieces if space. Each distinct dish once; lentils are eaten twice but show one container. No raw fish, whole unpeeled edamame, tortilla, tacos, unrelated meals or decorations. Square composition, appetizing realistic food textures, not a collage, no separators, no hands/people, no text/logos/watermark. Make all main meals and dinners recognizable, desserts smaller.",
+      "edicion_final": "Edit this menu photograph with one targeted change: replace ONLY the small bowl of peach pieces at the bottom center with a small cream ceramic plate holding TWO small seeded-bread toasts topped with crushed fresh tomato and thin slices of Iberian cured ham (Spanish pa amb tomàquet con jamón ibérico). Keep every other dish, container, position, continuous cream tabletop, overhead viewpoint, warm light and square image unchanged. Do not add text or logos. The ham-tomato toasts are an additional dinner and must be clearly recognizable; do not change the pork sandwich.",
+      "archivo": "imagenes/menus/09-2.webp",
+      "dimensiones": [
+        1024,
+        1024
+      ],
+      "bytes": 319454,
+      "sha256": "9f93b33f3d22549c5fc5e5564cd2ca8b2a6e814c607c33391f69441c2e7392af",
+      "menu_sha256": "36d24d5d9230323149da33f9a5a8194128d373552c554c987be0e9023183e885",
+      "recetas_sha256": {
+        "bocadillo-de-solomillo-y-pimientos-asados": "d94f20fd9f8572fd736a04ad141cfc76b51fab005e00a1203b68125ec6f32794",
+        "bowl-de-yogur-con-miel-y-granola": "ca39eada8426e8b60359367944b10186dd1601e7a78f35540b895839d579b894",
+        "salmon-con-naranja-y-azafran": "cfe2e1bcdf0441d90fd36a838e4dca27834ad1f38fba6b790fe8065e2e31852c",
+        "revuelto-de-setas-trigueros-y-gambas": "3d000ac4d510b996cf79ee3e3ca07d7a63915fffe1065f35094de28816461285",
+        "pimientos-asados": "dd9f4d4316a65002f3165790e1e5b4e262b6fb617d78788a7c72d4e42a8814b9",
+        "ensalada-griega-con-caballa-y-pimientos": "1b30566ac19730755f661a2ff30fec7c20dbee233e76c03c6f4b774748a04097",
+        "lentejas-estofadas-con-chorizo": "fdff951dbe75bb06131b79707da25f0d3d694d7b1f00969f5744d065007f67fa",
+        "galletas-de-avena-con-chocolate": "c77ecb9c3af8d51817d65adae204861d9c6b8fcfc6f9a2519a22d7879ac9246c",
+        "pa-amb-tomaquet-con-jamon-iberico": "7abc44bb213ddd3b650df754e74ff48596ead3018d032eab15ccd960bc4cca95",
+        "solomillo-de-cerdo-a-la-miel-y-dos-mostazas": "2e125676cff905df4b7639953e0322695928759901d7208ebceb99e823870807",
+        "dorada-al-horno-con-cama-de-patata-y-cebolla": "e4e8d29330bec08d0f4237cabcecae9b76491eb96343ed9b8f95abbdeb3b604d"
+      }
+    }
+  ],
+  "main_base": "f86fdfd6af434c5bb28ecd3ff58b09aa1a203272"
+}

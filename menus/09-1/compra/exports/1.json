@@ -1,0 +1,247 @@
+{
+  "author": "MiruRecetas",
+  "name": "Septiembre · Menú 1 · 1 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/09-1/compra/?porciones=1",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/09-1.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "110 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Aceitunas",
+      "spec": "1 lata, verdes rellenas de anchoa, escurridas, Vegcampo DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Aguacate",
+      "spec": "60 g, pulpa comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "20 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Anchoas",
+      "spec": "30 g, en aceite, escurridas",
+      "stock": false
+    },
+    {
+      "itemId": "Arroz",
+      "spec": "1 vasito, blanco, cocido, DIA Al Punto",
+      "stock": false
+    },
+    {
+      "itemId": "Atún",
+      "spec": "2 latas, claro al natural, escurrido, Mari Marinera DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Berenjena",
+      "spec": "350 g, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Burrata",
+      "spec": "1 envase, fresca, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "120 g",
+      "stock": false
+    },
+    {
+      "itemId": "Champiñones",
+      "spec": "100 g",
+      "stock": false
+    },
+    {
+      "itemId": "Espinacas",
+      "spec": "200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Gambones",
+      "spec": "170 g, crudos, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Gazpacho",
+      "spec": "1 botella, fresco, refrigerado, DIA Al Punto",
+      "stock": false
+    },
+    {
+      "itemId": "Grana Padano",
+      "spec": "1 paquete, rallado, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "20 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "3 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "30 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Lechuga",
+      "spec": "120 g",
+      "stock": false
+    },
+    {
+      "itemId": "Maíz",
+      "spec": "130 g, dulce en conserva, escurrido",
+      "stock": false
+    },
+    {
+      "itemId": "Melón",
+      "spec": "400 g, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "20 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Mostaza",
+      "spec": "1 tarro, de Dijon, Maille",
+      "stock": false
+    },
+    {
+      "itemId": "Mozzarella",
+      "spec": "1 bolsa, rallada, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Pan",
+      "spec": "50 g, blanco de barra",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde",
+      "spec": "2 rebanadas, cereales y semillas, Oroweat",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "130 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "450 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "270 g, cruda, sin piel",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "40 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "40 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimientos del piquillo",
+      "spec": "1 frasco, asados, escurridos, Delicias de DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema",
+      "spec": "1 tarrina, Philadelphia",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera picada",
+      "spec": "150 g, hasta quince por ciento de grasa",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "320 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate triturado",
+      "spec": "150 g, en conserva",
+      "stock": false
+    },
+    {
+      "itemId": "Tortillas de trigo",
+      "spec": "3 tortillas, mini, IFA Eliges",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "1 vasito, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria",
+      "spec": "40 g",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón",
+      "spec": "30 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo en polvo",
+      "stock": true
+    },
+    {
+      "itemId": "Condimentos al gusto",
+      "stock": true
+    },
+    {
+      "itemId": "Orégano",
+      "stock": true
+    },
+    {
+      "itemId": "Perejil",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Salsa Worcestershire",
+      "stock": true
+    },
+    {
+      "itemId": "Zumo de limón",
+      "stock": true
+    }
+  ],
+  "yield": "1"
+}

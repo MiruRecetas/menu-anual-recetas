@@ -81,14 +81,26 @@ def make_source(tables,catalog,root,key,catalog_sha):
         if p['id'] in product_ids:
             products.append({k:v for k,v in p.items() if k in ('id','cantidad_envase','peso_escurrido','peso_escurrido_g','presentacion','formato_unidades','componentes_envase','fuente','estado')})
     if {p['id'] for p in products}!=product_ids:raise ValueError('Productos no resueltos')
-    condiments=[];recipe_hashes={}
+    condiments=[];recipe_hashes={};complements=[];clarifications=[]
+    aromatic={
+      'recqaBfscEdwqGD88':('Limón (para aromatizar, no se consume)','Limón'),
+      'recAcoLOJ2jnzWdPw':('Naranja (ralladura para el adobo y rodajas que se retiran)','Naranja')}
     for p in graph['preparaciones']:
         match=re.search(r'/recetas/([a-z0-9-]+)/?',p.get('Enlace receta',''))
         if not match:continue # Base interna sin ficha: expansión por ID igualmente obligatoria.
         slug=match.group(1);path=root/'datos/recetas'/f'{slug}.json'
         if not path.exists():raise ValueError('Ficha no disponible: '+slug)
         recipe=json.loads(path.read_text());recipe_hashes[slug]=digest(culinary(recipe))
+        if p['id']=='recgAYwNYGSi8mF3w':
+            clarifications.append(dict(ingrediente_id='recL3C3lL1AolAsIS',preparacion_id=p['id'],nombre='Azúcar',descripcion='blanco y moreno, para galletas',fuente=slug))
+        if p['id']=='recjnVw2YLRDUoutj':
+            clarifications.append(dict(ingrediente_id='recRCioQiVImHhuKg',preparacion_id=p['id'],nombre='Jamón',descripcion='ibérico',fuente=slug))
         for ingredient in recipe['ingredientes']:
+            if p['id'] in aromatic and ingredient['nombre']==aromatic[p['id']][0]:
+                if ingredient['unidad']!='unidad':raise ValueError('Unidad aromática cambiada')
+                complements.append(dict(preparacion_id=p['id'],nombre=aromatic[p['id']][1],cantidad=str(positive(ingredient['cantidad'])),unidad='unidad',descripcion='para aromatizar',fuente=slug))
+            if p['id']=='recgAYwNYGSi8mF3w' and ingredient['nombre'] in ('Extracto de vainilla','Levadura en polvo o bicarbonato'):
+                complements.append(dict(preparacion_id=p['id'],nombre=ingredient['nombre'],cantidad=str(positive(ingredient['cantidad'])),unidad=ingredient['unidad'],descripcion='para galletas',stock=True,fuente=slug))
             if ingredient['cantidad'] is None or (p['id']=='recdhYBKhV8omXHcm' and ingredient['nombre']=='Laurel' and ingredient['unidad'] in ('hoja','hojas')):
                 line={'nombre':ingredient['nombre'],'preparacion_id':p['id'],'fuente':slug}
                 if ingredient['cantidad'] is not None:
@@ -101,6 +113,8 @@ def make_source(tables,catalog,root,key,catalog_sha):
         fuentes={'menu_sha256':digest(menu_public),'recetas_sha256':recipe_hashes,'catalogo_blob':catalog_sha,
                  'grafo_sha256':digest(graph),'imagen_sha256':__import__('hashlib').sha256((root/image).read_bytes()).hexdigest()},
         grafo=graph,productos=products,condimentos=condiments)
+    if complements:source['complementos']=complements
+    if clarifications:source['aclaraciones_compra']=clarifications
     source['calculo']=expand_graph(source)
     return source
 

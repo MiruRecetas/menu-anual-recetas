@@ -1,5 +1,7 @@
 # Expediente — Septiembre · Menú 4
 
+> **Cierre físico comunicado · 16/10/2026:** la usuaria confirma «Sus importaciones en bring están correctas y funcionando según lo esperado» para septiembre 3 y 4. La importación general queda validada. No se especifican porciones, versión ni cada recorrido; el procedimiento propuesto abajo se conserva como referencia histórica, sin afirmar su ejecución detallada.
+
 15/10/2026. Solicitud expresa de Lucía: «Septiembre menú 4». Ampliación de la integración permanente existente; octubre se conserva y no se activan otros menús.
 
 Base: main `7be454c`, sin PR abiertas al iniciar. Menú `recavOScUQHdfVwro`, completo, leído en Airtable y contrastado con `datos/menus/09-4.json`. Fuente comercial actual: blob `008a62690aafffc40711a347eb9d95b180e51ceb` de productos.json.
@@ -25,6 +27,6 @@ Pruebas locales: 55 tests Python correctos; generación repetida; sintaxis JavaS
 
 Son verificaciones técnicas y de navegador; no se ha simulado una importación física en Bring! Android.
 
-## Pendiente físico
+## Procedimiento físico propuesto originalmente (ver cierre superior)
 
 Importación nueva desde `menus/09-4/compra/` a 1 y 3 porciones en Bring! Android, incluida entrada por la PWA: imagen, título, latas, variantes de pollo, despensa y vuelta con porciones conservadas. No usar favoritos viejos. Las pruebas 7/8 históricas permanecen validadas pero no prueban esta ruta. No se afirma instalación o prueba física nueva por CI/HTTP.

@@ -31,6 +31,10 @@ NOUNS = {
  'dia-mari-marinera-atun-claro-natural': ('lata','latas'),
  'dia-vegcampo-aceitunas-rellenas-anchoa': ('lata','latas'),
  'cidacos-alubias-rojas-extra': ('frasco','frascos'),
+ 'maille-mostaza-antigua-210': ('tarro','tarros'),
+ 'dia-mari-marinera-caballa-sur-aceite-oliva': ('lata','latas'),
+ 'iberitos-tomate-natural-20x22': ('tarrina','tarrinas'),
+ 'dia-temptation-chocolate-85-sin-azucares-anadidos-100': ('tableta','tabletas'),
 }
 DERIVED = {
  'recHiBRS3Ikrzb1mt': 'arteinaki-filete-boqueron-alinado',
@@ -82,7 +86,9 @@ def presentation(ingredient,unit,products):
         # El chili incorpora también el adobo: el envase comprado aporta 220 g netos, no solo chiles escurridos.
         if ingredient['id']=='recNnfHxJO9aFN7gF' and pid=='la-costena-chipotles-adobo':
             size=p['cantidad_envase'];base='neto con adobo'
-        if not size or size['unidad']!=unit:raise ValueError('Formato/unidad no verificado: '+pid)
+        # Ficha verificada no implica peso de envase conocido (p. ej. chorizo artesanal).
+        if not size or size.get('valor') is None:return None
+        if size['unidad']!=unit:raise ValueError('Formato/unidad no verificado: '+pid)
         return {'contenido':str(positive(size['valor'])),'unidad':unit,
                 'singular':NOUNS.get(pid,('envase','envases'))[0],
                 'plural':NOUNS.get(pid,('envase','envases'))[1],
@@ -92,6 +98,10 @@ def presentation(ingredient,unit,products):
     if ingredient['id']=='recSPOXZkbn9PSbHI' and unit=='g':
         return {'contenido':'50','unidad':'g','singular':'huevo','plural':'huevos',
                 'fuente':'Quiche registrada: 4 huevos = 200 g comestibles; criterio ensayado 7/8', 'verificado':True}
+    if ingredient['id']=='recfn122yYJmxuETA' and unit=='g':
+        return {'contenido':'385/2','unidad':'g','singular':'dorada','plural':'doradas',
+                'fuente':'Dorada al horno registrada: una pieza de compra de 350 g, rendimiento FEN estimado 55 %, 192,5 g comestibles por pieza; no rendimiento medido',
+                'verificado':True}
     return None
 
 def expand_graph(source):
@@ -102,7 +112,7 @@ def expand_graph(source):
         if len({x['id'] for x in values})!=len(values):raise ValueError('IDs duplicados en '+name)
         if any(not re.fullmatch(r'rec[A-Za-z0-9]{14}',x['id']) for x in values):raise ValueError('ID inválido en '+name)
     preps,pe,ce,meals,ingredients=({x['id']:x for x in graph[k]} for k in ('preparaciones','preparacion_elementos','comida_elementos','comidas','ingredientes'))
-    leaves=[];coverage=[];excluded=[];visited=set()
+    leaves=[];coverage=[];excluded=[];visited=set();complements=[]
     def emit(row,factor,origin,path):
         ir=one(row,'Ingrediente',True)
         pr=one(row,'Preparación incluida' if 'Preparación incluida' in row else 'Preparación',True)
@@ -121,6 +131,9 @@ def expand_graph(source):
         p=preps[pid];visited.add(pid)
         if p.get('Estado cálculo')!='Calculado':raise ValueError('Preparación no calculada: '+pid)
         factor=servings/positive(p.get('Raciones base')); links=ids(p.get('PREPARACION_ELEMENTOS'))
+        for c in source.get('complementos',[]):
+            if c['preparacion_id']==pid:
+                complements.append(dict(c,cantidad_exacta=str(positive(c['cantidad'])*factor),origen=origin,ruta=path+[pid]))
         if not links:raise ValueError('Preparación vacía: '+pid)
         for eid in links:
             row=pe[eid]
@@ -166,6 +179,10 @@ def expand_graph(source):
         row=dict(id=iid,nombre_tecnico=ingredient['Nombre'],nombre=name,
                  descripcion=ingredient.get('Descripción de compra',''),unidad=unit,cantidad_exacta=str(q),
                  stock=iid in STOCK,aportes=contributions)
+        for c in source.get('aclaraciones_compra',[]):
+            if c['ingrediente_id']==iid:
+                if not all(c['preparacion_id'] in x['ruta'] for x in contributions):raise ValueError('Revisar variantes culinarias del ingrediente: '+iid)
+                row.update(nombre=c['nombre'],descripcion=c['descripcion'])
         pres=presentation(ingredient,unit,products)
         if pres:row['presentacion']=pres
         rows.append(row)
@@ -173,9 +190,14 @@ def expand_graph(source):
     for r in source['condimentos']:
         if r['preparacion_id'] not in visited:raise ValueError('Condimento ajeno al grafo')
         condiments.setdefault(r['nombre'],[]).append(r['fuente'])
-    return {'ingredientes':sorted(rows,key=lambda r:(r['nombre'].casefold(),r['id'],r['unidad'])),
+    result={'ingredientes':sorted(rows,key=lambda r:(r['nombre'].casefold(),r['id'],r['unidad'])),
             'condimentos':[{'nombre':n,'origenes':origins} for n,origins in sorted(condiments.items())],
             'cobertura':coverage,'exclusiones':excluded,'preparaciones':sorted(visited)}
+    if source.get('complementos'):
+        if any(c['preparacion_id'] not in visited for c in source['complementos']):raise ValueError('Complemento ajeno al grafo')
+        # Sin ID nutricional: conservar cada uso literal; nunca agregar por nombre o ID ficticio.
+        result['complementos']=complements
+    return result
 
 def validate_source(source,root):
     if source.get('schema_version')!=1:raise ValueError('Contrato compra desconocido')
@@ -190,7 +212,12 @@ def validate_source(source,root):
         if digest({k:v for k,v in json.loads((root/'datos/recetas'/f'{slug}.json').read_text()).items() if k in ('raciones','ingredientes')})!=sha:
             raise ValueError('Receta actualizada: regenerar compra '+slug)
     image=root/source['imagen']
-    if hashlib.sha256(image.read_bytes()).hexdigest()!=source['fuentes']['imagen_sha256']:raise ValueError('Imagen no verificada')
+    data=image.read_bytes()
+    valid=(data.startswith(b'\x89PNG\r\n\x1a\n') or
+           (len(data)>=30 and data[:4]==b'RIFF' and data[8:12]==b'WEBP' and int.from_bytes(data[4:8],'little')+8==len(data)) or
+           (data.startswith(b'\xff\xd8\xff') and data.endswith(b'\xff\xd9')))
+    if not valid:raise ValueError('Archivo de imagen inválido o vacío')
+    if hashlib.sha256(data).hexdigest()!=source['fuentes']['imagen_sha256']:raise ValueError('Imagen no verificada')
     if digest(source['grafo'])!=source['fuentes']['grafo_sha256']:raise ValueError('Huella de grafo incoherente')
     base=expand_graph(source)
     if base!=source['calculo']:raise ValueError('Compra no reproducible desde grafo')
@@ -209,6 +236,14 @@ def selection(source,n,site):
         exported=f'{count} {unit}';spec=exported+(', '+r['descripcion'] if r['descripcion'] else '')
         rows.append(dict(nombre=r['nombre'],descripcion=r['descripcion'],necesidad=real_text(q)+' '+r['unidad'],exportada=exported,stock=r['stock']))
         items.append(dict(itemId=r['nombre'],spec=spec,stock=r['stock']))
+    for c in source['calculo'].get('complementos',[]):
+        q=F(c['cantidad_exacta'])*n
+        if c['unidad'] in ('g','ml'):count=ceil(q/10)*10;unit=c['unidad']
+        elif c['unidad']=='unidad':count=ceil(q);unit='unidad' if count==1 else 'unidades'
+        else:raise ValueError('Unidad de complemento no admitida')
+        exported=f'{count} {unit}'
+        rows.append(dict(nombre=c['nombre'],descripcion=c['descripcion'],necesidad=real_text(q)+' '+c['unidad'],exportada=exported,stock=c.get('stock',False)))
+        items.append(dict(itemId=c['nombre'],spec=exported+', '+c['descripcion'],stock=c.get('stock',False)))
     condiments=[]
     for c in source['calculo']['condimentos']:
         condiments.append(c['nombre'])

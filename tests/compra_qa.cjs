@@ -36,10 +36,10 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    await page.getByRole('link',{name:'← Volver a Octubre · Menú 1'}).click();
    await page.waitForFunction(()=>document.querySelector('#month').value==='10'&&document.querySelector('#menu-number').value==='1');
    assert.equal(await page.locator('#month').inputValue(),'10');assert.equal(await page.locator('#menu-number').inputValue(),'1');
-   await page.locator('#month').selectOption('9');assert.equal(await page.locator('#menu-shopping').isVisible(),false);
+   await page.locator('#month').selectOption('11');assert.equal(await page.locator('#menu-shopping').isVisible(),false);
    assert.deepEqual(errors,[]);await context.close();
   }
-  for(const menu of [4,3]) for(const width of [390,820,1440]){
+  for(const menu of [4,3,1,2]) for(const width of [390,820,1440]){
    const context=await browser.newContext({serviceWorkers:'block',viewport:{width,height:1100}});
    await context.route(/https:\/\/(fonts.googleapis.com|fonts.gstatic.com)\//,r=>r.abort());
    const page=await context.newPage();
@@ -48,12 +48,12 @@ const assert=require('node:assert/strict'), fs=require('node:fs');
    await page.locator('#menu-shopping').click();
    await page.waitForFunction(()=>document.querySelector('#exportar')?.getAttribute('aria-disabled')==='false');
    assert.ok(await page.locator('.purchase-intro img').evaluate(x=>x.complete&&x.naturalWidth===1024));
-   assert.equal(await page.locator('#lista tr').count(),menu===4?35:33);
+   assert.equal(await page.locator('#lista tr').count(),({4:35,3:33,1:41,2:45})[menu]);
    await page.locator('#porciones').fill('3');
    await page.waitForFunction(()=>document.querySelector('#exportar').getAttribute('aria-disabled')==='false'&&document.querySelector('#exportar').textContent.includes(' 3 '));
    const link=new URL(await page.locator('#exportar').getAttribute('href'));
    assert.ok(link.searchParams.get('url').endsWith(`/menus/09-${menu}/compra/exports/3.json`));
-   assert.ok((await page.locator('#lista').innerText()).includes(menu===4?'3 latas':'3 vasitos'));
+   assert.ok((await page.locator('#lista').innerText()).includes(({4:'3 latas',3:'3 vasitos',1:'6 latas',2:'3 doradas'})[menu]));
    await page.screenshot({path:`qa-screenshots/compra-septiembre${menu}-${width}.png`,fullPage:true});
    await page.getByRole('link',{name:`← Volver a Septiembre · Menú ${menu}`}).click();
    await page.waitForFunction(n=>document.querySelector('#month').value==='9'&&document.querySelector('#menu-number').value===String(n),menu);

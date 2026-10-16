@@ -1,0 +1,325 @@
+{
+  "fecha": "2026-10-16",
+  "base": "apprzwAwMVhkn3oHh",
+  "tabla": "tblJ7cjOhGBHLMWxv",
+  "campos": {
+    "nombre": "fldr6piAwwi3gHG7x",
+    "descripcion": "fldXb73P5SLE5syZe",
+    "tipo": "singleLineText"
+  },
+  "registros": [
+    {
+      "id": "rec1Xb6nuoyFWAxvF",
+      "nombre_tecnico": "Lechuga cruda (parte comestible)",
+      "referencia": "BEDCA:2399",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Lechuga",
+        "descripcion": null
+      }
+    },
+    {
+      "id": "rec29LrWfpOxcBpP3",
+      "nombre_tecnico": "Gambas crudas peladas (referencia representativa)",
+      "referencia": "BEDCA:817",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Gambas",
+        "descripcion": "crudas, peladas"
+      }
+    },
+    {
+      "id": "rec3IWu5VmkWByjJV",
+      "nombre_tecnico": "Chorizo artesano picante de La Alberca Julián Becerro",
+      "referencia": "PROPIOS:julian-becerro-chorizo-artesano-alberca-picante",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Chorizo",
+        "descripcion": "picante, artesano, Julián Becerro"
+      }
+    },
+    {
+      "id": "rec5FqFslqUdjaiiX",
+      "nombre_tecnico": "Anchoas en aceite escurridas (genéricas)",
+      "referencia": "BEDCA:2129",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Anchoas",
+        "descripcion": "en aceite, escurridas"
+      }
+    },
+    {
+      "id": "rec5W7tOnZEG0QEni",
+      "nombre_tecnico": "Chocolate negro 85 % sin azúcares añadidos DIA Temptation",
+      "referencia": "PROPIOS:dia-temptation-chocolate-85-sin-azucares-anadidos-100",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Chocolate",
+        "descripcion": "negro, sin azúcares añadidos, DIA Temptation"
+      }
+    },
+    {
+      "id": "rec8Qjo12MyyUQ3Rc",
+      "nombre_tecnico": "Melón crudo (parte comestible)",
+      "referencia": "BEDCA:2234",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Melón",
+        "descripcion": "parte comestible"
+      }
+    },
+    {
+      "id": "recBE2lEQUhdaql1G",
+      "nombre_tecnico": "Copos de avena secos (referencia genérica BEDCA)",
+      "referencia": "BEDCA:1010",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Copos de avena",
+        "descripcion": "secos"
+      }
+    },
+    {
+      "id": "recBiZ2WT8594MJ45",
+      "nombre_tecnico": "Mostaza a la Antigua Maille",
+      "referencia": "PROPIOS:maille-mostaza-antigua-210",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Mostaza",
+        "descripcion": "a la antigua, Maille"
+      }
+    },
+    {
+      "id": "recEiDCa6JHQpUw23",
+      "nombre_tecnico": "Grana Padano DOP rallado DIA Selección Mundial",
+      "referencia": "PROPIOS:dia-seleccion-mundial-grana-padano-dop-rallado",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Grana Padano",
+        "descripcion": "rallado, DIA Selección Mundial"
+      }
+    },
+    {
+      "id": "recHXANUTNGT7A9ni",
+      "nombre_tecnico": "Lenteja seca cruda",
+      "referencia": "BEDCA:1065",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Lentejas",
+        "descripcion": "secas"
+      }
+    },
+    {
+      "id": "recIojLrLrb7ItZ81",
+      "nombre_tecnico": "Mostaza de Dijon Original Maille",
+      "referencia": "PROPIOS:maille-mostaza-dijon-original-215",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Mostaza",
+        "descripcion": "de Dijon, Maille"
+      }
+    },
+    {
+      "id": "recIpfiAqWOaCmZ2X",
+      "nombre_tecnico": "Setas crudas (referencia genérica BEDCA)",
+      "referencia": "BEDCA:2419",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Setas",
+        "descripcion": null
+      }
+    },
+    {
+      "id": "recJ4mshh3aIXqMWm",
+      "nombre_tecnico": "Burrata fresca DIA Selección Mundial (escurridos)",
+      "referencia": "PROPIOS:dia-seleccion-mundial-burrata-150",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Burrata",
+        "descripcion": "fresca, DIA Selección Mundial"
+      }
+    },
+    {
+      "id": "recL3C3lL1AolAsIS",
+      "nombre_tecnico": "Azúcar blanca",
+      "referencia": "BEDCA:2642",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Azúcar",
+        "descripcion": "blanco"
+      }
+    },
+    {
+      "id": "recNBV9PEVdfiMCza",
+      "nombre_tecnico": "Gazpacho fresco DIA Al Punto refrigerado",
+      "referencia": "PROPIOS:dia-al-punto-gazpacho-fresco-330",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Gazpacho",
+        "descripcion": "fresco, refrigerado, DIA Al Punto"
+      }
+    },
+    {
+      "id": "recPWLPZxmvdkdNVq",
+      "nombre_tecnico": "Espárragos verdes crudos (parte comestible)",
+      "referencia": "BEDCA:1179",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Espárragos",
+        "descripcion": "verdes"
+      }
+    },
+    {
+      "id": "recRXEXmNsAe7G2OK",
+      "nombre_tecnico": "Solomillo de cerdo crudo",
+      "referencia": "BEDCA:1021",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Solomillo de cerdo",
+        "descripcion": "crudo"
+      }
+    },
+    {
+      "id": "recTylFWMFulxwTRE",
+      "nombre_tecnico": "Queso feta D.O.P. DIA Selección Mundial",
+      "referencia": "PROPIOS:dia-seleccion-mundial-queso-feta-dop-150",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Queso feta",
+        "descripcion": "DOP, DIA Selección Mundial"
+      }
+    },
+    {
+      "id": "recbPT5IprxVSkgPT",
+      "nombre_tecnico": "Tomate natural Iberitos (monodosis de 22 g)",
+      "referencia": "PROPIOS:iberitos-tomate-natural-20x22",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Tomate",
+        "descripcion": "natural, monodosis, Iberitos"
+      }
+    },
+    {
+      "id": "recfn122yYJmxuETA",
+      "nombre_tecnico": "Dorada cruda (parte comestible)",
+      "referencia": "FEN:dorada",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Dorada",
+        "descripcion": "entera, limpia, con cabeza y espinas"
+      }
+    },
+    {
+      "id": "rechAJmSfDY1Lzu6G",
+      "nombre_tecnico": "Caballa del sur en aceite de oliva Mari Marinera DIA, escurrida",
+      "referencia": "PROPIOS:dia-mari-marinera-caballa-sur-aceite-oliva",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Caballa",
+        "descripcion": "en aceite de oliva, escurrida, DIA Mari Marinera"
+      }
+    },
+    {
+      "id": "reclKQvB48lfBN4PL",
+      "nombre_tecnico": "Berenjena cruda (parte comestible)",
+      "referencia": "BEDCA:2370",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Berenjena",
+        "descripcion": "parte comestible"
+      }
+    },
+    {
+      "id": "recopPfIUQXoWtL7P",
+      "nombre_tecnico": "Pimientos del piquillo D.O.P. de Lodosa Delicias de DIA (escurridos)",
+      "referencia": "PROPIOS:delicias-dia-pimientos-piquillo-dop-lodosa",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Pimientos del piquillo",
+        "descripcion": "asados, escurridos, Delicias de DIA"
+      }
+    },
+    {
+      "id": "reczgvNmAbXxN7Rs3",
+      "nombre_tecnico": "Espinacas crudas",
+      "referencia": "USDA:168462",
+      "antes": {
+        "nombre": null,
+        "descripcion": null
+      },
+      "despues": {
+        "nombre": "Espinacas",
+        "descripcion": null
+      }
+    }
+  ],
+  "verificacion": "Segunda lectura de seis tablas, presentación y nombre/referencia conservados. Proyección de dependencias de make_source semánticamente idéntica tras etiquetas. Solo dos campos de presentación escritos."
+}

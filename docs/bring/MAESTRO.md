@@ -1,12 +1,14 @@
 # MiruRecetas — Maestro Bring! y expediente de implementación
 
+> **Estado vigente 16/10/2026:** la integración permanente está implementada. Activos: Octubre 1 y Septiembre 1–4, veinte selecciones por menú. La usuaria confirma importaciones correctas de septiembre 3/4; no volver a presentarlas como pendientes. Las pruebas 7/8 conservan íntegramente sus resultados y procedimiento. Leer [ESTADO](ESTADO.md), [operación](OPERACION.md) y los traspasos [integración](AGENTE-INTEGRACION.md) / [imágenes](AGENTE-IMAGENES.md). Las descripciones de propuestas/ausencias del 14/10 que se conservan abajo son antecedentes históricos, no estado actual.
+
 > **Ampliación autorizada · 15/10/2026:** Lucía solicita Septiembre · Menú 4. Se incorpora `09-4` manteniendo `10-1`, con fuente actual, imagen propia, veinte selecciones y los mismos contratos de cálculo/PWA. [Operación vigente](OPERACION.md) · [Expediente de septiembre](PUBLICACION-SEPTIEMBRE4.md). Las restricciones anteriores a octubre describen el primer despliegue y quedan ampliadas solo a este segundo menú.
 
 
 > **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
 
 
-Versión 2.0 · 14/10/2026 · Responsable de integración Bring!.
+Versión 3.0 · 16/10/2026 · Responsable de integración Bring!.
 
 Sustituye íntegramente el traspaso Bring! del 13/10/2026. Complementa los maestros de web, PWA, recetas, comidas y productos exclusivamente en materia de lista de compra. No sustituye sus contratos nutricionales, culinarios, editoriales ni de publicación.
 

@@ -1,5 +1,7 @@
 # Expediente — Septiembre · Menú 3
 
+> **Cierre físico comunicado · 16/10/2026:** la usuaria confirma «Sus importaciones en bring están correctas y funcionando según lo esperado» para septiembre 3 y 4. La importación general queda validada. No se especifican porciones, versión ni cada recorrido; el procedimiento propuesto abajo se conserva como referencia histórica, sin afirmar su ejecución detallada.
+
 15/10/2026. Solicitud expresa «Septiembre menú 3». Base main `a2bc44b`, conservando el trabajo simultáneo de Pollo Madrás (#91/#93). Menú `recoroSa93XtdWN8C` calculado, contrastado con su fuente pública sin modificar recetas, menús, cantidades ni nutrición. Catálogo comercial blob `d5e7abcf219c30ad3e6f55cc855b0c89c59f3afd`.
 
 Extracción autenticada de las seis tablas y segunda lectura: proyección completa de dependencias idéntica semánticamente. Durante la lectura aparecen nuevas comidas ajenas a este menú; no se incorporan ni se revierten. Se reutilizan dos campos existentes de presentación para diez ingredientes adicionales, comprobando nombre y referencia conservados. Expediente AIRTABLE-SEPTIEMBRE3-2026-10-15.json.
@@ -10,7 +12,7 @@ Imagen nueva propia `imagenes/menus/09-3.webp`, herramienta integrada image_gen 
 
 Pruebas locales: 59 tests Python correctos, incluyendo repeticiones, bases internas, variantes de arroz, formatos individuales, selección previa, stock y reproducción del exportador. Se añade QA de móvil/tablet/escritorio. Generación reproducible y comprobación de diff antes de PR. CI y publicación verificadas en los enlaces siguientes.
 
-## Verificación física pendiente
+## Procedimiento físico propuesto originalmente (ver cierre superior)
 
 Importaciones NUEVAS de esta ruta a 1 y 3 porciones en Bring! Android, incluida entrada desde la PWA: portada y título; dos artículos Arroz independientes en JSON aunque Bring! los agrupe; vasitos, nata, huevos, despensa y vuelta a la selección. Usar una importación nueva, no favoritos antiguos. Las pruebas 7/8 históricas mantienen su resultado y procedimiento, pero no certifican físicamente esta nueva ruta. CI, HTTP y navegador no sustituyen esa comprobación.
 

@@ -1,26 +1,11 @@
-# Bring! — documentación de implementación
+# MiruRecetas — Bring! permanente
 
-> **Ampliación autorizada · 15/10/2026:** «Septiembre menú 3». Se incorpora `09-3`, conservando octubre 1 y septiembre 4. [Expediente](PUBLICACION-SEPTIEMBRE3.md). Solo estas tres claves quedan activas.
+Actualizado 16/10/2026. [Estado vigente y validaciones](ESTADO.md).
 
-> **Ampliación autorizada · 15/10/2026:** Lucía solicita Septiembre · Menú 4. Se incorpora `09-4` manteniendo `10-1`, con fuente actual, imagen propia, veinte selecciones y los mismos contratos de cálculo/PWA. [Operación vigente](OPERACION.md) · [Expediente de septiembre](PUBLICACION-SEPTIEMBRE4.md). Las restricciones anteriores a octubre describen el primer despliegue y quedan ampliadas solo a este segundo menú.
+- [Agente único de integración: guía completa y prompt](AGENTE-INTEGRACION.md).
+- [Agente de imágenes de listas: guía completa y prompt](AGENTE-IMAGENES.md).
+- [Maestro y pruebas históricas](MAESTRO.md).
+- [Airtable](AIRTABLE-INGREDIENTES.md), [exportador/productos](EXPORTADOR-PRODUCTOS.md), [imágenes](IMAGENES-MENUS.md), [implementación](IMPLEMENTACION-MANTENIMIENTO.md), [operación y recuperación](OPERACION.md).
+- Expedientes: [Octubre 1](PUBLICACION-OCTUBRE.md), [Septiembre 3](PUBLICACION-SEPTIEMBRE3.md), [Septiembre 4](PUBLICACION-SEPTIEMBRE4.md), [Septiembre 1/2](PUBLICACION-SEPTIEMBRE12.md).
 
-
-> **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
-
-
-Estado al 14/10/2026: ensayos 1–8 documentados y formato final validado físicamente en Android. Implementación permanente pendiente; actualización actual exclusivamente documental.
-
-- [Maestro v2.0: reglas, evidencia de todas las pruebas y plan](MAESTRO.md).
-- [Imágenes de menús](IMAGENES-MENUS.md).
-- [Campos de presentación en Airtable](AIRTABLE-INGREDIENTES.md).
-- [Exportador y formatos comerciales](EXPORTADOR-PRODUCTOS.md).
-- [Implementación y mantenimiento de la página](IMPLEMENTACION-MANTENIMIENTO.md).
-- [Prompts para abrir los cinco roles](PROMPTS-AGENTES.md).
-- [Expediente histórico de experimentos](../../experimentos/bring/README.md).
-
-No ejecutar código o cambios de esquema por solo leer estas guías. Aplicar el encargo específico, inspeccionar main y conservar cambios simultáneos. No confundir propuesta, rama, merge, despliegue, HTTP, automatización y prueba física.
-
-
-## Implementación permanente · 14/10/2026
-
-El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.
+La usuaria ha confirmado importaciones de septiembre 3/4. Septiembre 1/2 se publican por su encargo del 16/10; su prueba física queda pendiente. No activar otros menús sin indicación.
