@@ -46,6 +46,7 @@ class SeptiembreUnoDos(unittest.TestCase):
   self.assertEqual(items['Limón']['spec'],'3 unidades, para aromatizar')
   self.assertEqual(items['Naranja']['spec'],'1 unidad, para aromatizar')
   self.assertFalse(items['Naranja']['stock'])
+  self.assertEqual(next(x for x in v['ingredientes'] if x['nombre']=='Limón')['necesidad'],'3 unidades')
   vanilla=next(x for x in v['ingredientes'] if x['nombre']=='Extracto de vainilla')
   self.assertEqual(vanilla['necesidad'],'3.2 ml');self.assertEqual(vanilla['exportada'],'10 ml');self.assertTrue(vanilla['stock'])
  def test_twenty_payloads_and_reproduction(self):
