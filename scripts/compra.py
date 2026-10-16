@@ -242,7 +242,7 @@ def selection(source,n,site):
         elif c['unidad']=='unidad':count=ceil(q);unit='unidad' if count==1 else 'unidades'
         else:raise ValueError('Unidad de complemento no admitida')
         exported=f'{count} {unit}'
-        rows.append(dict(nombre=c['nombre'],descripcion=c['descripcion'],necesidad=real_text(q)+' '+c['unidad'],exportada=exported,stock=c.get('stock',False)))
+        rows.append(dict(nombre=c['nombre'],descripcion=c['descripcion'],necesidad=real_text(q)+' '+('unidades' if c['unidad']=='unidad' and q!=1 else c['unidad']),exportada=exported,stock=c.get('stock',False)))
         items.append(dict(itemId=c['nombre'],spec=exported+', '+c['descripcion'],stock=c.get('stock',False)))
     condiments=[]
     for c in source['calculo']['condimentos']:
