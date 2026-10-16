@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "4105fa61df7ccc4b2b1361a02e70220fc2994661",
-  "generated_at_utc": "2026-10-15T22:55:40Z",
-  "total_recetas": 56,
+  "source_commit_sha": "5de4ee64efedfe1a0e2c96f0be97e95501ab2efd",
+  "generated_at_utc": "2026-10-16T10:55:06Z",
+  "total_recetas": 57,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -241,6 +241,38 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/berenjenas-rellenas/"
+    },
+    {
+      "nombre": "Bocadillo de solomillo y pimientos asados",
+      "slug": "bocadillo-de-solomillo-y-pimientos-asados",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Bocadillo de solomillo a la miel y dos mostazas con pimientos asados y rúcula.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pan",
+          "cantidad": 110,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Solomillo de cerdo a la miel y dos mostazas",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "solomillo-de-cerdo-a-la-miel-y-dos-mostazas"
+        },
+        {
+          "nombre": "Pimientos asados",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "pimientos-asados"
+        },
+        {
+          "nombre": "Rúcula",
+          "cantidad": 20,
+          "unidad": "g"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bocadillo-de-solomillo-y-pimientos-asados/"
     },
     {
       "nombre": "Bowl de yogur con miel y granola",
