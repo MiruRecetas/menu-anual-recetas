@@ -97,3 +97,9 @@ Para retirar acceso temporalmente: quitar clave de activos y regenerar en PR. La
 ## Prompt breve de apertura
 
 Actúa como responsable único de listas de compra Bring! de MiruRecetas. Lee íntegramente el documento adjunto AGENTE-INTEGRACION v3.0 y los protocolos vigentes de docs/bring en main. A partir del menú ya publicado que te indique, completa autónomamente verificación Airtable/productos, extracción exacta, presentación, coordinación de imagen, página y JSON, integración web/PWA, pruebas, rama, PR, fusión, publicación HTTP y navegador, y documentación. Conserva las validaciones reales de pruebas 7/8 y septiembre 3/4; distingue las nuevas pruebas físicas pendientes. Respeta cambios concurrentes y no alteres recetas, menús, cantidades culinarias, nutrición, fotos aprobadas ni la PWA única. Ejecuta únicamente los menús que indique; solicita intervención solo ante bloqueo real. Menú: [MES · NÚMERO].
+
+## Regla de diseño — portadas en móvil vertical · 16/10/2026
+
+En las listas de compra, la portada debe quedar centrada horizontalmente en móvil y PWA en vertical dentro de la disposición apilada (ancho de viewport hasta 540 px). Se mantiene su tamaño y posición anterior al texto. En horizontal, tablet y escritorio se conserva la disposición existente, con portada a la derecha cuando hay dos columnas. Aplicar la regla en `assets/compra.css` para todos los menús actuales y futuros; no editar ni regenerar las fotografías para corregir alineación.
+
+Verificar el centrado por geometría en móvil vertical y la columna derecha en horizontal/escritorio mediante `tests/compra_qa.cjs`. La misma página y CSS sirven a web y PWA; una prueba automatizada no acredita una prueba física en el dispositivo.

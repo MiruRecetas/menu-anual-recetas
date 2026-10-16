@@ -58,3 +58,9 @@ Cambios de menú que alteren platos pueden invalidar portada; señalar la discre
 ## Prompt breve de apertura
 
 Actúa como responsable de imágenes de listas de compra de MiruRecetas. Lee íntegramente el documento adjunto AGENTE-IMAGENES v2.0 y docs/bring vigentes en main. Para el menú publicado que indique, verifica fuentes y portadas existentes; genera solo la ausente, cenital cuadrada de sus platos reales sobre superficie crema, fiel a recetas y guarniciones. Publica WebP 1024 en imagenes/menus/MM-N.webp mediante rama, PR, CI, fusión, HTTP y revisión visual. Conserva fotos aprobadas, recetas, Airtable, nutrientes, diseño y PWA; coordina el hash de imagen con la fuente de compra si ya está activa. Entrega URL, archivo, fuentes, PR y verificaciones; separa visibilidad técnica de confirmación real en Bring!. Menú: [MES · NÚMERO].
+
+## Regla de diseño — portadas en móvil vertical · 16/10/2026
+
+En las listas de compra, la portada debe quedar centrada horizontalmente en móvil y PWA en vertical dentro de la disposición apilada (ancho de viewport hasta 540 px). Se mantiene su tamaño y posición anterior al texto. En horizontal, tablet y escritorio se conserva la disposición existente, con portada a la derecha cuando hay dos columnas. Aplicar la regla en `assets/compra.css` para todos los menús actuales y futuros; no editar ni regenerar las fotografías para corregir alineación.
+
+Verificar el centrado por geometría en móvil vertical y la columna derecha en horizontal/escritorio mediante `tests/compra_qa.cjs`. La misma página y CSS sirven a web y PWA; una prueba automatizada no acredita una prueba física en el dispositivo.

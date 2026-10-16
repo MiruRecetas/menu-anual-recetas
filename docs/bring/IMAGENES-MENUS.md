@@ -13,3 +13,9 @@ Publicar binario real y expediente de fuente/huellas/prompt mediante rama/PR/CI/
 Verificar Pages, HTTP anónimo, MIME, bytes/hash, dimensiones y decodificación; abrir públicamente y revisar. Para enlazadas, imageUrl de todos los payloads coincide. Separar generada/subida/desplegada/visible/confirmada en Bring!. La usuaria confirma importaciones correctas de septiembre 3/4 el 16/10/2026; septiembre 1/2 siguen pendientes de esa comprobación física.
 
 Expedientes vigentes: IMAGEN-SEPTIEMBRE3.json, IMAGEN-SEPTIEMBRE4.json, IMAGENES-SEPTIEMBRE12.json. No crear imágenes en imagenes/batchcooking ni editar campos imagen de recetas desde este rol.
+
+## Regla de diseño — portadas en móvil vertical · 16/10/2026
+
+En las listas de compra, la portada debe quedar centrada horizontalmente en móvil y PWA en vertical dentro de la disposición apilada (ancho de viewport hasta 540 px). Se mantiene su tamaño y posición anterior al texto. En horizontal, tablet y escritorio se conserva la disposición existente, con portada a la derecha cuando hay dos columnas. Aplicar la regla en `assets/compra.css` para todos los menús actuales y futuros; no editar ni regenerar las fotografías para corregir alineación.
+
+Verificar el centrado por geometría en móvil vertical y la columna derecha en horizontal/escritorio mediante `tests/compra_qa.cjs`. La misma página y CSS sirven a web y PWA; una prueba automatizada no acredita una prueba física en el dispositivo.
