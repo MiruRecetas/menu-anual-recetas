@@ -1,8 +1,6 @@
 # Septiembre · Menú 2 — registro operativo
 
-Fuente: encargo de la usuaria de 16/10/2026, Airtable consultado el 15/10/2026
-a las 22:32 UTC. Menú `recszLULYqeN04sPl`. Publicación incremental, todavía
-Pendiente: falta comida del viernes.
+Fuente: encargo de la usuaria de 16/10/2026, Airtable releído el 16/10/2026. Menú `recszLULYqeN04sPl` completo y Calculado.
 Actualización del miércoles: 1,5 raciones (3 galletas) y 200 ml de leche
 semidesnatada, ambas en los campos de postre correspondientes.
 
@@ -12,10 +10,10 @@ semidesnatada, ambas en los campos de postre correspondientes.
 | Martes | Solomillo a las dos mostazas + boniato 200 g + brócoli 200 g | Revuelto de setas, trigueros y gambas | Bowl de yogur, 1 ración |
 | Miércoles | Ensalada griega con caballa | Pa amb tomàquet con jamón ibérico | Galletas 1,5 raciones (3 unidades) + leche semidesnatada 200 ml |
 | Jueves | Misma COMIDA de lentejas del lunes | Salmón con naranja y azafrán + patata 200 g + pimientos asados, 1 ración | Melocotón 180 g |
-| Viernes | Pendiente | Libre | Sin postre registrado |
+| Viernes | Bocadillo templado de solomillo y pimientos, 1 ración | Libre | Sin postre registrado |
 
 Cinco cafés universales conservados. Se reutilizan todas las PREPARACIONES
-existentes, sin nuevas recetas. Siete COMIDAS nuevas, doce elementos; la de
+existentes, sin nuevas recetas. Ocho COMIDAS nuevas, trece elementos; la de
 lentejas `recxoSr6SJCrICLgT` se comparte entre lunes y jueves. Las otras:
 dorada `recQnxRDTuf6Uwhq5`, solomillo `recbXWzLDzMHFJOsg`, revuelto
 `recZVCuvgbA9G0KGn`, ensalada `recyOjEWEtOifdiQ3`, pan con jamón
@@ -39,11 +37,9 @@ Ingredientes genéricos creados tras revisar los 113 registros previos:
   micronutrientes disponibles permanecen en la ficha JSON de Airtable;
   desconocidos se conservan nulos. Los 180 g son parte comestible cruda.
 
-Las cuatro macros de cada COMIDA y cada día se leyeron de Airtable tras
-registrar. Las fórmulas semanales son BLANK por menú incompleto: el JSON
-publica un subtotal de días oficiales (5697,407360 kcal; 353,545783 g proteína;
-485,6198 g hidratos; 253,804423 g grasa), sin comida del viernes.
-No sustituir ese subtotal por una semana completa ni alterar las fórmulas.
+Las cuatro macros de cada COMIDA, día y semana se leyeron de Airtable tras registrar. Total semanal oficial: 6373,058583 kcal; 405,229283 g proteína; 556,6948 g hidratos; 273,663240 g grasa.
+
+Viernes: COMIDA `recXcoZlCwROMqEVo`, elemento `recJ9AWlcWjBpIX4X`, grupo principal, 1 ración de la PREPARACIÓN existente `rec3tCt6wL2FcGwzt` «Bocadillo de solomillo y pimientos asados». Sin duplicar ni modificar la receta. Comida: 675,651222 kcal; 51,6835 g proteína; 71,075 g hidratos; 19,858817 g grasa. Total del viernes: 723,158202 kcal; 55,0155 g proteína; 75,813 g hidratos; 21,512817 g grasa. Cena libre. No quedan ingestas pendientes.
 
 Galletas existentes `recgAYwNYGSi8mF3w`: receta de 10 raciones / 20 galletas,
 por tanto 1 ración = 2 galletas. Se registran 1,5 raciones por indicación expresa: 3 galletas (rectificación posterior de las 2 raciones iniciales).
