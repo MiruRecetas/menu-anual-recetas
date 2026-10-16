@@ -1,10 +1,10 @@
 # Bring! permanente — operación y recuperación
 
-Contrato de implementación del 14/10/2026. Esta guía describe el código permanente; el expediente de publicación registra sus verificaciones. Los resultados físicos históricos 7/8 del Maestro permanecen vigentes. No son una prueba física de la nueva ruta.
+Actualización 16/10/2026: integración permanente. Esta guía describe el código permanente; el expediente de publicación registra sus verificaciones. Los resultados físicos históricos 7/8 del Maestro permanecen vigentes. No son una prueba física de la nueva ruta.
 
 ## Alcance y rutas
 
-Están habilitados `10-1`, `09-4` y `09-3` en `datos/compra/activos.json`. Lucía solicitó Septiembre · Menú 4 el 15/10/2026. No añadir otros menús sin su autorización.
+Están habilitados `10-1`, `09-4`, `09-3`, `09-1` y `09-2` en `datos/compra/activos.json`. Lucía solicitó Septiembre · Menú 4 el 15/10/2026. No añadir otros menús sin su autorización.
 
 - Fuente: `datos/compra/10-1.json`, contrato v1 independiente de nutrición y menú v2.
 - Página: `menus/10-1/compra/`; entrada contextual junto al selector del menú semanal.
@@ -67,7 +67,7 @@ El exportador admite tanto el postre simple de los menús v2 previos como el env
 
 Pimentón dulce `recI8AwaRp7BOa9GZ` se añade explícitamente a despensa. El pimentón literal sin cantidad no duplica ese artículo cuantificado. El laurel del marmitako carece de vínculo a INGREDIENTES: se conserva como checklist literal de despensa sin inventar ID, gramos ni nutrientes, con procedencia y sus dos hojas culinarias originales en la fuente. Se trata del criterio por preparación verificada `recdhYBKhV8omXHcm`; no migra cantidades de otras recetas. Agua, guindilla, ras el hanout, sal y vinagre sin cantidad también quedan como checklist de despensa.
 
-Dieciocho ingredientes nuevos recibieron únicamente los campos de presentación existentes: expediente en AIRTABLE-SEPTIEMBRE4-2026-10-15.json. La nueva imagen y sus fuentes están en IMAGEN-SEPTIEMBRE4.json. La prueba física Android de esta nueva ruta permanece pendiente, separada de CI, HTTP y navegador.
+Dieciocho ingredientes nuevos recibieron únicamente los campos de presentación existentes: expediente en AIRTABLE-SEPTIEMBRE4-2026-10-15.json. La nueva imagen y sus fuentes están en IMAGEN-SEPTIEMBRE4.json. La usuaria confirmó el 16/10/2026 que sus importaciones en Bring! son correctas y funcionan según lo esperado; comprobación general cerrada, sin atribuir pasos no especificados.
 
 
 ## Ampliación Septiembre · Menú 3 · 15/10/2026
@@ -76,4 +76,13 @@ Solicitud expresa «Septiembre menú 3». Fuente `datos/compra/09-3.json`; pági
 
 33 ingredientes por ID/unidad, 9 preparaciones, 40 artículos (32 compra, 8 despensa). Albóndigas dos usos, salchichas dos, puré tres; se expanden sofrito clásico y tzatziki. Las variantes de arroz permanecen como dos artículos con el mismo nombre sencillo: crudo genérico en gramos y cocido DIA en vasitos individuales de 125 g. Nata: 200 ml por envase individual del pack verificado, 180 ml reales para una porción semanal y 540 ml para tres; se exportan uno y tres envases respectivamente. No se inventan formatos para salchichas, salmón, aguacate o mango genéricos. Las dos líneas culinarias de salchichas blancas/rojas comparten el mismo ID y unidad: se suman, manteniendo ambas características en su descripción.
 
-Diez etiquetas de presentación adicionales, sin cambio técnico; expediente AIRTABLE-SEPTIEMBRE3-2026-10-15.json. Imagen, prompt y huellas: IMAGEN-SEPTIEMBRE3.json. Cálculo exacto, redondeo posterior al selector y exclusión de los cinco cafés de oficina conservados. QA incluye acceso y regreso contextual en 390/820/1440 px, arroz por vasito y variantes; las pruebas históricas 7/8 no se modifican. Publicación, HTTP y navegador en PUBLICACION-SEPTIEMBRE3.md. Pendiente físico separado: importaciones nuevas Android a 1 y 3 porciones desde web y PWA, portada, arroz, nata, huevos, despensa y retorno.
+Diez etiquetas de presentación adicionales, sin cambio técnico; expediente AIRTABLE-SEPTIEMBRE3-2026-10-15.json. Imagen, prompt y huellas: IMAGEN-SEPTIEMBRE3.json. Cálculo exacto, redondeo posterior al selector y exclusión de los cinco cafés de oficina conservados. QA incluye acceso y regreso contextual en 390/820/1440 px, arroz por vasito y variantes; las pruebas históricas 7/8 no se modifican. Publicación, HTTP y navegador en PUBLICACION-SEPTIEMBRE3.md. Validación real comunicada el 16/10/2026: importaciones correctas y funcionando según lo esperado. El procedimiento de 1/3 porciones queda como referencia, sin afirmar que se verificaron individualmente todos sus pasos.
+
+
+## Septiembre 1/2 y traspaso · 16/10/2026
+
+Dos menús publicados completos; fuentes actuales y catálogo blob 6c53a3aac1117b1f96e1a7509cf33fdbfb1332b0. Menú 1: 41 filas cuantificadas y 49 artículos (10 despensa), 12 preparaciones. Menú 2: 41 filas por ID/unidad y cuatro complementos literales; 45 filas visibles y 53 artículos (12 despensa), 12 preparaciones. Incluye postre dual leche y 1,5 raciones de galletas, dos lentejas y usos repetidos de solomillo/pimientos. Chorizo sin peso de pieza se mantiene en gramos; dorada por equivalencia culinaria específica; tomate Iberitos por monodosis; dos mostazas siguen separadas.
+
+Extensiones compatibles v1: complementos por línea de receta sin ID (cítricos aromáticos y vainilla/levadura) y aclaraciones de usos culinarios (jamón ibérico/proxy serrano y azúcar blanco/moreno agrupado autorizado). No hay sumas por nombre ni nutrientes/IDs inventados. Véase AGENTE-INTEGRACION para contrato y pruebas. Las 67 pruebas locales incluyen regresiones históricas. Generación reproducible, CI, HTTP y navegador se registran en PUBLICACION-SEPTIEMBRE12; la comprobación física de estas dos nuevas rutas sigue pendiente.
+
+Traspasos actuales: AGENTE-INTEGRACION v3.0 y AGENTE-IMAGENES v2.0 sustituyen prompts de implementación desde cero. Los cinco protocolos específicos y referencias han sido actualizados. Mantener main como fuente de estado; no reactivar instantáneas experimentales ni pedir nuevamente autorizaciones ya dadas.

@@ -1,71 +1,15 @@
-# MiruRecetas — Guía de imágenes de menús para Bring!
+# Bring! — Imágenes de menús
 
-> **Ampliación autorizada · 15/10/2026:** Lucía solicita Septiembre · Menú 4. Se incorpora `09-4` manteniendo `10-1`, con fuente actual, imagen propia, veinte selecciones y los mismos contratos de cálculo/PWA. [Operación vigente](OPERACION.md) · [Expediente de septiembre](PUBLICACION-SEPTIEMBRE4.md). Las restricciones anteriores a octubre describen el primer despliegue y quedan ampliadas solo a este segundo menú.
+Versión 2.0 · 16/10/2026. La carpeta canónica y su integración están implementadas. Procedimiento completo y prompt autónomo en AGENTE-IMAGENES.md. Lectura conjunta con ESTADO.md, MAESTRO.md y la identidad visual vigente.
 
+Una sola portada por menú publicado autorizado en imagenes/menus/MM-N.webp. Página y los veinte JSON reutilizan la misma imageUrl absoluta. WebP binario sRGB, 1024 cuadrado, objetivo <350 KB con calidad. Octubre 1 conserva el PNG aprobado original 1254 cuadrado y su SHA documentado: no convertir/regenerar. Mantener fotos de recetas y experimentos históricos.
 
-> **Estado vigente · 14/10/2026:** integración permanente de Octubre · Menú 1 publicada mediante PR #86, CI y verificación HTTP/navegador correctos. Solo este menú está activo. [Operación y recuperación](OPERACION.md) · [Expediente de publicación](PUBLICACION-OCTUBRE.md). Las secciones de propuesta anteriores se conservan como antecedentes y no describen el estado de implementación actual. La prueba física de la nueva ruta está pendiente; pruebas históricas 7/8 validadas.
+Cenital sobre una superficie crema continua, cerámica clara y recipientes transparentes, luz natural cálida, editorial y realista. Platos reales de comidas/cenas y guarniciones; repetidos pueden aparecer una vez; postres reales si caben. No copiar alimentos de la referencia estética, inventar guarniciones, collage, texto, manos, personas, logos o marcas. Leer ingredientes y pasos, no solo nombres ni lista de compra. Bases internas se ven dentro del plato. La imagen es generada, no fotografía de la usuaria.
 
+Inventariar antes; reutilizar aprobadas fieles. Si falta, generar con herramienta de imágenes e inspeccionar; editar de forma dirigida si falta un plato relevante. No sustituir por gusto ni automatizar nuevas imágenes sin encargo. Septiembre 2 requirió añadir el pa amb tomàquet omitido en la primera composición; la escena final incluye esa cena independiente.
 
-Versión 1.0 · 14/10/2026. Complementa el Maestro Bring! v2.0 y los protocolos de imágenes de recetas. Este documento prepara el encargo; no acredita generación ni publicación de las futuras imágenes.
+Publicar binario real y expediente de fuente/huellas/prompt mediante rama/PR/CI/fusión. Si aún no existe compra, entregar imagen al integrador sin activar menús. Si se sustituye una imagen activa con autorización, coordinar su hash en fuente y regeneración, sin alterar cálculos ni huellas culinarias. No crear un segundo archivo canónico.
 
-## Misión y diferencia respecto de fotos de recetas
+Verificar Pages, HTTP anónimo, MIME, bytes/hash, dimensiones y decodificación; abrir públicamente y revisar. Para enlazadas, imageUrl de todos los payloads coincide. Separar generada/subida/desplegada/visible/confirmada en Bring!. La usuaria confirma importaciones correctas de septiembre 3/4 el 16/10/2026; septiembre 1/2 siguen pendientes de esa comprobación física.
 
-Generar UNA imagen principal cuadrada por menú real de MiruRecetas, reutilizada por su página de lista de compra y por `imageUrl` de la receta/menú importada en Bring!. El menú no se convierte en una nueva PREPARACIÓN ni en una receta canónica del recetario.
-
-Las fotos de recetas existentes continúan en `imagenes/<slug>.webp` y se reutilizan en ficha, recetario y Batch cooking. No modificarlas, no cambiar el campo imagen de recetas y no crear imágenes en `imagenes/batchcooking/`. La imagen de menú es un uso distinto y tiene carpeta propia.
-
-## Ruta canónica para la implementación
-
-- Repositorio: `MiruRecetas/menu-anual-recetas`.
-- Archivo: `imagenes/menus/MM-N.webp`, con mes numérico de dos cifras y número de menú real. Ejemplo: `imagenes/menus/10-1.webp`.
-- URL: `https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/10-1.webp` para ese archivo, SOLO cuando publicado y verificado.
-- No crear `octubre-final`, sufijos -2 ni copias por número de personas. Una imagen por menú; la cantidad seleccionada no cambia la composición editorial.
-- Esta convención es nueva; inspeccionar main y coordinar cualquier ruta ya implementada antes de crear una segunda. No introducir un campo imagen en datos/menus sin coordinación de contrato. La implementación puede resolver la ruta determinista por MM-N y verificar su existencia sin cambiar el JSON culinario.
-
-## Fuentes y selección
-
-Leer main, `datos/menus/MM-N.json`, todos sus componentes reales y los JSON de recetas enlazadas, incluyendo subpreparaciones. El grafo de ingredientes de compra ayuda a verificar alimentos, pero no sustituye pasos, guarniciones y presentación del plato. Releer fuentes actuales: el snapshot de un experimento no acredita el menú de hoy.
-
-Generar solo menús realmente registrados/publicados y dentro del encargo. No rellenar automáticamente las cuarenta posiciones septiembre–junio con platos inventados. Menú incompleto: identificar lo pendiente y no representarlo como completo; no inventar comidas para llenar la imagen. Las recetas repetidas pueden representarse una vez o en recipientes proporcionados, manteniendo reconocibles todas las comidas y cenas distintas. Desayuno de oficina y viernes cena libre no son platos que haya que inventar. Los postres reales pueden incluirse si caben sin quitar protagonismo a comidas/cenas.
-
-Antes de generar, elaborar internamente una lista de platos y guarniciones, fuentes/SHA y qué aparecerá. No duplicar preparaciones internas como si fueran comidas aparte: el sofrito debe verse dentro de su elaboración, no como plato independiente obligatorio.
-
-## Estilo aprobado
-
-Referencia visual aportada por la usuaria y probada en Bring!: PNG cenital de menú de octubre, publicado en `experimentos/bring/prueba-8-10-1/menu-octubre-1.png`. Imagen de prueba original: 1254 × 1254, SHA-256 `c7952019f9e9b24a3c1bba2f376e5b354a91c518464b2e85d6276a48252c62c7`.
-
-- Cámara cenital, perpendicular a la superficie; relación 1:1.
-- Una escena continua sobre encimera o mesa clara crema/piedra suave; platos y recipientes distribuidos con orden doméstico y suficiente margen. No mosaico de fotografías ni collage con separadores.
-- Platos cocinados y recipientes transparentes de batch cooking, vajilla cerámica crema, composición cálida, apetecible y editorial.
-- Luz natural suave, colores fieles, sombras delicadas, fondos discretos, estilo coherente con MiruRecetas.
-- Mostrar todos o casi todos los platos reales del menú, mínimo comidas y cenas distintas, según lo permita la legibilidad; no sustituir por bodegón de ingredientes en este encargo.
-- Sin personas/manos, texto, logos, marcas de agua, envases con marcas, interfaz Bring! ni alimentos de decoración ajenos al menú.
-
-La imagen aportada es REFERENCIA DE ESTILO y ensayo técnico. No copiar automáticamente sus frutas, guarniciones, hierbas, semillas o proporciones si no figuran en el menú real. El bowl, pescado, carrilleras, quiche, wraps, canelones, tostas y wok deben ajustarse a sus fichas vigentes; el aspecto de una patata no permite reemplazar un boniato registrado. No asumir que el éxito de la importación confirma fidelidad culinaria de aquella imagen.
-
-## Formato y publicación
-
-Referencia de salida: WebP auténtico, sRGB, 1024 × 1024, 1:1. Objetivo <350 KB sin degradación apreciable; calidad y legibilidad prevalecen sobre compresión extrema. Respetar formatos legítimos existentes si hay una imagen canónica ya aprobada: no convertirla o sustituirla por iniciativa propia. El PNG de prueba 8 no debe editarse ni moverse para este encargo.
-
-Usar la herramienta de generación/edición de imágenes disponible y sus instrucciones. Revisar visualmente ingredientes, formas, número razonable de platos, coherencia y ausencia de artefactos. La representación es generada, no fotografía tomada por la usuaria.
-
-Publicar binarios reales mediante rama y PR, revisar cambios simultáneos, CI y Pages. Comprobar MIME, dimensiones, decodificación, hash de origen frente a remoto y URL anónima. Una cadena Base64 como texto dentro de .webp no es una imagen. Verificar visualmente la imagen abierta en navegador cuando sea posible y declarar qué no se verificó.
-
-Si la implementación de compra aún no existe, publicar solo el archivo y entregar MM-N, ruta, URL y fuentes al responsable; no tocar el generador, PWA, recetas o menús para enlazarlo por cuenta propia. Si existe, seguir exactamente el contrato de enlace vigente y solo las modificaciones autorizadas. El campo Bring! es `imageUrl`, no `image` de Schema.org.
-
-## Existencias, continuidad y cierre
-
-Inventariar `imagenes/menus/` antes de generar. Reutilizar imágenes válidas y fieles; generar ausentes. Si cambió la composición de un menú y la imagen quedó obsoleta, documentar la discrepancia y tramitar la actualización dentro del alcance recibido. No sustituir automáticamente una imagen aprobada por mero cambio de estilo.
-
-No crear o modificar una automatización de imágenes de menú sin encargo; no reutilizar el horario del agente de recetas. Mantener responsabilidades separadas.
-
-Entregar por menú: MM-N y ID Airtable si disponible, fuente/SHA del menú y recetas, ruta, dimensiones/formato/tamaño, hash, PR, estado de Pages, HTTP y comprobación visual. Separar generada, subida, desplegada, visible y validada dentro de Bring!. La imagen en Bring! requiere prueba física, aunque imageUrl y HTTP sean correctos.
-
-## Prompt breve de apertura
-
-Actúa como responsable de imágenes de menús de MiruRecetas. Lee esta guía y el Maestro Bring! v2.0; contrástalos con main. Genera una imagen cuadrada 1:1 por menú real publicado, cenital de sus platos sobre una superficie crema, fiel a recetas y guarniciones y al estilo aportado. Guarda una única imagen en imagenes/menus/MM-N.webp mediante rama, PR, CI y verificación pública. Reutiliza imágenes válidas; no inventes menús, sobrescribas fotos aprobadas ni cambies Airtable, recetas, nutrición, web/PWA o el exportador. Entrega rutas y URLs verificadas para enlazarlas desde la compra. Continúa con el encargo concreto de menús que indique la usuaria.
-
-
-## Implementación permanente · 14/10/2026
-
-El encargo posterior de Lucía autoriza la integración y publicación de Octubre · Menú 1. El estado documental previo se conserva como expediente histórico. El contrato ejecutable, campos reales, extracción, generación, rutas, límites PWA, incorporación de menús y recuperación se describen en [OPERACION.md](OPERACION.md); las verificaciones y estado de despliegue se registran en [PUBLICACION-OCTUBRE.md](PUBLICACION-OCTUBRE.md). Solo octubre está habilitado; extender a otros menús requiere autorización posterior. Las pruebas físicas 7 y 8 permanecen validadas, sin atribuirles una importación de la nueva ruta.
+Expedientes vigentes: IMAGEN-SEPTIEMBRE3.json, IMAGEN-SEPTIEMBRE4.json, IMAGENES-SEPTIEMBRE12.json. No crear imágenes en imagenes/batchcooking ni editar campos imagen de recetas desde este rol.

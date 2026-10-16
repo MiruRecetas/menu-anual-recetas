@@ -64,7 +64,7 @@ class Compra(unittest.TestCase):
   tables['menus'][g['menu']['id']]['Lunes · Postre cantidad']=101
   with self.assertRaisesRegex(ValueError,'Postre público'):make_source(tables,self.s['productos'],R,'10-1',self.s['fuentes']['catalogo_blob'])
  def test_approved_menus_and_original_image(self):
-  self.assertEqual(json.loads((R/'datos/compra/activos.json').read_text()),['10-1','09-4','09-3'])
+  self.assertEqual(json.loads((R/'datos/compra/activos.json').read_text()),['10-1','09-4','09-3','09-1','09-2'])
   data=(R/self.s['imagen']).read_bytes();self.assertEqual(hashlib.sha256(data).hexdigest(),'c7952019f9e9b24a3c1bba2f376e5b354a91c518464b2e85d6276a48252c62c7')
   self.assertEqual(data,(R/'experimentos/bring/prueba-8-10-1/menu-octubre-1.png').read_bytes())
  def test_reproducibility(self):

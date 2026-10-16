@@ -1,0 +1,267 @@
+{
+  "author": "MiruRecetas",
+  "name": "Septiembre · Menú 2 · 12 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/09-2/compra/?porciones=12",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/09-2.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "590 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Aceitunas",
+      "spec": "12 latas, verdes rellenas de anchoa, escurridas, Vegcampo DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "100 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Almendras",
+      "spec": "300 g, crudas",
+      "stock": false
+    },
+    {
+      "itemId": "Azúcar",
+      "spec": "360 g, blanco y moreno, para galletas",
+      "stock": false
+    },
+    {
+      "itemId": "Boniato",
+      "spec": "2400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Brócoli",
+      "spec": "2400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Caballa",
+      "spec": "12 latas, en aceite de oliva, escurrida, DIA Mari Marinera",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "3120 g",
+      "stock": false
+    },
+    {
+      "itemId": "Chocolate",
+      "spec": "2 tabletas, negro, sin azúcares añadidos, DIA Temptation",
+      "stock": false
+    },
+    {
+      "itemId": "Chorizo",
+      "spec": "1600 g, picante, artesano, Julián Becerro",
+      "stock": false
+    },
+    {
+      "itemId": "Copos de avena",
+      "spec": "240 g, secos",
+      "stock": false
+    },
+    {
+      "itemId": "Dorada",
+      "spec": "12 doradas, entera, limpia, con cabeza y espinas",
+      "stock": false
+    },
+    {
+      "itemId": "Espárragos",
+      "spec": "1200 g, verdes",
+      "stock": false
+    },
+    {
+      "itemId": "Gambas",
+      "spec": "1440 g, crudas, peladas",
+      "stock": false
+    },
+    {
+      "itemId": "Granola",
+      "spec": "2 envases, avena, Kellogg’s Special K",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "180 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "26 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Jamón",
+      "spec": "720 g, ibérico",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "2400 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Lentejas",
+      "spec": "2000 g, secas",
+      "stock": false
+    },
+    {
+      "itemId": "Mantequilla",
+      "spec": "210 g, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Melocotón",
+      "spec": "4320 g",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "440 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Mostaza",
+      "spec": "1 tarro, a la antigua, Maille",
+      "stock": false
+    },
+    {
+      "itemId": "Mostaza",
+      "spec": "1 tarro, de Dijon, Maille",
+      "stock": false
+    },
+    {
+      "itemId": "Pan",
+      "spec": "1320 g, blanco de barra",
+      "stock": false
+    },
+    {
+      "itemId": "Pan de molde",
+      "spec": "36 rebanadas, cereales y semillas, Oroweat",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "4800 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pepino",
+      "spec": "1200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "10200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "1200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Queso feta",
+      "spec": "6 envases, DOP, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Rúcula",
+      "spec": "240 g",
+      "stock": false
+    },
+    {
+      "itemId": "Salmón",
+      "spec": "1800 g, crudo, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Setas",
+      "spec": "1440 g",
+      "stock": false
+    },
+    {
+      "itemId": "Solomillo de cerdo",
+      "spec": "4320 g, crudo",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "36 tarrinas, natural, monodosis, Iberitos",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "3600 g",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "12 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria",
+      "spec": "640 g",
+      "stock": false
+    },
+    {
+      "itemId": "Limón",
+      "spec": "12 unidades, para aromatizar",
+      "stock": false
+    },
+    {
+      "itemId": "Extracto de vainilla",
+      "spec": "20 ml, para galletas",
+      "stock": true
+    },
+    {
+      "itemId": "Levadura en polvo o bicarbonato",
+      "spec": "10 g, para galletas",
+      "stock": true
+    },
+    {
+      "itemId": "Naranja",
+      "spec": "4 unidades, para aromatizar",
+      "stock": false
+    },
+    {
+      "itemId": "Azafrán",
+      "stock": true
+    },
+    {
+      "itemId": "Canela",
+      "stock": true
+    },
+    {
+      "itemId": "Orégano",
+      "stock": true
+    },
+    {
+      "itemId": "Pimentón",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta",
+      "stock": true
+    },
+    {
+      "itemId": "Romero",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Vinagre",
+      "stock": true
+    }
+  ],
+  "yield": "12"
+}
