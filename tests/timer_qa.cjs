@@ -80,6 +80,11 @@ const server=http.createServer((req,res)=>{
   // Touch tap on the 15-minute mark (single primary pointer).
   const b=await p.locator('#timer-dial').boundingBox();await p.touchscreen.tap(b.x+b.width*.92,b.y+b.height/2);
   assert.equal(await p.locator('#timer-dial').getAttribute('aria-valuenow'),'900');
+  await p.locator('#timer-start').click();
+  assert.match(await p.locator('#timer-start').getAttribute('aria-label'),/Pausar/);
+  await p.locator('#timer-reset').click();assert.equal(await p.locator('#timer-dial').getAttribute('aria-valuenow'),'0');
+  await p.locator('#timer-sound').click();assert.equal(await p.locator('#timer-sound').getAttribute('aria-pressed'),'false');
+  await p.locator('.timer-actions').screenshot({path:`qa-screenshots/timer-controls-${width}x${height}.png`});
   await c.close();
  }
  console.log('PASS timer: bidirectional edit, hour layers/boundaries, pointer turns, touch, keyboard, deadline, pause/reset, tone scheduling, mute/vibration requests, central stop, 30s cutoff, responsive. Physical sound/vibration NOT tested.');
