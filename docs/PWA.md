@@ -57,3 +57,10 @@ Seguir con misma publicación, manifest, iconos, scope y actualización consenti
 ## Compra Bring! permanente · Octubre · Menú 1
 
 Nueva familia de página en `menus/10-1/compra/`, decorada por el mismo pipeline de assets/manifest/registro. Acceso contextual en el menú; misma PWA, iconos, scope y SW. No se precachean payloads. La importación requiere red y valida el JSON público seleccionado; pérdida de conexión bloquea el enlace. La consulta de la página abierta permanece disponible, sin garantizar reapertura offline de URLs con parámetros ni caché del PNG aprobado (>2 MiB). Contrato de operación y recuperación: [docs/bring/OPERACION.md](bring/OPERACION.md). QA con SW real y una única inscripción PWA correcto en la PR #86; comprobación pública de la compra correcta. Validación física de las rutas nuevas pendiente; el expediente Bring! distingue CI/HTTP de Android real.
+
+
+## Temporizador visual compartido · 19/10/2026
+
+El modo cocina usa la esfera y controles descritos en [TEMPORIZADOR.md](TEMPORIZADOR.md), generados desde la misma plantilla para todas las recetas, web y PWA. No hay publicación, registro SW ni iconos de instalación adicionales. El audio se sintetiza localmente mediante Web Audio y se prepara al pulsar iniciar/activar sonido; no añade archivos remotos ni solicitudes de permisos de notificaciones. Conserva disponibilidad offline de fichas y dependencias ya guardadas, revisiones inmutables y actualización consentida. Estado y preferencia de sonido son de la sesión en memoria, sin persistencia nueva.
+
+Una fecha límite absoluta evita acumular desfase por cada tick. Tras suspensión se reconcilia el tiempo al volver; no convierte la web en una alarma del sistema. Pantalla bloqueada, segundo plano, silencio/volumen, políticas del navegador y soporte de vibración pueden impedir el aviso. Las comprobaciones de APIs y osciladores automatizadas no acreditan sonido audible ni vibración física. La usuaria realizará esa validación después de publicar.

@@ -174,3 +174,8 @@ Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MA
 Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
 
 Futura página de compra integrada desde el menú, con selector previo y payload público por selección. Mantener diseño/navegación responsive y funcionalidades actuales. No implementar con una segunda PWA ni editar HTML generado; seguir [guía de implementación](bring/IMPLEMENTACION-MANTENIMIENTO.md). Imágenes de menú y campos de ingrediente pertenecen a sus responsables.
+
+
+## Temporizador de cocina aprobado · 19/10/2026
+
+La esfera redonda, capas terracota/mostaza/salvia, edición central y controles Lucide sustituyen al temporizador de intervalos exclusivamente predefinidos en todas las fichas. Contrato vinculante, comportamiento y pruebas: [TEMPORIZADOR.md](TEMPORIZADOR.md). No añadir campos de tiempo externos ni una frase visible «Quedan…». El botón de reinicio pone a cero y el botón para detener el aviso aparece en el centro. Preservar este contrato al adaptar responsive, cocina o PWA.

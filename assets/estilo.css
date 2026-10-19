@@ -555,3 +555,28 @@ button[hidden]{display:none!important}
 .logo .logo-wordmark{color:var(--ink)}
 .logo-isotipo{display:block;flex:none;height:.72em;height:1cap;width:auto}
 @media(max-width:359px){.topbar{gap:8px}.nav{gap:8px}.nav a{font-size:.75rem;gap:4px}}
+
+/* Temporizador de cocina compartido por web y PWA · 19/10/2026. */
+.timer{padding:clamp(10px,2vw,22px);text-align:center;--timer-cream:#faf6ee;--timer-ink:#3c493f}
+.timer-dial-wrap{position:relative;width:min(100%,290px);margin-inline:auto;aspect-ratio:1;container-type:inline-size}
+.timer-dial{display:block;width:100%;height:100%;touch-action:none;user-select:none;border-radius:50%;cursor:grab}
+.timer-dial:active{cursor:grabbing}.timer-dial:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.timer-rim{fill:none;stroke:#8c9985;stroke-width:14}.timer-base{fill:var(--timer-cream)}
+#timer-marks line{stroke:var(--timer-ink)}#timer-marks .major{stroke-width:1.6}#timer-marks .minor{stroke-width:.7}
+#timer-marks text{fill:var(--timer-ink);font:500 13px "Geist",system-ui,sans-serif}
+.timer-knob{stroke:var(--timer-cream);stroke-width:3;paint-order:stroke;filter:drop-shadow(0 0 1px #3c493f)}
+.timer-center{position:absolute;inset:32%;border-radius:50%;background:var(--timer-cream);display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #3c493f12}
+.timer-center[hidden],.timer-alarm-stop[hidden]{display:none}
+.timer .timer-readout{display:flex;align-items:center;justify-content:center;width:100%;margin:0;font-size:clamp(1rem,10cqw,1.9rem);letter-spacing:0;line-height:1.2;color:var(--timer-ink)}
+.timer-readout input{font:inherit;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.04em;width:2.1ch;min-width:0;padding:3px 0;border:0;border-bottom:1px solid #8c998580;background:transparent;color:inherit;text-align:center;border-radius:0}
+.timer-hours{font-size:clamp(.7rem,1.8vw,.85rem);line-height:1.2;color:var(--timer-ink);display:flex;align-items:center;justify-content:center;gap:2px;margin-top:4px}
+.timer-hours input{font:inherit;text-align:center;width:1.2ch;padding:2px 0;border:0;border-bottom:1px solid #8c998580;background:transparent;color:inherit;border-radius:0}
+.timer input:focus-visible,.timer button:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.timer-help{margin:10px 0 0;font-size:.75rem}.timer-presets{justify-content:center;gap:6px;margin:12px 0}
+.timer-presets button{padding:6px 9px;min-height:44px;font-size:.8rem}
+.timer-actions{justify-content:center;gap:12px}.timer-actions button{display:grid;place-items:center;width:48px;height:48px;padding:0;border-color:#8c9985;color:var(--timer-ink);background:var(--timer-cream)}
+.timer-actions button:first-child{background:var(--timer-ink);color:var(--timer-cream)}.timer-actions button:disabled{opacity:.45;cursor:default}
+.timer-actions svg{width:23px;height:23px;stroke-width:1.8}
+.timer-alarm-stop{position:absolute;inset:32%;width:36%;height:36%;border-radius:50%;border:2px solid #af7251;background:var(--timer-cream);color:var(--timer-ink);display:grid;place-items:center;padding:0}
+.timer-alarm-stop svg{width:54%;height:54%;stroke-width:1.6}.timer.is-alarming .timer-rim{stroke:#af7251}
+@media (orientation:landscape) and (min-width:650px) and (max-width:900px){.timer{padding:8px}.timer-presets{gap:4px}.timer-presets button{padding:5px 7px}.timer-actions{gap:8px}.timer-actions button{width:44px;height:44px}}
