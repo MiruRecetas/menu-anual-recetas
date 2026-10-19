@@ -32,7 +32,32 @@
 <section class="face" id="reverso" aria-label="Modo cocina">
 <div class="back-grid">
 <div class="cooking-main"><span class="eyebrow">Modo cocina · {{BASE_SERVINGS}} raciones de referencia</span><h1>{{TITLE}}</h1><p class="muted" id="cooking-servings">{{BASE_SERVINGS}} raciones seleccionadas</p><h2 class="section-title">Elaboración</h2><ol class="steps">{{STEP_ROWS}}</ol><button class="action outline" type="button" id="steps-reset">Reiniciar pasos</button></div>
-<aside class="side-panel"><span class="eyebrow"><i data-lucide="chef-hat" aria-hidden="true"></i> Herramientas de cocina</span><h2><i data-lucide="timer" aria-hidden="true"></i> Temporizador</h2><div class="timer"><p class="muted small">Cuenta atrás</p><div class="timer-readout" role="timer" aria-live="off" id="timer-readout">10:00</div><div class="timer-presets"><button type="button" data-minutes="5">5 min</button><button type="button" data-minutes="10">10 min</button><button type="button" data-minutes="15">15 min</button><button type="button" data-minutes="30">30 min</button></div><div class="timer-actions"><button id="timer-start" type="button">Iniciar</button><button id="timer-pause" type="button">Pausar</button><button id="timer-reset" type="button">Reiniciar</button></div><p id="timer-status" class="muted small" aria-live="polite"></p></div>
+<aside class="side-panel"><span class="eyebrow"><i data-lucide="chef-hat" aria-hidden="true"></i> Herramientas de cocina</span><h2><i data-lucide="timer" aria-hidden="true"></i> Temporizador</h2><div class="timer">
+<div class="timer-dial-wrap">
+<svg class="timer-dial" id="timer-dial" viewBox="0 0 300 300" role="slider" tabindex="0" aria-label="Duración del temporizador" aria-valuemin="0" aria-valuemax="10800" aria-valuenow="600" aria-valuetext="10 minutos" aria-describedby="timer-help">
+<circle class="timer-rim" cx="150" cy="150" r="143"/>
+<circle class="timer-base" id="timer-base" cx="150" cy="150" r="127"/>
+<path id="timer-sector" class="timer-sector"/>
+<g id="timer-marks" aria-hidden="true"></g>
+<circle class="timer-knob" id="timer-knob" cx="260" cy="86.5" r="10"/>
+</svg>
+<div class="timer-center" id="timer-center">
+<div class="timer-readout" id="timer-readout" aria-label="Tiempo restante">
+<label class="visually-hidden" for="timer-minutes">Minutos</label><input id="timer-minutes" type="text" inputmode="numeric" maxlength="2" value="10" autocomplete="off" aria-label="Minutos" pattern="[0-9]{1,2}"><span aria-hidden="true">:</span><label class="visually-hidden" for="timer-seconds">Segundos</label><input id="timer-seconds" type="text" inputmode="numeric" maxlength="2" value="00" autocomplete="off" aria-label="Segundos" pattern="[0-9]{1,2}">
+</div>
+<label class="timer-hours" title="Horas adicionales">+<input id="timer-hours" type="text" inputmode="numeric" maxlength="1" value="0" autocomplete="off" aria-label="Horas adicionales, de 0 a 3" pattern="[0-3]"> h</label>
+</div>
+<button id="timer-stop" class="timer-alarm-stop" type="button" aria-label="Detener aviso" title="Detener aviso" hidden><i data-lucide="circle-stop" aria-hidden="true"></i></button>
+</div>
+<p class="timer-help muted small" id="timer-help">Gira o toca los minutos</p>
+<div class="timer-presets"><button type="button" data-minutes="5">5 min</button><button type="button" data-minutes="10">10 min</button><button type="button" data-minutes="15">15 min</button><button type="button" data-minutes="30">30 min</button></div>
+<div class="timer-actions">
+<button id="timer-start" type="button" aria-label="Iniciar temporizador" title="Iniciar temporizador"><i data-lucide="play" aria-hidden="true"></i></button>
+<button id="timer-reset" type="button" aria-label="Poner temporizador a cero" title="Poner a cero"><i data-lucide="rotate-ccw" aria-hidden="true"></i></button>
+<button id="timer-sound" type="button" aria-label="Silenciar sonido" title="Silenciar sonido" aria-pressed="true"><i data-lucide="volume-2" aria-hidden="true"></i></button>
+</div>
+<p id="timer-status" class="visually-hidden" role="status" aria-live="polite"></p>
+</div>
 {{NOTES}}</aside>
 </div></section>
 <div class="flipbar"><button id="flip-button" class="action" type="button" aria-controls="anverso reverso">Dar la vuelta · Modo cocina →</button></div>

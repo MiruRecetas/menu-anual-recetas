@@ -54,6 +54,19 @@ const server=http.createServer((req,res)=>{
     await page.locator('#portion-plus').click();assert.equal(await page.locator('#portion-value').innerText(),before);
     await page.locator('#flip-button').click();await page.locator('.steps input').first().check();
     await page.locator('#timer-start').click();assert.match(await page.locator('#timer-status').innerText(),/marcha/);
+    // The new editable dial works under the real worker while offline.
+    await page.locator('#timer-start').click();
+    await page.locator('#timer-hours').fill('1');
+    await page.locator('#timer-minutes').fill('25');
+    await page.locator('#timer-seconds').fill('12');
+    await page.locator('#timer-seconds').press('Tab');
+    assert.equal(await page.locator('#timer-dial').getAttribute('aria-valuenow'),'5112');
+    assert.equal(await page.locator('#timer-dial').getAttribute('data-layer'),'1');
+    await page.locator('#timer-reset').click();
+    assert.equal(await page.locator('#timer-minutes').inputValue(),'00');
+    await page.locator('[data-minutes="10"]').click();
+    await page.locator('#timer-start').click();
+
     await page.goto(origin+base+'recetas/bacalao-a-la-vizcaina/');
     assert.match(await page.locator('h2').innerText(),/no está guardada/);
     unavailable=false;await context.setOffline(false);await page.goto(url);
