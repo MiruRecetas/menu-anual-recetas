@@ -48,7 +48,7 @@ En la portada se construye automáticamente una **galería de fotografías** a p
 
 - [Recetario](https://mirurecetas.github.io/menu-anual-recetas/recetario/) con búsqueda por nombre, descripción y etiquetas; el buscador ocupa todo el ancho del conjunto de tarjetas en móvil, tablet y escritorio; carga inicial de diez resultados y opción de mostrar más.
 - **Una ficha por receta** en `recetas/<slug>/`, con fotografía, ingredientes, raciones, elaboración, categoría, etiquetas y nutrición cuando exista.
-- Selector de raciones para **escalar las cantidades visibles**, anverso/reverso en **modo cocina**, pasos marcables y temporizador.
+- Selector de raciones para **escalar las cantidades visibles**, anverso/reverso en **modo cocina**, pasos marcables y [temporizador visual de hasta 3 horas](docs/TEMPORIZADOR.md): esfera con capas terracota/mostaza/salvia, tiempo central editable y sincronizado con giro/toque, tiempos rápidos, controles Lucide de inicio/pausa, puesta a cero y sonido. Al terminar, aviso de hasta 30 segundos con parada central y vibración compatible. Compartido por web/PWA, móvil, tablet y escritorio; aceptado por la usuaria tras pruebas físicas el **19/10/2026**. El detalle de evidencia y limitaciones está en su contrato.
 - Marcado estructurado **Schema.org Recipe** para facilitar compartir/importar recetas desde el navegador, incluido el flujo de **Compartir → Bring!** en Android. La importación depende del comportamiento de Bring!; no existe una integración propia ni sincronización automática de listas de compra.
 
 ## Nutrición: significado de los indicadores
@@ -110,6 +110,8 @@ docs/
   PROTOCOLO-MAESTRO-RECETAS.md # Protocolo integral y matizaciones vigentes
   IMAGENES-BATCHCOOKING.md
   MANTENIMIENTO-DISENO-WEB.md # Manual operativo del chat web
+  PWA.md                    # Instalación, offline, actualización y evidencia
+  TEMPORIZADOR.md           # Contrato aprobado y validación del modo cocina
 .github/workflows/
   validar-web.yml
   qa-navegador.yml

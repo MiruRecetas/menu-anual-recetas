@@ -183,3 +183,7 @@ Revisión del 15/10/2026: se completan las 18 fichas con notas ausentes/vacías,
 ## Etiqueta principal Dulces · Norma del 16/10/2026
 
 Por instrucción de la usuaria se incorpora `dulces` (Dulces), con icono Lucide `candy`, al catálogo cerrado de etiquetas principales. Aplicarla a partir de ahora a recetas de perfil dulce con bastante azúcar, considerando el conjunto de ingredientes y su uso culinario, sin imponer un umbral numérico no acordado. No basta la fruta por sí sola ni un toque de miel en una receta salada. Mantener exactamente una principal, precedida por las funcionales. Las galletas de avena con chocolate cambian de `lacteos` a `dulces`, conservando `rapida`. El criterio rige nuevas altas y revisiones futuras; no obliga a reclasificar retrospectivamente otras recetas sin encargo. Es clasificación editorial, no una declaración nutricional regulada ni una modificación de macros, ingredientes, Airtable o menús.
+
+
+## Preservar temporizador compartido · 19/10/2026
+Las fichas reutilizan la plantilla y el temporizador de esfera de [TEMPORIZADOR.md](TEMPORIZADOR.md), publicado en PR #122 y aceptado por la usuaria tras sus pruebas físicas el 19/10/2026. No duplicar ni configurar un temporizador por receta, ni restablecer el selector antiguo de intervalos. Al registrar/editar recetas se conservan esfera, edición central, capas por horas y controles; no exige campos nuevos en los JSON ni cambios nutricionales. El registro de evidencia distingue CI, HTTP y confirmación física sin atribuir dispositivos no especificados.
