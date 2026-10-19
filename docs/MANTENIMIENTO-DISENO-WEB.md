@@ -183,3 +183,8 @@ La esfera redonda, capas terracota/mostaza/salvia, edición central y controles 
 
 ### Cierre de validación del temporizador · 19/10/2026
 PR #122 publicada y verificada por HTTP; la usuaria confirma a las 09:35 (España peninsular) que realizó todas las pruebas y funciona exactamente como quería. Temporizador aceptado físicamente en el entorno probado por ella; no inventar una matriz de dispositivos no comunicada. Mantener esfera/capas, edición central, controles, cero y parada central del aviso. Evidencia completa y límites en [TEMPORIZADOR.md](TEMPORIZADOR.md). No seguir marcando esta validación inicial como pendiente.
+
+
+## Encabezado único del temporizador · 20/10/2026
+
+El panel de cocina muestra únicamente «Temporizador» con su icono Lucide `timer`, usando el estilo `eyebrow` del antiguo rótulo «Herramientas de cocina»: tipografía de texto, tamaño pequeño, negrita, espaciado y mayúsculas visuales en terracota. Se elimina el rótulo genérico y el título grande duplicado. Se conserva su función accesible de encabezado de nivel 2. La regla reside en `plantillas/receta.html` y se aplica al regenerar todas las fichas existentes y a las futuras, en web y PWA y en ambas orientaciones. No cambia esfera, controles, sonido ni la validación funcional del temporizador.
