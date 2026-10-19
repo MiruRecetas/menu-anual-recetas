@@ -85,3 +85,7 @@ El campo de visualización propuesto no elimina matices de un uso como Tomate ch
 
 
 **Dulces (16/10/2026):** etiqueta principal `dulces`, icono `candy`, para recetas de perfil dulce con bastante azúcar según valoración editorial de su composición. Usarla en futuras recetas que cumplan ese criterio, sin inventar un umbral ni asignarla por un toque de miel en platos salados. Sustituye a otra principal, no se añade como segunda. Galletas de avena con chocolate: `rapida`, `dulces`.
+
+
+## Preservar temporizador compartido · 19/10/2026
+Las fichas reutilizan la plantilla y el temporizador de esfera de [TEMPORIZADOR.md](TEMPORIZADOR.md), publicado en PR #122 y aceptado por la usuaria tras sus pruebas físicas el 19/10/2026. No duplicar ni configurar un temporizador por receta, ni restablecer el selector antiguo de intervalos. Al registrar/editar recetas se conservan esfera, edición central, capas por horas y controles; no exige campos nuevos en los JSON ni cambios nutricionales. El registro de evidencia distingue CI, HTTP y confirmación física sin atribuir dispositivos no especificados.

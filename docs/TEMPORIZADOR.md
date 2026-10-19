@@ -27,6 +27,20 @@ AudioContext se prepara por gesto del usuario al iniciar/activar sonido. Fallo o
 
 `tests/timer_qa.cjs`: edición bidireccional, capas y horas exactas, máximos, giro con cruce de hora, toque táctil, teclado, cuenta con reloj controlado, pausa y puesta a cero, solicitudes Web Audio/vibración, silencio, parada central y corte automático a 30 s. Layout y capturas a 1440×900, 1100×820, 820×1100, 844×390, 390×844, 320×700 y 667×375. Se ejecuta en QA navegador junto a regresiones existentes.
 
-`tests/pwa_qa.cjs` verifica también edición por horas/minutos/segundos y puesta a cero offline bajo SW real y ruta canónica. CI no equivale a instalación física. Tras PR/CI/fusión deben verificarse generación y HTTP de HTML y assets revisados. Prueba física de sonido, vibración, gestos y tamaños reales pendiente de la usuaria; no declararla realizada por revisar APIs o capturas.
+`tests/pwa_qa.cjs` verifica también edición por horas/minutos/segundos y puesta a cero offline bajo SW real y ruta canónica. CI no equivale a instalación física. Tras PR/CI/fusión deben verificarse generación y HTTP de HTML y assets revisados. La usuaria ha confirmado su prueba física el 19/10/2026; el alcance y la evidencia se registran a continuación y no se deducen de las pruebas automáticas.
 
 Una única publicación y PWA. No cambia Airtable, ingredientes, nutrición, menús, fotografías o exportación Bring!. Respetar las integraciones Bring! actualmente publicadas por sus agentes; no revertirlas basándose en documentación histórica.
+
+
+## Validación y publicación · 19/10/2026
+
+Implementación publicada mediante [PR #122](https://github.com/MiruRecetas/menu-anual-recetas/pull/122), merge `4a900070c65bd1f2814b3348e97be7d894e03a3c` y commit de páginas generadas `8c1c3ac2b1813deddc3f9139301d7cd9f28cdfdb`.
+
+| Evidencia | Resultado y alcance |
+| --- | --- |
+| Automatización | 67 pruebas Python, gráficos Node y generación idempotente; `Validar web` #191 y `QA navegador MiruRecetas` #165 correctos. Incluye interacciones del temporizador, controles en siete tamaños/orientaciones y edición offline con SW real. |
+| Publicación | `Publicar recetas` y Pages correctos. HTTP anónimo 200 y bytes comprobados en manifest, SW, offline, seis iconos y cuatro familias HTML; hashes de CSS/JS de la ficha comprobados públicamente. |
+| Prueba física declarada | El 19/10/2026 a las 09:35, hora de España peninsular, la usuaria confirma: «Funciona perfectamente! He hecho todas las pruebas y todo funciona exactamente como quería!». Se registra como aceptación física y funcional del temporizador entregado, incluidos sus avisos según el alcance declarado por la usuaria. |
+| Límites de la evidencia | La confirmación no identifica individualmente dispositivo, sistema, navegador u orientación. No convertirla en una batería física de todas las plataformas, ni en prueba de instalación/actualización completa de PWA o de alarma en segundo plano/pantalla bloqueada. |
+
+**Estado: temporizador publicado y validado por la usuaria.** No seguir presentándolo como propuesta o pendiente de comprobación física inicial. Una modificación posterior exige las regresiones correspondientes; la aprobación no permite rediseñarlo ni ampliar alcance sin encargo.

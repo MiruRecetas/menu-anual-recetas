@@ -179,3 +179,7 @@ Futura página de compra integrada desde el menú, con selector previo y payload
 ## Temporizador de cocina aprobado · 19/10/2026
 
 La esfera redonda, capas terracota/mostaza/salvia, edición central y controles Lucide sustituyen al temporizador de intervalos exclusivamente predefinidos en todas las fichas. Contrato vinculante, comportamiento y pruebas: [TEMPORIZADOR.md](TEMPORIZADOR.md). No añadir campos de tiempo externos ni una frase visible «Quedan…». El botón de reinicio pone a cero y el botón para detener el aviso aparece en el centro. Preservar este contrato al adaptar responsive, cocina o PWA.
+
+
+### Cierre de validación del temporizador · 19/10/2026
+PR #122 publicada y verificada por HTTP; la usuaria confirma a las 09:35 (España peninsular) que realizó todas las pruebas y funciona exactamente como quería. Temporizador aceptado físicamente en el entorno probado por ella; no inventar una matriz de dispositivos no comunicada. Mantener esfera/capas, edición central, controles, cero y parada central del aviso. Evidencia completa y límites en [TEMPORIZADOR.md](TEMPORIZADOR.md). No seguir marcando esta validación inicial como pendiente.
