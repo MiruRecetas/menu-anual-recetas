@@ -44,3 +44,8 @@ Implementación publicada mediante [PR #122](https://github.com/MiruRecetas/menu
 | Límites de la evidencia | La confirmación no identifica individualmente dispositivo, sistema, navegador u orientación. No convertirla en una batería física de todas las plataformas, ni en prueba de instalación/actualización completa de PWA o de alarma en segundo plano/pantalla bloqueada. |
 
 **Estado: temporizador publicado y validado por la usuaria.** No seguir presentándolo como propuesta o pendiente de comprobación física inicial. Una modificación posterior exige las regresiones correspondientes; la aprobación no permite rediseñarlo ni ampliar alcance sin encargo.
+
+
+## Encabezado único del temporizador · 20/10/2026
+
+El panel de cocina muestra únicamente «Temporizador» con su icono Lucide `timer`, usando el estilo `eyebrow` del antiguo rótulo «Herramientas de cocina»: tipografía de texto, tamaño pequeño, negrita, espaciado y mayúsculas visuales en terracota. Se elimina el rótulo genérico y el título grande duplicado. Se conserva su función accesible de encabezado de nivel 2. La regla reside en `plantillas/receta.html` y se aplica al regenerar todas las fichas existentes y a las futuras, en web y PWA y en ambas orientaciones. No cambia esfera, controles, sonido ni la validación funcional del temporizador.
