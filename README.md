@@ -1,3 +1,7 @@
+> **Estado de publicación verificado (20/10/2026).** La Fase 3.3 incorporó el coste estimado por ración a 57 fichas (58 preparaciones canónicas; sofrito interno), con icono `hand-coins` y precio `≈ XX,XX €/ración`. La atribución de las fichas se actualizó mediante [PR #126](https://github.com/MiruRecetas/menu-anual-recetas/pull/126) a «Estimaciones de costes elaboradas con datos de OpenCesta (ODbL 1.0) y referencias comerciales documentadas». La web y PWA siguen generándose y publicándose **desde este repositorio**, que también contiene fuentes, generador, plantillas, pruebas y workflows. La separación futura del desarrollo técnico en repositorios privados **no está implementada**. [PR de integración #125](https://github.com/MiruRecetas/menu-anual-recetas/pull/125). Esta nota prevalece sobre referencias históricas del README sin reescribirlas.
+
+---
+
 # MiruRecetas · Menú anual
 
 **MiruRecetas** es la web personal de planificación alimentaria del proyecto **Menú anual**: menús de lunes a viernes reutilizables, recetario, resúmenes nutricionales y preparaciones de batch cooking. Está construida como sitio estático, generado desde archivos JSON y publicado en GitHub Pages.
