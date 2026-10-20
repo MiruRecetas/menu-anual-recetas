@@ -1,0 +1,347 @@
+{
+  "schema": "mirurecetas.public-recipe-costs/1",
+  "recipes": {
+    "ensalada-campera": {
+      "web_name": "Ensalada campera",
+      "base_portions": "1",
+      "culinary_sha256": "4e4f99dd5893ac52fd38b511ad2c0ed88001d5f769793d6092a6f8a2fd831d40",
+      "cents": "275"
+    },
+    "bacalao-a-la-vizcaina": {
+      "web_name": "Bacalao a la vizcaína",
+      "base_portions": "2",
+      "culinary_sha256": "3b7be662e2afbd6eb298b2a0430c1adf79427e314bbb92035af18d161d9f21af",
+      "cents": "536"
+    },
+    "bocadillo-de-solomillo-y-pimientos-asados": {
+      "web_name": "Bocadillo de solomillo y pimientos asados",
+      "base_portions": "1",
+      "culinary_sha256": "7ce554e74b394251ee193a16cbcbd8fde5c5005af3d0349337d353a4e85c86cc",
+      "cents": "362"
+    },
+    "salchichas-al-vino": {
+      "web_name": "Salchichas al vino",
+      "base_portions": "3",
+      "culinary_sha256": "92fc46e8a4718f4ca0057e33c5cce85cf33045268874f43d198ac86fdd629bdb",
+      "cents": "148"
+    },
+    "tacos-de-gambon": {
+      "web_name": "Tacos de gambón",
+      "base_portions": "1",
+      "culinary_sha256": "21728832c5b37cd188ac3457d09a6abc2ecc5ebe7015ff0540161e039beb6bac",
+      "cents": "392"
+    },
+    "burritos-de-chili-con-carne": {
+      "web_name": "Burritos de chili con carne",
+      "base_portions": "1",
+      "culinary_sha256": "ef79d3bb7fc4b87f2706fd99d2fb5ea8c65d097a62b0e1b0b2b5107095b99adb",
+      "cents": "344"
+    },
+    "cuscus-de-pollo-y-verduras": {
+      "web_name": "Cuscús de pollo y verduras",
+      "base_portions": "1",
+      "culinary_sha256": "706fd65c750de03f07ae7b685e81160b78bd0c4c67a7a71063bb95d626df3aa2",
+      "cents": "244"
+    },
+    "gambones-al-horno-con-ajo-perejil-y-limon": {
+      "web_name": "Gambones al horno con ajo, perejil y limón",
+      "base_portions": "1",
+      "culinary_sha256": "903877076506ca6a6cc08e4a795af7793ec686e0729d5a9af60021f32f3d0a47",
+      "cents": "412"
+    },
+    "canelones-de-carrilleras": {
+      "web_name": "Canelones de carrilleras",
+      "base_portions": "1",
+      "culinary_sha256": "8930cddda91e9785f62f262804f42d2b8fa49344009ef76d23d94dc2ec29fd86",
+      "cents": "524"
+    },
+    "mini-wraps-de-falafel": {
+      "web_name": "Mini wraps de falafel",
+      "base_portions": "1",
+      "culinary_sha256": "f06a7d69696c9d403f92eadeb9d33670271c3deb6f3b2ae0338f4d8117a61701",
+      "cents": "168"
+    },
+    "bowl-de-yogur-con-miel-y-granola": {
+      "web_name": "Bowl de yogur con miel y granola",
+      "base_portions": "1",
+      "culinary_sha256": "055843aff8bb2db263398116e14f7e4f5695e20ab55c5df0ea418530e1e29646",
+      "cents": "91"
+    },
+    "salmon-con-naranja-y-azafran": {
+      "web_name": "Salmón con naranja y azafrán",
+      "base_portions": "3",
+      "culinary_sha256": "908b5720c526fd27d8f2c6e6fa829d74130f2c032761c011fcd3a077d18b5922",
+      "cents": "363"
+    },
+    "ragu-a-la-bolonesa": {
+      "web_name": "Ragú a la boloñesa",
+      "base_portions": "4",
+      "culinary_sha256": "0cda911baa314f9887c12246604d878625a60aa6fcd79b50e90eb84c417a152f",
+      "cents": "160"
+    },
+    "vinagreta-de-pimientos-y-cebolla": {
+      "web_name": "Vinagreta de pimientos y cebolla",
+      "base_portions": "1",
+      "culinary_sha256": "e1ef4cef9e235a104ea217c4d568915ddfd94fb5135ce7b076c67eacd8250983",
+      "cents": "23"
+    },
+    "poke-de-salmon": {
+      "web_name": "Poke de salmón",
+      "base_portions": "1",
+      "culinary_sha256": "50142e02b8a8feed960efe3d80f667dd98aa5fe491381931c9e443e7ed33342c",
+      "cents": "469"
+    },
+    "hummus": {
+      "web_name": "Hummus",
+      "base_portions": "1",
+      "culinary_sha256": "fe9bc25730bc25db98827bd0c666b2390fb11b62d13cfc0ec8355e6684c3dde6",
+      "cents": "58"
+    },
+    "pisto": {
+      "web_name": "Pisto",
+      "base_portions": "6",
+      "culinary_sha256": "c285e20cd402993a1259dfa1702694dd1c2636cec2c36bb2f8993719c3ea4628",
+      "cents": "184"
+    },
+    "revuelto-de-setas-trigueros-y-gambas": {
+      "web_name": "Revuelto de setas, trigueros y gambas",
+      "base_portions": "1",
+      "culinary_sha256": "f3c35c30742cc07c4a2302856f053921e0b76360f0783cf63fb4c99326f3a159",
+      "cents": "508"
+    },
+    "arroz-con-pollo": {
+      "web_name": "Arroz con pollo",
+      "base_portions": "2",
+      "culinary_sha256": "22e03fe2c06bb645db69a0742f90ef93ccfc9283484a3b1b4757c2aff47fd3a4",
+      "cents": "261"
+    },
+    "pollo-al-limon": {
+      "web_name": "Pollo al limón",
+      "base_portions": "2",
+      "culinary_sha256": "fdcd251133f0288fd965ed58fc0a46a4fa2b1811f6734b4ef7701a4143f8be93",
+      "cents": "109"
+    },
+    "pimientos-asados": {
+      "web_name": "Pimientos asados",
+      "base_portions": "3",
+      "culinary_sha256": "82a95626b646c4a95c30761091e7a9c1cc5efed857445ee7840c88607d6cc824",
+      "cents": "120"
+    },
+    "bechamel": {
+      "web_name": "Bechamel",
+      "base_portions": "6",
+      "culinary_sha256": "396dcefa4d79ddc4de61de651f7fff36f945a14a896897f9db2f4aed7d64163f",
+      "cents": "14"
+    },
+    "pollo-madras": {
+      "web_name": "Pollo Madrás",
+      "base_portions": "3",
+      "culinary_sha256": "ca3f911884ce8150c74f3b3dec14393a5ed66903fdfae222761317a5e6adfa69",
+      "cents": "224"
+    },
+    "ensalada-griega-con-caballa-y-pimientos": {
+      "web_name": "Ensalada griega con caballa y pimientos",
+      "base_portions": "1",
+      "culinary_sha256": "4fcf559a22dd8b63812d27a0e2709d0cf8d9a79d952eadbbc4df1f1b99f15de0",
+      "cents": "612"
+    },
+    "quesadillas-vegetales": {
+      "web_name": "Quesadillas vegetales",
+      "base_portions": "1",
+      "culinary_sha256": "161a0742f642dd17719dd8b15bc3e11cfd2ec700b9af81fc477e907009bf6fcb",
+      "cents": "272"
+    },
+    "crep-de-pollo-al-curry": {
+      "web_name": "Crep de pollo al curry",
+      "base_portions": "1",
+      "culinary_sha256": "3906b2b52f45b6d0a3cffa9b4c8a0b31bb3afb0a38018390b6473421b0704568",
+      "cents": "243"
+    },
+    "huevos-rotos": {
+      "web_name": "Huevos rotos",
+      "base_portions": "1",
+      "culinary_sha256": "f0209a4e08841ceb4048aeaca536cefbb78ccaa636a77a02a1fa2061588db6ae",
+      "cents": "93"
+    },
+    "tortilla-de-patata-tradicional-con-cebolla": {
+      "web_name": "Tortilla de patata y cebolla",
+      "base_portions": "2",
+      "culinary_sha256": "efbaae27a94e00a4375f022c0d6e88dec8c2ddaaee1e60d797e74b10583561e2",
+      "cents": "120"
+    },
+    "lentejas-estofadas-con-chorizo": {
+      "web_name": "Lentejas estofadas con chorizo",
+      "base_portions": "3",
+      "culinary_sha256": "c11ed592227b3f05ec0dddb01b12f41a17c1dd681f89d9aa49f667e43f44ec34",
+      "cents": "255"
+    },
+    "falafel": {
+      "web_name": "Falafel",
+      "base_portions": "6",
+      "culinary_sha256": "7d0dc9d4e3dac04869b2b327a9eea34280f561441d333799f50d3fa397be8b87",
+      "cents": "32"
+    },
+    "pasta-con-chili": {
+      "web_name": "Pasta con chili",
+      "base_portions": "1",
+      "culinary_sha256": "77de245256ea42ce6fc39ee0d8bf987300588aa5c2a6a48062aaa5ba4496d672",
+      "cents": "359"
+    },
+    "berenjenas-rellenas": {
+      "web_name": "Berenjenas rellenas",
+      "base_portions": "4",
+      "culinary_sha256": "67e4cbb4eb43ebdf944664e2052a94aa6907d670624415f5f1acb6debee70b34",
+      "cents": "222"
+    },
+    "albondigas-en-salsa-rubia": {
+      "web_name": "Albóndigas en salsa rubia",
+      "base_portions": "3",
+      "culinary_sha256": "f98f4d8c0c474cae64db5df2f0980c09ca2dd6e50a2644ad51f1eaaea7d72540",
+      "cents": "299"
+    },
+    "carrilleras-de-cerdo-al-vino": {
+      "web_name": "Carrilleras de cerdo al vino",
+      "base_portions": "4",
+      "culinary_sha256": "fe71e514b831a6ef53abaf9741d30c85cc93aa3d1c7b468edeb14a346a467df1",
+      "cents": "396"
+    },
+    "salteado-de-pollo-y-verduras": {
+      "web_name": "Salteado de pollo y verduras",
+      "base_portions": "2",
+      "culinary_sha256": "3ecb8114e719cd361a9f1afce8df456c868ead61ae8a1cf82874da085a5bb484",
+      "cents": "188"
+    },
+    "pure-de-calabaza-y-calabacin": {
+      "web_name": "Puré de calabaza y calabacín",
+      "base_portions": "5",
+      "culinary_sha256": "373ed5f8ea4710e49c8d3af1b31b0cab9efab8bf6ba0cbd2253f166a3e75a9ed",
+      "cents": "77"
+    },
+    "tostas-de-burrata-piquillos-y-anchoas": {
+      "web_name": "Tostas de burrata, piquillos y anchoas",
+      "base_portions": "1",
+      "culinary_sha256": "6cac0bc25a49f03a9807201e92b65f860159fedbcc653dfd75cd4ea715f208e0",
+      "cents": "533"
+    },
+    "marmitako-de-bonito": {
+      "web_name": "Marmitako de bonito",
+      "base_portions": "2",
+      "culinary_sha256": "c6c180492e26536b35d778c3ac225c1156274c22abd513a28bd2774ab7b6bcd9",
+      "cents": "474"
+    },
+    "ensalada-mediterranea-de-pasta-con-atun": {
+      "web_name": "Ensalada de pasta con atún",
+      "base_portions": "1",
+      "culinary_sha256": "58356e31a948f0ba288e0aae3bf6bf6406ecf30b6e09879bff66a2594b224d18",
+      "cents": "587"
+    },
+    "quiche-de-puerro-champinones-y-pavo": {
+      "web_name": "Quiche de puerro, champiñones y pavo",
+      "base_portions": "4",
+      "culinary_sha256": "93ff65abfa5ad6cc2aa9de29b9c734ebc93cd13fb2ae7168b0d7479c01889feb",
+      "cents": "231"
+    },
+    "pasta-bolonesa": {
+      "web_name": "Pasta boloñesa",
+      "base_portions": "1",
+      "culinary_sha256": "9dd1eee124c6d2830b67b3bf8638c8ef8a28d7be7ed654e6f68bc46175ec84c7",
+      "cents": "247"
+    },
+    "galletas-de-avena-con-chocolate": {
+      "web_name": "Galletas de avena con chocolate",
+      "base_portions": "10",
+      "culinary_sha256": "539f4ce42661326e86b08b34d9da0c8c879b5d5b8198d3e2315aa23cc3118e8d",
+      "cents": "41"
+    },
+    "tzatziki": {
+      "web_name": "Tzatziki",
+      "base_portions": "2",
+      "culinary_sha256": "e9d904ae2d28c2705bde0b6de85b9d98e15e5ae716fe3019556a36bfee62daf1",
+      "cents": "23"
+    },
+    "tortilla-de-bacalao": {
+      "web_name": "Tortilla de bacalao",
+      "base_portions": "1",
+      "culinary_sha256": "c65df014a84e09765715a88b26cc1b2e58c58b7a4fb9ce9eb6796ffe8de9b1c2",
+      "cents": "315"
+    },
+    "pa-amb-tomaquet-con-jamon-iberico": {
+      "web_name": "Pa amb tomàquet con jamón ibérico",
+      "base_portions": "1",
+      "culinary_sha256": "d9b9b5f65085a5f9fecf073268ba02e6daf788f9af4b2652377f98ca42a59a2c",
+      "cents": "307"
+    },
+    "wok-de-gambones-y-pisto": {
+      "web_name": "Wok de gambones y pisto",
+      "base_portions": "1",
+      "culinary_sha256": "b2400c2ee1f70a9dd592f3a21f77ea48dd322aba5103a72b5410d2578aefbd69",
+      "cents": "587"
+    },
+    "solomillo-de-cerdo-a-la-miel-y-dos-mostazas": {
+      "web_name": "Solomillo de cerdo a la miel y dos mostazas",
+      "base_portions": "2",
+      "culinary_sha256": "5f299384670b91536959a1e9442abc93f6268b5eddc9ee6481358a2ad68c2a80",
+      "cents": "180"
+    },
+    "crepes": {
+      "web_name": "Crepes",
+      "base_portions": "2",
+      "culinary_sha256": "39e0f49d95066919cdc783957a74daea87cfb361bb51dac974cd2792521b1d69",
+      "cents": "19"
+    },
+    "chili-con-carne": {
+      "web_name": "Chili con carne",
+      "base_portions": "5",
+      "culinary_sha256": "d9936ea7f69f8a76e6f7617b80f0e124498f8018ab1ad3684ff3fbbf78c21ef7",
+      "cents": "303"
+    },
+    "carne-guisada": {
+      "web_name": "Carne guisada",
+      "base_portions": "3",
+      "culinary_sha256": "baf2de0f8d4246834fc051d3e322d919f357a5bc56704aac6f481b43252b2b74",
+      "cents": "478"
+    },
+    "dorada-al-horno-con-cama-de-patata-y-cebolla": {
+      "web_name": "Dorada al horno con cama de patata y cebolla",
+      "base_portions": "1",
+      "culinary_sha256": "db97e3b259ec310ed5234b085487fe33e5e7ad61a6772d14a78c6d105deaea2d",
+      "cents": "446"
+    },
+    "guisantes-con-jamon": {
+      "web_name": "Guisantes con jamón",
+      "base_portions": "1",
+      "culinary_sha256": "53a3807704dd944124cb04ae7de40d05ec13fff0155ab56e8fa6b7089c85d2c7",
+      "cents": "265"
+    },
+    "fajitas-de-pollo": {
+      "web_name": "Fajitas de pollo",
+      "base_portions": "1",
+      "culinary_sha256": "f29e3390a2b3ac43f24dd9407f26d2fa721759bf78106ac3f55047373d2b93ef",
+      "cents": "267"
+    },
+    "salsa-vizcaina": {
+      "web_name": "Salsa vizcaína",
+      "base_portions": "2",
+      "culinary_sha256": "89ca2b2ff37e7bd9ec9c97e2b8a55c510e8199509324df3176b372d254f56db1",
+      "cents": "52"
+    },
+    "berenjenas-fritas-con-miel-natural": {
+      "web_name": "Berenjenas fritas con miel natural",
+      "base_portions": "1",
+      "culinary_sha256": "6e63a184b84b35454eee4d91fafa4e422b192847d590b3b7d3a31b58d44a2dd1",
+      "cents": "77"
+    },
+    "ensalada-cesar": {
+      "web_name": "Ensalada César",
+      "base_portions": "3",
+      "culinary_sha256": "0a17b9363c8aa39ffa7e00a5ee3856780a1c2974e58b3095d5b41d85609178ee",
+      "cents": "282"
+    },
+    "tostas-de-hummus-y-sardinillas": {
+      "web_name": "Tostas de hummus y sardinillas",
+      "base_portions": "1",
+      "culinary_sha256": "808409b5e628efb7f54734d50feb63a918b3a95125e48bed18495c3a6158d208",
+      "cents": "191"
+    }
+  }
+}

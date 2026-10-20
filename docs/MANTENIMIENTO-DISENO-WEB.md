@@ -188,3 +188,8 @@ PR #122 publicada y verificada por HTTP; la usuaria confirma a las 09:35 (Españ
 ## Encabezado único del temporizador · 20/10/2026
 
 El panel de cocina muestra únicamente «Temporizador» con su icono Lucide `timer`, usando el estilo `eyebrow` del antiguo rótulo «Herramientas de cocina»: tipografía de texto, tamaño pequeño, negrita, espaciado y mayúsculas visuales en terracota. Se elimina el rótulo genérico y el título grande duplicado. Se conserva su función accesible de encabezado de nivel 2. La regla reside en `plantillas/receta.html` y se aplica al regenerar todas las fichas existentes y a las futuras, en web y PWA y en ambas orientaciones. No cambia esfera, controles, sonido ni la validación funcional del temporizador.
+
+
+## Integración económica · Fase 3.3
+
+Contrato vigente en [COSTES-RECETAS.md](COSTES-RECETAS.md). Conservar el distintivo estático por ración, atribución y proyección mínima durante regeneraciones. No recalcular economía desde nutrición ni modificar costes manualmente. Cambios culinarios/nombre/raciones de una ficha con precio requieren revalidación privada; imágenes/descripciones/etiquetas no invalidan su identidad económica. El selector no escala precios. Misma PWA, política offline y temporizador; sin catálogo económico ni solicitudes de precios en cliente. Ante un vínculo incompatible, corregir la entrada validada antes de publicar, sin retirar importes para pasar CI.

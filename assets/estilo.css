@@ -580,3 +580,14 @@ button[hidden]{display:none!important}
 .timer-alarm-stop{position:absolute;inset:32%;width:36%;height:36%;border-radius:50%;border:2px solid #af7251;background:var(--timer-cream);color:var(--timer-ink);display:grid;place-items:center;padding:0}
 .timer-alarm-stop svg{width:54%;height:54%;stroke-width:1.6}.timer.is-alarming .timer-rim{stroke:#af7251}
 @media (orientation:landscape) and (min-width:650px) and (max-width:900px){.timer{padding:8px}.timer-presets{gap:4px}.timer-presets button{padding:5px 7px}.timer-actions{gap:8px}.timer-actions button{width:44px;height:44px}}
+
+/* Coste por ración: HTML estático, independiente del selector y nutrición. */
+.recipe-cost{position:absolute;right:14px;bottom:14px;z-index:4;display:inline-flex;align-items:center;gap:8px;max-width:calc(100% - 28px);padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);box-shadow:0 4px 16px #29352e24;font:600 .85rem/1.35 "Geist",system-ui,sans-serif;font-variant-numeric:tabular-nums;white-space:normal}
+.recipe-cost svg{width:20px;height:20px;flex:0 0 20px;color:var(--green);stroke-width:1.8}
+.photo-panel:has(.photo-empty){display:flex;flex-direction:column}
+.photo-panel:has(.photo-empty) .photo-empty{flex:1;min-height:0;height:auto}
+.photo-panel:has(.photo-empty) .recipe-cost{position:static;align-self:flex-end;flex:0 0 auto;margin:0 14px 14px}
+body:has(.recipe-card) .footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+body:has(.recipe-card) .footer a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media(max-width:360px){.recipe-cost{right:10px;bottom:10px;padding:7px 9px;gap:6px;font-size:.78rem;max-width:calc(100% - 20px)}}
+@media print{.recipe-cost{box-shadow:none}}

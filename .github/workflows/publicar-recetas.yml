@@ -86,3 +86,6 @@ jobs:
 
       - name: Verificar compra Bring! pública sin autenticación
         run: python scripts/verificar_compra_publica.py
+
+      - name: Verificar costes y recursos publicados sin autenticación
+        run: python scripts/verificar_costes.py --public
