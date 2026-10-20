@@ -10,7 +10,7 @@ from pathlib import Path
 from coste_receta import PublicCosts
 
 SITE = "https://mirurecetas.github.io/menu-anual-recetas"
-ATTRIBUTION = ' Estimaciones de MiruRecetas elaboradas con datos de <a href="https://github.com/ruvelro/opencesta">OpenCesta</a> (<a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>) y referencias comerciales documentadas.'
+ATTRIBUTION = ' Estimaciones de costes elaboradas con datos de <a href="https://github.com/ruvelro/opencesta">OpenCesta</a> (<a href="https://opendatacommons.org/licenses/odbl/1-0/">ODbL 1.0</a>) y referencias comerciales documentadas.'
 
 
 def verify(root, public=False):
