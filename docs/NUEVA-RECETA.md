@@ -89,3 +89,8 @@ El campo de visualización propuesto no elimina matices de un uso como Tomate ch
 
 ## Preservar temporizador compartido · 19/10/2026
 Las fichas reutilizan la plantilla y el temporizador de esfera de [TEMPORIZADOR.md](TEMPORIZADOR.md), publicado en PR #122 y aceptado por la usuaria tras sus pruebas físicas el 19/10/2026. No duplicar ni configurar un temporizador por receta, ni restablecer el selector antiguo de intervalos. Al registrar/editar recetas se conservan esfera, edición central, capas por horas y controles; no exige campos nuevos en los JSON ni cambios nutricionales. El registro de evidencia distingue CI, HTTP y confirmación física sin atribuir dispositivos no especificados.
+
+
+## Integración económica · Fase 3.3
+
+Contrato vigente en [COSTES-RECETAS.md](COSTES-RECETAS.md). Conservar el distintivo estático por ración, atribución y proyección mínima durante regeneraciones. No recalcular economía desde nutrición ni modificar costes manualmente. Cambios culinarios/nombre/raciones de una ficha con precio requieren revalidación privada; imágenes/descripciones/etiquetas no invalidan su identidad económica. El selector no escala precios. Misma PWA, política offline y temporizador; sin catálogo económico ni solicitudes de precios en cliente. Ante un vínculo incompatible, corregir la entrada validada antes de publicar, sin retirar importes para pasar CI.

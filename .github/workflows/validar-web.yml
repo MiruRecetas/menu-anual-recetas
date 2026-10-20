@@ -34,6 +34,7 @@ jobs:
       - name: Generar y comprobar contrato del recetario
         run: |
           python scripts/generar.py
+          python scripts/verificar_costes.py
           test -f indice-recetas.json
           python -m json.tool indice-recetas.json > /dev/null
           test -f index.html

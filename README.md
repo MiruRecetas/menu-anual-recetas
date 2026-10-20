@@ -246,3 +246,8 @@ Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](docs/bri
 Esta actualización es documental. La integración permanente sigue pendiente de ejecución específica y coordinación de esquema/exportación/UI. No cambia cantidades, nutrientes, fórmulas, recetas, fotos canónicas o PWA por sí sola. La afirmación histórica de ausencia de integración propia se refiere a producción; los experimentos sí están publicados y validados.
 
 Guías por rol y prompts en [docs/bring](docs/bring/README.md). Los archivos de experimentos permanecen aislados y no son generados por el flujo de producción.
+
+
+## Coste estimado por ración · Fase 3.3
+
+Las fichas con correspondencia económica validada presentan `hand-coins` + `≈ XX,XX €/ración` sobre la fotografía. El coste corresponde a una ración de referencia y no cambia con el selector. La generación oficial conserva los precios mediante una proyección pública mínima, sin acceso a catálogos privados ni secretos. [Contrato, actualización, pruebas y reversión](docs/COSTES-RECETAS.md).

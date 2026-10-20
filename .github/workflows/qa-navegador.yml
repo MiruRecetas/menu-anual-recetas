@@ -53,6 +53,7 @@ jobs:
           sleep 2
           node tests/browser_qa.cjs
           node tests/compra_qa.cjs
+          node tests/costes_qa.cjs
           node tests/timer_qa.cjs
       - name: Pruebas PWA con rutas canónicas y service worker real
         run: node tests/pwa_qa.cjs

@@ -5,6 +5,8 @@ from indice_publico import update_json_index, source_commit
 from pathlib import Path
 from pwa import decorate, build
 from compra import generate as generate_purchase
+from coste_receta import PublicCosts as Costs
+COSTS = Costs()
 R=Path(__file__).resolve().parents[1]
 SITE="https://mirurecetas.github.io/menu-anual-recetas"
 DAYS=["Lunes","Martes","Miércoles","Jueves","Viernes"]
@@ -92,7 +94,7 @@ def make(r):
     photo='<img class="hero-photo" itemprop="image" src="'+e(img)+'" alt="'+e(n)+'">' if img else '<div class="photo-empty">Fotografía pendiente</div>'
     social='<meta property="og:image" content="'+e(img)+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="'+e(img)+'">' if img else ""
     notes=str(r.get("notas") or "")
-    replacements={"PAGE_TITLE":e(n+" · MiruRecetas"),"META_DESCRIPTION":e(desc or n),"CANONICAL_URL":url,"SOCIAL_IMAGE":social,"CSS_URL":SITE+"/assets/estilo.css","JS_URL":SITE+"/assets/cocina.js","HOME_URL":SITE+"/","JSON_LD":json.dumps(structured,ensure_ascii=False).replace("<",r"\u003c"),"UI_JSON":json.dumps({"raciones":servings}),"VISIBLE_IMAGE":photo,"TITLE":e(n),"DESCRIPTION":'<p class="muted">'+e(desc)+'</p>' if desc else "","BASE_SERVINGS":str(servings),"NUTRITION":nut_html,"INGREDIENT_ROWS":rows,"TAGS":tags_html,"CATEGORY_ICON":cat_html,"STEP_ROWS":''.join('<li><label><input type="checkbox"><span class="step-text">'+e(t)+'</span></label></li>' for t in steps),"NOTES":'<div class="notes"><h2>Notas</h2><p>'+e(notes)+'</p></div>'}
+    replacements={"PAGE_TITLE":e(n+" · MiruRecetas"),"META_DESCRIPTION":e(desc or n),"CANONICAL_URL":url,"SOCIAL_IMAGE":social,"CSS_URL":SITE+"/assets/estilo.css","JS_URL":SITE+"/assets/cocina.js","HOME_URL":SITE+"/","JSON_LD":json.dumps(structured,ensure_ascii=False).replace("<",r"\u003c"),"UI_JSON":json.dumps({"raciones":servings}),"VISIBLE_IMAGE":photo,"COST_BADGE":COSTS.render(r),"TITLE":e(n),"DESCRIPTION":'<p class="muted">'+e(desc)+'</p>' if desc else "","BASE_SERVINGS":str(servings),"NUTRITION":nut_html,"INGREDIENT_ROWS":rows,"TAGS":tags_html,"CATEGORY_ICON":cat_html,"STEP_ROWS":''.join('<li><label><input type="checkbox"><span class="step-text">'+e(t)+'</span></label></li>' for t in steps),"NOTES":'<div class="notes"><h2>Notas</h2><p>'+e(notes)+'</p></div>'}
     out=T
     for k,v in replacements.items():out=out.replace("{{"+k+"}}",v)
     dest=R/"recetas"/s/"index.html";dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(decorate(branded(out),R,SITE),encoding="utf-8")
