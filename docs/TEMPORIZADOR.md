@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # Temporizador del modo cocina
 
 Contrato aprobado por la usuaria el 19/10/2026; base de implementación main `6935440693c822eb769bd7db8f6fb69805f307da`. Fuentes: `plantillas/receta.html`, `assets/cocina.js`, `assets/estilo.css`. Las recetas y datos canónicos no cambian.

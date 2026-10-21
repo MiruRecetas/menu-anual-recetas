@@ -1,3 +1,7 @@
+> **Reconciliación documental · 21/10/2026.** Las fuentes del proyecto «Menú anual» se han consolidado en 18 archivos. La documentación AS IS describe lo implementado; TO BE sigue siendo un plan. El histórico se conserva y no debe interpretarse como instrucciones actuales incompatibles. [Estado y precedencia](docs/SINCRONIZACION-DOCUMENTAL-2026-10-21.md). Esta revisión modifica solo Markdown; no ejecuta migración ni amplía permisos.
+
+---
+
 > **Estado de publicación verificado (20/10/2026).** La Fase 3.3 incorporó el coste estimado por ración a 57 fichas (58 preparaciones canónicas; sofrito interno), con icono `hand-coins` y precio `≈ XX,XX €/ración`. La atribución de las fichas se actualizó mediante [PR #126](https://github.com/MiruRecetas/menu-anual-recetas/pull/126) a «Estimaciones de costes elaboradas con datos de OpenCesta (ODbL 1.0) y referencias comerciales documentadas». La web y PWA siguen generándose y publicándose **desde este repositorio**, que también contiene fuentes, generador, plantillas, pruebas y workflows. La separación futura del desarrollo técnico en repositorios privados **no está implementada**. [PR de integración #125](https://github.com/MiruRecetas/menu-anual-recetas/pull/125). Esta nota prevalece sobre referencias históricas del README sin reescribirlas.
 
 ---
@@ -45,7 +49,7 @@ En la portada se construye automáticamente una **galería de fotografías** a p
 
 - Las miniaturas llevan a su receta.
 - El nombre no ocupa una línea bajo la foto: aparece **sobre la imagen atenuada** al pasar el ratón, al enfocar con teclado o con el primer toque en pantallas táctiles; el segundo toque abre la receta.
-- La disposición es adaptable: en móvil vertical hasta 700 px se muestran siempre 3 columnas; en tablet vertical ancha se aplica la regla editorial de 1, 2 o 3 columnas según cantidad; en escritorio y en móvil/tablet **horizontales** se usan hasta cinco miniaturas por fila, con ancho limitado y filas incompletas centradas.
+- La disposición es adaptable: en móvil vertical hasta 700 px se muestran siempre 3 columnas; en tablet vertical se muestran 4 columnas; en escritorio y en móvil/tablet **horizontales** se usan hasta cinco miniaturas por fila, con ancho limitado y filas incompletas centradas.
 - **No hay una colección de imágenes de batch cooking distinta de las fotografías principales.**
 
 ### 4. Recetario y fichas
@@ -255,3 +259,7 @@ Guías por rol y prompts en [docs/bring](docs/bring/README.md). Los archivos de 
 ## Coste estimado por ración · Fase 3.3
 
 Las fichas con correspondencia económica validada presentan `hand-coins` + `≈ XX,XX €/ración` sobre la fotografía. El coste corresponde a una ración de referencia y no cambia con el selector. La generación oficial conserva los precios mediante una proyección pública mínima, sin acceso a catálogos privados ni secretos. [Contrato, actualización, pruebas y reversión](docs/COSTES-RECETAS.md).
+
+## Reconciliación de fuentes del proyecto · 21/10/2026
+
+[Estado operativo completo](docs/ESTADO-RECONCILIADO-2026-10-21.md): postre dual, parciales, ocho familias con dulces, notas, gráficos ocultables, tablet vertical, temporizador, fotografías, Bring! permanente y costes. [Puerta documental y triggers](docs/SINCRONIZACION-DOCUMENTAL-2026-10-21.md). Este apartado no convierte una propuesta de migración en una implementación.

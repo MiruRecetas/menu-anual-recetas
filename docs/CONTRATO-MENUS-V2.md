@@ -1,6 +1,8 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # Menús MiruRecetas: contrato v2 (octubre de 2026)
 
-Los menús completos proceden de Airtable: MENÚS → COMIDAS → COMIDA_ELEMENTOS. No se inventan datos faltantes ni se publican menús incompletos.
+Los menús completos proceden de Airtable: MENÚS → COMIDAS → COMIDA_ELEMENTOS. No se inventan datos faltantes. Se publican menús completos o parciales con sus estados reales, conforme a la sección Publicación vigente.
 
 ## Archivo estático
 
@@ -18,7 +20,7 @@ El exportador debe usar `scripts/agrupar_componentes.py` con los metadatos visua
 - Orden grupo: `fldXXebPlYFQh33co`
 - Orden elemento: `fldJdc8nbkoesAe6k`
 
-Se valida con `scripts/validar_menus.py`. No debe agregarse a GitHub ningún JSON parcial, de muestra o con IDs inventados. No habilitar tokens en assets públicos.
+Se valida con `scripts/validar_menus.py`. No agregar JSON de muestra ni IDs inventados. Los menús parciales auténticos se publican con estado Pendiente y sus ingestas/totales registrados, según Publicación vigente. No habilitar tokens en assets públicos.
 
 ## Compatibilidad
 
@@ -53,7 +55,7 @@ no modifica fórmulas ni permite recalcular nutrientes de comidas en la web.
 
 El exportador auténtico y menús calculados ya están publicados. Otros menús permanecen Pendiente: no confundir posiciones del calendario con semanas completas. Consultar los JSON actuales en cada sesión. Antes de fusionar comprobar estados, numeración, nutrición, grupos, enlaces, accesibilidad y aspecto visual con datos reales.
 
-## Actualización de coordinación Bring! · 14/10/2026
+## Antecedente histórico de coordinación Bring! · 14/10/2026 (superado en producción)
 
 Las pruebas aisladas 1–8 están consolidadas en [Maestro Bring! v2.0](bring/MAESTRO.md). La usuaria ha validado en Android la compra por ID con expansión recursiva, selector previo y redondeo final; nombres sencillos con características por comas, unión de variantes en cesta, stock e imagen de menú. El estado técnico, evidencia real y límites se documentan allí.
 

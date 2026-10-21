@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # MiruRecetas — Maestro Bring! y expediente de implementación
 
 > **Estado vigente 16/10/2026:** la integración permanente está implementada. Activos: Octubre 1 y Septiembre 1–4, veinte selecciones por menú. La usuaria confirma importaciones correctas de septiembre 3/4; no volver a presentarlas como pendientes. Las pruebas 7/8 conservan íntegramente sus resultados y procedimiento. Leer [ESTADO](ESTADO.md), [operación](OPERACION.md) y los traspasos [integración](AGENTE-INTEGRACION.md) / [imágenes](AGENTE-IMAGENES.md). Las descripciones de propuestas/ausencias del 14/10 que se conservan abajo son antecedentes históricos, no estado actual.
