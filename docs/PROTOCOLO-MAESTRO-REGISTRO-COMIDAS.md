@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # MiruRecetas · Protocolo maestro de registro y publicación incremental de menús
 
 **Versión 2.0 · 11 de octubre de 2026.** Sustituye las partes obsoletas del «Protocolo maestro de registro de comidas y cenas» (v1.0) que indicaban que MENÚS aún no existía o que la publicación no correspondía a este flujo. Complementa, sin sustituir, el [protocolo de recetas](PROTOCOLO-MAESTRO-RECETAS.md), el [contrato web](../datos/FORMATO.md) y el código vigente de `main`.

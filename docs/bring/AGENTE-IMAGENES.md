@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # MiruRecetas — Agente de imágenes de páginas de lista de compra
 
 Versión 2.0 · 16/10/2026. Traspaso específico y autónomo. Repositorio: https://github.com/MiruRecetas/menu-anual-recetas . Leer main actual y los contratos vigentes; un SHA histórico nunca autoriza restaurar archivos.

@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # Bring! permanente — operación y recuperación
 
 Actualización 16/10/2026: integración permanente. Esta guía describe el código permanente; el expediente de publicación registra sus verificaciones. Los resultados físicos históricos 7/8 del Maestro permanecen vigentes. No son una prueba física de la nueva ruta.

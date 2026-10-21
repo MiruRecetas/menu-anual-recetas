@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # MiruRecetas · Protocolo maestro de procesamiento integral de recetas
 
 **Versión 1.4 · 13 de octubre de 2026.** Fuente operativa del flujo de **creación, auditoría, actualización y publicación de recetas** del proyecto *Menú anual*. Esta versión consolida las decisiones hasta el 13/10/2026 y **sustituye los documentos maestros anteriores de procesamiento de recetas**, incluidas las versiones 1.1, 1.2 y 1.3. Incorpora descripciones cortas, pasos sin dosificaciones, rectificaciones de etiquetas, reutilización de productos y el procedimiento vigente de aceite retenido. Leer siempre las versiones de `main` de [NUEVA-RECETA.md](NUEVA-RECETA.md), [FORMATO.md](../datos/FORMATO.md), [IMAGENES-BATCHCOOKING.md](IMAGENES-BATCHCOOKING.md) y el código real del generador; las preferencias expresas más recientes de la usuaria prevalecen en su receta.

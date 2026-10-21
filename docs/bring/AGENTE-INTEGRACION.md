@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # MiruRecetas — Agente único de listas de compra y publicación Bring!
 
 Versión 3.0 · 16/10/2026. Documento de apertura y continuidad. Repositorio canónico: https://github.com/MiruRecetas/menu-anual-recetas . Leer siempre main actual, PR abiertas y los contratos antes de ejecutar. Este documento sustituye instrucciones antiguas que describían la compra permanente como pendiente de implementación. Los protocolos culinarios y nutricionales siguen vigentes.

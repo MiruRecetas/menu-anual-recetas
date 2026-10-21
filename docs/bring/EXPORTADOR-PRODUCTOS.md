@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # Bring! — Exportador y formatos comerciales
 
 Versión 2.0 · 16/10/2026. Contrato implementado. Guía completa de ejecución: AGENTE-INTEGRACION.md; operación/recuperación: OPERACION.md. No confundir el exportador culinario de menús con el adaptador de compra.

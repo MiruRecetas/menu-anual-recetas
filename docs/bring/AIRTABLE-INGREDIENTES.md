@@ -1,3 +1,5 @@
+> **Vigencia reconciliada · 21/10/2026.** [Estado actual, aclaraciones y pendientes](../ESTADO-RECONCILIADO-2026-10-21.md) prevalece sobre propuestas históricas incompatibles de esta guía. Se conserva su contenido operativo y su trazabilidad. No autoriza cambios funcionales durante la sincronización documental.
+
 # Bring! — Presentación de ingredientes en Airtable
 
 Versión 2.0 · 16/10/2026. Estado implementado; leer ESTADO.md y AGENTE-INTEGRACION.md. Las propuestas del 14/10 se han ejecutado. Reconfirmar siempre esquema/acceso vivos.
