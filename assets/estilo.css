@@ -554,6 +554,8 @@ button[hidden]{display:none!important}
 .logo{display:inline-flex;align-items:baseline;gap:.35em;white-space:nowrap}
 .logo .logo-wordmark{color:var(--ink)}
 .logo-isotipo{display:block;flex:none;height:.72em;height:1cap;width:auto}
+/* La cabecera solo salta de linea cuando la fuente de sustitucion no cabe. */
+@media(max-width:389px){.topbar{flex-wrap:wrap}.nav{margin-left:auto}}
 @media(max-width:359px){.topbar{gap:8px}.nav{gap:8px}.nav a{font-size:.75rem;gap:4px}}
 
 /* Temporizador de cocina compartido por web y PWA · 19/10/2026. */
