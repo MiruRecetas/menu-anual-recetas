@@ -142,48 +142,7 @@ window.MiruRecetasHeroResponsive={
  seekFrame(frame){setOffset(clamp(frame-1,0,360)/360*maxTravel())},
  switchIfNecessary
 };
-/* Rutas pendientes. Configurables desde el shell definitivo SIN cambiar el componente Hero.
-   No insertar href="" ni redirigir a una pantalla inexistente.
-   Se permitirá configurar rutas internas cuando existan /cocina/, /disfruta/, /conserva/ y login.
-   El estado de autenticación es solo una señal de PRESENTACIÓN; el backend verificará sesiones y permisos. */
-const HERO_ROUTES={...HERO_SETTINGS.routes};
-let authenticated=false;
-const authButton=document.getElementById('auth-link');
-const headerButtons=[...document.querySelectorAll('[data-hero-destination]')];
-const navToast=document.getElementById('nav-toast');
-let toastTimeout=0;
-function toast(message){navToast.textContent=message;navToast.hidden=false;
-  clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>{navToast.hidden=true},2100);
-}
-function safeRoute(value){
-  // Solo rutas absolutas del mismo origen, nunca destinos javascript:, data: ni sitios externos.
-  return typeof value==='string' && value.startsWith('/') && !value.startsWith('//') ? value : '';
-}
-function refreshNav(){
-  authButton.classList.toggle('is-authenticated',authenticated);
-  authButton.dataset.heroDestination=authenticated?'cuenta':'login';
-  headerButtons.forEach(button=>{
-    const key=button.dataset.heroDestination;
-    const names={cocina:'Cocina',disfruta:'Disfruta',conserva:'Conserva',login:'Iniciar sesión',cuenta:'Mi cuenta'};
-    const label=(names[key]||'Acceso')+(safeRoute(HERO_ROUTES[key])?'':' (próximamente)');
-    button.setAttribute('aria-label',label);button.title=label;
-  });
-}
-headerButtons.forEach(button=>button.addEventListener('click',()=>{
-  const destination=button.dataset.heroDestination;
-  const route=safeRoute(HERO_ROUTES[destination]);
-  if(route){window.location.assign(route);return}
-  const names={cocina:'Cocina',disfruta:'Disfruta',conserva:'Conserva',login:'Inicio de sesión',cuenta:'Mi cuenta'};
-  toast(`${names[destination]||'Esta sección'} · Próximamente`);
-}));
-// API de integración futura; las rutas no se publican ni la sesión se simula en esta demo.
-window.MiruRecetasHeroNav={
-  configureRoutes(routes){for(const key of Object.keys(HERO_ROUTES)){
-    if(Object.prototype.hasOwnProperty.call(routes||{},key)) HERO_ROUTES[key]=safeRoute(routes[key]);
-  }refreshNav();},
-  // Authentication state will be wired only to a real verified session.
-};
-refreshNav();
+/* Los menús se controlan mediante la cabecera compartida. */
 update();
 
 // Demo 13: siempre cubrir el área horizontal (sin selector ni recorte de los WebP).

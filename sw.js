@@ -2,7 +2,7 @@
 // Public same-origin resources only. No third-party interception or credentials.
 const BASE = new URL('./', self.location.href);
 const PREFIX = 'mirurecetas-pwa-';
-const CORE = PREFIX + 'core-dd69f20b4f1b0772a8c9';
+const CORE = PREFIX + 'core-60793cee407f375db9d8';
 const RUNTIME = PREFIX + 'public-v1';
 const MAX_AGE = 30 * 86400000;
 const LIMITS = {page: 40, asset: 64, image: 40, json: 2};
@@ -30,7 +30,7 @@ self.addEventListener('message', event => {
 function kind(url, request) {
   const path = url.pathname.slice(BASE.pathname.length);
   if (request.mode === 'navigate' && !url.search &&
-      (path === '' || path === 'index.html' || path === 'recetario/' || path === 'recetario/index.html' ||
+      (path === 'planificador/' || path === 'planificador/index.html' || path === 'recetario/' || path === 'recetario/index.html' ||
        /^recetas\/[a-z0-9-]+\/(?:index\.html)?$/.test(path) ||
        /^menus\/\d{2}-[1-4]\/[^/]+\/(?:index\.html)?$/.test(path))) return 'page';
   if (/^assets\/(?:revisions\/[a-f0-9]{64}\/)?[a-zA-Z0-9_.-]+\.(css|js)$/.test(path) && /^[a-f0-9]{64}$/.test(url.searchParams.get('v') || '') && [...url.searchParams.keys()].every(k => k === 'v')) return 'asset';
@@ -141,6 +141,17 @@ async function respond(request, url, type) {
 self.addEventListener('fetch', event => {
   const request = event.request, url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname) || request.headers.has('Authorization')) return;
+  // El acceso cinematográfico es online y no almacena fotogramas ni su HTML.
+  // Si falla la conexión, ofrecer la pantalla offline precargada.
+  const path = url.pathname.slice(BASE.pathname.length);
+  if (request.mode === 'navigate' && !url.search &&
+      (path === '' || path === 'index.html' || path === 'hero/' || path === 'hero/index.html')) {
+    event.respondWith((async () => {
+      try { return await fetch(request, {cache:'no-store', credentials:'omit'}); }
+      catch { return await (await caches.open(CORE)).match(new URL('offline.html', BASE)) || Response.error(); }
+    })());
+    return;
+  }
   const type = kind(url, request);
   if (type) event.respondWith(respond(request, url, type));
   else if (PRECACHE.includes(url.pathname.slice(BASE.pathname.length) + url.search)) {
