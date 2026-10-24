@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "04d999a5b4cc19b38aaac7fd4593f9a86b478213",
-  "generated_at_utc": "2026-10-24T19:20:17Z",
-  "total_recetas": 59,
+  "source_commit_sha": "fa51f30151b7a1b17df569b3666dd6c375337821",
+  "generated_at_utc": "2026-10-24T19:51:18Z",
+  "total_recetas": 60,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -2082,6 +2082,66 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/revuelto-de-setas-trigueros-y-gambas/"
+    },
+    {
+      "nombre": "Risotto de setas y gambas",
+      "slug": "risotto-de-setas-y-gambas",
+      "categoria": "arroces-pastas",
+      "descripcion": "Arroz cremoso con setas y gambas, cocinado con fumet y terminado con Grana Padano, mantequilla y perejil.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Gambas peladas",
+          "cantidad": 160,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Setas",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Grana Padano",
+          "cantidad": 25,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 12,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Caldo de marisco",
+          "cantidad": 200,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Mantequilla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/risotto-de-setas-y-gambas/"
     },
     {
       "nombre": "Salchichas al vino",

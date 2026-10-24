@@ -354,6 +354,12 @@
       "base_portions": "3",
       "culinary_sha256": "72cf06084cf2edf14ca7fdcc1fd57c1c97db8ed06c79548f2497e6f38f7bce5e",
       "cents": "212"
+    },
+    "risotto-de-setas-y-gambas": {
+      "web_name": "Risotto de setas y gambas",
+      "base_portions": "1",
+      "culinary_sha256": "4d41c584d708faf8c60580643f8d4b61caf3c22bba336ee87455807414cf8478",
+      "cents": "457"
     }
   }
 }
