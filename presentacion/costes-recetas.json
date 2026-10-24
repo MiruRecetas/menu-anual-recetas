@@ -348,6 +348,12 @@
       "base_portions": "4",
       "culinary_sha256": "8b759cf404e64eaac5326fa86e526b145a608c9ffd0cef437d9f830c60beae72",
       "cents": "283"
+    },
+    "cebollas-rellenas": {
+      "web_name": "Cebollas rellenas",
+      "base_portions": "3",
+      "culinary_sha256": "72cf06084cf2edf14ca7fdcc1fd57c1c97db8ed06c79548f2497e6f38f7bce5e",
+      "cents": "212"
     }
   }
 }

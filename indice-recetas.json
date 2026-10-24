@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "4676e3c445d26ee68883f3115c0237ab9b44a26a",
-  "generated_at_utc": "2026-10-24T13:20:03Z",
-  "total_recetas": 58,
+  "source_commit_sha": "84c034e1bb7d628bfab44c53c83a907a26a37be4",
+  "generated_at_utc": "2026-10-24T13:52:21Z",
+  "total_recetas": 59,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -511,6 +511,61 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/carrilleras-de-cerdo-al-vino/"
+    },
+    {
+      "nombre": "Cebollas rellenas",
+      "slug": "cebollas-rellenas",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Cebollas tiernas rellenas de atún, huevo cocido y piquillos, guisadas a fuego suave en una salsa de tomate y vino blanco.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Cebolla",
+          "cantidad": 800,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Atún al natural",
+          "cantidad": 2,
+          "unidad": "latas"
+        },
+        {
+          "nombre": "Tomate frito para el relleno",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate frito para la salsa",
+          "cantidad": 310,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevo",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Pimientos del piquillo para el relleno",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimientos del piquillo para la salsa",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 100,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 30,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/cebollas-rellenas/"
     },
     {
       "nombre": "Chili con carne",
