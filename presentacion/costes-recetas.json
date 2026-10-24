@@ -372,6 +372,12 @@
       "base_portions": "2",
       "culinary_sha256": "893e668866ba88bd0c7ce12f39ab191c68b08fd2f2b2b1013b024d3bd1247cb9",
       "cents": "236"
+    },
+    "jurel-y-setas-a-la-plancha-con-ajo-y-perejil": {
+      "web_name": "Jurel y setas a la plancha con ajo y perejil",
+      "base_portions": "1",
+      "culinary_sha256": "5573c0779831ff160bcee43d97347363305d9802a9a47179f13613fbeba7e57c",
+      "cents": "590"
     }
   }
 }

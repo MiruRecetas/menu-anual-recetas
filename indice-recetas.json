@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "417e2085a0951750e6d43e76bc0d6a5c536edd81",
-  "generated_at_utc": "2026-10-24T21:13:46Z",
-  "total_recetas": 62,
+  "source_commit_sha": "39aa777057701f474edac52bac97dcb202f77608",
+  "generated_at_utc": "2026-10-24T21:45:48Z",
+  "total_recetas": 63,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1397,6 +1397,46 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/hummus/"
+    },
+    {
+      "nombre": "Jurel y setas a la plancha con ajo y perejil",
+      "slug": "jurel-y-setas-a-la-plancha-con-ajo-y-perejil",
+      "categoria": "asados-horno",
+      "descripcion": "Filetes de jurel y setas dorados a la plancha, terminados con un majado fresco de ajo, perejil y limón.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Jurel mediano",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Setas",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 6,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Perejil",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/jurel-y-setas-a-la-plancha-con-ajo-y-perejil/"
     },
     {
       "nombre": "Lentejas estofadas con chorizo",
