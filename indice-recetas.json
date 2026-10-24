@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "55f05a024731a6426febdce5713274d6b6ee72db",
-  "generated_at_utc": "2026-10-24T19:59:32Z",
-  "total_recetas": 60,
+  "source_commit_sha": "37ecf2d4a967cf9f0ba149ee8460160b430a2751",
+  "generated_at_utc": "2026-10-24T20:22:16Z",
+  "total_recetas": 61,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -971,6 +971,51 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-mediterranea-de-pasta-con-atun/"
+    },
+    {
+      "nombre": "Espinacas a la catalana",
+      "slug": "espinacas-a-la-catalana",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Espinacas salteadas con ajo, pasas y piñones tostados, con un contraste dulce y crujiente.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Espinacas",
+          "cantidad": 250,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pasas",
+          "cantidad": 20,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Piñones",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 6,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/espinacas-a-la-catalana/"
     },
     {
       "nombre": "Fajitas de pollo",

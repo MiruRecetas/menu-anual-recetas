@@ -360,6 +360,12 @@
       "base_portions": "1",
       "culinary_sha256": "4d41c584d708faf8c60580643f8d4b61caf3c22bba336ee87455807414cf8478",
       "cents": "457"
+    },
+    "espinacas-a-la-catalana": {
+      "web_name": "Espinacas a la catalana",
+      "base_portions": "1",
+      "culinary_sha256": "436b77e09104396314192ada8263716ed5dff9193bc6ed1a151c259079b54825",
+      "cents": "176"
     }
   }
 }
