@@ -366,6 +366,12 @@
       "base_portions": "1",
       "culinary_sha256": "436b77e09104396314192ada8263716ed5dff9193bc6ed1a151c259079b54825",
       "cents": "176"
+    },
+    "shakshuka": {
+      "web_name": "Shakshuka",
+      "base_portions": "2",
+      "culinary_sha256": "893e668866ba88bd0c7ce12f39ab191c68b08fd2f2b2b1013b024d3bd1247cb9",
+      "cents": "236"
     }
   }
 }

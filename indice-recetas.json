@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "37ecf2d4a967cf9f0ba149ee8460160b430a2751",
-  "generated_at_utc": "2026-10-24T20:22:16Z",
-  "total_recetas": 61,
+  "source_commit_sha": "417e2085a0951750e6d43e76bc0d6a5c536edd81",
+  "generated_at_utc": "2026-10-24T21:13:46Z",
+  "total_recetas": 62,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -2377,6 +2377,86 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salteado-de-pollo-y-verduras/"
+    },
+    {
+      "nombre": "Shakshuka",
+      "slug": "shakshuka",
+      "categoria": "huevos-tortillas",
+      "descripcion": "Huevos cuajados en una salsa espesa de tomate, pimiento y especias, terminados con feta, perejil y un toque de chile.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Queso feta",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 175,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 175,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate triturado",
+          "cantidad": 800,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevos",
+          "cantidad": 4,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Tomate concentrado",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 30,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 3,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Comino",
+          "cantidad": 0.5,
+          "unidad": "cdta."
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": 0.25,
+          "unidad": "cdta."
+        },
+        {
+          "nombre": "Perejil picado",
+          "cantidad": 2,
+          "unidad": "cda."
+        },
+        {
+          "nombre": "Chile triturado",
+          "cantidad": 0.25,
+          "unidad": "cdta."
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/shakshuka/"
     },
     {
       "nombre": "Solomillo de cerdo a la miel y dos mostazas",
