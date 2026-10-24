@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "aab99d3a1e04edbbe6e953c68aa107b036aae3a1",
-  "generated_at_utc": "2026-10-16T11:51:21Z",
-  "total_recetas": 57,
+  "source_commit_sha": "f1af47d422123aa8e0b2b3413edd21e9d9c90827",
+  "generated_at_utc": "2026-10-24T12:20:07Z",
+  "total_recetas": 58,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1142,6 +1142,81 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/guisantes-con-jamon/"
+    },
+    {
+      "nombre": "Guiso de cerdo adobado",
+      "slug": "guiso-de-cerdo-adobado",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Lomo de cerdo adobado con patatas chascadas, sofrito de pimientos y cebolla y vino blanco, cocinado en olla a presión con un toque especiado.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Lomo de cerdo adobado",
+          "cantidad": 700,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Patata",
+          "cantidad": 700,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento verde",
+          "cantidad": 225,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Pimiento rojo",
+          "cantidad": 225,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 225,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 22.5,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 3,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 200,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Cayena",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Comino",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/guiso-de-cerdo-adobado/"
     },
     {
       "nombre": "Huevos rotos",

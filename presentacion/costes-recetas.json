@@ -342,6 +342,12 @@
       "base_portions": "1",
       "culinary_sha256": "808409b5e628efb7f54734d50feb63a918b3a95125e48bed18495c3a6158d208",
       "cents": "191"
+    },
+    "guiso-de-cerdo-adobado": {
+      "web_name": "Guiso de cerdo adobado",
+      "base_portions": "4",
+      "culinary_sha256": "8b759cf404e64eaac5326fa86e526b145a608c9ffd0cef437d9f830c60beae72",
+      "cents": "283"
     }
   }
 }
