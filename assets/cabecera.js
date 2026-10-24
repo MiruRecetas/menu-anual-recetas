@@ -59,12 +59,13 @@
       if (fine() && event.pointerType === 'mouse' && opened === item)
         leaveTimer = setTimeout(() => { if (!item.matches(':hover')) close(); }, 130);
     });
-    item.addEventListener('focusout', () => {
-      queueMicrotask(() => {
-        if (opened === item && !item.contains(document.activeElement)) close();
-      });
-    });
-    panel.addEventListener('click', event => { if (event.target.closest('a[href]')) close(); });
+    // La pérdida de foco en móvil puede suceder antes del click del enlace.
+    // El cierre por teclado se gestiona al enfocar un destino real fuera del menú.
+    // No ocultar el enlace en su propio evento click: se cancelaría su navegación.
+    // El siguiente documento comienza con el menú cerrado; Escape y clic fuera siguen operativos.
+  });
+  document.addEventListener('focusin', event => {
+    if (opened && !opened.contains(event.target)) close();
   });
   document.addEventListener('pointerdown', event => {
     if (opened && !opened.contains(event.target)) close();
