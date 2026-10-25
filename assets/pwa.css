@@ -1,1 +1,11 @@
 .pwa-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}.pwa-tools button{border:1px solid #516f5d;border-radius:12px;background:#fffcf7;color:#29352e;padding:10px 14px;min-height:44px;text-align:left}.pwa-tools button[hidden]{display:none}.pwa-tools button:focus-visible{outline:3px solid #b96c4a;outline-offset:3px}.pwa-tools p{margin:0;flex-basis:100%}
+
+.pwa-install-guide{max-width:min(360px,calc(100vw - 32px));box-sizing:border-box;
+ border:1px solid #a8b8a0;border-radius:16px;padding:24px;background:#faf6ee;color:#29352e;
+ box-shadow:0 15px 55px #111a13a6;font:400 14px/1.55 "Geist",system-ui,sans-serif}
+.pwa-install-guide::backdrop{background:#111a13a6}
+.pwa-install-guide h2{margin:0 0 10px;font:600 22px/1.15 "Bricolage Grotesque",system-ui,sans-serif}
+.pwa-install-guide p{margin:0 0 18px}
+.pwa-guide-close{border:1px solid #516f5d;border-radius:999px;padding:10px 18px;background:#516f5d;color:#fffdf7;
+ min-height:44px;font:500 13px/1.2 "Geist",system-ui,sans-serif;cursor:pointer}
+.pwa-guide-close:focus-visible{outline:3px solid #b96c4a;outline-offset:2px}

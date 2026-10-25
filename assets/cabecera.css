@@ -26,6 +26,15 @@
   width:100%;height:100%;padding:calc(var(--miru-pad-top) + env(safe-area-inset-top,0px)) max(var(--miru-edge),env(safe-area-inset-right,0px)) 0 max(var(--miru-edge),env(safe-area-inset-left,0px));
   box-sizing:border-box;
 }
+.miru-header .miru-header__identity{display:flex;align-items:center;gap:clamp(6px,1.3vw,15px);min-width:0;flex:0 1 auto}
+.miru-header .miru-install{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:6px;
+  min-height:34px;padding:0 11px;color:var(--miru-foreground);background:transparent;border:1px solid currentColor;
+  border-radius:100px;box-shadow:none;font:400 12px/1 "Geist",system-ui,sans-serif;white-space:nowrap;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.miru-header .miru-install[hidden]{display:none!important}
+.miru-header .miru-install svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.miru-header .miru-install:hover{background:color-mix(in srgb,currentColor 9%,transparent)}
+.miru-header .miru-install:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .miru-header .miru-brand{
   display:inline-flex;align-items:center;gap:9px;flex:none;min-width:0;
   min-height:45px;padding:0;margin:0;text-decoration:none;color:var(--miru-name);
@@ -105,4 +114,25 @@ html:has(.miru-header--interior){scroll-padding-top:calc(94px + env(safe-area-in
 @media(orientation:landscape) and (max-height:480px){
  html:has(.miru-header--interior){scroll-padding-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
  html:has(.miru-header--interior) [id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
+}
+
+/* La navegación permanece fijada al extremo derecho con/sin instalación. */
+@media(max-width:480px){
+ .miru-header{--miru-edge:13px}
+ .miru-header .miru-header__identity{gap:6px}
+ .miru-header .miru-brand{gap:5px}
+ .miru-header .miru-isotipo{width:26px;height:26px}
+ .miru-header .miru-wordmark{font-size:clamp(14px,4vw,17px)}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:36px;min-width:36px;height:44px}
+ .miru-header .miru-trigger svg,.miru-header .miru-account svg{width:20px;height:20px}
+ .miru-header .miru-install{min-height:32px;padding:0 7px;gap:4px;font-size:11px}
+ .miru-header .miru-install svg{width:14px;height:14px}
+}
+@media(max-width:365px){
+ .miru-header{--miru-edge:8px}
+ .miru-header .miru-header__identity{gap:4px}
+ .miru-header .miru-wordmark{font-size:14px}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:35px;min-width:35px}
+ .miru-header .miru-install{width:31px;min-width:31px;padding:0}
+ .miru-header .miru-install__label{display:none}
 }

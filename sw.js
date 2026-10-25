@@ -2,7 +2,7 @@
 // Public same-origin resources only. No third-party interception or credentials.
 const BASE = new URL('./', self.location.href);
 const PREFIX = 'mirurecetas-pwa-';
-const CORE = PREFIX + 'core-60793cee407f375db9d8';
+const CORE = PREFIX + 'core-b824e5cfcaa990143498';
 const RUNTIME = PREFIX + 'public-v1';
 const MAX_AGE = 30 * 86400000;
 const LIMITS = {page: 40, asset: 64, image: 40, json: 2};

@@ -26,7 +26,8 @@ for(const mode of ['vertical','horizontal']){
 }
 const gesture=document.getElementById('gesture-layer');
 const scenes=[...document.querySelectorAll('.scene')];
-const nav=[...document.querySelectorAll('.nav button')];
+const scrollGuide=document.getElementById('hero-scroll-guide');
+const nextButton=document.getElementById('hero-scroll-next');
 const progress=document.getElementById('progress');
 const placeholder=document.getElementById('placeholder');
 const decoded={vertical:new Map(),horizontal:new Map()};
@@ -46,7 +47,8 @@ function setOffset(next){offset=clamp(next,0,maxTravel());update()}
 function sceneAt(i,mode){const f=i+1;const groups=LABEL_RANGES[mode];for(const [j,name] of ['welcome','cocina','disfruta','conserva'].entries()){const [a,b]=groups[name];if(f>=a&&f<=b)return j}return -1}
 function applyScene(index,mode){const s=sceneAt(index,mode);if(active===s)return;active=s;
  scenes.forEach((el,i)=>{el.classList.toggle('active',i===s);el.setAttribute('aria-hidden',i===s?'false':'true')});
- nav.forEach((el,i)=>{el.classList.toggle('current',i===s);el.setAttribute('aria-current',i===s?'step':'false')});
+ scrollGuide.hidden=s===3;
+ if(s>=0 && s<3)nextButton.setAttribute('aria-label','Avanzar a '+['Cocina','Disfruta','Conserva'][s]);
 }
 function closeBitmap(b){if(b&&typeof b.close==='function')b.close()}
 function trimCache(mode){const cache=decoded[mode];const lim=mode===desired?maxDecoded[mode]:2;
@@ -135,7 +137,7 @@ window.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey||e.targe
  if(e.key==='PageDown'||e.key===' ')d=frozenHeight*.70;if(e.key==='PageUp')d=-frozenHeight*.70;
  if(e.key==='Home'||e.key==='End'){e.preventDefault();cancelNav();setOffset(e.key==='Home'?0:maxTravel());return}
  if(d){e.preventDefault();cancelNav();setOffset(offset+d)}});
-nav.forEach((b,i)=>b.addEventListener('click',()=>navigateTo(ANCHORS[i])));
+nextButton.addEventListener('click',()=>{if(active>=0&&active<3)navigateTo(ANCHORS[active+1]);});
 // Diagnostic API for responsive validation; no permanent debug UI in approved vertical design.
 window.MiruRecetasHeroResponsive={
  getStatus(){return{desired,displayed,verticalFrame:shown.vertical+1,horizontalFrame:shown.horizontal+1,goalFrame:goal+1,section:active,decoded:{vertical:decoded.vertical.size,horizontal:decoded.horizontal.size},pending:running,failed:{vertical:failed.vertical.size,horizontal:failed.horizontal.size},progress:Math.round(offset/maxTravel()*1000)/10}},
