@@ -1,0 +1,141 @@
+/* Cabecera canónica: misma geometría e interacción, dos tratamientos cromáticos. */
+.miru-header{
+  --miru-h:94px;--miru-pad-top:11px;--miru-edge:clamp(13px,4.5vw,29px);
+  --miru-foreground:#516f5d;--miru-name:#29352e;--miru-name-accent:#b96c4a;
+  position:relative;z-index:40;box-sizing:border-box;
+  width:100%;height:calc(var(--miru-h) + env(safe-area-inset-top,0px));
+  color:var(--miru-foreground);font-family:"Geist",system-ui,sans-serif;
+  isolation:isolate;
+}
+.miru-header::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+}
+.miru-header--hero{
+  position:fixed;top:0;left:0;right:0;
+  --miru-foreground:#fffdf7;--miru-name:#fffdf7;--miru-name-accent:#fffdf7;
+}
+.miru-header--hero::before{
+  background:linear-gradient(to bottom,rgba(13,19,15,.88) 0%,rgba(13,19,15,.66) 40%,rgba(13,19,15,0) 100%);
+}
+.miru-header--interior{
+  position:sticky;top:0;width:100vw;margin-left:calc(50% - 50vw);
+}
+.miru-header--interior::before{background:#f6f2eb;box-shadow:0 1px 0 #e4dfd5;}
+.miru-header__inner{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+  width:100%;height:100%;padding:calc(var(--miru-pad-top) + env(safe-area-inset-top,0px)) max(var(--miru-edge),env(safe-area-inset-right,0px)) 0 max(var(--miru-edge),env(safe-area-inset-left,0px));
+  box-sizing:border-box;
+}
+.miru-header .miru-header__identity{display:flex;align-items:center;gap:clamp(10px,1.8vw,18px);min-width:0;flex:0 1 auto}
+.miru-header .miru-install{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:6px;
+  min-height:34px;padding:0 11px;color:var(--miru-foreground);background:transparent;border:1px solid currentColor;
+  border-radius:100px;box-shadow:none;font:400 12px/1 "Geist",system-ui,sans-serif;white-space:nowrap;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.miru-header .miru-install{margin-left:clamp(2px,.6vw,8px)}
+.miru-header .miru-install[hidden]{display:none!important}
+.miru-header .miru-install svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.miru-header .miru-install:hover{background:color-mix(in srgb,currentColor 9%,transparent)}
+.miru-header .miru-install:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.miru-header .miru-brand{
+  display:inline-flex;align-items:center;gap:9px;flex:none;min-width:0;
+  min-height:45px;padding:0;margin:0;text-decoration:none;color:var(--miru-name);
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+}
+.miru-header .miru-isotipo{display:block;width:30px;height:30px;flex:none;}
+.miru-header--hero .miru-isotipo{filter:brightness(0) invert(1);}
+.miru-header .miru-wordmark{font:600 clamp(17px,4.1vw,21px)/1 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;color:var(--miru-name);}
+.miru-header .miru-wordmark span{color:var(--miru-name-accent);}
+.miru-header .miru-header__nav{display:flex;align-items:center;gap:2px;flex:none;margin:0;padding:0;}
+.miru-header .miru-nav-item{position:relative;display:block;}
+.miru-header .miru-trigger,.miru-header .miru-account{
+  display:flex;align-items:center;justify-content:center;
+  width:43px;min-width:43px;height:45px;box-sizing:border-box;
+  margin:0;padding:0;background:transparent;color:var(--miru-foreground);
+  border:0;border-radius:0;box-shadow:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.miru-header .miru-trigger{cursor:pointer;appearance:none;touch-action:manipulation;}
+.miru-header .miru-account{cursor:default;}
+.miru-header .miru-trigger svg,.miru-header .miru-account svg{
+  display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linejoin:round;stroke-linecap:round;pointer-events:none;
+}
+.miru-header .miru-account .miru-account__signed{display:none;}
+.miru-header[data-auth-state="authenticated"] .miru-account__signed{display:block;}
+.miru-header[data-auth-state="authenticated"] .miru-account__guest{display:none;}
+.miru-header .miru-brand:focus-visible,.miru-header .miru-trigger:focus-visible{
+  outline:2px solid currentColor;outline-offset:2px;border-radius:4px;
+}
+.miru-header .miru-trigger:hover,.miru-header .miru-trigger[aria-expanded="true"]{opacity:.76;}
+.miru-header .miru-panel{
+  position:absolute;top:100%;right:0;z-index:50;box-sizing:border-box;
+  min-width:218px;width:max-content;max-width:calc(100vw - 24px);
+  padding:6px;border:1px solid #dfded5;border-radius:11px;background:#fffcf7;
+  color:#29352e;box-shadow:0 14px 32px #101b1538;
+  font:500 13px/1.45 "Geist",system-ui,sans-serif;
+  white-space:normal;overflow-wrap:normal;touch-action:pan-y;
+}
+.miru-header .miru-panel[hidden]{display:none!important;}
+.miru-header .miru-panel a,.miru-header .miru-panel__future{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  box-sizing:border-box;min-height:44px;padding:10px 11px;border-radius:7px;
+  color:#29352e;text-decoration:none;white-space:nowrap;
+}
+.miru-header .miru-panel a:hover,.miru-header .miru-panel a:focus-visible{
+  background:#e5ebe1;color:#3c493f;outline:2px solid transparent;
+}
+.miru-header .miru-panel a:focus-visible{outline:2px solid #516f5d;outline-offset:-2px;}
+.miru-header .miru-panel__future{color:#67756b;cursor:default;border-top:1px solid #eee9df;}
+.miru-header .miru-panel__future small{font-size:10px;white-space:nowrap;color:#6c7d6b;font-weight:500;}
+.miru-header--interior ~ .main [id],html:has(.miru-header--interior) [id]{scroll-margin-top:calc(94px + env(safe-area-inset-top,0px) + 16px);}
+html:has(.miru-header--interior){scroll-padding-top:calc(94px + env(safe-area-inset-top,0px) + 16px);}
+@media(max-width:375px){
+ .miru-header{--miru-edge:13px;}
+ .miru-header .miru-brand{gap:6px;}
+ .miru-header .miru-isotipo{width:25px;height:25px;}
+ .miru-header .miru-wordmark{font-size:15px;}
+ .miru-header .miru-header__nav{gap:0;}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:38px;min-width:38px;height:44px;}
+ .miru-header .miru-trigger svg,.miru-header .miru-account svg{width:20px;height:20px;}
+}
+@media(max-width:335px){
+ .miru-header{--miru-edge:8px;}
+ .miru-header .miru-brand{gap:4px;}
+ .miru-header .miru-wordmark{font-size:14px;}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:36px;min-width:36px;}
+}
+@media(orientation:landscape){.miru-header{--miru-h:78px;}}
+@media(orientation:landscape) and (max-height:480px){
+ .miru-header{--miru-h:70px;--miru-pad-top:6px;}
+}
+@media(orientation:landscape){
+ html:has(.miru-header--interior){scroll-padding-top:calc(78px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior) [id]{scroll-margin-top:calc(78px + env(safe-area-inset-top,0px) + 16px);}
+}
+@media(orientation:landscape) and (max-height:480px){
+ html:has(.miru-header--interior){scroll-padding-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior) [id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
+}
+
+/* La navegación permanece fijada al extremo derecho con/sin instalación. */
+@media(max-width:480px){
+ .miru-header{--miru-edge:13px}
+ .miru-header .miru-header__identity{gap:12px}
+ .miru-header .miru-install{margin-left:4px}
+ .miru-header .miru-brand{gap:5px}
+ .miru-header .miru-isotipo{width:26px;height:26px}
+ .miru-header .miru-wordmark{font-size:clamp(14px,4vw,17px)}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:36px;min-width:36px;height:44px}
+ .miru-header .miru-trigger svg,.miru-header .miru-account svg{width:20px;height:20px}
+ .miru-header .miru-install{min-height:32px;padding:0 7px;gap:4px;font-size:11px}
+ .miru-header .miru-install svg{width:14px;height:14px}
+}
+@media(max-width:365px){
+ .miru-header{--miru-edge:8px}
+ .miru-header .miru-header__identity{gap:7px}
+ .miru-header .miru-install{margin-left:2px}
+ .miru-header .miru-wordmark{font-size:14px}
+ .miru-header .miru-trigger,.miru-header .miru-account{width:35px;min-width:35px}
+ .miru-header .miru-install{width:31px;min-width:31px;padding:0}
+ .miru-header .miru-install__label{display:none}
+}
