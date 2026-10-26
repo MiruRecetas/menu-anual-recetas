@@ -17,11 +17,11 @@ const menuQuery=new URLSearchParams(location.search);const requested=menus.find(
 const modal=$('#day-modal'),dialog=$('#day-dialog'),close=$('#close-day'),content=$('#quick-content');let origin=null;
 const dessertComponents=x=>x?.componentes||(x?[x]:[]);
 // La leche es un complemento de postre; el campo INGREDIENTE no implica fruta.
-const dessertKind=x=>x.tipo==='ingrediente'&&x.referencia_id!=='recw8aSxhSx0aSH93'?'Fruta':'Postre';
+const dessertKind=x=>x.seccion||(x.tipo==='ingrediente'&&x.referencia_id!=='recw8aSxhSx0aSH93'?'Fruta':'Postre');
 const MEAL_ICONS={Desayuno:'coffee',Comida:'utensils',Cena:'moon',Fruta:'apple',Postre:'dessert'};
 const mealIcon=(kind,item)=>kind==='Postre'&&item?.tipo==='preparacion'?'dessert':MEAL_ICONS[kind];
 // Nombres de presentación para frutas directas de los menús; fuente nutricional intacta.
-const FRUIT_NAMES={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
+const FRUIT_NAMES={recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos',recKHz46AnYi2YWe6:'Granada',recBse4SOxBOPwYEQ:'Yogur Griego'};
 const ingredientName=item=>item?.tipo==='ingrediente'?(FRUIT_NAMES[item.referencia_id]||item.nombre||''):(item?.nombre||'');
 // Solo se enlazan recetas publicadas y relacionadas mediante las referencias del menú.
 const cleanRecipeName=name=>String(name||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').replace(/\s+/g,' ').trim();

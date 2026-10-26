@@ -68,7 +68,7 @@ function dailyNutrition(nut){
  macros.append(el('p','Barras: % del objetivo diario · PR 93 g · HC 147 g · GR 65 g','daily-macro-note'));
  group.append(energy,macros);return group;
 }
-const shortNames={recIa7zpasm2s0mgH:'Café con leche',recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos'};
+const shortNames={recIa7zpasm2s0mgH:'Café con leche',recrQuW0jedsqM35u:'Uvas',rec4H9nVK34mLywwy:'Ciruelas',recPmxLD5hBc4rvSM:'Higos',recKHz46AnYi2YWe6:'Granada',recBse4SOxBOPwYEQ:'Yogur Griego'};
 const foodNames={recSPOXZkbn9PSbHI:'Huevos',recG7EOA99Wt7MiRC:'Mozzarella rallada',recVfgOdXad3Ns6po:'Pechuga de pollo loncheada',rec4QWbZX5KJIhQyW:'Aceite de oliva virgen extra',recjq8IrRWXTVjRKg:'Tomate',recrGNY88zOIOcRom:'Cebolla',recSE81b9WjkURbXi:'Patata',recZ6WhTcrZDhRgKI:'Pan de molde',recpHKx8XrOpBd8zW:'Salmón',reccZQ0blNFQ0THdM:'Arroz blanco cocido',recJq3z3foutu1hOx:'Queso curado de oveja',recJoLfb85Oe5dxXq:'Carpaccio con parmesano y AOVE',rec3RHqUWRFk0FIJ1:'Puerros al natural',recEtJBidxvvxhoAg:'Mayonesa con cebolla caramelizada y ajo',recgTA0LAJrz7rD8B:'Boniato',recHiBRS3Ikrzb1mt:'Boquerones aliñados'};
 // Equivalencias de presentación verificadas: no modifican cantidad ni nutrición de origen.
 function displayAmount(x){
@@ -129,7 +129,7 @@ const total=el('section',undefined,'daily-total');total.append(dailyNutrition(da
 if(day.comida?.estado==='pendiente'||day.cena?.estado==='pendiente')total.append(el('p','Total parcial: faltan ingestas por registrar.','muted small'));
 if(payload.nombre_dia==='Viernes')total.append(el('p','Cena libre no incluida.','muted small'));
 root.append(total);simple('Desayuno',day.desayuno);root.append(meal('Comida',day.comida),meal('Cena',day.cena));
-for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.tipo==='ingrediente'&&item.referencia_id!=='recw8aSxhSx0aSH93'?'Fruta':'Postre',item);
+for(const item of day.postre?.componentes||(day.postre?[day.postre]:[]))simple(item.seccion||(item.tipo==='ingrediente'&&item.referencia_id!=='recw8aSxhSx0aSH93'?'Fruta':'Postre'),item);
 if(day.cena?.estado==='libre'&&window.lucide?.createIcons)window.lucide.createIcons();
 function enableSwipeNavigation(){
  const main=document.querySelector('main.main');
