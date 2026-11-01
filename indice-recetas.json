@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "6096e398bea29e5620ead85fb406727f3f7711ba",
-  "generated_at_utc": "2026-10-26T01:44:14Z",
+  "source_commit_sha": "d251ec18e81ec0b653efa71c43b7fa7825c92247",
+  "generated_at_utc": "2026-11-01T13:34:38Z",
   "total_recetas": 63,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
       "slug": "albondigas-en-salsa-rubia",
+      "qr_id": "r002",
       "categoria": "guisos-legumbres",
       "descripcion": "Albóndigas de ternera guisadas en una salsa rubia de cebolla y vino blanco, ligadas con la harina del enharinado.",
       "raciones_base": 3,
@@ -67,6 +68,7 @@
     {
       "nombre": "Arroz con pollo",
       "slug": "arroz-con-pollo",
+      "qr_id": "r003",
       "categoria": "arroces-pastas",
       "descripcion": "Arroz con pollo, pimientos, cebolla y guisantes, cocinado en caldo de pollo con azafrán a partir de un salteado casero de pollo y verduras.",
       "raciones_base": 2,
@@ -113,6 +115,7 @@
     {
       "nombre": "Bacalao a la vizcaína",
       "slug": "bacalao-a-la-vizcaina",
+      "qr_id": "r004",
       "categoria": "guisos-legumbres",
       "descripcion": "Bacalao marcado con ajo y terminado a fuego suave en salsa vizcaína, ligada con los jugos del pescado.",
       "raciones_base": 2,
@@ -144,6 +147,7 @@
     {
       "nombre": "Bechamel",
       "slug": "bechamel",
+      "qr_id": "r005",
       "categoria": "salsas-aderezos",
       "descripcion": "Bechamel casera elaborada con mantequilla, harina y leche semidesnatada, ideal para gratinar canelones.",
       "raciones_base": 6,
@@ -184,6 +188,7 @@
     {
       "nombre": "Berenjenas fritas con miel natural",
       "slug": "berenjenas-fritas-con-miel-natural",
+      "qr_id": "r006",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Rodajas de berenjena ligeramente enharinadas, fritas en AOVE y bien escurridas, servidas con miel natural de abeja.",
       "raciones_base": 1,
@@ -219,6 +224,7 @@
     {
       "nombre": "Berenjenas rellenas",
       "slug": "berenjenas-rellenas",
+      "qr_id": "r007",
       "categoria": "asados-horno",
       "descripcion": "Berenjenas asadas rellenas de ragú a la boloñesa y su propia pulpa, con mozzarella rallada gratinada.",
       "raciones_base": 4,
@@ -245,6 +251,7 @@
     {
       "nombre": "Bocadillo de solomillo y pimientos asados",
       "slug": "bocadillo-de-solomillo-y-pimientos-asados",
+      "qr_id": "r008",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Bocadillo de solomillo a la miel y dos mostazas con pimientos asados y rúcula.",
       "raciones_base": 1,
@@ -277,6 +284,7 @@
     {
       "nombre": "Bowl de yogur con miel y granola",
       "slug": "bowl-de-yogur-con-miel-y-granola",
+      "qr_id": "r009",
       "categoria": "postres",
       "descripcion": "Bowl de yogur griego natural con granola, miel de apicultura y almendras tostadas en airfryer.",
       "raciones_base": 1,
@@ -307,6 +315,7 @@
     {
       "nombre": "Burritos de chili con carne",
       "slug": "burritos-de-chili-con-carne",
+      "qr_id": "r010",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Tres mini burritos de trigo rellenos de chili con carne casero, calientes y ligeramente dorados en sartén.",
       "raciones_base": 1,
@@ -328,6 +337,7 @@
     {
       "nombre": "Canelones de carrilleras",
       "slug": "canelones-de-carrilleras",
+      "qr_id": "r011",
       "categoria": "arroces-pastas",
       "descripcion": "Canelones rellenos de carrilleras guisadas desmechadas con su salsa, cubiertos de bechamel y mozzarella gratinada.",
       "raciones_base": 1,
@@ -360,6 +370,7 @@
     {
       "nombre": "Carne guisada",
       "slug": "carne-guisada",
+      "qr_id": "r012",
       "categoria": "guisos-legumbres",
       "descripcion": "Guiso de aguja de ternera con patata, champiñones, guisantes y coles de Bruselas, cocinado en olla a presión con sofrito y vino blanco.",
       "raciones_base": 3,
@@ -440,6 +451,7 @@
     {
       "nombre": "Carrilleras de cerdo al vino",
       "slug": "carrilleras-de-cerdo-al-vino",
+      "qr_id": "r013",
       "categoria": "guisos-legumbres",
       "descripcion": "Carrilleras selladas y cocinadas lentamente en salsa de vino tinto, verduras y caldo, con la salsa triturada al final.",
       "raciones_base": 4,
@@ -515,6 +527,7 @@
     {
       "nombre": "Cebollas rellenas",
       "slug": "cebollas-rellenas",
+      "qr_id": "r014",
       "categoria": "guisos-legumbres",
       "descripcion": "Cebollas tiernas rellenas de atún, huevo cocido y piquillos, guisadas a fuego suave en una salsa de tomate y vino blanco.",
       "raciones_base": 3,
@@ -570,6 +583,7 @@
     {
       "nombre": "Chili con carne",
       "slug": "chili-con-carne",
+      "qr_id": "r015",
       "categoria": "guisos-legumbres",
       "descripcion": "Guiso de ternera picada, alubias rojas y verduras con tomate, chipotle en adobo, jalapeños y maíz dulce.",
       "raciones_base": 5,
@@ -630,6 +644,7 @@
     {
       "nombre": "Crep de pollo al curry",
       "slug": "crep-de-pollo-al-curry",
+      "qr_id": "r016",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Crep relleno de pollo Madrás con cebolla, tomate y curry.",
       "raciones_base": 1,
@@ -652,6 +667,7 @@
     {
       "nombre": "Crepes",
       "slug": "crepes",
+      "qr_id": "r017",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Crepes de harina, huevo y leche semidesnatada, con masa reposada en frío y cocinados en sartén antiadherente.",
       "raciones_base": 2,
@@ -677,6 +693,7 @@
     {
       "nombre": "Cuscús de pollo y verduras",
       "slug": "cuscus-de-pollo-y-verduras",
+      "qr_id": "r018",
       "categoria": "arroces-pastas",
       "descripcion": "Cuscús de trigo con pollo salteado, pimientos y cebolla, acompañado de almendras, pasas y ras el hanout.",
       "raciones_base": 1,
@@ -723,6 +740,7 @@
     {
       "nombre": "Dorada al horno con cama de patata y cebolla",
       "slug": "dorada-al-horno-con-cama-de-patata-y-cebolla",
+      "qr_id": "r019",
       "categoria": "asados-horno",
       "descripcion": "Dorada entera al horno sobre una cama de patata y cebolla, con AOVE y rodajas de limón.",
       "raciones_base": 1,
@@ -763,6 +781,7 @@
     {
       "nombre": "Ensalada campera",
       "slug": "ensalada-campera",
+      "qr_id": "r020",
       "categoria": "ensaladas-frios",
       "descripcion": "Ensalada de patata cocida y tomate con atún al natural, aceitunas rellenas de anchoa y vinagreta casera de pimientos y cebolla.",
       "raciones_base": 1,
@@ -799,6 +818,7 @@
     {
       "nombre": "Ensalada César",
       "slug": "ensalada-cesar",
+      "qr_id": "r021",
       "categoria": "ensaladas-frios",
       "descripcion": "Ensalada de lechuga y pollo a la plancha con picatostes, Grana Padano y una salsa cremosa de yogur y anchoas.",
       "raciones_base": 3,
@@ -864,6 +884,7 @@
     {
       "nombre": "Ensalada griega con caballa y pimientos",
       "slug": "ensalada-griega-con-caballa-y-pimientos",
+      "qr_id": "r022",
       "categoria": "ensaladas-frios",
       "descripcion": "Ensalada de tomate, pepino, feta y cebolla con aceitunas, caballa escurrida y pimientos asados con sus jugos.",
       "raciones_base": 1,
@@ -915,6 +936,7 @@
     {
       "nombre": "Ensalada de pasta con atún",
       "slug": "ensalada-mediterranea-de-pasta-con-atun",
+      "qr_id": "r023",
       "categoria": "ensaladas-frios",
       "descripcion": "Ensalada fría de pasta con atún, tomate cherry, piquillos, aceitunas, maíz y aguacate, aliñada con AOVE, limón y orégano.",
       "raciones_base": 1,
@@ -975,6 +997,7 @@
     {
       "nombre": "Espinacas a la catalana",
       "slug": "espinacas-a-la-catalana",
+      "qr_id": "r024",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Espinacas salteadas con ajo, pasas y piñones tostados, con un contraste dulce y crujiente.",
       "raciones_base": 1,
@@ -1020,6 +1043,7 @@
     {
       "nombre": "Fajitas de pollo",
       "slug": "fajitas-de-pollo",
+      "qr_id": "r025",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Tres mini fajitas de trigo untadas con queso crema y rellenas de pollo salteado con pimientos y cebolla, doradas en sartén sin aceite.",
       "raciones_base": 1,
@@ -1046,6 +1070,7 @@
     {
       "nombre": "Falafel",
       "slug": "falafel",
+      "qr_id": "r026",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Falafel de garbanzos secos remojados, hierbas frescas y especias, preparados en horno o airfryer.",
       "raciones_base": 6,
@@ -1101,6 +1126,7 @@
     {
       "nombre": "Galletas de avena con chocolate",
       "slug": "galletas-de-avena-con-chocolate",
+      "qr_id": "r027",
       "categoria": "postres",
       "descripcion": "Galletas de copos de avena y mantequilla con vainilla, azúcar blanco y moreno y trozos de chocolate negro.",
       "raciones_base": 10,
@@ -1166,6 +1192,7 @@
     {
       "nombre": "Gambones al horno con ajo, perejil y limón",
       "slug": "gambones-al-horno-con-ajo-perejil-y-limon",
+      "qr_id": "r028",
       "categoria": "asados-horno",
       "descripcion": "Gambones enteros horneados con un majado de ajo, perejil, limón, vino blanco y AOVE, pelados al servir.",
       "raciones_base": 1,
@@ -1211,6 +1238,7 @@
     {
       "nombre": "Guisantes con jamón",
       "slug": "guisantes-con-jamon",
+      "qr_id": "r029",
       "categoria": "guisos-legumbres",
       "descripcion": "Guisantes salteados con ajo y jamón serrano, terminados con una reducción de vino blanco de guiso.",
       "raciones_base": 1,
@@ -1246,6 +1274,7 @@
     {
       "nombre": "Guiso de cerdo adobado",
       "slug": "guiso-de-cerdo-adobado",
+      "qr_id": "r030",
       "categoria": "guisos-legumbres",
       "descripcion": "Lomo de cerdo adobado con patatas chascadas, sofrito de pimientos y cebolla y vino blanco, cocinado en olla a presión con un toque especiado.",
       "raciones_base": 4,
@@ -1321,6 +1350,7 @@
     {
       "nombre": "Huevos rotos",
       "slug": "huevos-rotos",
+      "qr_id": "r031",
       "categoria": "huevos-tortillas",
       "descripcion": "Patatas en bastones doradas en freidora de aire, coronadas con dos huevos a la plancha y terminadas con pimentón y un chorrito de vinagre.",
       "raciones_base": 1,
@@ -1356,6 +1386,7 @@
     {
       "nombre": "Hummus",
       "slug": "hummus",
+      "qr_id": "r032",
       "categoria": "salsas-aderezos",
       "descripcion": "Crema de garbanzos cocidos con tahini, limón, ajo, AOVE y comino.",
       "raciones_base": 1,
@@ -1401,6 +1432,7 @@
     {
       "nombre": "Jurel y setas a la plancha con ajo y perejil",
       "slug": "jurel-y-setas-a-la-plancha-con-ajo-y-perejil",
+      "qr_id": "r033",
       "categoria": "asados-horno",
       "descripcion": "Filetes de jurel y setas dorados a la plancha, terminados con un majado fresco de ajo, perejil y limón.",
       "raciones_base": 1,
@@ -1441,6 +1473,7 @@
     {
       "nombre": "Lentejas estofadas con chorizo",
       "slug": "lentejas-estofadas-con-chorizo",
+      "qr_id": "r034",
       "categoria": "guisos-legumbres",
       "descripcion": "Lentejas estofadas en olla a presión con chorizo picante y verduras trituradas.",
       "raciones_base": 3,
@@ -1506,6 +1539,7 @@
     {
       "nombre": "Marmitako de bonito",
       "slug": "marmitako-de-bonito",
+      "qr_id": "r035",
       "categoria": "guisos-legumbres",
       "descripcion": "Guiso tradicional de bonito del norte fresco con patata chascada, verduras, fumet de pescado y marisco, pimiento choricero y pimentón dulce.",
       "raciones_base": 2,
@@ -1591,6 +1625,7 @@
     {
       "nombre": "Mini wraps de falafel",
       "slug": "mini-wraps-de-falafel",
+      "qr_id": "r036",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Tres mini wraps de trigo rellenos de falafel, tzatziki, tomate, cebolla y rúcula.",
       "raciones_base": 1,
@@ -1633,6 +1668,7 @@
     {
       "nombre": "Pa amb tomàquet con jamón ibérico",
       "slug": "pa-amb-tomaquet-con-jamon-iberico",
+      "qr_id": "r037",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Pan tostado restregado con ajo, cubierto con tomate natural, AOVE y jamón ibérico.",
       "raciones_base": 1,
@@ -1668,6 +1704,7 @@
     {
       "nombre": "Pasta boloñesa",
       "slug": "pasta-bolonesa",
+      "qr_id": "r038",
       "categoria": "arroces-pastas",
       "descripcion": "Pasta al dente con ragú de ternera y verduras, ligada con su agua de cocción y terminada con Grana Padano.",
       "raciones_base": 1,
@@ -1699,6 +1736,7 @@
     {
       "nombre": "Pasta con chili",
       "slug": "pasta-con-chili",
+      "qr_id": "r039",
       "categoria": "arroces-pastas",
       "descripcion": "Pasta al dente mezclada con chili con carne casero y terminada con mozzarella rallada fundida.",
       "raciones_base": 1,
@@ -1725,6 +1763,7 @@
     {
       "nombre": "Pimientos asados",
       "slug": "pimientos-asados",
+      "qr_id": "r040",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Pimientos rojos asados con sus jugos, cebolla en juliana fina y vinagre al gusto.",
       "raciones_base": 3,
@@ -1760,6 +1799,7 @@
     {
       "nombre": "Pisto",
       "slug": "pisto",
+      "qr_id": "r001",
       "categoria": "aperitivos-guarniciones",
       "descripcion": "Pisto casero de tomate, pimientos, calabacín y cebolla, pochados lentamente en aceite de oliva.",
       "raciones_base": 6,
@@ -1800,6 +1840,7 @@
     {
       "nombre": "Poke de salmón",
       "slug": "poke-de-salmon",
+      "qr_id": "r041",
       "categoria": "ensaladas-frios",
       "descripcion": "Bowl de arroz con salmón cocinado en freidora de aire, edamame, mango, cebolla, tomates cherry y tzatziki.",
       "raciones_base": 1,
@@ -1846,6 +1887,7 @@
     {
       "nombre": "Pollo al limón",
       "slug": "pollo-al-limon",
+      "qr_id": "r042",
       "categoria": "asados-horno",
       "descripcion": "Tiras de pechuga de pollo doradas con ajo y terminadas en la sartén con zumo de limón fresco.",
       "raciones_base": 2,
@@ -1876,6 +1918,7 @@
     {
       "nombre": "Pollo Madrás",
       "slug": "pollo-madras",
+      "qr_id": "r043",
       "categoria": "guisos-legumbres",
       "descripcion": "Pechuga de pollo con cebolla y ajo sofritos en aceite de coco, curry Madrás y tomate frito, cocinada a fuego lento.",
       "raciones_base": 3,
@@ -1931,6 +1974,7 @@
     {
       "nombre": "Puré de calabaza y calabacín",
       "slug": "pure-de-calabaza-y-calabacin",
+      "qr_id": "r044",
       "categoria": "sopas-cremas-pures",
       "descripcion": "Puré cremoso de calabaza butternut, calabacín y patata asados al horno, triturados con nata líquida.",
       "raciones_base": 5,
@@ -1971,6 +2015,7 @@
     {
       "nombre": "Quesadillas vegetales",
       "slug": "quesadillas-vegetales",
+      "qr_id": "r045",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Mini quesadillas rellenas de espinacas y champiñones salteados, maíz dulce y mozzarella, doradas a la plancha hasta fundir el queso.",
       "raciones_base": 1,
@@ -2011,6 +2056,7 @@
     {
       "nombre": "Quiche de puerro, champiñones y pavo",
       "slug": "quiche-de-puerro-champinones-y-pavo",
+      "qr_id": "r046",
       "categoria": "huevos-tortillas",
       "descripcion": "Quiche de masa quebrada con puerro, champiñones y dados de pavo salteados, ligada con huevos y queso crema y horneada hasta cuajar.",
       "raciones_base": 4,
@@ -2066,6 +2112,7 @@
     {
       "nombre": "Ragú a la boloñesa",
       "slug": "ragu-a-la-bolonesa",
+      "qr_id": "r047",
       "categoria": "salsas-aderezos",
       "descripcion": "Salsa de ternera y verduras cocinada a fuego lento, con tomate y un toque cremoso de leche y queso.",
       "raciones_base": 4,
@@ -2136,6 +2183,7 @@
     {
       "nombre": "Revuelto de setas, trigueros y gambas",
       "slug": "revuelto-de-setas-trigueros-y-gambas",
+      "qr_id": "r048",
       "categoria": "huevos-tortillas",
       "descripcion": "Revuelto de huevos con setas, espárragos trigueros y gambas salteados en AOVE.",
       "raciones_base": 1,
@@ -2171,6 +2219,7 @@
     {
       "nombre": "Risotto de setas y gambas",
       "slug": "risotto-de-setas-y-gambas",
+      "qr_id": "r049",
       "categoria": "arroces-pastas",
       "descripcion": "Arroz cremoso con setas y gambas, cocinado con fumet y terminado con Grana Padano, mantequilla y perejil.",
       "raciones_base": 1,
@@ -2231,6 +2280,7 @@
     {
       "nombre": "Salchichas al vino",
       "slug": "salchichas-al-vino",
+      "qr_id": "r050",
       "categoria": "guisos-legumbres",
       "descripcion": "Salchichas frescas blancas y rojas de cerdo, doradas con cebolla y cocinadas en vino blanco con laurel y pimienta negra.",
       "raciones_base": 3,
@@ -2276,6 +2326,7 @@
     {
       "nombre": "Salmón con naranja y azafrán",
       "slug": "salmon-con-naranja-y-azafran",
+      "qr_id": "r051",
       "categoria": "asados-horno",
       "descripcion": "Salmón al horno o en freidora de aire con miel, ajo, ralladura de naranja, romero y azafrán.",
       "raciones_base": 3,
@@ -2331,6 +2382,7 @@
     {
       "nombre": "Salsa vizcaína",
       "slug": "salsa-vizcaina",
+      "qr_id": "r052",
       "categoria": "salsas-aderezos",
       "descripcion": "Salsa de cebolla, pimiento choricero y pan tostado, cocinada lentamente y pasada por el pasapurés.",
       "raciones_base": 2,
@@ -2381,6 +2433,7 @@
     {
       "nombre": "Salteado de pollo y verduras",
       "slug": "salteado-de-pollo-y-verduras",
+      "qr_id": "r053",
       "categoria": "guisos-legumbres",
       "descripcion": "Pechuga de pollo dorada en sartén con cebolla pochada y tiras de pimiento verde y rojo, salteadas con AOVE.",
       "raciones_base": 2,
@@ -2421,6 +2474,7 @@
     {
       "nombre": "Shakshuka",
       "slug": "shakshuka",
+      "qr_id": "r054",
       "categoria": "huevos-tortillas",
       "descripcion": "Huevos cuajados en una salsa espesa de tomate, pimiento y especias, terminados con feta, perejil y un toque de chile.",
       "raciones_base": 2,
@@ -2501,6 +2555,7 @@
     {
       "nombre": "Solomillo de cerdo a la miel y dos mostazas",
       "slug": "solomillo-de-cerdo-a-la-miel-y-dos-mostazas",
+      "qr_id": "r055",
       "categoria": "guisos-legumbres",
       "descripcion": "Solomillo de cerdo dorado en sartén y terminado en una salsa de miel, mostaza de Dijon y mostaza a la antigua.",
       "raciones_base": 2,
@@ -2536,6 +2591,7 @@
     {
       "nombre": "Tacos de gambón",
       "slug": "tacos-de-gambon",
+      "qr_id": "r056",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Mini tacos de gambón salteado con cebolla y pimientos, acompañados de aguacate y tzatziki.",
       "raciones_base": 1,
@@ -2587,6 +2643,7 @@
     {
       "nombre": "Tortilla de bacalao",
       "slug": "tortilla-de-bacalao",
+      "qr_id": "r057",
       "categoria": "huevos-tortillas",
       "descripcion": "Tortilla de bacalao desmigado con cebolla y puerro pochados, terminada con perejil.",
       "raciones_base": 1,
@@ -2627,6 +2684,7 @@
     {
       "nombre": "Tortilla de patata y cebolla",
       "slug": "tortilla-de-patata-tradicional-con-cebolla",
+      "qr_id": "r058",
       "categoria": "huevos-tortillas",
       "descripcion": "Tortilla de patata y cebolla fritas, bien escurridas y doradas antes de mezclarlas con el huevo y cuajarlas sin aceite añadido.",
       "raciones_base": 2,
@@ -2662,6 +2720,7 @@
     {
       "nombre": "Tostas de burrata, piquillos y anchoas",
       "slug": "tostas-de-burrata-piquillos-y-anchoas",
+      "qr_id": "r059",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Pan tostado con piquillos, burrata fresca y anchoas, montado justo antes de servir.",
       "raciones_base": 1,
@@ -2697,6 +2756,7 @@
     {
       "nombre": "Tostas de hummus y sardinillas",
       "slug": "tostas-de-hummus-y-sardinillas",
+      "qr_id": "r060",
       "categoria": "tostas-bocadillos-wraps",
       "descripcion": "Dos tostas de pan multicereales con hummus casero y sardinillas bien escurridas.",
       "raciones_base": 1,
@@ -2723,6 +2783,7 @@
     {
       "nombre": "Tzatziki",
       "slug": "tzatziki",
+      "qr_id": "r061",
       "categoria": "salsas-aderezos",
       "descripcion": "Salsa fría de yogur griego natural, pepino escurrido, ajo, limón y hierbas frescas.",
       "raciones_base": 2,
@@ -2768,6 +2829,7 @@
     {
       "nombre": "Vinagreta de pimientos y cebolla",
       "slug": "vinagreta-de-pimientos-y-cebolla",
+      "qr_id": "r062",
       "categoria": "salsas-aderezos",
       "descripcion": "Vinagreta con pimiento verde, pimiento rojo y cebolla finamente picados.",
       "raciones_base": 1,
@@ -2808,6 +2870,7 @@
     {
       "nombre": "Wok de gambones y pisto",
       "slug": "wok-de-gambones-y-pisto",
+      "qr_id": "r063",
       "categoria": "arroces-pastas",
       "descripcion": "Noodles de arroz con gambones, pisto y salsa de soja, terminados en wok.",
       "raciones_base": 1,

@@ -2,6 +2,51 @@
 <html lang="es" data-hero-base="https://mirurecetas.github.io/assets/hero">
 <head>
 <meta charset="utf-8">
+<script data-miru-qr-resolver>
+/* El repositorio raíz ya conserva location.hash. Este resolvedor no modifica Hero. */
+(() => {
+  "use strict";
+  const code = window.location.hash.slice(1);
+  if (!/^r[0-9]{3,}$/.test(code)) return;
+  const base = "https://mirurecetas.github.io/menu-anual-recetas";
+  function reportError() {
+    function show() {
+      const banner = document.createElement("p");
+      banner.setAttribute("role", "alert");
+      banner.style.cssText = "position:relative;z-index:10000;margin:0;padding:12px;background:#fff4dd;color:#202720;text-align:center;font:16px system-ui";
+      banner.append(document.createTextNode("No se pudo abrir el código de receta " + code + ". "));
+      const link = document.createElement("a");
+      link.href = base + "/recetario/";
+      link.textContent = "Abrir recetario";
+      banner.append(link);
+      document.body.prepend(banner);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", show, {once:true});
+    } else {
+      show();
+    }
+  }
+  fetch(base + "/indice-recetas.json", {cache:"no-store", credentials:"omit"})
+    .then(response => {
+      if (!response.ok) throw new Error("Índice no disponible");
+      return response.json();
+    })
+    .then(index => {
+      if (!Array.isArray(index.recetas) || index.total_recetas !== index.recetas.length) {
+        throw new Error("Índice no válido");
+      }
+      const recipe = index.recetas.find(r => r.qr_id === code);
+      if (!recipe || typeof recipe.slug !== "string" ||
+          !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(recipe.slug)) {
+        throw new Error("Código QR desconocido");
+      }
+      window.location.replace(base + "/recetas/" + recipe.slug + "/");
+    })
+    .catch(reportError);
+})();
+</script>
+
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#171a14">
 <link rel="canonical" href="https://mirurecetas.github.io/menu-anual-recetas/">
