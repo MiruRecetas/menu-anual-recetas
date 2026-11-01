@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "d251ec18e81ec0b653efa71c43b7fa7825c92247",
-  "generated_at_utc": "2026-11-01T13:34:38Z",
-  "total_recetas": 63,
+  "source_commit_sha": "2c3300875228f5576af517e5194b78fbc1f751c6",
+  "generated_at_utc": "2026-11-01T13:39:41Z",
+  "total_recetas": 70,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -111,6 +111,67 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/arroz-con-pollo/"
+    },
+    {
+      "nombre": "Arroz del señoret con sepia y gambas",
+      "slug": "arroz-del-senoret-con-sepia-y-gambas",
+      "qr_id": "r064",
+      "categoria": "arroces-pastas",
+      "descripcion": "Arroz seco con sepia y gambas peladas, sofrito de tomate y ajo y fumet aromatizado con azafrán.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Arroz",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sepia limpia y troceada",
+          "cantidad": 110,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Gambas peladas",
+          "cantidad": 110,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 70,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Fumet de pescado y marisco",
+          "cantidad": 250,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Azafrán",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/arroz-del-senoret-con-sepia-y-gambas/"
     },
     {
       "nombre": "Bacalao a la vizcaína",
@@ -691,6 +752,58 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crepes/"
     },
     {
+      "nombre": "Crepes de pulpo y gambas a la crema de pimentón",
+      "slug": "crepes-de-pulpo-y-gambas-a-la-crema-de-pimenton",
+      "qr_id": "r065",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Crepes rellenos de pulpo cocido y gambas con cebolla, ajo y una crema de queso aromatizada con pimentón.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pulpo cocido",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Gambas peladas",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Crepes",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "crepes"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 1,
+          "unidad": "diente"
+        },
+        {
+          "nombre": "Queso crema",
+          "cantidad": 35,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Pimentón",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crepes-de-pulpo-y-gambas-a-la-crema-de-pimenton/"
+    },
+    {
       "nombre": "Cuscús de pollo y verduras",
       "slug": "cuscus-de-pollo-y-verduras",
       "qr_id": "r018",
@@ -995,6 +1108,57 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-mediterranea-de-pasta-con-atun/"
     },
     {
+      "nombre": "Ensalada templada de arroz integral, pollo y granada",
+      "slug": "ensalada-templada-de-arroz-integral-pollo-y-granada",
+      "qr_id": "r066",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada templada de arroz integral con semillas, pollo dorado, espinacas, granada y queso feta.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de pollo",
+          "cantidad": 165,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vasito de arroz integral con semillas",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Granada",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espinacas",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso feta",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Vinagre de manzana",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-templada-de-arroz-integral-pollo-y-granada/"
+    },
+    {
       "nombre": "Espinacas a la catalana",
       "slug": "espinacas-a-la-catalana",
       "qr_id": "r024",
@@ -1122,6 +1286,72 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Fricandó de ternera",
+      "slug": "fricando-de-ternera",
+      "qr_id": "r067",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Guiso de filetes de aguja de ternera con setas, sofrito de tomate y cebolla, vino blanco y piñones tostados.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Filetes de aguja de ternera",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Cebolla",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 2,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Setas",
+          "cantidad": 500,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Vino blanco de guiso",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Piñones",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 60,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": 300,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Laurel",
+          "cantidad": 1,
+          "unidad": "hoja"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/fricando-de-ternera/"
     },
     {
       "nombre": "Galletas de avena con chocolate",
@@ -1761,6 +1991,48 @@
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pasta-con-chili/"
     },
     {
+      "nombre": "Pastel gratinado de boniato y fricandó",
+      "slug": "pastel-gratinado-de-boniato-y-fricando",
+      "qr_id": "r068",
+      "categoria": "asados-horno",
+      "descripcion": "Pastel individual de fricandó de ternera cubierto con puré cremoso de boniato y mozzarella gratinada.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Fricandó de ternera",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "fricando-de-ternera"
+        },
+        {
+          "nombre": "Boniato",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mozzarella rallada",
+          "cantidad": 30,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pastel-gratinado-de-boniato-y-fricando/"
+    },
+    {
       "nombre": "Pimientos asados",
       "slug": "pimientos-asados",
       "qr_id": "r040",
@@ -2011,6 +2283,57 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pure-de-calabaza-y-calabacin/"
+    },
+    {
+      "nombre": "Puré de patata y ajo",
+      "slug": "pure-de-patata-y-ajo",
+      "qr_id": "r069",
+      "categoria": "aperitivos-guarniciones",
+      "descripcion": "Puré cremoso de patata con ajo asado, leche y mantequilla, aromatizado con pimienta negra y nuez moscada.",
+      "raciones_base": 6,
+      "ingredientes": [
+        {
+          "nombre": "Patata",
+          "cantidad": 1000,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 6,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 150,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Mantequilla sin sal",
+          "cantidad": 50,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta negra",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Nuez moscada",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Agua para cocer",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pure-de-patata-y-ajo/"
     },
     {
       "nombre": "Quesadillas vegetales",
@@ -2322,6 +2645,47 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salchichas-al-vino/"
+    },
+    {
+      "nombre": "Salmón al horno con crema de manzana",
+      "slug": "salmon-al-horno-con-crema-de-manzana",
+      "qr_id": "r070",
+      "categoria": "asados-horno",
+      "descripcion": "Lomos de salmón horneados con una crema suave de manzana, puerro y nata.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Salmón",
+          "cantidad": 360,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Manzana",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nata para cocinar",
+          "cantidad": 100,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salmon-al-horno-con-crema-de-manzana/"
     },
     {
       "nombre": "Salmón con naranja y azafrán",

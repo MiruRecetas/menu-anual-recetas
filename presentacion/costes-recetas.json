@@ -378,6 +378,48 @@
       "base_portions": "1",
       "culinary_sha256": "5573c0779831ff160bcee43d97347363305d9802a9a47179f13613fbeba7e57c",
       "cents": "590"
+    },
+    "arroz-del-senoret-con-sepia-y-gambas": {
+      "web_name": "Arroz del señoret con sepia y gambas",
+      "base_portions": "1",
+      "culinary_sha256": "ed06fbdb910f6480474f74a9a5b11c883761789d1ba130017441a73c3bc8d60f",
+      "cents": "430"
+    },
+    "fricando-de-ternera": {
+      "web_name": "Fricandó de ternera",
+      "base_portions": "4",
+      "culinary_sha256": "464eac85c0dab961904d94e437f41f70d67eb94d7dde03f7b9a5e04fc1a0beb5",
+      "cents": "466"
+    },
+    "pure-de-patata-y-ajo": {
+      "web_name": "Puré de patata y ajo",
+      "base_portions": "6",
+      "culinary_sha256": "decf713e436d0eb88127a8ff5f72d605a413ecda078bacdf76e083e79967acd8",
+      "cents": "42"
+    },
+    "ensalada-templada-de-arroz-integral-pollo-y-granada": {
+      "web_name": "Ensalada templada de arroz integral, pollo y granada",
+      "base_portions": "1",
+      "culinary_sha256": "eed3897bee8ce922c5f0d85ae288e6da73f16d3579b1b57e1ecd339983df4562",
+      "cents": "283"
+    },
+    "salmon-al-horno-con-crema-de-manzana": {
+      "web_name": "Salmón al horno con crema de manzana",
+      "base_portions": "2",
+      "culinary_sha256": "2fc38b20dc71b71605e2222cb90bf3ed971a190649ce62888058aaf601099dd1",
+      "cents": "533"
+    },
+    "pastel-gratinado-de-boniato-y-fricando": {
+      "web_name": "Pastel gratinado de boniato y fricandó",
+      "base_portions": "1",
+      "culinary_sha256": "cc794020aae947e0082f6cc28cb0b3b1ad16b244d8e9bd5973d5ec6752f3f996",
+      "cents": "550"
+    },
+    "crepes-de-pulpo-y-gambas-a-la-crema-de-pimenton": {
+      "web_name": "Crepes de pulpo y gambas a la crema de pimentón",
+      "base_portions": "1",
+      "culinary_sha256": "196fc80cb15f6c6d4fa3649481c616992282721f3ce0ff850a2a80c127cb7cea",
+      "cents": "561"
     }
   }
 }
