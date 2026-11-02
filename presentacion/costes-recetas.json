@@ -420,6 +420,12 @@
       "base_portions": "1",
       "culinary_sha256": "196fc80cb15f6c6d4fa3649481c616992282721f3ce0ff850a2a80c127cb7cea",
       "cents": "561"
+    },
+    "frejoles-con-patatas": {
+      "web_name": "Fréjoles con patatas",
+      "base_portions": "2",
+      "culinary_sha256": "4fa8c8af151e2141148cc2142ccc2bf23b221a7f5277d3b3470f8ceeab3219ea",
+      "cents": "381"
     }
   }
 }

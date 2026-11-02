@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "7949c8a10310ed270db68c2065173b3ee9d8b4d9",
-  "generated_at_utc": "2026-11-02T12:34:28Z",
-  "total_recetas": 70,
+  "source_commit_sha": "608efb267f0c0b08cc20c5898c3a5c2740ab4eec",
+  "generated_at_utc": "2026-11-02T14:28:28Z",
+  "total_recetas": 71,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1286,6 +1286,47 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/falafel/"
+    },
+    {
+      "nombre": "Fréjoles con patatas",
+      "slug": "frejoles-con-patatas",
+      "qr_id": "r071",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Judías verdes con patatas cocidas, jamón y ajo, rehogadas en AOVE y terminadas con tomate triturado.",
+      "raciones_base": 2,
+      "ingredientes": [
+        {
+          "nombre": "Judías verdes en conserva, escurridas",
+          "cantidad": 350,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tomate triturado",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Jamón serrano",
+          "cantidad": 60,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Patatas cocidas en conserva, escurridas",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Ajo",
+          "cantidad": 3,
+          "unidad": "dientes"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 15,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/frejoles-con-patatas/"
     },
     {
       "nombre": "Fricandó de ternera",
