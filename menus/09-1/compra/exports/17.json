@@ -7,7 +7,7 @@
   "items": [
     {
       "itemId": "Aceite de oliva",
-      "spec": "1850 ml, virgen extra",
+      "spec": "1980 ml, virgen extra",
       "stock": true
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "itemId": "Cebolla",
-      "spec": "2000 g",
+      "spec": "3280 g",
       "stock": false
     },
     {
@@ -152,12 +152,12 @@
     },
     {
       "itemId": "Pimiento rojo",
-      "spec": "640 g",
+      "spec": "1920 g",
       "stock": false
     },
     {
       "itemId": "Pimiento verde",
-      "spec": "640 g",
+      "spec": "1920 g",
       "stock": false
     },
     {
@@ -172,7 +172,7 @@
     },
     {
       "itemId": "Ternera picada",
-      "spec": "2550 g, hasta quince por ciento de grasa",
+      "spec": "4250 g, hasta quince por ciento de grasa",
       "stock": false
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "itemId": "Tomate triturado",
-      "spec": "2550 g, en conserva",
+      "spec": "3400 g, en conserva",
       "stock": false
     },
     {
@@ -202,7 +202,7 @@
     },
     {
       "itemId": "Zanahoria",
-      "spec": "640 g",
+      "spec": "850 g",
       "stock": false
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "c55fc3711fa84a6e71432cf49833c1767d7cd0ef",
-  "generated_at_utc": "2026-11-02T11:50:40Z",
+  "source_commit_sha": "7949c8a10310ed270db68c2065173b3ee9d8b4d9",
+  "generated_at_utc": "2026-11-02T12:34:28Z",
   "total_recetas": 70,
   "recetas": [
     {
@@ -2442,37 +2442,37 @@
       "ingredientes": [
         {
           "nombre": "Pimiento verde",
-          "cantidad": 75,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
           "nombre": "Pimiento rojo",
-          "cantidad": 75,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
           "nombre": "Cebolla",
-          "cantidad": 75,
+          "cantidad": 225,
           "unidad": "g"
         },
         {
           "nombre": "AOVE",
-          "cantidad": 7.5,
+          "cantidad": 22.5,
           "unidad": "ml"
         },
         {
           "nombre": "Carne picada de ternera",
-          "cantidad": 300,
+          "cantidad": 500,
           "unidad": "g"
         },
         {
           "nombre": "Zanahoria",
-          "cantidad": 75,
+          "cantidad": 100,
           "unidad": "g"
         },
         {
           "nombre": "Tomate triturado",
-          "cantidad": 300,
+          "cantidad": 400,
           "unidad": "g"
         },
         {

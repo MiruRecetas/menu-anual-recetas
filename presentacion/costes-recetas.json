@@ -76,8 +76,8 @@
     "ragu-a-la-bolonesa": {
       "web_name": "Ragú a la boloñesa",
       "base_portions": "4",
-      "culinary_sha256": "0cda911baa314f9887c12246604d878625a60aa6fcd79b50e90eb84c417a152f",
-      "cents": "160"
+      "culinary_sha256": "8803aa2c79e8b502a0fd863b0b5c3d38e022da91cd22f7744acf863ab3899777",
+      "cents": "275"
     },
     "vinagreta-de-pimientos-y-cebolla": {
       "web_name": "Vinagreta de pimientos y cebolla",
@@ -191,7 +191,7 @@
       "web_name": "Berenjenas rellenas",
       "base_portions": "4",
       "culinary_sha256": "67e4cbb4eb43ebdf944664e2052a94aa6907d670624415f5f1acb6debee70b34",
-      "cents": "222"
+      "cents": "337"
     },
     "albondigas-en-salsa-rubia": {
       "web_name": "Albóndigas en salsa rubia",
@@ -245,7 +245,7 @@
       "web_name": "Pasta boloñesa",
       "base_portions": "1",
       "culinary_sha256": "9dd1eee124c6d2830b67b3bf8638c8ef8a28d7be7ed654e6f68bc46175ec84c7",
-      "cents": "247"
+      "cents": "362"
     },
     "galletas-de-avena-con-chocolate": {
       "web_name": "Galletas de avena con chocolate",
