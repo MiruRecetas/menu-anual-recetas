@@ -22,7 +22,7 @@
     },
     {
       "itemId": "Almendras",
-      "spec": "330 g, crudas",
+      "spec": "980 g, crudas",
       "stock": false
     },
     {
@@ -71,6 +71,11 @@
       "stock": false
     },
     {
+      "itemId": "Granola",
+      "spec": "3 envases, avena, Kellogg’s Special K",
+      "stock": false
+    },
+    {
       "itemId": "Guisantes",
       "spec": "1300 g, congelados",
       "stock": false
@@ -94,6 +99,11 @@
       "itemId": "Maíz",
       "spec": "330 g, dulce en conserva, escurrido",
       "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "390 g, natural",
+      "stock": true
     },
     {
       "itemId": "Mozzarella",
@@ -173,6 +183,11 @@
     {
       "itemId": "Vino blanco",
       "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "26 vasitos, griego natural, DIA Fidias",
       "stock": false
     },
     {

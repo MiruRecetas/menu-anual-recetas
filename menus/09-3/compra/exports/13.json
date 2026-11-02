@@ -76,6 +76,11 @@
       "stock": false
     },
     {
+      "itemId": "Miel",
+      "spec": "280 g, natural",
+      "stock": true
+    },
+    {
       "itemId": "Mozzarella",
       "spec": "2 bolsas, rallada, DIA Láctea",
       "stock": false
@@ -162,7 +167,7 @@
     },
     {
       "itemId": "Yogur",
-      "spec": "10 vasitos, griego natural, DIA Fidias",
+      "spec": "23 vasitos, griego natural, DIA Fidias",
       "stock": false
     },
     {

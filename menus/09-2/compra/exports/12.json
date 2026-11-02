@@ -27,7 +27,7 @@
     },
     {
       "itemId": "Azúcar",
-      "spec": "360 g, blanco y moreno, para galletas",
+      "spec": "480 g, blanco y moreno, para galletas",
       "stock": false
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "itemId": "Chocolate",
-      "spec": "2 tabletas, negro, sin azúcares añadidos, DIA Temptation",
+      "spec": "3 tabletas, negro, sin azúcares añadidos, DIA Temptation",
       "stock": false
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "itemId": "Copos de avena",
-      "spec": "240 g, secos",
+      "spec": "320 g, secos",
       "stock": false
     },
     {
@@ -87,12 +87,12 @@
     },
     {
       "itemId": "Harina de trigo",
-      "spec": "180 g, blanca",
+      "spec": "240 g, blanca",
       "stock": false
     },
     {
       "itemId": "Huevos",
-      "spec": "26 huevos",
+      "spec": "27 huevos",
       "stock": false
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "itemId": "Leche",
-      "spec": "2400 ml, semidesnatada",
+      "spec": "4800 ml, semidesnatada",
       "stock": false
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "itemId": "Mantequilla",
-      "spec": "210 g, sin sal",
+      "spec": "280 g, sin sal",
       "stock": false
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "itemId": "Miel",
-      "spec": "440 g, natural",
+      "spec": "700 g, natural",
       "stock": true
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "itemId": "Pan de molde",
-      "spec": "36 rebanadas, cereales y semillas, Oroweat",
+      "spec": "48 rebanadas, cereales y semillas, Oroweat",
       "stock": false
     },
     {
@@ -202,7 +202,7 @@
     },
     {
       "itemId": "Yogur",
-      "spec": "12 vasitos, griego natural, DIA Fidias",
+      "spec": "24 vasitos, griego natural, DIA Fidias",
       "stock": false
     },
     {
@@ -217,7 +217,17 @@
     },
     {
       "itemId": "Extracto de vainilla",
-      "spec": "20 ml, para galletas",
+      "spec": "10 ml, para galletas",
+      "stock": true
+    },
+    {
+      "itemId": "Levadura en polvo o bicarbonato",
+      "spec": "10 g, para galletas",
+      "stock": true
+    },
+    {
+      "itemId": "Extracto de vainilla",
+      "spec": "10 ml, para galletas",
       "stock": true
     },
     {

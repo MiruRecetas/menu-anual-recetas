@@ -27,7 +27,7 @@
     },
     {
       "itemId": "Azúcar",
-      "spec": "150 g, blanco y moreno, para galletas",
+      "spec": "200 g, blanco y moreno, para galletas",
       "stock": false
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "itemId": "Copos de avena",
-      "spec": "100 g, secos",
+      "spec": "130 g, secos",
       "stock": false
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "itemId": "Harina de trigo",
-      "spec": "80 g, blanca",
+      "spec": "100 g, blanca",
       "stock": false
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "itemId": "Leche",
-      "spec": "1000 ml, semidesnatada",
+      "spec": "2000 ml, semidesnatada",
       "stock": false
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "itemId": "Mantequilla",
-      "spec": "90 g, sin sal",
+      "spec": "120 g, sin sal",
       "stock": false
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "itemId": "Miel",
-      "spec": "190 g, natural",
+      "spec": "290 g, natural",
       "stock": true
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "itemId": "Pan de molde",
-      "spec": "15 rebanadas, cereales y semillas, Oroweat",
+      "spec": "20 rebanadas, cereales y semillas, Oroweat",
       "stock": false
     },
     {
@@ -202,7 +202,7 @@
     },
     {
       "itemId": "Yogur",
-      "spec": "5 vasitos, griego natural, DIA Fidias",
+      "spec": "10 vasitos, griego natural, DIA Fidias",
       "stock": false
     },
     {
@@ -214,6 +214,16 @@
       "itemId": "Limón",
       "spec": "5 unidades, para aromatizar",
       "stock": false
+    },
+    {
+      "itemId": "Extracto de vainilla",
+      "spec": "10 ml, para galletas",
+      "stock": true
+    },
+    {
+      "itemId": "Levadura en polvo o bicarbonato",
+      "spec": "10 g, para galletas",
+      "stock": true
     },
     {
       "itemId": "Extracto de vainilla",
