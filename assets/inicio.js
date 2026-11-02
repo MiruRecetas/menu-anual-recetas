@@ -251,14 +251,12 @@ for(const day of days){
   const meal=m.dias[day][kind];
   if(!meal)continue;
   const inMeal=new Set();
-  for(const component of kind==='postre'?dessertComponents(meal):[meal])
+  for(const component of kind==='postre'?dessertComponents(meal):[meal]){
    if(component.tipo==='preparacion'&&component.slug)traverse(component.slug,inMeal);
-  if(!meal.presentacion)continue;
-  for(const group of meal.presentacion.grupos)
-   for(const item of group.elementos)
-    if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
-  for(const item of meal.presentacion.elementos_sin_grupo)
-   if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
+   const p=component.presentacion;
+   const items=[...(p?.grupos||[]).flatMap(g=>g.elementos),...(p?.elementos_sin_grupo||[])];
+   for(const item of items)if(item.tipo==='preparacion'&&item.slug)traverse(item.slug,inMeal);
+  }
  }
 }
 if(!counts.size){b.append(el('p','No hay preparaciones de batch cooking identificadas para este menú.','muted small'))}

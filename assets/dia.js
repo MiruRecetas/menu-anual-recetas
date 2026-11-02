@@ -95,8 +95,8 @@ function heading(kind,nut){
 function component(x,nut=x.nutricion,name=displayName(x)){
  const box=el('div',undefined,'daily-component');box.append(entry(x,name),macros(nut));return box;
 }
-function group(g){
- if(g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,g.nombre==='Pan Oroweat'?'Pan de molde':g.nombre);
+function group(g,collapsible=false){
+ if(!collapsible&&g.elementos.length===1)return component(g.elementos[0],g.nutricion||g.elementos[0].nutricion,g.nombre==='Pan Oroweat'?'Pan de molde':g.nombre);
  const details=el('details',undefined,'culinary-group daily-component');
  const summary=el('summary');summary.append(el('span',g.nombre,'component-name'),macros(g.nutricion,'span'));
  const inside=el('div',undefined,'group-entries');
@@ -122,7 +122,12 @@ function meal(kind,x){
 }
 function simple(kind,x){
  if(!x)return;const section=el('section',undefined,'daily-meal');
- const body=el('div',undefined,'daily-meal-body');body.append(component(x));
+ const body=el('div',undefined,'daily-meal-body');
+ if(x.tipo==='comida'){
+  const p=x.presentacion;
+  const items=[...[...p.grupos].sort((a,b)=>a.orden-b.orden).flatMap(g=>g.elementos),...p.elementos_sin_grupo];
+  body.append(group({nombre:x.nombre,nutricion:x.nutricion,elementos:items},true));
+ }else body.append(component(x));
  section.append(heading(kind,x.nutricion),body);root.append(section);
 }
 const total=el('section',undefined,'daily-total');total.append(dailyNutrition(day.nutricion));
@@ -164,3 +169,4 @@ function enableSwipeNavigation(){
  },{passive:true});
 }
 enableSwipeNavigation();})();
+
