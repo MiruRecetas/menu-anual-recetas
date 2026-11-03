@@ -4,7 +4,7 @@
 .p1-stepper button{width:37px;height:38px;border:0;background:#fff;color:var(--ink);font-size:1.25rem}
 .p1-stepper button:hover{background:var(--sage)}
 .p1-stepper output{width:36px;text-align:center;font-weight:700}
-.p1-copies-stepper{width:max-content;max-width:100%;align-self:flex-start;gap:0}
+.p1-copies-stepper{width:max-content;max-width:100%;justify-self:center;align-self:center;gap:0}
 .p1-copies-stepper button{width:48px;height:46px;min-width:48px;font-size:1.5rem}
 .p1-copies-stepper output{display:grid;place-items:center;width:58px;min-height:46px;border-inline:1px solid var(--line);font-size:1.08rem}
 .p1-copies-stepper button:disabled{opacity:.4}
@@ -44,7 +44,7 @@
 .p1-preview{display:block;flex:none;box-sizing:border-box;width:min(100%,182px);max-width:100%;height:auto;max-height:none;aspect-ratio:590/945;object-fit:fill;background:#fff;border:1px solid #d0d5cf;box-shadow:0 2px 9px #0001}
 .p1-preview.p1-horizontal{width:min(100%,410px);height:auto;max-height:none;aspect-ratio:945/590}
 .p1-preview.p1-component{width:min(100%,410px);height:auto;max-height:none;aspect-ratio:590/354}
-.p1-qr-note{font-size:.78rem;line-height:1.4;color:#705f41;background:#fff5df;border:1px solid #e3d4b5;border-radius:9px;padding:8px 10px;overflow-wrap:anywhere;word-break:break-word}
+.p1-qr-note{font-size:.78rem;line-height:1.4;color:var(--muted);background:transparent;border:0;padding:0;text-align:center;overflow-wrap:anywhere;word-break:break-word}
 .p1-connection{display:grid;gap:10px;border:1px solid var(--line);border-radius:14px;padding:12px}
 .p1-ble-progress{position:relative;display:block;box-sizing:border-box;width:100%;height:7px;overflow:hidden;border-radius:999px;background:#dcddda}
 .p1-ble-progress-fill{position:absolute;top:0;bottom:0;left:0;width:0%;border-radius:inherit;background:var(--terra);transition:width .12s linear}
@@ -60,7 +60,7 @@
 .p1-print:disabled{background:#d9dcd5;color:#6c7770;box-shadow:none}
 .p1-help{font-size:.77rem;color:var(--muted);margin:0}
 .p1-error{color:#a14434}
-.p1-metrics{width:100%;max-width:100%;text-align:center;font-size:.78rem;color:var(--muted);overflow-wrap:anywhere}
+.p1-metrics{width:100%;max-width:100%;text-align:center;font-size:.78rem;line-height:1.55;white-space:pre-line;color:var(--muted);overflow-wrap:anywhere}
 .p1-mobile-handle{display:none}
 @media(max-width:850px){.p1-recipe-grid{grid-template-columns:1fr}.p1-photo{min-height:0;height:300px}.p1-main{padding:24px}}
 @media(max-width:700px){

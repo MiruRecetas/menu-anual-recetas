@@ -658,9 +658,9 @@ function v9Build(d,qrVariant="original"){
 
 
 const PANEL_FORMATS=Object.freeze({
- vertical:{label:"50 × 80 mm · Vertical",size:"50×80",maxBytes:35000},
- horizontal:{label:"50 × 80 mm · Horizontal",size:"50×80",maxBytes:36000},
- component:{label:"50 × 30 mm · Componente",size:"50×30",maxBytes:35000}
+ vertical:{label:"50 × 80 mm • Vertical",size:"50×80",maxBytes:35000},
+ horizontal:{label:"50 × 80 mm • Horizontal",size:"50×80",maxBytes:36000},
+ component:{label:"50 × 30 mm • Componente",size:"50×30",maxBytes:35000}
 });
 function panelDate(iso,required=false){
  if(!iso){if(required)throw Error("Selecciona la fecha de envasado.");return "--/--/--";}
@@ -678,12 +678,11 @@ function panelDates(packed,expiry,required=true){
 function panelArgs(dates){
  return {...V7_RECIPE,packed:dates.packed,expiry:dates.expiry};
 }
-function panelQrPlaceholder(ctx,x,y,w,h,title){
+function panelQrPlaceholder(ctx,x,y,w,h){
  ctx.save();ctx.strokeStyle="#b5b9b5";ctx.lineWidth=1;
  ctx.setLineDash([5,5]);ctx.strokeRect(x,y,w,h);ctx.setLineDash([]);
  ctx.fillStyle="#66746a";ctx.textAlign="center";
- ctx.font='600 16px "Geist"';ctx.fillText(title,x+w/2,y+h/2-6);
- ctx.font='500 12px "Geist"';ctx.fillText("#"+PANEL_RECIPE.qrId+" · QR TSPL",x+w/2,y+h/2+15);
+ ctx.font='600 16px "Geist"';ctx.fillText("QR nativo",x+w/2,y+h/2);
  ctx.restore();
 }
 function panelPreview(format,dates,qrVariant=format==="component"?"large":"original"){
@@ -696,7 +695,7 @@ function panelPreview(format,dates,qrVariant=format==="component"?"large":"origi
   canvas.width=V6_W;canvas.height=V6_H;
   ctx=canvas.getContext("2d");ctx.drawImage(art,0,0);
   ctx.fillStyle="#000";for(const y of [119,415,530,861])ctx.fillRect(26,y,531,3);
-  panelQrPlaceholder(ctx,V6_QR.x,V6_QR.y,204,204,"QR NATIVO");
+  panelQrPlaceholder(ctx,V6_QR.x,V6_QR.y,204,204);
   return canvas;
  }
  if(format==="horizontal"){
@@ -704,7 +703,7 @@ function panelPreview(format,dates,qrVariant=format==="component"?"large":"origi
   const display=document.createElement("canvas");
   display.width=V7_W;display.height=V7_H;
   const g=display.getContext("2d");g.drawImage(physical,0,0);
-  panelQrPlaceholder(g,V7_QR.x,V7_QR.y,205,205,"QR NATIVO");
+  panelQrPlaceholder(g,V7_QR.x,V7_QR.y,205,205);
   canvas.width=945;canvas.height=590;
   ctx=canvas.getContext("2d");ctx.translate(945,0);ctx.rotate(Math.PI/2);
   ctx.drawImage(display,0,0);return canvas;
@@ -715,8 +714,7 @@ function panelPreview(format,dates,qrVariant=format==="component"?"large":"origi
   ctx=canvas.getContext("2d");ctx.drawImage(art,0,0);
   const qr=panelComponentQr(qrVariant);
   const symbolDots=qrVariant==="large"?29*qr.module:148;
-  panelQrPlaceholder(ctx,qr.x,qr.y,symbolDots,symbolDots,
-   qrVariant==="large"?"QR 5 PUNTOS":"QR NATIVO");
+  panelQrPlaceholder(ctx,qr.x,qr.y,symbolDots,symbolDots);
   return canvas;
  }
  throw Error("Formato no reconocido.");

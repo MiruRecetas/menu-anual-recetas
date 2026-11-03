@@ -78,8 +78,8 @@
    preview.getContext("2d").drawImage(art,0,0);
    const n=labelCopies;
    metrics.textContent=engine.formats[format.value].label+
-    " · "+engine.recipe.name+" · "+n+" "+(n===1?"etiqueta":"etiquetas")+
-    " · "+(qrMode()==="large"?"QR 5 puntos / ECC M (aprobado)":"QR aprobado / formato 50×80")+" · envasado "+dates.packed+" · consumo "+dates.expiry;
+    " • "+engine.recipe.name+" • "+n+" "+(n===1?"etiqueta":"etiquetas")+
+    "\nenvasado "+dates.packed+" • consumo "+dates.expiry;
    if(!error.hidden)showError("");
   }catch(e){
    metrics.textContent="Error de vista previa: "+e.message;
@@ -231,8 +231,8 @@
    count+" "+(count===1?"etiqueta":"etiquetas")+" de "+engine.recipe.name+" ("+
    engine.formats[format.value].label+")?\n"+
    "Envasado: "+dates.packed+" · Consumo preferente: "+dates.expiry+
-   "\nQR corto #"+engine.recipe.qrId+" · QR "+(job.qrModule||"original")+" puntos"+(job.qrVariant==="large"?" 5/M APROBADO":"")+" · PRINT 1,"+count+".\n"+
-   "Sin reintentos. PRINT 1,2 probado físicamente; desalineación intermitente en el ensayo de diez copias (#49).";
+   "\nQR de receta: "+engine.recipe.shortUrl+
+   "\nSe enviará un único trabajo. No habrá reintentos automáticos.";
   if(!window.confirm(text)){log("Impresión cancelada antes del envío.");return;}
   busy=true;update();showError("");
   try{await transmit(job.job,"PANEL V1 "+job.format+" · QR "+(job.qrModule||"normal")+" puntos · PRINT 1,"+count);}
