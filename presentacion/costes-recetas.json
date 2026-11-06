@@ -426,6 +426,12 @@
       "base_portions": "2",
       "culinary_sha256": "4fa8c8af151e2141148cc2142ccc2bf23b221a7f5277d3b3470f8ceeab3219ea",
       "cents": "381"
+    },
+    "crepes-cremosos-de-pollo-y-champinones": {
+      "web_name": "Crepes cremosos de pollo y champiñones",
+      "base_portions": "1",
+      "culinary_sha256": "f51837dadb69266d4b2e9ae520382ca95fd86278b9ca0adf216cbd0fa7460c64",
+      "cents": "324"
     }
   }
 }

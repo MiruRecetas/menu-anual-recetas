@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "3b2b0a123dc2d6c89748e3e9416d9ee83146928b",
-  "generated_at_utc": "2026-11-06T21:37:36Z",
-  "total_recetas": 71,
+  "source_commit_sha": "89497f8490949c0c1833288c14632e20b42bd30f",
+  "generated_at_utc": "2026-11-06T22:37:20Z",
+  "total_recetas": 72,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -750,6 +750,68 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crepes/"
+    },
+    {
+      "nombre": "Crepes cremosos de pollo y champiñones",
+      "slug": "crepes-cremosos-de-pollo-y-champinones",
+      "qr_id": "r072",
+      "categoria": "tostas-bocadillos-wraps",
+      "descripcion": "Crepes rellenos de pollo dorado, champiñones y puerro en una salsa suave de queso crema y mostaza de Dijon.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Crepes",
+          "cantidad": 1,
+          "unidad": "ración",
+          "preparacion": "crepes"
+        },
+        {
+          "nombre": "Pechuga de pollo",
+          "cantidad": 140,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Champiñones frescos",
+          "cantidad": 120,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 75,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso crema",
+          "cantidad": 35,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Leche semidesnatada",
+          "cantidad": 50,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Mostaza de Dijon",
+          "cantidad": 8,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Pimienta",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crepes-cremosos-de-pollo-y-champinones/"
     },
     {
       "nombre": "Crepes de pulpo y gambas a la crema de pimentón",
