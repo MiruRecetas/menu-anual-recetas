@@ -1,0 +1,245 @@
+{
+  "author": "MiruRecetas",
+  "name": "Octubre · Menú 4 · 16 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/10-4/compra/?porciones=16",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/10-4.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "1360 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "150 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Almendras",
+      "spec": "800 g, crudas",
+      "stock": false
+    },
+    {
+      "itemId": "Arroz integral",
+      "spec": "16 envases, cocido, con semillas, DIA Al Punto",
+      "stock": false
+    },
+    {
+      "itemId": "Bacalao",
+      "spec": "1600 g, desalado",
+      "stock": false
+    },
+    {
+      "itemId": "Boniato",
+      "spec": "3200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Brócoli",
+      "spec": "4800 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cebada perlada",
+      "spec": "2240 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "5440 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cuscús",
+      "spec": "960 g, de trigo, seco",
+      "stock": false
+    },
+    {
+      "itemId": "Espinacas",
+      "spec": "800 g",
+      "stock": false
+    },
+    {
+      "itemId": "Gambas",
+      "spec": "1280 g, crudas, peladas",
+      "stock": false
+    },
+    {
+      "itemId": "Granada",
+      "spec": "960 g",
+      "stock": false
+    },
+    {
+      "itemId": "Granola",
+      "spec": "2 envases, avena, Kellogg’s Special K",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "500 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "40 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "1400 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Mantequilla",
+      "spec": "140 g, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Manzana",
+      "spec": "7200 g",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "580 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Mozzarella",
+      "spec": "3 bolsas, rallada, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Nata",
+      "spec": "8 envases, para cocinar, DIA Láctea",
+      "stock": false
+    },
+    {
+      "itemId": "Pasas",
+      "spec": "320 g, sin semillas",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "2670 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "7440 g, cruda, sin piel",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "2400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "2400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Piñones",
+      "spec": "400 g, Piñones pelados al natural",
+      "stock": false
+    },
+    {
+      "itemId": "Puerro",
+      "spec": "2800 g, crudo o congelado",
+      "stock": false
+    },
+    {
+      "itemId": "Pulpo",
+      "spec": "1600 g, cocido",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema",
+      "spec": "5 tarrinas, Philadelphia",
+      "stock": false
+    },
+    {
+      "itemId": "Queso feta",
+      "spec": "2 envases, DOP, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Salmón",
+      "spec": "5760 g, crudo, parte comestible",
+      "stock": false
+    },
+    {
+      "itemId": "Setas",
+      "spec": "4000 g",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera",
+      "spec": "4000 g, aguja, cruda, sin hueso",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate",
+      "spec": "2400 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tortillas de trigo",
+      "spec": "48 tortillas, mini, IFA Eliges",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "32 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Agua",
+      "stock": true
+    },
+    {
+      "itemId": "Agua para cocer",
+      "stock": true
+    },
+    {
+      "itemId": "Laurel",
+      "stock": true
+    },
+    {
+      "itemId": "Nuez moscada",
+      "stock": true
+    },
+    {
+      "itemId": "Perejil",
+      "stock": true
+    },
+    {
+      "itemId": "Pimentón",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Ras el hanout",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Vinagre de manzana",
+      "stock": true
+    }
+  ],
+  "yield": "16"
+}

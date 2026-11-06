@@ -276,6 +276,10 @@
       "stock": false
     },
     {
+      "itemId": "Laurel",
+      "stock": true
+    },
+    {
       "itemId": "Menta o hierbabuena",
       "stock": true
     },
