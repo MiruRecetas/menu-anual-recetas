@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "89497f8490949c0c1833288c14632e20b42bd30f",
-  "generated_at_utc": "2026-11-06T22:37:20Z",
-  "total_recetas": 72,
+  "source_commit_sha": "4224c60bde4e7aa84a53cbf4f396818e12b60b03",
+  "generated_at_utc": "2026-11-06T23:33:02Z",
+  "total_recetas": 73,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -372,6 +372,57 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/bowl-de-yogur-con-miel-y-granola/"
+    },
+    {
+      "nombre": "Brownie de castañas",
+      "slug": "brownie-de-castanas",
+      "qr_id": "r073",
+      "categoria": "postres",
+      "descripcion": "Brownie de chocolate negro con interior húmedo y trozos de castañas cocidas.",
+      "raciones_base": 12,
+      "ingredientes": [
+        {
+          "nombre": "Chocolate negro 85 %",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Mantequilla sin sal",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Huevos",
+          "cantidad": 3,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Azúcar blanca",
+          "cantidad": 125,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Harina de trigo",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Castañas crudas con cáscara",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Esencia de vainilla",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/brownie-de-castanas/"
     },
     {
       "nombre": "Burritos de chili con carne",

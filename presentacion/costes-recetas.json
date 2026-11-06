@@ -432,6 +432,12 @@
       "base_portions": "1",
       "culinary_sha256": "f51837dadb69266d4b2e9ae520382ca95fd86278b9ca0adf216cbd0fa7460c64",
       "cents": "324"
+    },
+    "brownie-de-castanas": {
+      "web_name": "Brownie de castañas",
+      "base_portions": "12",
+      "culinary_sha256": "014572bd8427cab71692604b5cc2754824ad24bff406b6a5ddb7373287b42181",
+      "cents": "62"
     }
   }
 }
