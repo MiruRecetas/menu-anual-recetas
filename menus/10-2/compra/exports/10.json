@@ -1,0 +1,258 @@
+{
+  "author": "MiruRecetas",
+  "name": "Octubre · Menú 2 · 10 porciones",
+  "tagline": "Menú semanal. Compra calculada antes de exportar.",
+  "linkOutUrl": "https://mirurecetas.github.io/menu-anual-recetas/menus/10-2/compra/?porciones=10",
+  "imageUrl": "https://mirurecetas.github.io/menu-anual-recetas/imagenes/menus/10-2.webp",
+  "items": [
+    {
+      "itemId": "Aceite de oliva",
+      "spec": "1010 ml, virgen extra",
+      "stock": true
+    },
+    {
+      "itemId": "Ajo",
+      "spec": "230 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Arroz",
+      "spec": "1300 g, blanco, grano corto, crudo",
+      "stock": false
+    },
+    {
+      "itemId": "Atún",
+      "spec": "14 latas, claro al natural, escurrido, Mari Marinera DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Boniato",
+      "spec": "1500 g",
+      "stock": false
+    },
+    {
+      "itemId": "Cebolla",
+      "spec": "9180 g",
+      "stock": false
+    },
+    {
+      "itemId": "Chile triturado",
+      "spec": "10 g, Chile seco triturado en copos, sin mezcla de especias",
+      "stock": false
+    },
+    {
+      "itemId": "Comino",
+      "spec": "10 g, molido",
+      "stock": true
+    },
+    {
+      "itemId": "Curry Madrás",
+      "spec": "1 envase, suave, TRS",
+      "stock": false
+    },
+    {
+      "itemId": "Espinacas",
+      "spec": "2500 g",
+      "stock": false
+    },
+    {
+      "itemId": "Fumet de pescado y marisco",
+      "spec": "2 envases, de roca, Gallina Blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Gambas",
+      "spec": "1600 g, crudas, peladas",
+      "stock": false
+    },
+    {
+      "itemId": "Grana Padano",
+      "spec": "6 paquetes, rallado, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Granada",
+      "spec": "3000 g",
+      "stock": false
+    },
+    {
+      "itemId": "Grasa de coco",
+      "spec": "1 envase, bio, ecoBASICS",
+      "stock": false
+    },
+    {
+      "itemId": "Harina de trigo",
+      "spec": "310 g, blanca",
+      "stock": false
+    },
+    {
+      "itemId": "Huevos",
+      "spec": "32 huevos",
+      "stock": false
+    },
+    {
+      "itemId": "Jurel",
+      "spec": "1780 g, Jurel fresco entero, de ración; solicitar en filetes",
+      "stock": false
+    },
+    {
+      "itemId": "Leche",
+      "spec": "750 ml, semidesnatada",
+      "stock": false
+    },
+    {
+      "itemId": "Mantequilla",
+      "spec": "100 g, sin sal",
+      "stock": false
+    },
+    {
+      "itemId": "Miel",
+      "spec": "420 g, natural",
+      "stock": true
+    },
+    {
+      "itemId": "Pan de molde",
+      "spec": "20 rebanadas, cereales y semillas, Oroweat",
+      "stock": false
+    },
+    {
+      "itemId": "Pasas",
+      "spec": "200 g, sin semillas",
+      "stock": false
+    },
+    {
+      "itemId": "Pasta",
+      "spec": "700 g",
+      "stock": false
+    },
+    {
+      "itemId": "Patatas",
+      "spec": "4500 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pechuga de pollo",
+      "spec": "4540 g, cruda, sin piel",
+      "stock": false
+    },
+    {
+      "itemId": "Perejil",
+      "spec": "40 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Pimentón",
+      "spec": "10 g, dulce",
+      "stock": true
+    },
+    {
+      "itemId": "Pimiento rojo",
+      "spec": "1440 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimiento verde",
+      "spec": "570 g",
+      "stock": false
+    },
+    {
+      "itemId": "Pimientos del piquillo",
+      "spec": "2 frascos, asados, escurridos, Delicias de DIA",
+      "stock": false
+    },
+    {
+      "itemId": "Piñones",
+      "spec": "100 g, Piñones pelados al natural",
+      "stock": false
+    },
+    {
+      "itemId": "Queso crema",
+      "spec": "1 tarrina, Philadelphia",
+      "stock": false
+    },
+    {
+      "itemId": "Queso feta",
+      "spec": "2 envases, DOP, DIA Selección Mundial",
+      "stock": false
+    },
+    {
+      "itemId": "Queso halloumi",
+      "spec": "5 envases, Carrefour Extra, DOP, envase de 225 g",
+      "stock": false
+    },
+    {
+      "itemId": "Setas",
+      "spec": "3500 g",
+      "stock": false
+    },
+    {
+      "itemId": "Ternera picada",
+      "spec": "1250 g, hasta quince por ciento de grasa",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate concentrado",
+      "spec": "1 envase, Doble concentrado Mutti, tubo de 130 g",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate frito",
+      "spec": "14 envases, HIDA",
+      "stock": false
+    },
+    {
+      "itemId": "Tomate triturado",
+      "spec": "5000 g, en conserva",
+      "stock": false
+    },
+    {
+      "itemId": "Vino blanco",
+      "spec": "1 caja, para guisar, de Alberto",
+      "stock": false
+    },
+    {
+      "itemId": "Yogur",
+      "spec": "20 vasitos, griego natural, DIA Fidias",
+      "stock": false
+    },
+    {
+      "itemId": "Zanahoria",
+      "spec": "250 g",
+      "stock": false
+    },
+    {
+      "itemId": "Zumo de limón",
+      "spec": "150 g, fresco",
+      "stock": false
+    },
+    {
+      "itemId": "Ajo",
+      "stock": true
+    },
+    {
+      "itemId": "Chile triturado",
+      "stock": true
+    },
+    {
+      "itemId": "Perejil",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta",
+      "stock": true
+    },
+    {
+      "itemId": "Pimienta negra",
+      "stock": true
+    },
+    {
+      "itemId": "Sal",
+      "stock": true
+    },
+    {
+      "itemId": "Zumo de limón",
+      "stock": true
+    }
+  ],
+  "yield": "10"
+}
