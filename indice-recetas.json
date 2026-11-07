@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "3b6c3dba4889d622e62d3b6d854ed04a350084d4",
-  "generated_at_utc": "2026-11-07T10:31:41Z",
+  "source_commit_sha": "d212fe3aeb8eb3297376952c4dec57b847349ce6",
+  "generated_at_utc": "2026-11-07T11:03:02Z",
   "total_recetas": 73,
   "recetas": [
     {
@@ -1623,7 +1623,7 @@
       "nombre": "Guisantes con jamón",
       "slug": "guisantes-con-jamon",
       "qr_id": "r029",
-      "categoria": "guisos-legumbres",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Guisantes salteados con ajo y jamón serrano, terminados con una reducción de vino blanco de guiso.",
       "raciones_base": 1,
       "ingredientes": [
@@ -1817,7 +1817,7 @@
       "nombre": "Jurel y setas a la plancha con ajo y perejil",
       "slug": "jurel-y-setas-a-la-plancha-con-ajo-y-perejil",
       "qr_id": "r033",
-      "categoria": "asados-horno",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Filetes de jurel y setas dorados a la plancha, terminados con un majado fresco de ajo, perejil y limón.",
       "raciones_base": 1,
       "ingredientes": [
@@ -2314,7 +2314,7 @@
       "nombre": "Pollo al limón",
       "slug": "pollo-al-limon",
       "qr_id": "r042",
-      "categoria": "asados-horno",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Tiras de pechuga de pollo doradas con ajo y terminadas en la sartén con zumo de limón fresco.",
       "raciones_base": 2,
       "ingredientes": [
@@ -2758,7 +2758,7 @@
       "nombre": "Salchichas al vino",
       "slug": "salchichas-al-vino",
       "qr_id": "r050",
-      "categoria": "guisos-legumbres",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Salchichas frescas blancas y rojas de cerdo, doradas con cebolla y cocinadas en vino blanco con laurel y pimienta negra.",
       "raciones_base": 3,
       "ingredientes": [
@@ -2952,7 +2952,7 @@
       "nombre": "Salteado de pollo y verduras",
       "slug": "salteado-de-pollo-y-verduras",
       "qr_id": "r053",
-      "categoria": "guisos-legumbres",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Pechuga de pollo dorada en sartén con cebolla pochada y tiras de pimiento verde y rojo, salteadas con AOVE.",
       "raciones_base": 2,
       "ingredientes": [
@@ -3074,7 +3074,7 @@
       "nombre": "Solomillo de cerdo a la miel y dos mostazas",
       "slug": "solomillo-de-cerdo-a-la-miel-y-dos-mostazas",
       "qr_id": "r055",
-      "categoria": "guisos-legumbres",
+      "categoria": "salteados-fritos-plancha",
       "descripcion": "Solomillo de cerdo dorado en sartén y terminado en una salsa de miel, mostaza de Dijon y mostaza a la antigua.",
       "raciones_base": 2,
       "ingredientes": [
