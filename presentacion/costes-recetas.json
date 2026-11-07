@@ -450,6 +450,12 @@
       "base_portions": "3",
       "culinary_sha256": "05400f80c4e14abdf3e18c6d20d10f1797eb7278c98bb739c1eb1f74611a4ae5",
       "cents": "281"
+    },
+    "crema-de-manzana": {
+      "web_name": "Crema de manzana",
+      "base_portions": "4",
+      "culinary_sha256": "72d55f8ae62c49502f8abe763b84f5f61b8c781b03ba89dff03f64c3f584c667",
+      "cents": "104"
     }
   }
 }

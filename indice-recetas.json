@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "de9659e0a6ffa7ae8b9fe69b5971cff39d912ce8",
-  "generated_at_utc": "2026-11-07T15:50:09Z",
-  "total_recetas": 75,
+  "source_commit_sha": "09a8408410693a5af14d7b8ac424204c9fadf20c",
+  "generated_at_utc": "2026-11-07T15:56:19Z",
+  "total_recetas": 76,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -752,6 +752,42 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/chili-con-carne/"
+    },
+    {
+      "nombre": "Crema de manzana",
+      "slug": "crema-de-manzana",
+      "qr_id": "r076",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Crema salada de manzana y puerro pochados en AOVE, triturados con nata hasta obtener una textura suave y homogénea.",
+      "raciones_base": 4,
+      "ingredientes": [
+        {
+          "nombre": "Manzana",
+          "cantidad": 600,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Puerro",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nata para cocinar",
+          "cantidad": 200,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 20,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/crema-de-manzana/"
     },
     {
       "nombre": "Crep de pollo al curry",
