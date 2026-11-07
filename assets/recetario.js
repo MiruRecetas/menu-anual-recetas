@@ -13,7 +13,22 @@ const sections=[
  {key:'categoria_filtro',label:'Categoría'},
  {key:'practicas_filtro',label:'Etiquetas'}
 ];
-const chosen=new Map(sections.map(s=>[s.key,new Set()]));
+// Each facet has one of three states: absent (neutral), include, exclude.
+const chosen=new Map(sections.map(s=>[s.key,new Map()]));
+const states=Object.freeze({neutral:'neutral',include:'include',exclude:'exclude'});
+function nextState(state){return state===states.neutral?states.include:state===states.include?states.exclude:states.neutral;}
+function setState(key,value,next){
+ const selection=chosen.get(key);
+ if(next===states.neutral)selection.delete(value);
+ else selection.set(value,next);
+}
+function getState(key,value){return chosen.get(key).get(value)||states.neutral;}
+function facetMatches(valuesForRecipe,selection){
+ const includes=[...selection].filter(([,state])=>state===states.include).map(([value])=>value);
+ const excludes=[...selection].filter(([,state])=>state===states.exclude).map(([value])=>value);
+ return (!includes.length||includes.some(value=>valuesForRecipe.includes(value)))&&
+        excludes.every(value=>!valuesForRecipe.includes(value));
+}
 const normalize=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es');
 const values=(r,key)=>key==='categoria_filtro'?(r[key]?[r[key]]:[]):Array.isArray(r[key])?r[key]:[];
 let limit=10,origin=null,found=0;
@@ -29,18 +44,19 @@ function tile(r){
 }
 function matches(r,term){
  if(!normalize([r.nombre,r.descripcion,...(r.etiquetas||[])].join(' ')).includes(term))return false;
- return sections.every(s=>{const selected=chosen.get(s.key);return !selected.size||values(r,s.key).some(v=>selected.has(v));});
+ return sections.every(s=>facetMatches(values(r,s.key),chosen.get(s.key)));
 }
 function selectedCount(){return [...chosen.values()].reduce((sum,set)=>sum+set.size,0);}
 function buildSummary(){
  activeNode.replaceChildren();
  for(const section of sections){
-  for(const value of chosen.get(section.key)){
+  for(const [value,state] of chosen.get(section.key)){
    const chip=document.createElement('button');chip.type='button';chip.className='catalog-filter-chip';
-   chip.setAttribute('aria-label','Quitar filtro '+value+' de '+section.label);
+   chip.setAttribute('aria-label','Quitar filtro '+(state===states.exclude?'excluido ':'incluido ')+value+' de '+section.label);
+   chip.classList.toggle('is-excluded',state===states.exclude);
    const text=document.createElement('span');text.textContent=value;
-   chip.append(text,icon('x'));
-   chip.addEventListener('click',()=>{chosen.get(section.key).delete(value);limit=10;render();opener.focus();});
+   chip.append(icon(state===states.exclude?'minus':'check'),text,icon('x'));
+   chip.addEventListener('click',()=>{setState(section.key,value,states.neutral);limit=10;render();opener.focus();});
    activeNode.append(chip);
   }
  }
@@ -53,7 +69,13 @@ function syncPanel(){
   const selected=chosen.get(section.key);
   node.querySelector('[data-filter-count]').textContent=selected.size?' ('+selected.size+')':'';
   for(const option of node.querySelectorAll('[data-filter-value]')){
-   option.setAttribute('aria-pressed',String(selected.has(option.dataset.filterValue)));
+   const state=selected.get(option.dataset.filterValue)||states.neutral;
+   option.setAttribute('aria-pressed',state===states.exclude?'mixed':String(state===states.include));
+   option.classList.toggle('is-excluded',state===states.exclude);
+   option.setAttribute('aria-label',(state===states.include?'Incluido: ':state===states.exclude?'Excluido: ':'Sin filtro: ')+option.dataset.filterValue+'. Pulsar para '+(state===states.neutral?'incluir':state===states.include?'excluir':'quitar el filtro'));
+   const stateIcon=option.querySelector('.catalog-filter-option-state');
+   stateIcon.replaceChildren();
+   if(state!==states.neutral)stateIcon.append(icon(state===states.exclude?'minus':'check'));
   }
  }
  panelCount.textContent=found+' '+(found===1?'receta encontrada':'recetas encontradas');
@@ -81,9 +103,11 @@ function constructPanel(){
   optionsNode.hidden=section.key==='categoria_filtro';
   toggle.addEventListener('click',()=>{const expanded=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!expanded));optionsNode.hidden=expanded;});
   for(const value of options){
-   const button=document.createElement('button');button.type='button';button.className='catalog-filter-option';button.textContent=value;button.dataset.filterValue=value;button.setAttribute('aria-pressed','false');
+   const button=document.createElement('button');button.type='button';button.className='catalog-filter-option';button.dataset.filterValue=value;button.setAttribute('aria-pressed','false');
+   const stateIcon=document.createElement('span');stateIcon.className='catalog-filter-option-state';stateIcon.setAttribute('aria-hidden','true');
+   const label=document.createElement('span');label.textContent=value;button.append(stateIcon,label);
    button.addEventListener('click',()=>{
-    const selected=chosen.get(section.key);if(selected.has(value))selected.delete(value);else selected.add(value);
+    setState(section.key,value,nextState(getState(section.key,value)));
     limit=10;render();button.focus();
    });
    optionsNode.append(button);

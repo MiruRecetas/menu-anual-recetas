@@ -627,3 +627,13 @@ body:has(.recipe-card) .footer a:focus-visible{outline:2px solid var(--green);ou
 body.catalog-filters-open{overflow:hidden}
 @media(max-width:650px){.catalog-filter-overlay{align-items:flex-end;justify-content:stretch}.catalog-filter-dialog{width:100%;max-height:min(88dvh,850px);border-radius:22px 22px 0 0;box-shadow:0 -10px 35px #17291e22}.catalog-filter-handle{display:block;margin:10px auto 0;width:42px;height:5px;border-radius:99px;background:#b5c1b5}.catalog-filter-header{padding:16px 19px}.catalog-filter-groups{padding:7px 19px 20px}.catalog-filter-footer{padding:15px 19px}.catalog-filter-toolbar{gap:7px}.catalog-filter-chip{font-size:.77rem}}
 @media(prefers-reduced-motion:reduce){.catalog-filter-section-toggle [data-lucide]{transition:none}}
+
+/* Extensión triestado exclusiva del panel del recetario. */
+.catalog-filter-option-state{display:inline-flex;align-items:center;justify-content:center;min-width:0}
+.catalog-filter-option-state:empty{display:none}
+.catalog-filter-option-state [data-lucide],.catalog-filter-chip [data-lucide]{flex-shrink:0}
+.catalog-filter-option.is-excluded,.catalog-filter-option[aria-pressed="mixed"]{background:#f8e9e2;border-color:#ae684f;color:#753d2b}
+.catalog-filter-option.is-excluded:hover,.catalog-filter-option.is-excluded:focus-visible{background:#f4ddd3}
+.catalog-filter-chip.is-excluded{background:#f8e9e2;border-color:#ae684f;color:#753d2b}
+.catalog-filter-help{font-size:.83rem;color:var(--muted);margin:2px 0 12px;line-height:1.5}
+.catalog-filter-help strong{color:var(--ink)}
