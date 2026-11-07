@@ -593,3 +593,37 @@ body:has(.recipe-card) .footer a{color:inherit;text-decoration:underline;text-un
 body:has(.recipe-card) .footer a:focus-visible{outline:2px solid var(--green);outline-offset:3px}
 @media(max-width:360px){.recipe-cost{right:10px;bottom:10px;padding:7px 9px;gap:6px;font-size:.78rem;max-width:calc(100% - 20px)}}
 @media print{.recipe-cost{box-shadow:none}}
+
+/* Filtros del recetario: alcance exclusivo, sin tocar la vista diaria ni otros paneles. */
+.catalog-filter-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:-4px 0 20px;min-height:45px}
+.catalog-filter-toggle,.catalog-filter-chip,.catalog-filter-clear,.catalog-filter-close,.catalog-filter-section-toggle,.catalog-filter-option{font:inherit}
+.catalog-filter-toggle{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:9px 16px;border:1px solid var(--green);background:var(--paper);color:var(--green);border-radius:13px;font-weight:700;white-space:nowrap}
+.catalog-filter-toggle:hover,.catalog-filter-toggle:focus-visible{background:var(--sage)}
+.catalog-active-filters{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.catalog-filter-chip{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:7px 10px 7px 13px;border:1px solid #b5c9b8;border-radius:999px;color:var(--green);background:var(--sage);font-size:.82rem}
+.catalog-filter-chip:hover,.catalog-filter-chip:focus-visible{border-color:var(--green)}
+.catalog-filter-chip [data-lucide]{width:14px;height:14px}
+.catalog-filter-clear{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;padding:8px;border:1px solid var(--line);border-radius:999px;color:var(--green);background:var(--paper)}
+.catalog-filter-clear[hidden],.catalog-filter-overlay[hidden]{display:none!important}
+.catalog-filter-clear:hover,.catalog-filter-clear:focus-visible{background:var(--sage)}
+.catalog-filter-overlay{position:fixed;inset:0;z-index:300;display:flex;justify-content:flex-end;align-items:stretch;background:rgba(24,38,29,.48)}
+.catalog-filter-dialog{width:min(450px,100%);max-height:100dvh;overflow:auto;overscroll-behavior:contain;background:var(--paper);box-shadow:-10px 0 38px #17291e25;display:flex;flex-direction:column;outline:0}
+.catalog-filter-handle{display:none}
+.catalog-filter-header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:28px 25px 20px;border-bottom:1px solid var(--line)}
+.catalog-filter-header h2{margin:5px 0 0;font-size:1.8rem}
+.catalog-filter-close{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink)}
+.catalog-filter-groups{flex:1;overflow:auto;padding:8px 25px 24px}
+.catalog-filter-group{border-bottom:1px solid var(--line);padding:7px 0}
+.catalog-filter-section-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;gap:15px;text-align:left;border:0;background:transparent;padding:15px 0;font-weight:700;color:var(--ink)}
+.catalog-filter-section-toggle [data-lucide]{transition:transform .16s}
+.catalog-filter-section-toggle[aria-expanded="true"] [data-lucide]{transform:rotate(180deg)}
+.catalog-filter-options{display:flex;flex-wrap:wrap;gap:9px;padding:0 0 18px}
+.catalog-filter-options[hidden]{display:none}
+.catalog-filter-option{display:inline-flex;align-items:center;gap:6px;min-height:43px;padding:9px 13px;border:1px solid #c5d0c4;border-radius:999px;background:transparent;color:var(--ink);font-size:.87rem}
+.catalog-filter-option[aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}
+.catalog-filter-option:focus-visible,.catalog-filter-section-toggle:focus-visible,.catalog-filter-chip:focus-visible,.catalog-filter-toggle:focus-visible,.catalog-filter-close:focus-visible,.catalog-filter-clear:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.catalog-filter-footer{position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:18px 25px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.catalog-filter-footer .action{white-space:nowrap}
+body.catalog-filters-open{overflow:hidden}
+@media(max-width:650px){.catalog-filter-overlay{align-items:flex-end;justify-content:stretch}.catalog-filter-dialog{width:100%;max-height:min(88dvh,850px);border-radius:22px 22px 0 0;box-shadow:0 -10px 35px #17291e22}.catalog-filter-handle{display:block;margin:10px auto 0;width:42px;height:5px;border-radius:99px;background:#b5c1b5}.catalog-filter-header{padding:16px 19px}.catalog-filter-groups{padding:7px 19px 20px}.catalog-filter-footer{padding:15px 19px}.catalog-filter-toolbar{gap:7px}.catalog-filter-chip{font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){.catalog-filter-section-toggle [data-lucide]{transition:none}}
