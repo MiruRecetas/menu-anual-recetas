@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "8a0471cecf2363092c40f2ba07f2a2a47a58e637",
-  "generated_at_utc": "2026-11-07T09:44:27Z",
+  "source_commit_sha": "ebf60e82afd69f56385eddd8a5cf7044c50f808f",
+  "generated_at_utc": "2026-11-07T10:24:54Z",
   "total_recetas": 73,
   "recetas": [
     {
@@ -2442,7 +2442,7 @@
       "nombre": "Puré de patata y ajo",
       "slug": "pure-de-patata-y-ajo",
       "qr_id": "r069",
-      "categoria": "aperitivos-guarniciones",
+      "categoria": "sopas-cremas-pures",
       "descripcion": "Puré cremoso de patata con ajo asado, leche y mantequilla, aromatizado con pimienta negra y nuez moscada.",
       "raciones_base": 6,
       "ingredientes": [
