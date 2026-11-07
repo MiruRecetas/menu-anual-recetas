@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "d212fe3aeb8eb3297376952c4dec57b847349ce6",
-  "generated_at_utc": "2026-11-07T11:03:02Z",
-  "total_recetas": 73,
+  "source_commit_sha": "178a3ba000282c1e841ceb890e4c09eb2563ff82",
+  "generated_at_utc": "2026-11-07T12:06:53Z",
+  "total_recetas": 74,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1316,6 +1316,52 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/espinacas-a-la-catalana/"
+    },
+    {
+      "nombre": "Fabada asturiana",
+      "slug": "fabada-asturiana",
+      "qr_id": "r074",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Fabes cocidas lentamente con chorizo y morcilla asturianos, lacón curado y tocino entreverado, en un caldo ligado y sabroso.",
+      "raciones_base": 6,
+      "ingredientes": [
+        {
+          "nombre": "Fabes",
+          "cantidad": 400,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Chorizo asturiano",
+          "cantidad": 2,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Morcilla asturiana",
+          "cantidad": 2,
+          "unidad": "unidades"
+        },
+        {
+          "nombre": "Lacón curado",
+          "cantidad": 200,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Tocino entreverado",
+          "cantidad": 150,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azafrán (opcional)",
+          "cantidad": null,
+          "unidad": ""
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/fabada-asturiana/"
     },
     {
       "nombre": "Fajitas de pollo",

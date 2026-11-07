@@ -438,6 +438,12 @@
       "base_portions": "12",
       "culinary_sha256": "014572bd8427cab71692604b5cc2754824ad24bff406b6a5ddb7373287b42181",
       "cents": "62"
+    },
+    "fabada-asturiana": {
+      "web_name": "Fabada asturiana",
+      "base_portions": "6",
+      "culinary_sha256": "4e30f103ffb9cd3ff0bb910e1ff83f0f71a3ccca65171a4d287b458d1b1083c1",
+      "cents": "309"
     }
   }
 }
