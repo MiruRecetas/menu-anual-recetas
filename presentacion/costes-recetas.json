@@ -444,6 +444,12 @@
       "base_portions": "6",
       "culinary_sha256": "4e30f103ffb9cd3ff0bb910e1ff83f0f71a3ccca65171a4d287b458d1b1083c1",
       "cents": "309"
+    },
+    "pote-asturiano": {
+      "web_name": "Pote asturiano",
+      "base_portions": "3",
+      "culinary_sha256": "05400f80c4e14abdf3e18c6d20d10f1797eb7278c98bb739c1eb1f74611a4ae5",
+      "cents": "281"
     }
   }
 }

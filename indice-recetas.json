@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "178a3ba000282c1e841ceb890e4c09eb2563ff82",
-  "generated_at_utc": "2026-11-07T12:06:53Z",
-  "total_recetas": 74,
+  "source_commit_sha": "9615b0a756206874d3e15333ec3127a3065e5ecf",
+  "generated_at_utc": "2026-11-07T12:20:54Z",
+  "total_recetas": 75,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -2442,6 +2442,38 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pollo-madras/"
+    },
+    {
+      "nombre": "Pote asturiano",
+      "slug": "pote-asturiano",
+      "qr_id": "r075",
+      "categoria": "guisos-legumbres",
+      "descripcion": "Pote de fabada asturiana con verdura bacochada y patatas chascadas, cocido hasta que la patata queda tierna y el caldo ligado.",
+      "raciones_base": 3,
+      "ingredientes": [
+        {
+          "nombre": "Fabada asturiana",
+          "cantidad": 2,
+          "unidad": "raciones",
+          "preparacion": "fabada-asturiana"
+        },
+        {
+          "nombre": "Verdura",
+          "cantidad": 170,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Patata",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Agua",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pote-asturiano/"
     },
     {
       "nombre": "Puré de calabaza y calabacín",
