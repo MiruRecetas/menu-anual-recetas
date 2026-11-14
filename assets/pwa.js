@@ -63,7 +63,8 @@
   area.className = 'pwa-tools'; area.setAttribute('aria-label', 'Actualización de la aplicación');
   const footer = document.querySelector('.footer');
   if (footer) footer.append(area);
-  let registration, accepted = false;
+  let registration, accepted = false, deferredReload = false;
+  const printing = () => document.documentElement.dataset.miruPrintBusy === 'true';
   const update = document.createElement('button');
   update.type = 'button';
   update.textContent = 'Hay una nueva versión disponible. Actualizar';
@@ -71,10 +72,18 @@
   area.append(update);
   update.addEventListener('click', async () => {
     if (!registration?.waiting) return;
+    if (printing()) { status.textContent = 'La impresión está en curso. La actualización se realizará después; no cierres esta pantalla.'; return; }
     if (document.querySelector('#recipe-ui-data') && !window.confirm('La actualización recargará esta ficha y reiniciará raciones, pasos y temporizador. ¿Actualizar ahora?')) return;
     accepted = true; registration.waiting.postMessage({type:'ACCEPT_UPDATE'});
   });
-  navigator.serviceWorker.addEventListener('controllerchange', () => { if (accepted) location.reload(); });
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!accepted) return;
+    if (printing()) { deferredReload = true; status.textContent = 'Impresión en curso. Recarga aplazada hasta finalizar el envío.'; return; }
+    location.reload();
+  });
+  document.addEventListener('miru:print-state', () => {
+    if (!printing() && deferredReload && accepted) { deferredReload = false; location.reload(); }
+  });
   const status = document.createElement('p'); status.setAttribute('role','status'); area.append(status);
   function networkStatus() {
     const stored = document.querySelector('[data-miru-offline]');

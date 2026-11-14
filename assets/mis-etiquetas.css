@@ -1,0 +1,239 @@
+/* Conserva · Etiquetas de ingredientes · módulo integrado en web/PWA única
+   Identidad MiruRecetas: crema, salvia, terracota, Bricolage Grotesque y Geist. */
+:root{
+  color-scheme:light;
+  --bg:#f7f5ef;--paper:#fffefa;--ink:#2c3830;--muted:#637366;
+  --sage:#536c58;--sage-dark:#3b5441;--sage-soft:#e6ede5;
+  --line:#dae1d8;--terracotta:#af7251;--shadow:0 7px 28px rgb(31 54 40 / 6%);
+  font-family:"Geist",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);
+}
+*{box-sizing:border-box}
+body.miru-labels{margin:0;min-width:320px}
+button,input,select{font:inherit}
+button{touch-action:manipulation}
+a{color:inherit}
+.page{max-width:1360px;margin:0 auto;padding:30px 24px 64px}
+.eyebrow{margin:0 0 10px;color:#b96c4a;font-size:.7rem;letter-spacing:.16em;font-weight:700;text-transform:uppercase}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.035em}
+h1{font-size:clamp(31px,4.7vw,50px);line-height:1.06;margin:0 0 16px;font-weight:700}
+h2{font-size:21px;line-height:1.15;margin:0 0 6px}
+h3{font-size:15px}
+.intro{max-width:680px;font-size:16px;line-height:1.5;color:#67756b;margin:0 0 30px}
+.layout-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);align-items:start;gap:24px}
+.format-column{grid-column:2;grid-row:1;min-width:0}
+.steps-column{grid-column:1;grid-row:1;min-width:0;display:grid;align-content:start;gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:var(--shadow)}
+.card-head{display:flex;align-items:start;gap:13px;margin-bottom:21px}
+.step{display:grid;place-items:center;flex:0 0 27px;width:27px;height:27px;background:var(--sage-soft);color:var(--sage);border-radius:50%;font-size:12px;font-weight:800}
+.small{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:grid;gap:8px;min-width:0;font-size:13px;font-weight:650}
+.field.full{grid-column:1/-1}
+.field input,.field select{width:100%;min-width:0;border:1px solid #b6c4b6;border-radius:11px;background:#fff;color:var(--ink);min-height:46px;padding:10px 13px;outline:none}
+.field input:focus-visible,.field select:focus-visible{outline:3px solid #adcdb2;outline-offset:2px;border-color:var(--sage)}
+.field input:disabled,.field select:disabled{background:#f0f1ee;color:#7b877c}
+.field-note{font-weight:400;font-size:11px;color:var(--muted)}
+.disclaimer{border-left:3px solid var(--terracotta);padding:10px 12px;margin:19px 0 0;background:#faf4ee;border-radius:0 9px 9px 0;font-size:12px;line-height:1.5;color:#655446}
+.preview-panel{position:relative}
+.preview-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.dimensions{font-size:11px;font-weight:700;color:#617064;padding:6px 9px;border:1px solid var(--line);border-radius:50px;white-space:nowrap}
+.preview-stage{background:#f0eee9;border:1px dashed #d3d0c7;border-radius:13px;padding:22px 13px;margin:17px 0;display:grid;place-items:center;min-height:225px}
+#preview{width:min(100%,354px);height:auto;aspect-ratio:354/236;background:#fff;border:1px solid #c9cfc7;box-shadow:0 9px 21px rgb(0 0 0 / 9%);image-rendering:auto}
+#a-preview{width:100%;height:auto;max-width:945px;aspect-ratio:945/590;background:#fff;border:1px solid #c9cfc7;box-shadow:0 9px 21px rgb(0 0 0 / 9%);image-rendering:auto}
+.status-line{font-size:12px;color:var(--muted);line-height:1.55;margin:8px 0 0}
+.device-status{display:inline-flex;gap:7px;align-items:center;font-size:13px;font-weight:650;margin:0 0 17px}
+.device-status:before{content:"";background:#a2a9a2;display:block;width:8px;height:8px;border-radius:50%}
+.device-status[data-connected="true"]:before{background:#428651}
+.buttons{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;border:1px solid var(--sage);border-radius:11px;padding:12px 17px;min-height:45px;cursor:pointer;font-size:13px;font-weight:700;color:#fff;background:var(--sage);transition:background .15s ease}
+.btn:hover:not(:disabled){background:var(--sage-dark)}
+.btn.secondary{color:var(--sage);background:transparent;border-color:#a9bcae}
+.btn.secondary:hover:not(:disabled){background:var(--sage-soft)}
+.btn:focus-visible{outline:3px solid #adccb2;outline-offset:3px}
+.btn:disabled{opacity:.48;cursor:not-allowed}
+.btn.print{width:100%;min-height:50px;margin-top:17px}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin:20px 0 0;cursor:pointer;font-size:12px;line-height:1.55;color:#4f6052}
+.checkbox-row input{width:18px;height:18px;flex:none;margin:0;accent-color:var(--sage)}
+.copies-field{display:grid;gap:9px;margin:18px 0 4px}
+.copy-stepper{display:flex;width:max-content;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.copy-stepper button{width:48px;height:46px;border:0;background:#fff;color:var(--ink);font-size:24px;cursor:pointer}
+.copy-stepper button:hover:not(:disabled){background:var(--sage-soft)}
+.copy-stepper button:disabled{opacity:.38;cursor:default}
+.copy-stepper output{display:grid;place-items:center;width:58px;min-height:46px;border-inline:1px solid var(--line);font-size:17px;font-weight:700}
+.transport{display:grid;gap:7px;margin-top:17px;padding:14px;background:#f8f5f0;border:1px solid var(--line);border-radius:12px}
+.transport[hidden]{display:none}
+.transport-head{display:flex;justify-content:space-between;gap:10px;font-size:13px}
+.transport-head strong{font-weight:700}
+.transport-track{height:9px;position:relative;overflow:hidden;border-radius:99px;background:#dcddda}
+.transport-fill{height:100%;width:0%;border-radius:inherit;background:#b96c4a;transition:width .12s linear}
+.transport-count{font-size:13px;font-weight:650;line-height:1.4;margin:0;color:var(--ink)}
+.transport[data-state="error"] .transport-fill{background:#a14434}
+.transport[data-state="complete"] .transport-fill{background:#b96c4a}
+@media(prefers-reduced-motion:reduce){.transport-fill{transition:none}}
+.advanced{margin-top:18px;border-top:1px solid var(--line);padding-top:15px}
+.advanced summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--sage);padding:7px 0}
+#log{color:#ddebe0;background:#1c3023;border-radius:9px;font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;padding:12px;min-height:70px;max-height:170px;white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto}
+.advanced .buttons{margin:11px 0}
+.advanced .btn{min-height:35px;padding:8px 12px;font-size:12px}
+.footer{font-size:12px;color:var(--muted);line-height:1.7;padding:28px 0}
+code{font-family:ui-monospace,monospace}
+@media(max-width:900px){.page{padding:25px 17px 44px}.card{padding:21px}}
+/* La orientación vertical apila; horizontal conserva dos columnas desde 680px. */
+@media(max-width:679px),(max-width:900px) and (orientation:portrait){
+ .layout-grid{display:flex;flex-direction:column;gap:16px}
+ .format-column,.steps-column{width:100%;min-width:0}
+ .steps-column{gap:16px}
+}
+@media(max-width:410px){
+ .fields{grid-template-columns:1fr}
+ .preview-stage{padding:15px 8px}
+ .buttons .btn{flex:1 1 auto}
+}
+@media(prefers-reduced-motion:reduce){.btn{transition:none}}
+
+/* Mis etiquetas · selector de formatos horizontal; sin alterar arte térmico */
+.format-card{margin:0}
+.format-card .card-head{margin-bottom:14px}
+.format-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;min-width:0}
+.format-option{display:block;min-width:0;position:relative;cursor:pointer}
+.format-option input[type=radio]{position:absolute;width:1px;height:1px;opacity:0}
+.format-option-body{min-width:0;min-height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:13px 6px;border:1px solid #b6c4b6;border-radius:13px;background:#fff;text-align:center;transition:border-color .15s,background .15s}
+.format-icon{display:block;width:64px;max-width:100%;height:49px;flex:none}
+.format-icon .icon-main{fill:#567b46}
+.format-icon .icon-light{fill:#bbceb0}
+.format-icon .icon-tint{fill:#eef3eb}
+.format-option-body strong{font:700 clamp(12px,1.7vw,18px)/1.1 "Bricolage Grotesque",sans-serif;color:var(--ink);letter-spacing:-.035em;overflow-wrap:normal}
+.format-option-body>span:not(.format-option-body){font-size:clamp(10px,1.3vw,13px);line-height:1.25;color:var(--muted);white-space:nowrap}
+.format-option input:checked+.format-option-body{border:2px solid var(--sage);background:var(--sage-soft);padding:12px 5px}
+.format-option input:focus-visible+.format-option-body{outline:3px solid #adcdb2;outline-offset:3px}
+.format-option:not(.format-future):hover .format-option-body{border-color:var(--sage)}
+.format-future{cursor:default}
+.format-future .format-option-body{background:#f5f5f0;border-style:dashed;opacity:.72}
+.format-future .format-option-body strong{font-weight:650}
+.format-placeholder{background:var(--sage-soft);border:1px solid var(--line);border-radius:13px;padding:24px 20px;min-height:135px;line-height:1.6}
+.format-placeholder strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px;color:var(--ink)}
+.format-placeholder p{font-size:14px;color:var(--muted);margin:10px 0 0}
+#ingredient-fields[hidden],#ingredient-preview[hidden],#ingredient-print[hidden],.format-placeholder[hidden]{display:none!important}
+@media(max-width:760px){
+ .format-card{padding:18px 14px}
+ .format-card .card-head{margin-bottom:12px}
+ .format-options{gap:6px}
+ .format-option-body{min-height:112px;gap:5px;padding:9px 3px;border-radius:11px}
+ .format-option input:checked+.format-option-body{padding:8px 2px}
+ .format-icon{width:46px;height:38px}
+ .format-option-body strong{font-size:clamp(10px,3vw,14px)}
+ .format-option-body>span:not(.format-option-body){font-size:clamp(9px,2.65vw,12px)}
+}
+@media(max-width:360px){
+ .format-options{gap:4px}
+ .format-card{padding:15px 9px}
+ .format-icon{width:40px;height:34px}
+ .format-option-body{padding:8px 1px;min-height:105px}
+ .format-option input:checked+.format-option-body{padding:7px 0}
+ .format-option-body strong{font-size:10.5px}
+ .format-option-body>span:not(.format-option-body){font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.format-option-body{transition:none}}
+
+/* Compacta libre: componentes autónomos del formulario, sin estilos de producción. */
+#compact-fields{display:grid;gap:17px}
+#compact-fields[hidden],#compact-preview[hidden],#c-nutrition-fields[hidden]{display:none!important}
+#compact-fields textarea,#wide-fields textarea{width:100%;min-width:0;resize:vertical;max-height:160px;
+ border:1px solid #b6c4b6;border-radius:11px;background:#fff;color:var(--ink);padding:12px;
+ font:inherit;font-weight:500;line-height:1.5}
+#compact-fields textarea:focus-visible,#wide-fields textarea:focus-visible{outline:3px solid #adcdb2;outline-offset:2px}
+#compact-fields .checkbox-row{margin:2px 0 0}
+#c-nutrition-fields{margin-bottom:0}
+#c-preview{width:100%;height:auto;display:block;image-rendering:auto}
+
+
+/* Mis etiquetas: estructura aprobada con selector y vista previa unidos.
+   Pantalla ancha: formularios a la izquierda, vista previa a la derecha;
+   móvil: selector/vista previa primero y después los dos pasos. */
+.format-preview{margin-top:20px;min-width:0}
+.format-preview .preview-stage{margin:0;min-height:175px}
+.format-preview .status-line{display:none}
+.format-preview .status-line[data-error="true"]{display:block;color:#a14434;font-weight:650;margin:12px 0 0}
+.step-card{min-width:0}
+.step-heading{display:flex;align-items:center;gap:13px;cursor:pointer;list-style:none}
+.step-heading::-webkit-details-marker{display:none}
+.step-heading::marker{content:""}
+.step-heading h2{margin:0;flex:1}
+.step-heading:focus-visible{outline:3px solid #adcdb2;outline-offset:5px;border-radius:7px}
+.accordion-chevron{width:10px;height:10px;flex:none;border-right:2px solid var(--sage);border-bottom:2px solid var(--sage);transform:rotate(45deg);transition:transform .15s ease;margin:0 5px 4px 0}
+.step-card[open] .accordion-chevron{transform:rotate(225deg);margin:6px 5px 0 0}
+.step-content{margin-top:22px}
+#compact-fields,#wide-fields{display:grid;gap:15px}
+#c-nutrition-fields[hidden],#a-nutrition-fields[hidden],
+#compact-fields[hidden],#wide-fields[hidden],#compact-preview[hidden],#wide-preview[hidden],
+#ingredient-fields[hidden],#ingredient-preview[hidden],#ingredient-print[hidden],
+.format-placeholder[hidden]{display:none!important}
+#compact-fields .checkbox-row,#wide-fields .checkbox-row,
+.note-settings .checkbox-row{margin:8px 0 12px}
+.note-settings{margin-top:17px}
+@media(max-width:900px){.format-preview{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.accordion-chevron{transition:none}}
+
+
+/* Banco doméstico de Pequeña: dos chips discretos y selector modal independiente. */
+#ingredient-bank-controls[hidden],#bank-overlay[hidden],#bank-time-tools[hidden],
+#bank-reset-date[hidden]{display:none!important}
+.bank-mode{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.bank-choice{border:1px solid #b9c9b8;background:#fff;color:var(--sage-dark);border-radius:999px;
+ padding:10px 15px;font:600 13px/1.2 "Geist",sans-serif;cursor:pointer;flex:1 1 145px}
+.bank-choice.is-active{background:var(--sage);border-color:var(--sage);color:#fff}
+.bank-choice:focus-visible,.bank-close:focus-visible,.bank-category:focus-visible,.bank-item:focus-visible,
+.bank-time-tools button:focus-visible{outline:3px solid #9dbc9a;outline-offset:3px}
+.bank-choice:hover:not(.is-active){background:var(--sage-soft)}
+.bank-time-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+ color:var(--sage-dark);font-size:12px;margin:7px 0 2px}
+.bank-time-tools button{border:0;background:none;color:var(--sage-dark);text-decoration:underline;
+ font-size:12px;cursor:pointer;padding:5px 0}
+.bank-overlay{position:fixed;inset:0;z-index:10020;background:rgb(26 43 32 / 40%);
+ display:flex;align-items:flex-end;justify-content:stretch}
+.bank-sheet{position:relative;background:#fffcf7;color:var(--ink);border-radius:20px 20px 0 0;width:100%;
+ max-height:min(90dvh,760px);padding:22px max(18px,env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));
+ display:flex;flex-direction:column;gap:13px;overflow:hidden;box-shadow:0 0 40px rgb(0 0 0 / 20%)}
+.bank-sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.bank-sheet-head .eyebrow{font-size:10px;margin:0 0 4px}
+.bank-sheet-head h2{font:700 23px/1.2 "Bricolage Grotesque",sans-serif;margin:0}
+/* Geometría, color y tipografía del cierre oficial .p1-close (web productiva). */
+.bank-close{display:grid;place-items:center;width:44px;height:44px;min-width:44px;
+ border:1px solid #e4dfd5;border-radius:50%;background:#fff;color:#29352e;
+ font-size:1.6rem;line-height:1;padding:0;cursor:pointer}
+.bank-mobile-handle{display:none}
+@media(max-width:700px){
+ .bank-mobile-handle{display:block;position:absolute;top:14px;left:50%;
+  transform:translateX(-50%);width:46px;height:5px;border-radius:4px;
+  background:#c1c9bf;pointer-events:none}
+ .bank-sheet{padding-top:34px}
+}
+.bank-search-field,.bank-subfield{display:flex;flex-direction:column;gap:6px;color:var(--sage-dark);
+ font-size:12px;font-weight:650}
+.bank-search-field input,.bank-subfield select{border:1px solid #b6c4b6;border-radius:10px;background:#fff;
+ padding:11px 12px;color:var(--ink);min-width:0;width:100%;font:500 15px "Geist",sans-serif}
+.bank-categories{display:flex;flex-wrap:wrap;gap:6px}
+.bank-category{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px;
+ font:600 12px/1.2 "Geist",sans-serif;color:var(--sage-dark);cursor:pointer}
+.bank-category[aria-pressed="true"]{background:var(--sage-soft);border-color:var(--sage)}
+.bank-subfield select{padding:8px 10px;font-size:13px}
+.bank-results-count{font-size:12px;color:var(--muted);margin:0}
+.bank-results{overflow-y:auto;overscroll-behavior:contain;min-height:0;flex:1 1 auto;display:grid;
+ align-content:start;gap:8px;padding:1px 3px 7px 1px}
+.bank-item{text-align:left;display:flex;align-items:flex-start;justify-content:space-between;
+ gap:10px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:11px 12px;
+ cursor:pointer;color:var(--ink);width:100%}
+.bank-item[aria-pressed="true"]{border:2px solid var(--sage);background:var(--sage-soft);padding:10px 11px}
+.bank-item-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.bank-item-name{font:700 15px/1.25 "Bricolage Grotesque",sans-serif}
+.bank-item-meta{color:var(--muted);font-size:12px;line-height:1.35}
+.bank-item-mark{font-weight:750;color:var(--sage-dark);flex:none}
+.bank-empty{color:var(--muted);font-size:14px;padding:15px}
+.bank-sheet-actions{border-top:1px solid var(--line);padding-top:12px}
+.bank-sheet-actions .btn{width:100%;margin:0}
+@media(min-width:700px) and (orientation:landscape){
+ .bank-overlay{align-items:stretch;justify-content:flex-end}
+ .bank-sheet{width:min(490px,50vw);height:100%;max-height:none;
+  border-radius:20px 0 0 20px;padding:26px 22px 26px 24px}
+}
+@media(prefers-reduced-motion:reduce){.bank-choice,.bank-category,.bank-item{transition:none}}

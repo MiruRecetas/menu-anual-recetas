@@ -2,7 +2,7 @@
 // Public same-origin resources only. No third-party interception or credentials.
 const BASE = new URL('./', self.location.href);
 const PREFIX = 'mirurecetas-pwa-';
-const CORE = PREFIX + 'core-b824e5cfcaa990143498';
+const CORE = PREFIX + 'core-8a049076f2cfd6d24ea0';
 const RUNTIME = PREFIX + 'public-v1';
 const MAX_AGE = 30 * 86400000;
 const LIMITS = {page: 40, asset: 64, image: 40, json: 2};
@@ -141,11 +141,12 @@ async function respond(request, url, type) {
 self.addEventListener('fetch', event => {
   const request = event.request, url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname) || request.headers.has('Authorization')) return;
-  // El acceso cinematográfico es online y no almacena fotogramas ni su HTML.
+  // Hero y Mis etiquetas son páginas online; no cachear su HTML ni el banco doméstico.
   // Si falla la conexión, ofrecer la pantalla offline precargada.
   const path = url.pathname.slice(BASE.pathname.length);
   if (request.mode === 'navigate' && !url.search &&
-      (path === '' || path === 'index.html' || path === 'hero/' || path === 'hero/index.html')) {
+      (path === '' || path === 'index.html' || path === 'hero/' || path === 'hero/index.html' ||
+        path === 'mis-etiquetas/' || path === 'mis-etiquetas/index.html')) {
     event.respondWith((async () => {
       try { return await fetch(request, {cache:'no-store', credentials:'omit'}); }
       catch { return await (await caches.open(CORE)).match(new URL('offline.html', BASE)) || Response.error(); }
