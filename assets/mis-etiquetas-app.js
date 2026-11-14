@@ -11,17 +11,11 @@
  function log(s){
   $("log").textContent+="["+new Date().toLocaleTimeString("es-ES")+"] "+s+"\n";
  }
- const previousRasterMetrics=new Map();
- function rasterSavings(id,work){
+ function rasterSavings(work){
   const saved=work.savedBytes,percent=work.baselineBytes>0
    ?(100*saved/work.baselineBytes).toFixed(1):"0.0";
   const info="Antes "+work.baselineBytes+" B · ahora "+work.bytes+" B · ahorro "+
    saved+" B ("+percent+" %) · "+work.baselineTiles+"→"+work.tiles+" sub-bandas";
-  // Registro técnico ya existente (plegado), no añadir anotaciones al preview.
-  if(previousRasterMetrics.get(id)!==info){
-   previousRasterMetrics.set(id,info);
-   log("Raster "+id+": "+info);
-  }
   return info;
  }
  function connected(){return !!(device?.gatt?.connected&&channel);}
@@ -107,7 +101,7 @@
    $("a-status").textContent="Vista previa disponible.";
    try{
     const strict=A.normalize(wideValues(),true),job=A.build(A.render(strict,logo),copies);
-    $("a-metrics").textContent=rasterSavings("Amplia",job)+" · "+job.fragments+
+    $("a-metrics").textContent=rasterSavings(job)+" · "+job.fragments+
      " fragmentos BLE · "+copies+(copies===1?" copia":" copias")+".";
     $("a-preview").dataset.baselineBytes=String(job.baselineBytes);
     $("a-preview").dataset.optimizedBytes=String(job.bytes);
@@ -130,7 +124,7 @@
    canvas.getContext("2d").drawImage(cv,0,0);
    $("c-status").dataset.error="false";$("c-status").textContent="Vista previa disponible.";
    try{const strict=C.normalize(compactValues(),true),job=C.build(C.render(strict,logo),copies);
-    $("c-metrics").textContent=rasterSavings("Compacta",job)+" · "+job.fragments+
+    $("c-metrics").textContent=rasterSavings(job)+" · "+job.fragments+
      " fragmentos BLE · "+copies+" copias.";
     $("c-preview").dataset.baselineBytes=String(job.baselineBytes);
     $("c-preview").dataset.optimizedBytes=String(job.bytes);
@@ -155,7 +149,7 @@
    let message="Vista previa con fecha de envasado pendiente; el consumo preferente es opcional.";
    try{
     const strict=E.normalize(values(),true),full=E.build(E.render(strict,logo),copies);
-    message=rasterSavings("Pequeña",full)+" · "+full.fragments+
+    message=rasterSavings(full)+" · "+full.fragments+
      " fragmentos BLE · "+copies+(copies===1?" copia":" copias")+".";
     $("preview").dataset.baselineBytes=String(full.baselineBytes);
     $("preview").dataset.optimizedBytes=String(full.bytes);
@@ -168,7 +162,6 @@
    if(n===refreshSeq){
     $("design-status").dataset.error="true";$("design-status").textContent="Vista previa bloqueada: "+err.message;
     $("metrics").textContent="No se puede imprimir sin los activos oficiales.";
-    log("Diseño: "+err.message);
    }
   }finally{if(n===refreshSeq)update();}
  }
@@ -199,10 +192,12 @@
    log("Bluetooth requiere HTTPS y Chrome Android compatible.");return;
   }
   busy=true;update();
+  let chosen=false;
   try{
    device=await navigator.bluetooth.requestDevice({
     filters:[{namePrefix:"CT230B"}],optionalServices:[SERVICE]
    });
+   chosen=true;
    device.addEventListener("gattserverdisconnected",()=>{
     log("CT230B desconectada.");disconnect();
    });
@@ -214,11 +209,11 @@
    try{
     const notifications=await svc.getCharacteristic(NOTIFY);
     await notifications.startNotifications();
-    log("Notificaciones GATT habilitadas.");
-   }catch(err){log("Aviso: notificaciones no disponibles: "+err.message);}
-   log("Conectado al servicio UART, sin comandos de impresión.");
+   }catch(_){/* Las notificaciones GATT son opcionales para la impresión. */}
+   log("CT230B conectada.");
   }catch(err){
-   log("Error al conectar: "+err.name+": "+err.message);
+   // Cancelar el selector de dispositivos no es un error de impresión.
+   if(chosen||err.name!=="NotFoundError")log("No se pudo conectar: "+err.message);
    if(device?.gatt?.connected)device.gatt.disconnect();
    disconnect();
   }finally{busy=false;update();}
@@ -246,7 +241,7 @@
   let done=0;
   const total=work.fragments;
   progress(0,total,"sending");
-  log("Envío único de "+work.bytes+" B; "+total+" fragmentos BLE y "+work.tiles+" bandas; "+copies+" copias TSPL; sin QR.");
+  log("Enviando "+copies+(copies===1?" etiqueta":" etiquetas")+" · "+paper+" mm.");
   try{
    for(let i=0;i<work.job.length;i+=20){
     if(!connected())throw Error("Se perdió la conexión BLE durante el envío.");
@@ -260,10 +255,10 @@
     await new Promise(resolve=>setTimeout(resolve,75));
    }
    progress(done,total,"complete");
-   log("Transmitidos "+done+"/"+total+" fragmentos para "+copies+" copias. Verificar físicamente impresión y alineación.");
+   log("Transmisión completa. Comprueba la impresión en papel.");
   }catch(err){
    progress(done,total,"error");
-   log("ERROR: "+err.message+"; enviados "+done+"/"+total+". No reintentar sin revisar la impresora.");
+   log("Error de envío: "+err.message+"; fragmentos enviados "+done+"/"+total+". Revisa la impresora antes de reintentar.");
   }finally{
    busy=false;delete document.documentElement.dataset.miruPrintBusy;document.dispatchEvent(new Event("miru:print-state"));$("confirm-paper").checked=false;update();
   }
@@ -339,6 +334,5 @@
  $("c-packed").value=$("packed").value;
  $("a-packed").value=$("packed").value;
  if(!E||!C||!A){$("design-status").dataset.error="true";$("design-status").textContent="Falta un motor libre del laboratorio.";return;}
- log("Mis etiquetas: Pequeña, Compacta y Amplia B con BLE habilitado y confirmación manual; ensayo físico de Amplia pendiente. Sin inventarios.");
  update();void refresh();
 })();
