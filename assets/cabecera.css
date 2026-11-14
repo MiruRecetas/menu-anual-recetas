@@ -18,6 +18,8 @@
   background:linear-gradient(to bottom,rgba(13,19,15,.88) 0%,rgba(13,19,15,.66) 40%,rgba(13,19,15,0) 100%);
 }
 .miru-header--interior{
+  /* Una sola geometría interior para TODAS las páginas, sin alterar Hero. */
+  --miru-h:64px;
   position:sticky;top:0;width:100vw;margin-left:calc(50% - 50vw);
 }
 .miru-header--interior::before{background:#f6f2eb;box-shadow:0 1px 0 #e4dfd5;}
@@ -87,8 +89,8 @@
 .miru-header .miru-panel a:focus-visible{outline:2px solid #516f5d;outline-offset:-2px;}
 .miru-header .miru-panel__future{color:#67756b;cursor:default;border-top:1px solid #eee9df;}
 .miru-header .miru-panel__future small{font-size:10px;white-space:nowrap;color:#6c7d6b;font-weight:500;}
-.miru-header--interior ~ .main [id],html:has(.miru-header--interior) [id]{scroll-margin-top:calc(94px + env(safe-area-inset-top,0px) + 16px);}
-html:has(.miru-header--interior){scroll-padding-top:calc(94px + env(safe-area-inset-top,0px) + 16px);}
+.miru-header--interior ~ .main [id],html:has(.miru-header--interior) [id]{scroll-margin-top:calc(64px + env(safe-area-inset-top,0px) + 16px);}
+html:has(.miru-header--interior){scroll-padding-top:calc(64px + env(safe-area-inset-top,0px) + 16px);}
 @media(max-width:375px){
  .miru-header{--miru-edge:13px;}
  .miru-header .miru-brand{gap:6px;}
@@ -104,17 +106,17 @@ html:has(.miru-header--interior){scroll-padding-top:calc(94px + env(safe-area-in
  .miru-header .miru-wordmark{font-size:14px;}
  .miru-header .miru-trigger,.miru-header .miru-account{width:36px;min-width:36px;}
 }
-@media(orientation:landscape){.miru-header{--miru-h:78px;}}
+@media(orientation:landscape){.miru-header{--miru-h:78px;}.miru-header--interior{--miru-h:62px;}}
 @media(orientation:landscape) and (max-height:480px){
- .miru-header{--miru-h:70px;--miru-pad-top:6px;}
+ .miru-header{--miru-h:70px;--miru-pad-top:6px;}.miru-header--interior{--miru-h:58px;}
 }
 @media(orientation:landscape){
- html:has(.miru-header--interior){scroll-padding-top:calc(78px + env(safe-area-inset-top,0px) + 16px);}
- html:has(.miru-header--interior) [id]{scroll-margin-top:calc(78px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior){scroll-padding-top:calc(62px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior) [id]{scroll-margin-top:calc(62px + env(safe-area-inset-top,0px) + 16px);}
 }
 @media(orientation:landscape) and (max-height:480px){
- html:has(.miru-header--interior){scroll-padding-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
- html:has(.miru-header--interior) [id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior){scroll-padding-top:calc(58px + env(safe-area-inset-top,0px) + 16px);}
+ html:has(.miru-header--interior) [id]{scroll-margin-top:calc(58px + env(safe-area-inset-top,0px) + 16px);}
 }
 
 /* La navegación permanece fijada al extremo derecho con/sin instalación. */
