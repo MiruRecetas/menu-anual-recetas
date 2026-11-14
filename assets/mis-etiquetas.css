@@ -237,21 +237,3 @@ code{font-family:ui-monospace,monospace}
   border-radius:20px 0 0 20px;padding:26px 22px 26px 24px}
 }
 @media(prefers-reduced-motion:reduce){.bank-choice,.bank-category,.bank-item{transition:none}}
-
-/* Mis etiquetas: cabecera interior compacta, sin alterar el componente global.
-   La geometría original de 94px deja espacio vacío bajo iconos de 45px. */
-body.miru-labels .miru-header--interior{--miru-h:64px;--miru-pad-top:8px}
-@media(orientation:landscape){body.miru-labels .miru-header--interior{--miru-h:62px;--miru-pad-top:7px}}
-@media(orientation:landscape) and (max-height:480px){body.miru-labels .miru-header--interior{--miru-h:58px;--miru-pad-top:5px}}
-
-/* El mismo offset compacto se aplica al desplazamiento a anclas, sin tocar otras páginas. */
-html:has(body.miru-labels .miru-header--interior){scroll-padding-top:calc(64px + env(safe-area-inset-top,0px) + 16px)}
-html:has(body.miru-labels .miru-header--interior) [id]{scroll-margin-top:calc(64px + env(safe-area-inset-top,0px) + 16px)}
-@media(orientation:landscape){
- html:has(body.miru-labels .miru-header--interior){scroll-padding-top:calc(62px + env(safe-area-inset-top,0px) + 16px)}
- html:has(body.miru-labels .miru-header--interior) [id]{scroll-margin-top:calc(62px + env(safe-area-inset-top,0px) + 16px)}
-}
-@media(orientation:landscape) and (max-height:480px){
- html:has(body.miru-labels .miru-header--interior){scroll-padding-top:calc(58px + env(safe-area-inset-top,0px) + 16px)}
- html:has(body.miru-labels .miru-header--interior) [id]{scroll-margin-top:calc(58px + env(safe-area-inset-top,0px) + 16px)}
-}
