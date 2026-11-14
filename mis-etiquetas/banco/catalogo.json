@@ -2988,8 +2988,8 @@
       "congelacion_dias": null,
       "conserva": false,
       "conserva_dias": null,
-      "despensa": false,
-      "despensa_dias": null,
+      "despensa": true,
+      "despensa_dias": 7,
       "estado_recomendacion": "verificado",
       "id": "FRV-HOR-013",
       "nombre": "Tomate",
@@ -3003,7 +3003,7 @@
       "subcategoria": "Hortalizas",
       "tips_conserva": null,
       "tips_descongelacion": null,
-      "tips_despensa": null,
+      "tips_despensa": "Hasta madurar; luego 7 días",
       "tips_refrigeracion": null
     },
     {
