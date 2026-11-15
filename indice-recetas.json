@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "931333d79a86584ea37e8df8bcf4e2994f6b9264",
-  "generated_at_utc": "2026-11-14T15:56:51Z",
+  "source_commit_sha": "e88be68223d00421783a74c2eb90c062a0c45775",
+  "generated_at_utc": "2026-11-15T14:42:56Z",
   "total_recetas": 76,
   "recetas": [
     {
@@ -2928,29 +2928,10 @@
           "unidad": "g"
         },
         {
-          "nombre": "Manzana",
-          "cantidad": 300,
-          "unidad": "g"
-        },
-        {
-          "nombre": "Puerro",
-          "cantidad": 150,
-          "unidad": "g"
-        },
-        {
-          "nombre": "Nata para cocinar",
-          "cantidad": 100,
-          "unidad": "ml"
-        },
-        {
-          "nombre": "AOVE",
-          "cantidad": 10,
-          "unidad": "ml"
-        },
-        {
-          "nombre": "Sal",
-          "cantidad": null,
-          "unidad": ""
+          "nombre": "Crema de manzana",
+          "cantidad": 2,
+          "unidad": "raciones",
+          "preparacion": "crema-de-manzana"
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/salmon-al-horno-con-crema-de-manzana/"
