@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "b5487770af51713a11040e8d7e885eb9745acab1",
-  "generated_at_utc": "2026-11-15T21:00:21Z",
-  "total_recetas": 78,
+  "source_commit_sha": "29ca590a356d3dd18ce48782dd425a63e6a37a60",
+  "generated_at_utc": "2026-11-15T21:10:53Z",
+  "total_recetas": 79,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -1306,6 +1306,47 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-templada-de-arroz-integral-pollo-y-granada/"
+    },
+    {
+      "nombre": "Ensalada templada de otoño",
+      "slug": "ensalada-templada-de-otono",
+      "qr_id": "r079",
+      "categoria": "ensaladas-frios",
+      "descripcion": "Ensalada templada de quinoa, pechuga de pavo y calabaza asada, terminada con nueces troceadas.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Vasito de quinoa",
+          "cantidad": 1,
+          "unidad": "unidad"
+        },
+        {
+          "nombre": "Pechuga de pavo",
+          "cantidad": 165,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Calabaza",
+          "cantidad": 180,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Nueces",
+          "cantidad": 15,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 10,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/ensalada-templada-de-otono/"
     },
     {
       "nombre": "Espinacas a la catalana",
