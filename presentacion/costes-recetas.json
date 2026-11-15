@@ -462,6 +462,12 @@
       "base_portions": "24",
       "culinary_sha256": "57fc0d1b150118366ca55a528a7ce4a75083c220054fc6fa85b2699b5f689e0a",
       "cents": "16"
+    },
+    "papillote-crujiente-de-abadejo": {
+      "web_name": "Papillote crujiente de abadejo",
+      "base_portions": "1",
+      "culinary_sha256": "e3673b18c90c9f32248cff73e7c3a69bf3860ed0419896b6045266ce5f5de1f4",
+      "cents": "1344"
     }
   }
 }

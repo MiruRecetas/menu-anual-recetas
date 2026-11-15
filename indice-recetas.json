@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "b42a21efbbbc16db952e770dea559bef57c71e4f",
-  "generated_at_utc": "2026-11-15T19:55:06Z",
-  "total_recetas": 77,
+  "source_commit_sha": "b5487770af51713a11040e8d7e885eb9745acab1",
+  "generated_at_utc": "2026-11-15T21:00:21Z",
+  "total_recetas": 78,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -2192,6 +2192,62 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/pa-amb-tomaquet-con-jamon-iberico/"
+    },
+    {
+      "nombre": "Papillote crujiente de abadejo",
+      "slug": "papillote-crujiente-de-abadejo",
+      "qr_id": "r078",
+      "categoria": "asados-horno",
+      "descripcion": "Lomo de abadejo al horno sobre verduras salteadas y queso brie, en un barquito crujiente de masa filo.",
+      "raciones_base": 1,
+      "ingredientes": [
+        {
+          "nombre": "Berenjena",
+          "cantidad": 100,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Calabacín",
+          "cantidad": 90,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Espárragos trigueros",
+          "cantidad": 80,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Queso brie",
+          "cantidad": 40,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Abadejo",
+          "cantidad": 180,
+          "unidad": "g"
+        },
+        {
+          "nombre": "AOVE",
+          "cantidad": 15,
+          "unidad": "ml"
+        },
+        {
+          "nombre": "Mantequilla",
+          "cantidad": 10,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Masa filo",
+          "cantidad": 4,
+          "unidad": "hojas"
+        },
+        {
+          "nombre": "Sal",
+          "cantidad": null,
+          "unidad": ""
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/papillote-crujiente-de-abadejo/"
     },
     {
       "nombre": "Pasta boloñesa",
