@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "source_commit_sha": "e88be68223d00421783a74c2eb90c062a0c45775",
-  "generated_at_utc": "2026-11-15T14:42:56Z",
-  "total_recetas": 76,
+  "source_commit_sha": "b42a21efbbbc16db952e770dea559bef57c71e4f",
+  "generated_at_utc": "2026-11-15T19:55:06Z",
+  "total_recetas": 77,
   "recetas": [
     {
       "nombre": "Albóndigas en salsa rubia",
@@ -2087,6 +2087,32 @@
         }
       ],
       "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/marmitako-de-bonito/"
+    },
+    {
+      "nombre": "Mermelada de mango",
+      "slug": "mermelada-de-mango",
+      "qr_id": "r077",
+      "categoria": "salsas-aderezos",
+      "descripcion": "Mermelada de mango con azúcar y zumo de limón, cocida lentamente y envasada en tarros.",
+      "raciones_base": 24,
+      "ingredientes": [
+        {
+          "nombre": "Mango",
+          "cantidad": 750,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Azúcar",
+          "cantidad": 300,
+          "unidad": "g"
+        },
+        {
+          "nombre": "Zumo de limón",
+          "cantidad": 30,
+          "unidad": "ml"
+        }
+      ],
+      "url": "https://mirurecetas.github.io/menu-anual-recetas/recetas/mermelada-de-mango/"
     },
     {
       "nombre": "Mini wraps de falafel",

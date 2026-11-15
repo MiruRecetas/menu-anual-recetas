@@ -456,6 +456,12 @@
       "base_portions": "4",
       "culinary_sha256": "72d55f8ae62c49502f8abe763b84f5f61b8c781b03ba89dff03f64c3f584c667",
       "cents": "104"
+    },
+    "mermelada-de-mango": {
+      "web_name": "Mermelada de mango",
+      "base_portions": "24",
+      "culinary_sha256": "57fc0d1b150118366ca55a528a7ce4a75083c220054fc6fa85b2699b5f689e0a",
+      "cents": "16"
     }
   }
 }
